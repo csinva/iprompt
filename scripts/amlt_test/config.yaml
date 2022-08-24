@@ -1,0 +1,5 @@
+environment:
+  image: pytorch/pytorch:1.7.1-cuda11.0-cudnn8-devel
+
+code:
+  local_dir: $CONFIG_DIR/

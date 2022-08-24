@@ -1,0 +1,11 @@
+numpy
+pandas
+scipy
+transformers[torch]
+torch
+torchvision
+scikit-learn
+tqdm
+
+# optional for launching jobs
+# amlt
