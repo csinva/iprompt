@@ -9,3 +9,12 @@ tqdm
 
 # optional for launching jobs
 # amlt
+
+
+# optional for prefix_tuning
+# dataclasses
+
+# for dart
+statistics
+wandb
+tensorboard
