@@ -6,7 +6,7 @@ import csv
 import numpy as np
 import os
 import logging
-from fp16 import FP16_Module, FP16_Optimizer
+# from fp16 import FP16_Module, FP16_Optimizer
 from parallel import DataParallelModel, DataParallelCriterion
 from collections import OrderedDict
 from utils import *
