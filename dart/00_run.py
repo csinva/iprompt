@@ -43,7 +43,7 @@ def get_best_results(metric, output_dir, result_file='results.json'):
 def main():
     run_parser = ArgumentParser()
     run_parser.add_argument("--encoder",
-                            choices=['manual', 'lstm', 'inner', 'inner2'],
+                            choices=['manual', 'lstm', 'inner'],
                             default='manual')
     run_parser.add_argument("--task", default='all')
     run_parser.add_argument("--num_splits", type=int, default=-1)
@@ -134,10 +134,7 @@ def main():
                                   '--pet_gradient_accumulation_steps', '1'])
 
             # Set prompt encoder type
-            if run_args.encoder == 'inner2':
-                arguments.extend(
-                    ['--prompt_encoder_type', 'inner', '--two_stage_train'])
-            elif run_args.encoder == 'manual':
+            if run_args.encoder == 'manual':
                 arguments.extend(['--prompt_encoder_type', 'none'])
             else:
                 arguments.extend(['--prompt_encoder_type', run_args.encoder])
@@ -157,22 +154,9 @@ def main():
             best_result, _ = get_best_results(args.metrics[-1], output_dir)
             for metric, value in best_result.items():
                 best_result_all[metric].append(value)
-            if args.two_stage_train:
-                best_result, _ = get_best_results(
-                    args.metrics[-1], output_dir, 'results_stage1.json')
-                for metric, value in best_result.items():
-                    best_result_stage1[metric].append(value)
 
         # Summary results
         logger.info("\n\n========== RESULTS OF TASK: %s ==========" % task)
-        if args.two_stage_train:
-            logger.info("---------- STAGE[1] RESULTS ----------")
-            for metric, values in best_result_stage1.items():
-                mean = statistics.mean(values)
-                std = statistics.stdev(values) if len(values) > 1 else 0
-                logger.info("{}: {:.1f}({:.1f})\n".format(
-                    metric, mean * 100, std * 100))
-            logger.info("---------- STAGE[2] RESULTS ----------")
         for metric, values in best_result_all.items():
             mean = statistics.mean(values)
             std = statistics.stdev(values) if len(values) > 1 else 0

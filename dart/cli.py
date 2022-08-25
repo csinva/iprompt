@@ -15,6 +15,8 @@ This script can be used to train and evaluate either a regular supervised model 
 one of the supported tasks and datasets.
 """
 
+# python3 cli.py --data_dir data/k-shot/SST-2/16-13 --model_type roberta --model_name_or_path roberta-large --task_name SST-2 --output_dir output/SST-2/manual/16-13 --do_train
+
 import argparse
 import os
 import torch
