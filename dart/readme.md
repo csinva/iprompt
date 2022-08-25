@@ -8,11 +8,11 @@ Implementation for ICLR2022 paper *[Differentiable Prompt Makes Pre-trained Lang
 - 16-shot GLUE dataset from [LM-BFF](https://github.com/princeton-nlp/LM-BFF).
 - Generated data consists of 5 random splits (13/21/42/87/100) for a task, each has 16 samples.
 ## How to run
-- To run across each 5 splits in a task, use `run.py`:
+- To run across each 5 splits in a task, use `00_run.py`:
   - In the arguments, `encoder="inner"` is the method proposed in the paper where verbalizers are other trainable tokens; `encoder="manual"` means verbalizers are selected fixed tokens; `encoder="lstm"` refers to the [P-Tuning](https://github.com/THUDM/P-tuning) method.
 ```bash
-$ python run.py -h
-usage: run.py [-h] [--encoder {manual,lstm,inner,inner2}] [--task TASK]
+$ python 00_run.py -h
+usage: 00_run.py [-h] [--encoder {manual,lstm,inner,inner2}] [--task TASK]
               [--num_splits NUM_SPLITS] [--repeat REPEAT] [--load_manual]
               [--extra_mask_rate EXTRA_MASK_RATE]
               [--output_dir_suffix OUTPUT_DIR_SUFFIX]
