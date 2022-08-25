@@ -1,14 +1,19 @@
 import torch
+from torch.utils.data import DataLoader
 from torch import nn
-from pytorch_transformers import AdamW
+from pytorch_transformers import AdamW, WEIGHTS_NAME, WarmupLinearSchedule
+import csv
+import numpy as np
 import os
 import logging
-from fp16 import FP16_Optimizer
-from parallel import DataParallelCriterion
+from fp16 import FP16_Module, FP16_Optimizer
+from parallel import DataParallelModel, DataParallelCriterion
+from collections import OrderedDict
 from utils import *
-from settings import args, TASK_DICT, init_logging, MODEL_CONFIG, MODEL_CLASS, SPECIAL_TOKENS
-from settings import TOKENIZER, SPECIAL_TOKEN_IDS, FILL_VAL, SAVE_NAME, TOKENS_WEIGHT, CONFIG_NAME
+from settings import args, TASK_DICT, init_logging, MODEL_CONFIG, MODEL_CLASS, SPECIAL_TOKENS, CONFIG_CLASS
+from settings import TOKENIZER, SPECIAL_TOKEN_IDS, FILL_VAL, SAVE_NAME, FINAL_SAVE_NAME, TOKENS_WEIGHT, CONFIG_NAME
 from scheduler import AnnealingLR
+from regularizers import REG_TYPES, REG_TYPE_KEYS, Weight_Regularized_AdamW, Weight_Regularized_SGD
 from torch.nn import CrossEntropyLoss
 logger = logging.getLogger(__name__)
 
