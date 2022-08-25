@@ -40,7 +40,7 @@ def parse_args():
     parser.add_argument("--lr_schedule", type=str, default="warmup_linear")
     parser.add_argument("--max_grad_norm", type=int, default=1)
     parser.add_argument("--max_n_epochs", type=int, default=9)
-    parser.add_argument("--min_batch_size", type=int, default=4)
+    parser.add_argument("--min_batch_size", type=int, default=100)
     parser.add_argument("--min_n_steps", type=int, default=1500)
     parser.add_argument("--n_gpus", type=int, default=1)
     parser.add_argument("--dynamic_epochs", action="store_true")
