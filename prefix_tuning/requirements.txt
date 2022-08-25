@@ -1,0 +1,4 @@
+GPUtil==1.4.0
+pytorch-transformers==1.2.0
+torch>=1.2.0
+OpenAttack==2.0.1

@@ -18,3 +18,7 @@ tqdm
 statistics
 wandb
 tensorboard
+
+# for prefix-tuning (robust)
+pytorch-transformers
+gputil
