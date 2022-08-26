@@ -20,6 +20,7 @@ MEMORY_FACTOR = {
 TURING_ARCHS = {'Tesla V100', '2080 Ti'}
 MODEL_CLASSES = {
     'gpt2-medium': (GPT2LMHeadModel, GPT2Tokenizer, GPT2Config),
+    'gpt2-large': (GPT2LMHeadModel, GPT2Tokenizer, GPT2Config),
 }
 SAVE_NAME = 'model-'
 FINAL_SAVE_NAME = 'model-finish'
@@ -69,7 +70,7 @@ def parse_args():
     parser.add_argument("--model_dir_root", type=str, required=True)
     parser.add_argument("--device", type=int, default=0) # GPU id
     parser.add_argument("--logging_steps", type=int, default=1000)
-    parser.add_argument("--model_name", type=str, default="gpt2-medium", choices=["gpt2-medium"])
+    parser.add_argument("--model_name", type=str, default="gpt2-medium", choices=["gpt2-medium", "gpt2-large"])
 
     # prefix P_theta training
     parser.add_argument("--preseqlen", type=int, default=10)
