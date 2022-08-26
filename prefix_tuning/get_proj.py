@@ -134,7 +134,7 @@ def test_one_to_many(task_load):
     TOKENIZER.add_tokens([gen_token])
     SPECIAL_TOKENS[task_load] = gen_token
     SPECIAL_TOKEN_IDS[task_load] = TOKENIZER.convert_tokens_to_ids(gen_token)
-    model = MODEL_CLASS.from_pretrained('../gpt2-medium-pretrained/').cuda()
+    model = MODEL_CLASS.from_pretrained(args.model_name).cuda()
     model.resize_token_embeddings(len(TOKENIZER))
     model.transformer.output_hidden_states = True
     model.transformer.output_attentions = False
