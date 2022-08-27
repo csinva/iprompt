@@ -6,6 +6,7 @@ torch
 torchvision
 scikit-learn
 tqdm
+matplotlib
 
 # optional for launching jobs
 # amlt
