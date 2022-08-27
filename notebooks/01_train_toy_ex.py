@@ -28,8 +28,8 @@ def train(dset, model, tokenizer, batch_size=100):
     # initialize prefix
     prefix_str = ["x the following two numbers: "]
     prefix_inputs = tokenizer(prefix_str, return_tensors="pt").to(device)
-    prefix_emb = torch.nn.Parameter(wte.forward(
-        prefix_inputs['input_ids'])).to(device)
+    prefix_emb = wte.forward(prefix_inputs['input_ids'])
+    prefix_emb = torch.nn.Parameter(prefix_emb).to(device)
 
     # optimizer
     optim = torch.optim.Adam([prefix_emb])
@@ -80,6 +80,6 @@ if __name__ == '__main__':
     model = AutoModelForCausalLM.from_pretrained(
         checkpoint, output_hidden_states=True)
     dset = data.get_data(N=1000)
-    r = train(dset, model, tokenizer, batch_size=300)
+    r = train(dset, model, tokenizer, batch_size=500)
 
     pkl.dump(r, open('results.pkl', 'wb'))
