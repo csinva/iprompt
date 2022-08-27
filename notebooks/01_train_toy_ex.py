@@ -11,6 +11,7 @@ from collections import defaultdict
 import pandas as pd
 from datasets import Dataset
 import data
+import logging
 import pickle as pkl
 from torch.utils.data import DataLoader
 
@@ -75,11 +76,17 @@ def train(dset, model, tokenizer, batch_size=100,
 
 
 if __name__ == '__main__':
+    logger = logging.getLogger()
+    logging.basicConfig(level=logging.INFO)
+
+    logger.info('loading model and data...')
     checkpoint = "EleutherAI/gpt-neo-2.7B"
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     model = AutoModelForCausalLM.from_pretrained(
         checkpoint, output_hidden_states=True)
-    dset = data.get_data(N=100000)
+    dset = data.get_data(N=10000)
+    
+    logger.info('beginning training...')
     r = train(dset, model, tokenizer, batch_size=500)
 
     pkl.dump(r, open('results.pkl', 'wb'))
