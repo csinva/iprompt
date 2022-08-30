@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import torch
 from torch import nn
@@ -13,7 +14,17 @@ from datasets import Dataset
 import data
 import pickle as pkl
 
-def get_unembedding(model):
+def get_unembedding(checkpoint):
+    """Get unembedding layer for first continuous vector
+    This is needed to take gradients wrt the input text
+    """
+    checkpoint_clean = checkpoint.lower().replace('/', '___')
+    fname = f'../data/preprocessed/unembed_{checkpoint_clean}.pkl'
+    if os.path.exists(fname):
+        return pkl.load(open(fname, 'rb'))
+
+    # get the embedding from the model
+    model = AutoModelForCausalLM.from_pretrained(checkpoint)
     trans = model._modules['transformer']
     w_embed = trans.wte.weight # vocab_size, embed_dim
     vocab_size = w_embed.shape[0]
@@ -23,4 +34,7 @@ def get_unembedding(model):
     unemb_linear = nn.Linear(in_features=embed_size, out_features=vocab_size, bias=False)
     pinv = torch.linalg.pinv(w_embed)
     unemb_linear.weight = nn.Parameter(pinv.T)
+    
+    pkl.dump(unemb_linear, open(fname, 'wb'))
     return unemb_linear
+
