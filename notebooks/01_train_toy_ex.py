@@ -68,6 +68,7 @@ def train(args, r, dset, model, tokenizer):
             outputs = model(inputs_embeds=emb)
 
             # calculate loss
+            # currently this calculates loss only on the answer token
             idxs_correct = tokenizer(y_text, return_tensors='pt')['input_ids']
             assert idxs_correct.nelement(
             ) == args.batch_size, 'For now assume that answer is a single token'
@@ -75,20 +76,23 @@ def train(args, r, dset, model, tokenizer):
             # (batch_size, seq_len, vocab_size)
             logit_answer = outputs['logits'][0, -1, y_idx_correct]
 
-            # optimize
-            optim.zero_grad()
-            loss = -1 * logit_answer
+            # accumulate gradients in this batch
+            loss = -1 * logit_answer # minimize prob answer being wrong
             loss.backward()
-            optim.step()
 
         # save stuff
         r['embs'].append(prefix_emb.detach().cpu().numpy())
+        r['grads'].append(prefix_emb.grad.detach().cpu().numpy())
         r['losses'].append(loss.item())
         # print('losses', loss)
 
-        if epoch % args.epoch_save_interval == 0:
-            os.makedirs(save_dir, exist_ok=True)
-            pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
+        # optimize
+        optim.step()
+        optim.zero_grad()
+
+    if epoch % args.epoch_save_interval == 0:
+        os.makedirs(save_dir, exist_ok=True)
+        pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
     return r
 
 
