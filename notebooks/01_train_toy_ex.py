@@ -40,6 +40,7 @@ def train(args, r, dset, model, tokenizer):
     # set up saving
     save_dir_unique = datetime.now().strftime("%b_%d_%H_%M_") + ''.join(random.choices(string.ascii_lowercase, k=12))
     save_dir = os.path.join(args.save_dir, save_dir_unique)
+    logging.info('saving to ' + save_dir)
 
     # initialize prefix
     prefix_str = ["x the following two numbers: "]
@@ -84,15 +85,17 @@ def train(args, r, dset, model, tokenizer):
         r['embs'].append(prefix_emb.detach().cpu().numpy())
         r['grads'].append(prefix_emb.grad.detach().cpu().numpy())
         r['losses'].append(loss.item())
+        if epoch % args.epoch_save_interval == 0:
+            os.makedirs(save_dir, exist_ok=True)
+            pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
         # print('losses', loss)
 
         # optimize
         optim.step()
         optim.zero_grad()
 
-    if epoch % args.epoch_save_interval == 0:
-        os.makedirs(save_dir, exist_ok=True)
-        pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
+
+
     return r
 
 
