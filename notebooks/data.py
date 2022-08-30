@@ -3,10 +3,12 @@ import pandas as pd
 import numpy as np
 from collections import defaultdict
 
+from tqdm import trange
+
 def get_data(max_digit=1000):
     d = defaultdict(list)
     np.random.seed(13)
-    for num1 in range(max_digit):
+    for num1 in trange(max_digit, desc="creating data", leave=False):
         for num2 in range(max_digit):
             d['input'].append(f'{num1} {num2}')
             d['output'].append(f' {num1 + num2}')

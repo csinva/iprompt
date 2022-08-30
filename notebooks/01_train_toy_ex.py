@@ -35,7 +35,7 @@ def train(args, r, dset, model, tokenizer):
     model = model.to(device)
     trans = model._modules['transformer']
     wte = trans.wte.to(device)
-    dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=True)
+    dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=True, drop_last=True)
 
     # set up saving
     save_dir_unique = datetime.now().strftime("%b_%d_%H_%M_") + ''.join(random.choices(string.ascii_lowercase, k=12))
@@ -51,7 +51,7 @@ def train(args, r, dset, model, tokenizer):
     # optimizer
     optim = torch.optim.Adam([prefix_emb], lr=args.lr)
     for epoch in range(args.n_epochs):
-        for batch in tqdm(dataloader):
+        for idx, batch in tqdm(enumerate(dataloader)):
             x_text = batch['input']
             y_text = batch['output']
             full_text = [x_text[i] + y_text[i] for i in range(len(x_text))]
@@ -62,7 +62,7 @@ def train(args, r, dset, model, tokenizer):
                 device)).to(device)
 
             # concatenate prefix + example
-            emb = torch.cat((prefix_emb.repeat(args.batch_size, 1, 1),
+            emb = torch.cat((prefix_emb.repeat(ex_embs.shape[0], 1, 1),
                             ex_embs), dim=1)
 
             # go through model
@@ -70,15 +70,17 @@ def train(args, r, dset, model, tokenizer):
 
             # calculate loss
             # currently this calculates loss only on the answer token
-            idxs_correct = tokenizer(y_text, return_tensors='pt')['input_ids']
+            idxs_correct = tokenizer(y_text, return_tensors='pt')['input_ids'].to(device)
             assert idxs_correct.nelement(
             ) == args.batch_size, 'For now assume that answer is a single token'
-            y_idx_correct = idxs_correct[0]
             # (batch_size, seq_len, vocab_size)
-            logit_answer = outputs['logits'][0, -1, y_idx_correct]
+
+            last_token_logits = outputs['logits'][:, -1, :]
+            log_probs = torch.gather(last_token_logits, 1, idxs_correct)
 
             # accumulate gradients in this batch
-            loss = -1 * logit_answer # minimize prob answer being wrong
+            loss = -1 * log_probs.mean() # minimize prob answer being wrong
+
             loss.backward()
 
         # save stuff
