@@ -6,6 +6,8 @@ from collections import defaultdict
 from tqdm import trange
 
 def get_data(max_digit=1000):
+
+
     d = defaultdict(list)
     np.random.seed(13)
     for num1 in trange(max_digit, desc="creating data", leave=False):

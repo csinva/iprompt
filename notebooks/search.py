@@ -30,5 +30,9 @@ def get_init_prefix(model, dataloader, tokenizer, wte, device) -> List:
     return prefix_emb
 
 def get_init_suffix(model, dataloader, tokenizer, wte, device) -> List:
-    suffix_str = "The relationship between the numbers in the question and the answer is: "
-    return suffix_str
+    addition_suffixes_manual = [
+        "The relationship between the numbers in the question and the answer is: ",
+        "To get the answer, take the two numbers in the question and ",
+    ]
+    
+    return addition_suffixes_manual[-1]

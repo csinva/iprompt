@@ -25,6 +25,8 @@ from datetime import datetime
 
 
 def train_prefix(args, r, model, wte, dataloader, device, save_dir, prefix_emb):
+    """Gradient-based optimization of the prefix
+    """
     # optimizer
     optim = torch.optim.Adam([prefix_emb], lr=args.lr)
 
@@ -125,7 +127,7 @@ def train_suffix(args, r, model, dataloader, device, suffix_str: str, save_dir,
         top_decoded_tokens = tokenizer.decode(sorted_top_k_inds)
         logging.info(str(epoch) + ' ' + repr(suffix_str))
         for i in range(k):
-            logging.info('\t ' + repr(top_decoded_tokens[i]) + ' ' + f'{avg_probs[sorted_top_k_inds[i]]:%.2E}')
+            logging.info('\t ' + repr(top_decoded_tokens[i]) + '\t' + f'{avg_probs[sorted_top_k_inds[i]]:.2E}')
 
         suffix_str += top_decoded_tokens[0]
         # save stuff
@@ -174,7 +176,7 @@ def train(args, r, dset, model, tokenizer):
 
 
 if __name__ == '__main__':
-
+    # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 200
     # initialize args
     def init_parser():
         parser = argparse.ArgumentParser()
