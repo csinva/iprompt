@@ -32,10 +32,15 @@ def train(args, r, dset, model, tokenizer):
     torch.manual_seed(args.seed)
     device = 'cuda'
 
+    model.train() 
+
     model = model.to(device)
     trans = model._modules['transformer']
     wte = trans.wte.to(device)
     dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=True, drop_last=True)
+
+    # track token-to-word mapping 
+    rvocab = {v:k for k,v in tokenizer.vocab.items()}
 
     # set up saving
     save_dir_unique = datetime.now().strftime("%b_%d_%H_%M_") + ''.join(random.choices(string.ascii_lowercase, k=12))
@@ -46,11 +51,33 @@ def train(args, r, dset, model, tokenizer):
     prefix_str = ["x the following two numbers: "]
     prefix_inputs = tokenizer(prefix_str, return_tensors="pt").to(device)
     prefix_emb = wte.forward(prefix_inputs['input_ids'])
-    prefix_emb = torch.nn.Parameter(prefix_emb).to(device)
+
+    #####################################################################
+    # breakpoint()
+    trainable_prefix_emb = torch.nn.Parameter(wte.weight.mean(dim=0, keepdim=True)[None], requires_grad=True).to(device)
+    # trainable_prefix_emb = torch.nn.Parameter(torch.randu((1, 1, 768)), requires_grad=True).to(device)
+    # trainable_prefix_emb = torch.nn.Parameter(prefix_emb[:, 0:1, :], requires_grad=True).to(device)
+    #####################################################################
+
+    untrainable_prefix_emb = torch.nn.Parameter(prefix_emb[:, 1:, :], requires_grad=False).to(device)
+
+    # this code assumes that 'x' is the first token
 
     # optimizer
-    optim = torch.optim.Adam([prefix_emb], lr=args.lr)
+    optim = torch.optim.Adam([trainable_prefix_emb], lr=args.lr)
+
+    assert model.training
     for epoch in range(args.n_epochs):
+        # Print closest tokens at the beginning of each epoch.
+        print("*" * 30)
+        print(f"Epoch {epoch}. Closest tokens to x:")
+        word_distances =  ((wte.weight - trainable_prefix_emb.reshape(1, 768))**2).sum(1)
+        assert word_distances.shape == (50_257,)
+        topk_closest_words = distances = word_distances.topk(k=10, largest=False)
+        for _id, _dist in zip(topk_closest_words.indices.cpu().tolist(), topk_closest_words.values.cpu().tolist()):
+            print(f'\t{rvocab[_id]} ({_id}): {_dist:.3f}')
+        print("*" * 30)
+        
         for idx, batch in tqdm(enumerate(dataloader)):
             x_text = batch['input']
             y_text = batch['output']
@@ -62,8 +89,14 @@ def train(args, r, dset, model, tokenizer):
                 device)).to(device)
 
             # concatenate prefix + example
-            emb = torch.cat((prefix_emb.repeat(ex_embs.shape[0], 1, 1),
-                            ex_embs), dim=1)
+            emb = torch.cat(
+                (
+                    trainable_prefix_emb.repeat(ex_embs.shape[0], 1, 1),
+                    untrainable_prefix_emb.repeat(ex_embs.shape[0], 1, 1),
+                    ex_embs
+                ), 
+                dim=1
+            )
 
             # go through model
             outputs = model(inputs_embeds=emb)
@@ -75,26 +108,32 @@ def train(args, r, dset, model, tokenizer):
             ) == args.batch_size, 'For now assume that answer is a single token'
             # (batch_size, seq_len, vocab_size)
 
-            last_token_logits = outputs['logits'][:, -1, :]
-            log_probs = torch.gather(last_token_logits, 1, idxs_correct)
+            last_token_logprobs = outputs['logits'][:, -1, :].log_softmax(dim=-1)
+            correct_token_logprobs = torch.gather(last_token_logprobs, 1, idxs_correct)
 
             # accumulate gradients in this batch
-            loss = -1 * log_probs.mean() # minimize prob answer being wrong
-
+            loss = -1 * correct_token_logprobs.mean() # minimize prob answer being wrong
             loss.backward()
+            print(f"Loss = {loss:.3f}")
+            # # optimize
+            # optim.step()
+            # optim.zero_grad()
 
         # save stuff
-        r['embs'].append(prefix_emb.detach().cpu().numpy())
-        r['grads'].append(prefix_emb.grad.detach().cpu().numpy())
+        r['embs'].append(trainable_prefix_emb.detach().cpu().numpy())
+        r['grads'].append(trainable_prefix_emb.grad.detach().cpu().numpy())
         r['losses'].append(loss.item())
         if epoch % args.epoch_save_interval == 0:
             os.makedirs(save_dir, exist_ok=True)
             pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
         # print('losses', loss)
-
         # optimize
         optim.step()
         optim.zero_grad()
+
+        if epoch % 5 == 0:
+            breakpoint()
+
 
 
 
