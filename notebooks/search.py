@@ -33,7 +33,7 @@ def get_init_suffix(model, dataloader, tokenizer, device) -> List:
     addition_suffixes_manual = [
         "The relationship between the numbers in the question and the answer is: ",
         "To get the answer, take the two numbers in the question and ",
-        "To get the answer, take the two inputs and ",
+        "To get the answer, take the two inputs and",
     ]
     
     return addition_suffixes_manual[-1]

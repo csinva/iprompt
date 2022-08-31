@@ -79,6 +79,7 @@ def train_prefix(args, r, model, wte, dataloader, device, save_dir, prefix_emb):
 
 def train_suffix(args, r, model, dataloader, device, suffix_str: str, save_dir,
                  num_tokens_to_add=8,
+                 disallow_whitespace_tokens=True,
                  beam_size=1):
     """Here we find the suffix which maximizes the likelihood over all examples.
     The algorithms is basically to do beam search on the average prob distrs. over all examples.
@@ -118,25 +119,31 @@ def train_suffix(args, r, model, dataloader, device, suffix_str: str, save_dir,
         # keep only top k tokens with highest probability
         # keep the top tokens with cumulative probability >= top_p
         avg_logits = cum_logits / num_examples
-        print('shapes', logits.shape, next_token_logits.shape, cum_logits.shape)
+        # print('shapes', logits.shape, next_token_logits.shape, cum_logits.shape)
         avg_logits = avg_logits.detach().cpu().numpy().squeeze()
         avg_probs = np.exp(avg_logits) # softmax
         avg_probs /= np.sum(avg_probs)
         k = 50
         # could also check out top_k_top_p_filtering (https://huggingface.co/docs/transformers/v4.16.2/en/task_summary)
         top_k_inds = np.argpartition(avg_logits, -k)[-k:] # get topk
-        sorted_top_k_inds = top_k_inds[np.argsort(avg_logits[top_k_inds])][::-1] # sort the topk (largest first)        
+        top_k_inds = top_k_inds[np.argsort(avg_logits[top_k_inds])][::-1] # sort the topk (largest first)        
 
         # decode and log
-        top_decoded_tokens = tokenizer.decode(sorted_top_k_inds)
+        print('shapes', top_k_inds)
+        top_decoded_tokens = np.array([tokenizer.decode(ind) for ind in top_k_inds])
         logging.info(str(epoch) + ' ' + repr(suffix_str))
         for i in range(k):
-            logging.info('\t ' + repr(top_decoded_tokens[i]) + '\t' + f'{avg_probs[sorted_top_k_inds[i]]:.2E}')
+            logging.info('\t ' + repr(top_decoded_tokens[i]) + '\t' + f'{avg_probs[top_k_inds[i]]:.2E}')
+
+        if disallow_whitespace_tokens:
+            disallowed_idxs = np.array([s.isspace() for s in top_decoded_tokens], dtype=bool)
+            top_k_inds = top_k_inds[~disallowed_idxs]
+            top_decoded_tokens = top_decoded_tokens[~disallowed_idxs]
 
         suffix_str += top_decoded_tokens[0]
         r['beam_search'].append({
             suffix_str: {
-                top_decoded_tokens[i]: avg_probs[sorted_top_k_inds[i]]
+                top_decoded_tokens[i]: avg_probs[top_k_inds[i]]
                 for i in range(k)
             }
         })
@@ -192,6 +199,10 @@ if __name__ == '__main__':
     # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 1 --checkpoint EleutherAI/gpt-neox-20b
     # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 50 --checkpoint EleutherAI/gpt-j-6B
     # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3
+    # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 100 --checkpoint EleutherAI/gpt-neo-2.7B --n_shots 3
+
+
+
     # initialize args
     def init_parser():
         parser = argparse.ArgumentParser()
