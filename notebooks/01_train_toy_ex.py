@@ -129,10 +129,9 @@ def train_suffix(args, r, model, dataloader, device, suffix_str: str, save_dir,
         top_k_inds = top_k_inds[np.argsort(avg_logits[top_k_inds])][::-1] # sort the topk (largest first)        
 
         # decode and log
-        print('shapes', top_k_inds)
         top_decoded_tokens = np.array([tokenizer.decode(ind) for ind in top_k_inds])
         logging.info(str(epoch) + ' ' + repr(suffix_str))
-        for i in range(k):
+        for i in range(20):
             logging.info('\t ' + repr(top_decoded_tokens[i]) + '\t' + f'{avg_probs[top_k_inds[i]]:.2E}')
 
         if disallow_whitespace_tokens:
@@ -144,7 +143,7 @@ def train_suffix(args, r, model, dataloader, device, suffix_str: str, save_dir,
         r['beam_search'].append({
             suffix_str: {
                 top_decoded_tokens[i]: avg_probs[top_k_inds[i]]
-                for i in range(k)
+                for i in range(top_k_inds.shape[0])
             }
         })
         
