@@ -78,22 +78,26 @@ def train_prefix(args, r, model, wte, dataloader, device, save_dir, prefix_emb):
 
 
 def train_suffix(args, r, model, dataloader, device, suffix_str: str, save_dir,
-                 num_tokens_to_add=5):
+                 num_tokens_to_add=8,
+                 beam_size=1):
     """Here we find the suffix which maximizes the likelihood over all examples.
     The algorithms is basically to do beam search on the average prob distrs. over all examples.
     """
 
+    # set up beam search
+    # suffix_candidates = [suffix_str]
+
     # run training loop
+    logging.info(f'num batches: {len(dataloader)} batch_size {args.batch_size}')
     for epoch in range(args.n_epochs):
         num_examples = 0
         cum_logits = None
         for idx, batch in tqdm(enumerate(dataloader)):
 
             # set up inputs
-            x_text = batch['input']
-            y_text = batch['output']
-            full_text = [x_text[i] + y_text[i] + suffix_str
-                         for i in range(len(x_text))]
+            text = batch['text']
+            full_text = [text[i] + suffix_str
+                         for i in range(len(text))]
             ex_inputs = tokenizer(full_text, return_tensors='pt').to(device)
             input_ids = ex_inputs['input_ids']
 
@@ -108,7 +112,7 @@ def train_suffix(args, r, model, dataloader, device, suffix_str: str, save_dir,
                 cum_logits = next_token_logits.detach()
             else:
                 cum_logits += next_token_logits.detach()
-            num_examples += len(x_text)
+            num_examples += len(text)
 
         # use averaged logits
         # keep only top k tokens with highest probability
@@ -130,8 +134,14 @@ def train_suffix(args, r, model, dataloader, device, suffix_str: str, save_dir,
             logging.info('\t ' + repr(top_decoded_tokens[i]) + '\t' + f'{avg_probs[sorted_top_k_inds[i]]:.2E}')
 
         suffix_str += top_decoded_tokens[0]
+        r['beam_search'].append({
+            suffix_str: {
+                top_decoded_tokens[i]: avg_probs[sorted_top_k_inds[i]]
+                for i in range(k)
+            }
+        })
+        
         # save stuff
-        # r['embs'].append(search_emb.detach().cpu().numpy())
         utils.save(epoch, args, save_dir, r)
 
 
@@ -148,7 +158,6 @@ def train(args, r, dset, model, tokenizer):
 
     # initialize training things
     model = model.to(device)
-    wte = model._modules['transformer'].wte.to(device)
     dataloader = DataLoader(
         dset, batch_size=args.batch_size, shuffle=True, drop_last=True)
 
@@ -160,6 +169,9 @@ def train(args, r, dset, model, tokenizer):
 
     # initialize prefix
     if args.prefix_or_suffix.startswith('pre'):
+        # extract out embedding
+        wte = model._modules['transformer'].wte.to(device)
+
         # get embedding of a chosen prefix string as nn.Parameter
         prefix_emb = search.get_init_prefix(
             model, dataloader, tokenizer, wte, device)
@@ -171,33 +183,48 @@ def train(args, r, dset, model, tokenizer):
 
     elif args.prefix_or_suffix.startswith('suf'):
         suffix_str = search.get_init_suffix(
-            model, dataloader, tokenizer, wte, device)
+            model, dataloader, tokenizer, device)
         train_suffix(args, r, model, dataloader, device, suffix_str, save_dir)
 
 
 if __name__ == '__main__':
-    # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 200
+    # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 200 --checkpoint EleutherAI/gpt-neo-2.7B 
+    # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 1 --checkpoint EleutherAI/gpt-neox-20b
+    # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 50 --checkpoint EleutherAI/gpt-j-6B
+    # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3
     # initialize args
     def init_parser():
         parser = argparse.ArgumentParser()
+
+        # dataset args
+        parser.add_argument('--max_digit', type=int, default=100,
+                            help='maximum value of each digit in summand')
+        parser.add_argument('--n_shots', type=int, default=1,
+                            help='number of shots in the prompt')
+
+        # algorithm args
+        parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-j-6B", # EleutherAI/gpt-neox-20b, "EleutherAI/gpt-neo-2.7B"
+                            help='model checkpoint to use')
+        parser.add_argument('--prefix_or_suffix', type=str, default="prefix",  # either prefix or suffix (pre or suf will suffice)
+                            help='model checkpoint to use')
+        parser.add_argument('--lr', type=float, default=1e-4,
+                            help='learning rate')
+
+        # training misc args
         parser.add_argument('--batch_size', type=int, default=100,
                             help='batch size for training')
         parser.add_argument('--seed', type=int, default=1,
                             help='random seed')
         parser.add_argument('--n_epochs', type=int, default=10000,
                             help='number of epochs for training')
-        parser.add_argument('--max_digit', type=int, default=100,
-                            help='maximum value of each digit in summand')
+
+        # logging/saving args
         parser.add_argument('--save_dir', type=str, default='results',
                             help='directory for saving')
         parser.add_argument('--epoch_save_interval', type=int, default=1,
                             help='interval to save results')
-        parser.add_argument('--lr', type=float, default=1e-4,
-                            help='learning rate')
-        parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",
-                            help='model checkpoint to use')
-        parser.add_argument('--prefix_or_suffix', type=str, default="prefix",  # either prefix or suffix (pre or suf will suffice)
-                            help='model checkpoint to use')
+        
+        
         return parser
     parser = init_parser()
     args = parser.parse_args()
@@ -205,14 +232,15 @@ if __name__ == '__main__':
     # set up logging
     logger = logging.getLogger()
     logging.basicConfig(level=logging.INFO)
+    logger.info(str(vars(args)))
 
     # load model and data
-    logger.info('loading model and data...' + str(vars(args)))
+    logger.info('loading model and data...')
     checkpoint = args.checkpoint
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     model = AutoModelForCausalLM.from_pretrained(
         checkpoint, output_hidden_states=args.prefix_or_suffix == 'prefix')
-    dset = data.get_data(max_digit=args.max_digit)
+    dset = data.get_data(n_shots=args.n_shots, max_digit=args.max_digit)
 
     # set up saving
     r = defaultdict(list)
