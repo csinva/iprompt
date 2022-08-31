@@ -1,5 +1,20 @@
+description: Simple test job on AMLK8s
 environment:
   image: pytorch/pytorch:1.7.1-cuda11.0-cudnn8-devel
+  setup:
+    - pip install tensorboard --user
 
 code:
   local_dir: $CONFIG_DIR
+
+target:
+  service: amlk8s
+  # run "amlt target list amlk8s" to list the names of available AMLK8s targets
+  name: itpseasiav100cl
+  vc: resrchvc
+
+jobs:
+- name: high_lr
+  sku: G1
+  command:
+  - python main.py --lr 0.5
