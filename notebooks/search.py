@@ -28,3 +28,7 @@ def get_init_prefix(model, dataloader, tokenizer, wte, device) -> List:
     prefix_emb = wte.forward(prefix_inputs['input_ids'])
     prefix_emb = torch.nn.Parameter(prefix_emb).to(device)
     return prefix_emb
+
+def get_init_suffix(model, dataloader, tokenizer, wte, device) -> List:
+    suffix_str = "The relationship between the numbers in the question and the answer is: "
+    return suffix_str

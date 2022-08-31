@@ -7,7 +7,7 @@ from torch import nn
 import matplotlib.pyplot as plt
 import argparse
 from transformers import pipeline
-from transformers import AutoTokenizer, AutoModel, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModel, AutoModelForCausalLM, top_k_top_p_filtering
 from copy import deepcopy
 import pandas as pd
 from tqdm import tqdm
@@ -24,9 +24,9 @@ from torch.utils.data import DataLoader
 from datetime import datetime
 
 
-def train_prefix(args, r, model, wte, dataloader, device, save_dir, search_emb):
+def train_prefix(args, r, model, wte, dataloader, device, save_dir, prefix_emb):
     # optimizer
-    optim = torch.optim.Adam([search_emb], lr=args.lr)
+    optim = torch.optim.Adam([prefix_emb], lr=args.lr)
 
     # run training loop
     for epoch in range(args.n_epochs):
@@ -41,7 +41,7 @@ def train_prefix(args, r, model, wte, dataloader, device, save_dir, search_emb):
                 device)).to(device)
 
             # concatenate prefix + example
-            emb = torch.cat((search_emb.repeat(ex_embs.shape[0], 1, 1),
+            emb = torch.cat((prefix_emb.repeat(ex_embs.shape[0], 1, 1),
                             ex_embs), dim=1)
 
             # go through model
@@ -64,8 +64,8 @@ def train_prefix(args, r, model, wte, dataloader, device, save_dir, search_emb):
             loss.backward()
 
         # save stuff
-        r['embs'].append(search_emb.detach().cpu().numpy())
-        r['grads'].append(search_emb.grad.detach().cpu().numpy())
+        r['embs'].append(prefix_emb.detach().cpu().numpy())
+        r['grads'].append(prefix_emb.grad.detach().cpu().numpy())
         r['losses'].append(loss.item())
         utils.save(epoch, args, save_dir, r)
         # print('losses', loss)
@@ -75,58 +75,62 @@ def train_prefix(args, r, model, wte, dataloader, device, save_dir, search_emb):
         optim.zero_grad()
 
 
-def train_suffix(args, r, model, dataloader, device, save_dir):
+def train_suffix(args, r, model, dataloader, device, suffix_str: str, save_dir,
+                 num_tokens_to_add=5):
     """Here we find the suffix which maximizes the likelihood over all examples.
-    Not really technically `training` anything (no optimizable parameters, just sampling for a string).
+    The algorithms is basically to do beam search on the average prob distrs. over all examples.
     """
-    # optimizer
-    # optim = torch.optim.Adam() #[search_emb], lr=args.lr)
 
     # run training loop
     for epoch in range(args.n_epochs):
+        num_examples = 0
+        cum_logits = None
         for idx, batch in tqdm(enumerate(dataloader)):
+
+            # set up inputs
             x_text = batch['input']
             y_text = batch['output']
-            full_text = [x_text[i] + y_text[i] for i in range(len(x_text))]
-            # print(full_text)
+            full_text = [x_text[i] + y_text[i] + suffix_str
+                         for i in range(len(x_text))]
             ex_inputs = tokenizer(full_text, return_tensors='pt').to(device)
-            # print(ex_inputs)
-            ex_embs = wte.forward(ex_inputs['input_ids'].to(
-                device)).to(device)
-
-            # concatenate prefix + example
-            emb = torch.cat((search_emb.repeat(ex_embs.shape[0], 1, 1),
-                            ex_embs), dim=1)
+            input_ids = ex_inputs['input_ids']
 
             # go through model
-            outputs = model(inputs_embeds=emb)
+            outputs = model(input_ids)
+            logits = outputs['logits']  # (batch_size, seq_len, vocab_size)
+            # get logits of last hidden state, sum over batch_size
+            next_token_logits = logits[:, -1, :].sum(axis=0)
 
-            # calculate loss
-            # currently this calculates loss only on the answer token
-            idxs_correct = tokenizer(y_text, return_tensors='pt')[
-                'input_ids'].to(device)
-            assert idxs_correct.nelement(
-            ) == args.batch_size, 'For now assume that answer is a single token'
-            # (batch_size, seq_len, vocab_size)
+            # accumulate logits
+            if cum_logits is None:
+                cum_logits = next_token_logits.detach()
+            else:
+                cum_logits += next_token_logits.detach()
+            num_examples += len(x_text)
 
-            last_token_logits = outputs['logits'][:, -1, :]
-            log_probs = torch.gather(last_token_logits, 1, idxs_correct)
+        # use averaged logits
+        # keep only top k tokens with highest probability
+        # keep the top tokens with cumulative probability >= top_p
+        avg_logits = cum_logits / num_examples
+        print('shapes', logits.shape, next_token_logits.shape, cum_logits.shape)
+        avg_logits = avg_logits.detach().cpu().numpy().squeeze()
+        avg_probs = np.exp(avg_logits) # softmax
+        avg_probs /= np.sum(avg_probs)
+        k = 50
+        # could also check out top_k_top_p_filtering (https://huggingface.co/docs/transformers/v4.16.2/en/task_summary)
+        top_k_inds = np.argpartition(avg_logits, -k)[-k:] # get topk
+        sorted_top_k_inds = top_k_inds[np.argsort(avg_logits[top_k_inds])][::-1] # sort the topk (largest first)        
 
-            # accumulate gradients in this batch
-            loss = -1 * log_probs.mean()  # minimize prob answer being wrong
+        # decode and log
+        top_decoded_tokens = tokenizer.decode(sorted_top_k_inds)
+        logging.info(str(epoch) + ' ' + repr(suffix_str))
+        for i in range(k):
+            logging.info('\t ' + repr(top_decoded_tokens[i]) + ' ' + f'{avg_probs[sorted_top_k_inds[i]]:%.2E}')
 
-            loss.backward()
-
+        suffix_str += top_decoded_tokens[0]
         # save stuff
         # r['embs'].append(search_emb.detach().cpu().numpy())
-        # r['grads'].append(search_emb.grad.detach().cpu().numpy())
-        r['losses'].append(loss.item())
         utils.save(epoch, args, save_dir, r)
-        # print('losses', loss)
-
-        # optimize
-        # optim.step()
-        # optim.zero_grad()
 
 
 def train(args, r, dset, model, tokenizer):
@@ -153,24 +157,28 @@ def train(args, r, dset, model, tokenizer):
     logging.info('saving to ' + save_dir)
 
     # initialize prefix
-    if args.prefix_or_suffix == 'prefix':
+    if args.prefix_or_suffix.startswith('pre'):
         # get embedding of a chosen prefix string as nn.Parameter
-        search_emb = search.get_init_prefix(
+        prefix_emb = search.get_init_prefix(
             model, dataloader, tokenizer, wte, device)
 
         # actually do fitting and saving
-        train_prefix(args, r, model, wte, dataloader,
-                     device, save_dir, search_emb)
+        with torch.no_grad():
+            train_prefix(args, r, model, wte, dataloader,
+                         device, save_dir, prefix_emb)
 
-    elif args.prefix_or_suffix == 'suffix':
-        train_suffix(args, r, model, dataloader, device, save_dir)
+    elif args.prefix_or_suffix.startswith('suf'):
+        suffix_str = search.get_init_suffix(
+            model, dataloader, tokenizer, wte, device)
+        train_suffix(args, r, model, dataloader, device, suffix_str, save_dir)
+
 
 if __name__ == '__main__':
 
     # initialize args
     def init_parser():
         parser = argparse.ArgumentParser()
-        parser.add_argument('--batch_size', type=int, default=300,
+        parser.add_argument('--batch_size', type=int, default=100,
                             help='batch size for training')
         parser.add_argument('--seed', type=int, default=1,
                             help='random seed')
@@ -186,7 +194,7 @@ if __name__ == '__main__':
                             help='learning rate')
         parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",
                             help='model checkpoint to use')
-        parser.add_argument('--prefix_or_suffix', type=str, default="prefix",  # either prefix or suffix
+        parser.add_argument('--prefix_or_suffix', type=str, default="prefix",  # either prefix or suffix (pre or suf will suffice)
                             help='model checkpoint to use')
         return parser
     parser = init_parser()
@@ -197,11 +205,11 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
 
     # load model and data
-    logger.info('loading model and data...')
+    logger.info('loading model and data...' + str(vars(args)))
     checkpoint = args.checkpoint
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     model = AutoModelForCausalLM.from_pretrained(
-        checkpoint, output_hidden_states=True)
+        checkpoint, output_hidden_states=args.prefix_or_suffix == 'prefix')
     dset = data.get_data(max_digit=args.max_digit)
 
     # set up saving
