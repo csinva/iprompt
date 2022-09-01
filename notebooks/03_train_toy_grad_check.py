@@ -49,20 +49,23 @@ def train(args, r, dset, model, tokenizer):
     save_dir = os.path.join(args.save_dir, save_dir_unique)
     logging.info('saving to ' + save_dir)
 
+    emb_dim = wte.weight.shape[1] # 768 or 2560 for some larger models
+
     # initialize prefix
-    prefix_str = ["20439 the following two numbers: "]
+    # prefix_str = [" interns"]
+    # prefix_str = ['ャ']
+    prefix_str = ['x']
     prefix_inputs = tokenizer(prefix_str, return_tensors="pt").to(device)
     prefix_emb = wte.forward(prefix_inputs['input_ids'])
 
-    emb_dim = wte.weight.shape[1] # 768 or 2560 for some larger models
+    assert prefix_emb.shape == (1, 1, emb_dim)
+
 
     #####################################################################
     # trainable_prefix_emb = torch.nn.Parameter(wte.weight.mean(dim=0, keepdim=True)[None], requires_grad=True).to(device)
     # trainable_prefix_emb = torch.nn.Parameter(torch.randu((1, 1, emb_dim)), requires_grad=True).to(device)
-    trainable_prefix_emb = torch.nn.Parameter(prefix_emb[:, 0:1, :], requires_grad=True).to(device)
+    trainable_prefix_emb = torch.nn.Parameter(prefix_emb[:, 0, :], requires_grad=True).to(device)
     #####################################################################
-
-    untrainable_prefix_emb = torch.nn.Parameter(prefix_emb[:, 1:, :], requires_grad=False).to(device)
 
     # this code assumes that 'x' is the first token
 
@@ -81,13 +84,16 @@ def train(args, r, dset, model, tokenizer):
             print(f'\t{rvocab[_id]} ({_id}): {_dist:.3f}')
         print("*" * 30)
 
-        logits_vector = torch.zeros((50_257,), dtype=float).to(device)
+        all_losses = []
         
-        for idx, batch in tqdm(enumerate(dataloader)):
+        pbar = tqdm(enumerate(dataloader), total=len(dataloader))
+        for idx, batch in pbar:
             x_text = batch['input']
             y_text = batch['output']
-            full_text = [x_text[i] + y_text[i] for i in range(len(x_text))]
+            full_text = [x_text[i] for i in range(len(x_text))]
             # print(full_text)
+            # breakpoint()
+
             ex_inputs = tokenizer(full_text, return_tensors='pt').to(device)
             # print(ex_inputs)
             ex_embs = wte.forward(ex_inputs['input_ids'].to(
@@ -97,7 +103,6 @@ def train(args, r, dset, model, tokenizer):
             emb = torch.cat(
                 (
                     trainable_prefix_emb.repeat(ex_embs.shape[0], 1, 1),
-                    untrainable_prefix_emb.repeat(ex_embs.shape[0], 1, 1),
                     ex_embs
                 ), 
                 dim=1
@@ -106,11 +111,15 @@ def train(args, r, dset, model, tokenizer):
             # go through model
             outputs = model(inputs_embeds=emb)
 
+            breakpoint()
+
             # calculate loss
             # currently this calculates loss only on the answer token
             idxs_correct = tokenizer(y_text, return_tensors='pt')['input_ids'].to(device)
-            assert idxs_correct.nelement(
-            ) == args.batch_size, 'For now assume that answer is a single token'
+            try:
+                assert idxs_correct.nelement() == args.batch_size, 'For now assume that answer is a single token'
+            except:
+                breakpoint()
             # (batch_size, seq_len, vocab_size)
 
             last_token_logprobs = outputs['logits'][:, -1, :].log_softmax(dim=-1)
@@ -118,23 +127,26 @@ def train(args, r, dset, model, tokenizer):
 
             # accumulate gradients in this batch
             loss = -1 * correct_token_logprobs.mean() # minimize prob answer being wrong
+            all_losses.append(loss.item())
             loss.backward()
-            print(f"Loss = {loss:.3f}")
+            pbar.set_description(f"Loss = {loss:.3f}")
 
-            breakpoint()
+            # breakpoint()
             # optimize
             # optim.step()
             # optim.zero_grad()
+        
+        avg_loss = sum(all_losses) / len(all_losses)
+        print(f"Epoch {epoch}. average loss = {avg_loss:.3f}")
 
         # save stuff
         r['embs'].append(trainable_prefix_emb.detach().cpu().numpy())
         r['grads'].append(trainable_prefix_emb.grad.detach().cpu().numpy())
-        r['losses'].append(loss.item())
+        r['losses'].append(avg_loss)
         if epoch % args.epoch_save_interval == 0:
             os.makedirs(save_dir, exist_ok=True)
             pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
         # print('losses', loss)
-
 
         token_grads = wte.weight.mv(trainable_prefix_emb.grad.flatten())
         print(f"Epoch {epoch}. Most negative grads for x:")
@@ -193,7 +205,7 @@ if __name__ == '__main__':
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     model = AutoModelForCausalLM.from_pretrained(
         checkpoint, output_hidden_states=True)
-    dset = data.get_data(max_digit=args.max_digit)
+    dset = data.get_data(max_digit=args.max_digit, template_idx=0)
 
     logger.info('beginning training...')
     r = train(args, r, dset, model, tokenizer)
