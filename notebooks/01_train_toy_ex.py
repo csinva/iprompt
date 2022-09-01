@@ -99,11 +99,11 @@ def train_suffix(args, r, model, dataloader, device, suffix_str: str, save_dir,
             text = batch['text']
             full_text = [text[i] + suffix_str
                          for i in range(len(text))]
-            ex_inputs = tokenizer(full_text, return_tensors='pt').to(device)
+            ex_inputs = tokenizer(full_text, padding='longest', return_tensors='pt').to(device)
             input_ids = ex_inputs['input_ids']
 
             # go through model
-            outputs = model(input_ids)
+            outputs = model(input_ids=ex_inputs['input_ids'], attention_mask=ex_inputs['attention_mask'])
             logits = outputs['logits']  # (batch_size, seq_len, vocab_size)
             # get logits of last hidden state, sum over batch_size
             next_token_logits = logits[:, -1, :].sum(axis=0).log_softmax(dim=-1)
@@ -248,6 +248,7 @@ if __name__ == '__main__':
     logger.info('loading model and data...')
     checkpoint = args.checkpoint
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+    tokenizer.pad_token = tokenizer.eos_token
     model = AutoModelForCausalLM.from_pretrained(
         checkpoint, output_hidden_states=args.prefix_or_suffix == 'prefix')
     dset = data.get_data(n_shots=args.n_shots, max_digit=args.max_digit)
