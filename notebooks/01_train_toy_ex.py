@@ -32,7 +32,7 @@ def train_prefix(args, r, model, wte, dataloader, device, save_dir, prefix_emb):
 
     # run training loop
     for epoch in range(args.n_epochs):
-        for idx, batch in tqdm(enumerate(dataloader)):
+        for idx, batch in tqdm(enumerate(dataloader), total=len(dataloader)):
             x_text = batch['input']
             y_text = batch['output']
             full_text = [x_text[i] + y_text[i] for i in range(len(x_text))]
@@ -93,7 +93,7 @@ def train_suffix(args, r, model, dataloader, device, suffix_str: str, save_dir,
     for epoch in range(args.n_epochs):
         num_examples = 0
         cum_logits = None
-        for idx, batch in tqdm(enumerate(dataloader)):
+        for idx, batch in tqdm(enumerate(dataloader), total=len(dataloader)):
 
             # set up inputs
             text = batch['text']
@@ -106,7 +106,7 @@ def train_suffix(args, r, model, dataloader, device, suffix_str: str, save_dir,
             outputs = model(input_ids)
             logits = outputs['logits']  # (batch_size, seq_len, vocab_size)
             # get logits of last hidden state, sum over batch_size
-            next_token_logits = logits[:, -1, :].sum(axis=0)
+            next_token_logits = logits[:, -1, :].sum(axis=0).log_softmax(dim=-1)
 
             # accumulate logits
             if cum_logits is None:
