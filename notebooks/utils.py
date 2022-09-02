@@ -39,7 +39,7 @@ def get_unembedding(checkpoint):
     return unemb_linear
 
 
-def save(epoch, args, save_dir, r):
-    if epoch % args.epoch_save_interval == 0:
+def save(args, save_dir, r, epoch=None):
+    if epoch is None or (epoch % args.epoch_save_interval == 0):
         os.makedirs(save_dir, exist_ok=True)
         pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
