@@ -39,16 +39,17 @@ def get_unembedding(checkpoint):
     pkl.dump(unemb_linear, open(fname, 'wb'))
     return unemb_linear
 
-def save_params(args, save_dir, r):
+def save_json(args={}, save_dir='results', fname='params.json', r={}):
     os.makedirs(save_dir, exist_ok=True)
-    with open(os.path.join(save_dir, 'params.json'), 'w') as f:
-        json.dump({**vars(args), **r}, f, indent=4)
+    with open(os.path.join(save_dir, fname), 'w') as f:
+        if isinstance(args, dict):
+            json.dump({**args, **r}, f, indent=4)
+        else:
+            json.dump({**vars(args), **r}, f, indent=4)
 
 def save(args, save_dir, r, epoch=None, final=False, params=True):
+    os.makedirs(save_dir, exist_ok=True)
     if final:
-        fname = 'results_final.pkl'
-    else:
-        fname = 'results.pkl'
-    if epoch is None or (epoch % args.epoch_save_interval == 0):
-        os.makedirs(save_dir, exist_ok=True)
-        pkl.dump(r, open(os.path.join(save_dir, fname), 'wb'))
+        pkl.dump(r, open(os.path.join(save_dir, 'results_final.pkl'), 'wb'))
+    elif epoch is None or (epoch % args.epoch_save_interval == 0):
+        pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))

@@ -128,23 +128,23 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_s
         return avg_logits
 
     # set up DFS beam search
-    suffixes = [{'s': suffix_str, 'num_tokens_added': 0}]
+    suffixes = [{'s': suffix_str, 'num_tokens_added': 0, 'running_prob': 1}]
     r['suffix_str_init'] = suffix_str
     r['len_suffix_str_init'] = len(suffix_str)
     num_model_queries = 0
     while len(suffixes) > 0:
         suffix_dict = suffixes.pop()
         suffix_str = suffix_dict['s']
-        num_tokens_added = suffix_dict['num_tokens_added']
 
         # get avg_probs
         avg_probs = get_avg_probs_next_token(
             suffix_str, model, dataloader, tokenizer)
         num_model_queries += 1
 
-
-        # could also check out top_k_top_p_filtering (https://huggingface.co/docs/transformers/v4.16.2/en/task_summary)
-        top_k_inds = np.argpartition(avg_probs, -beam_size_for_saving)[-beam_size_for_saving:]  # get topk
+        # could also check out top_k_top_p_filtering
+        # (https://huggingface.co/docs/transformers/v4.16.2/en/task_summary)
+        top_k_inds = np.argpartition(
+            avg_probs, -beam_size_for_saving)[-beam_size_for_saving:]  # get topk
         # sort the topk (largest first)
         top_k_inds = top_k_inds[np.argsort(avg_probs[top_k_inds])][::-1]
 
@@ -165,9 +165,11 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_s
         # save results for suffix_str
         r['suffix_str_full'].append(suffix_str)
         r['suffix_str_added'].append(suffix_str[r['len_suffix_str_init']:])
-        r['correct'].append(False) # if we made it here, we did not find the answer
+        # if we made it here, we did not find the answer
+        r['correct'].append(False)
         r['num_model_queries'].append(num_model_queries)
         r['decoded_token'].append(top_decoded_tokens[0])
+        r['running_prob'].append(suffix_dict['running_prob'])
         r['top_decoded_tokens_dict'].append({
             top_decoded_tokens[i]: avg_probs[top_k_inds[i]]
             for i in range(top_k_inds.shape[0])
@@ -175,10 +177,10 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_s
         utils.save(args, save_dir, r, epoch=None, final=True)
 
         # check each beam
-        if num_tokens_added < args.max_num_tokens:
+        if suffix_dict['num_tokens_added'] < args.max_num_tokens:
             for beam_num in range(args.beam_width_suffix):
                 suffix_new = suffix_str + top_decoded_tokens[beam_num]
-                if check_answer_func(suffix_new): # and args.early_stopping
+                if check_answer_func(suffix_new):  # and args.early_stopping
                     r['final_answer_full'] = suffix_new
                     r['final_answer_added'] = suffix_new[r['len_suffix_str_init']:]
                     logging.info('successful early stopping!')
@@ -186,10 +188,19 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_s
                     logging.info('\t' + repr(r['final_answer_added']))
                     logging.info(save_dir)
                     utils.save(args, save_dir, r, final=True)
+                    utils.save_json(r={ # save some key outputs in readable form
+                        k: r[k]
+                        for k in r if isinstance(r[k], str) or isinstance(r[k], int)
+                    }, save_dir=save_dir, fname='final.json')
                     exit(0)
-                
-                # for bfs (dfs would append at end)
-                suffixes.insert(0, {'s': suffix_new, 'num_tokens_added': num_tokens_added + 1})
+
+                # for bfs insert at beginning (dfs would append at end)
+                suffixes.insert(0, {
+                    's': suffix_new,
+                    'num_tokens_added': suffix_dict['num_tokens_added'] + 1,
+                    'running_prob': suffix_dict['running_prob'] * avg_probs[top_k_inds[i]],
+                })
+
 
 def train(args, r, dset, check_answer_func, model, tokenizer):
     """
@@ -203,13 +214,12 @@ def train(args, r, dset, check_answer_func, model, tokenizer):
         ''.join(random.choices(string.ascii_lowercase, k=12))
     save_dir = os.path.join(args.save_dir, save_dir_unique)
     logging.info('saving to ' + save_dir)
-    
 
     # set seed + device
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    utils.save_params(args, save_dir, r)
+    utils.save_json(args=args, save_dir=save_dir, fname='params.json', r=r)
 
     # initialize training things
     model = model.to(device)
@@ -273,7 +283,7 @@ if __name__ == '__main__':
                             help='learning rate')
         parser.add_argument('--beam_width_suffix', type=int, default=1,
                             help='max width of beam in suffix search')
-        # parser.add_argument('--early_stopping', dest='early_stopping', default=True, 
+        # parser.add_argument('--early_stopping', dest='early_stopping', default=True,
         #     help='whether to stop searching once finding correct answer - for suffix, this currently has to be true',
         #     action='store_true')
 
@@ -299,7 +309,6 @@ if __name__ == '__main__':
     logger = logging.getLogger()
     logging.basicConfig(level=logging.INFO)
     logger.info(str(vars(args)))
-
 
     # load model and data
     logger.info('loading model and data...')

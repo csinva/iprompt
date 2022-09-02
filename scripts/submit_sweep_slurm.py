@@ -1,5 +1,10 @@
 import itertools
 import os
+from os.path import dirname
+
+repo_dir = dirname(dirname(os.path.abspath(__file__)))
+print('repo_dir', repo_dir)
+
 # slurm params
 partition = 'amlk8s'
 num_gpus = 1
@@ -51,9 +56,9 @@ ks_final = ks_shared + list(sum(ks_coupled, ()))
 
 
 for i in range(len(param_combos_final)):
-    param_str = '/usr/bin/python3 ../01_train.py '
+    param_str = '/usr/bin/python3 ' + os.path.join(repo_dir, '01_train.py ')
     for j, key in enumerate(ks_final):
         param_str += '--' + key + ' ' + str(param_combos_final[i][j]) + ' '
     print(param_str)
     # s.run(param_str)
-    # os.system(param_str)
+    os.system(param_str)
