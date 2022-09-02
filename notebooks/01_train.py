@@ -1,6 +1,7 @@
 import os
 import random
 import string
+import sys
 import numpy as np
 import torch
 from torch import nn
@@ -78,21 +79,19 @@ def train_prefix(args, r, model, wte, dataloader, device, save_dir, prefix_emb):
 
 
 def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_str: str, save_dir,
-                 num_tokens_to_add=8,
                  disallow_whitespace_tokens=True,
-                 beam_size=1):
+                 beam_size_for_saving=30):
     """Here we find the suffix which maximizes the likelihood over all examples.
-    The algorithms is basically to do depth-first beam-search on the next-token prob distr. averaged over all examples
+    The algorithm is basically to do depth-first beam-search on the next-token prob distr. averaged over all examples
     """
 
-    # set up DFS beam search
-    # suffix_candidates = [suffix_str]
-
     def get_avg_probs_next_token(suffix_str: str, model, dataloader, tokenizer):
-        """Get the average
+        """Get the average probs for the next token across the entire dataset
         """
         num_examples = 0
         cum_logits = None
+        logging.debug(
+            f'num batches: {len(dataloader)} batch_size {args.batch_size}')
         for idx, batch in tqdm(enumerate(dataloader), total=len(dataloader)):
 
             # set up inputs
@@ -128,25 +127,29 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_s
 
         return avg_logits
 
-    # run training loop
-    logging.info(
-        f'num batches: {len(dataloader)} batch_size {args.batch_size}')
-    for epoch in range(args.max_length):
+    # set up DFS beam search
+    suffixes = [suffix_str]
+    r['suffix_str_init'] = suffix_str
+    r['len_suffix_str_init'] = len(suffix_str)
+    num_model_queries = 0
+    while len(suffixes) > 0:
+        suffix_str = suffixes.pop()
 
         # get avg_probs
         avg_probs = get_avg_probs_next_token(
             suffix_str, model, dataloader, tokenizer)
+        num_model_queries += 1
 
-        k = 50
+
         # could also check out top_k_top_p_filtering (https://huggingface.co/docs/transformers/v4.16.2/en/task_summary)
-        top_k_inds = np.argpartition(avg_probs, -k)[-k:]  # get topk
+        top_k_inds = np.argpartition(avg_probs, -beam_size_for_saving)[-beam_size_for_saving:]  # get topk
         # sort the topk (largest first)
         top_k_inds = top_k_inds[np.argsort(avg_probs[top_k_inds])][::-1]
 
         # decode and log
         top_decoded_tokens = np.array(
             [tokenizer.decode(ind) for ind in top_k_inds])
-        logging.info(str(epoch) + ' ' + repr(suffix_str))
+        logging.info(str(num_model_queries) + ' ' + repr(suffix_str))
         for i in range(20):
             logging.info(
                 '\t ' + repr(top_decoded_tokens[i]) + '\t' + f'{avg_probs[top_k_inds[i]]:.2E}')
@@ -157,16 +160,31 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_s
             top_k_inds = top_k_inds[~disallowed_idxs]
             top_decoded_tokens = top_decoded_tokens[~disallowed_idxs]
 
-        suffix_str += top_decoded_tokens[0]
+        # save stuff
+        """
+        r['decoded_token'].append(top_decoded_tokens[0])
+        r['suffix_str'].append(suffix_str[r['len_suffix_str_init']:])
+        r['correct'].append(False) # if we made it here, we did not find the answer
         r['top_decoded_tokens_dict'].append({
             top_decoded_tokens[i]: avg_probs[top_k_inds[i]]
             for i in range(top_k_inds.shape[0])
         })
-        r['suffix_str'].append(suffix_str)
-        r['correct'].append(bool(check_answer_func(suffix_str)))
-
-        # save stuff
         utils.save(args, save_dir, r, epoch=None)
+        
+
+        # check each beam
+        for beam_num in args.beam_width:
+
+            # bool(check_answer_func(suffix_str)))
+            suffix_new = suffix_str + top_decoded_tokens[beam_num]
+
+
+            if args.early_stopping and r['correct'][-1]:
+            logging.info('successful early stopping!')
+            sys.exit(0)
+
+            r['suffix_str'].append(suffix_str)
+        """
 
 
 def train(args, r, dset, check_answer_func, model, tokenizer):
@@ -209,16 +227,18 @@ def train(args, r, dset, check_answer_func, model, tokenizer):
     elif args.prefix_or_suffix.startswith('suf'):
         suffix_str = search.get_init_suffix(
             model, dataloader, tokenizer, device)
-        train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_str, save_dir)
+        train_suffix(args, r, model, dataloader,
+                     check_answer_func, device, suffix_str, save_dir)
 
 
 if __name__ == '__main__':
-    # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 200 --checkpoint EleutherAI/gpt-neo-2.7B
-    # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 1 --checkpoint EleutherAI/gpt-neox-20b
-    # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 50 --checkpoint EleutherAI/gpt-j-6B
-    # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3
-    # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 100 --checkpoint EleutherAI/gpt-neo-2.7B --n_shots 3
-    # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3 --max_digit 10
+    # python3 01_train.py --prefix_or_suffix suffix --batch_size 200 --checkpoint EleutherAI/gpt-neo-2.7B
+    # python3 01_train.py --prefix_or_suffix suffix --batch_size 1 --checkpoint EleutherAI/gpt-neox-20b
+    # python3 01_train.py --prefix_or_suffix suffix --batch_size 50 --checkpoint EleutherAI/gpt-j-6B
+    # python3 01_train.py --prefix_or_suffix suffix --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3
+    # python3 01_train.py --prefix_or_suffix suffix --batch_size 100 --checkpoint EleutherAI/gpt-neo-2.7B --n_shots 3
+    # python3 01_train.py --prefix_or_suffix suffix --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3 --max_digit 10
+    # python3 01_train.py --prefix_or_suffix suffix --checkpoint gpt2-mediu
 
     # initialize args
     def init_parser():
@@ -233,12 +253,20 @@ if __name__ == '__main__':
                             help='name of task')
 
         # algorithm args
-        parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-j-6B",  # EleutherAI/gpt-neox-20b, "EleutherAI/gpt-neo-2.7B"
+        # gpt # "gpt2-medium"
+        # gpneo # "EleutherAI/gpt-neo-2.7B", "EleutherAI/gpt-j-6B", "EleutherAI/gpt-neox-20b"
+        parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-j-6B",
                             help='model checkpoint to use')
         parser.add_argument('--prefix_or_suffix', type=str, default="prefix",  # either prefix or suffix (pre or suf will suffice)
                             help='model checkpoint to use')
         parser.add_argument('--lr', type=float, default=1e-4,
                             help='learning rate')
+        parser.add_argument('--max_length', type=int, default=4,
+                            help='max length of sequence to find (num tokens)')
+        parser.add_argument('--beam_width_suffix', type=int, default=1,
+                            help='max width of beam in suffix search')
+        parser.add_argument(
+            '--early_stopping', dest='early_stopping', default=False, action='store_true')
 
         # training misc args
         parser.add_argument('--batch_size', type=int, default=100,
@@ -247,10 +275,6 @@ if __name__ == '__main__':
                             help='random seed')
         parser.add_argument('--n_epochs_prefix', type=int, default=10000,
                             help='number of epochs for training')
-        parser.add_argument('--max_length', type=int, default=10,
-                            help='max length of sequence to find (num tokens)')
-        parser.add_argument('--beam_width_suffix', type=int, default=1,
-                            help='max width of beam in suffix search')
 
         # logging/saving args
         parser.add_argument('--save_dir', type=str, default='results',
@@ -274,7 +298,8 @@ if __name__ == '__main__':
     tokenizer.pad_token = tokenizer.eos_token
     model = AutoModelForCausalLM.from_pretrained(
         checkpoint, output_hidden_states=args.prefix_or_suffix == 'prefix')
-    dset, check_answer_func = data.get_data(args.task_name, n_shots=args.n_shots, max_digit=args.max_digit)
+    dset, check_answer_func = data.get_data(
+        args.task_name, n_shots=args.n_shots, max_digit=args.max_digit)
 
     # set up saving
     r = defaultdict(list)

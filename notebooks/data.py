@@ -50,7 +50,8 @@ def get_data(task_name, max_digit=1000, template_idx=-1, n_shots: int = 1, max_d
     return dset, TASKS[task_name]['check_answer_func']
 
 
-# note: all templates should be "stackable" so that they work in the multi-shot setting
+"""Note: all templates should be "stackable" so that they work in the multi-shot setting
+"""
 PROMPT_TEMPLATE_TWO_NUMS = [
     lambda num1, num2, g: (
         f'Given the numbers {num1} and {num2}, the answer is', f' {g([num1, num2])}'),
