@@ -31,7 +31,7 @@ def train_prefix(args, r, model, wte, dataloader, device, save_dir, prefix_emb):
     optim = torch.optim.Adam([prefix_emb], lr=args.lr)
 
     # run training loop
-    for epoch in range(args.n_epochs):
+    for epoch in range(args.n_epochs_prefix):
         for idx, batch in tqdm(enumerate(dataloader), total=len(dataloader)):
             x_text = batch['input']
             y_text = batch['output']
@@ -69,7 +69,7 @@ def train_prefix(args, r, model, wte, dataloader, device, save_dir, prefix_emb):
         r['embs'].append(prefix_emb.detach().cpu().numpy())
         r['grads'].append(prefix_emb.grad.detach().cpu().numpy())
         r['losses'].append(loss.item())
-        utils.save(epoch, args, save_dir, r)
+        utils.save(args, save_dir, r, epoch=epoch)
         # print('losses', loss)
 
         # optimize
@@ -85,12 +85,12 @@ def train_suffix(args, r, model, dataloader, device, suffix_str: str, save_dir,
     The algorithms is basically to do beam search on the average prob distrs. over all examples.
     """
 
-    # set up beam search
+    # set up DFS beam search
     # suffix_candidates = [suffix_str]
 
-    # run training loop
-    logging.info(f'num batches: {len(dataloader)} batch_size {args.batch_size}')
-    for epoch in range(args.n_epochs):
+    def get_avg_probs_next_token(suffix_str: str, model, dataloader, tokenizer):
+        """Get the average
+        """
         num_examples = 0
         cum_logits = None
         for idx, batch in tqdm(enumerate(dataloader), total=len(dataloader)):
@@ -100,7 +100,6 @@ def train_suffix(args, r, model, dataloader, device, suffix_str: str, save_dir,
             full_text = [text[i] + suffix_str
                          for i in range(len(text))]
             ex_inputs = tokenizer(full_text, padding='longest', return_tensors='pt').to(device)
-            input_ids = ex_inputs['input_ids']
 
             # go through model
             outputs = model(input_ids=ex_inputs['input_ids'], attention_mask=ex_inputs['attention_mask'])
@@ -123,10 +122,20 @@ def train_suffix(args, r, model, dataloader, device, suffix_str: str, save_dir,
         avg_logits = avg_logits.detach().cpu().numpy().squeeze()
         avg_probs = np.exp(avg_logits) # softmax
         avg_probs /= np.sum(avg_probs)
+
+        return avg_logits
+
+    # run training loop
+    logging.info(f'num batches: {len(dataloader)} batch_size {args.batch_size}')
+    for epoch in range(args.max_length):
+        
+        # get avg_probs
+        avg_probs = get_avg_probs_next_token(suffix_str, model, dataloader, tokenizer)
+        
         k = 50
         # could also check out top_k_top_p_filtering (https://huggingface.co/docs/transformers/v4.16.2/en/task_summary)
-        top_k_inds = np.argpartition(avg_logits, -k)[-k:] # get topk
-        top_k_inds = top_k_inds[np.argsort(avg_logits[top_k_inds])][::-1] # sort the topk (largest first)        
+        top_k_inds = np.argpartition(avg_probs, -k)[-k:] # get topk
+        top_k_inds = top_k_inds[np.argsort(avg_probs[top_k_inds])][::-1] # sort the topk (largest first)        
 
         # decode and log
         top_decoded_tokens = np.array([tokenizer.decode(ind) for ind in top_k_inds])
@@ -148,7 +157,7 @@ def train_suffix(args, r, model, dataloader, device, suffix_str: str, save_dir,
         })
         
         # save stuff
-        utils.save(epoch, args, save_dir, r)
+        utils.save(args, save_dir, r, epoch=None)
 
 
 def train(args, r, dset, model, tokenizer):
@@ -199,7 +208,7 @@ if __name__ == '__main__':
     # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 50 --checkpoint EleutherAI/gpt-j-6B
     # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3
     # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 100 --checkpoint EleutherAI/gpt-neo-2.7B --n_shots 3
-
+    # python3 01_train_toy_ex.py --prefix_or_suffix suffix --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3 --max_digit 10
 
 
     # initialize args
@@ -225,8 +234,12 @@ if __name__ == '__main__':
                             help='batch size for training')
         parser.add_argument('--seed', type=int, default=1,
                             help='random seed')
-        parser.add_argument('--n_epochs', type=int, default=10000,
+        parser.add_argument('--n_epochs_prefix', type=int, default=10000,
                             help='number of epochs for training')
+        parser.add_argument('--max_length', type=int, default=10,
+                            help='max length of sequence to find (num tokens)') 
+        parser.add_argument('--beam_width_suffix', type=int, default=1,
+                            help='max width of beam in suffix search') 
 
         # logging/saving args
         parser.add_argument('--save_dir', type=str, default='results',

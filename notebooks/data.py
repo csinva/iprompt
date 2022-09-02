@@ -11,10 +11,13 @@ def get_data(max_digit=1000, template_idx=-1, n_shots: int = 1, max_dset_size=10
     TEMPLATES = [  # note, these should be stackable in the multi-shot setting
         lambda num1, num2: (
             f' the numbers {num1} and {num2} and the answer is', f' {num1 + num2}'),
+
         lambda num1, num2: (
             f'{num1} {num2}', f' {num1 + num2}\n'),
+
         lambda num1, num2: (
             f'The input is {num1} {num2}', f' The answer is {num1 + num2}\n\n'),
+
         lambda num1, num2: (
             f'Question: {num1} {num2}\n', f'Answer: {num1 + num2}\n\n'),
     ]
