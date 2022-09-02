@@ -128,12 +128,14 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_s
         return avg_logits
 
     # set up DFS beam search
-    suffixes = [suffix_str]
+    suffixes = [{'s': suffix_str, 'num_tokens_added': 0}]
     r['suffix_str_init'] = suffix_str
     r['len_suffix_str_init'] = len(suffix_str)
     num_model_queries = 0
     while len(suffixes) > 0:
-        suffix_str = suffixes.pop()
+        suffix_dict = suffixes.pop()
+        suffix_str = suffix_dict['s']
+        num_tokens_added = suffix_dict['num_tokens_added']
 
         # get avg_probs
         avg_probs = get_avg_probs_next_token(
@@ -151,7 +153,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_s
             [tokenizer.decode(ind) for ind in top_k_inds])
         logging.info(str(num_model_queries) + ' ' + repr(suffix_str))
         for i in range(20):
-            logging.info(
+            logging.debug(
                 '\t ' + repr(top_decoded_tokens[i]) + '\t' + f'{avg_probs[top_k_inds[i]]:.2E}')
 
         if disallow_whitespace_tokens:
@@ -161,29 +163,32 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_s
             top_decoded_tokens = top_decoded_tokens[~disallowed_idxs]
 
         # save results for suffix_str
-        r['suffix_str'].append(suffix_str[r['len_suffix_str_init']:])
+        r['suffix_str_full'].append(suffix_str)
+        r['suffix_str_added'].append(suffix_str[r['len_suffix_str_init']:])
         r['correct'].append(False) # if we made it here, we did not find the answer
+        r['num_model_queries'].append(num_model_queries)
         r['decoded_token'].append(top_decoded_tokens[0])
         r['top_decoded_tokens_dict'].append({
             top_decoded_tokens[i]: avg_probs[top_k_inds[i]]
             for i in range(top_k_inds.shape[0])
         })
         utils.save(args, save_dir, r, epoch=None)
-        
 
         # check each beam
-        for beam_num in args.beam_width:
-
-            # bool(check_answer_func(suffix_str)))
-            suffix_new = suffix_str + top_decoded_tokens[beam_num]
-
-
-            if args.early_stopping and r['correct'][-1]:
-                logging.info('successful early stopping!')
-                sys.exit(0)
-
-            r['suffix_str'].append(suffix_str)
-
+        if num_tokens_added < args.max_num_tokens:
+            for beam_num in range(args.beam_width_suffix):
+                suffix_new = suffix_str + top_decoded_tokens[beam_num]
+                if check_answer_func(suffix_new): # and args.early_stopping
+                    r['final_answer_full'] = suffix_new
+                    r['final_answer_added'] = suffix_new[r['len_suffix_str_init']:]
+                    logging.info('successful early stopping!')
+                    logging.info('\t' + repr(r['suffix_str_init']))
+                    logging.info('\t' + repr(r['final_answer_added']))
+                    logging.info(save_dir)
+                    exit(0)
+                
+                # for bfs (dfs would append at end)
+                suffixes.insert(0, {'s': suffix_new, 'num_tokens_added': num_tokens_added + 1})
 
 def train(args, r, dset, check_answer_func, model, tokenizer):
     """
@@ -251,20 +256,21 @@ if __name__ == '__main__':
                             help='name of task')
 
         # algorithm args
-        # gpt # "gpt2-medium"
+        # gpt # "gpt2-medium" (355M), "gpt2-large" (774M), "gpt2-xl" (1.5B)
         # gpneo # "EleutherAI/gpt-neo-2.7B", "EleutherAI/gpt-j-6B", "EleutherAI/gpt-neox-20b"
-        parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-j-6B",
+        parser.add_argument('--checkpoint', type=str, default="gpt2-medium",
                             help='model checkpoint to use')
         parser.add_argument('--prefix_or_suffix', type=str, default="prefix",  # either prefix or suffix (pre or suf will suffice)
                             help='model checkpoint to use')
         parser.add_argument('--lr', type=float, default=1e-4,
                             help='learning rate')
-        parser.add_argument('--max_length', type=int, default=4,
+        parser.add_argument('--max_num_tokens', type=int, default=4,
                             help='max length of sequence to find (num tokens)')
         parser.add_argument('--beam_width_suffix', type=int, default=1,
                             help='max width of beam in suffix search')
-        parser.add_argument(
-            '--early_stopping', dest='early_stopping', default=False, action='store_true')
+        # parser.add_argument('--early_stopping', dest='early_stopping', default=True, 
+        #     help='whether to stop searching once finding correct answer - for suffix, this currently has to be true',
+        #     action='store_true')
 
         # training misc args
         parser.add_argument('--batch_size', type=int, default=100,
@@ -288,6 +294,7 @@ if __name__ == '__main__':
     logger = logging.getLogger()
     logging.basicConfig(level=logging.INFO)
     logger.info(str(vars(args)))
+
 
     # load model and data
     logger.info('loading model and data...')
