@@ -7,7 +7,7 @@ import re
 from tqdm import trange
 
 
-def get_data(task_name, max_digit=1000, template_idx=-1, n_shots: int = 1, max_dset_size=10000):
+def get_data(task_name='add_two', max_digit=1000, template_idx=-1, n_shots: int = 1, max_dset_size=10000):
 
     d = defaultdict(list)
     rng = np.random.default_rng(12345)
@@ -103,6 +103,7 @@ if __name__ == '__main__':
         print(df[i]['text'], end='<--------------------\n')
     """
 
+
     task = TASKS['first_two']
     func = task['check_answer_func']
     print('func', func)
@@ -112,3 +113,7 @@ if __name__ == '__main__':
     template = task['prompt_template_funcs'][0]
     print('gen_func', gen_func, 'template', template)
     print(template(3, 4, gen_func))
+
+
+    
+

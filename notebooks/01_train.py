@@ -160,11 +160,10 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_s
             top_k_inds = top_k_inds[~disallowed_idxs]
             top_decoded_tokens = top_decoded_tokens[~disallowed_idxs]
 
-        # save stuff
-        """
-        r['decoded_token'].append(top_decoded_tokens[0])
+        # save results for suffix_str
         r['suffix_str'].append(suffix_str[r['len_suffix_str_init']:])
         r['correct'].append(False) # if we made it here, we did not find the answer
+        r['decoded_token'].append(top_decoded_tokens[0])
         r['top_decoded_tokens_dict'].append({
             top_decoded_tokens[i]: avg_probs[top_k_inds[i]]
             for i in range(top_k_inds.shape[0])
@@ -180,11 +179,10 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_s
 
 
             if args.early_stopping and r['correct'][-1]:
-            logging.info('successful early stopping!')
-            sys.exit(0)
+                logging.info('successful early stopping!')
+                sys.exit(0)
 
             r['suffix_str'].append(suffix_str)
-        """
 
 
 def train(args, r, dset, check_answer_func, model, tokenizer):

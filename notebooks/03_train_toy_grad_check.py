@@ -229,7 +229,7 @@ if __name__ == '__main__':
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     model = AutoModelForCausalLM.from_pretrained(
         checkpoint, output_hidden_states=True)
-    dset = data.get_data(max_digit=args.max_digit, template_idx=0)
+    dset, check_answer_func = data.get_data(max_digit=args.max_digit, template_idx=0)
 
     logger.info('beginning training...')
     r = train(args=args, r=r, dset=dset, model=model, tokenizer=tokenizer, gamma=args.gamma)
