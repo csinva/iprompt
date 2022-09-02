@@ -25,9 +25,16 @@ from torch.utils.data import DataLoader
 from datetime import datetime
 
 
-def train_prefix(args, r, model, wte, dataloader, device, save_dir, prefix_emb):
+def train_prefix(args, r, model, dataloader, device, save_dir, tokenizer):
     """Gradient-based optimization of the prefix
     """
+    # extract out embedding
+    wte = model._modules['transformer'].wte.to(device)
+
+    # get embedding of a chosen prefix string as nn.Parameter
+    prefix_emb = search.get_init_prefix(
+        model, dataloader, tokenizer, wte, device)
+
     # optimizer
     optim = torch.optim.Adam([prefix_emb], lr=args.lr_prefix)
 
@@ -78,7 +85,7 @@ def train_prefix(args, r, model, wte, dataloader, device, save_dir, prefix_emb):
         optim.zero_grad()
 
 
-def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_str: str, save_dir,
+def train_suffix(args, r, model, dataloader, check_answer_func, device, tokenizer, save_dir,
                  disallow_whitespace_tokens=True,
                  beam_size_for_saving=30):
     """Here we find the suffix which maximizes the likelihood over all examples.
@@ -90,8 +97,6 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_s
         """
         num_examples = 0
         cum_logits = None
-        logging.debug(
-            f'num batches: {len(dataloader)} batch_size {args.batch_size}')
         for idx, batch in tqdm(enumerate(dataloader), total=len(dataloader)):
 
             # set up inputs
@@ -128,10 +133,16 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_s
         return avg_logits
 
     # set up DFS beam search
+    suffix_str = search.get_init_suffix(
+        model, dataloader, tokenizer, device)
+
     suffixes = [{'s': suffix_str, 'num_tokens_added': 0, 'running_prob': 1}]
     r['suffix_str_init'] = suffix_str
     r['len_suffix_str_init'] = len(suffix_str)
     num_model_queries = 0
+    logging.info(
+        f'num batches: {len(dataloader)} batch_size {args.batch_size}')
+
     while len(suffixes) > 0:
         suffix_dict = suffixes.pop()
         suffix_str = suffix_dict['s']
@@ -188,7 +199,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_s
                     logging.info('\t' + repr(r['final_answer_added']))
                     logging.info(save_dir)
                     utils.save(args, save_dir, r, final=True)
-                    utils.save_json(r={ # save some key outputs in readable form
+                    utils.save_json(r={  # save some key outputs in readable form
                         k: r[k]
                         for k in r if isinstance(r[k], str) or isinstance(r[k], int)
                     }, save_dir=save_dir, fname='final.json')
@@ -200,53 +211,6 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_s
                     'num_tokens_added': suffix_dict['num_tokens_added'] + 1,
                     'running_prob': suffix_dict['running_prob'] * avg_probs[top_k_inds[i]],
                 })
-
-
-def train(args, r, dset, check_answer_func, model, tokenizer):
-    """
-    Params
-    ------
-    r: dict
-        dictionary of things to save
-    """
-    # set up saving before seeding
-    save_dir_unique = datetime.now().strftime("%b_%d_%H_%M_") + \
-        ''.join(random.choices(string.ascii_lowercase, k=12))
-    save_dir = os.path.join(args.save_dir, save_dir_unique)
-    logging.info('saving to ' + save_dir)
-
-    # set seed + device
-    np.random.seed(args.seed)
-    torch.manual_seed(args.seed)
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    utils.save_json(args=args, save_dir=save_dir, fname='params.json', r=r)
-
-    # initialize training things
-    model = model.to(device)
-    dataloader = DataLoader(
-        dset, batch_size=args.batch_size, shuffle=True, drop_last=True)
-
-    # initialize prefix
-    if args.prefix_or_suffix.startswith('pre'):
-        # extract out embedding
-        wte = model._modules['transformer'].wte.to(device)
-
-        # get embedding of a chosen prefix string as nn.Parameter
-        prefix_emb = search.get_init_prefix(
-            model, dataloader, tokenizer, wte, device)
-
-        # actually do fitting and saving
-        with torch.no_grad():
-            train_prefix(args, r, model, wte, dataloader,
-                         device, save_dir, prefix_emb)
-
-    elif args.prefix_or_suffix.startswith('suf'):
-        suffix_str = search.get_init_suffix(
-            model, dataloader, tokenizer, device)
-        train_suffix(args, r, model, dataloader,
-                     check_answer_func, device, suffix_str, save_dir)
-
-    utils.save(args, save_dir, r, final=True)
 
 
 if __name__ == '__main__':
@@ -263,7 +227,7 @@ if __name__ == '__main__':
         parser = argparse.ArgumentParser()
 
         # dataset args
-        parser.add_argument('--max_digit', type=int, default=100,
+        parser.add_argument('--max_digit', type=int, default=10,
                             help='maximum value of each digit in summand')
         parser.add_argument('--n_shots', type=int, default=1,
                             help='number of shots in the prompt')
@@ -281,7 +245,7 @@ if __name__ == '__main__':
                             help='max length of sequence to find (num tokens)')
         parser.add_argument('--lr_prefix', type=float, default=1e-4,
                             help='learning rate')
-        parser.add_argument('--beam_width_suffix', type=int, default=1,
+        parser.add_argument('--beam_width_suffix', type=int, default=4,
                             help='max width of beam in suffix search')
         # parser.add_argument('--early_stopping', dest='early_stopping', default=True,
         #     help='whether to stop searching once finding correct answer - for suffix, this currently has to be true',
@@ -326,4 +290,30 @@ if __name__ == '__main__':
 
     # train
     logger.info('beginning training...')
-    train(args, r, dset, check_answer_func, model, tokenizer)
+
+    # set up saving before seeding
+    save_dir_unique = datetime.now().strftime("%b_%d_%H_%M_") + \
+        ''.join(random.choices(string.ascii_lowercase, k=12))
+    save_dir = os.path.join(args.save_dir, save_dir_unique)
+    logging.info('saving to ' + save_dir)
+
+    # set seed + device
+    np.random.seed(args.seed)
+    torch.manual_seed(args.seed)
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    utils.save_json(args=args, save_dir=save_dir, fname='params.json', r=r)
+
+    # initialize training things
+    model = model.to(device)
+    dataloader = DataLoader(
+        dset, batch_size=min(args.batch_size, len(dset)), shuffle=True, drop_last=True)
+
+    # train
+    if args.prefix_or_suffix.startswith('pre'):
+        train_prefix(args, r, model, dataloader, device, save_dir, tokenizer)
+    elif args.prefix_or_suffix.startswith('suf'):
+        with torch.no_grad():
+            train_suffix(args, r, model, dataloader,
+                         check_answer_func, device, tokenizer, save_dir)
+
+    utils.save(args, save_dir, r, final=True)
