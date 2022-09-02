@@ -1,3 +1,4 @@
+datasets
 numpy
 pandas
 scipy
@@ -16,10 +17,10 @@ matplotlib
 # dataclasses
 
 # for dart
-statistics
-wandb
-tensorboard
+# statistics
+# wandb
+# tensorboard
 
 # for prefix-tuning (robust)
-pytorch-transformers
-gputil
+# pytorch-transformers
+# gputil

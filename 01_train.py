@@ -1,28 +1,28 @@
+import argparse
+import logging
 import os
+import pickle as pkl
 import random
 import string
 import sys
-import numpy as np
-import torch
-from torch import nn
-import matplotlib.pyplot as plt
-import argparse
-from transformers import pipeline
-from transformers import AutoTokenizer, AutoModel, AutoModelForCausalLM, top_k_top_p_filtering
-from copy import deepcopy
-import pandas as pd
-from tqdm import tqdm
 from collections import defaultdict
-import pandas as pd
-from datasets import Dataset
-import data
-import utils
-import search
-
-import logging
-import pickle as pkl
-from torch.utils.data import DataLoader
+from copy import deepcopy
 from datetime import datetime
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import torch
+from datasets import Dataset
+from torch import nn
+from torch.utils.data import DataLoader
+from tqdm import tqdm
+from transformers import (AutoModel, AutoModelForCausalLM, AutoTokenizer,
+                          pipeline, top_k_top_p_filtering)
+
+import data
+import search
+import utils
 
 
 def train_prefix(args, r, model, dataloader, device, save_dir, tokenizer):
