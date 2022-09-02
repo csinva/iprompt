@@ -29,7 +29,7 @@ def train_prefix(args, r, model, wte, dataloader, device, save_dir, prefix_emb):
     """Gradient-based optimization of the prefix
     """
     # optimizer
-    optim = torch.optim.Adam([prefix_emb], lr=args.lr)
+    optim = torch.optim.Adam([prefix_emb], lr=args.lr_prefix)
 
     # run training loop
     for epoch in range(args.n_epochs_prefix):
@@ -172,7 +172,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_s
             top_decoded_tokens[i]: avg_probs[top_k_inds[i]]
             for i in range(top_k_inds.shape[0])
         })
-        utils.save(args, save_dir, r, epoch=None)
+        utils.save(args, save_dir, r, epoch=None, final=True)
 
         # check each beam
         if num_tokens_added < args.max_num_tokens:
@@ -185,6 +185,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, suffix_s
                     logging.info('\t' + repr(r['suffix_str_init']))
                     logging.info('\t' + repr(r['final_answer_added']))
                     logging.info(save_dir)
+                    utils.save(args, save_dir, r, final=True)
                     exit(0)
                 
                 # for bfs (dfs would append at end)
@@ -202,11 +203,13 @@ def train(args, r, dset, check_answer_func, model, tokenizer):
         ''.join(random.choices(string.ascii_lowercase, k=12))
     save_dir = os.path.join(args.save_dir, save_dir_unique)
     logging.info('saving to ' + save_dir)
+    
 
     # set seed + device
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    utils.save_params(args, save_dir, r)
 
     # initialize training things
     model = model.to(device)
@@ -232,6 +235,8 @@ def train(args, r, dset, check_answer_func, model, tokenizer):
             model, dataloader, tokenizer, device)
         train_suffix(args, r, model, dataloader,
                      check_answer_func, device, suffix_str, save_dir)
+
+    utils.save(args, save_dir, r, final=True)
 
 
 if __name__ == '__main__':
@@ -262,10 +267,10 @@ if __name__ == '__main__':
                             help='model checkpoint to use')
         parser.add_argument('--prefix_or_suffix', type=str, default="prefix",  # either prefix or suffix (pre or suf will suffice)
                             help='model checkpoint to use')
-        parser.add_argument('--lr', type=float, default=1e-4,
-                            help='learning rate')
         parser.add_argument('--max_num_tokens', type=int, default=4,
                             help='max length of sequence to find (num tokens)')
+        parser.add_argument('--lr_prefix', type=float, default=1e-4,
+                            help='learning rate')
         parser.add_argument('--beam_width_suffix', type=int, default=1,
                             help='max width of beam in suffix search')
         # parser.add_argument('--early_stopping', dest='early_stopping', default=True, 

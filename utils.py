@@ -13,6 +13,7 @@ import pandas as pd
 from datasets import Dataset
 import data
 import pickle as pkl
+import json
 
 def get_unembedding(checkpoint):
     """Get unembedding layer for first continuous vector
@@ -38,8 +39,16 @@ def get_unembedding(checkpoint):
     pkl.dump(unemb_linear, open(fname, 'wb'))
     return unemb_linear
 
+def save_params(args, save_dir, r):
+    os.makedirs(save_dir, exist_ok=True)
+    with open(os.path.join(save_dir, 'params.json'), 'w') as f:
+        json.dump({**vars(args), **r}, f, indent=4)
 
-def save(args, save_dir, r, epoch=None):
+def save(args, save_dir, r, epoch=None, final=False, params=True):
+    if final:
+        fname = 'results_final.pkl'
+    else:
+        fname = 'results.pkl'
     if epoch is None or (epoch % args.epoch_save_interval == 0):
         os.makedirs(save_dir, exist_ok=True)
-        pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
+        pkl.dump(r, open(os.path.join(save_dir, fname), 'wb'))
