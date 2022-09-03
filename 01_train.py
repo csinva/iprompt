@@ -13,18 +13,19 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import torch
+import torch.distributed as dist
 from datasets import Dataset
 from torch import nn
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from transformers import (AutoModel, AutoModelForCausalLM, AutoTokenizer,
                           pipeline, top_k_top_p_filtering)
+
+import data
+import parallel
 import train_prefix
 import train_suffix
-import data
 import utils
-import parallel
-import torch.distributed as dist
 
 # initialize args
 
@@ -70,6 +71,9 @@ def init_parser():
                         help='random seed')
     parser.add_argument('--n_epochs_prefix', type=int, default=10000,
                         help='number of epochs for training')
+    parser.add_argument('--use_parallelformers', type=int, default=1,
+                        help='boolean 0 or 1: whether to try and use parallelformers')
+
 
     # logging/saving args
     parser.add_argument('--save_dir', type=str, default='../results',
@@ -126,14 +130,14 @@ if __name__ == '__main__':
     utils.save_json(args=args, save_dir=save_dir, fname='params.json', r=r)
 
     # initialize training things
-    model = parallel.model_to_device(model)
+    model = parallel.model_to_device(args, model)
     dataloader = DataLoader(
         dset, batch_size=min(args.batch_size, len(dset)), shuffle=True, drop_last=True)
 
     # train
     if args.prefix_or_suffix.startswith('pre'):
         train_prefix.train_prefix(
-            args, r, model, dataloader, device, save_dir, tokenizer)
+            args, r, model, dataloader, save_dir, tokenizer)
     elif args.prefix_or_suffix.startswith('suf'):
         with torch.no_grad():
             train_suffix.train_suffix(args, r, model, dataloader,

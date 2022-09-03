@@ -1,4 +1,4 @@
-description: Sweep autoprompting
+description: Single query baseline
 environment:
   image: pytorch/pytorch:1.7.1-cuda11.0-cudnn8-devel
   setup:
@@ -8,11 +8,18 @@ code:
   local_dir: $CONFIG_DIR/..
 
 # use amlt ti to view these
+# target:
+#   service: amlk8s
+#   name: itphyperdgx2cl1
+#   # vc: hai3
+#   vc: hai2
+
+# these have only 8 gpus
 target:
   service: amlk8s
-  name: itphyperdgx2cl1
+  name: itplabrr1cl1
   # vc: hai3
-  vc: hai2
+  vc: resrchvc
 
 storage:
   output:
@@ -21,7 +28,7 @@ storage:
     mount_dir: /mnt/output # dir on the local machine
 
 jobs:
-- name: sweep_suffixes
-  sku: G16
+- name: single_query
+  sku: G8
   command:
-  - python scripts/submit_sweep.py --dummy
+  - python scripts/submit_single_query_baseline.py --dummy

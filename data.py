@@ -129,8 +129,8 @@ def get_init_suffix(args, model, dataloader, tokenizer) -> List:
     # Note: don't change the order of these (higher ones should be better)
     addition_suffixes_manual = [
         "To get the answer, take the numbers in the question and",        
-        "To get the answer from the inputs",
-        "To get the answer, take the two inputs and",        
+        "To compute the answer from the inputs",
+        "To calculate the answer, take the two inputs and",        
         "The relationship between the numbers in the question and the answer is:",
         "To get the answer,",
     ]

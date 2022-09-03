@@ -5,7 +5,7 @@ environment:
     - pip install -r requirements.txt --user
 
 code:
-  local_dir: $CONFIG_DIR/../..
+  local_dir: $CONFIG_DIR/..
 
 target:
   service: amlk8s
@@ -21,6 +21,7 @@ storage:
 
 jobs:
 - name: debug_8gpus
-  process_count_per_node: 8
+  # process_count_per_node: 8
+  sku: G8
   command:
   - sleep 2h

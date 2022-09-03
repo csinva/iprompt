@@ -19,7 +19,7 @@ import parallel
 import utils
 
 
-def get_avg_probs_next_token(suffix_str: str, model, dataloader, tokenizer):
+def get_avg_probs_next_token(args, suffix_str: str, model, dataloader, tokenizer):
     """Get the average probs for the next token across the entire dataset
     """
     num_examples = 0
@@ -32,7 +32,7 @@ def get_avg_probs_next_token(suffix_str: str, model, dataloader, tokenizer):
                      for i in range(len(text))]
         ex_inputs = tokenizer(
             full_text, padding='longest', return_tensors='pt')
-        ex_inputs = parallel.inputs_to_device(ex_inputs)
+        ex_inputs = parallel.inputs_to_device(args, ex_inputs)
 
         # go through model
         outputs = model(
@@ -61,7 +61,7 @@ def get_avg_probs_next_token(suffix_str: str, model, dataloader, tokenizer):
     return avg_logits
 
 
-def get_probs_single_query_next_token(suffix_str: str, model, dataloader, tokenizer):
+def get_probs_single_query_next_token(args, suffix_str: str, model, dataloader, tokenizer):
     """Get the average probs for the next token across the entire dataset
     """
     # get a single input
@@ -70,7 +70,7 @@ def get_probs_single_query_next_token(suffix_str: str, model, dataloader, tokeni
     full_text = [text[0] + suffix_str]
     ex_inputs = tokenizer(
         full_text, padding='longest', return_tensors='pt')
-    ex_inputs = parallel.inputs_to_device(ex_inputs)
+    ex_inputs = parallel.inputs_to_device(args, ex_inputs)
 
     # go through model
     outputs = model(
@@ -114,10 +114,11 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
 
         # get avg_probs
         if args.single_query:
-            avg_probs = get_probs_single_query_next_token(suffix_str, model, dataloader, tokenizer)
+            avg_probs = get_probs_single_query_next_token(
+                args, suffix_str, model, dataloader, tokenizer)
         else:
             avg_probs = get_avg_probs_next_token(
-                suffix_str, model, dataloader, tokenizer)
+                args, suffix_str, model, dataloader, tokenizer)
         num_model_queries += 1
 
         # could also check out top_k_top_p_filtering
