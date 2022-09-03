@@ -78,13 +78,13 @@ def init_parser():
 
 
 if __name__ == '__main__':
-    # python3 01_train.py --prefix_or_suffix suffix --batch_size 200 --checkpoint EleutherAI/gpt-neo-2.7B
-    # python3 01_train.py --prefix_or_suffix suffix --batch_size 1 --checkpoint EleutherAI/gpt-neox-20b
-    # python3 01_train.py --prefix_or_suffix suffix --batch_size 50 --checkpoint EleutherAI/gpt-j-6B
-    # python3 01_train.py --prefix_or_suffix suffix --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3
-    # python3 01_train.py --prefix_or_suffix suffix --batch_size 100 --checkpoint EleutherAI/gpt-neo-2.7B --n_shots 3
-    # python3 01_train.py --prefix_or_suffix suffix --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3 --max_digit 10
-    # python3 01_train.py --prefix_or_suffix suffix --checkpoint gpt2-mediu
+    # python3 01_train.py --batch_size 200 --checkpoint EleutherAI/gpt-neo-2.7B
+    # python3 01_train.py --batch_size 1 --checkpoint EleutherAI/gpt-neox-20b
+    # python3 01_train.py --batch_size 50 --checkpoint EleutherAI/gpt-j-6B
+    # python3 01_train.py --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3
+    # python3 01_train.py --batch_size 100 --checkpoint EleutherAI/gpt-neo-2.7B --n_shots 3
+    # python3 01_train.py --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3 --max_digit 10
+    # python3 01_train.py --checkpoint gpt2-mediu
 
    
     parser = init_parser()

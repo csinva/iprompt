@@ -8,10 +8,11 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
 if len(sys.argv) > 1:
     print('running in amlt mode...')
-    save_dir = './amlt_sweep4'
     cmd_python = 'python'
+    save_dir = sys.argv[1]
+    assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
-    save_dir = '/home/chansingh/mntv1/amlt_sweep3'
+    save_dir = '/home/chansingh/mntv1/sweep_misc'
     cmd_python = '/usr/bin/python3'
 
 ##########################################
@@ -19,7 +20,7 @@ else:
 ##########################################
 PARAMS_SHARED_DICT = {
     'seed': [1],
-    'n_shots': [1], # should vary this
+    'n_shots': [1],  # should vary this
     'max_digit': [10],
     'beam_width_suffix': [5],
     'prefix_or_suffix': ['suffix'],
@@ -33,9 +34,14 @@ PARAMS_SHARED_DICT = {
 ##########################################
 # params that are coupled together
 ##########################################
-PARAMS_COUPLED_DICT = { # these batch_sizes are roughly set for an A100 80GB gpu
-    ('checkpoint', 'batch_size'): [('gpt2-medium', 200), ('gpt2-large', 100),
-                                   ('gpt2-xl', 40)], #, ('EleutherAI/gpt-j-6B', 40)],
+PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
+    ('checkpoint', 'batch_size'): [
+        ('gpt2-medium', 200),
+        ('gpt2-large', 100),
+        ('gpt2-xl', 40),
+        # ('EleutherAI/gpt-j-6B', 40)
+        ('EleutherAI/gpt-neox-20b', 10),
+    ],  
 }
 
 # shared
@@ -63,6 +69,7 @@ for i in range(len(param_combos_final)):
     param_str = cmd_python + ' ' + os.path.join(repo_dir, '01_train.py ')
     for j, key in enumerate(ks_final):
         param_str += '--' + key + ' ' + str(param_combos_final[i][j]) + ' '
-    print(f'\n\n-------------------{i + 1}/{len(param_combos_final)}--------------------\n', param_str)
+    print(
+        f'\n\n-------------------{i + 1}/{len(param_combos_final)}--------------------\n', param_str)
     # s.run(param_str)
     os.system(param_str)

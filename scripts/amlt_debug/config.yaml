@@ -10,8 +10,8 @@ code:
 target:
   service: amlk8s
   # run "amlt target list amlk8s" to list the names of available AMLK8s targets
-  name: itphyperdgx2cl1
-  vc: hai2
+  name: itplabrr1cl1
+  vc: resrchvc
 
 storage:
   output:
@@ -20,7 +20,7 @@ storage:
     mount_dir: /mnt/output # dir on the local machine
 
 jobs:
-- name: debug_11_b
+- name: debug_8gpus
   process_count_per_node: 8
   command:
-  - bash sleep 2h
+  - sleep 2h

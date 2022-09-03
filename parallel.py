@@ -37,6 +37,9 @@ def model_to_device(model):
         return model.to(device)
     elif device_count > 1:
         parallelize(model, num_gpus=device_count, fp16=False, verbose='detail')
+        # print memory states
+        print(model.memory_allocated())
+        print(model.memory_reserved())
         return model
 
 def inputs_to_device(inputs):
