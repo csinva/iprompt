@@ -21,6 +21,6 @@ matplotlib
 # wandb
 # tensorboard
 
-# for prefix-tuning (robust)
+# for robust prefix-tuning repo
 # pytorch-transformers
 # gputil

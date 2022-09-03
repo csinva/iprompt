@@ -20,7 +20,7 @@ storage:
     mount_dir: /mnt/output # dir on the local machine
 
 jobs:
-- name: high_lr
+- name: sweep_suffixes
   sku: G16
   command:
-  - python3 01_train.py --prefix_or_suffix suffix --save_dir /mnt/output/amlt_sweep00 --checkpoint gpt2-medium --batch_size 200
+  - python3 scripts/submit_sweep.py --amlt

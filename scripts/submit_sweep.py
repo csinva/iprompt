@@ -1,28 +1,30 @@
 import itertools
 import os
 from os.path import dirname
-
+import sys
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 # python3 01_train.py --prefix_or_suffix suffix --save_dir /home/chansingh/mntv1/sweep1 --checkpoint gpt2-medium --batch_size 200
+# python3 01_train.py --save_dir /home/chansingh/mntv1/test
 
-# slurm params
-partition = 'amlk8s'
-num_gpus = 1
-time = '4-0'
-# s = Slurm("embed_dset", {"partition": partition, "time": time, "gres": f"gpu:{num_gpus}"})
-
+if len(sys.argv) > 1:
+    print('running in amlt mode...')
+    save_dir = './amlt_sweep4'
+else:
+    save_dir = '/home/chansingh/mntv1/amlt_sweep3'
 
 ##########################################
 # params shared across everything (higher up things are looped over first)
 ##########################################
 PARAMS_SHARED_DICT = {
     'seed': [1],
-    'n_shots': [1, 3],
+    'n_shots': [1], # should vary this
     'max_digit': [10],
     'beam_width_suffix': [5],
     'prefix_or_suffix': ['suffix'],
-    'save_dir': ['/home/chansingh/mntv1/sweep1'],
-    'task': ['add_two', 'first_two'],
+    'save_dir': [save_dir],
+    'task': ['add_two', 'multiply_two', 'divide_two', 'subtract_two', 'max_two'],
+    'template_num_init_prefix': [0, 1],
+    'template_num_task_phrasing': [0, 1],
 }
 
 
@@ -31,7 +33,7 @@ PARAMS_SHARED_DICT = {
 ##########################################
 PARAMS_COUPLED_DICT = { # these batch_sizes are roughly set for an A100 80GB gpu
     ('checkpoint', 'batch_size'): [('gpt2-medium', 200), ('gpt2-large', 100),
-                                   ('gpt2-xl', 40), ('EleutherAI/gpt-j-6B', 40)],
+                                   ('gpt2-xl', 40)], #, ('EleutherAI/gpt-j-6B', 40)],
 }
 
 # shared
@@ -59,6 +61,6 @@ for i in range(len(param_combos_final)):
     param_str = '/usr/bin/python3 ' + os.path.join(repo_dir, '01_train.py ')
     for j, key in enumerate(ks_final):
         param_str += '--' + key + ' ' + str(param_combos_final[i][j]) + ' '
-    print(param_str)
+    print(f'\n\n-------------------{i + 1}/{len(param_combos_final)}--------------------\n', param_str)
     # s.run(param_str)
     # os.system(param_str)

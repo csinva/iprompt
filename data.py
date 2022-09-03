@@ -8,13 +8,14 @@ import re
 from tqdm import trange
 import torch.nn
 
-def get_data(task_name='add_two', max_digit=1000, template_idx=-1,
-             n_shots: int = 1, max_dset_size=10000):
+
+def get_data(args, task_name: str = 'add_two', max_digit: int = 1000,
+             n_shots: int = 1, max_dset_size: int = 10000):
 
     d = defaultdict(list)
     rng = np.random.default_rng(12345)
     task = TASKS[task_name]
-    template = task['prompt_template_funcs'][template_idx]
+    template = task['prompt_template_funcs'][args.template_num_task_phrasing]
     for num1 in trange(max_digit, desc="creating data", leave=False):
         for num2 in range(min(max_digit, max_dset_size//max_digit)):
             gen_func = task['gen_func']
@@ -23,7 +24,8 @@ def get_data(task_name='add_two', max_digit=1000, template_idx=-1,
             d['input'].append(x)
             d['output'].append(y)
     df = pd.DataFrame.from_dict(d)
-    df = df.sample(n=df.shape[0], replace=False)  # shuffle rows
+    df = df.sample(n=min(df.shape[0], max_dset_size),
+                   replace=False)  # shuffle rows
 
     """
     for i in range(max_digit * max_digit):   
@@ -41,7 +43,8 @@ def get_data(task_name='add_two', max_digit=1000, template_idx=-1,
             s = ''.join(df.sample(n=n_shots, replace=False)['text'].values)
             d2['text'].append(s)
         df = pd.DataFrame.from_dict(d2)
-        df = df.sample(n=df.shape[0], replace=False)  # shuffle rows
+        # shuffle rows
+        df = df.sample(n=min(df.shape[0], max_dset_size), replace=False)
 
     # print(df.head())
 
@@ -52,20 +55,21 @@ def get_data(task_name='add_two', max_digit=1000, template_idx=-1,
     return dset, TASKS[task_name]['check_answer_func']
 
 
-"""Note: all templates should be "stackable" so that they work in the multi-shot setting
+"""Note: all templates should be "stackable" so that they work in the multi-shot setting.
+Don't change the order of these (higher should be better).
 """
 PROMPT_TEMPLATE_TWO_NUMS = [
     lambda num1, num2, g: (
-        f'Given the numbers {num1} and {num2}, the answer is', f' {g([num1, num2])}'),
+        f'Given the input numbers {num1} and {num2}, the answer is', f' {g([num1, num2])}'),
+
+    lambda num1, num2, g: (
+        f'Inputs: {num1} {num2}\n', f'Answer: {g([num1, num2])}\n\n'),
 
     lambda num1, num2, g: (
         f'{num1} {num2}', f' {g([num1, num2])}\n'),
 
     lambda num1, num2, g: (
-        f'The input is {num1} {num2}', f' The answer is {g([num1, num2])}\n\n'),
-
-    lambda num1, num2, g: (
-        f'Question: {num1} {num2}\n', f'Answer: {g([num1, num2])}\n\n'),
+        f'The inputs are {num1} {num2}.', f' The answer is {g([num1, num2])}\n\n'),
 ]
 
 
@@ -85,11 +89,23 @@ TASKS = {
         'check_answer_func': re.compile(r'multiply|product').search,
         'gen_func': np.prod
     },
+    'divide_two': {
+        'prompt_template_funcs': PROMPT_TEMPLATE_TWO_NUMS,
+        'check_answer_func': re.compile(r'divide|into').search,
+        'gen_func': lambda l: f'{l[0]}/{l[1]}'
+    },
+    'subtract_two': {
+        'prompt_template_funcs': PROMPT_TEMPLATE_TWO_NUMS,
+        'check_answer_func': re.compile(r'subtract|difference').search,
+        'gen_func': lambda l: l[0] - l[1]
+    },
     'max_two': {
         'prompt_template_funcs': PROMPT_TEMPLATE_TWO_NUMS,
         'check_answer_func': re.compile(r'max|large|greate|big').search,
         'gen_func': max
     },
+
+    # this one finds solutions like "subtract from the first"
     'first_two': {
         'prompt_template_funcs': PROMPT_TEMPLATE_TWO_NUMS,
         'check_answer_func': re.compile(r'first|begin|original').search,
@@ -97,23 +113,29 @@ TASKS = {
     },
 }
 
+
 def get_init_prefix(model, dataloader, tokenizer, wte, device) -> List:
+    """
+    """
     prefix_str = ["x the following two numbers: "]
     prefix_inputs = tokenizer(prefix_str, return_tensors="pt").to(device)
     prefix_emb = wte.forward(prefix_inputs['input_ids'])
     prefix_emb = torch.nn.Parameter(prefix_emb).to(device)
     return prefix_emb
 
-def get_init_suffix(model, dataloader, tokenizer, device) -> List:
-    addition_suffixes_manual = [
-        "The relationship between the numbers in the question and the answer is:",
-        "To get the answer, take the two numbers in the question and",
-        "To get the answer,",
-        "To get the answer, take the two inputs and",
-    ]
-    
-    return addition_suffixes_manual[-1]
 
+def get_init_suffix(args, model, dataloader, tokenizer, device) -> List:
+
+    # Note: don't change the order of these (higher ones should be better)
+    addition_suffixes_manual = [
+        "To get the answer, take the numbers in the question and",        
+        "To get the answer from the inputs,"
+        "To get the answer, take the two inputs and",        
+        "The relationship between the numbers in the question and the answer is:",
+        "To get the answer,",
+    ]
+
+    return addition_suffixes_manual[-1]
 
 
 if __name__ == '__main__':
