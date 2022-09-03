@@ -13,7 +13,7 @@ if len(sys.argv) > 1:
     save_dir = '/mnt/output/sweep_morning2' # sys.argv[1]
     assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
-    save_dir = '/home/chansingh/mntv1/sweep_misc'
+    save_dir = '/home/chansingh/mntv1/sweep_morning_local'
     cmd_python = '/usr/bin/python3'
 
 ##########################################
