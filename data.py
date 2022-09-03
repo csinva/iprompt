@@ -1,11 +1,12 @@
 import logging
+from typing import List
 from datasets import Dataset
 import pandas as pd
 import numpy as np
 from collections import defaultdict
 import re
 from tqdm import trange
-
+import torch.nn
 
 def get_data(task_name='add_two', max_digit=1000, template_idx=-1,
              n_shots: int = 1, max_dset_size=10000):
@@ -95,6 +96,24 @@ TASKS = {
         'gen_func': lambda x: x[0]
     },
 }
+
+def get_init_prefix(model, dataloader, tokenizer, wte, device) -> List:
+    prefix_str = ["x the following two numbers: "]
+    prefix_inputs = tokenizer(prefix_str, return_tensors="pt").to(device)
+    prefix_emb = wte.forward(prefix_inputs['input_ids'])
+    prefix_emb = torch.nn.Parameter(prefix_emb).to(device)
+    return prefix_emb
+
+def get_init_suffix(model, dataloader, tokenizer, device) -> List:
+    addition_suffixes_manual = [
+        "The relationship between the numbers in the question and the answer is:",
+        "To get the answer, take the two numbers in the question and",
+        "To get the answer,",
+        "To get the answer, take the two inputs and",
+    ]
+    
+    return addition_suffixes_manual[-1]
+
 
 
 if __name__ == '__main__':

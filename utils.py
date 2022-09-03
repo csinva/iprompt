@@ -20,7 +20,7 @@ def get_unembedding(checkpoint):
     This is needed to take gradients wrt the input text
     """
     checkpoint_clean = checkpoint.lower().replace('/', '___')
-    fname = f'data/preprocessed/unembed_{checkpoint_clean}.pkl'
+    fname = f'../data/preprocessed/unembed_{checkpoint_clean}.pkl'
     if os.path.exists(fname):
         return pkl.load(open(fname, 'rb'))
 

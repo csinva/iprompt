@@ -21,7 +21,6 @@ from transformers import (AutoModel, AutoModelForCausalLM, AutoTokenizer,
                           pipeline, top_k_top_p_filtering)
 
 import data
-import search
 import utils
 
 
@@ -32,7 +31,7 @@ def train_prefix(args, r, model, dataloader, device, save_dir, tokenizer):
     wte = model._modules['transformer'].wte.to(device)
 
     # get embedding of a chosen prefix string as nn.Parameter
-    prefix_emb = search.get_init_prefix(
+    prefix_emb = data.get_init_prefix(
         model, dataloader, tokenizer, wte, device)
 
     # optimizer
@@ -133,7 +132,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, tokenize
         return avg_logits
 
     # set up DFS beam search
-    suffix_str = search.get_init_suffix(
+    suffix_str = data.get_init_suffix(
         model, dataloader, tokenizer, device)
 
     suffixes = [{'s': suffix_str, 'num_tokens_added': 0, 'running_prob': 1}]
@@ -239,7 +238,7 @@ if __name__ == '__main__':
         # gpneo # "EleutherAI/gpt-neo-2.7B", "EleutherAI/gpt-j-6B", "EleutherAI/gpt-neox-20b"
         parser.add_argument('--checkpoint', type=str, default="gpt2-medium",
                             help='model checkpoint to use')
-        parser.add_argument('--prefix_or_suffix', type=str, default="prefix",  # either prefix or suffix (pre or suf will suffice)
+        parser.add_argument('--prefix_or_suffix', type=str, default="suffix",  # either prefix or suffix (pre or suf will suffice)
                             help='model checkpoint to use')
         parser.add_argument('--max_num_tokens', type=int, default=4,
                             help='max length of sequence to find (num tokens)')
@@ -260,7 +259,7 @@ if __name__ == '__main__':
                             help='number of epochs for training')
 
         # logging/saving args
-        parser.add_argument('--save_dir', type=str, default='results',
+        parser.add_argument('--save_dir', type=str, default='../results',
                             help='directory for saving')
         parser.add_argument('--epoch_save_interval', type=int, default=1,
                             help='interval to save results')
