@@ -24,17 +24,20 @@ PARAMS_SHARED_DICT = {
     'n_shots': [1],
     'task': ['add_two', 'multiply_two', 'divide_two', 'subtract_two', 'max_two'],
 
-    # fixed params
-    'max_digit': [10],
-    'beam_width_suffix': [5],
-    'prefix_or_suffix': ['suffix'],
-    'save_dir': [save_dir],
-    'use_parallelformers': [0], # NOTE NEED TO CHANGE THIS LATER TO PARALLELIZE!
+    # parallel settings
+    'use_parallelformers': [0],
+    'use_cpu_only': [0],
 
     # things to average over
     'seed': [1],
     'template_num_init_string': [0, 1, 2],
     'template_num_task_phrasing': [0, 1, 2],
+
+    # fixed params
+    'max_digit': [10],
+    'beam_width_suffix': [5],
+    'prefix_or_suffix': ['suffix'],
+    'save_dir': [save_dir],
 }
 
 

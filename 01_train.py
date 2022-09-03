@@ -58,7 +58,7 @@ def init_parser():
                         help='learning rate')
     parser.add_argument('--beam_width_suffix', type=int, default=4,
                         help='max width of beam in suffix search')
-    parser.add_argument('--single_query', type=int, default=0,
+    parser.add_argument('--use_single_query', type=int, default=0,
                         help='boolean 0 or 1: use baseline model? only uses a single example to prompt rather than the entire dset')
     # parser.add_argument('--early_stopping', dest='early_stopping', default=True,
     #     help='whether to stop searching once finding correct answer - for suffix, this currently has to be true',
@@ -71,6 +71,8 @@ def init_parser():
                         help='random seed')
     parser.add_argument('--n_epochs_prefix', type=int, default=10000,
                         help='number of epochs for training')
+    parser.add_argument('--use_cpu_only', type=int, default=0,
+                        help='boolean 0 or 1: whether to force everything onto cpu') 
     parser.add_argument('--use_parallelformers', type=int, default=1,
                         help='boolean 0 or 1: whether to try and use parallelformers')
 

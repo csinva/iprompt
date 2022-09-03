@@ -7,6 +7,8 @@
 - `data.py` holds the code for generating datasets (currently synthetic but soon to extend beyond)
 
 # recent changes
+- 09/03
+  - note: args that start with `use_` are boolean
 - 09/02
   - changed defaults in `01_train.py`: defaults to suffix, max_digit = 10, beam_width_suffix=4
   - `data.py` returns data + `check_answer_func`

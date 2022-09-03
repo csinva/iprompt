@@ -13,28 +13,32 @@ if len(sys.argv) > 1:
     save_dir = '/mnt/output/single_query2' # sys.argv[1]
     assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
-    save_dir = '/home/chansingh/mntv1/single_query_test'
+    save_dir = '/home/chansingh/mntv1/single_query6'
     cmd_python = '/usr/bin/python3'
 
 ##########################################
 # params shared across everything (higher up things are looped over first)
 ##########################################
 PARAMS_SHARED_DICT = {
-    'single_query': [1],
+    # things we vary
+    'use_single_query': [1],
     'n_shots': [1, 5, 10],
     'task': ['add_two', 'multiply_two', 'divide_two', 'subtract_two', 'max_two'],
+
+    # parallel settings
+    'use_parallelformers': [0],
+    'use_cpu_only': [1],
+    
+    # things to average over
+    'seed': [1],
+    'template_num_init_string': [0, 1, 2],
+    'template_num_task_phrasing': [0, 1, 2],
 
     # fixed params
     'max_digit': [10],
     'beam_width_suffix': [5],
     'prefix_or_suffix': ['suffix'],
     'save_dir': [save_dir],
-    'use_parallelformers': [0],
-    
-    # things to average over
-    'seed': [1],
-    'template_num_init_string': [0, 1, 2],
-    'template_num_task_phrasing': [0, 1, 2],
 }
 
 
@@ -47,7 +51,7 @@ PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gp
         ('gpt2-large', 100),
         ('gpt2-xl', 40),
         # ('EleutherAI/gpt-j-6B', 40)
-        ('EleutherAI/gpt-neox-20b', 10),
+        # ('EleutherAI/gpt-neox-20b', 10),
     ],
 }
 

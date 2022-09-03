@@ -24,4 +24,4 @@ jobs:
   # process_count_per_node: 8
   sku: G8
   command:
-  - sleep 2h
+  - sleep 3h

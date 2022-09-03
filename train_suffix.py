@@ -113,7 +113,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
         num_suffixes_checked = suffix_dict['num_suffixes_checked']
 
         # get avg_probs
-        if args.single_query:
+        if args.use_single_query:
             avg_probs = get_probs_single_query_next_token(
                 args, suffix_str, model, dataloader, tokenizer)
         else:
@@ -132,7 +132,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
         top_decoded_tokens = np.array(
             [tokenizer.decode(ind) for ind in top_k_inds])
         logging.info(str(num_model_queries) + ' ' + repr(suffix_str))
-        for i in range(20):
+        for i in range(top_k_inds.size):
             logging.debug(
                 '\t ' + repr(top_decoded_tokens[i]) + '\t' + f'{avg_probs[top_k_inds[i]]:.2E}')
 
@@ -158,7 +158,8 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
 
         # check each beam
         if suffix_dict['num_tokens_added'] < args.max_num_tokens:
-            for beam_num in range(args.beam_width_suffix):
+            # take this max just in case all tokens were somehow whitespace
+            for beam_num in range(max(args.beam_width_suffix, top_k_inds.size)):
                 suffix_new = suffix_str + top_decoded_tokens[beam_num]
                 if check_answer_func(suffix_new):  # and args.early_stopping
                     r['final_answer_full'] = suffix_new
@@ -181,7 +182,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
                 suffixes.insert(0, {
                     's': suffix_new,
                     'num_tokens_added': suffix_dict['num_tokens_added'] + 1,
-                    'running_prob': suffix_dict['running_prob'] * avg_probs[top_k_inds[i]],
+                    'running_prob': suffix_dict['running_prob'] * avg_probs[top_k_inds[beam_num]],
 
                     # checked beam_width at current suffix + all suffixes before this one (assumes BFS-beam search)
                     # this is the total number of suffixes checked at the time when this will be opened above
