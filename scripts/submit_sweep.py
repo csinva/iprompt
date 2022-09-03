@@ -27,7 +27,7 @@ PARAMS_SHARED_DICT = {
     'prefix_or_suffix': ['suffix'],
     'save_dir': [save_dir],
     'task': ['add_two', 'multiply_two', 'divide_two', 'subtract_two', 'max_two'],
-    'template_num_init_prefix': [0, 1],
+    'template_num_init_string': [0, 1],
     'template_num_task_phrasing': [0, 1],
 }
 

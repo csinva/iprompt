@@ -39,7 +39,7 @@ def init_parser():
                         help='number of shots in the prompt')
     parser.add_argument('--task_name', type=str, default='add_two',
                         help='name of task')
-    parser.add_argument('--template_num_init_prefix', type=int, default=0,
+    parser.add_argument('--template_num_init_string', type=int, default=0,
                         help='the number of the manually-specified prefix to be initialize with')
     parser.add_argument('--template_num_task_phrasing', type=int, default=0,
                         help='the number of the manual template for any given task (number of options varies with task')

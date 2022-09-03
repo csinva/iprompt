@@ -135,7 +135,7 @@ def get_init_suffix(args, model, dataloader, tokenizer) -> List:
         "To get the answer,",
     ]
 
-    return addition_suffixes_manual[-1]
+    return addition_suffixes_manual[args.template_num_init_string]
 
 
 if __name__ == '__main__':
