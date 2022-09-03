@@ -9,8 +9,10 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 if len(sys.argv) > 1:
     print('running in amlt mode...')
     save_dir = './amlt_sweep4'
+    cmd_python = 'python'
 else:
     save_dir = '/home/chansingh/mntv1/amlt_sweep3'
+    cmd_python = '/usr/bin/python3'
 
 ##########################################
 # params shared across everything (higher up things are looped over first)
@@ -58,9 +60,9 @@ ks_final = ks_shared + list(sum(ks_coupled, ()))
 
 
 for i in range(len(param_combos_final)):
-    param_str = '/usr/bin/python3 ' + os.path.join(repo_dir, '01_train.py ')
+    param_str = cmd_python + ' ' + os.path.join(repo_dir, '01_train.py ')
     for j, key in enumerate(ks_final):
         param_str += '--' + key + ' ' + str(param_combos_final[i][j]) + ' '
     print(f'\n\n-------------------{i + 1}/{len(param_combos_final)}--------------------\n', param_str)
     # s.run(param_str)
-    # os.system(param_str)
+    os.system(param_str)

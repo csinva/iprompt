@@ -22,6 +22,9 @@ from transformers import (AutoModel, AutoModelForCausalLM, AutoTokenizer,
 import train_prefix, train_suffix
 import data
 import utils
+import parallel
+import torch.distributed as dist
+
 
  # initialize args
 def init_parser():
@@ -117,13 +120,13 @@ if __name__ == '__main__':
     # set seed + device
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
     utils.save_json(args=args, save_dir=save_dir, fname='params.json', r=r)
 
     # initialize training things
-    model = model.to(device)
+    model = parallel.model_to_device(model)
     dataloader = DataLoader(
         dset, batch_size=min(args.batch_size, len(dset)), shuffle=True, drop_last=True)
+    
 
     # train
     if args.prefix_or_suffix.startswith('pre'):
@@ -131,6 +134,6 @@ if __name__ == '__main__':
     elif args.prefix_or_suffix.startswith('suf'):
         with torch.no_grad():
             train_suffix.train_suffix(args, r, model, dataloader,
-                         check_answer_func, device, tokenizer, save_dir)
+                         check_answer_func, tokenizer, save_dir)
 
     utils.save(args, save_dir, r, final=True)

@@ -11,3 +11,4 @@
   - changed defaults in `01_train.py`: defaults to suffix, max_digit = 10, beam_width_suffix=4
   - `data.py` returns data + `check_answer_func`
   - moved `train` function into `__main__` and refactored into `train_prefix.py` and `train_suffix.py`
+  - gpu / parallelization may not work properly for `train_prefix.py`

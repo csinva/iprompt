@@ -1,10 +1,5 @@
-import argparse
 import logging
-import os
 import pickle as pkl
-import random
-import string
-import sys
 from collections import defaultdict
 from copy import deepcopy
 from datetime import datetime
@@ -12,18 +7,19 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import torch
 from datasets import Dataset
 from torch import nn
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from transformers import (AutoModel, AutoModelForCausalLM, AutoTokenizer,
                           pipeline, top_k_top_p_filtering)
-import train_prefix
+
 import data
+import parallel
 import utils
 
-def train_suffix(args, r, model, dataloader, check_answer_func, device, tokenizer, save_dir,
+
+def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_dir,
                  disallow_whitespace_tokens=True,
                  beam_size_for_saving=30):
     """Here we find the suffix which maximizes the likelihood over all examples.
@@ -42,7 +38,8 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, tokenize
             full_text = [text[i] + suffix_str
                          for i in range(len(text))]
             ex_inputs = tokenizer(
-                full_text, padding='longest', return_tensors='pt').to(device)
+                full_text, padding='longest', return_tensors='pt')
+            ex_inputs = parallel.inputs_to_device(ex_inputs)
 
             # go through model
             outputs = model(
@@ -71,12 +68,13 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, tokenize
         return avg_logits
 
     # set up BFS beam search
-    suffix_str = data.get_init_suffix(args, model, dataloader, tokenizer, device)
+    suffix_str = data.get_init_suffix(args, model, dataloader, tokenizer)
 
-    suffixes = [{'s': suffix_str, 'num_tokens_added': 0, 'running_prob': 1, 'num_suffixes_checked': 0}]
+    suffixes = [{'s': suffix_str, 'num_tokens_added': 0,
+                 'running_prob': 1, 'num_suffixes_checked': 0}]
     r['suffix_str_init'] = suffix_str
     r['len_suffix_str_init'] = len(suffix_str)
-    num_model_queries = 0 
+    num_model_queries = 0
     logging.info(
         f'num batches: {len(dataloader)} batch_size {args.batch_size}')
 
@@ -133,7 +131,8 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, tokenize
                     r['final_answer_full'] = suffix_new
                     r['final_answer_added'] = suffix_new[r['len_suffix_str_init']:]
                     r['final_model_queries'] = num_model_queries
-                    r['final_num_suffixes_checked'] = num_suffixes_checked + beam_num + 1
+                    r['final_num_suffixes_checked'] = num_suffixes_checked + \
+                        beam_num + 1
                     logging.info('successful early stopping!')
                     logging.info('\t' + repr(r['suffix_str_init']))
                     logging.info('\t' + repr(r['final_answer_added']))
@@ -150,7 +149,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, tokenize
                     's': suffix_new,
                     'num_tokens_added': suffix_dict['num_tokens_added'] + 1,
                     'running_prob': suffix_dict['running_prob'] * avg_probs[top_k_inds[i]],
-                    
+
                     # checked beam_width at current suffix + all suffixes before this one (assumes BFS-beam search)
                     # this is the total number of suffixes checked at the time when this will be opened above
                     'num_suffixes_checked': num_suffixes_checked + args.beam_width_suffix * (beam_num + 1)

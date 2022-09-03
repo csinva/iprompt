@@ -24,9 +24,11 @@ import data
 import utils
 
 
-def train_prefix(args, r, model, dataloader, device, save_dir, tokenizer):
+def train_prefix(args, r, model, dataloader, save_dir, tokenizer):
     """Gradient-based optimization of the prefix
     """
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
     # extract out embedding
     wte = model._modules['transformer'].wte.to(device)
 

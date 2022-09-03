@@ -1,4 +1,4 @@
-description: Sweep autoprompting
+description: Multi-gpu debugging
 environment:
   image: pytorch/pytorch:1.7.1-cuda11.0-cudnn8-devel
   setup:
@@ -11,7 +11,7 @@ target:
   service: amlk8s
   # run "amlt target list amlk8s" to list the names of available AMLK8s targets
   name: itphyperdgx2cl1
-  vc: hai3
+  vc: hai2
 
 storage:
   output:
@@ -20,7 +20,7 @@ storage:
     mount_dir: /mnt/output # dir on the local machine
 
 jobs:
-- name: sweep_suffixes
-  sku: G16
+- name: debug_11_b
+  process_count_per_node: 8
   command:
-  - python scripts/submit_sweep.py --amlt
+  - bash sleep 2h

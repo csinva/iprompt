@@ -8,6 +8,7 @@ torchvision
 scikit-learn
 tqdm
 matplotlib
+parallelformers
 
 # optional for launching jobs
 # amlt

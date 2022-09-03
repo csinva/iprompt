@@ -124,7 +124,7 @@ def get_init_prefix(model, dataloader, tokenizer, wte, device) -> List:
     return prefix_emb
 
 
-def get_init_suffix(args, model, dataloader, tokenizer, device) -> List:
+def get_init_suffix(args, model, dataloader, tokenizer) -> List:
 
     # Note: don't change the order of these (higher ones should be better)
     addition_suffixes_manual = [
