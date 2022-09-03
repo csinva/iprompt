@@ -19,14 +19,16 @@ from torch.utils.data import DataLoader
 from tqdm import tqdm
 from transformers import (AutoModel, AutoModelForCausalLM, AutoTokenizer,
                           pipeline, top_k_top_p_filtering)
-import train_prefix, train_suffix
+import train_prefix
+import train_suffix
 import data
 import utils
 import parallel
 import torch.distributed as dist
 
+# initialize args
 
- # initialize args
+
 def init_parser():
     parser = argparse.ArgumentParser()
 
@@ -42,7 +44,6 @@ def init_parser():
     parser.add_argument('--template_num_task_phrasing', type=int, default=0,
                         help='the number of the manual template for any given task (number of options varies with task')
 
-
     # algorithm args
     # gpt # "gpt2-medium" (355M), "gpt2-large" (774M), "gpt2-xl" (1.5B)
     # gpneo # "EleutherAI/gpt-neo-2.7B", "EleutherAI/gpt-j-6B", "EleutherAI/gpt-neox-20b"
@@ -56,6 +57,8 @@ def init_parser():
                         help='learning rate')
     parser.add_argument('--beam_width_suffix', type=int, default=4,
                         help='max width of beam in suffix search')
+    parser.add_argument('--single_query', type=int, default=0,
+                        help='boolean 0 or 1: use baseline model? only uses a single example to prompt rather than the entire dset')
     # parser.add_argument('--early_stopping', dest='early_stopping', default=True,
     #     help='whether to stop searching once finding correct answer - for suffix, this currently has to be true',
     #     action='store_true')
@@ -86,7 +89,6 @@ if __name__ == '__main__':
     # python3 01_train.py --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3 --max_digit 10
     # python3 01_train.py --checkpoint gpt2-mediu
 
-   
     parser = init_parser()
     args = parser.parse_args()
 
@@ -102,7 +104,8 @@ if __name__ == '__main__':
     tokenizer.pad_token = tokenizer.eos_token
     model = AutoModelForCausalLM.from_pretrained(
         checkpoint, output_hidden_states=args.prefix_or_suffix == 'prefix')
-    dset, check_answer_func = data.get_data(args, args.task_name, n_shots=args.n_shots, max_digit=args.max_digit)
+    dset, check_answer_func = data.get_data(
+        args, args.task_name, n_shots=args.n_shots, max_digit=args.max_digit)
 
     # set up saving
     r = defaultdict(list)
@@ -126,14 +129,14 @@ if __name__ == '__main__':
     model = parallel.model_to_device(model)
     dataloader = DataLoader(
         dset, batch_size=min(args.batch_size, len(dset)), shuffle=True, drop_last=True)
-    
 
     # train
     if args.prefix_or_suffix.startswith('pre'):
-        train_prefix.train_prefix(args, r, model, dataloader, device, save_dir, tokenizer)
+        train_prefix.train_prefix(
+            args, r, model, dataloader, device, save_dir, tokenizer)
     elif args.prefix_or_suffix.startswith('suf'):
         with torch.no_grad():
             train_suffix.train_suffix(args, r, model, dataloader,
-                         check_answer_func, tokenizer, save_dir)
+                                      check_answer_func, tokenizer, save_dir)
 
     utils.save(args, save_dir, r, final=True)

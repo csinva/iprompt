@@ -13,15 +13,16 @@ if len(sys.argv) > 1:
     save_dir = sys.argv[1]
     assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
-    save_dir = '/home/chansingh/mntv1/sweep_misc'
+    save_dir = '/home/chansingh/mntv1/single_query'
     cmd_python = '/usr/bin/python3'
 
 ##########################################
 # params shared across everything (higher up things are looped over first)
 ##########################################
 PARAMS_SHARED_DICT = {
+    'single_query': [1],
+    'n_shots': [1, 5, 10],
     'seed': [1],
-    'n_shots': [1],  # should vary this
     'max_digit': [10],
     'beam_width_suffix': [5],
     'prefix_or_suffix': ['suffix'],

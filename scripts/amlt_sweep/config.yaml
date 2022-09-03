@@ -23,4 +23,4 @@ jobs:
 - name: sweep_suffixes
   sku: G16
   command:
-  - python scripts/submit_sweep.py /mnt/output/sweep_midnight
+  - python scripts/submit_sweep.py /mnt/output/sweep_midnight2

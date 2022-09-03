@@ -19,53 +19,82 @@ import parallel
 import utils
 
 
+def get_avg_probs_next_token(suffix_str: str, model, dataloader, tokenizer):
+    """Get the average probs for the next token across the entire dataset
+    """
+    num_examples = 0
+    cum_logits = None
+    for idx, batch in tqdm(enumerate(dataloader), total=len(dataloader)):
+
+        # set up inputs
+        text = batch['text']
+        full_text = [text[i] + suffix_str
+                     for i in range(len(text))]
+        ex_inputs = tokenizer(
+            full_text, padding='longest', return_tensors='pt')
+        ex_inputs = parallel.inputs_to_device(ex_inputs)
+
+        # go through model
+        outputs = model(
+            input_ids=ex_inputs['input_ids'], attention_mask=ex_inputs['attention_mask'])
+        logits = outputs['logits']  # (batch_size, seq_len, vocab_size)
+        # get logits of last hidden state, sum over batch_size
+        next_token_logits = logits[:, -1,
+                                   :].sum(axis=0).log_softmax(dim=-1)
+
+        # accumulate logits
+        if cum_logits is None:
+            cum_logits = next_token_logits.detach()
+        else:
+            cum_logits += next_token_logits.detach()
+        num_examples += len(text)
+
+    # use averaged logits
+    # keep only top k tokens with highest probability
+    # keep the top tokens with cumulative probability >= top_p
+    avg_logits = cum_logits / num_examples
+    # print('shapes', logits.shape, next_token_logits.shape, cum_logits.shape)
+    avg_logits = avg_logits.detach().cpu().numpy().squeeze()
+    avg_probs = np.exp(avg_logits)  # softmax
+    avg_probs /= np.sum(avg_probs)
+
+    return avg_logits
+
+
+def get_probs_single_query_next_token(suffix_str: str, model, dataloader, tokenizer):
+    """Get the average probs for the next token across the entire dataset
+    """
+    # get a single input
+    batch = next(iter(dataloader))
+    text = batch['text']
+    full_text = [text[0] + suffix_str]
+    ex_inputs = tokenizer(
+        full_text, padding='longest', return_tensors='pt')
+    ex_inputs = parallel.inputs_to_device(ex_inputs)
+
+    # go through model
+    outputs = model(
+        input_ids=ex_inputs['input_ids'], attention_mask=ex_inputs['attention_mask'])
+    logits = outputs['logits']  # (batch_size, seq_len, vocab_size)
+    next_token_logits = (
+        logits[:, -1, :]
+        .sum(axis=0)  # sum over batch_size
+        .log_softmax(dim=-1)
+        .detach()
+        .cpu()
+        .numpy()
+        .squeeze()
+    )
+
+    return next_token_logits
+
+
 def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_dir,
                  disallow_whitespace_tokens=True,
                  beam_size_for_saving=30):
     """Here we find the suffix which maximizes the likelihood over all examples.
     The algorithm is basically to do breadth-first beam-search on the next-token prob distr. averaged over all examples
     """
-
-    def get_avg_probs_next_token(suffix_str: str, model, dataloader, tokenizer):
-        """Get the average probs for the next token across the entire dataset
-        """
-        num_examples = 0
-        cum_logits = None
-        for idx, batch in tqdm(enumerate(dataloader), total=len(dataloader)):
-
-            # set up inputs
-            text = batch['text']
-            full_text = [text[i] + suffix_str
-                         for i in range(len(text))]
-            ex_inputs = tokenizer(
-                full_text, padding='longest', return_tensors='pt')
-            ex_inputs = parallel.inputs_to_device(ex_inputs)
-
-            # go through model
-            outputs = model(
-                input_ids=ex_inputs['input_ids'], attention_mask=ex_inputs['attention_mask'])
-            logits = outputs['logits']  # (batch_size, seq_len, vocab_size)
-            # get logits of last hidden state, sum over batch_size
-            next_token_logits = logits[:, -1,
-                                       :].sum(axis=0).log_softmax(dim=-1)
-
-            # accumulate logits
-            if cum_logits is None:
-                cum_logits = next_token_logits.detach()
-            else:
-                cum_logits += next_token_logits.detach()
-            num_examples += len(text)
-
-        # use averaged logits
-        # keep only top k tokens with highest probability
-        # keep the top tokens with cumulative probability >= top_p
-        avg_logits = cum_logits / num_examples
-        # print('shapes', logits.shape, next_token_logits.shape, cum_logits.shape)
-        avg_logits = avg_logits.detach().cpu().numpy().squeeze()
-        avg_probs = np.exp(avg_logits)  # softmax
-        avg_probs /= np.sum(avg_probs)
-
-        return avg_logits
 
     # set up BFS beam search
     suffix_str = data.get_init_suffix(args, model, dataloader, tokenizer)
@@ -84,8 +113,11 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
         num_suffixes_checked = suffix_dict['num_suffixes_checked']
 
         # get avg_probs
-        avg_probs = get_avg_probs_next_token(
-            suffix_str, model, dataloader, tokenizer)
+        if args.single_query:
+            avg_probs = get_probs_single_query_next_token(suffix_str, model, dataloader, tokenizer)
+        else:
+            avg_probs = get_avg_probs_next_token(
+                suffix_str, model, dataloader, tokenizer)
         num_model_queries += 1
 
         # could also check out top_k_top_p_filtering
