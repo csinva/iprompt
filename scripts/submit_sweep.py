@@ -10,7 +10,7 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 if len(sys.argv) > 1:
     print('running in amlt mode...')
     cmd_python = 'python'
-    save_dir = sys.argv[1]
+    save_dir = '/mnt/output/sweep_morning1' # sys.argv[1]
     assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
     save_dir = '/home/chansingh/mntv1/sweep_misc'
@@ -20,13 +20,18 @@ else:
 # params shared across everything (higher up things are looped over first)
 ##########################################
 PARAMS_SHARED_DICT = {
-    'seed': [1],
-    'n_shots': [1],  # should vary this
+    # things to vary
+    'n_shots': [1],
+    'task': ['add_two', 'multiply_two', 'divide_two', 'subtract_two', 'max_two'],
+
+    # fixed params
     'max_digit': [10],
     'beam_width_suffix': [5],
     'prefix_or_suffix': ['suffix'],
     'save_dir': [save_dir],
-    'task': ['add_two', 'multiply_two', 'divide_two', 'subtract_two', 'max_two'],
+
+    # things to average over
+    'seed': [1],
     'template_num_init_string': [0, 1],
     'template_num_task_phrasing': [0, 1],
 }

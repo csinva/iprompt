@@ -5,13 +5,14 @@ environment:
     - pip install -r requirements.txt --user
 
 code:
-  local_dir: $CONFIG_DIR/../..
+  local_dir: $CONFIG_DIR/..
 
+# use amlt ti to view these
 target:
   service: amlk8s
-  # run "amlt target list amlk8s" to list the names of available AMLK8s targets
   name: itphyperdgx2cl1
-  vc: hai3
+  # vc: hai3
+  vc: hai2
 
 storage:
   output:
@@ -23,4 +24,4 @@ jobs:
 - name: sweep_suffixes
   sku: G16
   command:
-  - python scripts/submit_sweep.py /mnt/output/sweep_midnight3
+  - python scripts/submit_sweep.py --mnt

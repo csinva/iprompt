@@ -22,12 +22,16 @@ else:
 PARAMS_SHARED_DICT = {
     'single_query': [1],
     'n_shots': [1, 5, 10],
-    'seed': [1],
+    'task': ['add_two', 'multiply_two', 'divide_two', 'subtract_two', 'max_two'],
+
+    # fixed params
     'max_digit': [10],
     'beam_width_suffix': [5],
     'prefix_or_suffix': ['suffix'],
     'save_dir': [save_dir],
-    'task': ['add_two', 'multiply_two', 'divide_two', 'subtract_two', 'max_two'],
+    
+    # things to average over
+    'seed': [1],
     'template_num_init_string': [0, 1],
     'template_num_task_phrasing': [0, 1],
 }

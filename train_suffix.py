@@ -91,7 +91,7 @@ def get_probs_single_query_next_token(suffix_str: str, model, dataloader, tokeni
 
 def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_dir,
                  disallow_whitespace_tokens=True,
-                 beam_size_for_saving=30):
+                 beam_size_for_saving=15):
     """Here we find the suffix which maximizes the likelihood over all examples.
     The algorithm is basically to do breadth-first beam-search on the next-token prob distr. averaged over all examples
     """
