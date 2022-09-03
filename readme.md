@@ -5,3 +5,9 @@
   - *suffix* is much simpler (and doesn't require any model gradients)
 - `scripts` is a folder for running sweeps over experiments
 - `data.py` holds the code for generating datasets (currently synthetic but soon to extend beyond)
+
+# recent changes
+- 09/02
+  - changed defaults in `01_train.py`: defaults to suffix, max_digit = 10, beam_width_suffix=4
+  - `data.py` returns data + `check_answer_func`
+  - moved `train` function into `__main__`

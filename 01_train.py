@@ -88,7 +88,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, tokenize
                  disallow_whitespace_tokens=True,
                  beam_size_for_saving=30):
     """Here we find the suffix which maximizes the likelihood over all examples.
-    The algorithm is basically to do depth-first beam-search on the next-token prob distr. averaged over all examples
+    The algorithm is basically to do breadth-first beam-search on the next-token prob distr. averaged over all examples
     """
 
     def get_avg_probs_next_token(suffix_str: str, model, dataloader, tokenizer):
@@ -131,20 +131,21 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, tokenize
 
         return avg_logits
 
-    # set up DFS beam search
+    # set up BFS beam search
     suffix_str = data.get_init_suffix(
         model, dataloader, tokenizer, device)
 
-    suffixes = [{'s': suffix_str, 'num_tokens_added': 0, 'running_prob': 1}]
+    suffixes = [{'s': suffix_str, 'num_tokens_added': 0, 'running_prob': 1, 'num_suffixes_checked': 0}]
     r['suffix_str_init'] = suffix_str
     r['len_suffix_str_init'] = len(suffix_str)
-    num_model_queries = 0
+    num_model_queries = 0 
     logging.info(
         f'num batches: {len(dataloader)} batch_size {args.batch_size}')
 
     while len(suffixes) > 0:
         suffix_dict = suffixes.pop()
         suffix_str = suffix_dict['s']
+        num_suffixes_checked = suffix_dict['num_suffixes_checked'] + 1
 
         # get avg_probs
         avg_probs = get_avg_probs_next_token(
@@ -193,6 +194,8 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, tokenize
                 if check_answer_func(suffix_new):  # and args.early_stopping
                     r['final_answer_full'] = suffix_new
                     r['final_answer_added'] = suffix_new[r['len_suffix_str_init']:]
+                    r['final_model_queries'] = num_model_queries
+                    r['final_num_suffixes_checked'] = num_suffixes_checked
                     logging.info('successful early stopping!')
                     logging.info('\t' + repr(r['suffix_str_init']))
                     logging.info('\t' + repr(r['final_answer_added']))
@@ -209,6 +212,10 @@ def train_suffix(args, r, model, dataloader, check_answer_func, device, tokenize
                     's': suffix_new,
                     'num_tokens_added': suffix_dict['num_tokens_added'] + 1,
                     'running_prob': suffix_dict['running_prob'] * avg_probs[top_k_inds[i]],
+                    
+                    # checked beam_width at current suffix + all suffixes before this one (assumes BFS-beam search)
+                    # this is the total number of suffixes checked at the time when this will be opened above
+                    'num_suffixes_checked': num_suffixes_checked + args.beam_width_suffix * (beam_num + 1)
                 })
 
 
