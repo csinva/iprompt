@@ -141,6 +141,11 @@ TASKS_ONE_NUM = {
         'check_answer_func': re.compile(r'fib').search,
         'gen_func': lambda x: data_utils.fib(x)
     },
+    'square_one': {
+        'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
+        'check_answer_func': re.compile(r'square|(mult.*self)|(prod.*self)').search,
+        'gen_func': lambda x: x * x
+    }
 }
 
 TASKS = {**TASKS_TWO_NUMS, **TASKS_ONE_NUM}
@@ -161,10 +166,10 @@ def get_init_suffix(args) -> List:
         ]
     elif args.task_name in TASKS_ONE_NUM.keys():
         init_suffixes = [
-            "The function mapping the input to the output is"
+            "To compute the answer from the input number,",
+            "The function mapping the input to the output is",
             "To find the output, take the number in the question and use the",
             # "To get the answer, take the number in the question and",
-            "To compute the answer from the input",
             "To calculate the answer, take the input and",
             "The relationship between the number in the question and the answer is:",
             "To get the answer,",

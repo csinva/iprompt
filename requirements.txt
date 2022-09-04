@@ -13,3 +13,7 @@ parallelformers
 
 # optional for launching jobs
 # amlt
+
+# optional for analysis
+# jupyterlab
+# seaborn

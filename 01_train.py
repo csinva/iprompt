@@ -69,12 +69,14 @@ def init_parser():
                         help='boolean 0 or 1: whether to force everything onto cpu') 
     parser.add_argument('--use_parallelformers', type=int, default=1,
                         help='boolean 0 or 1: whether to try and use parallelformers')
+    parser.add_argument('--use_cache', type=int, default=1,
+                        help='boolean 0 or 1: whether to check for cache')
 
 
     # logging/saving args
     parser.add_argument('--use_verbose_saving', type=int, default=0,
                         help='boolean 0 or 1: whether to save verbose things')
-    parser.add_argument('--save_dir', type=str, default='../results',
+    parser.add_argument('--save_dir', type=str, default='results',
                         help='directory for saving')
     parser.add_argument('--epoch_save_interval', type=int, default=1,
                         help='interval to save results')
@@ -107,7 +109,7 @@ if __name__ == '__main__':
     logging.info('saving to ' + save_dir)
 
     # check for cached run with these same args
-    if utils.check_cached(save_dir_unique_hash, args, parser, args.save_dir):
+    if args.use_cache and utils.check_cached(save_dir_unique_hash, args, parser, args.save_dir):
         logging.info('cached version exists!\nsuccessfully exiting :)')
         exit(0)
 
