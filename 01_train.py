@@ -114,34 +114,34 @@ if __name__ == '__main__':
         logging.info('cached version exists!\nsuccessfully exiting :)')
         exit(0)
 
-    # load model and data
-    logger.info('loading model and data...')
+    # set seed
+    np.random.seed(args.seed)
+    torch.manual_seed(args.seed)
+
+    # load data
+    logger.info('loading data...')
+    dset, check_answer_func = data.get_data(
+        args, args.task_name, n_shots=args.n_shots, max_digit=args.max_digit)
+    dataloader = DataLoader(
+        dset, batch_size=min(args.batch_size, len(dset)), shuffle=True, drop_last=True)
+    logging.info(f'num_examples: {dset.shape[0]}, num batches: {len(dataloader)}')
+
+    # load model
+    logger.info('loading model...')
     checkpoint = args.checkpoint
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     tokenizer.pad_token = tokenizer.eos_token
     model = AutoModelForCausalLM.from_pretrained(
         checkpoint, output_hidden_states=args.prefix_or_suffix == 'prefix')
-    dset, check_answer_func = data.get_data(
-        args, args.task_name, n_shots=args.n_shots, max_digit=args.max_digit)
+    model = parallel.model_to_device(args, model)
 
     # set up saving
     r = defaultdict(list)
-    r.update(vars(args))
+    r.update(vars(args))    
+    utils.save_json(args=args, save_dir=save_dir, fname='params.json', r=r)
 
     # train
     logger.info('beginning training...')
-
-    # set seed + device
-    np.random.seed(args.seed)
-    torch.manual_seed(args.seed)
-    utils.save_json(args=args, save_dir=save_dir, fname='params.json', r=r)
-
-    # initialize training things
-    model = parallel.model_to_device(args, model)
-    dataloader = DataLoader(
-        dset, batch_size=min(args.batch_size, len(dset)), shuffle=True, drop_last=True)
-
-    # train
     if args.prefix_or_suffix.startswith('pre'):
         train_prefix.train_prefix(
             args, r, model, dataloader, save_dir, tokenizer)

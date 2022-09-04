@@ -133,7 +133,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
             [tokenizer.decode(ind) for ind in top_k_inds])
         logging.info(str(num_model_queries) + ' ' + repr(suffix_str))
         for i in range(top_k_inds.size):
-            logging.info(
+            logging.debug(
                 '\t ' + repr(top_decoded_tokens[i]) + '\t' + f'{avg_probs[top_k_inds[i]]:.2E}')
 
         if disallow_whitespace_tokens:
@@ -159,7 +159,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
 
         # check each beam
         if suffix_dict['num_tokens_added'] < args.max_num_tokens:
-            # take this max just in case all tokens were somehow whitespace
+            # take this min just in case all tokens were somehow whitespace
             for beam_num in range(min(args.beam_width_suffix, top_k_inds.size)):
                 suffix_new = suffix_str + top_decoded_tokens[beam_num]
                 if check_answer_func(suffix_new):  # and args.early_stopping
