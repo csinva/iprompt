@@ -98,7 +98,6 @@ def check_cached(save_dir_unique_hash, args, parser, save_dir) -> bool:
             pass
     return False
 
-
 def get_unique_dir_hash(parser, args) -> str:
     args = vars(args)
     defaults = vars(parser.parse_args([]))

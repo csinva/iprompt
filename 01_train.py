@@ -1,4 +1,5 @@
 import argparse
+from copy import deepcopy
 import logging
 import os
 import pickle as pkl
@@ -20,12 +21,10 @@ import train_suffix
 import utils
 
 # initialize args
-def init_parser():
+def add_main_args(parser):
     """Note: caching uses the non-default values from parser to name the saving directory.
     Changing the default arg an argument will break compatibility with previous cached runs.
     """
-    parser = argparse.ArgumentParser()
-
     # dataset args
     parser.add_argument('--task_name', type=str, default='add_two',
                         help='name of task')
@@ -65,36 +64,38 @@ def init_parser():
                         help='random seed')
     parser.add_argument('--n_epochs_prefix', type=int, default=10000,
                         help='number of epochs for training')
+    parser.add_argument('--save_dir', type=str, default='results',
+                        help='directory for saving')
+    return parser
+
+def add_computational_args(parser):
+    """Arguments that only affect computation and not the results (shouldnt use when checking cache)
+    """
     parser.add_argument('--use_cpu_only', type=int, default=0,
                         help='boolean 0 or 1: whether to force everything onto cpu') 
     parser.add_argument('--use_parallelformers', type=int, default=1,
                         help='boolean 0 or 1: whether to try and use parallelformers')
     parser.add_argument('--use_cache', type=int, default=1,
                         help='boolean 0 or 1: whether to check for cache')
-
-
-    # logging/saving args
     parser.add_argument('--use_verbose_saving', type=int, default=0,
                         help='boolean 0 or 1: whether to save verbose things')
-    parser.add_argument('--save_dir', type=str, default='results',
-                        help='directory for saving')
     parser.add_argument('--epoch_save_interval', type=int, default=1,
                         help='interval to save results')
-
     return parser
 
 
 if __name__ == '__main__':
-    # python3 01_train.py --batch_size 200 --checkpoint EleutherAI/gpt-neo-2.7B
-    # python3 01_train.py --batch_size 1 --checkpoint EleutherAI/gpt-neox-20b
-    # python3 01_train.py --batch_size 50 --checkpoint EleutherAI/gpt-j-6B
-    # python3 01_train.py --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3
-    # python3 01_train.py --batch_size 100 --checkpoint EleutherAI/gpt-neo-2.7B --n_shots 3
-    # python3 01_train.py --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3 --max_digit 10
-    # python3 01_train.py --save_dir /home/chansingh/mntv1/test2
+    # python 01_train.py --batch_size 200 --checkpoint EleutherAI/gpt-neo-2.7B
+    # python 01_train.py --batch_size 1 --checkpoint EleutherAI/gpt-neox-20b
+    # python 01_train.py --batch_size 50 --checkpoint EleutherAI/gpt-j-6B
+    # python 01_train.py --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3
+    # python 01_train.py --batch_size 100 --checkpoint EleutherAI/gpt-neo-2.7B --n_shots 3
+    # python 01_train.py --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3 --max_digit 10
+    # python 01_train.py --save_dir /home/chansingh/mntv1/test2
 
-
-    parser = init_parser()
+    parser = argparse.ArgumentParser()
+    parser = add_main_args(parser)
+    parser = add_computational_args(parser)
     args = parser.parse_args()
 
     # set up logging
