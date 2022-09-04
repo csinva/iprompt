@@ -1,6 +1,7 @@
 datasets
 numpy
 pandas
+dict_hash
 scipy
 transformers[torch]
 torch
@@ -12,16 +13,3 @@ parallelformers
 
 # optional for launching jobs
 # amlt
-
-
-# optional for prefix_tuning
-# dataclasses
-
-# for dart
-# statistics
-# wandb
-# tensorboard
-
-# for robust prefix-tuning repo
-# pytorch-transformers
-# gputil

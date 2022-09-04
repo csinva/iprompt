@@ -6,6 +6,9 @@
 - `scripts` is a folder for running sweeps over experiments
 - `data.py` holds the code for generating datasets (currently synthetic but soon to extend beyond)
 
+# testing
+- to check if the pipeline seems to work, run `python3 01_train.py` and see if it successfully completes
+
 # recent changes
 - 09/03
   - note: args that start with `use_` are boolean

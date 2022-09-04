@@ -4,20 +4,12 @@ import os
 import pickle as pkl
 import random
 import string
-import sys
 from collections import defaultdict
-from copy import deepcopy
 from datetime import datetime
 
-import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 import torch
-import torch.distributed as dist
-from datasets import Dataset
-from torch import nn
 from torch.utils.data import DataLoader
-from tqdm import tqdm
 from transformers import (AutoModel, AutoModelForCausalLM, AutoTokenizer,
                           pipeline, top_k_top_p_filtering)
 
@@ -28,9 +20,10 @@ import train_suffix
 import utils
 
 # initialize args
-
-
 def init_parser():
+    """Note: caching uses the non-default values from parser to name the saving directory.
+    Changing the default arg an argument will break compatibility with previous cached runs.
+    """
     parser = argparse.ArgumentParser()
 
     # dataset args
@@ -93,7 +86,8 @@ if __name__ == '__main__':
     # python3 01_train.py --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3
     # python3 01_train.py --batch_size 100 --checkpoint EleutherAI/gpt-neo-2.7B --n_shots 3
     # python3 01_train.py --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3 --max_digit 10
-    # python3 01_train.py --checkpoint gpt2-mediu
+    # python3 01_train.py --save_dir /home/chansingh/mntv1/test2
+
 
     parser = init_parser()
     args = parser.parse_args()
@@ -102,6 +96,17 @@ if __name__ == '__main__':
     logger = logging.getLogger()
     logging.basicConfig(level=logging.INFO)
     logger.info(str(vars(args)))
+
+    # set up saving dirctory before seeding
+    save_dir_unique_hash = utils.get_unique_dir_hash(parser, args)
+    save_dir_random_suffix = ''.join(random.choices(string.ascii_lowercase, k=4))
+    save_dir = os.path.join(args.save_dir, save_dir_unique_hash + save_dir_random_suffix)
+    logging.info('saving to ' + save_dir)
+
+    # check for cached run with these same args
+    if utils.check_cached(save_dir_unique_hash, args, parser, args.save_dir):
+        logging.info('cached version exists!\nsuccessfully exiting :)')
+        exit(0)
 
     # load model and data
     logger.info('loading model and data...')
@@ -119,12 +124,6 @@ if __name__ == '__main__':
 
     # train
     logger.info('beginning training...')
-
-    # set up saving before seeding
-    save_dir_unique = datetime.now().strftime("%b_%d_%H_%M_") + \
-        ''.join(random.choices(string.ascii_lowercase, k=12))
-    save_dir = os.path.join(args.save_dir, save_dir_unique)
-    logging.info('saving to ' + save_dir)
 
     # set seed + device
     np.random.seed(args.seed)
