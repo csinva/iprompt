@@ -160,7 +160,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
         # check each beam
         if suffix_dict['num_tokens_added'] < args.max_num_tokens:
             # take this max just in case all tokens were somehow whitespace
-            for beam_num in range(max(args.beam_width_suffix, top_k_inds.size)):
+            for beam_num in range(min(args.beam_width_suffix, top_k_inds.size)):
                 suffix_new = suffix_str + top_decoded_tokens[beam_num]
                 if check_answer_func(suffix_new):  # and args.early_stopping
                     r['final_answer_full'] = suffix_new

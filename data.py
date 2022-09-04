@@ -166,8 +166,8 @@ def get_init_suffix(args) -> List:
         ]
     elif args.task_name in TASKS_ONE_NUM.keys():
         init_suffixes = [
-            "To compute the answer from the input number,",
             "The function mapping the input to the output is",
+            # "To compute the answer from the input number,",
             "To find the output, take the number in the question and use the",
             # "To get the answer, take the number in the question and",
             "To calculate the answer, take the input and",
