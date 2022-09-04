@@ -92,6 +92,7 @@ def check_cached(save_dir_unique_hash, args, parser, save_dir) -> bool:
                         if not d[k] == non_default_args[k]:
                             perfect_match = False
                     if perfect_match:
+                        logging.info('match found at ' + results_final_file)
                         return True
         except:
             pass

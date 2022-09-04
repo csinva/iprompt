@@ -17,12 +17,21 @@ from datasets import Dataset
 from torch import nn
 from torch.utils.data import DataLoader
 from tqdm import tqdm
+from typing import List
 from transformers import (AutoModel, AutoModelForCausalLM, AutoTokenizer,
                           pipeline, top_k_top_p_filtering)
 
 import data
 import utils
 
+def get_init_prefix(model, dataloader, tokenizer, wte, device) -> List:
+    """
+    """
+    prefix_str = ["x the following two numbers: "]
+    prefix_inputs = tokenizer(prefix_str, return_tensors="pt").to(device)
+    prefix_emb = wte.forward(prefix_inputs['input_ids'])
+    prefix_emb = torch.nn.Parameter(prefix_emb).to(device)
+    return prefix_emb
 
 def train_prefix(args, r, model, dataloader, save_dir, tokenizer):
     """Gradient-based optimization of the prefix
@@ -33,7 +42,7 @@ def train_prefix(args, r, model, dataloader, save_dir, tokenizer):
     wte = model._modules['transformer'].wte.to(device)
 
     # get embedding of a chosen prefix string as nn.Parameter
-    prefix_emb = data.get_init_prefix(
+    prefix_emb = get_init_prefix(
         model, dataloader, tokenizer, wte, device)
 
     # optimizer

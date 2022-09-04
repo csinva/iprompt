@@ -27,12 +27,13 @@ def init_parser():
     parser = argparse.ArgumentParser()
 
     # dataset args
-    parser.add_argument('--max_digit', type=int, default=10,
-                        help='maximum value of each digit in summand')
-    parser.add_argument('--n_shots', type=int, default=1,
-                        help='number of shots in the prompt')
     parser.add_argument('--task_name', type=str, default='add_two',
                         help='name of task')
+    parser.add_argument('--n_shots', type=int, default=1,
+                        help='number of shots in the prompt')
+    parser.add_argument('--max_dset_size', type=int, default=10000, help='maximum allowable dataset size') 
+    parser.add_argument('--max_digit', type=int, default=10,
+                        help='maximum value of each digit in summand')                        
     parser.add_argument('--template_num_init_string', type=int, default=0,
                         help='the number of the manually-specified prefix to be initialize with')
     parser.add_argument('--template_num_task_phrasing', type=int, default=0,
@@ -71,6 +72,8 @@ def init_parser():
 
 
     # logging/saving args
+    parser.add_argument('--use_verbose_saving', type=int, default=0,
+                        help='boolean 0 or 1: whether to save verbose things')
     parser.add_argument('--save_dir', type=str, default='../results',
                         help='directory for saving')
     parser.add_argument('--epoch_save_interval', type=int, default=1,

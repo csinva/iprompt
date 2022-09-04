@@ -97,7 +97,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
     """
 
     # set up BFS beam search
-    suffix_str = data.get_init_suffix(args, model, dataloader, tokenizer)
+    suffix_str = data.get_init_suffix(args)
 
     suffixes = [{'s': suffix_str, 'num_tokens_added': 0,
                  'running_prob': 1, 'num_suffixes_checked': 0}]
@@ -133,7 +133,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
             [tokenizer.decode(ind) for ind in top_k_inds])
         logging.info(str(num_model_queries) + ' ' + repr(suffix_str))
         for i in range(top_k_inds.size):
-            logging.debug(
+            logging.info(
                 '\t ' + repr(top_decoded_tokens[i]) + '\t' + f'{avg_probs[top_k_inds[i]]:.2E}')
 
         if disallow_whitespace_tokens:
@@ -143,17 +143,18 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
             top_decoded_tokens = top_decoded_tokens[~disallowed_idxs]
 
         # save results for suffix_str
-        r['suffix_str_full'].append(suffix_str)
         r['suffix_str_added'].append(suffix_str[r['len_suffix_str_init']:])
         # if we made it here, we did not find the answer
-        r['correct'].append(False)
         r['num_model_queries'].append(num_model_queries)
-        r['decoded_token'].append(top_decoded_tokens[0])
         r['running_prob'].append(suffix_dict['running_prob'])
-        r['top_decoded_tokens_dict'].append({
-            top_decoded_tokens[i]: avg_probs[top_k_inds[i]]
-            for i in range(top_k_inds.shape[0])
-        })
+        if args.use_verbose_saving:
+            r['correct'].append(False)
+            r['suffix_str_full'].append(suffix_str)
+            r['decoded_token'].append(top_decoded_tokens[0])
+            r['top_decoded_tokens_dict'].append({
+                top_decoded_tokens[i]: avg_probs[top_k_inds[i]]
+                for i in range(top_k_inds.shape[0])
+            })
         utils.save(args, save_dir, r, epoch=None, final=True)
 
         # check each beam
