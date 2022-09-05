@@ -126,7 +126,7 @@ if __name__ == '__main__':
 
     # load data
     logger.info('loading data...')
-    dset, check_answer_func = data.get_data(
+    dset, check_answer_func, descr = data.get_data(
         args, args.task_name, n_shots=args.n_shots)
     dataloader = DataLoader(
         dset, batch_size=min(args.batch_size, len(dset)), shuffle=True, drop_last=True)

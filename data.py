@@ -16,7 +16,13 @@ from data_utils.nli import TASKS_NLI
 TASKS = {**TASKS_TWO_NUMS, **TASKS_ONE_NUM, **TASKS_NLI}
 
 def get_data(args, task_name: str = 'add_two', n_shots: int = 1):
-
+    """Return
+    dset: huggingface dataset
+    check_answer_func: func
+        returns boolean when a string semantically matches the description of a task
+    description: str
+        string brief description of the task
+    """
     d = defaultdict(list)
     rng = np.random.default_rng(12345)
     task = TASKS[task_name]
@@ -84,7 +90,7 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1):
         print(type(check_answer_func))
         check_answer_func_re = re.compile(check_answer_func, re.IGNORECASE).search
         check_answer_func = lambda x: bool(check_answer_func_re(x))
-    return dset, check_answer_func
+    return dset, check_answer_func, task['description']
 
 
 """Note: questions should end with 2 newlines, so can directly start suffix.
@@ -101,13 +107,13 @@ def get_init_suffix(args) -> List:
 
 
 if __name__ == '__main__':
-    print('################Lots of available dsets############')
+    print('\n################Lots of available dsets############\n')
     for task_key in TASKS:
         if not task_key == 'SUFFIXES':
-            print(task_key, '->', TASKS[task_key]['description']) #, TASKS[task_key]['description'])
+            print(task_key, '->', TASKS[task_key]['description'] + '\n') #, TASKS[task_key]['description'])
 
 
-    print('\n################Lets look at some examples############\n')
+    print('\n\n################Lets look at some examples############\n')
     class fake_args:
         template_num_task_phrasing = 0
         max_dset_size = 1000
@@ -115,46 +121,46 @@ if __name__ == '__main__':
     task_name = 'multiply_two'
 
     args = fake_args()
-    dset, check_answer_func = get_data(
+    dset, check_answer_func, descr = get_data(
         args, task_name=task_name, n_shots=1)
     print('Example 1-shot (max_digit=10)', repr(dset[0]['text']))
     print('\tlen', len(dset))
 
-    dset, check_answer_func = get_data(
+    dset, check_answer_func, descr = get_data(
         args, task_name=task_name, n_shots=3)
     print('Example 3-shot (max_digit=10)', repr(dset[0]['text']))
     print('\tlen', len(dset))
 
     args.max_digit = 100
-    dset, check_answer_func = get_data(
+    dset, check_answer_func, descr = get_data(
         args, task_name=task_name, n_shots=1)
     print('Example 1-shot (max_digit=100)', repr(dset[0]['text']))
     print('\tlen', len(dset))
 
-    dset, check_answer_func = get_data(
+    dset, check_answer_func, descr = get_data(
         args, task_name='fibonacci_one', n_shots=1)
     print('Example fibonacci_one 1-shot (max_digit=10)',
           repr(dset[0]['text']))
     print('\tlen', len(dset))
 
-    print('\n################Lets look at an NLI dataset############\n')
+    print('\n\n################Lets look at an NLI dataset############\n')
     task_name = 'task1147_country_currency'
-    dset, check_answer_func = get_data(
+    dset, check_answer_func, descr = get_data(
         args, task_name=task_name, n_shots=1)
     print(f'Example {task_name} 1-shot',
           repr(dset[0]['text']))
     print('\tlen', len(dset))
 
-    dset, check_answer_func = get_data(
+    dset, check_answer_func, descr = get_data(
         args, task_name=task_name, n_shots=3)
     print(f'Example {task_name} 3-shot',
           repr(dset[0]['text']))
     print('\tlen', len(dset))
 
-    print('\n################Lets look at how answers are checked############\n')
+    print('\n\n################Lets look at how answers are checked############\n')
     task_name = 'add_two'
     task = TASKS[task_name]
-    _, check_answer_func = get_data(args, task_name=task_name)
+    _, check_answer_func, descr = get_data(args, task_name=task_name)
     print('checking func', check_answer_func, 'for', task_name)
     for s in ['add', 'take the nums and add', 'test', ' sum', 'Add']:
         print(repr(s), check_answer_func(s))

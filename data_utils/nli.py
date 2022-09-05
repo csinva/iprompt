@@ -7,8 +7,8 @@ from os.path import join as oj
 
 NLI_PROCESSED_DIR = oj(dirname(os.path.abspath(__file__)), 'nli_processed')
 DESCRIPTIONS_DICT = json.load(open(
-    oj(NLI_PROCESSED_DIR, 'task_defs_brief.json'), 'r'))
-    # oj(NLI_PROCESSED_DIR, 'task_defs.json'), 'r'))
+    # oj(NLI_PROCESSED_DIR, 'task_defs_brief.json'), 'r'))
+    oj(NLI_PROCESSED_DIR, 'task_defs.json'), 'r'))
 
 def fetch_data(task_name_nli):
     return pd.read_csv(oj(NLI_PROCESSED_DIR, task_name_nli + '.csv'))
