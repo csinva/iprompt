@@ -95,6 +95,8 @@ def get_init_suffix(args) -> List:
        init_suffixes = TASKS_TWO_NUMS['SUFFIXES']
     elif args.task_name in TASKS_ONE_NUM.keys():
         init_suffixes = TASKS_ONE_NUM['SUFFIXES']
+    elif args.task_name in TASKS_NLI.keys():
+        init_suffixes = TASKS_NLI['SUFFIXES'] 
     return init_suffixes[args.template_num_init_string]
 
 
