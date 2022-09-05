@@ -1,5 +1,8 @@
 {
     "task1146_country_capital": "In this task, you are given a country name and you need to return the capital city of the given country",
     "task1147_country_currency": "You are given a country name and you need to return the currency of the given country.",
-    "task1149_item_check_edible": "In this task, you are given an item and you need to check whether it is edible or not, return 1 if it is edible, else return 2."
+    "task1149_item_check_edible": "In this task, you are given an item and you need to check whether it is edible or not, return 1 if it is edible, else return 2.",
+    "task429_senteval_tense": "In this task you are given a sentence. You must judge whether the main verb of the sentence is in present or past tense. Label the instances as \"Present\" or \"Past\" based on your judgment. If there is no verb in the given text, answer \"Present\".",
+    "task430_senteval_subject_count": "In this task you are given a sentence. You must judge whether subject of the main clause is singular or plural. Label the instances as \"Singular\" or \"Plural\" based on your judgment.",
+    "task609_sbic_potentially_offense_binary_classification": "In this task, you are given a text from a social media post. Your task is to classify the given post into two categories: 1) yes if the given post is potentially offensive to anyone (i.e., a subset of people, any particular person, etc.), 2) no, otherwise. Note that potentially offensive posts can contain sexual, racial, religious biased or offensive language. Warning: the examples and instances may contain offensive language."
 }
