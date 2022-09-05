@@ -1,9 +1,12 @@
+from typing import Dict, List
+import datasets
 import os
 import random
 import string
 import numpy as np
 import torch
 from torch import nn
+import transformers
 import matplotlib.pyplot as plt
 import argparse
 from transformers import pipeline
@@ -12,6 +15,9 @@ from copy import deepcopy
 import pandas as pd
 from tqdm import tqdm
 from collections import defaultdict
+from model_utils.prefix import (
+    PrefixTunedModel, PromptTunedModel, HotFlipPrefixTunedModel, GumbelPrefixTunedModel
+)
 import pandas as pd
 from datasets import Dataset
 import data
@@ -21,7 +27,18 @@ from torch.utils.data import DataLoader
 from datetime import datetime
 
 
-def train(args, r, dset, model, tokenizer, gamma: float):
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+
+
+def train(
+        args: argparse.Namespace,
+        r: Dict[str, List],
+        dset: datasets.Dataset,
+        model: PrefixTunedModel,
+        tokenizer: transformers.AutoTokenizer,
+        gamma: float
+    ):
     """
     Params
     ------
@@ -32,63 +49,25 @@ def train(args, r, dset, model, tokenizer, gamma: float):
     assert gamma == 0.0, "lm loss not implemented"
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
-    device = 'cuda'
 
     model.train() 
 
     model = model.to(device)
-    trans = model._modules['transformer']
-    wte = trans.wte.to(device)
-    dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=False, drop_last=False)
-
-    TOP_K = 20
-
-    # track token-to-word mapping 
-    rvocab = {v:k for k,v in tokenizer.vocab.items()}
+    dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=True, drop_last=False)
 
     # set up saving
     save_dir_unique = datetime.now().strftime("%b_%d_%H_%M_") + ''.join(random.choices(string.ascii_lowercase, k=12))
     save_dir = os.path.join(args.save_dir, save_dir_unique)
     logging.info('saving to ' + save_dir)
 
-    emb_dim = wte.weight.shape[1] # 768 or 2560 for some larger models
-
-    # initialize prefix
-    # prefix_str = [" interns"]
-    # prefix_str = ['ャ']
-    prefix_str = 'Add'
-    prefix_inputs = tokenizer([prefix_str], return_tensors="pt").to(device)
-    prefix_emb = wte.forward(prefix_inputs['input_ids'])
-
-    assert prefix_emb.shape == (1, 1, emb_dim)
-
-
-    VERBOSE = False
-    #####################################################################
-    N_TOKENS = 25
-    trainable_prefix_emb = torch.nn.Parameter(wte.weight.mean(dim=0, keepdim=True)[None].repeat(1, N_TOKENS, 1), requires_grad=True).to(device)
-    # trainable_prefix_emb = torch.nn.Parameter(torch.randu((1, 1, emb_dim)), requires_grad=True).to(device)
-    # trainable_prefix_emb = torch.nn.Parameter(prefix_emb[:, 0, :], requires_grad=True).to(device)
-    # breakpoint()
-    #####################################################################
-
-    # this code assumes that 'x' is the first token
-
     # optimizer
-    optim = torch.optim.Adam([trainable_prefix_emb], lr=args.lr)
+    optim = torch.optim.Adam([word_weights], lr=args.lr)
+    word_weights = word_weights.to(device)
+    # optim = torch.optim.Adam([trainable_prefix_emb], lr=args.lr)
 
     assert model.training
     for epoch in range(args.n_epochs):
-        # Print closest tokens at the beginning of each epoch.
-        if VERBOSE:
-            print("*" *  30)
-            print(f"Epoch {epoch}. Closest tokens to '{prefix_str}':")
-            word_distances =  ((wte.weight - trainable_prefix_emb.reshape(1, emb_dim))**2).sum(1)
-            assert word_distances.shape == (50_257,)
-            topk_closest_words = distances = word_distances.topk(k=TOP_K, largest=False)
-            for _id, _dist in zip(topk_closest_words.indices.cpu().tolist(), topk_closest_words.values.cpu().tolist()):
-                print(f'\t{rvocab[_id]} ({_id}): {_dist:.3f}')
-            print("*" * 30)
+        model.pre_epoch()
 
         all_losses = []
         
@@ -96,28 +75,12 @@ def train(args, r, dset, model, tokenizer, gamma: float):
         total_n_correct = 0
         pbar = tqdm(enumerate(dataloader), total=len(dataloader))
         for idx, batch in pbar:
-            x_text = batch['input']
-            y_text = batch['output']
+            # todo; update template
+            x_text = [prompt.replace('Given ', '') for prompt in batch['input']]
+            y_text = [answer.replace('.', '').rstrip() for answer in batch['output']] # strip newlines and periods.
             full_text = [x_text[i] for i in range(len(x_text))]
             # print(full_text)
             # breakpoint()
-
-            ex_inputs = tokenizer(full_text, return_tensors='pt').to(device)
-            # print(ex_inputs)
-            ex_embs = wte.forward(ex_inputs['input_ids'].to(
-                device)).to(device)
-
-            # concatenate prefix + example
-            emb = torch.cat(
-                (
-                    trainable_prefix_emb.repeat(ex_embs.shape[0], 1, 1),
-                    ex_embs
-                ), 
-                dim=1
-            )
-
-            # go through model
-            outputs = model(inputs_embeds=emb)
 
             # calculate loss
             # currently this calculates loss only on the answer token
@@ -127,6 +90,8 @@ def train(args, r, dset, model, tokenizer, gamma: float):
             except:
                 breakpoint()
             # (batch_size, seq_len, vocab_size)
+
+            outputs = model.forward_text(text=full_text)
 
             last_token_logprobs = outputs['logits'][:, -1, :].log_softmax(dim=-1)
             correct_token_logprobs = torch.gather(last_token_logprobs, 1, idxs_correct)
@@ -146,34 +111,22 @@ def train(args, r, dset, model, tokenizer, gamma: float):
             # optimize
             # optim.step()
             # optim.zero_grad()
+
         
         avg_loss = sum(all_losses) / len(all_losses)
         print(f"Epoch {epoch}. average loss = {avg_loss:.3f} / {total_n_correct} / {total_n} correct ({total_n_correct/total_n*100:.2f}%)")
 
         # save stuff
-        r['embs'].append(trainable_prefix_emb.detach().cpu().numpy())
-        r['grads'].append(trainable_prefix_emb.grad.detach().cpu().numpy())
+        # r['embs'].append(trainable_prefix_emb.detach().cpu().numpy())
+        # r['grads'].append(trainable_prefix_emb.grad.detach().cpu().numpy())
         r['losses'].append(avg_loss)
         if epoch % args.epoch_save_interval == 0:
             os.makedirs(save_dir, exist_ok=True)
             pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
         # print('losses', loss)
-
-        PRINT_GRADS = False
-        if VERBOSE and PRINT_GRADS:
-            token_grads = wte.weight.mv(trainable_prefix_emb.grad.flatten())
-            print(f"Epoch {epoch}. Most negative grads for x:")
-            assert token_grads.shape == (50_257, )
-            topk_smallest_grads = distances = token_grads.topk(k=TOP_K, largest=False)
-            for _id, _dist in zip(topk_smallest_grads.indices.cpu().tolist(), topk_smallest_grads.values.cpu().tolist()):
-                print(f'\t{rvocab[_id]} ({_id}): {_dist:.3f}')
-            print("*" * 30)
-            print(f"Epoch {epoch}. Most positive grads for x:")
-            topk_largest_grads = distances = token_grads.topk(k=TOP_K, largest=True)
-            for _id, _dist in zip(topk_largest_grads.indices.cpu().tolist()[::-1], topk_largest_grads.values.cpu().tolist()[::-1]):
-                print(f'\t{rvocab[_id]} ({_id}): {_dist:.3f}')
-            print("*" * 30)
         # breakpoint()
+
+        model.post_epoch()
 
         # optimize
         optim.step()
@@ -183,16 +136,28 @@ def train(args, r, dset, model, tokenizer, gamma: float):
             # breakpoint()
 
 
-
-
     return r
 
+
+model_cls_dict = {
+    'gumbel': GumbelPrefixTunedModel,
+    'hotflip': HotFlipPrefixTunedModel,
+    'prompt_tune': PromptTunedModel,
+}
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
+    parser.add_argument('--model_cls', type=str,
+                    choices=model_cls_dict.keys(),
+                    required=True,
+                    help='model type to use for training')
     parser.add_argument('--batch_size', type=int, default=500,
                         help='batch size for training')
+    parser.add_argument('--max_dset_size', type=int,
+                        default=10000, help='maximum allowable dataset size')
+    parser.add_argument('--template_num_task_phrasing', type=int, default=0,
+                        help='the number of the manual template for any given task (number of options varies with task')
     parser.add_argument('--seed', type=int, default=1,
                         help='random seed')
     parser.add_argument('--n_epochs', type=int, default=10000,
@@ -227,9 +192,11 @@ if __name__ == '__main__':
     logger.info('loading model and data...')
     checkpoint = args.checkpoint
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
-    model = AutoModelForCausalLM.from_pretrained(
+    lm = AutoModelForCausalLM.from_pretrained(
         checkpoint, output_hidden_states=True)
-    dset, check_answer_func = data.get_data(max_digit=args.max_digit, template_idx=0)
+    model = model_cls_dict[args.model_cls](model=lm, tokenizer=tokenizer)
+    dset, check_answer_func, description = data.get_data(args=args, task_name='add_two')
+    print(f"got task with description: {description}")
 
     logger.info('beginning training...')
     r = train(args=args, r=r, dset=dset, model=model, tokenizer=tokenizer, gamma=args.gamma)
