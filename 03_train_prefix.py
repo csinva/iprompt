@@ -30,6 +30,12 @@ from datetime import datetime
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
+model_cls_dict = {
+    'gumbel': GumbelPrefixTunedModel,
+    'hotflip': HotFlipPrefixTunedModel,
+    'prompt_tune': PromptTunedModel,
+}
+
 
 def train(
         args: argparse.Namespace,
@@ -61,9 +67,7 @@ def train(
     logging.info('saving to ' + save_dir)
 
     # optimizer
-    optim = torch.optim.Adam([word_weights], lr=args.lr)
-    word_weights = word_weights.to(device)
-    # optim = torch.optim.Adam([trainable_prefix_emb], lr=args.lr)
+    optim = torch.optim.AdamW(model.trainable_params, lr=args.lr)
 
     assert model.training
     for epoch in range(args.n_epochs):
@@ -79,8 +83,6 @@ def train(
             x_text = [prompt.replace('Given ', '') for prompt in batch['input']]
             y_text = [answer.replace('.', '').rstrip() for answer in batch['output']] # strip newlines and periods.
             full_text = [x_text[i] for i in range(len(x_text))]
-            # print(full_text)
-            # breakpoint()
 
             # calculate loss
             # currently this calculates loss only on the answer token
@@ -88,6 +90,7 @@ def train(
             try:
                 assert idxs_correct.nelement() == len(y_text), 'For now assume that each answer is a single token'
             except:
+                print("error!")
                 breakpoint()
             # (batch_size, seq_len, vocab_size)
 
@@ -103,11 +106,9 @@ def train(
             # accumulate gradients in this batch
             loss = -1 * correct_token_logprobs.mean() # minimize prob answer being wrong
             all_losses.extend((-1 * correct_token_logprobs).flatten().tolist())
-            # breakpoint()
             loss.backward()
             pbar.set_description(f"Loss = {loss:.3f}")
 
-            # breakpoint()
             # optimize
             # optim.step()
             # optim.zero_grad()
@@ -117,8 +118,9 @@ def train(
         print(f"Epoch {epoch}. average loss = {avg_loss:.3f} / {total_n_correct} / {total_n} correct ({total_n_correct/total_n*100:.2f}%)")
 
         # save stuff
-        # r['embs'].append(trainable_prefix_emb.detach().cpu().numpy())
-        # r['grads'].append(trainable_prefix_emb.grad.detach().cpu().numpy())
+        for key, val in model.compute_metrics().items():
+            r[key].append(val)
+
         r['losses'].append(avg_loss)
         if epoch % args.epoch_save_interval == 0:
             os.makedirs(save_dir, exist_ok=True)
@@ -138,12 +140,6 @@ def train(
 
     return r
 
-
-model_cls_dict = {
-    'gumbel': GumbelPrefixTunedModel,
-    'hotflip': HotFlipPrefixTunedModel,
-    'prompt_tune': PromptTunedModel,
-}
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

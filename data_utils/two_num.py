@@ -47,7 +47,7 @@ TASKS_TWO_NUMS = {
         'prompt_template_funcs': PROMPT_TEMPLATE_TWO_NUMS,
         'check_answer_func': r'add|sum',
         'gen_func': sum,
-        'description': "Return the some of the inputs.",
+        'description': "Return the sum of the inputs.",
     },
     'multiply_two': {
         'prompt_template_funcs': PROMPT_TEMPLATE_TWO_NUMS,
