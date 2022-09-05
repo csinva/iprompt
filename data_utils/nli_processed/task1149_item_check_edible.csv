@@ -1,0 +1,239 @@
+input,output,text
+sink,2,"Input: sink Answer: 2
+"
+cat,2,"Input: cat Answer: 2
+"
+Orange,1,"Input: Orange Answer: 1
+"
+skis,2,"Input: skis Answer: 2
+"
+sheep,2,"Input: sheep Answer: 2
+"
+Burger,1,"Input: Burger Answer: 1
+"
+Carrot,1,"Input: Carrot Answer: 1
+"
+mouse,2,"Input: mouse Answer: 2
+"
+Pectin,1,"Input: Pectin Answer: 1
+"
+Turmeric,1,"Input: Turmeric Answer: 1
+"
+scissors,2,"Input: scissors Answer: 2
+"
+bowl,2,"Input: bowl Answer: 2
+"
+cow,2,"Input: cow Answer: 2
+"
+wine glass,2,"Input: wine glass Answer: 2
+"
+peanuts,1,"Input: peanuts Answer: 1
+"
+strawberries,1,"Input: strawberries Answer: 1
+"
+snowboard,2,"Input: snowboard Answer: 2
+"
+skateboard,2,"Input: skateboard Answer: 2
+"
+Chocolate,1,"Input: Chocolate Answer: 1
+"
+dining table,2,"Input: dining table Answer: 2
+"
+Pistachios,1,"Input: Pistachios Answer: 1
+"
+stop sign,2,"Input: stop sign Answer: 2
+"
+person,2,"Input: person Answer: 2
+"
+Black Pepper,1,"Input: Black Pepper Answer: 1
+"
+truck,2,"Input: truck Answer: 2
+"
+fire hydrant,2,"Input: fire hydrant Answer: 2
+"
+Noodles,1,"Input: Noodles Answer: 1
+"
+suitcase,2,"Input: suitcase Answer: 2
+"
+Peaches,1,"Input: Peaches Answer: 1
+"
+Corn Syrup,1,"Input: Corn Syrup Answer: 1
+"
+Pasta,1,"Input: Pasta Answer: 1
+"
+Bagels,1,"Input: Bagels Answer: 1
+"
+fork,2,"Input: fork Answer: 2
+"
+bicycle,2,"Input: bicycle Answer: 2
+"
+Biscuits,1,"Input: Biscuits Answer: 1
+"
+bed,2,"Input: bed Answer: 2
+"
+baseball glove,2,"Input: baseball glove Answer: 2
+"
+toothbrush,2,"Input: toothbrush Answer: 2
+"
+ flour,1,"Input:  flour Answer: 1
+"
+hair drier,2,"Input: hair drier Answer: 2
+"
+oven,2,"Input: oven Answer: 2
+"
+bench,2,"Input: bench Answer: 2
+"
+teddy bear,2,"Input: teddy bear Answer: 2
+"
+microwave,2,"Input: microwave Answer: 2
+"
+Grapes,1,"Input: Grapes Answer: 1
+"
+vase,2,"Input: vase Answer: 2
+"
+motorcycle,2,"Input: motorcycle Answer: 2
+"
+cranberries,1,"Input: cranberries Answer: 1
+"
+cup,2,"Input: cup Answer: 2
+"
+bird,2,"Input: bird Answer: 2
+"
+zebra,2,"Input: zebra Answer: 2
+"
+Lemon,1,"Input: Lemon Answer: 1
+"
+knife,2,"Input: knife Answer: 2
+"
+frisbee,2,"Input: frisbee Answer: 2
+"
+Sugar,1,"Input: Sugar Answer: 1
+"
+lentil,1,"Input: lentil Answer: 1
+"
+Butter,1,"Input: Butter Answer: 1
+"
+baseball bat,2,"Input: baseball bat Answer: 2
+"
+surfboard,2,"Input: surfboard Answer: 2
+"
+horse,2,"Input: horse Answer: 2
+"
+tv,2,"Input: tv Answer: 2
+"
+clock,2,"Input: clock Answer: 2
+"
+kite,2,"Input: kite Answer: 2
+"
+Hazelnut,1,"Input: Hazelnut Answer: 1
+"
+Milk,1,"Input: Milk Answer: 1
+"
+cell phone,2,"Input: cell phone Answer: 2
+"
+Raspberries,1,"Input: Raspberries Answer: 1
+"
+traffic light,2,"Input: traffic light Answer: 2
+"
+Rice,1,"Input: Rice Answer: 1
+"
+Juice,1,"Input: Juice Answer: 1
+"
+toaster,2,"Input: toaster Answer: 2
+"
+Bread,1,"Input: Bread Answer: 1
+"
+spoon,2,"Input: spoon Answer: 2
+"
+remote,2,"Input: remote Answer: 2
+"
+Peas,1,"Input: Peas Answer: 1
+"
+boat,2,"Input: boat Answer: 2
+"
+Apple,1,"Input: Apple Answer: 1
+"
+Glucose Syrup,1,"Input: Glucose Syrup Answer: 1
+"
+car,2,"Input: car Answer: 2
+"
+tennis racket,2,"Input: tennis racket Answer: 2
+"
+Almonds,1,"Input: Almonds Answer: 1
+"
+dog,2,"Input: dog Answer: 2
+"
+Cheese,1,"Input: Cheese Answer: 1
+"
+couch,2,"Input: couch Answer: 2
+"
+bottle,2,"Input: bottle Answer: 2
+"
+chair,2,"Input: chair Answer: 2
+"
+Banana,1,"Input: Banana Answer: 1
+"
+umbrella,2,"Input: umbrella Answer: 2
+"
+tie,2,"Input: tie Answer: 2
+"
+Wheat,1,"Input: Wheat Answer: 1
+"
+Cake,1,"Input: Cake Answer: 1
+"
+train,2,"Input: train Answer: 2
+"
+elephant,2,"Input: elephant Answer: 2
+"
+backpack,2,"Input: backpack Answer: 2
+"
+Prunes,1,"Input: Prunes Answer: 1
+"
+book,2,"Input: book Answer: 2
+"
+bus,2,"Input: bus Answer: 2
+"
+toilet,2,"Input: toilet Answer: 2
+"
+airplane,2,"Input: airplane Answer: 2
+"
+refrigerator,2,"Input: refrigerator Answer: 2
+"
+Pastry,1,"Input: Pastry Answer: 1
+"
+Water,1,"Input: Water Answer: 1
+"
+keyboard,2,"Input: keyboard Answer: 2
+"
+parking meter,2,"Input: parking meter Answer: 2
+"
+laptop,2,"Input: laptop Answer: 2
+"
+Beans,1,"Input: Beans Answer: 1
+"
+Soybean Oil,1,"Input: Soybean Oil Answer: 1
+"
+Olive Oil,1,"Input: Olive Oil Answer: 1
+"
+sports ball,2,"Input: sports ball Answer: 2
+"
+Sandwich,1,"Input: Sandwich Answer: 1
+"
+Salt,1,"Input: Salt Answer: 1
+"
+Walnuts,1,"Input: Walnuts Answer: 1
+"
+giraffe,2,"Input: giraffe Answer: 2
+"
+Garlic Onion,1,"Input: Garlic Onion Answer: 1
+"
+Coffee,1,"Input: Coffee Answer: 1
+"
+handbag,2,"Input: handbag Answer: 2
+"
+bear,2,"Input: bear Answer: 2
+"
+Dosa,1,"Input: Dosa Answer: 1
+"
+potted plant,2,"Input: potted plant Answer: 2
+"

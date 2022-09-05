@@ -62,7 +62,7 @@ def get_avg_probs_next_token(args, suffix_str: str, model, dataloader, tokenizer
 
 
 def get_probs_single_query_next_token(args, suffix_str: str, model, dataloader, tokenizer):
-    """Get the average probs for the next token across the entire dataset
+    """Get the probs for the next token for a single example
     """
     # get a single input
     batch = next(iter(dataloader))

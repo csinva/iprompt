@@ -1,0 +1,5 @@
+{
+    "task1146_country_capital": "In this task, you are given a country name and you need to return the capital city of the given country",
+    "task1147_country_currency": "You are given a country name and you need to return the currency of the given country.",
+    "task1149_item_check_edible": "In this task, you are given an item and you need to check whether it is edible or not, return 1 if it is edible, else return 2."
+}

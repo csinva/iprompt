@@ -8,7 +8,7 @@ from collections import defaultdict
 import re
 from tqdm import trange
 import torch.nn
-from . import data_utils
+from . import data_funcs
 
 """Note: all templates should be "stackable" so that they work in the multi-shot setting.
 Nothing will be added between them (so probably should end with 2 newlines).
@@ -46,34 +46,40 @@ TASKS_TWO_NUMS = {
     'add_two': {
         'prompt_template_funcs': PROMPT_TEMPLATE_TWO_NUMS,
         'check_answer_func': r'add|sum',
-        'gen_func': sum
+        'gen_func': sum,
+        'description': "Return the some of the inputs.",
     },
     'multiply_two': {
         'prompt_template_funcs': PROMPT_TEMPLATE_TWO_NUMS,
         'check_answer_func': r'multiply|product',
-        'gen_func': np.prod
+        'gen_func': np.prod,
+        'description': "Return the product of the inputs.",
     },
     'divide_two': {
         'prompt_template_funcs': PROMPT_TEMPLATE_TWO_NUMS,
-        'check_answer_func': r'divide|into',
-        'gen_func': lambda l: f'{l[0]}/{l[1]}'
+        'check_answer_func': r'divide|into|quotient',
+        'gen_func': lambda l: f'{l[0]}/{l[1]}',
+        'description': "Return the quotient of the inputs.",
     },
     'subtract_two': {
         'prompt_template_funcs': PROMPT_TEMPLATE_TWO_NUMS,
         'check_answer_func': r'subtract|difference',
-        'gen_func': lambda l: l[0] - l[1]
+        'gen_func': lambda l: l[0] - l[1],
+        'description': "Return the difference of the inputs.",
     },
     'max_two': {
         'prompt_template_funcs': PROMPT_TEMPLATE_TWO_NUMS,
         'check_answer_func': r'max|large|greate|big',
-        'gen_func': max
+        'gen_func': max,
+        'description': "Return the maximum of the inputs.",
     },
 
     # this one finds solutions like "subtract from the first"
     'first_two': {
         'prompt_template_funcs': PROMPT_TEMPLATE_TWO_NUMS,
         'check_answer_func': r'first|begin|original',
-        'gen_func': lambda x: x[0]
+        'gen_func': lambda x: x[0],
+        'description': "Return the fist of the inputs.",
     },
 
     'SUFFIXES': SUFFIXES_TWO_NUMS,    

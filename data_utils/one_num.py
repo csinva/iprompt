@@ -8,7 +8,7 @@ from collections import defaultdict
 import re
 from tqdm import trange
 import torch.nn
-from . import data_utils
+from . import data_funcs
 
 """Note: all templates should be "stackable" so that they work in the multi-shot setting.
 Only 2 newlines will be added between them.
@@ -45,30 +45,35 @@ TASKS_ONE_NUM = {
     'square_one': {
         'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
         'check_answer_func': r'square|(mult.*self)|(prod.*self)|x\s*\*\s*x|pow\(x,\s*2\)',
-        'gen_func': lambda x: x * x
+        'gen_func': lambda x: x * x,
+        'description': "Square the input to get the output.",
     },
     'exp_one': {
         'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
         'check_answer_func': r'exp|e\s*^\s*x|e\s*to the\s*x',
-        'gen_func': lambda x: np.exp(x).round(2)
+        'gen_func': lambda x: np.exp(x).round(2),
+        'description': "Exponentiate the input to get the output.",
     },
     'prime_one': {
         'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
         'check_answer_func': r'prime',
-        'gen_func': lambda x: data_utils.prime_n(x)
+        'gen_func': lambda x: data_funcs.prime_n(x),
+        'description': "Given an input x, return the xth prime number.",
     },
     'double_one': {
         'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
         'check_answer_func': r'two|double|2',
-        'gen_func': lambda x: data_utils.prime_n(x)
+        'gen_func': lambda x: 2 * x,
+        'description': "Given an input x, return 2*x.",
     },
 
     # too hard
     'fibonacci_one': {
         'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
         'check_answer_func': r'fib',
-        'gen_func': lambda x: data_utils.fib_n(x)
+        'gen_func': lambda x: data_funcs.fib_n(x),
+        'description': "Given an input x, return the xth fibonacci number.",
     },
 
-    'SUFFIXES': SUFFIXES_ONE_NUM,
+    'SUFFIXES': SUFFIXES_ONE_NUM
 }

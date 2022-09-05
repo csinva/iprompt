@@ -21,6 +21,8 @@ import train_suffix
 import utils
 
 # initialize args
+
+
 def add_main_args(parser):
     """Note: caching uses the non-default values from parser to name the saving directory.
     Changing the default arg an argument will break compatibility with previous cached runs.
@@ -30,9 +32,10 @@ def add_main_args(parser):
                         help='name of task')
     parser.add_argument('--n_shots', type=int, default=1,
                         help='number of shots in the prompt')
-    parser.add_argument('--max_dset_size', type=int, default=10000, help='maximum allowable dataset size') 
+    parser.add_argument('--max_dset_size', type=int,
+                        default=10000, help='maximum allowable dataset size')
     parser.add_argument('--max_digit', type=int, default=10,
-                        help='maximum value of each digit in summand')                        
+                        help='maximum value of each digit in summand')
     parser.add_argument('--template_num_init_string', type=int, default=0,
                         help='the number of the manually-specified prefix to be initialize with')
     parser.add_argument('--template_num_task_phrasing', type=int, default=0,
@@ -68,11 +71,12 @@ def add_main_args(parser):
                         help='directory for saving')
     return parser
 
+
 def add_computational_args(parser):
     """Arguments that only affect computation and not the results (shouldnt use when checking cache)
     """
     parser.add_argument('--use_cpu_only', type=int, default=0,
-                        help='boolean 0 or 1: whether to force everything onto cpu') 
+                        help='boolean 0 or 1: whether to force everything onto cpu')
     parser.add_argument('--use_parallelformers', type=int, default=1,
                         help='boolean 0 or 1: whether to try and use parallelformers')
     parser.add_argument('--use_cache', type=int, default=1,
@@ -105,8 +109,10 @@ if __name__ == '__main__':
 
     # set up saving dirctory before seeding
     save_dir_unique_hash = utils.get_unique_dir_hash(parser, args)
-    save_dir_random_suffix = ''.join(random.choices(string.ascii_lowercase, k=4))
-    save_dir = os.path.join(args.save_dir, save_dir_unique_hash + save_dir_random_suffix)
+    save_dir_random_suffix = ''.join(
+        random.choices(string.ascii_lowercase, k=4))
+    save_dir = os.path.join(
+        args.save_dir, save_dir_unique_hash + save_dir_random_suffix)
     logging.info('saving to ' + save_dir)
 
     # check for cached run with these same args
@@ -121,10 +127,11 @@ if __name__ == '__main__':
     # load data
     logger.info('loading data...')
     dset, check_answer_func = data.get_data(
-        args, args.task_name, n_shots=args.n_shots, max_digit=args.max_digit)
+        args, args.task_name, n_shots=args.n_shots)
     dataloader = DataLoader(
         dset, batch_size=min(args.batch_size, len(dset)), shuffle=True, drop_last=True)
-    logging.info(f'num_examples: {dset.shape[0]}, num batches: {len(dataloader)}')
+    logging.info(
+        f'num_examples: {dset.shape[0]}, num batches: {len(dataloader)}')
 
     # load model
     logger.info('loading model...')
@@ -137,7 +144,7 @@ if __name__ == '__main__':
 
     # set up saving
     r = defaultdict(list)
-    r.update(vars(args))    
+    r.update(vars(args))
     utils.save_json(args=args, save_dir=save_dir, fname='params.json', r=r)
 
     # train
