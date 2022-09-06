@@ -51,8 +51,7 @@ def train(
     r: dict
         dictionary of things to save
     """
-
-    assert gamma == 0.0, "lm loss not implemented"
+    gamma = 10
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
 
@@ -94,17 +93,29 @@ def train(
                 breakpoint()
             # (batch_size, seq_len, vocab_size)
 
-            outputs = model.forward_text(text=full_text)
+            input_ids, outputs = model.forward_text(text=full_text)
 
-            last_token_logprobs = outputs['logits'][:, -1, :].log_softmax(dim=-1)
+            log_probs = outputs['logits'].log_softmax(dim=-1)
+
+            last_token_logprobs = log_probs[:, -1, :]
             correct_token_logprobs = torch.gather(last_token_logprobs, 1, idxs_correct)
 
             total_n += len(last_token_logprobs)
             total_n_correct += (last_token_logprobs.argmax(dim=-1) == idxs_correct.flatten()).int().sum()
 
+            lm_loss = 0.0
+            if gamma > 0:
+                # Compute fluency loss.
+                # TODO handle masking correctly here.
+                num_input_words = input_ids.shape[1]
+                log_probs_for_input = log_probs[:, -1-num_input_words:-1, :]
+                input_log_probs = torch.gather(
+                    log_probs_for_input, dim=2, index=input_ids[...,None].to(device)
+                )
+                lm_loss = input_log_probs.mean()
 
             # accumulate gradients in this batch
-            loss = -1 * correct_token_logprobs.mean() # minimize prob answer being wrong
+            loss = -1 * (correct_token_logprobs.mean() + lm_loss * gamma) # minimize prob answer being wrong
             all_losses.extend((-1 * correct_token_logprobs).flatten().tolist())
             loss.backward()
             pbar.set_description(f"Loss = {loss:.3f}")

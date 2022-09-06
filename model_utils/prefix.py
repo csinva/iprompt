@@ -1,4 +1,4 @@
-from typing import Any, Dict, Iterable
+from typing import Any, Dict, Iterable, Tuple
 
 import abc
 import functools
@@ -45,8 +45,8 @@ class PrefixTunedModel(torch.nn.Module, abc.ABC):
         )
 
     def forward(self, input_ids: torch.Tensor) -> torch.Tensor:
-        embeddings = self.embed_input_ids(input_ids=input_ids)
-        return self.model(inputs_embeds=embeddings)
+        input_ids, embeddings = self.embed_input_ids(input_ids=input_ids)
+        return input_ids, self.model(inputs_embeds=embeddings)
     
     def pre_epoch(self) -> None:
         return
@@ -62,13 +62,13 @@ class PrefixTunedModel(torch.nn.Module, abc.ABC):
         raise NotImplementedError()
 
     @abc.abstractmethod
-    def embed_input_ids(self, input_ids: torch.Tensor) -> torch.Tensor:
+    def embed_input_ids(self, input_ids: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
         """To be implemented by subclasses -- embeds input ids and includes some sort of prefix,
         for example, in the case of prompt-tuning, by prepending a continuous embedding.
         """
         raise NotImplementedError()
     
-    def init_continuous_prefix_embedding(self) -> torch.nn.Parameter:
+    def init_continuous_prefix(self) -> torch.nn.Parameter:
         # TODO: argparse for params
         N_TOKENS = 1 # TODO argparse for n_tokens
         return torch.nn.Parameter(
@@ -77,43 +77,35 @@ class PrefixTunedModel(torch.nn.Module, abc.ABC):
         # return torch.nn.Parameter(torch.randu((1, 1, emb_dim)), requires_grad=True).to(device)
         # return torch.nn.Parameter(prefix_emb[:, 0, :], requires_grad=True).to(device)
     
-    def init_discrete_prefix_embedding(self) -> torch.nn.Parameter:
+    def init_discrete_prefix(self) -> torch.nn.Parameter:
         # TODO: argparse for params
-        N_TOKENS = 1 # TODO argparse for n_tokens
-        start_word_id = torch.tensor(self.tokenizer.vocab['the'], dtype=int)
-        return torch.nn.Parameter(
-            torch.nn.functional.one_hot(
-                start_word_id, num_classes=self.vocab_size
-            )
-            .reshape((1, 1, self.vocab_size))
-            .repeat((1, N_TOKENS, 1))
-            .float(),
-            requires_grad=True
-        )
+        N_TOKENS = 64 # TODO argparse for n_tokens
+        start_word_id = torch.tensor([self.tokenizer.vocab['the']], dtype=int)
+        return start_word_id.repeat((N_TOKENS,))
 
 
 class PromptTunedModel(PrefixTunedModel):
     model: transformers.PreTrainedModel
     tokenizer: transformers.PreTrainedTokenizer
-    trainable_prefix_embedding: torch.nn.Parameter
+    prefix_embedding: torch.nn.Parameter
     def __init__(self, model: transformers.PreTrainedModel, tokenizer: transformers.PreTrainedTokenizer):
         super().__init__(model=model, tokenizer=tokenizer)
-        self.trainable_prefix_embedding = self.init_continuous_prefix_embedding()
+        self.prefix_embedding = self.init_continuous_prefix()
 
-    def embed_input_ids(self, input_ids: torch.Tensor) -> torch.Tensor:
+    def embed_input_ids(self, input_ids: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
         token_embeddings = self.token_embedding.forward(input_ids)
-        return torch.cat(
-            (self.trainable_prefix_embedding.repeat((len(input_ids), 1, 1)), token_embeddings), dim=1
+        return None, torch.cat(
+            (self.prefix_embedding.repeat((len(input_ids), 1, 1)), token_embeddings), dim=1
         )
 
     @property
     def trainable_params(self) -> Iterable[torch.nn.Parameter]:
-        return [self.trainable_prefix_embedding]
+        return [self.prefix_embedding]
     
     def compute_metrics(self) -> Dict[str, Any]:
         return {
-            'embs': self.trainable_prefix_embedding.detach().cpu().numpy(),
-            'grads': self.trainable_prefix_embedding.grad.detach().cpu().numpy(),
+            'embs': self.prefix_embedding.detach().cpu().numpy(),
+            'grads': self.prefix_embedding.grad.detach().cpu().numpy(),
         }
 
 
@@ -123,17 +115,27 @@ TOP_K = 20 # for printing grads, etc.
 class HotFlipPrefixTunedModel(PrefixTunedModel):
     model: transformers.PreTrainedModel
     tokenizer: transformers.PreTrainedTokenizer
-    trainable_prefix_embedding: torch.nn.Parameter
+    prefix_ids: torch.Tensor
+    prefix_embedding: torch.nn.Parameter
     def __init__(self, model: transformers.PreTrainedModel, tokenizer: transformers.PreTrainedTokenizer):
         super().__init__(model=model, tokenizer=tokenizer)
-        self.trainable_prefix_embedding = self.init_discrete_prefix_embedding()
+        self.prefix_ids = self.init_discrete_prefix()
+        self.prefix_embedding = torch.nn.Parameter(
+            self.token_embedding.forward(self.prefix_ids), requires_grad=True
+        )
+    
+    def _set_prefix_ids(self, new_ids: torch.Tensor) -> None:
+        self.prefix_ids = new_ids
+        self.prefix_embedding = torch.nn.Parameter(
+            self.token_embedding.forward(self.prefix_ids), requires_grad=True
+        )
 
     def pre_epoch(self) -> None:
         # Print closest tokens at the beginning of each epoch.
         if VERBOSE:
             print("*" *  30)
             print(f"Epoch {epoch}. Closest tokens to '{prefix_str}':")
-            word_distances =  ((wte.weight - self.trainable_prefix_embedding.reshape(1, emb_dim))**2).sum(1)
+            word_distances =  ((self.token_embedding.weight - self.prefix_embedding.reshape(1, emb_dim))**2).sum(1)
             assert word_distances.shape == (50_257,)
             topk_closest_words = distances = word_distances.topk(k=TOP_K, largest=False)
             for _id, _dist in zip(topk_closest_words.indices.cpu().tolist(), topk_closest_words.values.cpu().tolist()):
@@ -141,9 +143,10 @@ class HotFlipPrefixTunedModel(PrefixTunedModel):
             print("*" * 30)
 
     def post_epoch(self) -> None:
+        # variables: V (vocab), d (embedding dim), n (num prefix tokens)
+        token_grads = torch.einsum('nd,vd->nv', self.prefix_embedding.grad, self.token_embedding.weight)
         if VERBOSE:
             # Print gradient information.
-            token_grads = wte.weight.mv(self.trainable_prefix_embedding.grad.flatten())
             print(f"Epoch {epoch}. Most negative grads for x:")
             assert token_grads.shape == (50_257, )
             topk_smallest_grads = distances = token_grads.topk(k=TOP_K, largest=False)
@@ -155,19 +158,45 @@ class HotFlipPrefixTunedModel(PrefixTunedModel):
             for _id, _dist in zip(topk_largest_grads.indices.cpu().tolist()[::-1], topk_largest_grads.values.cpu().tolist()[::-1]):
                 print(f'\t{self.id_to_word[_id]} ({_id}): {_dist:.3f}')
             print("*" * 30)
+        ############################################################
+        # TODO: Argparse for different search strategies.
+        # Flip word with most negative grad.
+        # token_to_flip_idx = token_grads.min(dim=1).values.argmin()
+        # new_token_id = token_grads[token_to_flip_idx].argmin()
+        # new_tokens = self.prefix_ids.cpu().numpy()
+        # new_tokens[token_to_flip_idx] = new_token_id
+        # self._set_prefix_ids(torch.tensor(new_tokens).to(device))
+        ############################################################
+        # Flip all words to token with most negative grad.
+        self._set_prefix_ids(token_grads.argmin(dim=1))
+        ############################################################
+        # TODO >> FLIP here
+        print("new words:", self.tokenizer.decode(self.prefix_ids.tolist()))
+    
+    @property
+    def prefix_embedding_token_ids(self) -> torch.Tensor:
+        return self.prefix_embedding.argmax(dim=-1)
 
     @property
     def trainable_params(self) -> Iterable[torch.nn.Parameter]:
-        return [self.trainable_prefix_embedding]
+        return [self.prefix_embedding]
 
-    def embed_input_ids(self, input_ids: torch.Tensor) -> torch.Tensor:
-        raise NotImplementedError() # TODO
+    def embed_input_ids(self, input_ids: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
+        batch_size = len(input_ids)
+        input_ids = torch.cat(
+            (self.prefix_embedding_token_ids.repeat((batch_size, 1)), input_ids), dim=1
+        )
+        outputs = torch.cat(
+            # concatenate prefix + example
+            (self.prefix_embedding[None].repeat((batch_size, 1, 1)), self.token_embedding.forward(input_ids)), dim=1
+        )
+        return input_ids, outputs
 
 
 class GumbelPrefixTunedModel(PrefixTunedModel):
     model: transformers.PreTrainedModel
     tokenizer: transformers.PreTrainedTokenizer
-    trainable_prefix_embedding: torch.nn.Parameter
+    prefix_embedding: torch.nn.Parameter
 
     def __init__(self, model: transformers.PreTrainedModel, tokenizer: transformers.PreTrainedTokenizer):
         super().__init__(model=model, tokenizer=tokenizer)
@@ -176,10 +205,10 @@ class GumbelPrefixTunedModel(PrefixTunedModel):
             torch.randn((1, N_TOKENS, self.vocab_size)), requires_grad=True
         )
         # TODO: argparse for tau
-        # low tau -> very spiky
+        # lower tau -> more spiky
         self.tau = 10
         # TODO: argparse for tau_anneal
-        self.tau_anneal = 1.03
+        self.tau_anneal = 1.02
 
     @property
     def trainable_params(self) -> Iterable[torch.nn.Parameter]:
@@ -189,7 +218,7 @@ class GumbelPrefixTunedModel(PrefixTunedModel):
         self.tau = self.tau / self.tau_anneal
         print(f"𝛕 = {self.tau:.2f}")
 
-    def embed_input_ids(self, input_ids: torch.Tensor) -> torch.Tensor:
+    def embed_input_ids(self, input_ids: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
         # word_weights_dist = (word_weights * 1000).softmax(dim=-1)
         prefix_embedding_words_dist = torch.nn.functional.gumbel_softmax(
             self.word_weights.repeat((len(input_ids), 1, 1)), tau=self.tau, dim=-1, hard=False
@@ -202,11 +231,11 @@ class GumbelPrefixTunedModel(PrefixTunedModel):
         )
         prefix_embedding = prefix_embedding_words_dist @ self.token_embedding.weight
 
-        # concatenate prefix + example
-        return torch.cat(
-            (
-                prefix_embedding,
-                self.token_embedding.forward(input_ids)
-            ), 
-            dim=1
+        input_ids = torch.cat(
+            (prefix_embedding_words_dist.argmax(dim=-1), input_ids), dim=1
         )
+        outputs = torch.cat(
+            # concatenate prefix + example
+            (prefix_embedding, self.token_embedding.forward(input_ids)), dim=1
+        )
+        return input_ids, outputs
