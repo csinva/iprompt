@@ -42,7 +42,7 @@ def train(
         r: Dict[str, List],
         dset: datasets.Dataset,
         model: PrefixTunedModel,
-        tokenizer: transformers.AutoTokenizer,
+        tokenizer: transformers.PreTrainedTokenizer,
         gamma: float
     ):
     """
@@ -51,7 +51,6 @@ def train(
     r: dict
         dictionary of things to save
     """
-    gamma = 10
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
 
@@ -106,7 +105,7 @@ def train(
             lm_loss = 0.0
             if gamma > 0:
                 # Compute fluency loss.
-                # TODO handle masking correctly here.
+                # TODO handle masking correctly.
                 num_input_words = input_ids.shape[1]
                 log_probs_for_input = log_probs[:, -1-num_input_words:-1, :]
                 input_log_probs = torch.gather(
@@ -136,17 +135,12 @@ def train(
         if epoch % args.epoch_save_interval == 0:
             os.makedirs(save_dir, exist_ok=True)
             pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
-        # print('losses', loss)
-        # breakpoint()
 
         model.post_epoch()
 
         # optimize
         optim.step()
         optim.zero_grad()
-
-        # if epoch % 5 == 0:
-            # breakpoint()
 
 
     return r
