@@ -2,8 +2,7 @@
 
 
 ## file structure
-- `01_train.py` is the main function to run and deals with processing all the cmd-line args
-  - this code is split up based on whther we are searching for a *prefix* or *suffix* (algorithms are very different)
+- `01_train_suffix.py` is the main function to run and deals with processing all the cmd-line args
   - *suffix* is much simpler (and doesn't require any model gradients)
   - when we implement *classification* and *clustering*, these should also go into new, different files
 - `scripts` is a folder for running sweeps over experiments
@@ -22,7 +21,7 @@
 - 09/03
   - note: args that start with `use_` are boolean
 - 09/02
-  - changed defaults in `01_train.py`: defaults to suffix, max_digit = 10, beam_width_suffix=4
+  - changed defaults in `01_train_suffix.py`: defaults to suffix, max_digit = 10, beam_width_suffix=4
   - `data.py` returns data + `check_answer_func`
   - moved `train` function into `__main__` and refactored into `train_prefix.py` and `train_suffix.py`
   - gpu / parallelization may not work properly for `train_prefix.py`
