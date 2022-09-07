@@ -119,6 +119,8 @@ class HotFlipPrefixTunedModel(PrefixTunedModel):
     prefix_embedding: torch.nn.Parameter
     def __init__(self, model: transformers.PreTrainedModel, tokenizer: transformers.PreTrainedTokenizer):
         super().__init__(model=model, tokenizer=tokenizer)
+        self.beam_width = 1 # TODO argparse for beam_width
+        self.num_candidates = 10
         self.prefix_ids = self.init_discrete_prefix()
         self.prefix_embedding = torch.nn.Parameter(
             self.token_embedding.forward(self.prefix_ids), requires_grad=True

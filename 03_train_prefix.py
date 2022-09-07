@@ -1,4 +1,5 @@
 from typing import Dict, List
+import dataclasses
 import datasets
 import os
 import random
@@ -35,6 +36,74 @@ model_cls_dict = {
     'hotflip': HotFlipPrefixTunedModel,
     'prompt_tune': PromptTunedModel,
 }
+
+
+@dataclasses.dataclass
+class PrefixLoss:
+    """Computes next-token-prediction loss with optional language modeling component.
+    """
+    gamma: float
+
+    def _compute_fluency_loss(
+            self, logits: torch.Tensor, input_ids: torch.Tensor
+        ) -> torch.Tensor:
+        if self.gamma == 0:
+            return torch.tensor(0.0).to(device)
+        log_probs = logits.log_softmax(dim=-1)
+        num_input_words = input_ids.shape[1]
+        log_probs_for_input = log_probs[:, -1-num_input_words:-1, :]
+        input_log_probs = torch.gather(
+            log_probs_for_input, dim=2, index=input_ids[...,None].to(device)
+        )
+        return -1 * input_log_probs.mean()
+
+    def _compute_token_loss(
+            self, next_token_logits: torch.Tensor, next_token_idxs: torch.Tensor, answer_mask: torch.Tensor
+        ) -> torch.Tensor:
+        batch_size, vocab_size = next_token_logits.shape
+        assert next_token_idxs.shape == (batch_size,)
+        assert answer_mask.shape == (vocab_size,)
+        next_token_logits = torch.where(
+            answer_mask[None], next_token_logits, torch.tensor(float('-inf')).to(device)
+        )
+        return torch.nn.functional.cross_entropy(
+            input=next_token_logits,
+            target=next_token_idxs,
+            reduction='mean'
+        )
+    
+    def __call__(self,
+            input_ids: torch.Tensor,
+            next_token_ids: torch.Tensor,
+            logits: torch.Tensor,
+            answer_mask: torch.Tensor,
+        ) -> torch.Tensor:
+        """Computes loss.
+
+        Args:
+            input_ids (int torch.Tensor): array of token IDs for inputs
+            next_token_ids (int torch.Tensor): array of token IDs for the word
+                that comes after the input
+            logits (float torch.Tensor): logits for all output tokens, including
+                the next one
+            answer_mask (bool torch.Tensor): mask over tokens to remove irrelevant ones
+
+        Returns: float torch.Tensor scalar, loss value (lower is better).
+        """
+        fluency_loss = (
+            self._compute_fluency_loss(
+                logits=logits,
+                input_ids=input_ids
+            )
+        )
+        token_loss = (
+            self._compute_token_loss(
+                next_token_logits=logits[:, -1, :],
+                next_token_idxs=next_token_ids,
+                answer_mask=answer_mask,
+            )
+        )
+        return token_loss + (self.gamma * fluency_loss)
 
 
 def train(
@@ -84,6 +153,8 @@ def train(
     majority_count = (possible_answer_ids[:, None] == possible_answer_ids[None, :]).sum(dim=1).max()
     majority_acc = majority_count * 100.0 / len(possible_answer_ids)
     print(f"Training with {num_unique_answers} possible answers / random acc {random_acc:.1f}% / majority acc {majority_acc:.1f}%")
+
+    loss_fct = PrefixLoss(gamma=gamma)
     
     vocab_size = len(tokenizer.vocab)
     possible_answer_mask = (
@@ -118,30 +189,11 @@ def train(
 
             input_ids, outputs = model.forward_text(text=full_text)
 
-            last_token_logits = outputs['logits'][:, -1, :]
-            last_token_logits = torch.where(
-                possible_answer_mask, last_token_logits, torch.tensor(float('-inf')).to(device)
-            )
-
             total_n += len(idxs_correct)
-            total_n_correct += (last_token_logits.argmax(dim=-1) == idxs_correct).int().sum()
+            total_n_correct += (outputs['logits'][:, -1, :].argmax(dim=-1) == idxs_correct).int().sum()
 
-            token_loss = torch.nn.functional.cross_entropy(input=last_token_logits, target=idxs_correct, reduction='mean')
+            loss = loss_fct(input_ids=input_ids, next_token_ids=idxs_correct, logits=outputs['logits'], answer_mask=possible_answer_mask)
 
-            lm_loss = 0.0
-            if gamma > 0:
-                # Compute fluency loss.
-                # TODO handle masking correctly.
-                log_probs = outputs['logits'].log_softmax(dim=-1)
-                num_input_words = input_ids.shape[1]
-                log_probs_for_input = log_probs[:, -1-num_input_words:-1, :]
-                input_log_probs = torch.gather(
-                    log_probs_for_input, dim=2, index=input_ids[...,None].to(device)
-                )
-                lm_loss = -1 * input_log_probs.mean()
-
-            # accumulate gradients in this batch
-            loss = token_loss + (gamma * lm_loss)
             all_losses.append(loss)
             loss.backward()
             pbar.set_description(f"Loss = {torch.tensor(all_losses).mean():.3f}")
