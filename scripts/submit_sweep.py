@@ -36,7 +36,6 @@ PARAMS_SHARED_DICT = {
     # fixed params
     'max_digit': [10],
     'beam_width_suffix': [5],
-    'prefix_or_suffix': ['suffix'],
     'save_dir': [save_dir],
 }
 
@@ -59,7 +58,7 @@ ks_final, param_combos_final = submit_utils.combine_param_dicts(
     PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT)
 
 for i in range(len(param_combos_final)):
-    param_str = cmd_python + ' ' + os.path.join(repo_dir, '01_train.py ')
+    param_str = cmd_python + ' ' + os.path.join(repo_dir, '01_train_suffix.py ')
     for j, key in enumerate(ks_final):
         param_str += '--' + key + ' ' + str(param_combos_final[i][j]) + ' '
     print(

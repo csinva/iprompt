@@ -16,7 +16,6 @@ from transformers import (AutoModel, AutoModelForCausalLM, AutoTokenizer,
 
 import data
 import parallel
-import train_prefix
 import train_suffix
 import utils
 
@@ -46,12 +45,8 @@ def add_main_args(parser):
     # gpneo # "EleutherAI/gpt-neo-2.7B", "EleutherAI/gpt-j-6B", "EleutherAI/gpt-neox-20b"
     parser.add_argument('--checkpoint', type=str, default="gpt2-medium",
                         help='model checkpoint to use')
-    parser.add_argument('--prefix_or_suffix', type=str, default="suffix",  # either prefix or suffix (pre or suf will suffice)
-                        help='model checkpoint to use')
     parser.add_argument('--max_num_tokens', type=int, default=4,
                         help='max length of sequence to find (num tokens)')
-    parser.add_argument('--lr_prefix', type=float, default=1e-4,
-                        help='learning rate')
     parser.add_argument('--beam_width_suffix', type=int, default=4,
                         help='max width of beam in suffix search')
     parser.add_argument('--use_single_query', type=int, default=0,
@@ -65,8 +60,6 @@ def add_main_args(parser):
                         help='batch size for training')
     parser.add_argument('--seed', type=int, default=1,
                         help='random seed')
-    parser.add_argument('--n_epochs_prefix', type=int, default=10000,
-                        help='number of epochs for training')
     parser.add_argument('--save_dir', type=str, default='results',
                         help='directory for saving')
     return parser
@@ -139,7 +132,7 @@ if __name__ == '__main__':
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     tokenizer.pad_token = tokenizer.eos_token
     model = AutoModelForCausalLM.from_pretrained(
-        checkpoint, output_hidden_states=args.prefix_or_suffix == 'prefix')
+        checkpoint, output_hidden_states=False)
     model = parallel.model_to_device(args, model)
 
     # set up saving
@@ -148,13 +141,8 @@ if __name__ == '__main__':
     utils.save_json(args=args, save_dir=save_dir, fname='params.json', r=r)
 
     # train
-    logger.info('beginning training...')
-    if args.prefix_or_suffix.startswith('pre'):
-        train_prefix.train_prefix(
-            args, r, model, dataloader, save_dir, tokenizer)
-    elif args.prefix_or_suffix.startswith('suf'):
-        with torch.no_grad():
-            train_suffix.train_suffix(args, r, model, dataloader,
-                                      check_answer_func, tokenizer, save_dir)
+    with torch.no_grad():
+        train_suffix.train_suffix(args, r, model, dataloader,
+                                  check_answer_func, tokenizer, save_dir)
 
     utils.save(args, save_dir, r, final=True)
