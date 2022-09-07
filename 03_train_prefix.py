@@ -68,6 +68,30 @@ def train(
     optim = torch.optim.AdamW(model.trainable_params, lr=args.lr)
 
     assert model.training
+    
+    # Compute loss only over possible answers to make task easier
+    possible_answer_ids = []
+    for batch in dataloader:
+        y_text = [answer for answer in batch['output']]
+        y_tokenized = tokenizer(y_text, return_tensors='pt')
+        true_next_token_ids = y_tokenized['input_ids'][:, 0] # only test on the single next token
+        possible_answer_ids.extend(true_next_token_ids.tolist())
+    
+    possible_answer_ids = torch.tensor(possible_answer_ids)
+    num_unique_answers = len(set(possible_answer_ids.tolist()))
+    assert num_unique_answers > 0, "need multiple answers for multiple choice"
+    random_acc = 1 / num_unique_answers * 100.0
+    majority_count = (possible_answer_ids[:, None] == possible_answer_ids[None, :]).sum(dim=1).max()
+    majority_acc = majority_count * 100.0 / len(possible_answer_ids)
+    print(f"Training with {num_unique_answers} possible answers / random acc {random_acc:.1f}% / majority acc {majority_acc:.1f}%")
+    
+    vocab_size = len(tokenizer.vocab)
+    possible_answer_mask = (
+        torch.arange(start=0, end=vocab_size)[:, None]
+        == 
+        possible_answer_ids[None, :]
+    ).any(dim=1).to(device)
+
     for epoch in range(args.n_epochs):
         model.pre_epoch()
 
@@ -90,39 +114,41 @@ def train(
             except:
                 print("error!")
                 breakpoint()
-            # (batch_size, seq_len, vocab_size)
+            idxs_correct = idxs_correct.squeeze(dim=1)
 
             input_ids, outputs = model.forward_text(text=full_text)
 
-            log_probs = outputs['logits'].log_softmax(dim=-1)
+            last_token_logits = outputs['logits'][:, -1, :]
+            last_token_logits = torch.where(
+                possible_answer_mask, last_token_logits, torch.tensor(float('-inf')).to(device)
+            )
 
-            last_token_logprobs = log_probs[:, -1, :]
-            correct_token_logprobs = torch.gather(last_token_logprobs, 1, idxs_correct)
+            total_n += len(idxs_correct)
+            total_n_correct += (last_token_logits.argmax(dim=-1) == idxs_correct).int().sum()
 
-            total_n += len(last_token_logprobs)
-            total_n_correct += (last_token_logprobs.argmax(dim=-1) == idxs_correct.flatten()).int().sum()
+            token_loss = torch.nn.functional.cross_entropy(input=last_token_logits, target=idxs_correct, reduction='mean')
 
             lm_loss = 0.0
             if gamma > 0:
                 # Compute fluency loss.
                 # TODO handle masking correctly.
+                log_probs = outputs['logits'].log_softmax(dim=-1)
                 num_input_words = input_ids.shape[1]
                 log_probs_for_input = log_probs[:, -1-num_input_words:-1, :]
                 input_log_probs = torch.gather(
                     log_probs_for_input, dim=2, index=input_ids[...,None].to(device)
                 )
-                lm_loss = input_log_probs.mean()
+                lm_loss = -1 * input_log_probs.mean()
 
             # accumulate gradients in this batch
-            loss = -1 * (correct_token_logprobs.mean() + lm_loss * gamma) # minimize prob answer being wrong
-            all_losses.extend((-1 * correct_token_logprobs).flatten().tolist())
+            loss = token_loss + (gamma * lm_loss)
+            all_losses.append(loss)
             loss.backward()
-            pbar.set_description(f"Loss = {loss:.3f}")
+            pbar.set_description(f"Loss = {torch.tensor(all_losses).mean():.3f}")
 
             # optimize
-            # optim.step()
-            # optim.zero_grad()
-
+            optim.step()
+            optim.zero_grad()
         
         avg_loss = sum(all_losses) / len(all_losses)
         print(f"Epoch {epoch}. average loss = {avg_loss:.3f} / {total_n_correct} / {total_n} correct ({total_n_correct/total_n*100:.2f}%)")
@@ -139,8 +165,8 @@ def train(
         model.post_epoch()
 
         # optimize
-        optim.step()
-        optim.zero_grad()
+        # optim.step()
+        # optim.zero_grad()
 
 
     return r
@@ -173,6 +199,10 @@ if __name__ == '__main__':
                         help='learning rate')
     parser.add_argument('--gamma', type=float, default=0.0,
                         help='hparam: weight for language modeling loss')
+    parser.add_argument('--task_name', type=str, default='add_two',
+                        choices=(data.TASKS.keys() - {'SUFFIX'}),
+                        help='name of task'
+    )
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",
                         choices=(
                             "EleutherAI/gpt-neo-125M",
@@ -196,7 +226,7 @@ if __name__ == '__main__':
     lm = AutoModelForCausalLM.from_pretrained(
         checkpoint, output_hidden_states=True)
     model = model_cls_dict[args.model_cls](model=lm, tokenizer=tokenizer)
-    dset, check_answer_func, description = data.get_data(args=args, task_name='add_two')
+    dset, check_answer_func, description = data.get_data(args=args, task_name=args.task_name)
     print(f"got task with description: {description}")
 
     logger.info('beginning training...')

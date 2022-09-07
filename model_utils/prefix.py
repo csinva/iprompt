@@ -70,7 +70,7 @@ class PrefixTunedModel(torch.nn.Module, abc.ABC):
     
     def init_continuous_prefix(self) -> torch.nn.Parameter:
         # TODO: argparse for params
-        N_TOKENS = 1 # TODO argparse for n_tokens
+        N_TOKENS = 8 # TODO argparse for n_tokens
         return torch.nn.Parameter(
             self.token_embedding.weight.mean(dim=0, keepdim=True)[None].repeat(1, N_TOKENS, 1), requires_grad=True
         )
