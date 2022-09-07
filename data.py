@@ -48,7 +48,7 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1):
 
             gen_func = task['gen_func']
             if num_inputs == 1:
-                x, y = template(num1, gen_func)
+                x, y = template(num2, gen_func)
             elif num_inputs == 2:
                 x, y = template(num1, num2, gen_func)
 
@@ -87,7 +87,6 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1):
     # return check answer func
     check_answer_func = TASKS[task_name]['check_answer_func']
     if isinstance(check_answer_func, str):
-        print(type(check_answer_func))
         check_answer_func_re = re.compile(check_answer_func, re.IGNORECASE).search
         check_answer_func = lambda x: bool(check_answer_func_re(x))
     return dset, check_answer_func, task['description']
