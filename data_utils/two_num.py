@@ -79,7 +79,7 @@ TASKS_TWO_NUMS = {
         'prompt_template_funcs': PROMPT_TEMPLATE_TWO_NUMS,
         'check_answer_func': r'first|begin|original',
         'gen_func': lambda x: x[0],
-        'description': "Return the fist of the inputs.",
+        'description': "Return the first of the inputs.",
     },
 
     'SUFFIXES': SUFFIXES_TWO_NUMS,    
