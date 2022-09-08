@@ -1,5 +1,4 @@
 from typing import Dict, List
-import dataclasses
 import datasets
 import os
 import random
@@ -117,8 +116,9 @@ def train(
                 breakpoint()
             idxs_correct = idxs_correct.squeeze(dim=1)
 
-            loss, n_correct = model.compute_loss(
-                text=full_text, next_token_ids=idxs_correct, possible_answer_mask=possible_answer_mask
+            input_ids = model.tokenizer(full_text, return_tensors='pt')['input_ids'].to(device)
+            loss, n_correct = model.compute_loss_and_call_backward(
+                original_input_ids=input_ids, next_token_ids=idxs_correct, possible_answer_mask=possible_answer_mask
             )
 
             total_n += len(idxs_correct)

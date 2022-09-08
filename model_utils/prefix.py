@@ -35,9 +35,6 @@ class PrefixLoss:
         batch_size, vocab_size = next_token_logits.shape
         assert next_token_idxs.shape == (batch_size,)
         assert answer_mask.shape == (vocab_size,)
-        next_token_logits = torch.where(
-            answer_mask[None], next_token_logits, torch.tensor(float('-inf')).to(device)
-        )
         return torch.nn.functional.cross_entropy(
             input=next_token_logits,
             target=next_token_idxs,
@@ -109,12 +106,6 @@ class PrefixModel(nn.Module, abc.ABC):
     @property 
     def token_embedding_dim(self) -> int:
         return self.token_embedding.weight.shape[1] # often 768, or 2560 for some larger models
-    
-    def forward_text(self, text: Iterable[str]) -> torch.Tensor:
-        tokenized_text = self.tokenizer(text, return_tensors='pt')
-        return self.forward(
-            input_ids=tokenized_text['input_ids'].to(device)
-        )
 
     def forward(self, input_ids: torch.Tensor) -> torch.Tensor:
         input_ids, embeddings = self.embed_input_ids(input_ids=input_ids)
@@ -149,22 +140,29 @@ class PrefixModel(nn.Module, abc.ABC):
         # return nn.Parameter(torch.randu((1, 1, emb_dim)), requires_grad=True).to(device)
         # return nn.Parameter(prefix_emb[:, 0, :], requires_grad=True).to(device)
     
-    def init_discrete_prefix(self) -> nn.Parameter:
+    def init_discrete_prefix(self, num_tokens: int) -> nn.Parameter:
         # TODO: argparse for params
-        N_TOKENS = 64 # TODO argparse for n_tokens
         start_word_id = torch.tensor([self.tokenizer.vocab['the']], dtype=int)
-        return start_word_id.repeat((N_TOKENS,))
+        return start_word_id.repeat((num_tokens,))
     
-    def compute_loss(self, text: str, next_token_ids: torch.Tensor, possible_answer_mask: torch.Tensor) -> Tuple[torch.Tensor, int]:
+    def compute_loss_and_call_backward(
+            self,
+            original_input_ids: torch.Tensor,
+            next_token_ids: torch.Tensor,
+            possible_answer_mask: torch.Tensor
+        ) -> Tuple[torch.Tensor, int]:
         """Computes loss using `self.loss_func`.
         
         Returns:
             loss (float torch.Tensor) -- the loss
             num_correct (int): number of examples where prediction was correct
         """
-        input_ids, outputs = self.forward_text(text=text)
+        input_ids, outputs = self.forward(input_ids=original_input_ids)
+        next_token_logits = torch.where(
+            possible_answer_mask[None], outputs.logits[:, -1, :], torch.tensor(float('-inf')).to(device)
+        )
         n_correct = (
-            outputs['logits'][:, -1, :].argmax(dim=-1)
+            next_token_logits.argmax(dim=-1)
                 ==
             next_token_ids
         ).int().sum()
@@ -175,6 +173,7 @@ class PrefixModel(nn.Module, abc.ABC):
             logits=outputs['logits'],
             answer_mask=possible_answer_mask
         )
+        loss.backward()
         return loss, n_correct
 
 
@@ -204,7 +203,7 @@ class PromptTunedModel(PrefixModel):
         }
 
 
-VERBOSE = False
+VERBOSE = False # whether to print grads, etc.
 TOP_K = 20 # for printing grads, etc.
 
 class HotFlipPrefixModel(PrefixModel):
@@ -215,9 +214,12 @@ class HotFlipPrefixModel(PrefixModel):
     prefix_embedding: nn.Parameter
     def __init__(self, loss_func: PrefixLoss, model: transformers.PreTrainedModel, tokenizer: transformers.PreTrainedTokenizer):
         super().__init__(loss_func=loss_func, model=model, tokenizer=tokenizer)
-        self.beam_width = 1 # TODO argparse for beam_width
-        self.num_candidates = 10
-        self.prefix_ids = self.init_discrete_prefix()
+        # HotFlip-specific parameters.
+        self._min_loss = float('inf')
+        self._num_tokens = 2 # TODO argparse for n_tokens
+        self._num_candidates_per_prefix_token = 3
+        # 
+        self.prefix_ids = self.init_discrete_prefix(num_tokens=self._num_tokens)
         self.prefix_embedding = nn.Parameter(
             self.token_embedding.forward(self.prefix_ids), requires_grad=True
         )
@@ -239,10 +241,15 @@ class HotFlipPrefixModel(PrefixModel):
             for _id, _dist in zip(topk_closest_words.indices.cpu().tolist(), topk_closest_words.values.cpu().tolist()):
                 print(f'\t{self.id_to_word[_id]} ({_id}): {_dist:.3f}')
             print("*" * 30)
+    
+    @property
+    def _prefix_token_grad(self) -> torch.Tensor:
+        """Gradient of the prefix tokens wrt the token embedding matrix."""
+        return torch.einsum('nd,vd->nv', self.prefix_embedding.grad, self.token_embedding.weight)
 
     def post_epoch(self) -> None:
         # variables: V (vocab), d (embedding dim), n (num prefix tokens)
-        token_grads = torch.einsum('nd,vd->nv', self.prefix_embedding.grad, self.token_embedding.weight)
+        token_grads = self._prefix_token_grad
         if VERBOSE:
             # Print gradient information.
             print(f"Epoch {epoch}. Most negative grads for x:")
@@ -256,6 +263,90 @@ class HotFlipPrefixModel(PrefixModel):
             for _id, _dist in zip(topk_largest_grads.indices.cpu().tolist()[::-1], topk_largest_grads.values.cpu().tolist()[::-1]):
                 print(f'\t{self.id_to_word[_id]} ({_id}): {_dist:.3f}')
             print("*" * 30)
+        
+
+    def _compute_loss(
+            self,
+            input_ids: torch.Tensor,
+            next_token_ids: torch.Tensor,
+            possible_answer_ids: torch.Tensor,
+            prefix_ids: Optional[torch.Tensor]
+        ) -> torch.Tensor:
+        input_ids, outputs = self.forward(input_ids=input_ids, prefix_ids=prefix_ids)
+        next_token_logits = torch.where(
+            possible_answer_mask[None], outputs.logits[:, -1, :], torch.tensor(float('-inf')).to(device)
+        )
+        n_correct = (
+            next_token_logits.argmax(dim=-1)
+                ==
+            next_token_ids
+        ).int().sum()
+
+        original_loss = self.loss_func(
+            input_ids=input_ids,
+            next_token_ids=next_token_ids,
+            logits=outputs['logits'],
+            answer_mask=possible_answer_mask
+        )
+        return input_ids, original_loss
+
+    def compute_loss_and_call_backward(
+            self,
+            original_input_ids: torch.Tensor,
+            next_token_ids: torch.Tensor,
+            possible_answer_mask: torch.Tensor
+        ) -> Tuple[torch.Tensor, int]:
+        """Computes loss using `self.loss_func`.
+        
+        Returns:
+            loss (float torch.Tensor) -- the loss
+            num_correct (int): number of examples where prediction was correct
+        """
+        # 
+        # Compute loss normally.
+        # 
+        original_loss = self._compute_loss(
+            original_input_ids=original_input_ids,
+            next_token_ids=next_token_ids,
+            possible_answer_mask=possible_answer_mask
+        )
+        original_loss.backward()
+        # 
+        # Get candidate IDs for every position.
+        # 
+        token_grads = self._prefix_token_grad
+        top_tokens_per_position = (
+            token_grads.topk(k=self._num_candidates_per_prefix_token, dim=1).indices
+        )
+        assert top_tokens_per_position.shape == (self._num_tokens, self._num_candidates_per_prefix_token)
+        # 
+        # Evaluate candidates.
+        # 
+        total_losses = torch.zeros_like(top_tokens_per_position)
+        for token_idx in range(self._num_tokens):
+            for candidate_idx in range(self._num_candidates_per_prefix_token):
+                candidate_mask = torch.nn.functional.one_hot(self._num_tokens)
+                candidate_id = top_tokens_per_position[token_idx, candidate_idx]
+                prefix_ids = torch.where(
+                    candidate_mask, top_tokens_per_position, self.prefix_ids
+                )
+                with torch.no_grad():
+                    loss = self._compute_loss(
+                        original_input_ids=original_input_ids,
+                        next_token_ids=next_token_ids,
+                        possible_answer_mask=possible_answer_mask,
+                        prefix_ids=prefix_ids
+                    )
+                total_losses[token_idx, candidate_idx] += loss
+                
+
+        # 
+        # Pick top candidate and reset self._min_loss. (TODO: Support beam width > 1.)
+        # 
+        # self._set_prefix_ids(best_prefix)
+        return self._min_loss, n_correct
+
+
         ############################################################
         # TODO: Argparse for different search strategies.
         # Flip word with most negative grad.
@@ -266,11 +357,9 @@ class HotFlipPrefixModel(PrefixModel):
         # self._set_prefix_ids(torch.tensor(new_tokens).to(device))
         ############################################################
         # Flip all words to token with most negative grad.
-        self._set_prefix_ids(token_grads.argmin(dim=1))
         ############################################################
-        # TODO >> FLIP here
         print("new words:", self.tokenizer.decode(self.prefix_ids.tolist()))
-    
+
     @property
     def prefix_embedding_token_ids(self) -> torch.Tensor:
         return self.prefix_embedding.argmax(dim=-1)
@@ -279,15 +368,45 @@ class HotFlipPrefixModel(PrefixModel):
     def trainable_params(self) -> Iterable[nn.Parameter]:
         return [self.prefix_embedding]
 
-    def embed_input_ids(self, input_ids: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
+    def embed_input_ids(self, input_ids: torch.Tensor, prefix_ids: Optional[torch.Tensor]) -> Tuple[torch.Tensor, torch.Tensor]:
+        """Gets token embeddings for tokens given by `input_ids` prefixed by `prefix_ids`.
+
+        If not provided, `prefix_ids` is replaced with `self.prefix_ids`
+        at every position.
+
+        Args:
+            input_ids (int torch.Tensor) -- IDs for batch of sentences
+            prefix_ids (Optional int torch.Tensor) -- IDs for a single prefix
+                to be prepended before each input ID. If not provided,
+                will be overridden with prefix from `self.prefix_ids`.
+
+        Returns:
+            input_ids (int torch.Tensor) -- IDs of all tokens, including prefix
+            outputs (float torch.Tensor): embedded tokens
+        """
         batch_size = len(input_ids)
-        input_ids = torch.cat(
-            (self.prefix_embedding_token_ids.repeat((batch_size, 1)), input_ids), dim=1
-        )
-        outputs = torch.cat(
-            # concatenate prefix + example
-            (self.prefix_embedding[None].repeat((batch_size, 1, 1)), self.token_embedding.forward(input_ids)), dim=1
-        )
+        if prefix_embedding_token_ids is None:
+            prefix_embedding_token_ids = self.prefix_ids.repeat((batch_size, 1))
+            input_ids = torch.cat(
+               (prefix_embedding_token_ids, input_ids), dim=1
+            )
+            outputs = torch.cat(
+                # concatenate prefix + example
+               (self.prefix_embedding[None].repeat((batch_size, 1, 1)),
+               self.token_embedding.forward(input_ids)), dim=1
+            )
+        else:
+            input_ids = torch.cat(
+               (prefix_embedding_token_ids, input_ids), dim=1
+            )
+            prefix_embedding = self.token_embedding.forward(input_ids)
+            outputs = torch.cat(
+                # concatenate prefix + example
+                (prefix_embedding[None].repeat((batch_size, 1, 1)),
+                self.token_embedding.forward(input_ids)), dim=1
+            )
+
+        
         return input_ids, outputs
 
 
