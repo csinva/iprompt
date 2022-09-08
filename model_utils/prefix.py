@@ -25,6 +25,8 @@ class PrefixLoss:
         log_probs = logits.log_softmax(dim=-1)
         num_input_words = input_ids.shape[1]
         log_probs_for_input = log_probs[:, -1-num_input_words:-1, :]
+        # breakpoint()
+        input_ids = input_ids[:, 1:]
         input_log_probs = torch.gather(
             log_probs_for_input, dim=2, index=input_ids[...,None].to(device)
         )
@@ -36,6 +38,7 @@ class PrefixLoss:
         batch_size, vocab_size = next_token_logits.shape
         assert next_token_idxs.shape == (batch_size,)
         assert answer_mask.shape == (vocab_size,)
+        
         return torch.nn.functional.cross_entropy(
             input=next_token_logits,
             target=next_token_idxs,
@@ -110,6 +113,7 @@ class PrefixModel(nn.Module, abc.ABC):
 
     def forward(self, input_ids: torch.Tensor, prefix_ids: Optional[torch.Tensor]) -> torch.Tensor:
         input_ids, embeddings = self.embed_input_ids(input_ids=input_ids, prefix_ids=prefix_ids)
+        assert input_ids.shape == embeddings.shape[0:2]
         return input_ids, self.model(inputs_embeds=embeddings)
     
     def pre_epoch(self) -> None:
@@ -218,8 +222,8 @@ class HotFlipPrefixModel(PrefixModel):
         super().__init__(loss_func=loss_func, model=model, tokenizer=tokenizer)
         # HotFlip-specific parameters.
         self._min_loss = float('inf')
-        self._num_tokens = 6 # TODO argparse for n_tokens
-        self._num_candidates_per_prefix_token = 10
+        self._num_tokens = 8 # TODO argparse for n_tokens
+        self._num_candidates_per_prefix_token = 32 # TODO argparse for this too
         # 
         self.prefix_ids = self.init_discrete_prefix(num_tokens=self._num_tokens)
         self.prefix_embedding = nn.Parameter(
@@ -315,7 +319,7 @@ class HotFlipPrefixModel(PrefixModel):
 
         for batch in tqdm.tqdm(dataloader, desc='evaluating HotFlip candidates', colour='red', leave=False):
             # Loop in this order so we only tokenize each thing once.
-            x_text = [prompt.replace('Given ', '') for prompt in batch['input']]
+            x_text = [prompt for prompt in batch['input']]
             y_text = [answer.replace('.', '').rstrip() for answer in batch['output']] # strip newlines and periods.
             #
             input_ids = self.tokenizer(x_text, return_tensors='pt')['input_ids'].to(device)
@@ -343,8 +347,9 @@ class HotFlipPrefixModel(PrefixModel):
         #
         min_loss = all_candidate_losses.min()
         min_mask = (all_candidate_losses == all_candidate_losses.min())
-        token_idx = min_mask.any(dim=1).nonzero().item()
-        candidate_idx = min_mask.any(dim=0).nonzero().item()
+        token_idx = min_mask.any(dim=1).nonzero()[0].item()
+        candidate_idx = min_mask.any(dim=0).nonzero()[0].item()
+        # breakpoint()
 
         new_token_id = top_tokens_per_position[token_idx, candidate_idx]
         mask = torch.nn.functional.one_hot(
@@ -398,7 +403,7 @@ class HotFlipPrefixModel(PrefixModel):
             prefix_embedding = self.token_embedding.forward(prefix_ids)
 
         prefix_ids = prefix_ids.to(device).repeat((batch_size, 1))
-        input_ids = torch.cat(
+        full_input_ids = torch.cat(
             (prefix_ids, input_ids), dim=1
         )
         outputs = torch.cat(
@@ -406,7 +411,7 @@ class HotFlipPrefixModel(PrefixModel):
             (self.prefix_embedding[None].repeat((batch_size, 1, 1)),
             self.token_embedding.forward(input_ids)), dim=1
         )
-        return input_ids, outputs
+        return full_input_ids, outputs
 
 
 class GumbelPrefixModel(PrefixModel):
