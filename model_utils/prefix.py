@@ -1,19 +1,91 @@
 from typing import Any, Dict, Iterable, Tuple
 
 import abc
+import dataclasses
 import functools
 import transformers
 import torch
+from torch import nn
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
-class PrefixTunedModel(torch.nn.Module, abc.ABC):
+@dataclasses.dataclass
+class PrefixLoss:
+    """Computes next-token-prediction loss with optional language modeling component.
+    """
+    gamma: float
+
+    def _compute_fluency_loss(
+            self, logits: torch.Tensor, input_ids: torch.Tensor
+        ) -> torch.Tensor:
+        if self.gamma == 0:
+            return torch.tensor(0.0).to(device)
+        log_probs = logits.log_softmax(dim=-1)
+        num_input_words = input_ids.shape[1]
+        log_probs_for_input = log_probs[:, -1-num_input_words:-1, :]
+        input_log_probs = torch.gather(
+            log_probs_for_input, dim=2, index=input_ids[...,None].to(device)
+        )
+        return -1 * input_log_probs.mean()
+
+    def _compute_token_loss(
+            self, next_token_logits: torch.Tensor, next_token_idxs: torch.Tensor, answer_mask: torch.Tensor
+        ) -> torch.Tensor:
+        batch_size, vocab_size = next_token_logits.shape
+        assert next_token_idxs.shape == (batch_size,)
+        assert answer_mask.shape == (vocab_size,)
+        next_token_logits = torch.where(
+            answer_mask[None], next_token_logits, torch.tensor(float('-inf')).to(device)
+        )
+        return torch.nn.functional.cross_entropy(
+            input=next_token_logits,
+            target=next_token_idxs,
+            reduction='mean'
+        )
+    
+    def __call__(self,
+            input_ids: torch.Tensor,
+            next_token_ids: torch.Tensor,
+            logits: torch.Tensor,
+            answer_mask: torch.Tensor,
+        ) -> torch.Tensor:
+        """Computes loss.
+
+        Args:
+            input_ids (int torch.Tensor): array of token IDs for inputs
+            next_token_ids (int torch.Tensor): array of token IDs for the word
+                that comes after the input
+            logits (float torch.Tensor): logits for all output tokens, including
+                the next one
+            answer_mask (bool torch.Tensor): mask over tokens to remove irrelevant ones
+
+        Returns: float torch.Tensor scalar, loss value (lower is better).
+        """
+        fluency_loss = (
+            self._compute_fluency_loss(
+                logits=logits,
+                input_ids=input_ids
+            )
+        )
+        token_loss = (
+            self._compute_token_loss(
+                next_token_logits=logits[:, -1, :],
+                next_token_idxs=next_token_ids,
+                answer_mask=answer_mask,
+            )
+        )
+        return token_loss + (self.gamma * fluency_loss)
+
+
+class PrefixModel(nn.Module, abc.ABC):
+    loss_func: PrefixLoss
     model: transformers.PreTrainedModel
     tokenizer: transformers.PreTrainedTokenizer
     
-    def __init__(self, model: transformers.PreTrainedModel, tokenizer: transformers.PreTrainedTokenizer):
+    def __init__(self, loss_func: PrefixLoss, model: transformers.PreTrainedModel, tokenizer: transformers.PreTrainedTokenizer):
         super().__init__()
+        self.loss_func = loss_func
         self.model = model
         self.tokenizer = tokenizer
 
@@ -23,11 +95,11 @@ class PrefixTunedModel(torch.nn.Module, abc.ABC):
         return {num: word for word, num in self.tokenizer.vocab.items()}
 
     @property
-    def transformer(self) -> torch.nn.Module:
+    def transformer(self) -> nn.Module:
         return self.model._modules['transformer']
 
     @property
-    def token_embedding(self) -> torch.nn.Embedding:
+    def token_embedding(self) -> nn.Embedding:
         return self.transformer.wte
     
     @property
@@ -58,7 +130,7 @@ class PrefixTunedModel(torch.nn.Module, abc.ABC):
         return {}
 
     @abc.abstractproperty
-    def trainable_params(self) -> Iterable[torch.nn.Parameter]:
+    def trainable_params(self) -> Iterable[nn.Parameter]:
         raise NotImplementedError()
 
     @abc.abstractmethod
@@ -68,28 +140,51 @@ class PrefixTunedModel(torch.nn.Module, abc.ABC):
         """
         raise NotImplementedError()
     
-    def init_continuous_prefix(self) -> torch.nn.Parameter:
+    def init_continuous_prefix(self) -> nn.Parameter:
         # TODO: argparse for params
         N_TOKENS = 8 # TODO argparse for n_tokens
-        return torch.nn.Parameter(
+        return nn.Parameter(
             self.token_embedding.weight.mean(dim=0, keepdim=True)[None].repeat(1, N_TOKENS, 1), requires_grad=True
         )
-        # return torch.nn.Parameter(torch.randu((1, 1, emb_dim)), requires_grad=True).to(device)
-        # return torch.nn.Parameter(prefix_emb[:, 0, :], requires_grad=True).to(device)
+        # return nn.Parameter(torch.randu((1, 1, emb_dim)), requires_grad=True).to(device)
+        # return nn.Parameter(prefix_emb[:, 0, :], requires_grad=True).to(device)
     
-    def init_discrete_prefix(self) -> torch.nn.Parameter:
+    def init_discrete_prefix(self) -> nn.Parameter:
         # TODO: argparse for params
         N_TOKENS = 64 # TODO argparse for n_tokens
         start_word_id = torch.tensor([self.tokenizer.vocab['the']], dtype=int)
         return start_word_id.repeat((N_TOKENS,))
+    
+    def compute_loss(self, text: str, next_token_ids: torch.Tensor, possible_answer_mask: torch.Tensor) -> Tuple[torch.Tensor, int]:
+        """Computes loss using `self.loss_func`.
+        
+        Returns:
+            loss (float torch.Tensor) -- the loss
+            num_correct (int): number of examples where prediction was correct
+        """
+        input_ids, outputs = self.forward_text(text=text)
+        n_correct = (
+            outputs['logits'][:, -1, :].argmax(dim=-1)
+                ==
+            next_token_ids
+        ).int().sum()
+
+        loss = self.loss_func(
+            input_ids=input_ids,
+            next_token_ids=next_token_ids,
+            logits=outputs['logits'],
+            answer_mask=possible_answer_mask
+        )
+        return loss, n_correct
 
 
-class PromptTunedModel(PrefixTunedModel):
+class PromptTunedModel(PrefixModel):
+    loss_func: PrefixLoss
     model: transformers.PreTrainedModel
     tokenizer: transformers.PreTrainedTokenizer
-    prefix_embedding: torch.nn.Parameter
-    def __init__(self, model: transformers.PreTrainedModel, tokenizer: transformers.PreTrainedTokenizer):
-        super().__init__(model=model, tokenizer=tokenizer)
+    prefix_embedding: nn.Parameter
+    def __init__(self, loss_func: PrefixLoss, model: transformers.PreTrainedModel, tokenizer: transformers.PreTrainedTokenizer):
+        super().__init__(loss_func=loss_func, model=model, tokenizer=tokenizer)
         self.prefix_embedding = self.init_continuous_prefix()
 
     def embed_input_ids(self, input_ids: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
@@ -99,7 +194,7 @@ class PromptTunedModel(PrefixTunedModel):
         )
 
     @property
-    def trainable_params(self) -> Iterable[torch.nn.Parameter]:
+    def trainable_params(self) -> Iterable[nn.Parameter]:
         return [self.prefix_embedding]
     
     def compute_metrics(self) -> Dict[str, Any]:
@@ -112,23 +207,24 @@ class PromptTunedModel(PrefixTunedModel):
 VERBOSE = False
 TOP_K = 20 # for printing grads, etc.
 
-class HotFlipPrefixTunedModel(PrefixTunedModel):
+class HotFlipPrefixModel(PrefixModel):
+    loss_func: PrefixLoss
     model: transformers.PreTrainedModel
     tokenizer: transformers.PreTrainedTokenizer
     prefix_ids: torch.Tensor
-    prefix_embedding: torch.nn.Parameter
-    def __init__(self, model: transformers.PreTrainedModel, tokenizer: transformers.PreTrainedTokenizer):
-        super().__init__(model=model, tokenizer=tokenizer)
+    prefix_embedding: nn.Parameter
+    def __init__(self, loss_func: PrefixLoss, model: transformers.PreTrainedModel, tokenizer: transformers.PreTrainedTokenizer):
+        super().__init__(loss_func=loss_func, model=model, tokenizer=tokenizer)
         self.beam_width = 1 # TODO argparse for beam_width
         self.num_candidates = 10
         self.prefix_ids = self.init_discrete_prefix()
-        self.prefix_embedding = torch.nn.Parameter(
+        self.prefix_embedding = nn.Parameter(
             self.token_embedding.forward(self.prefix_ids), requires_grad=True
         )
     
     def _set_prefix_ids(self, new_ids: torch.Tensor) -> None:
         self.prefix_ids = new_ids
-        self.prefix_embedding = torch.nn.Parameter(
+        self.prefix_embedding = nn.Parameter(
             self.token_embedding.forward(self.prefix_ids), requires_grad=True
         )
 
@@ -180,7 +276,7 @@ class HotFlipPrefixTunedModel(PrefixTunedModel):
         return self.prefix_embedding.argmax(dim=-1)
 
     @property
-    def trainable_params(self) -> Iterable[torch.nn.Parameter]:
+    def trainable_params(self) -> Iterable[nn.Parameter]:
         return [self.prefix_embedding]
 
     def embed_input_ids(self, input_ids: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
@@ -195,25 +291,26 @@ class HotFlipPrefixTunedModel(PrefixTunedModel):
         return input_ids, outputs
 
 
-class GumbelPrefixTunedModel(PrefixTunedModel):
+class GumbelPrefixModel(PrefixModel):
+    loss_func: PrefixLoss
     model: transformers.PreTrainedModel
     tokenizer: transformers.PreTrainedTokenizer
-    prefix_embedding: torch.nn.Parameter
+    prefix_embedding: nn.Parameter
 
-    def __init__(self, model: transformers.PreTrainedModel, tokenizer: transformers.PreTrainedTokenizer):
-        super().__init__(model=model, tokenizer=tokenizer)
-        N_TOKENS = 64 # TODO argparse for n_tokens
-        self.word_weights = torch.nn.Parameter(
+    def __init__(self, loss_func: PrefixLoss, model: transformers.PreTrainedModel, tokenizer: transformers.PreTrainedTokenizer):
+        super().__init__(loss_func=loss_func, model=model, tokenizer=tokenizer)
+        N_TOKENS = 8 # TODO argparse for n_tokens
+        self.word_weights = nn.Parameter(
             torch.randn((1, N_TOKENS, self.vocab_size)), requires_grad=True
         )
         # TODO: argparse for tau
-        # lower tau -> more spiky
+        # (lower tau -> more spiky)
         self.tau = 10
         # TODO: argparse for tau_anneal
         self.tau_anneal = 1.02
 
     @property
-    def trainable_params(self) -> Iterable[torch.nn.Parameter]:
+    def trainable_params(self) -> Iterable[nn.Parameter]:
         return [self.word_weights]
     
     def post_epoch(self) -> None:
@@ -222,7 +319,7 @@ class GumbelPrefixTunedModel(PrefixTunedModel):
 
     def embed_input_ids(self, input_ids: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
         # word_weights_dist = (word_weights * 1000).softmax(dim=-1)
-        prefix_embedding_words_dist = torch.nn.functional.gumbel_softmax(
+        prefix_embedding_words_dist = nn.functional.gumbel_softmax(
             self.word_weights.repeat((len(input_ids), 1, 1)), tau=self.tau, dim=-1, hard=False
         )
         

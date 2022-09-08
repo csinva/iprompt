@@ -14,6 +14,7 @@ from . import data_funcs
 Only 2 newlines will be added between them.
 Don't change the order of these (higher should be better).
 """
+
 PROMPT_TEMPLATE_ONE_NUM = [
     lambda num1, g: (
         f'Given the input x is {num1}, the output f(x) is', f' {g(num1)}.\n\n'),
