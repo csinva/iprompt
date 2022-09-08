@@ -101,37 +101,25 @@ def train(
         total_n_correct = 0
         pbar = tqdm(enumerate(dataloader), total=len(dataloader))
         for idx, batch in pbar:
-            # todo; update template
             x_text = [prompt.replace('Given ', '') for prompt in batch['input']]
             y_text = [answer.replace('.', '').rstrip() for answer in batch['output']] # strip newlines and periods.
-            full_text = [x_text[i] for i in range(len(x_text))]
 
-            # calculate loss
-            # currently this calculates loss only on the answer token
-            idxs_correct = tokenizer(y_text, return_tensors='pt')['input_ids'].to(device)
-            try:
-                assert idxs_correct.nelement() == len(y_text), 'For now assume that each answer is a single token'
-            except:
-                print("error!")
-                breakpoint()
-            idxs_correct = idxs_correct.squeeze(dim=1)
+            input_ids = model.tokenizer(x_text, return_tensors='pt')['input_ids'].to(device)
+            next_token_ids = tokenizer(y_text, return_tensors='pt')['input_ids'].to(device).squeeze(dim=1)
+            assert next_token_ids.nelement() == len(y_text), 'For now assume that each answer is a single token'
 
-            input_ids = model.tokenizer(full_text, return_tensors='pt')['input_ids'].to(device)
-            loss, n_correct = model.compute_loss_and_call_backward(
+            loss, n_correct = model.compute_loss(
                 original_input_ids=input_ids,
-                next_token_ids=idxs_correct,
+                next_token_ids=next_token_ids,
                 possible_answer_mask=possible_answer_mask
             )
+            loss.backward()
 
-            total_n += len(idxs_correct)
+            total_n += len(next_token_ids)
             total_n_correct += n_correct
 
             all_losses.append(loss)
             pbar.set_description(f"Loss = {torch.tensor(all_losses).mean():.3f}")
-
-            # optimize
-            if args.model_cls != 'hotflip': optim.step()
-            optim.zero_grad()
         
         avg_loss = sum(all_losses) / len(all_losses)
         print(f"Epoch {epoch}. average loss = {avg_loss:.3f} / {total_n_correct} / {total_n} correct ({total_n_correct/total_n*100:.2f}%)")
@@ -145,11 +133,11 @@ def train(
             os.makedirs(save_dir, exist_ok=True)
             pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
 
-        model.post_epoch(dataloader=dataloader)
+        model.post_epoch(dataloader=dataloader, possible_answer_mask=possible_answer_mask)
 
         # optimize
-        # optim.step()
-        # optim.zero_grad()
+        optim.step()
+        optim.zero_grad()
 
 
     return r
