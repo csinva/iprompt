@@ -6,6 +6,7 @@ import functools
 import transformers
 import torch
 from torch import nn
+import tqdm
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -114,7 +115,7 @@ class PrefixModel(nn.Module, abc.ABC):
     def pre_epoch(self) -> None:
         return
     
-    def post_epoch(self) -> None:
+    def post_epoch(self, dataloader: torch.utils.data.DataLoader, possible_answer_mask: torch.Tensor) -> None:
         return
     
     def compute_metrics(self) -> Dict[str, Any]:
@@ -218,8 +219,8 @@ class HotFlipPrefixModel(PrefixModel):
         super().__init__(loss_func=loss_func, model=model, tokenizer=tokenizer)
         # HotFlip-specific parameters.
         self._min_loss = float('inf')
-        self._num_tokens = 2 # TODO argparse for n_tokens
-        self._num_candidates_per_prefix_token = 3
+        self._num_tokens = 6 # TODO argparse for n_tokens
+        self._num_candidates_per_prefix_token = 10
         # 
         self.prefix_ids = self.init_discrete_prefix(num_tokens=self._num_tokens)
         self.prefix_embedding = nn.Parameter(
@@ -289,14 +290,17 @@ class HotFlipPrefixModel(PrefixModel):
         # 
         # Compute loss normally.
         # 
-        _input_ids, original_loss, original_n_correct = self._compute_loss(
+        _input_ids, loss, n_correct = self._compute_loss(
             original_input_ids=original_input_ids,
             next_token_ids=next_token_ids,
             possible_answer_mask=possible_answer_mask
         )
         original_loss.backward()
 
-        self._min_loss = min(self._min_loss, original_loss.item())
+        # self._set_prefix_ids(best_prefix)
+        return loss, n_correct
+        
+    def post_epoch(self, dataloader: torch.utils.data.DataLoader, possible_answer_mask: torch.Tensor) -> None:
         print(f"original loss: {self._min_loss:.2f} and n_correct = {original_n_correct}")
         # 
         # Get candidate IDs for every position.
@@ -310,11 +314,10 @@ class HotFlipPrefixModel(PrefixModel):
         # Evaluate candidates.
         # 
         all_candidate_losses = torch.zeros_like(top_tokens_per_position, dtype=float)
-        best_prefix_ids = self.prefix_ids
+        best_prefix_ids = None
         best_loss = self._min_loss
-        best_n_correct = original_n_correct
 
-        for token_idx in range(self._num_tokens):
+        for token_idx in tqdm.trange(self._num_tokens, 'evaluating candidates at each position for HotFlip', colour='red', leave=False):
             candidate_mask = torch.nn.functional.one_hot(
                 torch.tensor(token_idx), num_classes=self._num_tokens
             ).bool().to(device)
@@ -323,42 +326,34 @@ class HotFlipPrefixModel(PrefixModel):
                 prefix_ids = torch.where(
                     candidate_mask, candidate_id, self.prefix_ids.to(device)
                 ).to(device)
-                with torch.no_grad():
-                    _input_ids, loss, n_correct = self._compute_loss(
-                        original_input_ids=original_input_ids,
-                        next_token_ids=next_token_ids,
-                        possible_answer_mask=possible_answer_mask,
-                        prefix_ids=prefix_ids
-                    )
+
+                for batch in dataloader:
+                    x_text = [prompt.replace('Given ', '') for prompt in batch['input']]
+                    y_text = [answer.replace('.', '').rstrip() for answer in batch['output']] # strip newlines and periods.
+                    #
+                    idxs_correct = self.tokenizer(y_text, return_tensors='pt')['input_ids'].to(device)
+                    input_ids = self.tokenizer(full_text, return_tensors='pt')['input_ids'].to(device)
+                    #
+                    with torch.no_grad():
+                        _input_ids, loss, n_correct = self._compute_loss(
+                            original_input_ids=original_input_ids,
+                            next_token_ids=next_token_ids,
+                            possible_answer_mask=possible_answer_mask,
+                            prefix_ids=prefix_ids
+                        )
                 all_candidate_losses[token_idx, candidate_idx] += loss
 
                 if loss < self._min_loss:
                     self._min_loss = loss
                     best_prefix_ids = prefix_ids
-                    best_n_correct = n_correct
 
         # 
         # Pick top candidate and reset self._min_loss. (TODO: Support beam width > 1.)
         # 
         print(f'Old prefix: {self.tokenizer.decode(self.prefix_ids)} // New prefix: {self.tokenizer.decode(best_prefix_ids)}')
+        breakpoint()
         self._set_prefix_ids(best_prefix_ids)
-
-        # self._set_prefix_ids(best_prefix)
-        return self._min_loss, best_n_correct
-
-
-        ############################################################
-        # TODO: Argparse for different search strategies.
-        # Flip word with most negative grad.
-        # token_to_flip_idx = token_grads.min(dim=1).values.argmin()
-        # new_token_id = token_grads[token_to_flip_idx].argmin()
-        # new_tokens = self.prefix_ids.cpu().numpy()
-        # new_tokens[token_to_flip_idx] = new_token_id
-        # self._set_prefix_ids(torch.tensor(new_tokens).to(device))
-        ############################################################
-        # Flip all words to token with most negative grad.
-        ############################################################
-        print("new words:", self.tokenizer.decode(self.prefix_ids.tolist()))
+        return
 
     @property
     def prefix_embedding_token_ids(self) -> torch.Tensor:
@@ -426,7 +421,7 @@ class GumbelPrefixModel(PrefixModel):
     def trainable_params(self) -> Iterable[nn.Parameter]:
         return [self.word_weights]
     
-    def post_epoch(self) -> None:
+    def post_epoch(self, dataloader: torch.utils.data.DataLoader, possible_answer_mask: torch.Tensor) -> None:
         self.tau = self.tau / self.tau_anneal
         print(f"𝛕 = {self.tau:.2f}")
 

@@ -145,7 +145,7 @@ def train(
             os.makedirs(save_dir, exist_ok=True)
             pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
 
-        model.post_epoch()
+        model.post_epoch(dataloader=dataloader)
 
         # optimize
         # optim.step()
