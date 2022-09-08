@@ -118,18 +118,19 @@ def train(
 
             input_ids = model.tokenizer(full_text, return_tensors='pt')['input_ids'].to(device)
             loss, n_correct = model.compute_loss_and_call_backward(
-                original_input_ids=input_ids, next_token_ids=idxs_correct, possible_answer_mask=possible_answer_mask
+                original_input_ids=input_ids,
+                next_token_ids=idxs_correct,
+                possible_answer_mask=possible_answer_mask
             )
 
             total_n += len(idxs_correct)
             total_n_correct += n_correct
 
             all_losses.append(loss)
-            loss.backward()
             pbar.set_description(f"Loss = {torch.tensor(all_losses).mean():.3f}")
 
             # optimize
-            optim.step()
+            if args.model_cls != 'hotflip': optim.step()
             optim.zero_grad()
         
         avg_loss = sum(all_losses) / len(all_losses)

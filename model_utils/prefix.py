@@ -1,4 +1,4 @@
-from typing import Any, Dict, Iterable, Tuple
+from typing import Any, Dict, Iterable, Optional, Tuple
 
 import abc
 import dataclasses
@@ -107,8 +107,8 @@ class PrefixModel(nn.Module, abc.ABC):
     def token_embedding_dim(self) -> int:
         return self.token_embedding.weight.shape[1] # often 768, or 2560 for some larger models
 
-    def forward(self, input_ids: torch.Tensor) -> torch.Tensor:
-        input_ids, embeddings = self.embed_input_ids(input_ids=input_ids)
+    def forward(self, input_ids: torch.Tensor, prefix_ids: Optional[torch.Tensor]) -> torch.Tensor:
+        input_ids, embeddings = self.embed_input_ids(input_ids=input_ids, prefix_ids=prefix_ids)
         return input_ids, self.model(inputs_embeds=embeddings)
     
     def pre_epoch(self) -> None:
@@ -142,6 +142,7 @@ class PrefixModel(nn.Module, abc.ABC):
     
     def init_discrete_prefix(self, num_tokens: int) -> nn.Parameter:
         # TODO: argparse for params
+        # start_word_id = torch.tensor([self.tokenizer.vocab['the']], dtype=int)
         start_word_id = torch.tensor([self.tokenizer.vocab['the']], dtype=int)
         return start_word_id.repeat((num_tokens,))
     
@@ -186,7 +187,8 @@ class PromptTunedModel(PrefixModel):
         super().__init__(loss_func=loss_func, model=model, tokenizer=tokenizer)
         self.prefix_embedding = self.init_continuous_prefix()
 
-    def embed_input_ids(self, input_ids: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
+    def embed_input_ids(self, input_ids: torch.Tensor, prefix_ids: Optional[torch.Tensor]) -> Tuple[torch.Tensor, torch.Tensor]:
+        assert prefix_ids is None, "cannot provide custom prefix IDs for prompt-tuning"
         token_embeddings = self.token_embedding.forward(input_ids)
         return None, torch.cat(
             (self.prefix_embedding.repeat((len(input_ids), 1, 1)), token_embeddings), dim=1
@@ -247,32 +249,14 @@ class HotFlipPrefixModel(PrefixModel):
         """Gradient of the prefix tokens wrt the token embedding matrix."""
         return torch.einsum('nd,vd->nv', self.prefix_embedding.grad, self.token_embedding.weight)
 
-    def post_epoch(self) -> None:
-        # variables: V (vocab), d (embedding dim), n (num prefix tokens)
-        token_grads = self._prefix_token_grad
-        if VERBOSE:
-            # Print gradient information.
-            print(f"Epoch {epoch}. Most negative grads for x:")
-            assert token_grads.shape == (50_257, )
-            topk_smallest_grads = distances = token_grads.topk(k=TOP_K, largest=False)
-            for _id, _dist in zip(topk_smallest_grads.indices.cpu().tolist(), topk_smallest_grads.values.cpu().tolist()):
-                print(f'\t{self.id_to_word[_id]} ({_id}): {_dist:.3f}')
-            print("*" * 30)
-            print(f"Epoch {epoch}. Most positive grads for x:")
-            topk_largest_grads = distances = token_grads.topk(k=TOP_K, largest=True)
-            for _id, _dist in zip(topk_largest_grads.indices.cpu().tolist()[::-1], topk_largest_grads.values.cpu().tolist()[::-1]):
-                print(f'\t{self.id_to_word[_id]} ({_id}): {_dist:.3f}')
-            print("*" * 30)
-        
-
     def _compute_loss(
             self,
-            input_ids: torch.Tensor,
+            original_input_ids: torch.Tensor,
             next_token_ids: torch.Tensor,
-            possible_answer_ids: torch.Tensor,
-            prefix_ids: Optional[torch.Tensor]
+            possible_answer_mask: torch.Tensor,
+            prefix_ids: Optional[torch.Tensor] = None
         ) -> torch.Tensor:
-        input_ids, outputs = self.forward(input_ids=input_ids, prefix_ids=prefix_ids)
+        input_ids, outputs = self.forward(input_ids=original_input_ids, prefix_ids=prefix_ids)
         next_token_logits = torch.where(
             possible_answer_mask[None], outputs.logits[:, -1, :], torch.tensor(float('-inf')).to(device)
         )
@@ -288,7 +272,7 @@ class HotFlipPrefixModel(PrefixModel):
             logits=outputs['logits'],
             answer_mask=possible_answer_mask
         )
-        return input_ids, original_loss
+        return input_ids, original_loss, n_correct
 
     def compute_loss_and_call_backward(
             self,
@@ -305,46 +289,62 @@ class HotFlipPrefixModel(PrefixModel):
         # 
         # Compute loss normally.
         # 
-        original_loss = self._compute_loss(
+        _input_ids, original_loss, original_n_correct = self._compute_loss(
             original_input_ids=original_input_ids,
             next_token_ids=next_token_ids,
             possible_answer_mask=possible_answer_mask
         )
         original_loss.backward()
+
+        self._min_loss = min(self._min_loss, original_loss.item())
+        print(f"original loss: {self._min_loss:.2f} and n_correct = {original_n_correct}")
         # 
         # Get candidate IDs for every position.
         # 
         token_grads = self._prefix_token_grad
         top_tokens_per_position = (
-            token_grads.topk(k=self._num_candidates_per_prefix_token, dim=1).indices
+            token_grads.topk(k=self._num_candidates_per_prefix_token, dim=1, largest=False).indices
         )
         assert top_tokens_per_position.shape == (self._num_tokens, self._num_candidates_per_prefix_token)
         # 
         # Evaluate candidates.
         # 
-        total_losses = torch.zeros_like(top_tokens_per_position)
+        all_candidate_losses = torch.zeros_like(top_tokens_per_position, dtype=float)
+        best_prefix_ids = self.prefix_ids
+        best_loss = self._min_loss
+        best_n_correct = original_n_correct
+
         for token_idx in range(self._num_tokens):
+            candidate_mask = torch.nn.functional.one_hot(
+                torch.tensor(token_idx), num_classes=self._num_tokens
+            ).bool().to(device)
             for candidate_idx in range(self._num_candidates_per_prefix_token):
-                candidate_mask = torch.nn.functional.one_hot(self._num_tokens)
                 candidate_id = top_tokens_per_position[token_idx, candidate_idx]
                 prefix_ids = torch.where(
-                    candidate_mask, top_tokens_per_position, self.prefix_ids
-                )
+                    candidate_mask, candidate_id, self.prefix_ids.to(device)
+                ).to(device)
                 with torch.no_grad():
-                    loss = self._compute_loss(
+                    _input_ids, loss, n_correct = self._compute_loss(
                         original_input_ids=original_input_ids,
                         next_token_ids=next_token_ids,
                         possible_answer_mask=possible_answer_mask,
                         prefix_ids=prefix_ids
                     )
-                total_losses[token_idx, candidate_idx] += loss
-                
+                all_candidate_losses[token_idx, candidate_idx] += loss
+
+                if loss < self._min_loss:
+                    self._min_loss = loss
+                    best_prefix_ids = prefix_ids
+                    best_n_correct = n_correct
 
         # 
         # Pick top candidate and reset self._min_loss. (TODO: Support beam width > 1.)
         # 
+        print(f'Old prefix: {self.tokenizer.decode(self.prefix_ids)} // New prefix: {self.tokenizer.decode(best_prefix_ids)}')
+        self._set_prefix_ids(best_prefix_ids)
+
         # self._set_prefix_ids(best_prefix)
-        return self._min_loss, n_correct
+        return self._min_loss, best_n_correct
 
 
         ############################################################
@@ -385,28 +385,22 @@ class HotFlipPrefixModel(PrefixModel):
             outputs (float torch.Tensor): embedded tokens
         """
         batch_size = len(input_ids)
-        if prefix_embedding_token_ids is None:
-            prefix_embedding_token_ids = self.prefix_ids.repeat((batch_size, 1))
-            input_ids = torch.cat(
-               (prefix_embedding_token_ids, input_ids), dim=1
-            )
-            outputs = torch.cat(
-                # concatenate prefix + example
-               (self.prefix_embedding[None].repeat((batch_size, 1, 1)),
-               self.token_embedding.forward(input_ids)), dim=1
-            )
+        if prefix_ids is None:
+            prefix_ids = self.prefix_ids
+            prefix_embedding = self.prefix_embedding
+            
         else:
-            input_ids = torch.cat(
-               (prefix_embedding_token_ids, input_ids), dim=1
-            )
-            prefix_embedding = self.token_embedding.forward(input_ids)
-            outputs = torch.cat(
-                # concatenate prefix + example
-                (prefix_embedding[None].repeat((batch_size, 1, 1)),
-                self.token_embedding.forward(input_ids)), dim=1
-            )
+            prefix_embedding = self.token_embedding.forward(prefix_ids)
 
-        
+        prefix_ids = prefix_ids.to(device).repeat((batch_size, 1))
+        input_ids = torch.cat(
+            (prefix_ids, input_ids), dim=1
+        )
+        outputs = torch.cat(
+            # concatenate prefix + example
+            (self.prefix_embedding[None].repeat((batch_size, 1, 1)),
+            self.token_embedding.forward(input_ids)), dim=1
+        )
         return input_ids, outputs
 
 
@@ -436,7 +430,8 @@ class GumbelPrefixModel(PrefixModel):
         self.tau = self.tau / self.tau_anneal
         print(f"𝛕 = {self.tau:.2f}")
 
-    def embed_input_ids(self, input_ids: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
+    def embed_input_ids(self, input_ids: torch.Tensor, prefix_ids: Optional[torch.Tensor]) -> Tuple[torch.Tensor, torch.Tensor]:
+        assert prefix_ids is None, "cannot provide custom prefix IDs for Gumbel"
         # word_weights_dist = (word_weights * 1000).softmax(dim=-1)
         prefix_embedding_words_dist = nn.functional.gumbel_softmax(
             self.word_weights.repeat((len(input_ids), 1, 1)), tau=self.tau, dim=-1, hard=False
