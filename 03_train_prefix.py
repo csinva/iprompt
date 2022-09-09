@@ -101,7 +101,7 @@ def train(
         total_n_correct = 0
         pbar = tqdm(enumerate(dataloader), total=len(dataloader))
         for idx, batch in pbar:
-            x_text = [prompt for prompt in batch['input']]
+            x_text = [f' {prompt}' for prompt in batch['input']]
             y_text = [answer.replace('.', '').rstrip() for answer in batch['output']] # strip newlines and periods.
 
             input_ids = model.tokenizer(x_text, return_tensors='pt')['input_ids'].to(device)
@@ -176,13 +176,20 @@ if __name__ == '__main__':
     )
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",
                         choices=(
+                            ############################
                             "EleutherAI/gpt-neo-125M",
                             "EleutherAI/gpt-neo-1.3B",
                             "EleutherAI/gpt-neo-2.7B",
+                            ############################
+                            "EleutherAI/gpt-j-6B",
+                            ############################
+                            "EleutherAI/gpt-neox-20b",
+                            ############################
                             "gpt2",        # 117M params
                             "gpt2-medium", # 355M params
                             "gpt2-large",  # 774M params
                             "gpt2-xl",     # 1.5B params
+                            ############################
                         ),
                         help='model checkpoint to use')
     args = parser.parse_args()
@@ -196,7 +203,7 @@ if __name__ == '__main__':
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     lm = AutoModelForCausalLM.from_pretrained(
         checkpoint, output_hidden_states=True)
-    loss_func = PrefixLoss(gamma=args.gamma)
+    loss_func = PrefixLoss(gamma=args.gamma, tokenizer=tokenizer)
     model = model_cls_dict[args.model_cls](loss_func=loss_func, model=lm, tokenizer=tokenizer)
     dset, check_answer_func, description = data.get_data(args=args, task_name=args.task_name)
     print(f"got task with description: {description}")
