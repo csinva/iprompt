@@ -25,8 +25,8 @@ if __name__ == '__main__':
     
     # model_name = 'EleutherAI/gpt-j-6B'  # 'EleutherAI/gpt-neox-20b'
     # model_name = 'gpt2-medium'  # 'EleutherAI/gpt-neox-20b'
-    model_name = 'facebook/opt-1.3b'
-    # model_name = 'EleutherAI/gpt-neox-20b'
+    # model_name = 'facebook/opt-1.3b'
+    model_name = 'EleutherAI/gpt-neox-20b'
     save_dir = 'results'
     # task_names = TASKS.keys()
     task_names = ['add_two', 'divide_two', 'max_two',

@@ -11,9 +11,9 @@ import torch.nn
 from data_utils import data_funcs
 from data_utils.one_num import TASKS_ONE_NUM
 from data_utils.two_num import TASKS_TWO_NUMS
-from data_utils.nli import TASKS_NLI
+from data_utils.anli import TASKS_ANLI
 
-TASKS = {**TASKS_TWO_NUMS, **TASKS_ONE_NUM, **TASKS_NLI}
+TASKS = {**TASKS_TWO_NUMS, **TASKS_ONE_NUM, **TASKS_ANLI}
 
 def get_data(args, task_name: str = 'add_two', n_shots: int = 1):
     """Return
@@ -58,7 +58,7 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1):
         df = pd.DataFrame.from_dict(d)
 
     # NLI task
-    elif task_name in TASKS_NLI.keys():
+    elif task_name in TASKS_ANLI.keys():
         df = task['gen_func'](task_name)
 
 
@@ -100,8 +100,8 @@ def get_init_suffix(args) -> List:
        init_suffixes = TASKS_TWO_NUMS['SUFFIXES']
     elif args.task_name in TASKS_ONE_NUM.keys():
         init_suffixes = TASKS_ONE_NUM['SUFFIXES']
-    elif args.task_name in TASKS_NLI.keys():
-        init_suffixes = TASKS_NLI['SUFFIXES'] 
+    elif args.task_name in TASKS_ANLI.keys():
+        init_suffixes = TASKS_ANLI['SUFFIXES'] 
     return init_suffixes[args.template_num_init_string]
 
 
@@ -142,7 +142,7 @@ if __name__ == '__main__':
           repr(dset[0]['text']))
     print('\tlen', len(dset))
 
-    print('\n\n################Lets look at an NLI dataset############\n')
+    print('\n\n################Lets look at an ANLI dataset############\n')
     task_name = 'task1147_country_currency'
     dset, check_answer_func, descr = get_data(
         args, task_name=task_name, n_shots=1)
