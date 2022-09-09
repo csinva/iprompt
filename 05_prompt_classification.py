@@ -25,18 +25,19 @@ if __name__ == '__main__':
     
     # model_name = 'EleutherAI/gpt-j-6B'  # 'EleutherAI/gpt-neox-20b'
     # model_name = 'gpt2-medium'  # 'EleutherAI/gpt-neox-20b'
-    model_name = 'EleutherAI/gpt-neox-20b'
+    model_name = 'facebook/opt-1.3b'
+    # model_name = 'EleutherAI/gpt-neox-20b'
     save_dir = 'results'
     # task_names = TASKS.keys()
     task_names = ['add_two', 'divide_two', 'max_two',
                   'subtract_two', 'first_two', 'multiply_two']
     # task_names = list(set(TASKS.keys()) - {'SUFFIXES'})
     batch_size = 1
-    print('running', model_name)
+    # device = 'cpu' 
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')   
 
     # set up tasks    
     print('set up tasks')
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')    
     task_information = {}
     task_descriptions = []
     for name in task_names:
@@ -46,13 +47,14 @@ if __name__ == '__main__':
 
 
     # load stuff
-    print('load model...')
+    print(f'load model {model_name}...')
     model = transformers.AutoModelForCausalLM.from_pretrained(
         model_name, output_hidden_states=False)
     tokenizer = transformers.AutoTokenizer.from_pretrained(
         model_name, output_hidden_states=False)
 
     # calc losses & accs
+    print('running...')
     losses = np.zeros((len(task_names), len(task_descriptions)))
     accuracies = np.zeros((len(task_names), len(task_descriptions)))
     for i in tqdm(range(len(task_names))):
