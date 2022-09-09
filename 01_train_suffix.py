@@ -16,7 +16,7 @@ from transformers import (AutoModel, AutoModelForCausalLM, AutoTokenizer,
 
 import data
 import parallel
-import train_suffix
+import model_utils.suffix as suffix
 import utils
 
 # initialize args
@@ -142,7 +142,7 @@ if __name__ == '__main__':
 
     # train
     with torch.no_grad():
-        train_suffix.train_suffix(args, r, model, dataloader,
+        suffix.train_suffix(args, r, model, dataloader,
                                   check_answer_func, tokenizer, save_dir)
 
     utils.save(args, save_dir, r, final=True)

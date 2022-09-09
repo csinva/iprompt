@@ -78,7 +78,7 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1):
         # shuffle rows
         df = df.sample(n=actual_max_dset_size, replace=False)
 
-    print(df.shape[0], 'max_digit', args.max_digit, 'dset_size', args.max_dset_size, actual_max_dset_size)
+    # print(df.shape[0], 'max_digit', args.max_digit, 'dset_size', args.max_dset_size, actual_max_dset_size)
     # print(df.head())
     # trim max size (should already be controlled)
     df = df.iloc[:args.max_dset_size]
