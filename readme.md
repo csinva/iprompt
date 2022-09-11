@@ -1,4 +1,4 @@
-<h1 align="center">   <img src="https://yu-group.github.io/adaptive-wavelets/anim.gif" width="15%"> Interpretable autoprompting <img src="https://yu-group.github.io/adaptive-wavelets/anim.gif" width="15%"></h1>
+<h1 align="center">  Interpretable autoprompting </h1>
 <p align="center"> Natural language explanations of a <i>dataset</i> via language-model autoprompting.
 </p>
 
@@ -9,7 +9,7 @@
 </p>  
 
 
-<b>Official code for using / reproducing Interpretable autoprompting from the paper "Towards scientific discovery with language models via interpretable autoprompting" (<a href="https://arxiv.org/abs/2">(Singh, Morris, Aneja, Rush & Gao, 2022</a>)
+<b>Official code for using / reproducing Interpretable autoprompting from the paper "Towards scientific discovery with language models via interpretable autoprompting" (<a href="https://arxiv.org/abs/2">Singh, Morris, Aneja, Rush & Gao, 2022</a>) </b>
 
 <blockquote>
 <b>Abstract</b>: Large language models (LLMs) have displayed an extraordinary ability to harness natural language and perform complex tasks.
