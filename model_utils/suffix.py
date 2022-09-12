@@ -12,6 +12,7 @@ import numpy as np
 import pandas as pd
 from datasets import Dataset
 from torch import nn
+import torch
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from transformers import (AutoModel, AutoModelForCausalLM, AutoTokenizer,
@@ -22,7 +23,15 @@ import parallel
 import utils
 
 
-def get_avg_probs_next_token(args, suffix_str: str, model, dataloader, tokenizer):
+def get_stopwords():
+    """Leave this import here in case we don't want to install nltk
+    """
+    import nltk
+    nltk.download('stopwords')
+    return set(stopwords.words('english'))
+
+
+def get_probs_avg_next_token(args, suffix_str: str, model, dataloader, tokenizer):
     """Get the average probs for the next token across the entire dataset
     """
     num_examples = 0
@@ -41,9 +50,21 @@ def get_avg_probs_next_token(args, suffix_str: str, model, dataloader, tokenizer
         outputs = model(
             input_ids=ex_inputs['input_ids'], attention_mask=ex_inputs['attention_mask'])
         logits = outputs['logits']  # (batch_size, seq_len, vocab_size)
-        # get logits of last hidden state, sum over batch_size
-        next_token_logits = logits[:, -1,
-                                   :].sum(axis=0).log_softmax(dim=-1)
+
+        # get positions of the next-token hidden state
+        positions_next_token = ex_inputs['attention_mask'].sum(axis=1) - 1
+
+        # index at correct positions
+        # TODO: smarter torch func to do this
+        next_token_logits = torch.Tensor(size=(logits.shape[0], logits.shape[-1])).to(logits.device)
+        for i in range(logits.shape[0]):
+            next_token_logits[i, :] = logits[i, positions_next_token[i], :]
+
+        # sum over batch-size
+        next_token_logits = next_token_logits.sum(axis=0)
+
+        # take log softmax
+        # next_token_logits = next_token_logits.log_softmax(dim=-1)
 
         # accumulate logits
         if cum_logits is None:
@@ -53,23 +74,13 @@ def get_avg_probs_next_token(args, suffix_str: str, model, dataloader, tokenizer
         num_examples += len(text)
 
     # use averaged logits
-    # keep only top k tokens with highest probability
-    # keep the top tokens with cumulative probability >= top_p
     avg_logits = cum_logits / num_examples
-    # print('shapes', logits.shape, next_token_logits.shape, cum_logits.shape)
     avg_logits = avg_logits.detach().cpu().numpy().squeeze()
-    avg_probs = np.exp(avg_logits)  # softmax
-    avg_probs /= np.sum(avg_probs)
 
-    return avg_logits
-
-
-def get_stopwords():
-    """Leave this import here in case we don't want to install nltk
-    """
-    import nltk
-    nltk.download('stopwords')
-    return set(stopwords.words('english'))
+    # convert to probs
+    avg_probs = np.exp(avg_logits)  # softmax part 1
+    avg_probs /= np.sum(avg_probs)  # softmax part 2
+    return avg_probs
 
 
 def get_probs_single_query_next_token(args, suffix_str: str, model, dataloader, tokenizer):
@@ -87,8 +98,19 @@ def get_probs_single_query_next_token(args, suffix_str: str, model, dataloader, 
     outputs = model(
         input_ids=ex_inputs['input_ids'], attention_mask=ex_inputs['attention_mask'])
     logits = outputs['logits']  # (batch_size, seq_len, vocab_size)
+
+    # get positions of the next-token hidden state
+    positions_next_token = ex_inputs['attention_mask'].sum(axis=1) - 1
+
+    # index at correct positions
+    # TODO: smarter torch func to do this
+    next_token_logits = torch.Tensor(size=(logits.shape[0], logits.shape[-1])).to(logits.device)
+    for i in range(logits.shape[0]):
+        next_token_logits[i, :] = logits[i, positions_next_token[i], :]
+
+    # convert to make it more usable
     next_token_logits = (
-        logits[:, -1, :]
+        next_token_logits
         .sum(axis=0)  # sum over batch_size
         .log_softmax(dim=-1)
         .detach()
@@ -133,7 +155,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
             avg_probs = get_probs_single_query_next_token(
                 args, suffix_str, model, dataloader, tokenizer)
         else:
-            avg_probs = get_avg_probs_next_token(
+            avg_probs = get_probs_avg_next_token(
                 args, suffix_str, model, dataloader, tokenizer)
         num_model_queries += 1
 
