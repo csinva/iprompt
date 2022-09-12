@@ -97,7 +97,8 @@ if __name__ == '__main__':
 
     # set up logging
     logger = logging.getLogger()
-    logging.basicConfig(level=logging.INFO)
+    # logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.DEBUG)
     logger.info(str(vars(args)))
 
     # set up saving dirctory before seeding
