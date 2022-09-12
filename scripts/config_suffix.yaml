@@ -21,7 +21,8 @@ storage:
     mount_dir: /mnt/output # dir on the local machine
 
 jobs:
-- name: sweep_suffixes
+- name: sweep_anli
   sku: G16
   command:
-  - python scripts/submit_sweep.py --dummy
+  - python scripts/single_query_anli.py --dummy
+  # - python scripts/suffix_anli.py --dummy

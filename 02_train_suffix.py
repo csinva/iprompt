@@ -85,14 +85,6 @@ def add_computational_args(parser):
 
 
 if __name__ == '__main__':
-    # python 01_train.py --batch_size 200 --checkpoint EleutherAI/gpt-neo-2.7B
-    # python 01_train.py --batch_size 1 --checkpoint EleutherAI/gpt-neox-20b
-    # python 01_train.py --batch_size 50 --checkpoint EleutherAI/gpt-j-6B
-    # python 01_train.py --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3
-    # python 01_train.py --batch_size 100 --checkpoint EleutherAI/gpt-neo-2.7B --n_shots 3
-    # python 01_train.py --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3 --max_digit 10
-    # python 01_train.py --save_dir /home/chansingh/mntv1/test2
-
     parser = argparse.ArgumentParser()
     parser = add_main_args(parser)
     parser = add_computational_args(parser)
@@ -100,8 +92,8 @@ if __name__ == '__main__':
 
     # set up logging
     logger = logging.getLogger()
-    # logging.basicConfig(level=logging.INFO)
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(level=logging.INFO)
+    # logging.basicConfig(level=logging.DEBUG)
     logger.info(str(vars(args)))
 
     # set up saving directory before seeding
