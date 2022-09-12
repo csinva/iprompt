@@ -1,0 +1,203 @@
+input,output,text
+Butter chicken,non vegetarian,"Input: Butter chicken Answer: non vegetarian
+"
+Kadhi pakoda,vegetarian,"Input: Kadhi pakoda Answer: vegetarian
+"
+Doodhpak,vegetarian,"Input: Doodhpak Answer: vegetarian
+"
+Unni Appam,vegetarian,"Input: Unni Appam Answer: vegetarian
+"
+Kakinada khaja,vegetarian,"Input: Kakinada khaja Answer: vegetarian
+"
+Palathalikalu,vegetarian,"Input: Palathalikalu Answer: vegetarian
+"
+Prawn malai curry,non vegetarian,"Input: Prawn malai curry Answer: non vegetarian
+"
+Fara,vegetarian,"Input: Fara Answer: vegetarian
+"
+Sohan papdi,vegetarian,"Input: Sohan papdi Answer: vegetarian
+"
+Bandar laddu,vegetarian,"Input: Bandar laddu Answer: vegetarian
+"
+Ledikeni,vegetarian,"Input: Ledikeni Answer: vegetarian
+"
+Kheer sagar,vegetarian,"Input: Kheer sagar Answer: vegetarian
+"
+Lassi,vegetarian,"Input: Lassi Answer: vegetarian
+"
+Bhindi masala,vegetarian,"Input: Bhindi masala Answer: vegetarian
+"
+Kabiraji,non vegetarian,"Input: Kabiraji Answer: non vegetarian
+"
+Gajar ka halwa,vegetarian,"Input: Gajar ka halwa Answer: vegetarian
+"
+Anarsa,vegetarian,"Input: Anarsa Answer: vegetarian
+"
+Rasabali,vegetarian,"Input: Rasabali Answer: vegetarian
+"
+Basundi,vegetarian,"Input: Basundi Answer: vegetarian
+"
+Vindaloo,non vegetarian,"Input: Vindaloo Answer: non vegetarian
+"
+Kalakand,vegetarian,"Input: Kalakand Answer: vegetarian
+"
+Dhondas,vegetarian,"Input: Dhondas Answer: vegetarian
+"
+Boondi,vegetarian,"Input: Boondi Answer: vegetarian
+"
+Kadai paneer,vegetarian,"Input: Kadai paneer Answer: vegetarian
+"
+Haq Maas,non vegetarian,"Input: Haq Maas Answer: non vegetarian
+"
+Dharwad pedha,vegetarian,"Input: Dharwad pedha Answer: vegetarian
+"
+Maach Jhol,non vegetarian,"Input: Maach Jhol Answer: non vegetarian
+"
+Chana masala,vegetarian,"Input: Chana masala Answer: vegetarian
+"
+Pithe,vegetarian,"Input: Pithe Answer: vegetarian
+"
+Kaju katli,vegetarian,"Input: Kaju katli Answer: vegetarian
+"
+Jalebi,vegetarian,"Input: Jalebi Answer: vegetarian
+"
+Tandoori Fish Tikka,non vegetarian,"Input: Tandoori Fish Tikka Answer: non vegetarian
+"
+Kuzhi paniyaram,vegetarian,"Input: Kuzhi paniyaram Answer: vegetarian
+"
+Modak,vegetarian,"Input: Modak Answer: vegetarian
+"
+Daal baati churma,vegetarian,"Input: Daal baati churma Answer: vegetarian
+"
+Alu Pitika,non vegetarian,"Input: Alu Pitika Answer: non vegetarian
+"
+Kumol Sawul,non vegetarian,"Input: Kumol Sawul Answer: non vegetarian
+"
+Misti doi,vegetarian,"Input: Misti doi Answer: vegetarian
+"
+Poha,vegetarian,"Input: Poha Answer: vegetarian
+"
+Chicken razala,non vegetarian,"Input: Chicken razala Answer: non vegetarian
+"
+Laddu,vegetarian,"Input: Laddu Answer: vegetarian
+"
+Chhena poda,vegetarian,"Input: Chhena poda Answer: vegetarian
+"
+Double ka meetha,vegetarian,"Input: Double ka meetha Answer: vegetarian
+"
+Mihidana,vegetarian,"Input: Mihidana Answer: vegetarian
+"
+Chhena jalebi,vegetarian,"Input: Chhena jalebi Answer: vegetarian
+"
+Kheer,vegetarian,"Input: Kheer Answer: vegetarian
+"
+Aloo matar,vegetarian,"Input: Aloo matar Answer: vegetarian
+"
+Chicken Tikka,non vegetarian,"Input: Chicken Tikka Answer: non vegetarian
+"
+Chicken Varuval,non vegetarian,"Input: Chicken Varuval Answer: non vegetarian
+"
+Obbattu holige,vegetarian,"Input: Obbattu holige Answer: vegetarian
+"
+Koldil Chicken,non vegetarian,"Input: Koldil Chicken Answer: non vegetarian
+"
+Dum aloo,vegetarian,"Input: Dum aloo Answer: vegetarian
+"
+Gavvalu,vegetarian,"Input: Gavvalu Answer: vegetarian
+"
+Gulab jamun,vegetarian,"Input: Gulab jamun Answer: vegetarian
+"
+Tandoori Chicken,non vegetarian,"Input: Tandoori Chicken Answer: non vegetarian
+"
+Chole bhature,vegetarian,"Input: Chole bhature Answer: vegetarian
+"
+Aloo tikki,vegetarian,"Input: Aloo tikki Answer: vegetarian
+"
+Aloo methi,vegetarian,"Input: Aloo methi Answer: vegetarian
+"
+Koldil Duck,non vegetarian,"Input: Koldil Duck Answer: non vegetarian
+"
+Biryani,non vegetarian,"Input: Biryani Answer: non vegetarian
+"
+Dal makhani ,vegetarian,"Input: Dal makhani  Answer: vegetarian
+"
+Chingri malai curry,non vegetarian,"Input: Chingri malai curry Answer: non vegetarian
+"
+Ghevar,vegetarian,"Input: Ghevar Answer: vegetarian
+"
+Chikki,vegetarian,"Input: Chikki Answer: vegetarian
+"
+Sutar feni,vegetarian,"Input: Sutar feni Answer: vegetarian
+"
+Sohan halwa,vegetarian,"Input: Sohan halwa Answer: vegetarian
+"
+Shrikhand,vegetarian,"Input: Shrikhand Answer: vegetarian
+"
+Masor tenga,non vegetarian,"Input: Masor tenga Answer: non vegetarian
+"
+Rasgulla,vegetarian,"Input: Rasgulla Answer: vegetarian
+"
+Konir Dom,non vegetarian,"Input: Konir Dom Answer: non vegetarian
+"
+Bhatura,vegetarian,"Input: Bhatura Answer: vegetarian
+"
+Kachori,vegetarian,"Input: Kachori Answer: vegetarian
+"
+Galho,non vegetarian,"Input: Galho Answer: non vegetarian
+"
+Pootharekulu,vegetarian,"Input: Pootharekulu Answer: vegetarian
+"
+Singori,vegetarian,"Input: Singori Answer: vegetarian
+"
+Beef Fry,non vegetarian,"Input: Beef Fry Answer: non vegetarian
+"
+Kajjikaya,vegetarian,"Input: Kajjikaya Answer: vegetarian
+"
+Sandesh,vegetarian,"Input: Sandesh Answer: vegetarian
+"
+Kolim Jawla,non vegetarian,"Input: Kolim Jawla Answer: non vegetarian
+"
+Ariselu,vegetarian,"Input: Ariselu Answer: vegetarian
+"
+Mysore pak,vegetarian,"Input: Mysore pak Answer: vegetarian
+"
+Lyangcha,vegetarian,"Input: Lyangcha Answer: vegetarian
+"
+Ras malai,vegetarian,"Input: Ras malai Answer: vegetarian
+"
+Chak Hao Kheer,vegetarian,"Input: Chak Hao Kheer Answer: vegetarian
+"
+Bombil fry,non vegetarian,"Input: Bombil fry Answer: non vegetarian
+"
+Pantua,vegetarian,"Input: Pantua Answer: vegetarian
+"
+Mahim halwa,vegetarian,"Input: Mahim halwa Answer: vegetarian
+"
+Sheer korma,vegetarian,"Input: Sheer korma Answer: vegetarian
+"
+Aloo gobi,vegetarian,"Input: Aloo gobi Answer: vegetarian
+"
+Daal puri,vegetarian,"Input: Daal puri Answer: vegetarian
+"
+Phirni,vegetarian,"Input: Phirni Answer: vegetarian
+"
+Dal tadka,vegetarian,"Input: Dal tadka Answer: vegetarian
+"
+Imarti,vegetarian,"Input: Imarti Answer: vegetarian
+"
+Cham cham,vegetarian,"Input: Cham cham Answer: vegetarian
+"
+Chhena kheeri,vegetarian,"Input: Chhena kheeri Answer: vegetarian
+"
+Chicken Tikka masala,non vegetarian,"Input: Chicken Tikka masala Answer: non vegetarian
+"
+Qubani ka meetha,vegetarian,"Input: Qubani ka meetha Answer: vegetarian
+"
+Masor Koni,non vegetarian,"Input: Masor Koni Answer: non vegetarian
+"
+Adhirasam,vegetarian,"Input: Adhirasam Answer: vegetarian
+"
+Aloo shimla mirch,vegetarian,"Input: Aloo shimla mirch Answer: vegetarian
+"
+Shankarpali,vegetarian,"Input: Shankarpali Answer: vegetarian
+"
