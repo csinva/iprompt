@@ -40,7 +40,7 @@ PARAMS_SHARED_DICT = {
     'template_num_task_phrasing': [0],
 
     # fixed params
-    'beam_width_suffix': [5],
+    'beam_size': [5],
     'save_dir': [save_dir],
 }
 

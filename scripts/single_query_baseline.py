@@ -37,7 +37,7 @@ PARAMS_SHARED_DICT = {
 
     # fixed params
     'max_digit': [10],
-    'beam_width_suffix': [5],
+    'beam_size': [5],
     'save_dir': [save_dir],
 }
 

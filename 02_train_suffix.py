@@ -47,7 +47,7 @@ def add_main_args(parser):
                         help='model checkpoint to use')
     parser.add_argument('--max_num_tokens', type=int, default=4,
                         help='max length of sequence to find (num tokens)')
-    parser.add_argument('--beam_width_suffix', type=int, default=4,
+    parser.add_argument('--beam_size', type=int, default=4,
                         help='max width of beam in suffix search')
     parser.add_argument('--use_single_query', type=int, default=0,
                         help='boolean 0 or 1: use baseline model? only uses a single example to prompt rather than the entire dset')
@@ -104,7 +104,7 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
     logger.info(str(vars(args)))
 
-    # set up saving dirctory before seeding
+    # set up saving directory before seeding
     save_dir_unique_hash = utils.get_unique_dir_hash(parser, args)
     save_dir_random_suffix = ''.join(
         random.choices(string.ascii_lowercase, k=4))
