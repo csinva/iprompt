@@ -1,203 +1,203 @@
 input,output,text
-Butter chicken,non vegetarian,"Input: Butter chicken Answer: non vegetarian
+Butter chicken,no,"Input: Butter chicken Answer: no
 "
-Kadhi pakoda,vegetarian,"Input: Kadhi pakoda Answer: vegetarian
+Kadhi pakoda,yes,"Input: Kadhi pakoda Answer: yes
 "
-Doodhpak,vegetarian,"Input: Doodhpak Answer: vegetarian
+Doodhpak,yes,"Input: Doodhpak Answer: yes
 "
-Unni Appam,vegetarian,"Input: Unni Appam Answer: vegetarian
+Unni Appam,yes,"Input: Unni Appam Answer: yes
 "
-Kakinada khaja,vegetarian,"Input: Kakinada khaja Answer: vegetarian
+Kakinada khaja,yes,"Input: Kakinada khaja Answer: yes
 "
-Palathalikalu,vegetarian,"Input: Palathalikalu Answer: vegetarian
+Palathalikalu,yes,"Input: Palathalikalu Answer: yes
 "
-Prawn malai curry,non vegetarian,"Input: Prawn malai curry Answer: non vegetarian
+Prawn malai curry,no,"Input: Prawn malai curry Answer: no
 "
-Fara,vegetarian,"Input: Fara Answer: vegetarian
+Fara,yes,"Input: Fara Answer: yes
 "
-Sohan papdi,vegetarian,"Input: Sohan papdi Answer: vegetarian
+Sohan papdi,yes,"Input: Sohan papdi Answer: yes
 "
-Bandar laddu,vegetarian,"Input: Bandar laddu Answer: vegetarian
+Bandar laddu,yes,"Input: Bandar laddu Answer: yes
 "
-Ledikeni,vegetarian,"Input: Ledikeni Answer: vegetarian
+Ledikeni,yes,"Input: Ledikeni Answer: yes
 "
-Kheer sagar,vegetarian,"Input: Kheer sagar Answer: vegetarian
+Kheer sagar,yes,"Input: Kheer sagar Answer: yes
 "
-Lassi,vegetarian,"Input: Lassi Answer: vegetarian
+Lassi,yes,"Input: Lassi Answer: yes
 "
-Bhindi masala,vegetarian,"Input: Bhindi masala Answer: vegetarian
+Bhindi masala,yes,"Input: Bhindi masala Answer: yes
 "
-Kabiraji,non vegetarian,"Input: Kabiraji Answer: non vegetarian
+Kabiraji,no,"Input: Kabiraji Answer: no
 "
-Gajar ka halwa,vegetarian,"Input: Gajar ka halwa Answer: vegetarian
+Gajar ka halwa,yes,"Input: Gajar ka halwa Answer: yes
 "
-Anarsa,vegetarian,"Input: Anarsa Answer: vegetarian
+Anarsa,yes,"Input: Anarsa Answer: yes
 "
-Rasabali,vegetarian,"Input: Rasabali Answer: vegetarian
+Rasabali,yes,"Input: Rasabali Answer: yes
 "
-Basundi,vegetarian,"Input: Basundi Answer: vegetarian
+Basundi,yes,"Input: Basundi Answer: yes
 "
-Vindaloo,non vegetarian,"Input: Vindaloo Answer: non vegetarian
+Vindaloo,no,"Input: Vindaloo Answer: no
 "
-Kalakand,vegetarian,"Input: Kalakand Answer: vegetarian
+Kalakand,yes,"Input: Kalakand Answer: yes
 "
-Dhondas,vegetarian,"Input: Dhondas Answer: vegetarian
+Dhondas,yes,"Input: Dhondas Answer: yes
 "
-Boondi,vegetarian,"Input: Boondi Answer: vegetarian
+Boondi,yes,"Input: Boondi Answer: yes
 "
-Kadai paneer,vegetarian,"Input: Kadai paneer Answer: vegetarian
+Kadai paneer,yes,"Input: Kadai paneer Answer: yes
 "
-Haq Maas,non vegetarian,"Input: Haq Maas Answer: non vegetarian
+Haq Maas,no,"Input: Haq Maas Answer: no
 "
-Dharwad pedha,vegetarian,"Input: Dharwad pedha Answer: vegetarian
+Dharwad pedha,yes,"Input: Dharwad pedha Answer: yes
 "
-Maach Jhol,non vegetarian,"Input: Maach Jhol Answer: non vegetarian
+Maach Jhol,no,"Input: Maach Jhol Answer: no
 "
-Chana masala,vegetarian,"Input: Chana masala Answer: vegetarian
+Chana masala,yes,"Input: Chana masala Answer: yes
 "
-Pithe,vegetarian,"Input: Pithe Answer: vegetarian
+Pithe,yes,"Input: Pithe Answer: yes
 "
-Kaju katli,vegetarian,"Input: Kaju katli Answer: vegetarian
+Kaju katli,yes,"Input: Kaju katli Answer: yes
 "
-Jalebi,vegetarian,"Input: Jalebi Answer: vegetarian
+Jalebi,yes,"Input: Jalebi Answer: yes
 "
-Tandoori Fish Tikka,non vegetarian,"Input: Tandoori Fish Tikka Answer: non vegetarian
+Tandoori Fish Tikka,no,"Input: Tandoori Fish Tikka Answer: no
 "
-Kuzhi paniyaram,vegetarian,"Input: Kuzhi paniyaram Answer: vegetarian
+Kuzhi paniyaram,yes,"Input: Kuzhi paniyaram Answer: yes
 "
-Modak,vegetarian,"Input: Modak Answer: vegetarian
+Modak,yes,"Input: Modak Answer: yes
 "
-Daal baati churma,vegetarian,"Input: Daal baati churma Answer: vegetarian
+Daal baati churma,yes,"Input: Daal baati churma Answer: yes
 "
-Alu Pitika,non vegetarian,"Input: Alu Pitika Answer: non vegetarian
+Alu Pitika,no,"Input: Alu Pitika Answer: no
 "
-Kumol Sawul,non vegetarian,"Input: Kumol Sawul Answer: non vegetarian
+Kumol Sawul,no,"Input: Kumol Sawul Answer: no
 "
-Misti doi,vegetarian,"Input: Misti doi Answer: vegetarian
+Misti doi,yes,"Input: Misti doi Answer: yes
 "
-Poha,vegetarian,"Input: Poha Answer: vegetarian
+Poha,yes,"Input: Poha Answer: yes
 "
-Chicken razala,non vegetarian,"Input: Chicken razala Answer: non vegetarian
+Chicken razala,no,"Input: Chicken razala Answer: no
 "
-Laddu,vegetarian,"Input: Laddu Answer: vegetarian
+Laddu,yes,"Input: Laddu Answer: yes
 "
-Chhena poda,vegetarian,"Input: Chhena poda Answer: vegetarian
+Chhena poda,yes,"Input: Chhena poda Answer: yes
 "
-Double ka meetha,vegetarian,"Input: Double ka meetha Answer: vegetarian
+Double ka meetha,yes,"Input: Double ka meetha Answer: yes
 "
-Mihidana,vegetarian,"Input: Mihidana Answer: vegetarian
+Mihidana,yes,"Input: Mihidana Answer: yes
 "
-Chhena jalebi,vegetarian,"Input: Chhena jalebi Answer: vegetarian
+Chhena jalebi,yes,"Input: Chhena jalebi Answer: yes
 "
-Kheer,vegetarian,"Input: Kheer Answer: vegetarian
+Kheer,yes,"Input: Kheer Answer: yes
 "
-Aloo matar,vegetarian,"Input: Aloo matar Answer: vegetarian
+Aloo matar,yes,"Input: Aloo matar Answer: yes
 "
-Chicken Tikka,non vegetarian,"Input: Chicken Tikka Answer: non vegetarian
+Chicken Tikka,no,"Input: Chicken Tikka Answer: no
 "
-Chicken Varuval,non vegetarian,"Input: Chicken Varuval Answer: non vegetarian
+Chicken Varuval,no,"Input: Chicken Varuval Answer: no
 "
-Obbattu holige,vegetarian,"Input: Obbattu holige Answer: vegetarian
+Obbattu holige,yes,"Input: Obbattu holige Answer: yes
 "
-Koldil Chicken,non vegetarian,"Input: Koldil Chicken Answer: non vegetarian
+Koldil Chicken,no,"Input: Koldil Chicken Answer: no
 "
-Dum aloo,vegetarian,"Input: Dum aloo Answer: vegetarian
+Dum aloo,yes,"Input: Dum aloo Answer: yes
 "
-Gavvalu,vegetarian,"Input: Gavvalu Answer: vegetarian
+Gavvalu,yes,"Input: Gavvalu Answer: yes
 "
-Gulab jamun,vegetarian,"Input: Gulab jamun Answer: vegetarian
+Gulab jamun,yes,"Input: Gulab jamun Answer: yes
 "
-Tandoori Chicken,non vegetarian,"Input: Tandoori Chicken Answer: non vegetarian
+Tandoori Chicken,no,"Input: Tandoori Chicken Answer: no
 "
-Chole bhature,vegetarian,"Input: Chole bhature Answer: vegetarian
+Chole bhature,yes,"Input: Chole bhature Answer: yes
 "
-Aloo tikki,vegetarian,"Input: Aloo tikki Answer: vegetarian
+Aloo tikki,yes,"Input: Aloo tikki Answer: yes
 "
-Aloo methi,vegetarian,"Input: Aloo methi Answer: vegetarian
+Aloo methi,yes,"Input: Aloo methi Answer: yes
 "
-Koldil Duck,non vegetarian,"Input: Koldil Duck Answer: non vegetarian
+Koldil Duck,no,"Input: Koldil Duck Answer: no
 "
-Biryani,non vegetarian,"Input: Biryani Answer: non vegetarian
+Biryani,no,"Input: Biryani Answer: no
 "
-Dal makhani ,vegetarian,"Input: Dal makhani  Answer: vegetarian
+Dal makhani ,yes,"Input: Dal makhani  Answer: yes
 "
-Chingri malai curry,non vegetarian,"Input: Chingri malai curry Answer: non vegetarian
+Chingri malai curry,no,"Input: Chingri malai curry Answer: no
 "
-Ghevar,vegetarian,"Input: Ghevar Answer: vegetarian
+Ghevar,yes,"Input: Ghevar Answer: yes
 "
-Chikki,vegetarian,"Input: Chikki Answer: vegetarian
+Chikki,yes,"Input: Chikki Answer: yes
 "
-Sutar feni,vegetarian,"Input: Sutar feni Answer: vegetarian
+Sutar feni,yes,"Input: Sutar feni Answer: yes
 "
-Sohan halwa,vegetarian,"Input: Sohan halwa Answer: vegetarian
+Sohan halwa,yes,"Input: Sohan halwa Answer: yes
 "
-Shrikhand,vegetarian,"Input: Shrikhand Answer: vegetarian
+Shrikhand,yes,"Input: Shrikhand Answer: yes
 "
-Masor tenga,non vegetarian,"Input: Masor tenga Answer: non vegetarian
+Masor tenga,no,"Input: Masor tenga Answer: no
 "
-Rasgulla,vegetarian,"Input: Rasgulla Answer: vegetarian
+Rasgulla,yes,"Input: Rasgulla Answer: yes
 "
-Konir Dom,non vegetarian,"Input: Konir Dom Answer: non vegetarian
+Konir Dom,no,"Input: Konir Dom Answer: no
 "
-Bhatura,vegetarian,"Input: Bhatura Answer: vegetarian
+Bhatura,yes,"Input: Bhatura Answer: yes
 "
-Kachori,vegetarian,"Input: Kachori Answer: vegetarian
+Kachori,yes,"Input: Kachori Answer: yes
 "
-Galho,non vegetarian,"Input: Galho Answer: non vegetarian
+Galho,no,"Input: Galho Answer: no
 "
-Pootharekulu,vegetarian,"Input: Pootharekulu Answer: vegetarian
+Pootharekulu,yes,"Input: Pootharekulu Answer: yes
 "
-Singori,vegetarian,"Input: Singori Answer: vegetarian
+Singori,yes,"Input: Singori Answer: yes
 "
-Beef Fry,non vegetarian,"Input: Beef Fry Answer: non vegetarian
+Beef Fry,no,"Input: Beef Fry Answer: no
 "
-Kajjikaya,vegetarian,"Input: Kajjikaya Answer: vegetarian
+Kajjikaya,yes,"Input: Kajjikaya Answer: yes
 "
-Sandesh,vegetarian,"Input: Sandesh Answer: vegetarian
+Sandesh,yes,"Input: Sandesh Answer: yes
 "
-Kolim Jawla,non vegetarian,"Input: Kolim Jawla Answer: non vegetarian
+Kolim Jawla,no,"Input: Kolim Jawla Answer: no
 "
-Ariselu,vegetarian,"Input: Ariselu Answer: vegetarian
+Ariselu,yes,"Input: Ariselu Answer: yes
 "
-Mysore pak,vegetarian,"Input: Mysore pak Answer: vegetarian
+Mysore pak,yes,"Input: Mysore pak Answer: yes
 "
-Lyangcha,vegetarian,"Input: Lyangcha Answer: vegetarian
+Lyangcha,yes,"Input: Lyangcha Answer: yes
 "
-Ras malai,vegetarian,"Input: Ras malai Answer: vegetarian
+Ras malai,yes,"Input: Ras malai Answer: yes
 "
-Chak Hao Kheer,vegetarian,"Input: Chak Hao Kheer Answer: vegetarian
+Chak Hao Kheer,yes,"Input: Chak Hao Kheer Answer: yes
 "
-Bombil fry,non vegetarian,"Input: Bombil fry Answer: non vegetarian
+Bombil fry,no,"Input: Bombil fry Answer: no
 "
-Pantua,vegetarian,"Input: Pantua Answer: vegetarian
+Pantua,yes,"Input: Pantua Answer: yes
 "
-Mahim halwa,vegetarian,"Input: Mahim halwa Answer: vegetarian
+Mahim halwa,yes,"Input: Mahim halwa Answer: yes
 "
-Sheer korma,vegetarian,"Input: Sheer korma Answer: vegetarian
+Sheer korma,yes,"Input: Sheer korma Answer: yes
 "
-Aloo gobi,vegetarian,"Input: Aloo gobi Answer: vegetarian
+Aloo gobi,yes,"Input: Aloo gobi Answer: yes
 "
-Daal puri,vegetarian,"Input: Daal puri Answer: vegetarian
+Daal puri,yes,"Input: Daal puri Answer: yes
 "
-Phirni,vegetarian,"Input: Phirni Answer: vegetarian
+Phirni,yes,"Input: Phirni Answer: yes
 "
-Dal tadka,vegetarian,"Input: Dal tadka Answer: vegetarian
+Dal tadka,yes,"Input: Dal tadka Answer: yes
 "
-Imarti,vegetarian,"Input: Imarti Answer: vegetarian
+Imarti,yes,"Input: Imarti Answer: yes
 "
-Cham cham,vegetarian,"Input: Cham cham Answer: vegetarian
+Cham cham,yes,"Input: Cham cham Answer: yes
 "
-Chhena kheeri,vegetarian,"Input: Chhena kheeri Answer: vegetarian
+Chhena kheeri,yes,"Input: Chhena kheeri Answer: yes
 "
-Chicken Tikka masala,non vegetarian,"Input: Chicken Tikka masala Answer: non vegetarian
+Chicken Tikka masala,no,"Input: Chicken Tikka masala Answer: no
 "
-Qubani ka meetha,vegetarian,"Input: Qubani ka meetha Answer: vegetarian
+Qubani ka meetha,yes,"Input: Qubani ka meetha Answer: yes
 "
-Masor Koni,non vegetarian,"Input: Masor Koni Answer: non vegetarian
+Masor Koni,no,"Input: Masor Koni Answer: no
 "
-Adhirasam,vegetarian,"Input: Adhirasam Answer: vegetarian
+Adhirasam,yes,"Input: Adhirasam Answer: yes
 "
-Aloo shimla mirch,vegetarian,"Input: Aloo shimla mirch Answer: vegetarian
+Aloo shimla mirch,yes,"Input: Aloo shimla mirch Answer: yes
 "
-Shankarpali,vegetarian,"Input: Shankarpali Answer: vegetarian
+Shankarpali,yes,"Input: Shankarpali Answer: yes
 "

@@ -1,8 +1,12 @@
 {
+    "task088_identify_typo_verification": "Identify the typo in a sentence.",
+    "task092_check_prime_classification": "Identify whether the number is prime or not.",
+    "task107_splash_question_to_sql": "Generate an SQL statement from a question asking for certain data.",
     "task1146_country_capital": "Given a country, return it's capital city",
     "task1147_country_currency": "Given a country, return it's currency",
     "task1149_item_check_edible": "Given an item, check if it is edible or not",
-    "task429_senteval_tense": "Given a sentence, specify the tense of the main verb.",
-    "task430_senteval_subject_count": "Given a sentence, specify singularity or plurality of the subject.",
-    "task609_sbic_potentially_offense_binary_classification": "Determine whether the post is potentially offensive or not"
+    "task1191_food_veg_nonveg": "Given the name of an indian dish, classify it as non vegetarian or a vegetarian dish",
+    "task1336_peixian_equity_evaluation_corpus_gender_classifier": "Classifying gender of speaker of sentence",
+    "task1509_evalution_antonyms": "Given a word generate its antonym",
+    "task183_rhyme_generation": "Given an input word, generate a list of words that rhyme exactly with the input."
 }

@@ -1,239 +1,239 @@
 input,output,text
-sink,2,"Input: sink Answer: 2
+sink,no,"Input: sink Answer: no
 "
-cat,2,"Input: cat Answer: 2
+cat,no,"Input: cat Answer: no
 "
-Orange,1,"Input: Orange Answer: 1
+Orange,yes,"Input: Orange Answer: yes
 "
-skis,2,"Input: skis Answer: 2
+skis,no,"Input: skis Answer: no
 "
-sheep,2,"Input: sheep Answer: 2
+sheep,no,"Input: sheep Answer: no
 "
-Burger,1,"Input: Burger Answer: 1
+Burger,yes,"Input: Burger Answer: yes
 "
-Carrot,1,"Input: Carrot Answer: 1
+Carrot,yes,"Input: Carrot Answer: yes
 "
-mouse,2,"Input: mouse Answer: 2
+mouse,no,"Input: mouse Answer: no
 "
-Pectin,1,"Input: Pectin Answer: 1
+Pectin,yes,"Input: Pectin Answer: yes
 "
-Turmeric,1,"Input: Turmeric Answer: 1
+Turmeric,yes,"Input: Turmeric Answer: yes
 "
-scissors,2,"Input: scissors Answer: 2
+scissors,no,"Input: scissors Answer: no
 "
-bowl,2,"Input: bowl Answer: 2
+bowl,no,"Input: bowl Answer: no
 "
-cow,2,"Input: cow Answer: 2
+cow,no,"Input: cow Answer: no
 "
-wine glass,2,"Input: wine glass Answer: 2
+wine glass,no,"Input: wine glass Answer: no
 "
-peanuts,1,"Input: peanuts Answer: 1
+peanuts,yes,"Input: peanuts Answer: yes
 "
-strawberries,1,"Input: strawberries Answer: 1
+strawberries,yes,"Input: strawberries Answer: yes
 "
-snowboard,2,"Input: snowboard Answer: 2
+snowboard,no,"Input: snowboard Answer: no
 "
-skateboard,2,"Input: skateboard Answer: 2
+skateboard,no,"Input: skateboard Answer: no
 "
-Chocolate,1,"Input: Chocolate Answer: 1
+Chocolate,yes,"Input: Chocolate Answer: yes
 "
-dining table,2,"Input: dining table Answer: 2
+dining table,no,"Input: dining table Answer: no
 "
-Pistachios,1,"Input: Pistachios Answer: 1
+Pistachios,yes,"Input: Pistachios Answer: yes
 "
-stop sign,2,"Input: stop sign Answer: 2
+stop sign,no,"Input: stop sign Answer: no
 "
-person,2,"Input: person Answer: 2
+person,no,"Input: person Answer: no
 "
-Black Pepper,1,"Input: Black Pepper Answer: 1
+Black Pepper,yes,"Input: Black Pepper Answer: yes
 "
-truck,2,"Input: truck Answer: 2
+truck,no,"Input: truck Answer: no
 "
-fire hydrant,2,"Input: fire hydrant Answer: 2
+fire hydrant,no,"Input: fire hydrant Answer: no
 "
-Noodles,1,"Input: Noodles Answer: 1
+Noodles,yes,"Input: Noodles Answer: yes
 "
-suitcase,2,"Input: suitcase Answer: 2
+suitcase,no,"Input: suitcase Answer: no
 "
-Peaches,1,"Input: Peaches Answer: 1
+Peaches,yes,"Input: Peaches Answer: yes
 "
-Corn Syrup,1,"Input: Corn Syrup Answer: 1
+Corn Syrup,yes,"Input: Corn Syrup Answer: yes
 "
-Pasta,1,"Input: Pasta Answer: 1
+Pasta,yes,"Input: Pasta Answer: yes
 "
-Bagels,1,"Input: Bagels Answer: 1
+Bagels,yes,"Input: Bagels Answer: yes
 "
-fork,2,"Input: fork Answer: 2
+fork,no,"Input: fork Answer: no
 "
-bicycle,2,"Input: bicycle Answer: 2
+bicycle,no,"Input: bicycle Answer: no
 "
-Biscuits,1,"Input: Biscuits Answer: 1
+Biscuits,yes,"Input: Biscuits Answer: yes
 "
-bed,2,"Input: bed Answer: 2
+bed,no,"Input: bed Answer: no
 "
-baseball glove,2,"Input: baseball glove Answer: 2
+baseball glove,no,"Input: baseball glove Answer: no
 "
-toothbrush,2,"Input: toothbrush Answer: 2
+toothbrush,no,"Input: toothbrush Answer: no
 "
- flour,1,"Input:  flour Answer: 1
+ flour,yes,"Input:  flour Answer: yes
 "
-hair drier,2,"Input: hair drier Answer: 2
+hair drier,no,"Input: hair drier Answer: no
 "
-oven,2,"Input: oven Answer: 2
+oven,no,"Input: oven Answer: no
 "
-bench,2,"Input: bench Answer: 2
+bench,no,"Input: bench Answer: no
 "
-teddy bear,2,"Input: teddy bear Answer: 2
+teddy bear,no,"Input: teddy bear Answer: no
 "
-microwave,2,"Input: microwave Answer: 2
+microwave,no,"Input: microwave Answer: no
 "
-Grapes,1,"Input: Grapes Answer: 1
+Grapes,yes,"Input: Grapes Answer: yes
 "
-vase,2,"Input: vase Answer: 2
+vase,no,"Input: vase Answer: no
 "
-motorcycle,2,"Input: motorcycle Answer: 2
+motorcycle,no,"Input: motorcycle Answer: no
 "
-cranberries,1,"Input: cranberries Answer: 1
+cranberries,yes,"Input: cranberries Answer: yes
 "
-cup,2,"Input: cup Answer: 2
+cup,no,"Input: cup Answer: no
 "
-bird,2,"Input: bird Answer: 2
+bird,no,"Input: bird Answer: no
 "
-zebra,2,"Input: zebra Answer: 2
+zebra,no,"Input: zebra Answer: no
 "
-Lemon,1,"Input: Lemon Answer: 1
+Lemon,yes,"Input: Lemon Answer: yes
 "
-knife,2,"Input: knife Answer: 2
+knife,no,"Input: knife Answer: no
 "
-frisbee,2,"Input: frisbee Answer: 2
+frisbee,no,"Input: frisbee Answer: no
 "
-Sugar,1,"Input: Sugar Answer: 1
+Sugar,yes,"Input: Sugar Answer: yes
 "
-lentil,1,"Input: lentil Answer: 1
+lentil,yes,"Input: lentil Answer: yes
 "
-Butter,1,"Input: Butter Answer: 1
+Butter,yes,"Input: Butter Answer: yes
 "
-baseball bat,2,"Input: baseball bat Answer: 2
+baseball bat,no,"Input: baseball bat Answer: no
 "
-surfboard,2,"Input: surfboard Answer: 2
+surfboard,no,"Input: surfboard Answer: no
 "
-horse,2,"Input: horse Answer: 2
+horse,no,"Input: horse Answer: no
 "
-tv,2,"Input: tv Answer: 2
+tv,no,"Input: tv Answer: no
 "
-clock,2,"Input: clock Answer: 2
+clock,no,"Input: clock Answer: no
 "
-kite,2,"Input: kite Answer: 2
+kite,no,"Input: kite Answer: no
 "
-Hazelnut,1,"Input: Hazelnut Answer: 1
+Hazelnut,yes,"Input: Hazelnut Answer: yes
 "
-Milk,1,"Input: Milk Answer: 1
+Milk,yes,"Input: Milk Answer: yes
 "
-cell phone,2,"Input: cell phone Answer: 2
+cell phone,no,"Input: cell phone Answer: no
 "
-Raspberries,1,"Input: Raspberries Answer: 1
+Raspberries,yes,"Input: Raspberries Answer: yes
 "
-traffic light,2,"Input: traffic light Answer: 2
+traffic light,no,"Input: traffic light Answer: no
 "
-Rice,1,"Input: Rice Answer: 1
+Rice,yes,"Input: Rice Answer: yes
 "
-Juice,1,"Input: Juice Answer: 1
+Juice,yes,"Input: Juice Answer: yes
 "
-toaster,2,"Input: toaster Answer: 2
+toaster,no,"Input: toaster Answer: no
 "
-Bread,1,"Input: Bread Answer: 1
+Bread,yes,"Input: Bread Answer: yes
 "
-spoon,2,"Input: spoon Answer: 2
+spoon,no,"Input: spoon Answer: no
 "
-remote,2,"Input: remote Answer: 2
+remote,no,"Input: remote Answer: no
 "
-Peas,1,"Input: Peas Answer: 1
+Peas,yes,"Input: Peas Answer: yes
 "
-boat,2,"Input: boat Answer: 2
+boat,no,"Input: boat Answer: no
 "
-Apple,1,"Input: Apple Answer: 1
+Apple,yes,"Input: Apple Answer: yes
 "
-Glucose Syrup,1,"Input: Glucose Syrup Answer: 1
+Glucose Syrup,yes,"Input: Glucose Syrup Answer: yes
 "
-car,2,"Input: car Answer: 2
+car,no,"Input: car Answer: no
 "
-tennis racket,2,"Input: tennis racket Answer: 2
+tennis racket,no,"Input: tennis racket Answer: no
 "
-Almonds,1,"Input: Almonds Answer: 1
+Almonds,yes,"Input: Almonds Answer: yes
 "
-dog,2,"Input: dog Answer: 2
+dog,no,"Input: dog Answer: no
 "
-Cheese,1,"Input: Cheese Answer: 1
+Cheese,yes,"Input: Cheese Answer: yes
 "
-couch,2,"Input: couch Answer: 2
+couch,no,"Input: couch Answer: no
 "
-bottle,2,"Input: bottle Answer: 2
+bottle,no,"Input: bottle Answer: no
 "
-chair,2,"Input: chair Answer: 2
+chair,no,"Input: chair Answer: no
 "
-Banana,1,"Input: Banana Answer: 1
+Banana,yes,"Input: Banana Answer: yes
 "
-umbrella,2,"Input: umbrella Answer: 2
+umbrella,no,"Input: umbrella Answer: no
 "
-tie,2,"Input: tie Answer: 2
+tie,no,"Input: tie Answer: no
 "
-Wheat,1,"Input: Wheat Answer: 1
+Wheat,yes,"Input: Wheat Answer: yes
 "
-Cake,1,"Input: Cake Answer: 1
+Cake,yes,"Input: Cake Answer: yes
 "
-train,2,"Input: train Answer: 2
+train,no,"Input: train Answer: no
 "
-elephant,2,"Input: elephant Answer: 2
+elephant,no,"Input: elephant Answer: no
 "
-backpack,2,"Input: backpack Answer: 2
+backpack,no,"Input: backpack Answer: no
 "
-Prunes,1,"Input: Prunes Answer: 1
+Prunes,yes,"Input: Prunes Answer: yes
 "
-book,2,"Input: book Answer: 2
+book,no,"Input: book Answer: no
 "
-bus,2,"Input: bus Answer: 2
+bus,no,"Input: bus Answer: no
 "
-toilet,2,"Input: toilet Answer: 2
+toilet,no,"Input: toilet Answer: no
 "
-airplane,2,"Input: airplane Answer: 2
+airplane,no,"Input: airplane Answer: no
 "
-refrigerator,2,"Input: refrigerator Answer: 2
+refrigerator,no,"Input: refrigerator Answer: no
 "
-Pastry,1,"Input: Pastry Answer: 1
+Pastry,yes,"Input: Pastry Answer: yes
 "
-Water,1,"Input: Water Answer: 1
+Water,yes,"Input: Water Answer: yes
 "
-keyboard,2,"Input: keyboard Answer: 2
+keyboard,no,"Input: keyboard Answer: no
 "
-parking meter,2,"Input: parking meter Answer: 2
+parking meter,no,"Input: parking meter Answer: no
 "
-laptop,2,"Input: laptop Answer: 2
+laptop,no,"Input: laptop Answer: no
 "
-Beans,1,"Input: Beans Answer: 1
+Beans,yes,"Input: Beans Answer: yes
 "
-Soybean Oil,1,"Input: Soybean Oil Answer: 1
+Soybean Oil,yes,"Input: Soybean Oil Answer: yes
 "
-Olive Oil,1,"Input: Olive Oil Answer: 1
+Olive Oil,yes,"Input: Olive Oil Answer: yes
 "
-sports ball,2,"Input: sports ball Answer: 2
+sports ball,no,"Input: sports ball Answer: no
 "
-Sandwich,1,"Input: Sandwich Answer: 1
+Sandwich,yes,"Input: Sandwich Answer: yes
 "
-Salt,1,"Input: Salt Answer: 1
+Salt,yes,"Input: Salt Answer: yes
 "
-Walnuts,1,"Input: Walnuts Answer: 1
+Walnuts,yes,"Input: Walnuts Answer: yes
 "
-giraffe,2,"Input: giraffe Answer: 2
+giraffe,no,"Input: giraffe Answer: no
 "
-Garlic Onion,1,"Input: Garlic Onion Answer: 1
+Garlic Onion,yes,"Input: Garlic Onion Answer: yes
 "
-Coffee,1,"Input: Coffee Answer: 1
+Coffee,yes,"Input: Coffee Answer: yes
 "
-handbag,2,"Input: handbag Answer: 2
+handbag,no,"Input: handbag Answer: no
 "
-bear,2,"Input: bear Answer: 2
+bear,no,"Input: bear Answer: no
 "
-Dosa,1,"Input: Dosa Answer: 1
+Dosa,yes,"Input: Dosa Answer: yes
 "
-potted plant,2,"Input: potted plant Answer: 2
+potted plant,no,"Input: potted plant Answer: no
 "
