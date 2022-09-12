@@ -60,7 +60,8 @@ TASKS_ANLI = {
     # },
 
     'SUFFIXES': [
-        'How do we get the answer from the input?\nThe answer is'
+        'Given the input country, the answer is its',
+        # 'How do we get the answer from the input?\nThe answer is'
         # 'The answer is the'
         # 'To get the answer from the input,',
         # 'How do we get the answer from the input?\nTo get the answer, we'

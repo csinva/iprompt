@@ -59,7 +59,7 @@ ks_final, param_combos_final = submit_utils.combine_param_dicts(
 
 for i in range(len(param_combos_final)):
     param_str = cmd_python + ' ' + \
-        os.path.join(repo_dir, '01_train_suffix.py ')
+        os.path.join(repo_dir, '02_train_suffix.py ')
     for j, key in enumerate(ks_final):
         param_str += '--' + key + ' ' + str(param_combos_final[i][j]) + ' '
     print(

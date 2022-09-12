@@ -144,6 +144,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
 
         # save results for suffix_str
         r['suffix_str_added'].append(suffix_str[r['len_suffix_str_init']:])
+        
         # if we made it here, we did not find the answer
         r['num_model_queries'].append(num_model_queries)
         r['running_prob'].append(suffix_dict['running_prob'])
@@ -159,7 +160,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
 
         # check each beam
         if suffix_dict['num_tokens_added'] < args.max_num_tokens:
-            # take this min just in case all tokens were somehow whitespace
+            # take this min just in case all tokens were whitespace
             for beam_num in range(min(args.beam_width_suffix, top_k_inds.size)):
                 suffix_new = suffix_str + top_decoded_tokens[beam_num]
                 if check_answer_func(suffix_new):  # and args.early_stopping
@@ -188,7 +189,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
                     # checked beam_width at current suffix + all suffixes before this one (assumes BFS-beam search)
                     # this is the total number of suffixes checked at the time when this will be opened above
                     'num_suffixes_checked': num_suffixes_checked + args.beam_width_suffix * (beam_num + 1)
-                }
+                })
     
     
     # failed to find anything, save and return

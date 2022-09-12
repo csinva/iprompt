@@ -4,8 +4,8 @@ from os.path import dirname
 import sys
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
-# python3 01_train.py --prefix_or_suffix suffix --save_dir /home/chansingh/mntv1/sweep1 --checkpoint gpt2-medium --batch_size 200
-# python3 01_train.py --save_dir /home/chansingh/mntv1/test
+# python3 02_train.py --prefix_or_suffix suffix --save_dir /home/chansingh/mntv1/sweep1 --checkpoint gpt2-medium --batch_size 200
+# python3 02_train.py --save_dir /home/chansingh/mntv1/test
 #  /usr/bin/python3 /home/chansingh/auto-prompt-engineering/01_train.py --use_single_query 1 --n_shots 1 --task add_two --use_parallelformers 0 --use_cpu_only 1 --seed 1 --template_num_init_string 0 --template_num_task_phrasing 0 --max_digit 10 --beam_width_suffix 5 --prefix_or_suffix suffix --save_dir /home/chansingh/mntv1/single_query6 --checkpoint gpt2-medium --batch_size 200 
 
 if len(sys.argv) > 1:
@@ -60,7 +60,7 @@ ks_final, param_combos_final = submit_utils.combine_param_dicts(
     PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT)
 
 for i in range(len(param_combos_final)):
-    param_str = cmd_python + ' ' + os.path.join(repo_dir, '01_train_suffix.py ')
+    param_str = cmd_python + ' ' + os.path.join(repo_dir, '02_train_suffix.py ')
     for j, key in enumerate(ks_final):
         param_str += '--' + key + ' ' + str(param_combos_final[i][j]) + ' '
     print(
