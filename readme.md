@@ -1,4 +1,24 @@
-# extracting info from data through pre-trained LLM
+<h1 align="center">  Interpretable autoprompting </h1>
+<p align="center"> Natural language explanations of a <i>dataset</i> via language-model autoprompting.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/license-mit-blue.svg">
+  <img src="https://img.shields.io/badge/python-3.6--3.8-blue">
+  <a href="https://github.com/csinva/imodels/actions"><img src="https://github.com/Yu-Group/adaptive-wavelets/workflows/tests/badge.svg"></a>
+</p>  
+
+
+<b>Official code for using / reproducing Interpretable autoprompting from the paper "Towards scientific discovery with language models via interpretable autoprompting" (<a href="https://arxiv.org/abs/2">Singh, Morris, Aneja, Rush & Gao, 2022</a>) </b>
+
+<blockquote>
+<b>Abstract</b>: Large language models (LLMs) have displayed an extraordinary ability to harness natural language and perform complex tasks.
+In this work, we explore whether we can leverage a pre-trained LLM to understand patterns in our data.
+This ambitious problem statement has the potential to fuel scientific discovery, especially if an LLM is able to identify and explain structure in data that elude humans.
+Our approach to this problem is grounded in automatic prompt tuning:
+it iterates over the entire dataset, queries the model, and then uses the aggregate results to derive a natural-language interpretation.
+Experiments on a wide range of tasks, ranging from synthetic mathematics to diverse natural-language-understanding tasks show that this problem statement is feasible.
+</blockquote>
 
 
 ## file structure
@@ -14,14 +34,5 @@
 ## testing
 - to check if the pipeline seems to work, install pytest then run `pytest` from the repo's root directory
 
-## recent changes
-- 09/04
-  - much broader support for datasets including nli
-  - added tests
-- 09/03
-  - note: args that start with `use_` are boolean
-- 09/02
-  - changed defaults in `01_train_suffix.py`: defaults to suffix, max_digit = 10, beam_width_suffix=4
-  - `data.py` returns data + `check_answer_func`
-  - moved `train` function into `__main__` and refactored into `train_prefix.py` and `train_suffix.py`
-  - gpu / parallelization may not work properly for `train_prefix.py`
+## docs
+- note: args that start with `use_` are boolean

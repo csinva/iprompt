@@ -25,18 +25,18 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
     np.random.seed(42)
     torch.manual_seed(42)
 
+    # set up model + dataloader
     model.eval()
     model.to(device)
-
     tokenizer.pad_token = tokenizer.eos_token
-
     dataloader = torch.utils.data.DataLoader(
         dset, batch_size=batch_size, shuffle=False, drop_last=False)
+    
+
+    # Compute loss only over possible answers to make task easier
     total_loss = 0.0
     total_n = 0
     total_n_correct = 0.0
-
-    # Compute loss only over possible answers to make task easier
     possible_answer_ids = []
     for batch in dataloader:
         y_text = [answer for answer in batch['output']]
@@ -45,7 +45,6 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
         # only test on the single next token
         true_next_token_ids = y_tokenized['input_ids'][:, 0]
         possible_answer_ids.extend(true_next_token_ids.tolist())
-
     assert len(
         possible_answer_ids) > 0, "need multiple answers for multiple choice"
 

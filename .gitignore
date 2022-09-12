@@ -135,3 +135,5 @@ results
 
 data_utils/natural-instructions
 **.png
+.autoprompt
+.vscode

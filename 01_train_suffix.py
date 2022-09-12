@@ -125,6 +125,7 @@ if __name__ == '__main__':
         dset, batch_size=min(args.batch_size, len(dset)), shuffle=True, drop_last=True)
     logging.info(
         f'num_examples: {dset.shape[0]}, num batches: {len(dataloader)}')
+    logging.info(dset[0])
 
     # load model
     logger.info('loading model...')

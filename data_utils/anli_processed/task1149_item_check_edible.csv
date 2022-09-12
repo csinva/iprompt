@@ -1,0 +1,239 @@
+input,output,text
+sink,no,"Input: sink Answer: no
+"
+cat,no,"Input: cat Answer: no
+"
+Orange,yes,"Input: Orange Answer: yes
+"
+skis,no,"Input: skis Answer: no
+"
+sheep,no,"Input: sheep Answer: no
+"
+Burger,yes,"Input: Burger Answer: yes
+"
+Carrot,yes,"Input: Carrot Answer: yes
+"
+mouse,no,"Input: mouse Answer: no
+"
+Pectin,yes,"Input: Pectin Answer: yes
+"
+Turmeric,yes,"Input: Turmeric Answer: yes
+"
+scissors,no,"Input: scissors Answer: no
+"
+bowl,no,"Input: bowl Answer: no
+"
+cow,no,"Input: cow Answer: no
+"
+wine glass,no,"Input: wine glass Answer: no
+"
+peanuts,yes,"Input: peanuts Answer: yes
+"
+strawberries,yes,"Input: strawberries Answer: yes
+"
+snowboard,no,"Input: snowboard Answer: no
+"
+skateboard,no,"Input: skateboard Answer: no
+"
+Chocolate,yes,"Input: Chocolate Answer: yes
+"
+dining table,no,"Input: dining table Answer: no
+"
+Pistachios,yes,"Input: Pistachios Answer: yes
+"
+stop sign,no,"Input: stop sign Answer: no
+"
+person,no,"Input: person Answer: no
+"
+Black Pepper,yes,"Input: Black Pepper Answer: yes
+"
+truck,no,"Input: truck Answer: no
+"
+fire hydrant,no,"Input: fire hydrant Answer: no
+"
+Noodles,yes,"Input: Noodles Answer: yes
+"
+suitcase,no,"Input: suitcase Answer: no
+"
+Peaches,yes,"Input: Peaches Answer: yes
+"
+Corn Syrup,yes,"Input: Corn Syrup Answer: yes
+"
+Pasta,yes,"Input: Pasta Answer: yes
+"
+Bagels,yes,"Input: Bagels Answer: yes
+"
+fork,no,"Input: fork Answer: no
+"
+bicycle,no,"Input: bicycle Answer: no
+"
+Biscuits,yes,"Input: Biscuits Answer: yes
+"
+bed,no,"Input: bed Answer: no
+"
+baseball glove,no,"Input: baseball glove Answer: no
+"
+toothbrush,no,"Input: toothbrush Answer: no
+"
+ flour,yes,"Input:  flour Answer: yes
+"
+hair drier,no,"Input: hair drier Answer: no
+"
+oven,no,"Input: oven Answer: no
+"
+bench,no,"Input: bench Answer: no
+"
+teddy bear,no,"Input: teddy bear Answer: no
+"
+microwave,no,"Input: microwave Answer: no
+"
+Grapes,yes,"Input: Grapes Answer: yes
+"
+vase,no,"Input: vase Answer: no
+"
+motorcycle,no,"Input: motorcycle Answer: no
+"
+cranberries,yes,"Input: cranberries Answer: yes
+"
+cup,no,"Input: cup Answer: no
+"
+bird,no,"Input: bird Answer: no
+"
+zebra,no,"Input: zebra Answer: no
+"
+Lemon,yes,"Input: Lemon Answer: yes
+"
+knife,no,"Input: knife Answer: no
+"
+frisbee,no,"Input: frisbee Answer: no
+"
+Sugar,yes,"Input: Sugar Answer: yes
+"
+lentil,yes,"Input: lentil Answer: yes
+"
+Butter,yes,"Input: Butter Answer: yes
+"
+baseball bat,no,"Input: baseball bat Answer: no
+"
+surfboard,no,"Input: surfboard Answer: no
+"
+horse,no,"Input: horse Answer: no
+"
+tv,no,"Input: tv Answer: no
+"
+clock,no,"Input: clock Answer: no
+"
+kite,no,"Input: kite Answer: no
+"
+Hazelnut,yes,"Input: Hazelnut Answer: yes
+"
+Milk,yes,"Input: Milk Answer: yes
+"
+cell phone,no,"Input: cell phone Answer: no
+"
+Raspberries,yes,"Input: Raspberries Answer: yes
+"
+traffic light,no,"Input: traffic light Answer: no
+"
+Rice,yes,"Input: Rice Answer: yes
+"
+Juice,yes,"Input: Juice Answer: yes
+"
+toaster,no,"Input: toaster Answer: no
+"
+Bread,yes,"Input: Bread Answer: yes
+"
+spoon,no,"Input: spoon Answer: no
+"
+remote,no,"Input: remote Answer: no
+"
+Peas,yes,"Input: Peas Answer: yes
+"
+boat,no,"Input: boat Answer: no
+"
+Apple,yes,"Input: Apple Answer: yes
+"
+Glucose Syrup,yes,"Input: Glucose Syrup Answer: yes
+"
+car,no,"Input: car Answer: no
+"
+tennis racket,no,"Input: tennis racket Answer: no
+"
+Almonds,yes,"Input: Almonds Answer: yes
+"
+dog,no,"Input: dog Answer: no
+"
+Cheese,yes,"Input: Cheese Answer: yes
+"
+couch,no,"Input: couch Answer: no
+"
+bottle,no,"Input: bottle Answer: no
+"
+chair,no,"Input: chair Answer: no
+"
+Banana,yes,"Input: Banana Answer: yes
+"
+umbrella,no,"Input: umbrella Answer: no
+"
+tie,no,"Input: tie Answer: no
+"
+Wheat,yes,"Input: Wheat Answer: yes
+"
+Cake,yes,"Input: Cake Answer: yes
+"
+train,no,"Input: train Answer: no
+"
+elephant,no,"Input: elephant Answer: no
+"
+backpack,no,"Input: backpack Answer: no
+"
+Prunes,yes,"Input: Prunes Answer: yes
+"
+book,no,"Input: book Answer: no
+"
+bus,no,"Input: bus Answer: no
+"
+toilet,no,"Input: toilet Answer: no
+"
+airplane,no,"Input: airplane Answer: no
+"
+refrigerator,no,"Input: refrigerator Answer: no
+"
+Pastry,yes,"Input: Pastry Answer: yes
+"
+Water,yes,"Input: Water Answer: yes
+"
+keyboard,no,"Input: keyboard Answer: no
+"
+parking meter,no,"Input: parking meter Answer: no
+"
+laptop,no,"Input: laptop Answer: no
+"
+Beans,yes,"Input: Beans Answer: yes
+"
+Soybean Oil,yes,"Input: Soybean Oil Answer: yes
+"
+Olive Oil,yes,"Input: Olive Oil Answer: yes
+"
+sports ball,no,"Input: sports ball Answer: no
+"
+Sandwich,yes,"Input: Sandwich Answer: yes
+"
+Salt,yes,"Input: Salt Answer: yes
+"
+Walnuts,yes,"Input: Walnuts Answer: yes
+"
+giraffe,no,"Input: giraffe Answer: no
+"
+Garlic Onion,yes,"Input: Garlic Onion Answer: yes
+"
+Coffee,yes,"Input: Coffee Answer: yes
+"
+handbag,no,"Input: handbag Answer: no
+"
+bear,no,"Input: bear Answer: no
+"
+Dosa,yes,"Input: Dosa Answer: yes
+"
+potted plant,no,"Input: potted plant Answer: no
+"
