@@ -86,11 +86,12 @@ def train(
     print(f"Training with {num_unique_answers} possible answers / random acc {random_acc:.1f}% / majority acc {majority_acc:.1f}%")
     
     vocab_size = len(tokenizer.vocab)
-    possible_answer_mask = (
-        torch.arange(start=0, end=vocab_size)[:, None]
-        == 
-        possible_answer_ids[None, :]
-    ).any(dim=1).to(device)
+    # possible_answer_mask = (
+    #     torch.arange(start=0, end=vocab_size)[:, None]
+    #     == 
+    #     possible_answer_ids[None, :]
+    # ).any(dim=1).to(device)
+    possible_answer_mask = None
 
     for epoch in range(args.n_epochs):
         model.pre_epoch()
@@ -101,7 +102,7 @@ def train(
         total_n_correct = 0
         pbar = tqdm(enumerate(dataloader), total=len(dataloader))
         for idx, batch in pbar:
-            x_text = [f' {prompt}' for prompt in batch['input']]
+            x_text = [f'. {prompt}' for prompt in batch['input']]
             y_text = [answer.replace('.', '').rstrip() for answer in batch['output']] # strip newlines and periods.
 
             input_ids = model.tokenizer(x_text, return_tensors='pt')['input_ids'].to(device)
@@ -206,7 +207,7 @@ if __name__ == '__main__':
     loss_func = PrefixLoss(gamma=args.gamma, tokenizer=tokenizer)
     model = model_cls_dict[args.model_cls](loss_func=loss_func, model=lm, tokenizer=tokenizer)
     dset, check_answer_func, description = data.get_data(args=args, task_name=args.task_name)
-    print(f"got task with description: {description}")
+    print(f'Attempting task with description: "{description}"')
 
     logger.info('beginning training...')
     r = train(args=args, r=r, dset=dset, model=model, tokenizer=tokenizer)

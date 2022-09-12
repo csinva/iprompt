@@ -42,7 +42,6 @@ class PrefixLoss:
             target=input_ids,
             reduction='mean'
         )
-        # breakpoint()
         return loss
 
     def _compute_token_loss(
@@ -50,8 +49,14 @@ class PrefixLoss:
         ) -> torch.Tensor:
         batch_size, vocab_size = next_token_logits.shape
         assert next_token_idxs.shape == (batch_size,)
-        assert answer_mask.shape == (vocab_size,)
-        
+
+        if answer_mask is not None:
+            assert answer_mask.shape == (vocab_size,)
+            next_token_logits = torch.where(
+                answer_mask[None],
+                next_token_logits, torch.tensor(float('-inf')).to(device)
+            )
+                
         return torch.nn.functional.cross_entropy(
             input=next_token_logits,
             target=next_token_idxs,
@@ -91,6 +96,7 @@ class PrefixLoss:
                 answer_mask=answer_mask,
             )
         )
+
         return token_loss + (self.gamma * fluency_loss)
 
 
@@ -163,14 +169,19 @@ class PrefixModel(nn.Module, abc.ABC):
     def init_discrete_prefix(self, num_tokens: int) -> nn.Parameter:
         # TODO: argparse for params
         # start_word_id = torch.tensor([self.tokenizer.vocab['the']], dtype=int)
-        start_word_id = torch.tensor([self.tokenizer.vocab['the']], dtype=int)
+        # start_word_id = torch.tensor([self.tokenizer.encode(' multiply')[0]], dtype=int)
+        # start_word_id = torch.tensor([self.tokenizer.encode(' hello')[0]], dtype=int)
+        # start_word_id = torch.tensor([self.tokenizer.encode('ogg')[0]], dtype=int)
+        # start_word_id = torch.tensor([self.tokenizer.encode(' add')[0]], dtype=int)
+        start_word_id = torch.tensor([self.tokenizer.encode('<|endoftext|>')[0]], dtype=int)
+        print(f"start_word_id = {start_word_id}")
         return start_word_id.repeat((num_tokens,))
     
     def compute_loss(
             self,
             original_input_ids: torch.Tensor,
             next_token_ids: torch.Tensor,
-            possible_answer_mask: torch.Tensor
+            possible_answer_mask: Optional[torch.Tensor]
         ) -> Tuple[torch.Tensor, int]:
         """Computes loss using `self.loss_func`.
         
@@ -179,9 +190,9 @@ class PrefixModel(nn.Module, abc.ABC):
             num_correct (int): number of examples where prediction was correct
         """
         input_ids, outputs = self.forward(input_ids=original_input_ids)
-        next_token_logits = torch.where(
-            possible_answer_mask[None], outputs.logits[:, -1, :], torch.tensor(float('-inf')).to(device)
-        )
+
+        next_token_logits = outputs.logits[:, -1, :]
+
         n_correct = (
             next_token_logits.argmax(dim=-1)
                 ==
@@ -238,7 +249,7 @@ class HotFlipPrefixModel(PrefixModel):
         # HotFlip-specific parameters.
         self._min_loss = float('inf')
         self._num_tokens = 1 # TODO argparse for n_tokens
-        self._num_candidates_per_prefix_token = 64 # TODO argparse for this too
+        self._num_candidates_per_prefix_token = 200 # TODO argparse for this too
         self._swap_token_idx = 0
         # 
         self.preprefix_ids = self.tokenizer.encode('The function to compute is', return_tensors='pt')
@@ -249,6 +260,7 @@ class HotFlipPrefixModel(PrefixModel):
     
     def _set_prefix_ids(self, new_ids: torch.Tensor) -> None:
         self.prefix_ids = new_ids
+        # self.prefix_embedding = self.init_continuous_prefix()
         self.prefix_embedding = nn.Parameter(
             self.token_embedding.forward(self.prefix_ids), requires_grad=True
         )
@@ -279,9 +291,7 @@ class HotFlipPrefixModel(PrefixModel):
         ) -> torch.Tensor:
         input_ids, outputs = self.forward(input_ids=original_input_ids, prefix_ids=prefix_ids)
 
-        next_token_logits = torch.where(
-            possible_answer_mask[None], outputs.logits[:, -1, :], torch.tensor(float('-inf')).to(device)
-        )
+        next_token_logits = outputs.logits[:, -1, :]
         n_correct = (
             next_token_logits.argmax(dim=-1)
                 ==
@@ -308,9 +318,6 @@ class HotFlipPrefixModel(PrefixModel):
             loss (float torch.Tensor) -- the loss
             num_correct (int): number of examples where prediction was correct
         """
-        # 
-        # Compute loss normally.
-        # 
         _input_ids, loss, n_correct = self._compute_loss(
             original_input_ids=original_input_ids,
             next_token_ids=next_token_ids,
@@ -324,32 +331,51 @@ class HotFlipPrefixModel(PrefixModel):
         # 
         # Get candidate IDs for every position.
         # 
+        token_idx = self._swap_token_idx
         token_grads = self._prefix_token_grad
         top_tokens_per_position = (
             token_grads.topk(k=self._num_candidates_per_prefix_token, dim=1, largest=False).indices
         )
-        breakpoint()
         assert top_tokens_per_position.shape == (self._num_tokens, self._num_candidates_per_prefix_token)
+
+        top_swap_tokens = top_tokens_per_position[token_idx, :]
+        #
+        # Get most likely tokens.
+        #
+        prefix_until_swap_ids = torch.cat(
+            (self.preprefix_ids, self.prefix_ids[None, :token_idx]), dim=1
+        ).to(device)
+        swap_token_logits = self.model(self.preprefix_ids.to(device)).logits[:, -1, :]
+
+        rvocab = {v: k for k,v in self.tokenizer.vocab.items()}
+        # dist_sum = (swap_token_logits.log_softmax(dim=1) * .7 + (-1 * token_grads).log_softmax(dim=1))
+        # for v in (swap_token_logits.log_softmax(dim=1) * .7 + (-1 * token_grads).log_softmax(dim=1)).topk(10).indices.flatten(): print(rvocab[v.item()])
+
+
+        token_losses =(
+            (swap_token_logits.log_softmax(dim=1) * 0.0 + (-1 * token_grads).log_softmax(dim=1))
+        )
+        top_swap_tokens = token_losses.argsort(descending=True).flatten()
+        top_swap_tokens = top_swap_tokens[:self._num_candidates_per_prefix_token]
         # 
         # Evaluate candidates.
         # 
-        all_candidate_losses = torch.zeros_like(top_tokens_per_position, dtype=float)
+        all_candidate_losses = torch.zeros(self._num_candidates_per_prefix_token, dtype=float).to(device)
         best_loss = self._min_loss
 
-        token_idx = self._swap_token_idx
         mask = torch.nn.functional.one_hot(
             torch.tensor(token_idx), num_classes=self._num_tokens
         ).bool().to(device)
 
         for batch in tqdm.tqdm(dataloader, desc='evaluating HotFlip candidates', colour='red', leave=False):
             # Loop in this order so we only tokenize each thing once.
-            x_text = [f' {prompt}' for prompt in batch['input']]
+            x_text = [f'. {prompt}' for prompt in batch['input']]
             y_text = [answer.replace('.', '').rstrip() for answer in batch['output']] # strip newlines and periods.
             #
             input_ids = self.tokenizer(x_text, return_tensors='pt')['input_ids'].to(device)
             next_token_ids = self.tokenizer(y_text, return_tensors='pt')['input_ids'].squeeze(dim=1).to(device)
             for candidate_idx in range(self._num_candidates_per_prefix_token):
-                new_token_id = top_tokens_per_position[token_idx, candidate_idx]
+                new_token_id = top_swap_tokens[candidate_idx]
                 prefix_ids = torch.where(
                     mask, new_token_id, self.prefix_ids.to(device)
                 ).to(device)
@@ -360,15 +386,16 @@ class HotFlipPrefixModel(PrefixModel):
                         possible_answer_mask=possible_answer_mask,
                         prefix_ids=prefix_ids
                     )
-                all_candidate_losses[token_idx, candidate_idx] += loss
+                all_candidate_losses[candidate_idx] += loss
 
         #
         # Recreate prefix with min loss.
         #
+        breakpoint()
         min_loss = all_candidate_losses[token_idx].min()
-        candidate_idx = all_candidate_losses[token_idx].argmin()
+        best_candidate_idx = all_candidate_losses[token_idx].argmin()
 
-        new_token_id = top_tokens_per_position[token_idx, candidate_idx]
+        new_token_id = top_swap_tokens[best_candidate_idx]
         best_prefix_ids = torch.where(
             mask, new_token_id, self.prefix_ids.to(device)
         ).to(device)
