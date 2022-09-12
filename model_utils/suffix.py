@@ -1,8 +1,11 @@
+from this import d
+from nltk.corpus import stopwords
 import logging
 import pickle as pkl
 from collections import defaultdict
 from copy import deepcopy
 from datetime import datetime
+import string
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -60,6 +63,12 @@ def get_avg_probs_next_token(args, suffix_str: str, model, dataloader, tokenizer
 
     return avg_logits
 
+def get_stopwords():
+    """Leave this import here in case we don't want to install nltk
+    """
+    import nltk
+    nltk.download('stopwords')
+    return set(stopwords.words('english'))
 
 def get_probs_single_query_next_token(args, suffix_str: str, model, dataloader, tokenizer):
     """Get the probs for the next token for a single example
@@ -106,7 +115,9 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
     num_model_queries = 0
     logging.info(
         f'num batches: {len(dataloader)} batch_size {args.batch_size}')
-
+    if not args.use_stopwords:
+        STOPWORDS = get_stopwords()
+        
     while len(suffixes) > 0:
         suffix_dict = suffixes.pop()
         suffix_str = suffix_dict['s']
@@ -123,28 +134,40 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
 
         # could also check out top_k_top_p_filtering
         # (https://huggingface.co/docs/transformers/v4.16.2/en/task_summary)
+        # get the topk indexes and tokens
         top_k_inds = np.argpartition(
-            avg_probs, -beam_size_for_saving)[-beam_size_for_saving:]  # get topk
+            avg_probs, -beam_size_for_saving)[-1000:]  # get topk (hardcoded as 500)
+
         # sort the topk (largest first)
         top_k_inds = top_k_inds[np.argsort(avg_probs[top_k_inds])][::-1]
-
-        # decode and log
         top_decoded_tokens = np.array(
             [tokenizer.decode(ind) for ind in top_k_inds])
+
+        # disallow bad tokens
+        if disallow_whitespace_tokens:
+            disallowed_idxs = np.array([s.isspace() or all(c in string.punctuation for c in s)
+                                       for s in top_decoded_tokens], dtype=bool)
+            top_k_inds = top_k_inds[~disallowed_idxs]
+            top_decoded_tokens = top_decoded_tokens[~disallowed_idxs]
+        if not args.use_stopwords:
+            disallowed_idxs = np.array([s.lower().strip() in STOPWORDS
+                                       for s in top_decoded_tokens], dtype=bool)
+            top_k_inds = top_k_inds[~disallowed_idxs]
+            top_decoded_tokens = top_decoded_tokens[~disallowed_idxs]
+
+        # take topk
+        top_k_inds = top_k_inds[:beam_size_for_saving]
+        top_decoded_tokens = top_decoded_tokens[:beam_size_for_saving]
+
+        # log
         logging.info(str(num_model_queries) + ' ' + repr(suffix_str))
         for i in range(top_k_inds.size):
             logging.debug(
                 '\t ' + repr(top_decoded_tokens[i]) + '\t' + f'{avg_probs[top_k_inds[i]]:.2E}')
 
-        if disallow_whitespace_tokens:
-            disallowed_idxs = np.array([s.isspace()
-                                       for s in top_decoded_tokens], dtype=bool)
-            top_k_inds = top_k_inds[~disallowed_idxs]
-            top_decoded_tokens = top_decoded_tokens[~disallowed_idxs]
-
         # save results for suffix_str
         r['suffix_str_added'].append(suffix_str[r['len_suffix_str_init']:])
-        
+
         # if we made it here, we did not find the answer
         r['num_model_queries'].append(num_model_queries)
         r['running_prob'].append(suffix_dict['running_prob'])
@@ -160,8 +183,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
 
         # check each beam
         if suffix_dict['num_tokens_added'] < args.max_num_tokens:
-            # take this min just in case all tokens were whitespace
-            for beam_num in range(min(args.beam_width_suffix, top_k_inds.size)):
+            for beam_num in range(top_k_inds.size):
                 suffix_new = suffix_str + top_decoded_tokens[beam_num]
                 if check_answer_func(suffix_new):  # and args.early_stopping
                     r['final_answer_full'] = suffix_new
@@ -190,7 +212,6 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
                     # this is the total number of suffixes checked at the time when this will be opened above
                     'num_suffixes_checked': num_suffixes_checked + args.beam_width_suffix * (beam_num + 1)
                 })
-    
-    
+
     # failed to find anything, save and return
     utils.save(args, save_dir, r, final=True)

@@ -51,6 +51,9 @@ def add_main_args(parser):
                         help='max width of beam in suffix search')
     parser.add_argument('--use_single_query', type=int, default=0,
                         help='boolean 0 or 1: use baseline model? only uses a single example to prompt rather than the entire dset')
+    parser.add_argument('--use_stopwords', type=int, default=1,
+                        help='boolean 0 or 1: whether to allow stopwords when searching for prompt')
+
     # parser.add_argument('--early_stopping', dest='early_stopping', default=True,
     #     help='whether to stop searching once finding correct answer - for suffix, this currently has to be true',
     #     action='store_true')

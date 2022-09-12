@@ -10,6 +10,8 @@ scikit-learn
 tqdm
 matplotlib
 parallelformers
+nltk
+# need to once run nltk.download('stopwords') from python
 
 # optional for launching jobs
 # amlt
