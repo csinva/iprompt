@@ -189,7 +189,7 @@ class PrefixModel(nn.Module, abc.ABC):
             loss (float torch.Tensor) -- the loss
             num_correct (int): number of examples where prediction was correct
         """
-        input_ids, outputs = self.forward(input_ids=original_input_ids)
+        input_ids, outputs = self.forward(input_ids=original_input_ids, prefix_ids=None)
 
         next_token_logits = outputs.logits[:, -1, :]
 
@@ -233,6 +233,31 @@ class PromptTunedModel(PrefixModel):
             'embs': self.prefix_embedding.detach().cpu().numpy(),
             'grads': self.prefix_embedding.grad.detach().cpu().numpy(),
         }
+
+class FixedPrefixModel(PrefixModel):
+    loss_func: PrefixLoss
+    prefix: str
+    model: transformers.PreTrainedModel
+    tokenizer: transformers.PreTrainedTokenizer
+    prefix_embedding: nn.Parameter
+    def __init__(self, loss_func: PrefixLoss, model: transformers.PreTrainedModel, tokenizer: transformers.PreTrainedTokenizer):
+        super().__init__(loss_func=loss_func, model=model, tokenizer=tokenizer)
+        self.prefix_ids = None
+        self.prefix_embedding = None
+    
+    def set_prefix(self, prefix: str) -> None:
+        self.prefix_ids = self.tokenizer(prefix, return_tensors='pt', add_special_tokens=False)['input_ids'].to(device)
+        self.prefix_embedding = self.token_embedding.forward(self.prefix_ids)
+
+    def embed_input_ids(self, input_ids: torch.Tensor, prefix_ids: Optional[torch.Tensor]) -> Tuple[torch.Tensor, torch.Tensor]:
+        assert prefix_ids is None, "cannot provide custom prefix IDs in fixed-prefix setting"
+        assert self.prefix_ids is not None
+        token_embeddings = self.token_embedding.forward(input_ids)
+        return input_ids, token_embeddings
+
+    @property
+    def trainable_params(self) -> Iterable[nn.Parameter]:
+        return []
 
 
 VERBOSE = False # whether to print grads, etc.
