@@ -32,7 +32,7 @@ def get_prefix_from_mlm(dataloader: DataLoader, mlm_name: str, num_candidates: i
     logger.info('computing prefixes with model %s', mlm_name)
     mlm = transformers.RobertaForMaskedLM.from_pretrained(mlm_name).to(device)
     mlm_tokenizer = transformers.AutoTokenizer.from_pretrained(mlm_name)
-    init_prefix_template = "The function to compute is{mask}."
+    init_prefix_template = "{mask} the two numbers to get the answer."
     init_prefix_str = init_prefix_template.format(mask=mlm_tokenizer.mask_token)
 
     all_mask_probs = torch.zeros((mlm_tokenizer.vocab_size,), dtype=float).to(device)
@@ -71,7 +71,7 @@ def train(
     model = model.to(device)
     dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=True, drop_last=False)
 
-    prefix_list = get_prefix_from_mlm(dataloader=dataloader, mlm_name='roberta-large', num_candidates=128)
+    prefix_list = get_prefix_from_mlm(dataloader=dataloader, mlm_name='roberta-large', num_candidates=32)
     print('got prefixes:', prefix_list)
 
     logger.info('got %d prefixes, now computing losses', len(prefix_list))
