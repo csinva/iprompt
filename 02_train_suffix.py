@@ -145,5 +145,3 @@ if __name__ == '__main__':
     with torch.no_grad():
         suffix.train_suffix(args, r, model, dataloader,
                                   check_answer_func, tokenizer, save_dir)
-
-    utils.save(args, save_dir, r, final=True)

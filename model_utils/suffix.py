@@ -188,4 +188,8 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
                     # checked beam_width at current suffix + all suffixes before this one (assumes BFS-beam search)
                     # this is the total number of suffixes checked at the time when this will be opened above
                     'num_suffixes_checked': num_suffixes_checked + args.beam_width_suffix * (beam_num + 1)
-                })
+                }
+    
+    
+    # failed to find anything, save and return
+    utils.save(args, save_dir, r, final=True)

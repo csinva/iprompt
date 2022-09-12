@@ -47,6 +47,9 @@ def postprocess_results(r):
     cols_to_drop += ['epoch_save_interval', 'batch_size']
     r = r.drop(columns=cols_to_drop)
     """
-
-    r['final_answer_found'] = (~r['final_answer_full'].isna()).astype(int)
+    print(r.keys())
+    if 'final_answer_full' in r.columns:
+        r['final_answer_found'] = (~r['final_answer_full'].isna()).astype(int)
+    else:
+        r['final_answer_found'] = 0
     return r
