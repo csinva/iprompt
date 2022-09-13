@@ -15,7 +15,7 @@ if len(sys.argv) > 1:
     assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
     save_dir = '/home/chansingh/mntv1/single_query_math_9_12'
-    cmd_python = '/usr/bin/python3'
+    cmd_python = 'python'
 
 ##########################################
 # params shared across everything (higher up things are looped over first)

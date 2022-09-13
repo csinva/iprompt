@@ -14,7 +14,7 @@ if len(sys.argv) > 1:
     assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
     save_dir = '/home/chansingh/mntv1/suffix_math_9_12'
-    cmd_python = '/usr/bin/python3'
+    cmd_python = 'python'
 
 ##########################################
 # params shared across everything (higher up things are looped over first)
@@ -67,7 +67,7 @@ for i in range(len(param_combos_final)):
     print(
         f'\n\n-------------------{i + 1}/{len(param_combos_final)}--------------------\n', param_str)
     try:
-        # os.system(param_str)
+        os.system(param_str)
         pass
     except Exception as e:
         print(e)
