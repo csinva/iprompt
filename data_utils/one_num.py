@@ -32,15 +32,16 @@ PROMPT_TEMPLATE_ONE_NUM = [
         f'The input is {num1}.', f' The function output is {g(num1)}\n\n'),
 ]
 SUFFIXES_ONE_NUM = [
-        # "The function mapping the input to the output is",
-        "The function f(x) returns the",
+        
+        "The function returns the",
         "To compute the answer from the input number x, return",
-        "To compute the answer f(x) from the input number x, return",
+        "To calculate the answer, take the input and",
+        # "To compute the answer f(x) from the input number x, return",
+        # "The function mapping the input to the output is",
         # "To find the output, take the number in the question and use the",
         # "To get the answer, take the number in the question and",
-        "To calculate the answer, take the input and",
-        "The relationship between the number in the question and the answer is:",
-        "To get the answer,",
+        # "The relationship between the number in the question and the answer is:",
+        # "To get the answer,",
 ]
 TASKS_ONE_NUM = {
     'square_one': {

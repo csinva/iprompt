@@ -26,13 +26,13 @@ PROMPT_TEMPLATE_TWO_NUMS = [
         f'The inputs are {num1} {num2}.', f' The answer is {g([num1, num2])}\n\n'),
 ]
 SUFFIXES_TWO_NUMS = [
-        # "The function mapping the input to the output is",
-        "The function f(x) returns the",
         "To compute the answer from the input number x, return",
         "To compute the answer f(x) from the input number x, return",
+        "To calculate the answer, take the input and",
         # "To find the output, take the number in the question and use the",
         # "To get the answer, take the number in the question and",
-        "To calculate the answer, take the input and",
+        # "The function mapping the input to the output is",
+        # "The function f(x) returns the",
         "The relationship between the number in the question and the answer is:",
         "To get the answer,",
 ]

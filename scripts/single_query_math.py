@@ -4,9 +4,6 @@ from os.path import dirname
 import sys
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
-# python3 02_train.py --prefix_or_suffix suffix --save_dir /home/chansingh/mntv1/sweep1 --checkpoint gpt2-medium --batch_size 200
-# python3 02_train.py --save_dir /home/chansingh/mntv1/test
-#  /usr/bin/python3 /home/chansingh/auto-prompt-engineering/01_train.py --use_single_query 1 --n_shots 1 --task add_two --use_parallelformers 0 --use_cpu_only 1 --seed 1 --template_num_init_string 0 --template_num_task_phrasing 0 --max_digit 10 --beam_width_suffix 5 --prefix_or_suffix suffix --save_dir /home/chansingh/mntv1/single_query6 --checkpoint gpt2-medium --batch_size 200
 
 if len(sys.argv) > 1:
     print('running in amlt mode...')
