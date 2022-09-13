@@ -11,10 +11,10 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 if len(sys.argv) > 1:
     print('running in amlt mode...')
     cmd_python = 'python'
-    save_dir = '/mnt/output/single_query_math_9_12'  # sys.argv[1]
+    save_dir = '/mnt/output/single_query_math_9_13'  # sys.argv[1]
     assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
-    save_dir = '/home/chansingh/mntv1/single_query_math_9_12'
+    save_dir = '/home/chansingh/mntv1/single_query_math_9_13'
     cmd_python = 'python'
 
 ##########################################
@@ -23,6 +23,7 @@ else:
 PARAMS_SHARED_DICT = {
     # things we vary
     'use_single_query': [1],
+    'beam_size_extra': [0],
     'n_shots': [1, 5, 10],
     'task': ['add_two', 'multiply_two', 'divide_two', 'subtract_two',
              'max_two', 'first_two',

@@ -13,10 +13,10 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 if len(sys.argv) > 1:
     print('running in amlt mode...')
     cmd_python = 'python'
-    save_dir = '/mnt/output/single_query_anli_9_12'
+    save_dir = '/mnt/output/single_query_anli_9_13'
     assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
-    save_dir = '/home/chansingh/mntv1/single_query_anli_9_12'
+    save_dir = '/home/chansingh/mntv1/single_query_anli_9_13'
     cmd_python = '/home/chansingh/.autoprompt/bin/python' 
 
 ##########################################
@@ -26,6 +26,7 @@ PARAMS_SHARED_DICT = {
     # things to vary
     'use_single_query': [1],
     'n_shots': [1, 5, 10],
+    'beam_size_extra': [0],
     'task': ['task1146_country_capital', 'task1509_evalution_antonyms', 'task1147_country_currency',
              'task1149_item_check_edible', 'task183_rhyme_generation', 'task1191_food_veg_nonveg',
              'task092_check_prime_classification', 'task088_identify_typo_verification',

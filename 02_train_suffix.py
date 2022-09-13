@@ -49,6 +49,8 @@ def add_main_args(parser):
                         help='max length of sequence to find (num tokens)')
     parser.add_argument('--beam_size', type=int, default=4,
                         help='max width of beam in suffix search')
+    parser.add_argument('--beam_size_extra', type=int, default=50,
+                        help='extra width of beam to check at each iteration')
     parser.add_argument('--use_single_query', type=int, default=0,
                         help='boolean 0 or 1: use baseline model? only uses a single example to prompt rather than the entire dset')
     parser.add_argument('--use_stopwords', type=int, default=1,
@@ -59,8 +61,6 @@ def add_main_args(parser):
     #     action='store_true')
 
     # training misc args
-    parser.add_argument('--batch_size', type=int, default=100,
-                        help='batch size for training')
     parser.add_argument('--seed', type=int, default=1,
                         help='random seed')
     parser.add_argument('--save_dir', type=str, default='results',
@@ -81,6 +81,8 @@ def add_computational_args(parser):
                         help='boolean 0 or 1: whether to save verbose things')
     parser.add_argument('--epoch_save_interval', type=int, default=1,
                         help='interval to save results')
+    parser.add_argument('--batch_size', type=int, default=100,
+                        help='batch size for training')
     return parser
 
 

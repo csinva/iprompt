@@ -21,19 +21,19 @@ storage:
     mount_dir: /mnt/output # dir on the local machine
 
 jobs:
-# - name: single_query_anli
-#   sku: G16
-#   command:
-#   - python scripts/single_query_anli.py --dummy
-# - name: suffix_anli
-#   sku: G16
-#   command:
-#   - python scripts/suffix_anli.py --dummy
-- name: single_query_math
+- name: single_query_anli
   sku: G16
   command:
-  - python scripts/single_query_math.py --dummy
-- name: suffix_math
+  - python scripts/single_query_anli.py --dummy
+- name: suffix_anli
   sku: G16
   command:
-  - python scripts/suffix_math.py --dummy
+  - python scripts/suffix_anli.py --dummy
+# - name: single_query_math
+#   sku: G16
+#   command:
+#   - python scripts/single_query_math.py --dummy
+# - name: suffix_math
+#   sku: G16
+#   command:
+#   - python scripts/suffix_math.py --dummy

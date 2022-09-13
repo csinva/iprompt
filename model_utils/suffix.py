@@ -128,7 +128,6 @@ def get_probs_single_query_next_token(args, suffix_str: str, model, dataloader, 
 
 def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_dir,
                  disallow_whitespace_tokens=True,
-                 beam_size_extra=50,  # this actually changes the return value
                  beam_size_printing=1000,  # this might slow things down a bit but won't change anything
                  beam_size_for_saving=15
                  ):
@@ -215,7 +214,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
             break
 
         # check larger than args.beam_size in case the answer was basically right there
-        for beam_num in range(args.beam_size + beam_size_extra):
+        for beam_num in range(args.beam_size + args.beam_size_extra):
             suffix_new = suffix_str + top_decoded_tokens[beam_num]
             if check_answer_func(suffix_new):  # and args.early_stopping
                 r['final_answer_full'] = suffix_new
@@ -244,7 +243,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
 
                     # checked beam_size at current suffix + all suffixes before this one (assumes BFS-beam search)
                     # this is the total number of suffixes checked at the time when this will be opened above
-                    'num_suffixes_checked': num_suffixes_checked + (args.beam_size + beam_size_extra) * (beam_num + 1)
+                    'num_suffixes_checked': num_suffixes_checked + (args.beam_size + args.beam_size_extra) * (beam_num + 1)
                 })
 
     # failed to find anything, save and return
