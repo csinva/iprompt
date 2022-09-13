@@ -9,7 +9,7 @@
 </p>  
 
 
-<b>Official code for using / reproducing Interpretable autoprompting from the paper "Towards scientific discovery with language models via interpretable autoprompting" (<a href="https://arxiv.org/abs/2">Singh, Morris, Aneja, Rush & Gao, 2022</a>) </b>
+<b>Official code for using / reproducing Interpretable autoprompting from the paper "Towards scientific discovery with language models via interpretable autoprompting" (<a href="https://arxiv.org/abs/2">Singh*, Morris*, Aneja, Rush & Gao, 2022</a>) </b>
 
 <blockquote>
 <b>Abstract</b>: Large language models (LLMs) have displayed an extraordinary ability to harness natural language and perform complex tasks.
@@ -21,18 +21,18 @@ Experiments on a wide range of tasks, ranging from synthetic mathematics to dive
 </blockquote>
 
 
-## file structure
-- `01_train_suffix.py` is the main function to run and deals with processing all the cmd-line args
-  - *suffix* is much simpler (and doesn't require any model gradients)
-  - when we implement *classification* and *clustering*, these should also go into new, different files
+## File structure
+- `XX_train_XX.py` files each launch a job to fit a different task
+  - `02_train_suffix.py` is the main function to run and deals with processing all the cmd-line args
+    - *suffix* is much simpler (and doesn't require any model gradients)
 - `scripts` is a folder for running sweeps over experiments
   - for example, `scripts/submit_sweep.py` loops over cmd-line args and calls `01_train.py`
   - each file saves a pkl of results into a folder and after the sweep is run the `analyze` notebooks load and aggregate these into a dataframe
 - `data.py` holds the code for generating datasets
   - it uses files in the `data_utils` folder
 
-## testing
+## Testing
 - to check if the pipeline seems to work, install pytest then run `pytest` from the repo's root directory
 
-## docs
+## Notes
 - note: args that start with `use_` are boolean

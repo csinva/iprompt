@@ -14,6 +14,7 @@ from os.path import join as oj
 import pickle as pkl
 import os
 
+
 def load_results_and_cache(results_dir, save_file='r.pkl'):
     dir_names = sorted([fname
                         for fname in os.listdir(results_dir)
@@ -52,4 +53,48 @@ def postprocess_results(r):
         r['final_answer_found'] = (~r['final_answer_full'].isna()).astype(int)
     else:
         r['final_answer_found'] = 0
+
+    """
+    r['use_single_query'] = (
+        r['use_single_query']
+        .astype(bool)
+        .map({True: 'Single-query',
+              False: 'Avg suffix'})
+    )
+    """
+
+    # add metrics
+    metric_keys = []
+    for i in [3, 5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 150, 200]:
+        metric_key = f'acc@{i}'
+        r[metric_key] = (r['final_num_suffixes_checked'] <= i)
+        metric_keys.append(metric_key)
     return r
+
+
+def num_suffixes_checked_tab(tab, metric_key='final_num_suffixes_checked'):
+    return (tab
+            # mean over templates, task_name)
+            .groupby(['checkpoint', 'n_shots'])[[metric_key, 'use_single_query']]
+            .mean()
+            .reset_index()
+            )            
+
+def plot_tab(tab, metric_key, title):
+    # reformat legend
+    VALS = {
+        True: 'Single-query sample',
+        False: 'Ours: Average suffix sampling',
+    }
+    tab['Legend'] = tab['use_single_query'].map(VALS) + ' (nshots=' + tab['n_shots'].astype(str) + ')'
+
+    # make plot
+    sns.barplot(x='checkpoint', y=metric_key, hue='Legend', data=tab) #data=tab[tab['n_shots'] == 1])
+    plt.xlabel('Model name')
+    YLABS = {
+        'final_num_suffixes_checked': 'Number of suffixes checked before finding correct answer\n(lower is better)',
+    }
+    plt.ylabel(YLABS.get(metric_key, metric_key))
+    plt.title(title, fontsize='medium')
+    plt.tight_layout()
+    plt.show()
