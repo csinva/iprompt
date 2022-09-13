@@ -59,15 +59,28 @@ def train(
     for prefix in tqdm(prefix_list, desc='testing prefixes'):
         prefix_tokenized = tokenizer(prefix, return_tensors='pt', add_special_tokens=False).to(device)
         total_n = 0
-        total_acc = 0.0
+        total_n_correct = 0.0
         total_loss = 0.0
+        # Strip punctuation and spaces so we only compute loss
+        # across the output *token*.
+        process_s = lambda s: s.rstrip().rstrip('.')
         for idx, batch in enumerate(dataloader):
             this_batch_size = len(batch['text'])
+            # Remove spacing and punctuation that might be in initial phrasing.
+            input_text = list(map(process_s, batch['text']))
+            # Add a space between the prompt and the input-output pairs.
+            input_text = [' ' + t for t in input_text]
             tokenized_text = tokenizer(
-                batch['text'], return_tensors='pt', add_special_tokens=False
+                input_text, return_tensors='pt', add_special_tokens=False,
+                padding='longest'
             ).to(device)
+
+            tokenized_output_ids = tokenizer(
+                list(map(process_s, batch['output'])), return_tensors='pt', add_special_tokens=False
+            )['input_ids'].to(device).flatten()
             input_ids = torch.cat(
                 (
+                    # add BOS token in case we want to compute full-input fluency
                     torch.tensor([tokenizer.bos_token_id]).repeat((this_batch_size, 1)).to(device),
                     prefix_tokenized.input_ids.repeat((this_batch_size, 1)),
                     tokenized_text.input_ids,
@@ -76,6 +89,7 @@ def train(
             )
             attention_mask = torch.cat(
                 (
+                    # extra attention for adding BOS token
                     torch.tensor([1]).repeat((this_batch_size, 1)).to(device),
                     prefix_tokenized.attention_mask.repeat((this_batch_size, 1)),
                     tokenized_text.attention_mask,
@@ -88,23 +102,36 @@ def train(
                     input_ids=input_ids,
                     attention_mask=attention_mask
                 )
-            assert outputs.logits.shape == input_ids.shape + (tokenizer.vocab_size,)
-            total_loss += compute_log_ppl_loss(logits=outputs.logits, input_ids=input_ids)
+            assert outputs.logits.shape == input_ids.shape + (len(tokenizer.vocab),)
 
-            total_n += len(batch['text'])
-            total_acc += (
-                (outputs.logits[:, :-1].argmax(dim=2) == input_ids[:, 1:])
-                    .float()
-                    .mean(dim=1)
-                    .sum()
+            # actually compute the loss.
+            ###########################################################################
+            # next-token-only (few-shot) loss.
+            breakpoint()
+            last_token_logits = outputs.logits[:, -2, :]
+            total_loss += torch.nn.functional.cross_entropy(
+                input=last_token_logits, target=tokenized_output_ids
+            )
+            ###########################################################################
+            # Trim off prefix logits so we only compute loss on the input.
+            # TODO consider getting IDs of just "output" tokens in the input,
+            # to do it that way.
+            # prefix_length = prefix_tokenized['input_ids'].numel()
+            # logits = outputs.logits[:, prefix_length:, :]
+            # input_ids = input_ids[:, prefix_length:]
+            # total_loss += compute_log_ppl_loss(logits=logits, input_ids=input_ids)
+            ###########################################################################
+
+            total_n += this_batch_size
+            total_n_correct += (
+                (last_token_logits.argmax(dim=1) == tokenized_output_ids).float().sum()
             )
         r["prefixes"].append(prefix)
         r["losses"].append((total_loss / total_n).item())
-        r["accs"].append((total_acc / total_n).item())
-        print(f"Loss = {(total_loss / total_n):.4f} / Acc = {(total_acc/total_n):.2f} / Prefix '{prefix}'")
+        r["accs"].append((total_n_correct / total_n).item())
+        print(f"Loss = {(total_loss / total_n):.4f} / Acc = {(total_n_correct/total_n):.2f} / Prefix '{prefix}'")
     
     #
-    # import pandas as pd
     # df = pd.DataFrame.from_dict(r)
     # breakpoint()
     #
@@ -132,7 +159,7 @@ if __name__ == '__main__':
                         help='interval to save results')
     parser.add_argument('--lr', type=float, default=1e-4,
                         help='learning rate')
-    parser.add_argument('--mlm_num_candidates', type=int, default=32,
+    parser.add_argument('--mlm_num_candidates', type=int, default=128,
         help='number of candidates for single-instance text infilling'
     )
     parser.add_argument('--mlm_name', type=str, default='roberta-large',
@@ -174,10 +201,12 @@ if __name__ == '__main__':
     save_dir = os.path.join(
         args.save_dir, save_dir_unique_hash + save_dir_random_suffix)
     logging.info('saving to ' + save_dir)
+    print("*** save_dir =", save_dir)
 
     logger.info('loading model and data...')
     checkpoint = args.checkpoint
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+    tokenizer.pad_token = tokenizer.eos_token
     lm = AutoModelForCausalLM.from_pretrained(
         checkpoint, output_hidden_states=True)
     dset, check_answer_func, description = data.get_data(
