@@ -80,16 +80,17 @@ def get_probs_avg_next_token(args, suffix_str: str, model, dataloader, tokenizer
     avg_logits = cum_logits / num_examples
     avg_logits = avg_logits.detach().cpu().numpy().squeeze()
 
-    # convert to probs
+    # convert to probs (TODO: make this less likely to overflow)
     avg_probs = np.exp(avg_logits)  # softmax part 1
     avg_probs /= np.sum(avg_probs)  # softmax part 2
     return avg_probs
 
 
 def get_probs_single_query_next_token(args, suffix_str: str, model, dataloader, tokenizer):
-    """Get the probs for the next token for a single example
+    """Get the probs for the next token for a single example.
+    Kind of hacky - just takes the first example from the first batch
     """
-    # get a single input
+    # get a single input from the first batch and ignore the rest
     batch = next(iter(dataloader))
     text = batch['text']
     full_text = [text[0] + suffix_str]
