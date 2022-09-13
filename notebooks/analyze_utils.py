@@ -14,6 +14,7 @@ from os.path import join as oj
 import pickle as pkl
 import os
 
+
 def load_results_and_cache(results_dir, save_file='r.pkl'):
     dir_names = sorted([fname
                         for fname in os.listdir(results_dir)
@@ -52,4 +53,83 @@ def postprocess_results(r):
         r['final_answer_found'] = (~r['final_answer_full'].isna()).astype(int)
     else:
         r['final_answer_found'] = 0
+
+    r['use_single_query'] = (
+        r['use_single_query']
+        .astype(bool)
+        # .map({True: 'Single-query',
+        #   False: 'Avg suffix'})
+    )
+
+    # add metrics
+    metric_keys = []
+    for i in [3, 5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 150, 200]:
+        metric_key = f'Recall @ {i} suffixes'
+        r[metric_key] = (r['final_num_suffixes_checked'] <= i)
+        metric_keys.append(metric_key)
     return r
+
+
+def num_suffixes_checked_tab(tab, metric_key='final_num_suffixes_checked'):
+    return (tab
+            # mean over templates, task_name)
+            .groupby(['checkpoint', 'n_shots', 'use_single_query'])[[metric_key]]
+            .mean()
+            .reset_index()
+            )
+
+
+def plot_tab(tab, metric_key, title):
+    # reformat legend
+    VALS = {
+        True: 'Single-query sampling',
+        False: 'Ours: Average suffix sampling',
+    }
+    # light to dark
+    # blues ['#f7fbff','#deebf7','#c6dbef','#9ecae1','#6baed6','#4292c6','#2171b5','#084594']
+    # grays ['#ffffff','#f0f0f0','#d9d9d9','#bdbdbd','#969696','#737373','#525252','#252525']
+    COLORS = {
+        'Ours: Average suffix sampling (1-shot)': '#9ecae1',
+        'Ours: Average suffix sampling (5-shot)': '#4292c6',
+        'Ours: Average suffix sampling (10-shot)': '#084594',
+        'Single-query sampling (1-shot)': '#d9d9d9',
+        'Single-query sampling (5-shot)': '#969696',
+        'Single-query sampling (10-shot)': '#525252',
+    }
+
+    tab['legend'] = tab['use_single_query'].map(
+        VALS) + ' (' + tab['n_shots'].astype(str) + '-shot)'
+
+    # sort the plot
+    SORTED_HUE_NAMES = [
+        'Single-query sampling (1-shot)', 'Single-query sampling (5-shot)', 'Single-query sampling (10-shot)',
+        'Ours: Average suffix sampling (1-shot)', 'Ours: Average suffix sampling (5-shot)', 'Ours: Average suffix sampling (10-shot)',
+    ]
+    for hue in tab['legend'].unique():
+        assert hue in SORTED_HUE_NAMES, hue + \
+            ' not in ' + SORTED_HUE_NAMES
+    hue_order = [k for k in SORTED_HUE_NAMES if k in tab['legend'].unique()]
+
+    SORTED_MODEL_NAMES = ['gpt2-medium', 'gpt2-large', 'gpt2-xl']
+    for checkpoint in tab['checkpoint'].unique():
+        assert checkpoint in SORTED_MODEL_NAMES, checkpoint + \
+            ' not in ' + SORTED_MODEL_NAMES
+    order = [k for k in SORTED_MODEL_NAMES if k in tab['checkpoint'].unique()]
+
+    # make plot
+    ax = sns.barplot(x='checkpoint', y=metric_key, hue='legend', hue_order=hue_order, order=order,
+                     data=tab, palette=COLORS)  # data=tab[tab['n_shots'] == 1])
+    plt.xlabel('Model name')
+    YLABS = {
+        'final_num_suffixes_checked': 'Number of suffixes checked before finding correct answer\n(lower is better)',
+    }
+    plt.ylabel(YLABS.get(metric_key, metric_key))
+    plt.title(title, fontsize='medium')
+
+    # remove legend title
+    handles, labels = ax.get_legend_handles_labels()
+    ax.legend(handles=handles[:], labels=labels[:])
+    #   loc='center left', bbox_to_anchor=(1, 0.5))
+
+    plt.tight_layout()
+    plt.show()
