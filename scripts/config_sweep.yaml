@@ -1,4 +1,4 @@
-description: Sweep autoprompting
+description: autoprompting
 environment:
   image: pytorch/pytorch:1.7.1-cuda11.0-cudnn8-devel
   setup:
@@ -11,8 +11,8 @@ code:
 target:
   service: amlk8s
   name: itphyperdgx2cl1
-  # vc: hai3
-  vc: hai2
+  vc: hai3
+  # vc: hai2
 
 storage:
   output:
@@ -21,7 +21,19 @@ storage:
     mount_dir: /mnt/output # dir on the local machine
 
 jobs:
-- name: sweep_suffixes
+- name: single_query_anli
   sku: G16
   command:
-  - python scripts/submit_sweep.py --dummy
+  - python scripts/single_query_anli.py --dummy
+- name: suffix_anli
+  sku: G16
+  command:
+  - python scripts/suffix_anli.py --dummy
+# - name: single_query_math
+#   sku: G16
+#   command:
+#   - python scripts/single_query_math.py --dummy
+# - name: suffix_math
+#   sku: G16
+#   command:
+#   - python scripts/suffix_math.py --dummy

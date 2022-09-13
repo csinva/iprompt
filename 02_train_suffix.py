@@ -47,17 +47,20 @@ def add_main_args(parser):
                         help='model checkpoint to use')
     parser.add_argument('--max_num_tokens', type=int, default=4,
                         help='max length of sequence to find (num tokens)')
-    parser.add_argument('--beam_width_suffix', type=int, default=4,
+    parser.add_argument('--beam_size', type=int, default=4,
                         help='max width of beam in suffix search')
+    parser.add_argument('--beam_size_extra', type=int, default=50,
+                        help='extra width of beam to check at each iteration')
     parser.add_argument('--use_single_query', type=int, default=0,
                         help='boolean 0 or 1: use baseline model? only uses a single example to prompt rather than the entire dset')
+    parser.add_argument('--use_stopwords', type=int, default=1,
+                        help='boolean 0 or 1: whether to allow stopwords when searching for prompt')
+
     # parser.add_argument('--early_stopping', dest='early_stopping', default=True,
     #     help='whether to stop searching once finding correct answer - for suffix, this currently has to be true',
     #     action='store_true')
 
     # training misc args
-    parser.add_argument('--batch_size', type=int, default=100,
-                        help='batch size for training')
     parser.add_argument('--seed', type=int, default=1,
                         help='random seed')
     parser.add_argument('--save_dir', type=str, default='results',
@@ -78,18 +81,12 @@ def add_computational_args(parser):
                         help='boolean 0 or 1: whether to save verbose things')
     parser.add_argument('--epoch_save_interval', type=int, default=1,
                         help='interval to save results')
+    parser.add_argument('--batch_size', type=int, default=100,
+                        help='batch size for training')
     return parser
 
 
 if __name__ == '__main__':
-    # python 01_train.py --batch_size 200 --checkpoint EleutherAI/gpt-neo-2.7B
-    # python 01_train.py --batch_size 1 --checkpoint EleutherAI/gpt-neox-20b
-    # python 01_train.py --batch_size 50 --checkpoint EleutherAI/gpt-j-6B
-    # python 01_train.py --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3
-    # python 01_train.py --batch_size 100 --checkpoint EleutherAI/gpt-neo-2.7B --n_shots 3
-    # python 01_train.py --batch_size 10 --checkpoint EleutherAI/gpt-j-6B --n_shots 3 --max_digit 10
-    # python 01_train.py --save_dir /home/chansingh/mntv1/test2
-
     parser = argparse.ArgumentParser()
     parser = add_main_args(parser)
     parser = add_computational_args(parser)
@@ -98,9 +95,10 @@ if __name__ == '__main__':
     # set up logging
     logger = logging.getLogger()
     logging.basicConfig(level=logging.INFO)
+    # logging.basicConfig(level=logging.DEBUG)
     logger.info(str(vars(args)))
 
-    # set up saving dirctory before seeding
+    # set up saving directory before seeding
     save_dir_unique_hash = utils.get_unique_dir_hash(parser, args)
     save_dir_random_suffix = ''.join(
         random.choices(string.ascii_lowercase, k=4))

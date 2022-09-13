@@ -10,19 +10,22 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 if len(sys.argv) > 1:
     print('running in amlt mode...')
     cmd_python = 'python'
-    save_dir = '/mnt/output/sweep_morning2'  # sys.argv[1]
+    save_dir = '/mnt/output/suffix_math_9_13'  # sys.argv[1]
     assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
-    save_dir = '/home/chansingh/mntv1/sweep_morning3'
-    cmd_python = '/usr/bin/python3'
+    save_dir = '/home/chansingh/mntv1/suffix_math_9_13'
+    cmd_python = 'python'
 
 ##########################################
 # params shared across everything (higher up things are looped over first)
 ##########################################
 PARAMS_SHARED_DICT = {
     # things to vary
-    'n_shots': [1],
-    'task': ['add_two', 'multiply_two', 'divide_two', 'subtract_two', 'max_two'],
+    'n_shots': [1, 5],
+    'beam_size_extra': [0],
+    'task': ['add_two', 'multiply_two', 'divide_two', 'subtract_two',
+             'max_two', 'first_two',
+             'square_one', 'exp_one', 'double_one', 'fibonacci_one'],
 
     # parallel settings
     'use_parallelformers': [0],
@@ -35,7 +38,7 @@ PARAMS_SHARED_DICT = {
 
     # fixed params
     'max_digit': [10],
-    'beam_width_suffix': [5],
+    'beam_size': [5],
     'save_dir': [save_dir],
 }
 
@@ -65,7 +68,7 @@ for i in range(len(param_combos_final)):
     print(
         f'\n\n-------------------{i + 1}/{len(param_combos_final)}--------------------\n', param_str)
     try:
-        # os.system(param_str)
+        os.system(param_str)
         pass
     except Exception as e:
         print(e)

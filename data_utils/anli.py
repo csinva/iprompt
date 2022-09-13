@@ -25,30 +25,30 @@ TASKS_ANLI = {
     'task1149_item_check_edible': {
         'check_answer_func': r'edible|eatable|safe to eat',
     },
-    # 'task1321_country_continent': { # Given a word generate its antonym
-    # 'check_answer_func': r'edible|eatable|safe to eat',
-    # },
     'task1509_evalution_antonyms': {  # Given a word generate its antonym
         'check_answer_func': r'opposite|antonym',
     },
-    'task183_rhyme_generation': {  # Given a word generate its antonym
+    'task183_rhyme_generation': { 
         'check_answer_func': r'rhyme',
     },
-    'task1191_food_veg_nonveg': {  # Given a word generate its antonym
+    'task1191_food_veg_nonveg': {
         'check_answer_func': r'vegetarian|vegan|meat',
     },
-    'task092_check_prime_classification': {  # Given a word generate its antonym
+    'task092_check_prime_classification': {
         'check_answer_func': r'prime',
     },
-    'task107_splash_question_to_sql': {  # Given a word generate its antonym
+    'task107_splash_question_to_sql': {
         'check_answer_func': r'sql',
     },
-    'task1336_peixian_equity_evaluation_corpus_gender_classifier': {  # Given a word generate its antonym
+    'task1336_peixian_equity_evaluation_corpus_gender_classifier': {
         'check_answer_func': r'gender|fem|masc',
     },
-    'task088_identify_typo_verification': {  # Given a word generate its antonym
+    'task088_identify_typo_verification': {
         'check_answer_func': r'mistake|typo|mistype|spell',
     },
+    # 'task1321_country_continent': { # Given a word generate its antonym
+    # 'check_answer_func': r'edible|eatable|safe to eat',
+    # },    
     # 'task429_senteval_tense': {
     # 'check_answer_func': r'tense|past|present',
     # },
@@ -59,13 +59,25 @@ TASKS_ANLI = {
     # 'check_answer_func': r'offensive|toxic|harmful|derogatory|hate speech', # this is shaky
     # },
 
-    'SUFFIXES': [
-        'Given the input country, the answer is its',
-        # 'How do we get the answer from the input?\nThe answer is'
-        # 'The answer is the'
-        # 'To get the answer from the input,',
-        # 'How do we get the answer from the input?\nTo get the answer, we'
-    ],
+    # generic suffixes don't work
+    # SUFFIXES = [
+    # 'How do we get the answer from the input?\nThe answer is'
+    # 'The answer is the'
+    # 'To get the answer from the input,',
+    # 'How do we get the answer from the input?\nTo get the answer, we'
+    # ]
+    'SUFFIXES': {
+        'task1146_country_capital': ['Given the input country, the answer is the country\'s'],
+        'task1147_country_currency': ['Given the input country, the answer is the country\'s'],
+        'task1149_item_check_edible': ['The answer is whether or not the input item is'],
+        'task1509_evalution_antonyms': ['The answer takes the input word and returns its'],
+        'task183_rhyme_generation': ['The answer takes the input word and returns its'],
+        'task1191_food_veg_nonveg': ['The answer takes the food and returns whether is is'],
+        'task092_check_prime_classification': ['The answer takes the input number and returns whether it is'],
+        'task107_splash_question_to_sql': ['The answer takes the input word and returns it as a'],
+        'task1336_peixian_equity_evaluation_corpus_gender_classifier': ['The answer takes the input and returns the subject\'s'],
+        'task088_identify_typo_verification': ['The answer is the word in the input that is a'],
+    },
 }
 ks = list(TASKS_ANLI.keys())
 for k in ks:
