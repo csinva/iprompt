@@ -47,7 +47,7 @@ def train(
     dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=True, drop_last=False)
 
     logger.info('computing prefixes with model %s', mlm_name)
-    prefix_list = get_prefix_from_mlm(dataloader=dataloader, mlm_name=mlm_name, mlm_num_candidates=mlm_num_candidates)
+    prefix_list = get_prefix_from_mlm(dataloader=dataloader, mlm_name=mlm_name, num_candidates=mlm_num_candidates)
 
     logger.info('got %d prefixes, now computing losses', len(prefix_list))
 
