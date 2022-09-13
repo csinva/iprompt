@@ -1,5 +1,6 @@
 datasets
 numpy
+openai
 pandas
 dict_hash
 scipy

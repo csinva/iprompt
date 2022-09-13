@@ -1,5 +1,5 @@
 import pickle as pkl
-from model_utils.prompt_classification import test_model_on_task_with_prefix
+from model_utils.prompt_classification import create_model, test_model_on_task_with_prefix
 import matplotlib.pyplot as plt
 from data import get_data, TASKS
 from tqdm import tqdm
@@ -14,6 +14,9 @@ import sys
 import os
 sys.path.append('..')
 
+os.environ['TOKENIZERS_PARALLELISM'] = 'false'
+
+
 if __name__ == '__main__':
     args_dict = {
         'max_dset_size': 10_000,
@@ -24,7 +27,10 @@ if __name__ == '__main__':
     args = argparse.Namespace(**args_dict)
 
     # model_name = 'EleutherAI/gpt-j-6B'  # 'EleutherAI/gpt-neox-20b'
-    model_name = 'gpt2-medium'  # 'EleutherAI/gpt-neox-20b'
+    # model_name = 'gpt2-medium'  # 'EleutherAI/gpt-neox-20b'
+    model_name = 'gpt3'
+    if model_name == 'gpt3':
+        print('*** Warning: GPT-3 specified, so making calls to GPT-3 API ***')
     # model_name = 'facebook/opt-1.3b'
     # model_name = 'EleutherAI/gpt-neox-20b'
     save_dir = 'results'
@@ -47,10 +53,7 @@ if __name__ == '__main__':
 
     # load stuff
     print(f'load model {model_name}...')
-    model = transformers.AutoModelForCausalLM.from_pretrained(
-        model_name, output_hidden_states=False)
-    tokenizer = transformers.AutoTokenizer.from_pretrained(
-        model_name, output_hidden_states=False)
+    model = create_model(model_name)
 
     # calc losses & accs
     print('running...')
@@ -63,7 +66,8 @@ if __name__ == '__main__':
             dset, check_answer_func, __this_task_description = get_data(
                 args=args, task_name=name)
             loss, acc = test_model_on_task_with_prefix(
-                dset=dset, model=model, tokenizer=tokenizer, prefix=f'{description} ', device=device)
+                dset=dset, model=model, prefix=f'{description} '
+            )
 
             # save things
             losses[i][j] += loss
