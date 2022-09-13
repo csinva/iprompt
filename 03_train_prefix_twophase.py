@@ -32,7 +32,8 @@ def train(
         dset: datasets.Dataset,
         lm: AutoModelForCausalLM,
         tokenizer: AutoTokenizer,
-        mlm_name: str = 'roberta-large'
+        mlm_name: str,
+        mlm_num_candidates,
     ):
     """
     Params
@@ -46,7 +47,7 @@ def train(
     dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=True, drop_last=False)
 
     logger.info('computing prefixes with model %s', mlm_name)
-    prefix_list = get_prefix_from_mlm(dataloader=dataloader, mlm_name=mlm_name, num_candidates=16)
+    prefix_list = get_prefix_from_mlm(dataloader=dataloader, mlm_name=mlm_name, mlm_num_candidates=mlm_num_candidates)
 
     logger.info('got %d prefixes, now computing losses', len(prefix_list))
 
@@ -131,8 +132,12 @@ if __name__ == '__main__':
                         help='interval to save results')
     parser.add_argument('--lr', type=float, default=1e-4,
                         help='learning rate')
-    parser.add_argument('--gamma', type=float, default=0.0,
-                        help='hparam: weight for language modeling loss')
+    parser.add_argument('--mlm_num_candidates', type=int, default=32,
+        help='number of candidates for single-instance text infilling'
+    )
+    parser.add_argument('--mlm_name', type=str, default='roberta-large',
+        help='model to use for MLM-based text infilling'
+    )
     parser.add_argument('--task_name', type=str, default='add_two',
                         choices=(data.TASKS.keys() - {'SUFFIX'}),
                         help='name of task')
@@ -182,6 +187,8 @@ if __name__ == '__main__':
     print(f'Attempting task with description: "{description}"')
 
     logger.info('beginning training...')
-    r = train(args=args, r=r, dset=dset, lm=lm, tokenizer=tokenizer)
+    r = train(args=args, r=r, dset=dset, lm=lm, tokenizer=tokenizer,
+        mlm_name=args.mlm_name, mlm_num_candidates=args.mlm_num_candidates
+    )
     utils.save_json(args=args, save_dir=save_dir, fname='results.json', r=r)
 
