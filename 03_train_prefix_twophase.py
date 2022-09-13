@@ -1,28 +1,26 @@
 from typing import Dict, List
-import datasets
+
+import logging
 import os
 import random
 import string
-import numpy as np
 import torch
-from torch import nn
-import transformers
-import matplotlib.pyplot as plt
 import argparse
-from transformers import pipeline
-from transformers import AutoTokenizer, AutoModel, AutoModelForCausalLM
 from copy import deepcopy
-import pandas as pd
-from tqdm import tqdm
 from collections import defaultdict
-from model_utils.prefix import get_prefix_from_mlm, PrefixLoss, FixedPrefixModel
-import pandas as pd
+
+import datasets
 from datasets import Dataset
-import data
-import logging
-import pickle as pkl
+import numpy as np
+import pandas as pd
 from torch.utils.data import DataLoader
-from datetime import datetime
+from transformers import AutoTokenizer, AutoModelForCausalLM
+from tqdm import tqdm
+
+import data
+from model_utils.prefix import get_prefix_from_mlm, compute_log_ppl_loss
+import utils
+
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -32,9 +30,9 @@ def train(
         args: argparse.Namespace,
         r: Dict[str, List],
         dset: datasets.Dataset,
-        model: FixedPrefixModel,
-        tokenizer: transformers.PreTrainedTokenizer,
-        mlm_name: str = 'roberta-base'
+        lm: AutoModelForCausalLM,
+        tokenizer: AutoTokenizer,
+        mlm_name: str = 'roberta-large'
     ):
     """
     Params
@@ -45,75 +43,72 @@ def train(
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
 
-    model.eval() 
-
-    model = model.to(device)
     dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=True, drop_last=False)
 
     logger.info('computing prefixes with model %s', mlm_name)
-    prefix_list = get_prefix_from_mlm(dataloader=dataloader, mlm_name=mlm_name, num_candidates=8)
-    print('got prefixes:', prefix_list)
+    prefix_list = get_prefix_from_mlm(dataloader=dataloader, mlm_name=mlm_name, num_candidates=16)
 
     logger.info('got %d prefixes, now computing losses', len(prefix_list))
 
-    assert not model.training
-    
-    # Compute loss only over possible answers to make task easier
-    possible_answer_ids = []
-    for batch in dataloader:
-        y_text = [answer for answer in batch['output']]
-        y_tokenized = tokenizer(y_text, return_tensors='pt')
-        true_next_token_ids = y_tokenized['input_ids'][:, 0] # only test on the single next token
-        possible_answer_ids.extend(true_next_token_ids.tolist())
-    
-    possible_answer_ids = torch.tensor(possible_answer_ids)
-    num_unique_answers = len(set(possible_answer_ids.tolist()))
-    assert num_unique_answers > 0, "need multiple answers for multiple choice"
-    random_acc = 1 / num_unique_answers * 100.0
-    majority_count = (possible_answer_ids[:, None] == possible_answer_ids[None, :]).sum(dim=1).max()
-    majority_acc = majority_count * 100.0 / len(possible_answer_ids)
-    print(f"Training with {num_unique_answers} possible answers / random acc {random_acc:.1f}% / majority acc {majority_acc:.1f}%")
+    lm.eval() 
+    lm.to(device)
     
     vocab_size = len(tokenizer.vocab)
-    # possible_answer_mask = (
-    #     torch.arange(start=0, end=vocab_size)[:, None]
-    #     == 
-    #     possible_answer_ids[None, :]
-    # ).any(dim=1).to(device)
-    possible_answer_mask = None
 
-    all_losses = defaultdict(lambda: 0)
-    all_accs = defaultdict(lambda: 0)
     for prefix in tqdm(prefix_list, desc='testing prefixes'):
-        model.set_prefix(prefix=prefix)
+        prefix_tokenized = tokenizer(prefix, return_tensors='pt', add_special_tokens=False).to(device)
         total_n = 0
-        total_n_correct = 0
+        total_acc = 0.0
+        total_loss = 0.0
         for idx, batch in enumerate(dataloader):
-            x_text = [f'{prefix} {prompt}' for prompt in batch['input']]
-            y_text = [answer.replace('.', '').rstrip() for answer in batch['output']] # strip newlines and periods.
-
-            input_ids = model.tokenizer(x_text, return_tensors='pt')['input_ids'].to(device)
-            next_token_ids = tokenizer(y_text, return_tensors='pt')['input_ids'].to(device).squeeze(dim=1)
-            assert next_token_ids.nelement() == len(y_text), 'For now assume that each answer is a single token'
+            this_batch_size = len(batch['text'])
+            tokenized_text = tokenizer(
+                batch['text'], return_tensors='pt', add_special_tokens=False
+            ).to(device)
+            input_ids = torch.cat(
+                (
+                    torch.tensor([tokenizer.bos_token_id]).repeat((this_batch_size, 1)).to(device),
+                    prefix_tokenized.input_ids.repeat((this_batch_size, 1)),
+                    tokenized_text.input_ids,
+                ),
+                dim=1
+            )
+            attention_mask = torch.cat(
+                (
+                    torch.tensor([1]).repeat((this_batch_size, 1)).to(device),
+                    prefix_tokenized.attention_mask.repeat((this_batch_size, 1)),
+                    tokenized_text.attention_mask,
+                ),
+                dim=1
+            )
 
             with torch.no_grad():
-                loss, n_correct = model.compute_loss(
-                    original_input_ids=input_ids,
-                    next_token_ids=next_token_ids,
-                    possible_answer_mask=possible_answer_mask
+                outputs = lm(
+                    input_ids=input_ids,
+                    attention_mask=attention_mask
                 )
+            assert outputs.logits.shape == input_ids.shape + (tokenizer.vocab_size,)
+            total_loss += compute_log_ppl_loss(logits=outputs.logits, input_ids=input_ids)
 
-            total_n += len(next_token_ids)
-            total_n_correct += n_correct
-
-            all_losses[prefix] += loss.item()
-        all_accs[prefix] = (total_n_correct / total_n).item()
-        print(f"Loss = {all_losses[prefix]:.2f} / Prefix {prefix}")
+            total_n += len(batch['text'])
+            total_acc += (
+                (outputs.logits[:, :-1].argmax(dim=2) == input_ids[:, 1:])
+                    .float()
+                    .mean(dim=1)
+                    .sum()
+            )
+        r["prefixes"].append(prefix)
+        r["losses"].append((total_loss / total_n).item())
+        r["accs"].append((total_acc / total_n).item())
+        print(f"Loss = {(total_loss / total_n):.4f} / Acc = {(total_acc/total_n):.2f} / Prefix '{prefix}'")
     
     #
-    breakpoint()
-    import pandas as pd
-    df = pd.DataFrame(all_accs.items(), columns=['prefix', 'accuracy'])
+    # import pandas as pd
+    # df = pd.DataFrame.from_dict(r)
+    # breakpoint()
+    #
+
+    return r
 
 
 if __name__ == '__main__':
@@ -167,16 +162,26 @@ if __name__ == '__main__':
     logger = logging.getLogger()
     logging.basicConfig(level=logging.INFO)
 
+    # set up saving directory before seeding, etc.
+    save_dir_unique_hash = utils.get_unique_dir_hash(parser, args)
+    save_dir_random_suffix = ''.join(
+        random.choices(string.ascii_lowercase, k=4))
+    save_dir = os.path.join(
+        args.save_dir, save_dir_unique_hash + save_dir_random_suffix)
+    logging.info('saving to ' + save_dir)
+
     logger.info('loading model and data...')
     checkpoint = args.checkpoint
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     lm = AutoModelForCausalLM.from_pretrained(
         checkpoint, output_hidden_states=True)
-    loss_func = PrefixLoss(gamma=args.gamma, tokenizer=tokenizer)
-    model = FixedPrefixModel(loss_func=loss_func, model=lm, tokenizer=tokenizer)
-    dset, check_answer_func, description = data.get_data(args=args, task_name=args.task_name, n_shots=args.n_shots)
+    dset, check_answer_func, description = data.get_data(
+        args=args, task_name=args.task_name, n_shots=args.n_shots,
+    )
 
     print(f'Attempting task with description: "{description}"')
 
     logger.info('beginning training...')
-    r = train(args=args, r=r, dset=dset, model=model, tokenizer=tokenizer)
+    r = train(args=args, r=r, dset=dset, lm=lm, tokenizer=tokenizer)
+    utils.save_json(args=args, save_dir=save_dir, fname='results.json', r=r)
+

@@ -25,75 +25,13 @@ def get_token_replacements_single_mask(
         full_text = [f'{single_mask_prefix_str} {input_text}' for input_text in batch['text']]
         if idx == 0:
             print('Sample input: ', full_text[0])
-        inputs = tokenizer(full_text, return_tensors='pt')
+        inputs = tokenizer(full_text, return_tensors='pt', padding='longest')
         with torch.no_grad():
             outputs = model(**inputs.to(device))
         mask_idxs = (inputs['input_ids'] == tokenizer.mask_token_id).nonzero()
         # TODO: how to do this better in torch?
         mask_probs = outputs.logits[mask_idxs[:, 0], mask_idxs[:, 1]].log_softmax(dim=1)
         all_mask_probs += mask_probs.sum(dim=0)
-        
-    prefix_idxs = all_mask_probs.topk(num_candidates).indices
-    return [init_prefix_template.format(mask=tokenizer.decode(idx)) for idx in prefix_idxs]
-
-def get_token_replacements_double_mask(
-    dataloader: DataLoader, model: transformers.AutoModelForMaskedLM,
-    tokenizer: transformers.AutoTokenizer, init_prefix_template: str, num_candidates: int
-    )-> List[str]:
-    """Given a template like `{mask} the numbers`, returns the `num_candidates` most likely
-    double-token replacements for `{mask}` given `model`.
-    """
-    assert num_candidates <= 32, "can't generate more than 32^3 candidates"
-    
-    double_mask = (tokenizer.mask_token + tokenizer.mask_token)
-    double_mask_prefix_str = init_prefix_template.format(mask=double_mask)
-    all_mask_probs = torch.zeros((tokenizer.vocab_size,), dtype=float).to(device)
-    # Get probabilities for the first mask token.
-    for idx, batch in tqdm.tqdm(enumerate(dataloader), total=len(dataloader)):
-        full_text = [f'{double_mask_prefix_str} {input_text}' for input_text in batch['text']]
-        if idx == 0:
-            print('Sample input: ', full_text[0])
-        inputs = tokenizer(full_text, return_tensors='pt')
-        with torch.no_grad():
-            outputs = model(**inputs.to(device))
-        mask_idxs = (inputs['input_ids'] == tokenizer.mask_token_id).nonzero()
-        # TODO: how to do this better in torch?
-        mask_probs = outputs.logits[mask_idxs[:, 0], mask_idxs[:, 1]].log_softmax(dim=1)
-        breakpoint()
-        all_mask_probs += mask_probs.sum(dim=0)
-    
-    ### TODO: Compute double-mask with beam search.
-        
-    prefix_idxs = all_mask_probs.topk(num_candidates).indices
-    return [init_prefix_template.format(mask=tokenizer.decode(idx)) for idx in prefix_idxs]
-
-def get_token_replacements_triple_mask(
-    dataloader: DataLoader, model: transformers.AutoModelForMaskedLM,
-    tokenizer: transformers.AutoTokenizer, init_prefix_template: str, num_candidates: int
-    )-> List[str]:
-    """Given a template like `{mask} the numbers`, returns the `num_candidates` most likely
-    triple-token replacements for `{mask}` given `model`.
-    """
-    assert num_candidates <= 32, "can't generate more than 32^3 candidates"
-    
-    triple_mask = (tokenizer.mask_token + tokenizer.mask_token + tokenizer.mask_token)
-    triple_mask_prefix_str = init_prefix_template.format(mask=triple_mask)
-    all_mask_probs = torch.zeros((tokenizer.vocab_size,), dtype=float).to(device)
-    # Get probabilities for the first mask token.
-    for idx, batch in tqdm.tqdm(enumerate(dataloader), total=len(dataloader)):
-        full_text = [f'{triple_mask_prefix_str} {input_text}' for input_text in batch['text']]
-        if idx == 0:
-            print('Sample input: ', full_text[0])
-        inputs = tokenizer(full_text, return_tensors='pt')
-        with torch.no_grad():
-            outputs = model(**inputs.to(device))
-        mask_idxs = (inputs['input_ids'] == tokenizer.mask_token_id).nonzero()
-        # TODO: how to do this better in torch?
-        mask_probs = outputs.logits[mask_idxs[:, 0], mask_idxs[:, 1]].log_softmax(dim=1)
-        breakpoint()
-        all_mask_probs += mask_probs.sum(dim=0)
-    
-    ### TODO: Compute triple-mask with beam search.
         
     prefix_idxs = all_mask_probs.topk(num_candidates).indices
     return [init_prefix_template.format(mask=tokenizer.decode(idx)) for idx in prefix_idxs]
@@ -103,23 +41,43 @@ def get_prefix_from_mlm(dataloader: DataLoader, mlm_name: str, num_candidates: i
     """ Getting prefix from MLM."""
     mlm = transformers.RobertaForMaskedLM.from_pretrained(mlm_name).to(device)
     mlm_tokenizer = transformers.AutoTokenizer.from_pretrained(mlm_name)
-    template = "{mask} the two numbers to get the answer."
+    # template = "{mask} the two numbers to get the answer."
+    template = "Return the{mask} of the inputs."
 
-    # replacements = get_token_replacements_triple_mask(
-    #     dataloader=dataloader,
-    #     model=mlm, tokenizer=mlm_tokenizer,
-    #     init_prefix_template=template, num_candidates=num_candidates
-    # )
-    replacements = get_token_replacements_double_mask(
+    replacements = get_token_replacements_single_mask(
         dataloader=dataloader,
         model=mlm, tokenizer=mlm_tokenizer,
         init_prefix_template=template, num_candidates=num_candidates
     )
-    # replacements += get_token_replacements_single_mask()
 
     mlm.to('cpu') # no need for mlm on GPU anymore
     return replacements
 
+
+def compute_log_ppl_loss(logits: torch.Tensor, input_ids: torch.Tensor) -> torch.Tensor:
+    """Computes LM perplexity loss given logits for next tokens and original input IDs.
+    Exponentiate this quantity if you want the actual perplexity.
+    """
+    # logits gives us the probability of each token that comes after each token in input_ids.
+    # so they have the same shape. But we only want to compute ppl using the tokens we have,
+    # i.e. not the first true token (which we don't have logits for) or the last predicted token
+    # (which we don't know the true id for). so we have to shift each by one index.
+    assert logits.shape[0:2] == input_ids.shape
+    logits = logits[:, :-1, :]
+    input_ids = input_ids[:, 1:]
+
+    # now flatten along sequence length so we can compute crossentropy.
+    batch_size, sequence_length, vocab_size = logits.shape
+    assert input_ids.shape == (batch_size, sequence_length)
+    logits = logits.reshape((batch_size * sequence_length, vocab_size))
+    input_ids = input_ids.reshape((batch_size * sequence_length, ))
+    
+    loss = torch.nn.functional.cross_entropy(
+        input=logits,
+        target=input_ids,
+        reduction='mean'
+    )
+    return loss
 
 @dataclasses.dataclass
 class PrefixLoss:
@@ -133,25 +91,7 @@ class PrefixLoss:
         ) -> torch.Tensor:
         if self.gamma == 0:
             return torch.tensor(0.0).to(device)
-        # logits gives us the probability of each token that comes after each token in input_ids.
-        # so they have the same shape. But we only want to compute ppl using the tokens we have,
-        # i.e. not the first true token (which we don't have logits for) or the last predicted token
-        # (which we don't know the true id for). so we have to shift each by one index.
-        logits = logits[:, :-1, :]
-        input_ids = input_ids[:, 1:]
-
-        # now flatten along sequence length so we can compute crossentropy.
-        batch_size, sequence_length, vocab_size = logits.shape
-        assert input_ids.shape == (batch_size, sequence_length)
-        logits = logits.reshape((batch_size * sequence_length, vocab_size))
-        input_ids = input_ids.reshape((batch_size * sequence_length, ))
-        
-        loss = torch.nn.functional.cross_entropy(
-            input=logits,
-            target=input_ids,
-            reduction='mean'
-        )
-        return loss
+        return compute_log_ppl_loss(logits=logits, input_ids=input_ids)
 
     def _compute_token_loss(
             self, next_token_logits: torch.Tensor, next_token_idxs: torch.Tensor, answer_mask: torch.Tensor
@@ -172,7 +112,8 @@ class PrefixLoss:
             reduction='mean'
         )
     
-    def __call__(self,
+    def __call__(
+            self,
             input_ids: torch.Tensor,
             next_token_ids: torch.Tensor,
             logits: torch.Tensor,
@@ -241,10 +182,14 @@ class PrefixModel(nn.Module, abc.ABC):
     def token_embedding_dim(self) -> int:
         return self.token_embedding.weight.shape[1] # often 768, or 2560 for some larger models
 
-    def forward(self, input_ids: torch.Tensor, prefix_ids: Optional[torch.Tensor]) -> torch.Tensor:
+    def forward(self,
+            input_ids: torch.Tensor,
+            prefix_ids: Optional[torch.Tensor],
+            attention_mask: Optional[torch.Tensor] = None
+        ) -> torch.Tensor:
         input_ids, embeddings = self.embed_input_ids(input_ids=input_ids, prefix_ids=prefix_ids)
         assert input_ids.shape == embeddings.shape[0:2]
-        return input_ids, self.model(inputs_embeds=embeddings)
+        return input_ids, self.model(inputs_embeds=embeddings, attention_mask=attention_mask)
     
     def pre_epoch(self) -> None:
         return
@@ -342,32 +287,6 @@ class PromptTunedModel(PrefixModel):
             'embs': self.prefix_embedding.detach().cpu().numpy(),
             'grads': self.prefix_embedding.grad.detach().cpu().numpy(),
         }
-
-class FixedPrefixModel(PrefixModel):
-    loss_func: PrefixLoss
-    prefix: str
-    model: transformers.PreTrainedModel
-    tokenizer: transformers.PreTrainedTokenizer
-    prefix_embedding: nn.Parameter
-    def __init__(self, loss_func: PrefixLoss, model: transformers.PreTrainedModel, tokenizer: transformers.PreTrainedTokenizer):
-        super().__init__(loss_func=loss_func, model=model, tokenizer=tokenizer)
-        self.prefix_ids = None
-        self.prefix_embedding = None
-    
-    def set_prefix(self, prefix: str) -> None:
-        self.prefix_ids = self.tokenizer(prefix, return_tensors='pt', add_special_tokens=False)['input_ids'].to(device)
-        self.prefix_embedding = self.token_embedding.forward(self.prefix_ids)
-
-    def embed_input_ids(self, input_ids: torch.Tensor, prefix_ids: Optional[torch.Tensor]) -> Tuple[torch.Tensor, torch.Tensor]:
-        assert prefix_ids is None, "cannot provide custom prefix IDs in fixed-prefix setting"
-        assert self.prefix_ids is not None
-        token_embeddings = self.token_embedding.forward(input_ids)
-        return input_ids, token_embeddings
-
-    @property
-    def trainable_params(self) -> Iterable[nn.Parameter]:
-        return []
-
 
 VERBOSE = False # whether to print grads, etc.
 TOP_K = 20 # for printing grads, etc.
