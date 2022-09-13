@@ -1,4 +1,4 @@
-from typing import Any, Dict, Iterable, Optional, Tuple
+from typing import Any, Dict, List, Iterable, Optional, Tuple
 
 import abc
 import dataclasses
@@ -6,10 +6,119 @@ import functools
 import random
 import transformers
 import torch
+from torch.utils.data import DataLoader
 from torch import nn
 import tqdm
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+
+def get_token_replacements_single_mask(
+    dataloader: DataLoader, model: transformers.AutoModelForMaskedLM,
+    tokenizer: transformers.AutoTokenizer, init_prefix_template: str, num_candidates: int)-> List[str]:
+    """Given a template like `{mask} the numbers`, returns the `num_candidates` most likely
+    single-token replacements for `{mask}` given `model`.
+    """
+    single_mask_prefix_str = init_prefix_template.format(mask=tokenizer.mask_token)
+    all_mask_probs = torch.zeros((tokenizer.vocab_size,), dtype=float).to(device)
+    for idx, batch in tqdm.tqdm(enumerate(dataloader), total=len(dataloader)):
+        full_text = [f'{single_mask_prefix_str} {input_text}' for input_text in batch['text']]
+        if idx == 0:
+            print('Sample input: ', full_text[0])
+        inputs = tokenizer(full_text, return_tensors='pt')
+        with torch.no_grad():
+            outputs = model(**inputs.to(device))
+        mask_idxs = (inputs['input_ids'] == tokenizer.mask_token_id).nonzero()
+        # TODO: how to do this better in torch?
+        mask_probs = outputs.logits[mask_idxs[:, 0], mask_idxs[:, 1]].log_softmax(dim=1)
+        all_mask_probs += mask_probs.sum(dim=0)
+        
+    prefix_idxs = all_mask_probs.topk(num_candidates).indices
+    return [init_prefix_template.format(mask=tokenizer.decode(idx)) for idx in prefix_idxs]
+
+def get_token_replacements_double_mask(
+    dataloader: DataLoader, model: transformers.AutoModelForMaskedLM,
+    tokenizer: transformers.AutoTokenizer, init_prefix_template: str, num_candidates: int
+    )-> List[str]:
+    """Given a template like `{mask} the numbers`, returns the `num_candidates` most likely
+    double-token replacements for `{mask}` given `model`.
+    """
+    assert num_candidates <= 32, "can't generate more than 32^3 candidates"
+    
+    double_mask = (tokenizer.mask_token + tokenizer.mask_token)
+    double_mask_prefix_str = init_prefix_template.format(mask=double_mask)
+    all_mask_probs = torch.zeros((tokenizer.vocab_size,), dtype=float).to(device)
+    # Get probabilities for the first mask token.
+    for idx, batch in tqdm.tqdm(enumerate(dataloader), total=len(dataloader)):
+        full_text = [f'{double_mask_prefix_str} {input_text}' for input_text in batch['text']]
+        if idx == 0:
+            print('Sample input: ', full_text[0])
+        inputs = tokenizer(full_text, return_tensors='pt')
+        with torch.no_grad():
+            outputs = model(**inputs.to(device))
+        mask_idxs = (inputs['input_ids'] == tokenizer.mask_token_id).nonzero()
+        # TODO: how to do this better in torch?
+        mask_probs = outputs.logits[mask_idxs[:, 0], mask_idxs[:, 1]].log_softmax(dim=1)
+        breakpoint()
+        all_mask_probs += mask_probs.sum(dim=0)
+    
+    ### TODO: Compute double-mask with beam search.
+        
+    prefix_idxs = all_mask_probs.topk(num_candidates).indices
+    return [init_prefix_template.format(mask=tokenizer.decode(idx)) for idx in prefix_idxs]
+
+def get_token_replacements_triple_mask(
+    dataloader: DataLoader, model: transformers.AutoModelForMaskedLM,
+    tokenizer: transformers.AutoTokenizer, init_prefix_template: str, num_candidates: int
+    )-> List[str]:
+    """Given a template like `{mask} the numbers`, returns the `num_candidates` most likely
+    triple-token replacements for `{mask}` given `model`.
+    """
+    assert num_candidates <= 32, "can't generate more than 32^3 candidates"
+    
+    triple_mask = (tokenizer.mask_token + tokenizer.mask_token + tokenizer.mask_token)
+    triple_mask_prefix_str = init_prefix_template.format(mask=triple_mask)
+    all_mask_probs = torch.zeros((tokenizer.vocab_size,), dtype=float).to(device)
+    # Get probabilities for the first mask token.
+    for idx, batch in tqdm.tqdm(enumerate(dataloader), total=len(dataloader)):
+        full_text = [f'{triple_mask_prefix_str} {input_text}' for input_text in batch['text']]
+        if idx == 0:
+            print('Sample input: ', full_text[0])
+        inputs = tokenizer(full_text, return_tensors='pt')
+        with torch.no_grad():
+            outputs = model(**inputs.to(device))
+        mask_idxs = (inputs['input_ids'] == tokenizer.mask_token_id).nonzero()
+        # TODO: how to do this better in torch?
+        mask_probs = outputs.logits[mask_idxs[:, 0], mask_idxs[:, 1]].log_softmax(dim=1)
+        breakpoint()
+        all_mask_probs += mask_probs.sum(dim=0)
+    
+    ### TODO: Compute triple-mask with beam search.
+        
+    prefix_idxs = all_mask_probs.topk(num_candidates).indices
+    return [init_prefix_template.format(mask=tokenizer.decode(idx)) for idx in prefix_idxs]
+
+
+def get_prefix_from_mlm(dataloader: DataLoader, mlm_name: str, num_candidates: int) -> List[str]:
+    """ Getting prefix from MLM."""
+    mlm = transformers.RobertaForMaskedLM.from_pretrained(mlm_name).to(device)
+    mlm_tokenizer = transformers.AutoTokenizer.from_pretrained(mlm_name)
+    template = "{mask} the two numbers to get the answer."
+
+    # replacements = get_token_replacements_triple_mask(
+    #     dataloader=dataloader,
+    #     model=mlm, tokenizer=mlm_tokenizer,
+    #     init_prefix_template=template, num_candidates=num_candidates
+    # )
+    replacements = get_token_replacements_double_mask(
+        dataloader=dataloader,
+        model=mlm, tokenizer=mlm_tokenizer,
+        init_prefix_template=template, num_candidates=num_candidates
+    )
+    # replacements += get_token_replacements_single_mask()
+
+    mlm.to('cpu') # no need for mlm on GPU anymore
+    return replacements
 
 
 @dataclasses.dataclass

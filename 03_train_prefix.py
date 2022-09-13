@@ -173,8 +173,9 @@ if __name__ == '__main__':
                         help='hparam: weight for language modeling loss')
     parser.add_argument('--task_name', type=str, default='add_two',
                         choices=(data.TASKS.keys() - {'SUFFIX'}),
-                        help='name of task'
-    )
+                        help='name of task')
+    parser.add_argument('--n_shots', type=int, default=1,
+                        help='number of shots in the prompt')
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",
                         choices=(
                             ############################
@@ -206,7 +207,7 @@ if __name__ == '__main__':
         checkpoint, output_hidden_states=True)
     loss_func = PrefixLoss(gamma=args.gamma, tokenizer=tokenizer)
     model = model_cls_dict[args.model_cls](loss_func=loss_func, model=lm, tokenizer=tokenizer)
-    dset, check_answer_func, description = data.get_data(args=args, task_name=args.task_name)
+    dset, check_answer_func, description = data.get_data(args=args, task_name=args.task_name, n_shots=args.n_shots)
     print(f'Attempting task with description: "{description}"')
 
     logger.info('beginning training...')

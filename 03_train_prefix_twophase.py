@@ -15,7 +15,7 @@ from copy import deepcopy
 import pandas as pd
 from tqdm import tqdm
 from collections import defaultdict
-from model_utils.prefix import PrefixLoss, FixedPrefixModel
+from model_utils.prefix import get_prefix_from_mlm, PrefixLoss, FixedPrefixModel
 import pandas as pd
 from datasets import Dataset
 import data
@@ -27,35 +27,14 @@ from datetime import datetime
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-def get_prefix_from_mlm(dataloader: DataLoader, mlm_name: str, num_candidates: int) -> List[str]:
-    """ Getting prefix from MLM."""
-    logger.info('computing prefixes with model %s', mlm_name)
-    mlm = transformers.RobertaForMaskedLM.from_pretrained(mlm_name).to(device)
-    mlm_tokenizer = transformers.AutoTokenizer.from_pretrained(mlm_name)
-    init_prefix_template = "{mask} the two numbers to get the answer."
-    init_prefix_str = init_prefix_template.format(mask=mlm_tokenizer.mask_token)
-
-    all_mask_probs = torch.zeros((mlm_tokenizer.vocab_size,), dtype=float).to(device)
-    for idx, batch in tqdm(enumerate(dataloader), total=len(dataloader)):
-        full_text = [f'{init_prefix_str} {prompt}{y_text}' for prompt, y_text in zip(batch['input'], batch['output'])]
-        inputs = mlm_tokenizer(full_text, return_tensors='pt')
-        with torch.no_grad():
-            outputs = mlm(**inputs.to(device))
-        mask_idxs = (inputs['input_ids'] == mlm_tokenizer.mask_token_id).nonzero()
-        # TODO: how to do this better in torch?
-        mask_probs = outputs.logits[mask_idxs[:, 0], mask_idxs[:, 1]].log_softmax(dim=1)
-        all_mask_probs += mask_probs.sum(dim=0)
-        
-    mlm.to('cpu') # no need for mlm on GPU anymore
-    prefix_idxs = all_mask_probs.topk(num_candidates).indices
-    return [init_prefix_template.format(mask=mlm_tokenizer.decode(idx)) for idx in prefix_idxs]
 
 def train(
         args: argparse.Namespace,
         r: Dict[str, List],
         dset: datasets.Dataset,
         model: FixedPrefixModel,
-        tokenizer: transformers.PreTrainedTokenizer
+        tokenizer: transformers.PreTrainedTokenizer,
+        mlm_name: str = 'roberta-base'
     ):
     """
     Params
@@ -71,7 +50,8 @@ def train(
     model = model.to(device)
     dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=True, drop_last=False)
 
-    prefix_list = get_prefix_from_mlm(dataloader=dataloader, mlm_name='roberta-large', num_candidates=32)
+    logger.info('computing prefixes with model %s', mlm_name)
+    prefix_list = get_prefix_from_mlm(dataloader=dataloader, mlm_name=mlm_name, num_candidates=8)
     print('got prefixes:', prefix_list)
 
     logger.info('got %d prefixes, now computing losses', len(prefix_list))
@@ -160,8 +140,9 @@ if __name__ == '__main__':
                         help='hparam: weight for language modeling loss')
     parser.add_argument('--task_name', type=str, default='add_two',
                         choices=(data.TASKS.keys() - {'SUFFIX'}),
-                        help='name of task'
-    )
+                        help='name of task')
+    parser.add_argument('--n_shots', type=int, default=1,
+                        help='number of shots in the prompt')
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",
                         choices=(
                             ############################
@@ -193,7 +174,8 @@ if __name__ == '__main__':
         checkpoint, output_hidden_states=True)
     loss_func = PrefixLoss(gamma=args.gamma, tokenizer=tokenizer)
     model = FixedPrefixModel(loss_func=loss_func, model=lm, tokenizer=tokenizer)
-    dset, check_answer_func, description = data.get_data(args=args, task_name=args.task_name)
+    dset, check_answer_func, description = data.get_data(args=args, task_name=args.task_name, n_shots=args.n_shots)
+
     print(f'Attempting task with description: "{description}"')
 
     logger.info('beginning training...')
