@@ -6,9 +6,6 @@ import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 # python ../02_train_suffix.py --n_shots 3 --task task1146_country_capital --save_dir /home/chansingh/mntv1/sweep_anli_9_12 --checkpoint gpt2-xl --batch_size 200 --use_cache 0 --use_single_query 0 --use_stopwords 0
 # python ../02_train_suffix.py --n_shots 3 --task task1146_country_capital --save_dir /home/chansingh/mntv1/sweep_anli_9_12 --checkpoint gpt2-xl --batch_size 200 --use_cache 0 --use_single_query 1 --use_stopwords 0
-# python /home/chansingh/interpretable-autoprompting/02_train_suffix.py --n_shots 3 --task task1146_country_capital --save_dir /home/chansingh/mntv1/sweep_anli_9_12 --checkpoint gpt2-xl --batch_size 200 --use_cache 0 --use_single_query 1
-# python /home/chansingh/interpretable-autoprompting/02_train_suffix.py --n_shots 5 --task task1146_country_capital --use_parallelformers 0 --use_cpu_only 0 --seed 1 --template_num_init_string 0 --template_num_task_phrasing 0 --max_digit 10 --beam_width_suffix 5 --save_dir /home/chansingh/mntv1/sweep_anli_9_12 --checkpoint gpt2-xl --batch_size 200
-# python /home/chansingh/interpretable-autoprompting/02_train_suffix.py --n_shots 3 --task task1146_country_capital --save_dir /home/chansingh/mntv1/sweep_anli_9_12 --checkpoint gpt2-xl --batch_size 200 --use_cache 0
 
 if len(sys.argv) > 1:
     print('running in amlt mode...')
@@ -53,7 +50,7 @@ PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gp
     ('checkpoint', 'batch_size'): [
         ('gpt2-medium', 200),
         ('gpt2-large', 100),
-        ('gpt2-xl', 40),
+        ('gpt2-xl', 25),
         # ('EleutherAI/gpt-j-6B', 40)
         # ('EleutherAI/gpt-neox-20b', 10),
     ],
