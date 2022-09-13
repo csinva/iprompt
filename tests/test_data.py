@@ -94,3 +94,6 @@ def test_anli():
             assert pd.Series(df['text']).apply(
                 check_text).all(), 'text is all strings'
             assert check_text(descr)
+
+if __name__ == '__main__':
+    test_get_data()
