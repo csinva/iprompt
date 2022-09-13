@@ -10,10 +10,10 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 if len(sys.argv) > 1:
     print('running in amlt mode...')
     cmd_python = 'python'
-    save_dir = '/mnt/output/sweep_morning2'  # sys.argv[1]
+    save_dir = '/mnt/output/suffix_math_9_12'  # sys.argv[1]
     assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
-    save_dir = '/home/chansingh/mntv1/sweep_morning3'
+    save_dir = '/home/chansingh/mntv1/suffix_math_9_12'
     cmd_python = '/usr/bin/python3'
 
 ##########################################
@@ -21,8 +21,10 @@ else:
 ##########################################
 PARAMS_SHARED_DICT = {
     # things to vary
-    'n_shots': [1],
-    'task': ['add_two', 'multiply_two', 'divide_two', 'subtract_two', 'max_two'],
+    'n_shots': [1, 5],
+    'task': ['add_two', 'multiply_two', 'divide_two', 'subtract_two',
+             'max_two', 'first_two',
+             'square_one', 'exp_one', 'double_one', 'fibonacci_one'],
 
     # parallel settings
     'use_parallelformers': [0],

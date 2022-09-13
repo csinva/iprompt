@@ -1,5 +1,4 @@
 from this import d
-from nltk.corpus import stopwords
 import logging
 import pickle as pkl
 from collections import defaultdict
@@ -23,12 +22,15 @@ import parallel
 import utils
 
 
+'''
 def get_stopwords():
     """Leave this import here in case we don't want to install nltk
     """
     import nltk
     nltk.download('stopwords')
+    from nltk.corpus import stopwords
     return set(stopwords.words('english'))
+'''
 
 
 def get_probs_avg_next_token(args, suffix_str: str, model, dataloader, tokenizer):
@@ -56,7 +58,8 @@ def get_probs_avg_next_token(args, suffix_str: str, model, dataloader, tokenizer
 
         # index at correct positions
         # TODO: smarter torch func to do this
-        next_token_logits = torch.Tensor(size=(logits.shape[0], logits.shape[-1])).to(logits.device)
+        next_token_logits = torch.Tensor(
+            size=(logits.shape[0], logits.shape[-1])).to(logits.device)
         for i in range(logits.shape[0]):
             next_token_logits[i, :] = logits[i, positions_next_token[i], :]
 
@@ -104,7 +107,8 @@ def get_probs_single_query_next_token(args, suffix_str: str, model, dataloader, 
 
     # index at correct positions
     # TODO: smarter torch func to do this
-    next_token_logits = torch.Tensor(size=(logits.shape[0], logits.shape[-1])).to(logits.device)
+    next_token_logits = torch.Tensor(
+        size=(logits.shape[0], logits.shape[-1])).to(logits.device)
     for i in range(logits.shape[0]):
         next_token_logits[i, :] = logits[i, positions_next_token[i], :]
 
@@ -124,7 +128,7 @@ def get_probs_single_query_next_token(args, suffix_str: str, model, dataloader, 
 
 def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_dir,
                  disallow_whitespace_tokens=True,
-                 beam_size_extra=0,  # this actually changes the return value
+                 beam_size_extra=50,  # this actually changes the return value
                  beam_size_printing=1000,  # this might slow things down a bit but won't change anything
                  beam_size_for_saving=15
                  ):
@@ -219,6 +223,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
                 r['final_model_queries'] = num_model_queries
                 r['final_num_suffixes_checked'] = num_suffixes_checked + \
                     beam_num + 1
+                r['final_answer_depth'] = suffix_dict['num_tokens_added'] + 1
                 logging.info('successful early stopping!')
                 logging.info('\t' + repr(r['suffix_str_init']))
                 logging.info('\t' + repr(r['final_answer_added']))

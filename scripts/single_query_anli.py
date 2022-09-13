@@ -13,10 +13,10 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 if len(sys.argv) > 1:
     print('running in amlt mode...')
     cmd_python = 'python'
-    save_dir = '/mnt/output/sweep_anli_single_query_fixed_912'  # sys.argv[1]
+    save_dir = '/mnt/output/single_query_anli_9_12'
     assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
-    save_dir = '/home/chansingh/mntv1/sweep_anli_single_query_fixed_912'
+    save_dir = '/home/chansingh/mntv1/single_query_anli_9_12'
     cmd_python = '/home/chansingh/.autoprompt/bin/python' 
 
 ##########################################
