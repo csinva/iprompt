@@ -35,6 +35,7 @@ def get_stopwords():
 
 def get_probs_avg_next_token(args, suffix_str: str, model, dataloader, tokenizer):
     """Get the average probs for the next token across the entire dataset
+    Actually returns logits not probs in case of overflow issues
     """
     num_examples = 0
     cum_logits = None
@@ -81,9 +82,9 @@ def get_probs_avg_next_token(args, suffix_str: str, model, dataloader, tokenizer
     avg_logits = avg_logits.detach().cpu().numpy().squeeze()
 
     # convert to probs (TODO: make this less likely to overflow)
-    avg_probs = np.exp(avg_logits)  # softmax part 1
-    avg_probs /= np.sum(avg_probs)  # softmax part 2
-    return avg_probs
+    # avg_probs = np.exp(avg_logits)  # softmax part 1
+    # avg_probs /= np.sum(avg_probs)  # softmax part 2
+    return avg_logits
 
 
 def get_probs_single_query_next_token(args, suffix_str: str, model, dataloader, tokenizer):
@@ -233,7 +234,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
                     k: r[k]
                     for k in r if isinstance(r[k], str) or isinstance(r[k], int)
                 }, save_dir=save_dir, fname='final.json')
-                exit(0)
+                return
 
             # for bfs insert at beginning (dfs would append at end)
             if beam_num < args.beam_size:

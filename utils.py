@@ -64,7 +64,7 @@ def save(args, save_dir, r, epoch=None, final=False, params=True):
         pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
 
 
-def check_cached(save_dir_unique_hash, args, parser, save_dir) -> bool:
+def check_cached(save_dir_unique_hash, args, args_ignore_for_caching, parser, save_dir) -> bool:
     """Check if this configuration has already been run.
     Breaks if parser changes (e.g. changing default values of cmd-line args)
     """
@@ -75,7 +75,9 @@ def check_cached(save_dir_unique_hash, args, parser, save_dir) -> bool:
     args_dict = vars(args)
     defaults = vars(parser.parse_args([]))
     non_default_args = {k: args_dict[k] for k in args_dict.keys()
-                        if not args_dict[k] == defaults[k]}
+                        if not k in args_ignore_for_caching and
+                        not args_dict[k] == defaults[k]
+                        }
 
     logging.info('checking for cached run...')
     for exp_dir in tqdm(exp_dirs):
@@ -84,7 +86,7 @@ def check_cached(save_dir_unique_hash, args, parser, save_dir) -> bool:
 
                 # probably matched, but to be safe let's check the params
                 params_file = oj(save_dir, exp_dir, 'params.json')
-                results_final_file = oj(save_dir, exp_dir, 'results_final.pkl') 
+                results_final_file = oj(save_dir, exp_dir, 'results_final.pkl')
                 if os.path.exists(params_file) and os.path.exists(results_final_file):
                     d = json.load(open(params_file, 'r'))
                     perfect_match = True
@@ -98,9 +100,11 @@ def check_cached(save_dir_unique_hash, args, parser, save_dir) -> bool:
             pass
     return False
 
-def get_unique_dir_hash(parser, args) -> str:
+
+def get_unique_dir_hash(parser, args, args_ignore_for_caching) -> str:
     args = vars(args)
     defaults = vars(parser.parse_args([]))
     non_default_args = {k: args[k] for k in args.keys()
-                        if not args[k] == defaults[k]}
+                        if not k in args_ignore_for_caching and
+                        not args[k] == defaults[k]}
     return sha256(non_default_args)
