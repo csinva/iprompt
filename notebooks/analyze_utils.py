@@ -57,8 +57,8 @@ def postprocess_results(r):
     r['use_single_query'] = (
         r['use_single_query']
         .astype(bool)
-        # .map({True: 'Single-query',
-        #   False: 'Avg suffix'})
+        .map({True: 'Single-query',
+          False: 'Avg suffix'})
     )
 
     # add metrics
@@ -81,9 +81,9 @@ def num_suffixes_checked_tab(tab, metric_key='final_num_suffixes_checked'):
 
 def plot_tab(tab, metric_key, title):
     # reformat legend
-    VALS = {
-        True: 'Single-query sampling',
-        False: 'Ours: Average suffix sampling',
+    LEGEND_REMAP = {
+        'Single-query': 'Single-query sampling',
+        'Avg suffix': 'Ours: Average suffix sampling',
     }
     # light to dark
     # blues ['#f7fbff','#deebf7','#c6dbef','#9ecae1','#6baed6','#4292c6','#2171b5','#084594']
@@ -98,7 +98,7 @@ def plot_tab(tab, metric_key, title):
     }
 
     tab['legend'] = tab['use_single_query'].map(
-        VALS) + ' (' + tab['n_shots'].astype(str) + '-shot)'
+        LEGEND_REMAP) + ' (' + tab['n_shots'].astype(str) + '-shot)'
 
     # sort the plot
     SORTED_HUE_NAMES = [
@@ -107,13 +107,13 @@ def plot_tab(tab, metric_key, title):
     ]
     for hue in tab['legend'].unique():
         assert hue in SORTED_HUE_NAMES, hue + \
-            ' not in ' + SORTED_HUE_NAMES
+            ' not in ' + str(SORTED_HUE_NAMES)
     hue_order = [k for k in SORTED_HUE_NAMES if k in tab['legend'].unique()]
 
-    SORTED_MODEL_NAMES = ['gpt2-medium', 'gpt2-large', 'gpt2-xl']
+    SORTED_MODEL_NAMES = ['gpt2-medium', 'gpt2-large', 'gpt2-xl', 'EleutherAI/gpt-j-6B', 'EleutherAI/gpt-neox-20b',]
     for checkpoint in tab['checkpoint'].unique():
         assert checkpoint in SORTED_MODEL_NAMES, checkpoint + \
-            ' not in ' + SORTED_MODEL_NAMES
+            ' not in ' + str(SORTED_MODEL_NAMES)
     order = [k for k in SORTED_MODEL_NAMES if k in tab['checkpoint'].unique()]
 
     # make plot
