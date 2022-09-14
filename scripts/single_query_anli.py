@@ -47,15 +47,16 @@ PARAMS_SHARED_DICT = {
 ##########################################
 # params that are coupled together
 ##########################################
-PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
-    ('checkpoint', 'batch_size'): [
-        ('gpt2-medium', 200),
-        ('gpt2-large', 100),
-        ('gpt2-xl', 40),
-        # ('EleutherAI/gpt-j-6B', 40)
-        # ('EleutherAI/gpt-neox-20b', 10),
-    ],
-}
+PARAMS_COUPLED_DICT = submit_utils.PARAMS_COUPLED_DICT
+# PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
+#     ('checkpoint', 'batch_size'): [
+#         # ('gpt2-medium', 200),
+#         # ('gpt2-large', 100),
+#         ('gpt2-xl', 40),
+#         ('EleutherAI/gpt-j-6B', 10)
+#         # ('EleutherAI/gpt-neox-20b', 10),
+#     ],
+# }
 
 
 ks_final, param_combos_final = submit_utils.combine_param_dicts(

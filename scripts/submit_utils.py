@@ -5,6 +5,16 @@ import sys
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
 
+PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
+    ('checkpoint', 'batch_size'): [
+        # ('gpt2-medium', 200),
+        # ('gpt2-large', 100),
+        ('gpt2-xl', 40),
+        ('EleutherAI/gpt-j-6B', 10)
+        # ('EleutherAI/gpt-neox-20b', 10),
+    ],
+}
+
 def combine_param_dicts(PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT):
 
     # shared
