@@ -2,7 +2,10 @@ from typing import List
 
 import abc
 import argparse
-import openai
+try:
+    import openai
+except:
+    pass
 import seaborn as sns
 import datasets
 import numpy as np
