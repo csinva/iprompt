@@ -27,7 +27,6 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1):
     d = defaultdict(list)
     rng = np.random.default_rng(12345)
     task = TASKS[task_name]
-    actual_max_dset_size = args.max_dset_size
 
     if task_name not in TASKS or task_name == 'SUFFIXES':
         raise Exception(f'{task_name} not in list of supported task names: ' +
@@ -81,8 +80,8 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1):
             d2['output'].append(last_output)
         df = pd.DataFrame.from_dict(d2)
         # shuffle rows
-        df = df.sample(n=actual_max_dset_size, replace=False)
 
+        df = df.sample(n=args.max_dset_size, replace=False)
     # print(df.shape[0], 'max_digit', args.max_digit, 'dset_size', args.max_dset_size, actual_max_dset_size)
     # print(df.head())
     # trim max size (should already be controlled)

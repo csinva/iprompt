@@ -32,7 +32,7 @@ def add_main_args(parser):
     parser.add_argument('--n_shots', type=int, default=1,
                         help='number of shots in the prompt')
     parser.add_argument('--max_dset_size', type=int,
-                        default=10000, help='maximum allowable dataset size')
+                        default=1000, help='maximum allowable dataset size')
     parser.add_argument('--max_digit', type=int, default=10,
                         help='maximum value of each digit in summand')
     parser.add_argument('--template_num_init_string', type=int, default=0,

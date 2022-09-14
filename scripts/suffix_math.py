@@ -10,10 +10,10 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 if len(sys.argv) > 1:
     print('running in amlt mode...')
     cmd_python = 'python'
-    save_dir = '/mnt/output/suffix_math_9_14'  # sys.argv[1]
-    assert save_dir.startswith('/mnt/output'), 'need to save to mount'
+    # save_dir = '/mnt/output/suffix_math_9_15'  # sys.argv[1]
+    # assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
-    save_dir = '/home/chansingh/mntv1/suffix_math_9_14'
+    save_dir = '/home/chansingh/mntv1/suffix_math_9_15'
     cmd_python = 'python'
 
 ##########################################
@@ -21,7 +21,7 @@ else:
 ##########################################
 PARAMS_SHARED_DICT = {
     # things to vary
-    'n_shots': [1, 5],
+    'n_shots': [1, 5, 10],
     'beam_size_extra': [50],
     'task_name_list': [['add_two', 'multiply_two', 'divide_two', 'subtract_two',
              'max_two', 'first_two',
@@ -37,7 +37,7 @@ PARAMS_SHARED_DICT = {
     'template_num_task_phrasing': [0], #, 1, 2],
 
     # fixed params
-    'max_digit': [100],
+    'max_digit': [10],
     'beam_size': [5],
     'save_dir': [save_dir],
 }
