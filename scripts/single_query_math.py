@@ -32,7 +32,7 @@ PARAMS_SHARED_DICT = {
     'use_cpu_only': [1],
 
     # things to average over
-    'seed': [1], #, 2, 3],
+    'seed': [1, 2, 3], #, 2, 3],
     'template_num_init_string': [0], #, 1, 2],
     'template_num_task_phrasing': [0], #, 1, 2],
 

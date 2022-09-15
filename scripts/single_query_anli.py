@@ -10,8 +10,8 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 if len(sys.argv) > 1:
     print('running in amlt mode...')
     cmd_python = 'python'
-    save_dir = '/mnt/output/single_query_anli_9_14'
-    assert save_dir.startswith('/mnt/output'), 'need to save to mount'
+    # save_dir = '/mnt/output/single_query_anli_9_14'
+    # assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
     save_dir = '/home/chansingh/mntv1/single_query_anli_9_16'
     cmd_python = '/home/chansingh/.autoprompt/bin/python'
@@ -35,7 +35,7 @@ PARAMS_SHARED_DICT = {
     'use_cpu_only': [0],
 
     # things to average over
-    'seed': [1],
+    'seed': [1, 2, 3],
     'template_num_init_string': [0],
     'template_num_task_phrasing': [0],
 
