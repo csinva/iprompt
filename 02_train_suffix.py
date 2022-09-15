@@ -45,7 +45,7 @@ def add_main_args(parser):
     # gpneo # "EleutherAI/gpt-neo-2.7B", "EleutherAI/gpt-j-6B", "EleutherAI/gpt-neox-20b"
     parser.add_argument('--checkpoint', type=str, default="gpt2-medium",
                         help='model checkpoint to use')
-    parser.add_argument('--max_num_tokens', type=int, default=4,
+    parser.add_argument('--max_num_tokens', type=int, default=1,
                         help='max length of sequence to find (num tokens)')
     parser.add_argument('--beam_size', type=int, default=4,
                         help='max width of beam in suffix search')

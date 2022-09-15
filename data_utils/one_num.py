@@ -45,7 +45,7 @@ SUFFIXES_ONE_NUM = {
     'exp_one': ["To compute the answer, take the input number x and return"],
     'prime_one': ["To compute the answer, return whether the input number is"],
     'double_one': ["To compute the answer, take the input number and"],
-    'fibonacci_one': ["To compute the answer, take the input numberx and return"],
+    'fibonacci_one': ["To compute the answer, take the input number x and return the"],
 }
 TASKS_ONE_NUM = {
     'square_one': {

@@ -4,7 +4,7 @@ from os.path import dirname
 import sys
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-
+JOB_SUFFIX = '9_17'
 PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
     ('checkpoint', 'batch_size'): [
         # ('gpt2-medium', 200),
