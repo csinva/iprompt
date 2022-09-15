@@ -60,18 +60,20 @@ TASKS_ONE_NUM = {
         'gen_func': lambda x: np.exp(x).round(2),
         'description': "Exponentiate the input to get the output.",
     },
-    'prime_one': {
-        'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
-        'check_answer_func': r'prime',
-        'gen_func': lambda x: data_funcs.prime_n(x),
-        'description': "Given an input x, return the xth prime number.",
-    },
     'double_one': {
         'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
         'check_answer_func': r'two|double|2',
         'gen_func': lambda x: 2 * x,
         'description': "Given an input x, return 2*x.",
     },
+
+    # redundant with anli
+    # 'prime_one': {
+    #     'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
+    #     'check_answer_func': r'prime',
+    #     'gen_func': lambda x: data_funcs.prime_n(x),
+    #     'description': "Given an input x, return the xth prime number.",
+    # },    
 
     # too hard
     'fibonacci_one': {
