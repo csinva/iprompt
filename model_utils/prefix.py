@@ -42,16 +42,16 @@ def get_prefix_from_mlm(dataloader: DataLoader, mlm_name: str, num_candidates: i
     mlm = transformers.RobertaForMaskedLM.from_pretrained(mlm_name).to(device)
     mlm_tokenizer = transformers.AutoTokenizer.from_pretrained(mlm_name)
     # template = "{mask} the two numbers to get the answer."
+    # template = "{mask} the input number to get the answer."
     template = "Return the{mask} of the input."
 
-    replacements = get_token_replacements_single_mask(
+    candidates = get_token_replacements_single_mask(
         dataloader=dataloader,
         model=mlm, tokenizer=mlm_tokenizer,
         init_prefix_template=template, num_candidates=num_candidates
     )
-
     mlm.to('cpu') # no need for mlm on GPU anymore
-    return replacements
+    return candidates
 
 
 def compute_log_ppl_loss(logits: torch.Tensor, input_ids: torch.Tensor) -> torch.Tensor:

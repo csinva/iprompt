@@ -22,11 +22,10 @@ from model_utils.prefix import get_prefix_from_mlm, compute_log_ppl_loss
 import utils
 
 
-
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
-def train(
+def find_best_prompts_mlm(
         args: argparse.Namespace,
         r: Dict[str, List],
         dset: datasets.Dataset,
@@ -41,13 +40,35 @@ def train(
     r: dict
         dictionary of things to save
     """
-    np.random.seed(args.seed)
-    torch.manual_seed(args.seed)
+    suffix_str = data.get_init_suffix(args)
+    prefix_template = '{suffix_str}{mask}.'.format(suffix_str=suffix_str)
 
     dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=True, drop_last=False)
 
     logger.info('computing prefixes with model %s', mlm_name)
     prefix_list = get_prefix_from_mlm(dataloader=dataloader, mlm_name=mlm_name, num_candidates=mlm_num_candidates)
+
+    return rank_prefix_list(
+        args=args,
+        r=r,
+        lm=lm,
+        prefix_list=prefix_list
+    )
+
+def rank_prefix_list(
+        args: argparse.Namespace,
+        r: Dict[str, List],
+        dset: datasets.Dataset,
+        lm: AutoModelForCausalLM,
+        tokenizer: AutoTokenizer,
+        prefix_list: List[str]
+    ):
+    """
+    Params
+    ------
+    r: dict
+        dictionary of things to save
+    """
 
     logger.info('got %d prefixes, now computing losses', len(prefix_list))
 
@@ -76,7 +97,9 @@ def train(
             ).to(device)
 
             tokenized_output_ids = tokenizer(
-                list(map(process_s, batch['output'])), return_tensors='pt', add_special_tokens=False
+                list(map(process_s, batch['output'])),
+                return_tensors='pt', add_special_tokens=False,
+                truncation=True, max_length=1
             )['input_ids'].to(device).flatten()
             input_ids = torch.cat(
                 (
@@ -107,10 +130,13 @@ def train(
             # actually compute the loss.
             ###########################################################################
             # next-token-only (few-shot) loss.
-            # breakpoint()
-            last_token_logits = outputs.logits[:, -2, :]
+            next_token_id = (input_ids == tokenized_output_ids[:, None]).all(dim=0).nonzero()
+            assert next_token_id.numel() == 1, "multiple columns in input text correspond to output tokens?"
+            next_token_id = next_token_id.item()
+            
+            next_token_logits = outputs.logits[:, next_token_id-1, :]
             total_loss += torch.nn.functional.cross_entropy(
-                input=last_token_logits, target=tokenized_output_ids
+                input=next_token_logits, target=tokenized_output_ids
             )
             ###########################################################################
             # Trim off prefix logits so we only compute loss on the input.
@@ -124,7 +150,7 @@ def train(
 
             total_n += this_batch_size
             total_n_correct += (
-                (last_token_logits.argmax(dim=1) == tokenized_output_ids).float().sum()
+                (next_token_logits.argmax(dim=1) == tokenized_output_ids).float().sum()
             )
         r["prefixes"].append(prefix)
         r["losses"].append((total_loss / total_n).item())
@@ -134,7 +160,7 @@ def train(
     #
     df = pd.DataFrame.from_dict(r)
     print(df.sort_values(by='accs', ascending=False).head(n=20)[['prefixes', 'accs']])
-    # breakpoint()
+    breakpoint()
     #
 
     return r
@@ -196,7 +222,9 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
 
     # set up saving directory before seeding, etc.
-    save_dir_unique_hash = utils.get_unique_dir_hash(parser, args)
+    args_ignore_for_caching = {k for k in vars(
+        args) if not k in vars(parser.parse_args([])).keys()}
+    save_dir_unique_hash = utils.get_unique_dir_hash(parser, args, args_ignore_for_caching)
     save_dir_random_suffix = ''.join(
         random.choices(string.ascii_lowercase, k=4))
     save_dir = os.path.join(
@@ -216,8 +244,11 @@ if __name__ == '__main__':
 
     print(f'Attempting task with description: "{description}"')
 
+    np.random.seed(args.seed)
+    torch.manual_seed(args.seed)
+
     logger.info('beginning training...')
-    r = train(args=args, r=r, dset=dset, lm=lm, tokenizer=tokenizer,
+    r = find_best_prompts_mlm(args=args, r=r, dset=dset, lm=lm, tokenizer=tokenizer,
         mlm_name=args.mlm_name, mlm_num_candidates=args.mlm_num_candidates
     )
     utils.save_json(args=args, save_dir=save_dir, fname='results.json', r=r)
