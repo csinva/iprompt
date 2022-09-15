@@ -12,7 +12,10 @@ DESCRIPTIONS_DICT = json.load(open(
 
 
 def fetch_data(task_name_anli):
-    return pd.read_csv(oj(ANLI_PROCESSED_DIR, task_name_anli + '.csv'))
+    df = pd.read_csv(oj(ANLI_PROCESSED_DIR, task_name_anli + '.csv'))
+    # Prepend a space and add newlines to match output format of number tasks
+    df['output'] = df['output'].map(lambda s: f' {s}\n\n')
+    return df
 
 
 TASKS_ANLI = {

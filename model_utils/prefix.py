@@ -37,18 +37,24 @@ def get_token_replacements_single_mask(
     return [init_prefix_template.format(mask=tokenizer.decode(idx)) for idx in prefix_idxs]
 
 
-def get_prefix_from_mlm(dataloader: DataLoader, mlm_name: str, num_candidates: int) -> List[str]:
+def get_prefix_from_mlm(
+        dataloader: DataLoader,
+        mlm_name: str,
+        num_candidates: int,
+        template: str
+    ) -> List[str]:
     """ Getting prefix from MLM."""
     mlm = transformers.RobertaForMaskedLM.from_pretrained(mlm_name).to(device)
     mlm_tokenizer = transformers.AutoTokenizer.from_pretrained(mlm_name)
     # template = "{mask} the two numbers to get the answer."
     # template = "{mask} the input number to get the answer."
-    template = "Return the{mask} of the input."
+    # template = "Return the{mask} of the input."
 
     candidates = get_token_replacements_single_mask(
         dataloader=dataloader,
         model=mlm, tokenizer=mlm_tokenizer,
-        init_prefix_template=template, num_candidates=num_candidates
+        init_prefix_template=template,
+        num_candidates=num_candidates
     )
     mlm.to('cpu') # no need for mlm on GPU anymore
     return candidates

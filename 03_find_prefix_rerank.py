@@ -1,4 +1,4 @@
-from typing import Dict, List
+from typing import Callable, Dict, List
 
 import logging
 import os
@@ -31,8 +31,10 @@ def find_best_prompts_mlm(
         dset: datasets.Dataset,
         lm: AutoModelForCausalLM,
         tokenizer: AutoTokenizer,
+        check_answer_func: Callable[str, bool],
         mlm_name: str,
-        mlm_num_candidates,
+        mlm_num_candidates: int,
+        do_reranking: bool
     ):
     """
     Params
@@ -41,24 +43,37 @@ def find_best_prompts_mlm(
         dictionary of things to save
     """
     suffix_str = data.get_init_suffix(args)
-    prefix_template = '{suffix_str}{mask}.'.format(suffix_str=suffix_str)
+    prefix_template = suffix_str + '{mask}.'
 
     dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=True, drop_last=False)
 
     logger.info('computing prefixes with model %s', mlm_name)
-    prefix_list = get_prefix_from_mlm(dataloader=dataloader, mlm_name=mlm_name, num_candidates=mlm_num_candidates)
-
-    return rank_prefix_list(
-        args=args,
-        r=r,
-        lm=lm,
-        prefix_list=prefix_list
+    prefix_list = get_prefix_from_mlm(
+        dataloader=dataloader,
+        mlm_name=mlm_name,
+        num_candidates=mlm_num_candidates,
+        template=prefix_template
     )
 
-def rank_prefix_list(
+    r["prefixes"] = prefix_list
+    r["prefixes__check_answer_func"] = list(map(check_answer_func, prefix_list))
+
+
+    if do_reranking:
+        return rerank_prefix_list(
+            args=args,
+            r=r,
+            dataloader=dataloader,
+            lm=lm, tokenizer=tokenizer,
+            prefix_list=prefix_list
+        )
+    else:
+        return r
+
+def rerank_prefix_list(
         args: argparse.Namespace,
         r: Dict[str, List],
-        dset: datasets.Dataset,
+        dataloader: DataLoader,
         lm: AutoModelForCausalLM,
         tokenizer: AutoTokenizer,
         prefix_list: List[str]
@@ -109,7 +124,7 @@ def rank_prefix_list(
                     tokenized_text.input_ids,
                 ),
                 dim=1
-            )
+            ).to(device)
             attention_mask = torch.cat(
                 (
                     # extra attention for adding BOS token
@@ -118,7 +133,7 @@ def rank_prefix_list(
                     tokenized_text.attention_mask,
                 ),
                 dim=1
-            )
+            ).to(device)
 
             with torch.no_grad():
                 outputs = lm(
@@ -129,12 +144,19 @@ def rank_prefix_list(
 
             # actually compute the loss.
             ###########################################################################
+            # get index of ID token
+            # we have to do this by comparing input to output. We have to flip to get the
+            # *last* argmax, in case the output is repeated from the input (for example,
+            # take "Input: Mexico Output: Mexico City" or even worse "Input: San Marino...")
+            input_tokens_equal_to_output_tokens = (input_ids == tokenized_output_ids[:, None])
+            sequence_length = input_tokens_equal_to_output_tokens.shape[1]
+            output_token_ids = (
+                sequence_length - 1 
+                                - input_tokens_equal_to_output_tokens.flip(dims=[1]).int().argmax(dim=1)
+            )
+            ###########################################################################
             # next-token-only (few-shot) loss.
-            next_token_id = (input_ids == tokenized_output_ids[:, None]).all(dim=0).nonzero()
-            assert next_token_id.numel() == 1, "multiple columns in input text correspond to output tokens?"
-            next_token_id = next_token_id.item()
-            
-            next_token_logits = outputs.logits[:, next_token_id-1, :]
+            next_token_logits = outputs.logits[torch.arange(this_batch_size), output_token_ids-1]
             total_loss += torch.nn.functional.cross_entropy(
                 input=next_token_logits, target=tokenized_output_ids
             )
@@ -152,7 +174,6 @@ def rank_prefix_list(
             total_n_correct += (
                 (next_token_logits.argmax(dim=1) == tokenized_output_ids).float().sum()
             )
-        r["prefixes"].append(prefix)
         r["losses"].append((total_loss / total_n).item())
         r["accs"].append((total_n_correct / total_n).item())
         print(f"Loss = {(total_loss / total_n):.4f} / Acc = {(total_n_correct/total_n):.2f} / Prefix '{prefix}'")
@@ -172,14 +193,16 @@ if __name__ == '__main__':
                         help='batch size for training')
     parser.add_argument('--max_dset_size', type=int,
                         default=10000, help='maximum allowable dataset size')
-    parser.add_argument('--template_num_task_phrasing', type=int, default=0,
-                        help='the number of the manual template for any given task (number of options varies with task')
     parser.add_argument('--seed', type=int, default=1,
                         help='random seed')
     parser.add_argument('--n_epochs', type=int, default=10000,
                         help='number of epochs for training')
     parser.add_argument('--max_digit', type=int, default=100,
                         help='maximum value of each digit in summand')
+    parser.add_argument('--template_num_init_string', type=int, default=0,
+                        help='the number of the manually-specified prefix to be initialize with')
+    parser.add_argument('--template_num_task_phrasing', type=int, default=0,
+                        help='the number of the manual template for any given task (number of options varies with task')
     parser.add_argument('--save_dir', type=str, default='results',
                         help='directory for saving')
     parser.add_argument('--epoch_save_interval', type=int, default=1,
@@ -192,6 +215,8 @@ if __name__ == '__main__':
     parser.add_argument('--mlm_name', type=str, default='roberta-large',
         help='model to use for MLM-based text infilling'
     )
+    parser.add_argument('--do_reranking', type=int, default=1,
+                        help='boolean 0 or 1: whether to do re-ranking using a LLM')
     parser.add_argument('--task_name', type=str, default='add_two',
                         choices=(data.TASKS.keys() - {'SUFFIX'}),
                         help='name of task')
@@ -214,7 +239,8 @@ if __name__ == '__main__':
                             "gpt2-xl",     # 1.5B params
                             ############################
                         ),
-                        help='model checkpoint to use')
+                        help='model checkpoint to use'
+    )
     args = parser.parse_args()
     r = defaultdict(list)
     r.update(vars(args))
@@ -248,8 +274,13 @@ if __name__ == '__main__':
     torch.manual_seed(args.seed)
 
     logger.info('beginning training...')
-    r = find_best_prompts_mlm(args=args, r=r, dset=dset, lm=lm, tokenizer=tokenizer,
-        mlm_name=args.mlm_name, mlm_num_candidates=args.mlm_num_candidates
+    r = find_best_prompts_mlm(
+        args=args,
+        r=r, dset=dset,
+        lm=lm, tokenizer=tokenizer,
+        check_answer_func=check_answer_func,
+        mlm_name=args.mlm_name, mlm_num_candidates=args.mlm_num_candidates,
+        do_reranking=bool(args.do_reranking)
     )
     utils.save_json(args=args, save_dir=save_dir, fname='results.json', r=r)
 

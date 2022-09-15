@@ -56,7 +56,7 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1):
                 x, y = template(num2, gen_func)
             elif num_inputs == 2:
                 x, y = template(num1, num2, gen_func)
-
+            
             d['text'].append(x + y)
             d['input'].append(x)
             d['output'].append(y)
