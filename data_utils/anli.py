@@ -29,7 +29,7 @@ TASKS_ANLI = {
         'check_answer_func': r'opposite|antonym',
     },
     'task183_rhyme_generation': { 
-        'check_answer_func': r'rhyme',
+        'check_answer_func': r'rhyme|rhy',
     },
     'task1191_food_veg_nonveg': {
         'check_answer_func': r'vegetarian|vegan|meat',

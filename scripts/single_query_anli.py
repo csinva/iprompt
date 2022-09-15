@@ -10,11 +10,12 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 if len(sys.argv) > 1:
     print('running in amlt mode...')
     cmd_python = 'python'
-    save_dir = '/mnt/output/single_query_anli_9_13'
-    assert save_dir.startswith('/mnt/output'), 'need to save to mount'
+    # save_dir = '/mnt/output/single_query_anli_9_14'
+    # assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
-    save_dir = '/home/chansingh/mntv1/single_query_anli_9_13'
-    cmd_python = '/home/chansingh/.autoprompt/bin/python' 
+    # save_dir = '/home/chansingh/mntv1/single_query_anli_9_16'
+    save_dir = f'/home/chansingh/mntv1/single_query_anli_{submit_utils.JOB_SUFFIX}'
+    cmd_python = '/home/chansingh/.autoprompt/bin/python'
 
 ##########################################
 # params shared across everything (higher up things are looped over first)
@@ -23,11 +24,12 @@ PARAMS_SHARED_DICT = {
     # things to vary
     'use_single_query': [1],
     'n_shots': [1, 5, 10],
-    'beam_size_extra': [0],
-    'task': ['task1146_country_capital', 'task1509_evalution_antonyms', 'task1147_country_currency',
-             'task1149_item_check_edible', 'task183_rhyme_generation', 'task1191_food_veg_nonveg',
-             'task092_check_prime_classification', 'task088_identify_typo_verification',
-             'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql'],
+    'beam_size_extra': [50],
+    'task_name_list': [['task1146_country_capital', 'task1509_evalution_antonyms', 'task1147_country_currency',
+                        'task1149_item_check_edible', 'task183_rhyme_generation', 'task1191_food_veg_nonveg',
+                        'task092_check_prime_classification', 'task088_identify_typo_verification',
+                        'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql']],
+    'max_num_tokens': [1],
 
     # parallel settings
     'use_parallelformers': [0],
@@ -35,6 +37,8 @@ PARAMS_SHARED_DICT = {
 
     # things to average over
     'seed': [1, 2, 3],
+    'template_num_init_string': [0],
+    'template_num_task_phrasing': [0],
 
     # fixed params
     'beam_size': [5],
@@ -45,29 +49,20 @@ PARAMS_SHARED_DICT = {
 ##########################################
 # params that are coupled together
 ##########################################
-PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
-    ('checkpoint', 'batch_size'): [
-        ('gpt2-medium', 200),
-        ('gpt2-large', 100),
-        ('gpt2-xl', 40),
-        # ('EleutherAI/gpt-j-6B', 40)
-        # ('EleutherAI/gpt-neox-20b', 10),
-    ],
-}
+PARAMS_COUPLED_DICT = submit_utils.PARAMS_COUPLED_DICT
+# PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
+#     ('checkpoint', 'batch_size'): [
+#         # ('gpt2-medium', 200),
+#         # ('gpt2-large', 100),
+#         ('gpt2-xl', 40),
+#         ('EleutherAI/gpt-j-6B', 10)
+#         # ('EleutherAI/gpt-neox-20b', 10),
+#     ],
+# }
 
 
 ks_final, param_combos_final = submit_utils.combine_param_dicts(
     PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT)
 
-for i in range(len(param_combos_final)):
-    param_str = cmd_python + ' ' + \
-        os.path.join(repo_dir, '02_train_suffix.py ')
-    for j, key in enumerate(ks_final):
-        param_str += '--' + key + ' ' + str(param_combos_final[i][j]) + ' '
-    print(
-        f'\n\n-------------------{i + 1}/{len(param_combos_final)}--------------------\n', param_str)
-    try:
-        os.system(param_str)
-        pass
-    except Exception as e:
-        print(e)
+submit_utils.run_dicts(ks_final, param_combos_final, cmd_python=cmd_python,
+                       script_name='02_train_suffix.py', actually_run=True)

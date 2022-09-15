@@ -31,18 +31,22 @@ PROMPT_TEMPLATE_ONE_NUM = [
     lambda num1, g: (
         f'The input is {num1}.', f' The function output is {g(num1)}\n\n'),
 ]
-SUFFIXES_ONE_NUM = [
-        
-        "The function returns the",
-        "To compute the answer from the input number x, return",
-        "To calculate the answer, take the input and",
-        # "To compute the answer f(x) from the input number x, return",
-        # "The function mapping the input to the output is",
-        # "To find the output, take the number in the question and use the",
-        # "To get the answer, take the number in the question and",
-        # "The relationship between the number in the question and the answer is:",
-        # "To get the answer,",
-]
+# "The function returns the",
+# "To compute the answer from the input number x, return",
+# "To calculate the answer, take the input and",
+# # "To compute the answer f(x) from the input number x, return",
+# # "The function mapping the input to the output is",
+# # "To find the output, take the number in the question and use the",
+# # "To get the answer, take the number in the question and",
+# # "The relationship between the number in the question and the answer is:",
+# # "To get the answer,",
+SUFFIXES_ONE_NUM = {
+    'square_one': ["To compute the answer, take the input number and"],
+    'exp_one': ["To compute the answer, take the input number x and return"],
+    'prime_one': ["To compute the answer, return whether the input number is"],
+    'double_one': ["To compute the answer, take the input number and"],
+    'fibonacci_one': ["To compute the answer, take the input number x and return the"],
+}
 TASKS_ONE_NUM = {
     'square_one': {
         'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
@@ -56,18 +60,20 @@ TASKS_ONE_NUM = {
         'gen_func': lambda x: np.exp(x).round(2),
         'description': "Exponentiate the input to get the output.",
     },
-    'prime_one': {
-        'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
-        'check_answer_func': r'prime',
-        'gen_func': lambda x: data_funcs.prime_n(x),
-        'description': "Given an input x, return the xth prime number.",
-    },
     'double_one': {
         'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
         'check_answer_func': r'two|double|2',
         'gen_func': lambda x: 2 * x,
         'description': "Given an input x, return 2*x.",
     },
+
+    # redundant with anli
+    # 'prime_one': {
+    #     'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
+    #     'check_answer_func': r'prime',
+    #     'gen_func': lambda x: data_funcs.prime_n(x),
+    #     'description': "Given an input x, return the xth prime number.",
+    # },    
 
     # too hard
     'fibonacci_one': {

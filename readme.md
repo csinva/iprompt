@@ -31,6 +31,10 @@ Experiments on a wide range of tasks, ranging from synthetic mathematics to dive
 - `data.py` holds the code for generating datasets
   - it uses files in the `data_utils` folder
 
+
+## Scientific data
+- Uses scientific data/code from https://github.com/HuthLab/speechmodeltutorial linked to the paper "Natural speech reveals the semantic maps that tile human cerebral cortex" [Huth, A. G. et al., (2016) _Nature_.](https://www.nature.com/articles/nature17637)
+
 ## Testing
 - to check if the pipeline seems to work, install pytest then run `pytest` from the repo's root directory
 

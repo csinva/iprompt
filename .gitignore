@@ -137,3 +137,6 @@ data_utils/natural-instructions
 **.png
 .autoprompt
 .vscode
+tmp
+data_utils/speechmodeltutorial/data
+data_utils/speechmodeltutorial

@@ -25,17 +25,22 @@ PROMPT_TEMPLATE_TWO_NUMS = [
     lambda num1, num2, g: (
         f'The inputs are {num1} {num2}.', f' The answer is {g([num1, num2])}\n\n'),
 ]
-SUFFIXES_TWO_NUMS = [
-        "To compute the answer from the input number x, return",
-        "To compute the answer f(x) from the input number x, return",
-        "To calculate the answer, take the input and",
-        # "To find the output, take the number in the question and use the",
-        # "To get the answer, take the number in the question and",
-        # "The function mapping the input to the output is",
-        # "The function f(x) returns the",
-        "The relationship between the number in the question and the answer is:",
-        "To get the answer,",
-]
+SUFFIXES_TWO_NUMS = {
+    'add_two': ["To compute the answer, take the input numbers and"],
+    'multiply_two': ["To compute the answer, take the input numbers and"],
+    'divide_two': ["To compute the answer, take the input numbers and"],
+    'subtract_two': ["To compute the answer, take the input numbers and"],
+    'max_two': ["To compute the answer, take the input numbers and return their"],
+    'first_two': ["To compute the answer, return the"],
+}
+# "To compute the answer f(x) from the input number x, return",
+# "To calculate the answer, take the input and",
+# "To find the output, take the number in the question and use the",
+# "To get the answer, take the number in the question and",
+# "The function mapping the input to the output is",
+# "The function f(x) returns the",
+# "The relationship between the number in the question and the answer is:",
+# "To get the answer,",
 
 """Note: tasks here consist of
 (i) a function that returns data given the right inputs
@@ -82,5 +87,5 @@ TASKS_TWO_NUMS = {
         'description': "Return the first of the inputs.",
     },
 
-    'SUFFIXES': SUFFIXES_TWO_NUMS,    
+    'SUFFIXES': SUFFIXES_TWO_NUMS,
 }

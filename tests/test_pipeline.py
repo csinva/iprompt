@@ -4,7 +4,7 @@ from os.path import dirname
 
 def test_default_pipeline():
     repo_dir = dirname(dirname(os.path.abspath(__file__)))
-    exit_value=os.system('python ' + os.path.join(repo_dir, '02_train_suffix.py --use_cache 0'))
+    exit_value=os.system('python ' + os.path.join(repo_dir, '02_train_suffix.py --use_cache 0 --max_num_tokens 4'))
     assert exit_value == 0, 'default pipeline passed'
 
 

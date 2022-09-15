@@ -13,7 +13,7 @@ device = 'cpu' if device_count == 0 else 'cuda'
 
 def model_to_device(args, model):
     if device_count == 0 or args.use_cpu_only:
-        return model
+        return model.to('cpu')
     elif device_count == 1:
         return model.to(device)
     elif device_count > 1:
