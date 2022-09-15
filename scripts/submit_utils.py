@@ -23,11 +23,9 @@ PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gp
 PARAMS_SHARED_DICT_MATH = {
     # things to vary
     'n_shots': [1, 5, 10],
-    'beam_size_extra': [50],
     'task_name_list': [['add_two', 'multiply_two', 'divide_two', 'subtract_two',
              'max_two', 'first_two',
              'square_one', 'exp_one', 'double_one', 'fibonacci_one']],
-    'max_num_tokens': [1],
 
     # parallel settings
     'use_parallelformers': [0],
@@ -40,18 +38,15 @@ PARAMS_SHARED_DICT_MATH = {
 
     # fixed params
     'max_digit': [10],
-    'beam_size': [5],
 }
 
 PARAMS_SHARED_DICT_ANLI = {
     # things to vary
     'n_shots': [1, 5],
-    'beam_size_extra': [50],
     'task_name_list': [['task1146_country_capital', 'task1509_evalution_antonyms', 'task1147_country_currency',
              'task1149_item_check_edible', 'task183_rhyme_generation', 'task1191_food_veg_nonveg',
              'task092_check_prime_classification', 'task088_identify_typo_verification',
              'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql']],
-    'max_num_tokens': [1],
 
     # parallel settings
     'use_parallelformers': [0],
@@ -61,11 +56,20 @@ PARAMS_SHARED_DICT_ANLI = {
     'seed': [1],
     'template_num_init_string': [0],
     'template_num_task_phrasing': [0],
-
-    # fixed params
-    'beam_size': [5],
 }
 
+PARAMS_SHARED_DICT_SUFFIX = {
+    # fixed params
+    'beam_size': [5],
+    'beam_size_extra': [50],
+    'max_num_tokens': [1],
+}
+
+PARAMS_SHARED_DICT_PREFIX = {
+    'mlm_num_candidates': [256],
+    'do_reranking': [0, 1],
+    'single_query': [0, 1],
+}
 
 def combine_param_dicts(PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT):
     # shared

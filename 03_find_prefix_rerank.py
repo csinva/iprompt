@@ -58,10 +58,8 @@ def find_best_prompts_mlm(
         num_candidates=mlm_num_candidates,
         template=prefix_template
     )
-
     r["prefixes"] = prefix_list
     r["prefixes__check_answer_func"] = list(map(check_answer_func, prefix_list))
-
 
     if do_reranking:
         return rerank_prefix_list(
@@ -227,10 +225,14 @@ if __name__ == '__main__':
     parser.add_argument('--task_name', type=str, default='add_two',
                         choices=(data.TASKS.keys() - {'SUFFIX'}),
                         help='name of task')
+    parser.add_argument('--task_name_list', nargs="*", default=None,
+                        help='names of tasks as list; alternative to passing task_name')
     parser.add_argument('--n_shots', type=int, default=1,
                         help='number of shots in the prompt')
     parser.add_argument('--single_query', type=int, default=0,
                         help='if true, ranks prompts based on just a single query')
+    parser.add_argument('--use_cache', type=int, default=1,
+                        help='boolean 0 or 1: whether to check for cache')
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",
                         choices=(
                             ############################
@@ -251,46 +253,63 @@ if __name__ == '__main__':
                         help='model checkpoint to use'
     )
     args = parser.parse_args()
-    r = defaultdict(list)
-    r.update(vars(args))
+    args_ignore_for_caching = {k for k in vars(
+        args) if not k in vars(parser.parse_args([])).keys()}
+
     logger = logging.getLogger()
     logging.basicConfig(level=logging.INFO)
 
-    # set up saving directory before seeding, etc.
-    args_ignore_for_caching = {k for k in vars(
-        args) if not k in vars(parser.parse_args([])).keys()}
-    save_dir_unique_hash = utils.get_unique_dir_hash(parser, args, args_ignore_for_caching)
-    save_dir_random_suffix = ''.join(
-        random.choices(string.ascii_lowercase, k=4))
-    save_dir = os.path.join(
-        args.save_dir, save_dir_unique_hash + save_dir_random_suffix)
-    logging.info('saving to ' + save_dir)
-    print("*** save_dir =", save_dir)
+    # iterate over tasks
+    if args.task_name_list is not None:
+        logging.info('using task_name_list ' + str(args.task_name_list))
+    else:
+        args.task_name_list = [args.task_name]
+    for task_idx, task_name in enumerate(args.task_name_list):
+        print(f'*** Executing task {task_idx+1}/{len(args.task_name_list)}')
+        # actually set the task
+        args.task_name = task_name
+        
+        # set up saving directory before seeding
+        save_dir_unique_hash = utils.get_unique_dir_hash(parser, args, args_ignore_for_caching)
+        save_dir_random_suffix = ''.join(
+            random.choices(string.ascii_lowercase, k=4))
+        save_dir = os.path.join(
+            args.save_dir, save_dir_unique_hash + save_dir_random_suffix)
+        logging.info(f'\n\nrunning {task_name} + saving to ' + save_dir)
 
-    logger.info('loading model and data...')
-    checkpoint = args.checkpoint
-    dset, check_answer_func, description = data.get_data(
-        args=args, task_name=args.task_name, n_shots=args.n_shots,
-    )
+        # check for cached run with these same args
+        if args.use_cache and utils.check_cached(save_dir_unique_hash, args, args_ignore_for_caching, parser, args.save_dir):
+            logging.info(f'cached version exists for {task_name}!\nsuccessfully skipping :)\n\n\n')
+            continue
 
-    print(f'Attempting task with description: "{description}"')
+        logger.info('loading model and data...')
+        checkpoint = args.checkpoint
+        dset, check_answer_func, description = data.get_data(
+            args=args, task_name=args.task_name, n_shots=args.n_shots,
+        )
 
-    np.random.seed(args.seed)
-    torch.manual_seed(args.seed)
+        print(f'Attempting task with description: "{description}"')
 
-    # Support computing things from just a single ´xample
-    dset = dset.shuffle()
-    if args.single_query:
-        dset = dset.filter(lambda _, i: i == 0, with_indices=True)
+        np.random.seed(args.seed)
+        torch.manual_seed(args.seed)
 
-    logger.info('beginning training...')
-    r = find_best_prompts_mlm(
-        args=args,
-        r=r, dset=dset,
-        lm_checkpoint=checkpoint,
-        check_answer_func=check_answer_func,
-        mlm_name=args.mlm_name, mlm_num_candidates=args.mlm_num_candidates,
-        do_reranking=bool(args.do_reranking)
-    )
-    utils.save_json(args=args, save_dir=save_dir, fname='results.json', r=r)
+        # Support computing things from just a single ´xample
+        dset = dset.shuffle()
+        if args.single_query:
+            dset = dset.filter(lambda _, i: i == 0, with_indices=True)
+
+        logger.info('beginning training...')
+
+        r = defaultdict(list)
+        r.update(vars(args))
+        utils.save_json(args=args, save_dir=save_dir, fname='params.json', r=r)    
+        r = find_best_prompts_mlm(
+            args=args,
+            r=r, dset=dset,
+            lm_checkpoint=checkpoint,
+            check_answer_func=check_answer_func,
+            mlm_name=args.mlm_name, mlm_num_candidates=args.mlm_num_candidates,
+            do_reranking=bool(args.do_reranking)
+        )
+        utils.save_json(args=args, save_dir=save_dir, fname='results.json', r=r)
 

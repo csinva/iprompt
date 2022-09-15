@@ -21,6 +21,7 @@ else:
 # params shared across everything (higher up things are looped over first)
 ##########################################
 PARAMS_SHARED_DICT = submit_utils.PARAMS_SHARED_DICT_MATH
+PARAMS_SHARED_DICT.update(submit_utils.PARAMS_SHARED_DICT_SUFFIX)
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 
 ##########################################
