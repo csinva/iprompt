@@ -29,8 +29,7 @@ def find_best_prompts_mlm(
         args: argparse.Namespace,
         r: Dict[str, List],
         dset: datasets.Dataset,
-        lm: AutoModelForCausalLM,
-        tokenizer: AutoTokenizer,
+        lm_checkpoint: str,
         check_answer_func: Callable[str, bool],
         mlm_name: str,
         mlm_num_candidates: int,
@@ -45,7 +44,12 @@ def find_best_prompts_mlm(
     suffix_str = data.get_init_suffix(args)
     prefix_template = suffix_str + '{mask}.'
 
-    dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=True, drop_last=False)
+    dataloader = DataLoader(
+        dset, 
+        batch_size=args.batch_size,
+        shuffle=False,
+        drop_last=False
+    )
 
     logger.info('computing prefixes with model %s', mlm_name)
     prefix_list = get_prefix_from_mlm(
@@ -64,7 +68,7 @@ def find_best_prompts_mlm(
             args=args,
             r=r,
             dataloader=dataloader,
-            lm=lm, tokenizer=tokenizer,
+            lm_checkpoint=lm_checkpoint,
             prefix_list=prefix_list
         )
     else:
@@ -74,8 +78,7 @@ def rerank_prefix_list(
         args: argparse.Namespace,
         r: Dict[str, List],
         dataloader: DataLoader,
-        lm: AutoModelForCausalLM,
-        tokenizer: AutoTokenizer,
+        lm_checkpoint: str,
         prefix_list: List[str]
     ):
     """
@@ -86,6 +89,12 @@ def rerank_prefix_list(
     """
 
     logger.info('got %d prefixes, now computing losses', len(prefix_list))
+
+
+    lm = AutoModelForCausalLM.from_pretrained(
+        lm_checkpoint, output_hidden_states=False)
+    tokenizer = AutoTokenizer.from_pretrained(lm_checkpoint)
+    tokenizer.pad_token = tokenizer.eos_token
 
     lm.eval() 
     lm.to(device)
@@ -210,11 +219,9 @@ if __name__ == '__main__':
     parser.add_argument('--lr', type=float, default=1e-4,
                         help='learning rate')
     parser.add_argument('--mlm_num_candidates', type=int, default=128,
-        help='number of candidates for single-instance text infilling'
-    )
+        help='number of candidates for single-instance text infilling')
     parser.add_argument('--mlm_name', type=str, default='roberta-large',
-        help='model to use for MLM-based text infilling'
-    )
+        help='model to use for MLM-based text infilling')
     parser.add_argument('--do_reranking', type=int, default=1,
                         help='boolean 0 or 1: whether to do re-ranking using a LLM')
     parser.add_argument('--task_name', type=str, default='add_two',
@@ -222,6 +229,8 @@ if __name__ == '__main__':
                         help='name of task')
     parser.add_argument('--n_shots', type=int, default=1,
                         help='number of shots in the prompt')
+    parser.add_argument('--single_query', type=int, default=0,
+                        help='if true, ranks prompts based on just a single query')
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",
                         choices=(
                             ############################
@@ -260,10 +269,6 @@ if __name__ == '__main__':
 
     logger.info('loading model and data...')
     checkpoint = args.checkpoint
-    tokenizer = AutoTokenizer.from_pretrained(checkpoint)
-    tokenizer.pad_token = tokenizer.eos_token
-    lm = AutoModelForCausalLM.from_pretrained(
-        checkpoint, output_hidden_states=True)
     dset, check_answer_func, description = data.get_data(
         args=args, task_name=args.task_name, n_shots=args.n_shots,
     )
@@ -273,11 +278,16 @@ if __name__ == '__main__':
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
 
+    # Support computing things from just a single ´xample
+    dset = dset.shuffle()
+    if args.single_query:
+        dset = dset.filter(lambda _, i: i == 0, with_indices=True)
+
     logger.info('beginning training...')
     r = find_best_prompts_mlm(
         args=args,
         r=r, dset=dset,
-        lm=lm, tokenizer=tokenizer,
+        lm_checkpoint=checkpoint,
         check_answer_func=check_answer_func,
         mlm_name=args.mlm_name, mlm_num_candidates=args.mlm_num_candidates,
         do_reranking=bool(args.do_reranking)

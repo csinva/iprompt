@@ -5,7 +5,7 @@ import sys
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-save_dir = f'/home/chansingh/mntv1/prefix_math_{submit_utils.JOB_SUFFIX}'
+save_dir = f'/home/chansingh/mntv1/prefix_anli_{submit_utils.JOB_SUFFIX}'
 cmd_python = 'python'
 
 from suffix_math import PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT
