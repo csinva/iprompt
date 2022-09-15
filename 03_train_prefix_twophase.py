@@ -107,7 +107,7 @@ def train(
             # actually compute the loss.
             ###########################################################################
             # next-token-only (few-shot) loss.
-            breakpoint()
+            # breakpoint()
             last_token_logits = outputs.logits[:, -2, :]
             total_loss += torch.nn.functional.cross_entropy(
                 input=last_token_logits, target=tokenized_output_ids
@@ -132,7 +132,8 @@ def train(
         print(f"Loss = {(total_loss / total_n):.4f} / Acc = {(total_n_correct/total_n):.2f} / Prefix '{prefix}'")
     
     #
-    # df = pd.DataFrame.from_dict(r)
+    df = pd.DataFrame.from_dict(r)
+    print(df.sort_values(by='accs', ascending=False).head(n=20)[['prefixes', 'accs']])
     # breakpoint()
     #
 
