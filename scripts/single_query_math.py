@@ -11,7 +11,7 @@ if len(sys.argv) > 1:
     # save_dir = '/mnt/output/single_query_math_9_14'  # sys.argv[1]
     # assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
-    save_dir = '/home/chansingh/mntv1/single_query_math_9_15'
+    save_dir = '/home/chansingh/mntv1/single_query_math_9_16'
     cmd_python = 'python'
 
 ##########################################
@@ -25,6 +25,7 @@ PARAMS_SHARED_DICT = {
     'task_name_list': [['add_two', 'multiply_two', 'divide_two', 'subtract_two',
              'max_two', 'first_two',
              'square_one', 'exp_one', 'double_one', 'fibonacci_one']],
+    'max_num_tokens': [1],
 
     # parallel settings
     'use_parallelformers': [0],

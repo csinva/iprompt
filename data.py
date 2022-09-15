@@ -104,9 +104,9 @@ def get_init_suffix(args) -> List:
     """Note: questions should end with 2 newlines, so can directly start suffix.
     """
     if args.task_name in TASKS_TWO_NUMS.keys():
-        init_suffixes = TASKS_TWO_NUMS['SUFFIXES']
+        init_suffixes = TASKS_TWO_NUMS['SUFFIXES'][args.task_name]
     elif args.task_name in TASKS_ONE_NUM.keys():
-        init_suffixes = TASKS_ONE_NUM['SUFFIXES']
+        init_suffixes = TASKS_ONE_NUM['SUFFIXES'][args.task_name]
     elif args.task_name in TASKS_ANLI.keys():
         init_suffixes = TASKS_ANLI['SUFFIXES'][args.task_name]
     return init_suffixes[args.template_num_init_string]

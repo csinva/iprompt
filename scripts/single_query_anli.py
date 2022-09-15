@@ -13,7 +13,7 @@ if len(sys.argv) > 1:
     save_dir = '/mnt/output/single_query_anli_9_14'
     assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
-    save_dir = '/home/chansingh/mntv1/single_query_anli_9_14'
+    save_dir = '/home/chansingh/mntv1/single_query_anli_9_16'
     cmd_python = '/home/chansingh/.autoprompt/bin/python'
 
 ##########################################
@@ -28,6 +28,7 @@ PARAMS_SHARED_DICT = {
                         'task1149_item_check_edible', 'task183_rhyme_generation', 'task1191_food_veg_nonveg',
                         'task092_check_prime_classification', 'task088_identify_typo_verification',
                         'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql']],
+    'max_num_tokens': [1],
 
     # parallel settings
     'use_parallelformers': [0],

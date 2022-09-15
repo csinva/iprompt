@@ -166,8 +166,8 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
         # could also check out top_k_top_p_filtering
         # (https://huggingface.co/docs/transformers/v4.16.2/en/task_summary)
         # get the topk indexes and tokens
-        top_k_inds = np.argpartition(
-            avg_probs, -beam_size_for_saving)[-beam_size_printing:]  # get topk (hardcoded as 500)
+        top_k_inds = np.arange(avg_probs.size)
+        # top_k_inds = np.argpartition(avg_probs, -beam_size_for_saving)# [-beam_size_printing:]  # get topk (hardcoded as 500)
 
         # sort the topk (largest first)
         top_k_inds = top_k_inds[np.argsort(avg_probs[top_k_inds])][::-1]
@@ -208,10 +208,18 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
                 top_decoded_tokens[i]: avg_probs[top_k_inds[i]]
                 for i in range(beam_size_for_saving)
             })
+        
+        # find answer position (only if we're at the first token)
+        # in the best case, it is at position 0 (most likely completion)
+        if suffix_dict['num_tokens_added'] == 0:
+            pos_correct = np.array(list(map(check_answer_func, top_decoded_tokens)))
+            r['final_answer_pos_initial_token'] = np.where(pos_correct)[0].min()
         utils.save(args, save_dir, r, epoch=None, final=True)
 
-        # check each beam
-        if suffix_dict['num_tokens_added'] >= args.max_num_tokens:
+        # break if we've added enough tokens
+        if suffix_dict['num_tokens_added'] + 1 >= args.max_num_tokens:
+            logging.info('failed early stopping :/')
+            logging.info('\t' + 'pos_initial_token: ' + repr(r['final_answer_pos_initial_token']))
             break
 
         # check larger than args.beam_size in case the answer was basically right there
@@ -224,9 +232,10 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
                 r['final_num_suffixes_checked'] = num_suffixes_checked + \
                     beam_num + 1
                 r['final_answer_depth'] = suffix_dict['num_tokens_added'] + 1
-                logging.info('successful early stopping!')
+                logging.info('successful early stopping :)')
                 logging.info('\t' + repr(r['suffix_str_init']))
                 logging.info('\t' + repr(r['final_answer_added']))
+                logging.info('\t' + 'pos_initial_token: ' + repr(r['final_answer_pos_initial_token']))
                 logging.info(save_dir)
                 utils.save(args, save_dir, r, final=True)
                 utils.save_json(r={  # save some key outputs in readable form
