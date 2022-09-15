@@ -20,30 +20,8 @@ else:
 ##########################################
 # params shared across everything (higher up things are looped over first)
 ##########################################
-PARAMS_SHARED_DICT = {
-    # things to vary
-    'n_shots': [1, 5, 10],
-    'beam_size_extra': [50],
-    'task_name_list': [['add_two', 'multiply_two', 'divide_two', 'subtract_two',
-             'max_two', 'first_two',
-             'square_one', 'exp_one', 'double_one', 'fibonacci_one']],
-    'max_num_tokens': [1],
-
-    # parallel settings
-    'use_parallelformers': [0],
-    'use_cpu_only': [0],
-
-    # things to average over
-    'seed': [1],
-    'template_num_init_string': [0], #, 1, 2],
-    'template_num_task_phrasing': [0], #, 1, 2],
-
-    # fixed params
-    'max_digit': [10],
-    'beam_size': [5],
-    'save_dir': [save_dir],
-}
-
+PARAMS_SHARED_DICT = submit_utils.PARAMS_SHARED_DICT_MATH
+PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 
 ##########################################
 # params that are coupled together

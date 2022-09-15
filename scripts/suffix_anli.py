@@ -20,29 +20,8 @@ else:
 ##########################################
 # params shared across everything (higher up things are looped over first)
 ##########################################
-PARAMS_SHARED_DICT = {
-    # things to vary
-    'n_shots': [1, 5],
-    'beam_size_extra': [50],
-    'task_name_list': [['task1146_country_capital', 'task1509_evalution_antonyms', 'task1147_country_currency',
-             'task1149_item_check_edible', 'task183_rhyme_generation', 'task1191_food_veg_nonveg',
-             'task092_check_prime_classification', 'task088_identify_typo_verification',
-             'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql']],
-    'max_num_tokens': [1],
-
-    # parallel settings
-    'use_parallelformers': [0],
-    'use_cpu_only': [0],
-
-    # things to average over
-    'seed': [1],
-    'template_num_init_string': [0],
-    'template_num_task_phrasing': [0],
-
-    # fixed params
-    'beam_size': [5],
-    'save_dir': [save_dir],
-}
+PARAMS_SHARED_DICT = submit_utils.PARAMS_SHARED_DICT_ANLI
+PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 
 
 ##########################################
