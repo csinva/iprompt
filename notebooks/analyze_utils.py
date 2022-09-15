@@ -152,4 +152,4 @@ def plot_tab(tab, metric_key, title):
     #   loc='center left', bbox_to_anchor=(1, 0.5))
 
     plt.tight_layout()
-    plt.show()
+    # plt.show()

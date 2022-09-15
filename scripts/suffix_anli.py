@@ -14,7 +14,7 @@ if len(sys.argv) > 1:
     # assert save_dir.startswith('/mnt/output'), 'need to save to mount'
 else:
     # save_dir = '/home/chansingh/mntv1/suffix_anli_9_16'
-    save_dir = f'/home/chansingh/mntv1/suffix_query_anli_{submit_utils.JOB_SUFFIX}'
+    save_dir = f'/home/chansingh/mntv1/suffix_anli_{submit_utils.JOB_SUFFIX}'
     cmd_python = '/home/chansingh/.autoprompt/bin/python' 
 
 ##########################################
