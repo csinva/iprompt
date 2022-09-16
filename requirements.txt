@@ -15,6 +15,10 @@ parallelformers
 # nltk (optional if removing stopwords, which we usually don't do)
 # need to once run nltk.download('stopwords') from python
 
+# needed for processing speech data
+tables
+
+
 # optional for launching jobs
 # amlt
 

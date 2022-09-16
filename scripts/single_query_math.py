@@ -29,7 +29,7 @@ PARAMS_SHARED_DICT = {
 
     # parallel settings
     'use_parallelformers': [0],
-    'use_cpu_only': [1],
+    'use_cpu_only': [0],
 
     # things to average over
     'seed': [1, 2, 3], #, 2, 3],
