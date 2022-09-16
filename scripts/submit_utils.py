@@ -27,10 +27,6 @@ PARAMS_SHARED_DICT_MATH = {
              'max_two', 'first_two',
              'square_one', 'exp_one', 'double_one', 'fibonacci_one']],
 
-    # parallel settings
-    'use_parallelformers': [0],
-    'use_cpu_only': [0],
-
     # things to average over
     'seed': [1],
     'template_num_init_string': [0], #, 1, 2],
@@ -48,10 +44,6 @@ PARAMS_SHARED_DICT_ANLI = {
              'task092_check_prime_classification', 'task088_identify_typo_verification',
              'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql']],
 
-    # parallel settings
-    'use_parallelformers': [0],
-    'use_cpu_only': [0],
-
     # things to average over
     'seed': [1],
     'template_num_init_string': [0],
@@ -63,6 +55,9 @@ PARAMS_SHARED_DICT_SUFFIX = {
     'beam_size': [5],
     'beam_size_extra': [50],
     'max_num_tokens': [1],
+    # parallel settings
+    'use_parallelformers': [0],
+    'use_cpu_only': [0],
 }
 
 PARAMS_SHARED_DICT_PREFIX = {

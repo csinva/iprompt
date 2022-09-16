@@ -186,9 +186,9 @@ def rerank_prefix_list(
         print(f"Loss = {(total_loss / total_n):.4f} / Acc = {(total_n_correct/total_n):.2f} / Prefix '{prefix}'")
     
     #
-    df = pd.DataFrame.from_dict(r)
-    print(df.sort_values(by='accs', ascending=False).head(n=20)[['prefixes', 'accs']])
-    breakpoint()
+    # breakpoint()
+    # df = pd.DataFrame.from_dict({k:v for k,v in r.items() if k != 'task_name_list'})
+    # print(df.sort_values(by='accs', ascending=False).head(n=20)[['prefixes', 'accs']])
     #
 
     return r
