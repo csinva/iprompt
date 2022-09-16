@@ -30,7 +30,7 @@ def find_best_prompts_mlm(
         r: Dict[str, List],
         dset: datasets.Dataset,
         lm_checkpoint: str,
-        check_answer_func: Callable[str, bool],
+        check_answer_func: Callable[[str], bool],
         mlm_name: str,
         mlm_num_candidates: int,
         do_reranking: bool
