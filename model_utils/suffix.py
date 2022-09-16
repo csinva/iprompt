@@ -21,7 +21,6 @@ import parallel
 import utils
 
 
-'''
 def get_stopwords():
     """Leave this import here in case we don't want to install nltk
     """
@@ -29,7 +28,6 @@ def get_stopwords():
     nltk.download('stopwords')
     from nltk.corpus import stopwords
     return set(stopwords.words('english'))
-'''
 
 
 def get_next_token_logits(ex_inputs, model):
