@@ -9,7 +9,7 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 save_dir = f'/home/jxm3/random/interpretable-autoprompting/results/tst2/prefix_math_{submit_utils.JOB_SUFFIX}'
 cmd_python = 'python'
 
-PARAMS_SHARED_DICT = submit_utils.PARAMS_SHARED_DICT_ANLI
+PARAMS_SHARED_DICT = submit_utils.PARAMS_SHARED_DICT_MATH
 PARAMS_SHARED_DICT.update(submit_utils.PARAMS_SHARED_DICT_PREFIX)
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 
