@@ -61,7 +61,8 @@ PARAMS_SHARED_DICT_SUFFIX = {
 }
 
 PARAMS_SHARED_DICT_PREFIX = {
-    'mlm_num_candidates': [256],
+    # 'mlm_num_candidates': [256],
+    'mlm_num_candidates': [128],
     'do_reranking': [0, 1],
     'single_query': [0, 1],
 }
