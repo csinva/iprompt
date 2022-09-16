@@ -7,13 +7,13 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 JOB_SUFFIX = '9_17'
 PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
     ('checkpoint', 'batch_size'): [
-        ('gpt2', 32),
-        # # ('gpt2-medium', 200),
-        # # ('gpt2-large', 100),
-        # ('gpt2-xl', 40),
-        # ('EleutherAI/gpt-neo-2.7B', 20),
-        # ('EleutherAI/gpt-j-6B', 10)
-        # # ('EleutherAI/gpt-neox-20b', 1),
+        # ('gpt2', 32),
+        # ('gpt2-medium', 200),
+        # ('gpt2-large', 100),
+        ('gpt2-xl', 40),
+        ('EleutherAI/gpt-neo-2.7B', 20),
+        ('EleutherAI/gpt-j-6B', 10)
+        # ('EleutherAI/gpt-neox-20b', 1),
     ],
 }
 
