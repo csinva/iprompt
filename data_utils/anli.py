@@ -13,7 +13,9 @@ DESCRIPTIONS_DICT = json.load(open(
 
 def fetch_data(task_name_anli):
     df = pd.read_csv(oj(ANLI_PROCESSED_DIR, task_name_anli + '.csv'))
-    # Prepend a space and add newlines to match output format of number tasks
+    # Fix input: Encourage model to answer output as next token.
+    df['input'] = df['input'].map(lambda s: f'Input: {s} Answer:')
+    # Fix output: Prepend a space and add newlines to match output format of number tasks
     df['output'] = df['output'].map(lambda s: f' {s}\n\n')
     return df
 
