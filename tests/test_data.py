@@ -12,7 +12,6 @@ from data_utils import data_funcs
 from data_utils.one_num import TASKS_ONE_NUM
 from data_utils.two_num import TASKS_TWO_NUMS
 from data_utils.anli import TASKS_ANLI
-from data_utils.neuro import TASKS_NEURO
 from data import TASKS
 
 def test_data():
@@ -96,22 +95,5 @@ def test_anli():
                 check_text).all(), 'text is all strings'
             assert check_text(descr)
 
-def test_neuro():
-    class fake_args:
-        template_num_task_phrasing = 0
-        max_dset_size = 1000
-        max_digit = 10
-    args = fake_args()
-    for task_name in TASKS_NEURO:
-        if not task_name == 'SUFFIXES':
-            print(task_name)
-            df, answer_func, descr = get_data(args, task_name)
-            def check_text(s):
-                return isinstance(s, str) and len(s) > 0
-            assert pd.Series(df['text']).apply(
-                check_text).all(), 'text is all strings'
-            assert check_text(descr)
-
 if __name__ == '__main__':
-    # test_get_data()
-    test_neuro()
+    test_get_data()

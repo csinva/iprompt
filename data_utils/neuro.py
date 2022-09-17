@@ -5,29 +5,30 @@ import pandas as pd
 from os.path import dirname
 from os.path import join as oj
 import pickle as pkl
+import numpy as np
 
 NEURO_PROCESSED_DIR = oj(dirname(os.path.abspath(__file__)), 'neuro_processed')
 
 
-def fetch_data(task_name_neuro: str = 'neuro_0'):
-    voxel_best_num = int(task_name_neuro.split('_')[-1])
+def fetch_data():
+    # voxel_best_num = int(task_name_neuro.split('_')[-1])
     top_words = pkl.load(
-        open('neuro_processed/best_voxels_top_words_10000_voxels.pkl', 'rb'))
-    return top_words[voxel_best_num]
+        open(oj(NEURO_PROCESSED_DIR, 'best_voxels_top_words_10000_voxels.pkl'), 'rb'))
+    return top_words['top_words'] #[voxel_best_num]
+    
+
+def fetch_meta():
+    top_words = pkl.load(
+        open(oj(NEURO_PROCESSED_DIR, 'voxels_metadata.pkl'), 'rb'))
+    return top_words
 
 
-TASKS_NEURO = {
-    **{
-        f'neuro_{i}': {'check_answer_func': None}
-        for i in range(1000)
-    },
-    'SUFFIXES': ['Given the input country, the answer is the country\'s'],
-}
-ks = list(TASKS_NEURO.keys())
-for k in ks:
-    if not k == 'SUFFIXES':
-        TASKS_NEURO[k]['description'] = 'Find the similarity between the top words'
-        TASKS_NEURO[k]['gen_func'] = fetch_data
-
-if __name__ == '__main__':
-    print(TASKS_NEURO)
+def remap_scores_best_to_scores_all(scores_best_voxels, corrsort):
+    """We are only looking at the best voxels (in the order of corrsort).
+    Before plotting, we need to map back.
+    """
+    scores_all_voxels = np.zeros(corrsort.size)
+    for i in range(scores_best_voxels.size):
+        vox_num = corrsort[i]
+        scores_all_voxels[vox_num] = scores_best_voxels[i]
+    return scores_all_voxels

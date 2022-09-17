@@ -12,9 +12,8 @@ from data_utils import data_funcs
 from data_utils.one_num import TASKS_ONE_NUM
 from data_utils.two_num import TASKS_TWO_NUMS
 from data_utils.anli import TASKS_ANLI
-from data_utils.neuro import TASKS_NEURO
 
-TASKS = {**TASKS_TWO_NUMS, **TASKS_ONE_NUM, **TASKS_ANLI, **TASKS_NEURO}
+TASKS = {**TASKS_TWO_NUMS, **TASKS_ONE_NUM, **TASKS_ANLI}
 
 
 def get_data(args, task_name: str = 'add_two', n_shots: int = 1):
@@ -110,6 +109,4 @@ def get_init_suffix(args) -> List:
         init_suffixes = TASKS_ONE_NUM['SUFFIXES'][args.task_name]
     elif args.task_name in TASKS_ANLI.keys():
         init_suffixes = TASKS_ANLI['SUFFIXES'][args.task_name]
-    elif args.task_name in TASKS_NEURO.keys():
-        init_suffixes = TASKS_ANLI['SUFFIXES']
     return init_suffixes[args.template_num_init_string]
