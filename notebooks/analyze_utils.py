@@ -132,14 +132,27 @@ LEGEND_REMAP = {
 # light to dark
 # blues ['#f7fbff','#deebf7','#c6dbef','#9ecae1','#6baed6','#4292c6','#2171b5','#084594']
 # grays ['#ffffff','#f0f0f0','#d9d9d9','#bdbdbd','#969696','#737373','#525252','#252525']
-COLORS = {
-    'Ours: Average suffix sampling (1-shot)': '#9ecae1',
-    'Ours: Average suffix sampling (5-shot)': '#4292c6',
-    'Ours: Average suffix sampling (10-shot)': '#084594',
-    'Single-query sampling (1-shot)': '#d9d9d9',
-    'Single-query sampling (5-shot)': '#969696',
-    'Single-query sampling (10-shot)': '#525252',
-}
+# COLORS = {
+#     'Ours: Average suffix sampling (1-shot)': '#9ecae1',
+#     'Ours: Average suffix sampling (5-shot)': '#4292c6',
+#     'Ours: Average suffix sampling (10-shot)': '#084594',
+#     'Single-query sampling (1-shot)': '#d9d9d9',
+#     'Single-query sampling (5-shot)': '#969696',
+#     'Single-query sampling (10-shot)': '#525252',
+#     ############################################################
+#     'Prefix': '#9ecae1', 
+#     'Prefix (no reranking)': '#4292c6', 
+#     'Prefix, single-query (no reranking)': '#084594', 
+#     'Prefix, single-query': '#d9d9d9',
+# }
+
+SORTED_HUE_NAMES = [
+    'Single-query sampling (1-shot)', 'Single-query sampling (5-shot)', 'Single-query sampling (10-shot)',
+    'Ours: Average suffix sampling (1-shot)', 'Ours: Average suffix sampling (5-shot)', 'Ours: Average suffix sampling (10-shot)',
+    'Prefix', 'Prefix (no reranking)', 'Prefix, single-query (no reranking)', 'Prefix, single-query'
+]
+COLORS = dict(zip(SORTED_HUE_NAMES, sns.color_palette("rocket", len(SORTED_HUE_NAMES))))
+
 YLABS = {
     'final_num_suffixes_checked': 'Number of suffixes checked before finding correct answer\n(lower is better)',
     'final_answer_pos_initial_token': 'Rank of correct suffix (lower is better)',
@@ -147,10 +160,6 @@ YLABS = {
 
 
 def get_hue_order(legend_names):
-    SORTED_HUE_NAMES = [
-        'Single-query sampling (1-shot)', 'Single-query sampling (5-shot)', 'Single-query sampling (10-shot)',
-        'Ours: Average suffix sampling (1-shot)', 'Ours: Average suffix sampling (5-shot)', 'Ours: Average suffix sampling (10-shot)',
-    ]
     for hue in legend_names.unique():
         assert hue in SORTED_HUE_NAMES, hue + \
             ' not in ' + str(SORTED_HUE_NAMES)
@@ -159,8 +168,8 @@ def get_hue_order(legend_names):
 
 def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = True):
     # reformat legend
-
     if add_legend:
+        print("adding")
         tab['legend'] = tab['use_single_query'].map(
             LEGEND_REMAP) + ' (' + tab['n_shots'].astype(str) + '-shot)'
 

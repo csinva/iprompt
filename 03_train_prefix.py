@@ -184,6 +184,8 @@ if __name__ == '__main__':
                         help='number of candidates to rerank, for hotflip')
     parser.add_argument('--num_learned_tokens', type=int, default=1,
                         help='number of learned prefix tokens (for gumbel, hotflip, prompt-tuning)')
+    parser.add_argument('--use_preprefix', type=int, default=1, choices=(0, 1), 
+                        help='whether to use a template pre-prefix')
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",
                         choices=(
                             ############################
@@ -217,7 +219,7 @@ if __name__ == '__main__':
         checkpoint, output_hidden_states=True)
     loss_func = PrefixLoss(gamma=args.gamma, tokenizer=tokenizer)
 
-    preprefix = data.get_init_suffix(args) if args.model_cls == 'hotflip_preprefix' else '' 
+    preprefix = data.get_init_suffix(args) if args.use_preprefix else '' 
     model = model_cls_dict[args.model_cls](
         args=args,
         loss_func=loss_func, model=lm, tokenizer=tokenizer, preprefix=preprefix

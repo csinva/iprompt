@@ -47,6 +47,10 @@ class HotFlipPrefixModel(PrefixModel):
 
         # disable grads to model
         for p in self.model.parameters(): p.requires_grad = False
+
+        # track epoch
+        self._epoch = 0
+        self._data = []
     
     def _set_prefix_ids(self, new_ids: torch.Tensor) -> None:
         self.prefix_ids = new_ids
@@ -184,6 +188,17 @@ class HotFlipPrefixModel(PrefixModel):
                     )
                 all_candidate_losses[candidate_idx] += loss
                 all_n_correct[candidate_idx] += n_correct
+
+
+        ##################################################################################################################
+        for _i in range(self._num_candidates_per_prefix_token):
+            token_id = top_swap_tokens[_i].item()
+            self._data.append(
+                (_i, token_id, token_grads[token_id], all_candidate_losses[_i].item(), all_n_correct[_i].item())
+            )
+        import pickle
+        pickle.dump(self._data, open('hotflip_grads_data.p', 'wb'))
+        ##################################################################################################################
 
         #
         # Recreate prefix with min loss.
