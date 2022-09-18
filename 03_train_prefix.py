@@ -228,7 +228,7 @@ if __name__ == '__main__':
     save_dir_unique = datetime.now().strftime("%b_%d_%H_%M_") + ''.join(random.choices(string.ascii_lowercase, k=12))
     save_dir = os.path.join(args.save_dir, save_dir_unique)
     logging.info('saving to ' + save_dir)
-    args.save_dir_unique = save_dir_unique
+    args.save_dir_unique = save_dir
 
     preprefix = data.get_init_suffix(args) if args.use_preprefix else '' 
     model = model_cls_dict[args.model_cls](

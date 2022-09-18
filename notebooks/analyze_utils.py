@@ -149,14 +149,14 @@ COLORS = OrderedDict({
     'Suffix, single-output decoding (5-Ex.)': '#969696',
     'Suffix, single-output decoding (10-Ex.)': '#525252',
     ############################################################
-    'Prefix (1-Ex.)': '#4c1d4b', 
-    'Prefix (5-Ex.)': '#a11a5b',
-    'Prefix, no reranking (1-Ex.)': '#e83f3f',
-    'Prefix, no reranking (5-Ex.)': '#f69c73',
-    'Prefix, single-query, no reranking (1-Ex.)': '#f0f0f0',
-    'Prefix, single-query, no reranking (5-Ex.)': '#bdbdbd',
-    'Prefix, single-query (1-Ex.)': '#969696',
-    'Prefix, single-query (5-Ex.)': '#525252',
+    'Prefix, average-output with reranking (1-Ex.)': '#f69c73', 
+    'Prefix, average-output with reranking (5-Ex.)': '#e83f3f',
+    'Prefix, average-output (1-Ex.)': '#a11a5b',
+    'Prefix, average-output (5-Ex.)': '#4c1d4b',
+    'Prefix, single-output (1-Ex.)': '#f0f0f0',
+    'Prefix, single-output (5-Ex.)': '#bdbdbd',
+    'Prefix, single-output with reranking (1-Ex.)': '#969696',
+    'Prefix, single-output (5-Ex.)': '#525252',
 }.items())
 SORTED_HUE_NAMES = list(COLORS.keys())
 
