@@ -1,10 +1,12 @@
+from typing import Iterable, Optional, Tuple
+
 import argparse
 
 import torch
 import torch.nn as nn
 import transformers
 
-from .utils import PrefixModel
+from .utils import PrefixLoss, PrefixModel
 
 
 class GumbelPrefixModel(PrefixModel):

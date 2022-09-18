@@ -1,11 +1,16 @@
+from typing import Iterable, Optional, Tuple
+
 import argparse
 
 import torch
 import torch.nn as nn
+import tqdm
 import transformers
 
-from .utils import PrefixModel
+from .utils import PrefixLoss, PrefixModel
 
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 VERBOSE = False # whether to print grads, etc.
 TOP_K = 20 # for printing grads, etc.
@@ -30,10 +35,10 @@ class HotFlipPrefixModel(PrefixModel):
         self._swap_token_idx = 0
         # Sort both a version with a preprefix ("The function to compute is") and a version
         # where the full prefix is discovered by HotFlip without any assistance.
+        preprefix_ids = [self.tokenizer.bos_token_id]
         if preprefix:
-            self.preprefix_ids = self.tokenizer.encode(preprefix, return_tensors='pt')
-        else:
-            self.preprefix_ids = None
+            preprefix_ids.extend(self.tokenizer.encode(preprefix))
+        self.preprefix_ids = torch.tensor(preprefix_ids, dtype=int).to(device)
         self.prefix_ids = self.init_discrete_prefix(num_tokens=self._num_tokens)
         self.prefix_embedding = nn.Parameter(
             self.token_embedding.forward(self.prefix_ids), requires_grad=True
@@ -131,7 +136,7 @@ class HotFlipPrefixModel(PrefixModel):
         # prefix_until_swap_ids = torch.cat(
         #     (self.preprefix_ids.to(device), self.prefix_ids[None, :token_idx].to(device)), dim=1
         # ).to(device)
-        swap_token_logits = self.model(self.preprefix_ids.to(device)).logits[:, -1, :]
+        swap_token_logits = self.model(self.preprefix_ids[None].to(device)).logits[:, -1, :]
 
         rvocab = {v: k for k,v in self.tokenizer.vocab.items()}
         # dist_sum = (swap_token_logits.log_softmax(dim=1) * .7 + (-1 * token_grads).log_softmax(dim=1))
@@ -198,7 +203,9 @@ class HotFlipPrefixModel(PrefixModel):
         # 
         # Pick top candidate and reset self._min_loss. (TODO: Support beam width > 1.)
         # 
-        print(f'[Loss = {min_loss/len(dataloader):.2f}] // Old prefix: {self.tokenizer.decode(self.prefix_ids)} // New prefix: {self.tokenizer.decode(best_prefix_ids)} // New n_correct = {all_n_correct[best_candidate_idx].item()}')
+        old_prefix_str = self.tokenizer.decode(self.preprefix_ids.tolist() + self.prefix_ids.tolist())
+        new_prefix_str = self.tokenizer.decode(self.preprefix_ids.tolist() + best_prefix_ids.tolist())
+        print(f'[Loss = {min_loss/len(dataloader):.2f}] // Old prefix: {old_prefix_str} // New prefix: {new_prefix_str} // New n_correct = {all_n_correct[best_candidate_idx].item()}')
 
         if (best_prefix_ids == self.prefix_ids.to(device)).all():
             print('no change in prefix, exiting')
@@ -241,29 +248,17 @@ class HotFlipPrefixModel(PrefixModel):
         else:
             prefix_embedding = self.token_embedding.forward(prefix_ids)
 
-        # Support an optional preprefix to help guide the learned prefix.
-        prefix_ids = prefix_ids.to(device).repeat((batch_size, 1))
-        if self.preprefix_ids is None:
-            full_input_ids = torch.cat(
-                (prefix_ids, input_ids), dim=1
-            )
-            outputs = torch.cat(
-                (
-                    prefix_embedding[None].repeat((batch_size, 1, 1)),
-                    self.token_embedding.forward(input_ids)
-                ), dim=1
-            )
-        else:
-            # concatenate preprefix (fixed) + prefix (learned) + example
-            preprefix_ids = self.preprefix_ids.to(device).repeat((batch_size, 1))
-            full_input_ids = torch.cat(
-                (preprefix_ids, prefix_ids, input_ids), dim=1
-            )
-            outputs = torch.cat(
-                (
-                    self.token_embedding.forward(preprefix_ids),
-                    prefix_embedding[None].repeat((batch_size, 1, 1)),
-                    self.token_embedding.forward(input_ids)
-                ), dim=1
-            )
+        # concatenate preprefix (fixed) + prefix (learned) + example
+        prefix_ids = prefix_ids[None].to(device).repeat((batch_size, 1)).to(device)
+        preprefix_ids = self.preprefix_ids[None].to(device).repeat((batch_size, 1)).to(device)
+        full_input_ids = torch.cat(
+            (preprefix_ids, prefix_ids, input_ids), dim=1
+        )
+        outputs = torch.cat(
+            (
+                self.token_embedding.forward(preprefix_ids),
+                prefix_embedding[None].repeat((batch_size, 1, 1)),
+                self.token_embedding.forward(input_ids)
+            ), dim=1
+        )
         return full_input_ids, outputs
