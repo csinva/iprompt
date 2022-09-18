@@ -57,7 +57,7 @@ def load_results_and_cache_prefix_json(results_dir: str, save_file: str='r.pkl')
             # if we computed accuracy, reorder by that metric.
             rerank = df['do_reranking'].tolist()[0]
             if rerank:
-                df = df.sort_values(by='losses', ascending=True).reset_index()
+                df = df.sort_values(by='accs', ascending=False).reset_index()
 
             # get index of first answer, which will be nan if there isn't one (if all
             # answers were wrong).
@@ -156,7 +156,8 @@ LEGEND_REMAP = {
 SORTED_HUE_NAMES = [
     'Single-output sampling, suffix (1-Ex.)', 'Single-output sampling, suffix (5-Ex.)', 'Single-output sampling, suffix (10-Ex.)',
     'Average-output sampling, suffix (1-Ex.)', 'Average-output sampling, suffix (5-Ex.)', 'Average-output sampling, suffix (10-Ex.)',
-    'Prefix', 'Prefix (no reranking)', 'Prefix, single-query (no reranking)', 'Prefix, single-query'
+    'Prefix (1-Ex.)', 'Prefix, no reranking (1-Ex.)', 'Prefix, single-query, no reranking (1-Ex.)', 'Prefix, single-query (1-Ex.)',
+    'Prefix (5-Ex.)', 'Prefix, no reranking (5-Ex.)', 'Prefix, single-query, no reranking (5-Ex.)', 'Prefix, single-query (5-Ex.)',
 ]
 
 # TODO: diff colormap for each method type
@@ -184,8 +185,10 @@ def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = 
     # sort the plot
     hue_order = get_hue_order(tab['legend'])
 
-    SORTED_MODEL_NAMES = ['gpt2-medium', 'gpt2-large', 'gpt2-xl',
-                          'EleutherAI/gpt-neo-2.7B', 'EleutherAI/gpt-j-6B', 'EleutherAI/gpt-neox-20b', ]
+    SORTED_MODEL_NAMES = [
+        'gpt2-medium', 'gpt2-large', 'gpt2-xl',
+        'EleutherAI/gpt-neo-2.7B', 'EleutherAI/gpt-j-6B', 'EleutherAI/gpt-neox-20b', 
+    ]
     for checkpoint in tab['checkpoint'].unique():
         assert checkpoint in SORTED_MODEL_NAMES, checkpoint + \
             ' not in ' + str(SORTED_MODEL_NAMES)

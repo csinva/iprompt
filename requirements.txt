@@ -1,6 +1,7 @@
 accelerate
 dict_hash
 datasets
+dvu
 numpy
 openai
 pandas
