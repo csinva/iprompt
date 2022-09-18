@@ -59,11 +59,6 @@ def train(
     model = model.to(device)
     dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=True, drop_last=False)
 
-    # set up saving
-    save_dir_unique = datetime.now().strftime("%b_%d_%H_%M_") + ''.join(random.choices(string.ascii_lowercase, k=12))
-    save_dir = os.path.join(args.save_dir, save_dir_unique)
-    logging.info('saving to ' + save_dir)
-
     # optimizer
     optim = torch.optim.AdamW(model.trainable_params, lr=args.lr)
 
@@ -186,6 +181,8 @@ if __name__ == '__main__':
                         help='number of learned prefix tokens (for gumbel, hotflip, prompt-tuning)')
     parser.add_argument('--use_preprefix', type=int, default=1, choices=(0, 1), 
                         help='whether to use a template pre-prefix')
+    parser.add_argument('--llm_parsimonious',  '--parsimonious', type=int, default=1, choices=(0, 1),
+                        help='if true, loads LLM in fp16 and at low-ram')
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",
                         choices=(
                             ############################
@@ -215,9 +212,23 @@ if __name__ == '__main__':
     checkpoint = args.checkpoint
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     tokenizer.pad_token = tokenizer.eos_token
-    lm = AutoModelForCausalLM.from_pretrained(
-        checkpoint, output_hidden_states=True)
+
+    if args.llm_parsimonious:
+        lm = AutoModelForCausalLM.from_pretrained(
+            checkpoint, output_hidden_states=False,
+            revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True
+        )
+    else:    
+        lm = AutoModelForCausalLM.from_pretrained(
+            checkpoint, output_hidden_states=False
+        )
     loss_func = PrefixLoss(gamma=args.gamma, tokenizer=tokenizer)
+
+    # set up saving
+    save_dir_unique = datetime.now().strftime("%b_%d_%H_%M_") + ''.join(random.choices(string.ascii_lowercase, k=12))
+    save_dir = os.path.join(args.save_dir, save_dir_unique)
+    logging.info('saving to ' + save_dir)
+    args.save_dir_unique = save_dir_unique
 
     preprefix = data.get_init_suffix(args) if args.use_preprefix else '' 
     model = model_cls_dict[args.model_cls](

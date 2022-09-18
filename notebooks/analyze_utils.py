@@ -39,7 +39,7 @@ def load_results_and_cache(results_dir: str, save_file: str='r.pkl') -> pd.DataF
     return r
 
 
-def load_results_and_cache_json(results_dir: str, save_file: str='r.pkl') -> pd.DataFrame:
+def load_results_and_cache_prefix_json(results_dir: str, save_file: str='r.pkl') -> pd.DataFrame:
     dir_names = sorted([fname
                         for fname in os.listdir(results_dir)
                         if os.path.isdir(oj(results_dir, fname))
@@ -53,6 +53,12 @@ def load_results_and_cache_json(results_dir: str, save_file: str='r.pkl') -> pd.
             del json_dict['task_name_list'] # backwards compatibility with prev unneeded key
             df = pd.DataFrame.from_dict(json_dict)
             df['json_filename'] = json_filename
+
+            # if we computed accuracy, reorder by that metric.
+            rerank = df['do_reranking'].tolist()[0]
+            if rerank:
+                df = df.sort_values(by='losses', ascending=True).reset_index()
+
             # get index of first answer, which will be nan if there isn't one (if all
             # answers were wrong).
             first_answer_idx = (df.index[df['prefixes__check_answer_func']]).min()
@@ -62,6 +68,7 @@ def load_results_and_cache_json(results_dir: str, save_file: str='r.pkl') -> pd.
             else:
                 df['final_answer_full'] =  df.prefixes.iloc[first_answer_idx]
                 df['final_answer_pos_initial_token'] = first_answer_idx
+            
             dfs.append(df)
         except Exception as e:
             print("e:", e)

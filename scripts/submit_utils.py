@@ -64,7 +64,7 @@ PARAMS_SHARED_DICT_PREFIX = {
     # 'mlm_num_candidates': [256],
     'mlm_num_candidates': [128],
     'do_reranking': [0, 1],
-    'single_query': [0, 1],
+    'max_num_samples': [0, 1], # try full dataset (0) and single-sample (1)
 }
 
 def combine_param_dicts(PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT):

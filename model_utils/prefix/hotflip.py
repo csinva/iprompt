@@ -1,6 +1,8 @@
 from typing import Iterable, Optional, Tuple
 
 import argparse
+import os
+import pickle
 
 import torch
 import torch.nn as nn
@@ -191,13 +193,14 @@ class HotFlipPrefixModel(PrefixModel):
 
 
         ##################################################################################################################
+        hotflip_out_path = os.path.join(self.args.save_dir_unique, 'hotflip_grads_data.p')
         for _i in range(self._num_candidates_per_prefix_token):
             token_id = top_swap_tokens[_i].item()
+            # rank, prefix, token_id, token_grad, loss_with_this_token, n_correct_with_this_token
             self._data.append(
-                (_i, token_id, token_grads[token_id], all_candidate_losses[_i].item(), all_n_correct[_i].item())
+                (_i, self.prefix_ids.tolist(), token_id, token_grads.flatten()[token_id].item(), all_candidate_losses[_i].item(), all_n_correct[_i].item())
             )
-        import pickle
-        pickle.dump(self._data, open('hotflip_grads_data.p', 'wb'))
+        pickle.dump(self._data, open(hotflip_out_path, 'wb'))
         ##################################################################################################################
 
         #

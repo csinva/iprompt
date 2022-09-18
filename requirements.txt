@@ -1,3 +1,4 @@
+accelerate
 dict_hash
 datasets
 numpy

@@ -89,8 +89,14 @@ def rerank_prefix_list(
     logger.info('got %d prefixes, now computing losses', len(prefix_list))
 
 
-    lm = AutoModelForCausalLM.from_pretrained(
-        lm_checkpoint, output_hidden_states=False)
+    if args.llm_parsimonious:
+        lm = AutoModelForCausalLM.from_pretrained(
+            checkpoint, output_hidden_states=False,
+            revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True
+        )
+    else:    
+        lm = AutoModelForCausalLM.from_pretrained(
+            lm_checkpoint, output_hidden_states=False)
     tokenizer = AutoTokenizer.from_pretrained(lm_checkpoint)
     tokenizer.pad_token = tokenizer.eos_token
 
@@ -229,8 +235,8 @@ if __name__ == '__main__':
                         help='names of tasks as list; alternative to passing task_name')
     parser.add_argument('--n_shots', type=int, default=1,
                         help='number of shots in the prompt')
-    parser.add_argument('--single_query', type=int, default=0,
-                        help='if true, ranks prompts based on just a single query')
+    parser.add_argument('--max_num_samples', type=int, default=0,
+                        help='if true, ranks prompts based on just a certain number of data samples')
     parser.add_argument('--use_cache', type=int, default=1,
                         help='boolean 0 or 1: whether to check for cache')
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",
@@ -252,6 +258,8 @@ if __name__ == '__main__':
                         ),
                         help='model checkpoint to use'
     )
+    parser.add_argument('--llm_parsimonious', '--parsimonious', type=int, default=1, choices=(0, 1),
+                        help='if true, loads LLM in fp16 and at low-ram')
     args = parser.parse_args()
     args_ignore_for_caching = {k for k in vars(
         args) if not k in vars(parser.parse_args([])).keys()}
@@ -295,8 +303,8 @@ if __name__ == '__main__':
 
         # Support computing things from just a single ´xample
         dset = dset.shuffle()
-        if args.single_query:
-            dset = dset.filter(lambda _, i: i == 0, with_indices=True)
+        if (args.max_num_samples > 0):
+            dset = dset.filter(lambda _, i: (i < args.max_num_samples), with_indices=True)
 
         logger.info('beginning training...')
 
