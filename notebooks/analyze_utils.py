@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from copy import deepcopy
 import pandas as pd
 from tqdm import tqdm
-from collections import defaultdict
+from collections import defaultdict, OrderedDict
 from transformers import AutoTokenizer
 import pandas as pd
 import seaborn as sns
@@ -139,29 +139,27 @@ LEGEND_REMAP = {
 # light to dark
 # blues ['#f7fbff','#deebf7','#c6dbef','#9ecae1','#6baed6','#4292c6','#2171b5','#084594']
 # grays ['#ffffff','#f0f0f0','#d9d9d9','#bdbdbd','#969696','#737373','#525252','#252525']
-# COLORS = {
-#     'Ours: Average suffix sampling (1-shot)': '#9ecae1',
-#     'Ours: Average suffix sampling (5-shot)': '#4292c6',
-#     'Ours: Average suffix sampling (10-shot)': '#084594',
-#     'Single-query sampling (1-shot)': '#d9d9d9',
-#     'Single-query sampling (5-shot)': '#969696',
-#     'Single-query sampling (10-shot)': '#525252',
-#     ############################################################
-#     'Prefix': '#9ecae1', 
-#     'Prefix (no reranking)': '#4292c6', 
-#     'Prefix, single-query (no reranking)': '#084594', 
-#     'Prefix, single-query': '#d9d9d9',
-# }
+# reds ['#4c1d4b', '#a11a5b', '#e83f3f', '#f69c73']
+# greens ['#348ba6', '#38aaac', '#55caad', '#a1dfb9']
+COLORS = OrderedDict({
+    'Suffix, average-output decoding (1-Ex.)': '#9ecae1',
+    'Suffix, average-output decoding (5-Ex.)': '#4292c6',
+    'Suffix, average-output decoding (10-Ex.)': '#084594',
+    'Suffix, single-output decoding (1-Ex.)': '#d9d9d9',
+    'Suffix, single-output decoding (5-Ex.)': '#969696',
+    'Suffix, single-output decoding (10-Ex.)': '#525252',
+    ############################################################
+    'Prefix (1-Ex.)': '#4c1d4b', 
+    'Prefix (5-Ex.)': '#a11a5b',
+    'Prefix, no reranking (1-Ex.)': '#e83f3f',
+    'Prefix, no reranking (5-Ex.)': '#f69c73',
+    'Prefix, single-query, no reranking (1-Ex.)': '#f0f0f0',
+    'Prefix, single-query, no reranking (5-Ex.)': '#bdbdbd',
+    'Prefix, single-query (1-Ex.)': '#969696',
+    'Prefix, single-query (5-Ex.)': '#525252',
+}.items())
+SORTED_HUE_NAMES = list(COLORS.keys())
 
-SORTED_HUE_NAMES = [
-    'Single-output sampling, suffix (1-Ex.)', 'Single-output sampling, suffix (5-Ex.)', 'Single-output sampling, suffix (10-Ex.)',
-    'Average-output sampling, suffix (1-Ex.)', 'Average-output sampling, suffix (5-Ex.)', 'Average-output sampling, suffix (10-Ex.)',
-    'Prefix (1-Ex.)', 'Prefix, no reranking (1-Ex.)', 'Prefix, single-query, no reranking (1-Ex.)', 'Prefix, single-query (1-Ex.)',
-    'Prefix (5-Ex.)', 'Prefix, no reranking (5-Ex.)', 'Prefix, single-query, no reranking (5-Ex.)', 'Prefix, single-query (5-Ex.)',
-]
-
-# TODO: diff colormap for each method type
-COLORS = dict(zip(SORTED_HUE_NAMES, sns.color_palette("rocket", len(SORTED_HUE_NAMES))))
 
 YLABS = {
     'final_num_suffixes_checked': 'Number of suffixes checked before finding correct answer\n(lower is better)',
