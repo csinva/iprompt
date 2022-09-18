@@ -126,8 +126,8 @@ def num_suffixes_checked_tab(tab, metric_key='final_num_suffixes_checked'):
 
 
 LEGEND_REMAP = {
-    'Single-query': 'Single-query sampling',
-    'Avg suffix': 'Ours: Average suffix sampling',
+    'Single-query': 'Single-output sampling, suffix',
+    'Avg suffix': 'Average-output sampling, suffix',
 }
 # light to dark
 # blues ['#f7fbff','#deebf7','#c6dbef','#9ecae1','#6baed6','#4292c6','#2171b5','#084594']
@@ -147,10 +147,12 @@ LEGEND_REMAP = {
 # }
 
 SORTED_HUE_NAMES = [
-    'Single-query sampling (1-shot)', 'Single-query sampling (5-shot)', 'Single-query sampling (10-shot)',
-    'Ours: Average suffix sampling (1-shot)', 'Ours: Average suffix sampling (5-shot)', 'Ours: Average suffix sampling (10-shot)',
+    'Single-output sampling, suffix (1-Ex.)', 'Single-output sampling, suffix (5-Ex.)', 'Single-output sampling, suffix (10-Ex.)',
+    'Average-output sampling, suffix (1-Ex.)', 'Average-output sampling, suffix (5-Ex.)', 'Average-output sampling, suffix (10-Ex.)',
     'Prefix', 'Prefix (no reranking)', 'Prefix, single-query (no reranking)', 'Prefix, single-query'
 ]
+
+# TODO: diff colormap for each method type
 COLORS = dict(zip(SORTED_HUE_NAMES, sns.color_palette("rocket", len(SORTED_HUE_NAMES))))
 
 YLABS = {
@@ -169,9 +171,8 @@ def get_hue_order(legend_names):
 def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = True):
     # reformat legend
     if add_legend:
-        print("adding")
         tab['legend'] = tab['use_single_query'].map(
-            LEGEND_REMAP) + ' (' + tab['n_shots'].astype(str) + '-shot)'
+            LEGEND_REMAP) + ' (' + tab['n_shots'].astype(str) + '-Ex.)'
 
     # sort the plot
     hue_order = get_hue_order(tab['legend'])
