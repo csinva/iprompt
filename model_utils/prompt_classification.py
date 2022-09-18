@@ -2,10 +2,6 @@ from typing import List
 
 import abc
 import argparse
-try:
-    import openai
-except:
-    pass
 import seaborn as sns
 import datasets
 import numpy as np
@@ -36,6 +32,7 @@ class Model:
 class Gpt3Model(Model):
     def __init__(self):
         assert 'OPENAI_API_KEY' in os.environ, 'need to set OPENAI_API_KEY in env to use GPT-3 API'
+        import openai
         openai.api_key = os.environ['OPENAI_API_KEY']
         self._num_requests = 0
         self.tokenizer = transformers.AutoTokenizer.from_pretrained('gpt2')

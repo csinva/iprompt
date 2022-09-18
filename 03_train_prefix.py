@@ -73,7 +73,7 @@ def train(
     possible_answer_ids = []
     for batch in dataloader:
         y_text = [answer for answer in batch['output']]
-        y_tokenized = tokenizer(y_text, return_tensors='pt')
+        y_tokenized = tokenizer(y_text, return_tensors='pt', padding='longest')
         true_next_token_ids = y_tokenized['input_ids'][:, 0] # only test on the single next token
         possible_answer_ids.extend(true_next_token_ids.tolist())
     
@@ -105,9 +105,11 @@ def train(
             x_text = [f'. {prompt}' for prompt in batch['input']]
             y_text = [answer.replace('.', '').rstrip() for answer in batch['output']] # strip newlines and periods.
 
-            input_ids = model.tokenizer(x_text, return_tensors='pt')['input_ids'].to(device)
-            next_token_ids = tokenizer(y_text, return_tensors='pt')['input_ids'].to(device).squeeze(dim=1)
-            assert next_token_ids.nelement() == len(y_text), 'For now assume that each answer is a single token'
+            input_ids = model.tokenizer(
+                x_text, return_tensors='pt', padding='longest')['input_ids'].to(device)
+            next_token_ids = tokenizer(y_text, return_tensors='pt', padding='longest')['input_ids'].to(device)
+            # only evaluate on single next-token
+            next_token_ids = next_token_ids[:, 0]
 
             loss, n_correct = model.compute_loss(
                 original_input_ids=input_ids,
@@ -155,14 +157,16 @@ if __name__ == '__main__':
                         help='batch size for training')
     parser.add_argument('--max_dset_size', type=int,
                         default=10000, help='maximum allowable dataset size')
-    parser.add_argument('--template_num_task_phrasing', type=int, default=0,
-                        help='the number of the manual template for any given task (number of options varies with task')
     parser.add_argument('--seed', type=int, default=1,
                         help='random seed')
     parser.add_argument('--n_epochs', type=int, default=10000,
                         help='number of epochs for training')
     parser.add_argument('--max_digit', type=int, default=100,
                         help='maximum value of each digit in summand')
+    parser.add_argument('--template_num_init_string', type=int, default=0,
+                        help='the number of the manually-specified prefix to be initialize with')
+    parser.add_argument('--template_num_task_phrasing', type=int, default=0,
+                        help='the number of the manual template for any given task (number of options varies with task')
     parser.add_argument('--save_dir', type=str, default='results',
                         help='directory for saving')
     parser.add_argument('--epoch_save_interval', type=int, default=1,
@@ -176,6 +180,10 @@ if __name__ == '__main__':
                         help='name of task')
     parser.add_argument('--n_shots', type=int, default=1,
                         help='number of shots in the prompt')
+    parser.add_argument('--hotflip_num_candidates', type=int, default=10,
+                        help='number of candidates to rerank, for hotflip')
+    parser.add_argument('--num_learned_tokens', type=int, default=1,
+                        help='number of learned prefix tokens (for gumbel, hotflip, prompt-tuning)')
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",
                         choices=(
                             ############################
@@ -193,7 +201,8 @@ if __name__ == '__main__':
                             "gpt2-xl",     # 1.5B params
                             ############################
                         ),
-                        help='model checkpoint to use')
+                        help='model checkpoint to use'
+    )
     args = parser.parse_args()
     r = defaultdict(list)
     r.update(vars(args))
@@ -203,11 +212,18 @@ if __name__ == '__main__':
     logger.info('loading model and data...')
     checkpoint = args.checkpoint
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+    tokenizer.pad_token = tokenizer.eos_token
     lm = AutoModelForCausalLM.from_pretrained(
         checkpoint, output_hidden_states=True)
     loss_func = PrefixLoss(gamma=args.gamma, tokenizer=tokenizer)
-    model = model_cls_dict[args.model_cls](loss_func=loss_func, model=lm, tokenizer=tokenizer)
-    dset, check_answer_func, description = data.get_data(args=args, task_name=args.task_name, n_shots=args.n_shots)
+
+    preprefix = data.get_init_suffix(args) if args.model_cls == 'hotflip_preprefix' else '' 
+    model = model_cls_dict[args.model_cls](
+        args=args,
+        loss_func=loss_func, model=lm, tokenizer=tokenizer, preprefix=preprefix
+    )
+    dset, check_answer_func, description = data.get_data(
+        args=args, task_name=args.task_name, n_shots=args.n_shots)
     print(f'Attempting task with description: "{description}"')
 
     logger.info('beginning training...')

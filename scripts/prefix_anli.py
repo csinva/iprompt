@@ -19,5 +19,5 @@ ks_final, param_combos_final = submit_utils.combine_param_dicts(
     PARAMS_SHARED_DICT, submit_utils.PARAMS_COUPLED_DICT)
 
 submit_utils.run_dicts(ks_final, param_combos_final, cmd_python=cmd_python,
-                       script_name='03_find_prefix_rerank.py', actually_run=False
+                       script_name='03_rerank_prefix.py', actually_run=True
 )

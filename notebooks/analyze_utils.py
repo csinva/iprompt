@@ -12,10 +12,11 @@ import seaborn as sns
 from datasets import Dataset
 from os.path import join as oj
 import pickle as pkl
+import json
 import os
 
 
-def load_results_and_cache(results_dir, save_file='r.pkl'):
+def load_results_and_cache(results_dir: str, save_file: str='r.pkl') -> pd.DataFrame:
     dir_names = sorted([fname
                         for fname in os.listdir(results_dir)
                         if os.path.isdir(oj(results_dir, fname))
@@ -34,7 +35,40 @@ def load_results_and_cache(results_dir, save_file='r.pkl'):
             print('skipping', dir_name)
 
     r = pd.concat(results_list, axis=1).T.infer_objects()
-    r.to_pickle(os.path.join(results_dir, save_file))
+    r.to_pickle(oj(results_dir, save_file))
+    return r
+
+
+def load_results_and_cache_json(results_dir: str, save_file: str='r.pkl') -> pd.DataFrame:
+    dir_names = sorted([fname
+                        for fname in os.listdir(results_dir)
+                        if os.path.isdir(oj(results_dir, fname))
+                        and os.path.exists(oj(results_dir, fname, 'results.json'))
+                        ])
+    dfs = []
+    for dir_name in tqdm(dir_names):
+        try:
+            json_filename = oj(results_dir, dir_name, 'results.json')
+            json_dict = json.load(open(json_filename, 'r'))
+            del json_dict['task_name_list'] # backwards compatibility with prev unneeded key
+            df = pd.DataFrame.from_dict(json_dict)
+            df['json_filename'] = json_filename
+            # get index of first answer, which will be nan if there isn't one (if all
+            # answers were wrong).
+            first_answer_idx = (df.index[df['prefixes__check_answer_func']]).min()
+            if pd.isna(first_answer_idx):
+                df['final_answer_full'] = np.NaN
+                df['final_answer_pos_initial_token'] = float('inf')
+            else:
+                df['final_answer_full'] =  df.prefixes.iloc[first_answer_idx]
+                df['final_answer_pos_initial_token'] = first_answer_idx
+            dfs.append(df)
+        except Exception as e:
+            print("e:", e)
+            print('skipping', dir_name)
+
+    r = pd.concat(dfs, axis=0)
+    r.to_pickle(oj(results_dir, save_file))
     return r
 
 
@@ -123,11 +157,12 @@ def get_hue_order(legend_names):
     return [k for k in SORTED_HUE_NAMES if k in legend_names.unique()]
 
 
-def plot_tab(tab, metric_key, title):
+def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = True):
     # reformat legend
 
-    tab['legend'] = tab['use_single_query'].map(
-        LEGEND_REMAP) + ' (' + tab['n_shots'].astype(str) + '-shot)'
+    if add_legend:
+        tab['legend'] = tab['use_single_query'].map(
+            LEGEND_REMAP) + ' (' + tab['n_shots'].astype(str) + '-shot)'
 
     # sort the plot
     hue_order = get_hue_order(tab['legend'])
