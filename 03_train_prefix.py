@@ -114,18 +114,21 @@ def train(
             # only evaluate on single next-token
             next_token_ids = next_token_ids[:, 0]
 
-            loss, n_correct = model.compute_loss(
+            loss, n_correct = model.compute_loss_and_call_backward(
                 original_input_ids=input_ids,
                 next_token_ids=next_token_ids,
                 possible_answer_mask=possible_answer_mask
             )
-            loss.backward()
 
             total_n += len(next_token_ids)
             total_n_correct += n_correct
 
             all_losses.append(loss)
             pbar.set_description(f"Loss = {torch.tensor(all_losses).mean():.3f}")
+
+            if not args.accum_grad_over_epoch:
+                optim.step()
+                optim.zero_grad()
         
         avg_loss = sum(all_losses) / len(all_losses)
         print(f"Epoch {epoch}. average loss = {avg_loss:.3f} / {total_n_correct} / {total_n} correct ({total_n_correct/total_n*100:.2f}%)")
@@ -141,10 +144,9 @@ def train(
 
         model.post_epoch(dataloader=val_dataloader, possible_answer_mask=possible_answer_mask)
 
-        # optimize
-        optim.step()
-        optim.zero_grad()
-
+        if args.accum_grad_over_epoch:
+            optim.step()
+            optim.zero_grad()
 
     return r
 
@@ -185,8 +187,10 @@ if __name__ == '__main__':
                         help='number of shots in the prompt')
     parser.add_argument('--hotflip_num_candidates', type=int, default=10,
                         help='number of candidates to rerank, for hotflip')
+    parser.add_argument('--accum_grad_over_epoch', type=int, default=0, choices=(0, 1),
+                        help='should we clear gradients after a batch, or only at the end of the epoch?')
     parser.add_argument('--num_learned_tokens', type=int, default=1,
-                        help='number of learned prefix tokens (for gumbel, hotflip, prompt-tuning)')
+                        help='number of learned prefix tokens (for gumbel, hotflip, autoprompt, prompt-tuning)')
     parser.add_argument('--use_preprefix', type=int, default=1, choices=(0, 1), 
                         help='whether to use a template pre-prefix')
     parser.add_argument('--llm_parsimonious',  '--parsimonious', type=int, default=0, choices=(0, 1),
@@ -222,6 +226,9 @@ if __name__ == '__main__':
     checkpoint = args.checkpoint
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     tokenizer.pad_token = tokenizer.eos_token
+
+    if args.model_cls == 'autoprompt':
+        args.accum_grad_over_epoch = 0
 
     if args.llm_parsimonious:
         lm = AutoModelForCausalLM.from_pretrained(

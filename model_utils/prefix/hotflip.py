@@ -119,7 +119,7 @@ class HotFlip(PrefixModel):
         )
         return input_ids, original_loss, n_correct
 
-    def compute_loss(
+    def compute_loss_and_call_backward(
             self,
             original_input_ids: torch.Tensor,
             next_token_ids: torch.Tensor,
@@ -136,6 +136,8 @@ class HotFlip(PrefixModel):
             next_token_ids=next_token_ids,
             possible_answer_mask=possible_answer_mask
         )
+
+        loss.backward()
 
         # self._set_prefix_ids(best_prefix)
         return loss, n_correct
