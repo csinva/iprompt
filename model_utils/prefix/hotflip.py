@@ -69,7 +69,7 @@ class HotFlipPrefixModel(PrefixModel):
             self.token_embedding.to(device).forward(self.prefix_ids), requires_grad=True
         )
         # track prefixes we've tried
-        self._tested_prefix_ids[(tuple(new_ids.flatten().tolist()), self._swap_token_idx)] = 1
+        self._tested_prefix_ids[(tuple(new_ids.flatten().tolist()), self._swap_token_idx)] += 1
 
     def pre_epoch(self) -> None:
         # Print closest tokens at the beginning of each epoch.
@@ -159,7 +159,8 @@ class HotFlipPrefixModel(PrefixModel):
         # dist_sum = (swap_token_logits.log_softmax(dim=1) * .7 + (-1 * token_grads).log_softmax(dim=1))
         # for v in (swap_token_logits.log_softmax(dim=1) * .7 + (-1 * token_grads).log_softmax(dim=1)).topk(10).indices.flatten(): print(rvocab[v.item()])
 
-        alpha = 1.0 # TODO argparse for this alpha
+        alpha = 0.0 # TODO argparse for this alpha
+        print(f"HotFlip alpha = {alpha}")
         token_losses = (
             (swap_token_logits.log_softmax(dim=1) * alpha + (-1 * token_grads).log_softmax(dim=1))
         )
@@ -168,7 +169,6 @@ class HotFlipPrefixModel(PrefixModel):
         # if we've already tried this (prefix, swap_token_idx) combo, then let's try the next n candidates.
         _n = self._tested_prefix_ids[tuple(self.prefix_ids.flatten().tolist()), token_idx] - 1
         assert _n >= 0, "something went wrong"
-        if _n > 1: breakpoint()
         top_swap_tokens = top_swap_tokens[(_n * self._num_candidates_per_prefix_token) : (_n+1) * self._num_candidates_per_prefix_token]
         # 
         # Evaluate candidates.
