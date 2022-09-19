@@ -16,8 +16,9 @@ import pandas as pd
 from tqdm import tqdm
 from collections import defaultdict
 from model_utils.prefix import (
+    AutoPrompt,
     PrefixLoss, PrefixModel,
-    PromptTunedModel, HotFlipPrefixModel, GumbelPrefixModel
+    PromptTunedModel, HotFlip, GumbelPrefixModel
 )
 import pandas as pd
 from datasets import Dataset
@@ -32,8 +33,9 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 model_cls_dict = {
+    'autoprompt': AutoPrompt,
     'gumbel': GumbelPrefixModel,
-    'hotflip': HotFlipPrefixModel,
+    'hotflip': HotFlip,
     'prompt_tune': PromptTunedModel,
 }
 

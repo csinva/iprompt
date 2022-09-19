@@ -19,7 +19,8 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 VERBOSE = False # whether to print grads, etc.
 TOP_K = 20 # for printing grads, etc.
 
-class HotFlipPrefixModel(PrefixModel):
+
+class HotFlip(PrefixModel):
     args: argparse.Namespace
     loss_func: PrefixLoss
     model: transformers.PreTrainedModel
@@ -303,3 +304,5 @@ class HotFlipPrefixModel(PrefixModel):
             ), dim=1
         )
         return full_input_ids, outputs
+
+
