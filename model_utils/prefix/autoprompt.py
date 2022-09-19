@@ -1,8 +1,10 @@
+from typing import Optional, Tuple
+
 import argparse
 import torch
 import transformers
 
-from .hotflip import HotFlip
+from .hotflip import HotFlip, device
 from .utils import PrefixLoss, PrefixModel
 
 
@@ -14,59 +16,19 @@ class AutoPrompt(HotFlip):
     prefix_ids: torch.Tensor
     prefix_embedding: torch.nn.Parameter
     preprefix: str
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(
+            self,
+            args: argparse.Namespace,
+            loss_func: PrefixLoss,
+            model: transformers.PreTrainedModel,
+            tokenizer: transformers.PreTrainedTokenizer,
+            preprefix: str = 'The function to compute is'
+        ):
+        super().__init__(
+            args=args, loss_func=loss_func, model=model, tokenizer=tokenizer, preprefix=preprefix
+        )
         # AutoPrompt-specific parameters.
         self._num_candidates_per_prefix_token = args.hotflip_num_candidates # V_cand in autoprompt paper
-    
-    def _set_prefix_ids(self, new_ids: torch.Tensor) -> None:
-        self.prefix_ids = new_ids.to(device)
-        self.prefix_embedding = torch.nn.Parameter(
-            self.token_embedding.to(device).forward(self.prefix_ids), requires_grad=True
-        )
-        # track prefixes we've tried
-        self._tested_prefix_ids[(tuple(new_ids.flatten().tolist()), self._swap_token_idx)] += 1
-
-    def pre_epoch(self) -> None:
-        # Print closest tokens at the beginning of each epoch.
-        if VERBOSE:
-            print("*" *  30)
-            print(f"Epoch {epoch}. Closest tokens to '{prefix_str}':")
-            word_distances =  ((self.token_embedding.weight - self.prefix_embedding.reshape(1, emb_dim))**2).sum(1)
-            assert word_distances.shape == (50_257,)
-            topk_closest_words = distances = word_distances.topk(k=TOP_K, largest=False)
-            for _id, _dist in zip(topk_closest_words.indices.cpu().tolist(), topk_closest_words.values.cpu().tolist()):
-                print(f'\t{self.id_to_word[_id]} ({_id}): {_dist:.3f}')
-            print("*" * 30)
-    
-    @property
-    def _prefix_token_grad(self) -> torch.Tensor:
-        """Gradient of the prefix tokens wrt the token embedding matrix."""
-        return torch.einsum('nd,vd->nv', self.prefix_embedding.grad, self.token_embedding.weight)
-
-    def _compute_loss_with_set_prefix(
-            self,
-            original_input_ids: torch.Tensor,
-            next_token_ids: torch.Tensor,
-            possible_answer_mask: torch.Tensor,
-            prefix_ids: Optional[torch.Tensor] = None
-        ) -> torch.Tensor:
-        input_ids, outputs = self.forward(input_ids=original_input_ids, prefix_ids=prefix_ids)
-
-        next_token_logits = outputs.logits[:, -1, :]
-        n_correct = (
-            next_token_logits.argmax(dim=-1)
-                ==
-            next_token_ids
-        ).int().sum()
-
-        original_loss = self.loss_func(
-            input_ids=input_ids,
-            next_token_ids=next_token_ids,
-            logits=outputs['logits'],
-            answer_mask=possible_answer_mask
-        )
-        return input_ids, original_loss, n_correct
 
     def compute_loss(
             self,

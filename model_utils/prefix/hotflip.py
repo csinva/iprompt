@@ -28,8 +28,14 @@ class HotFlip(PrefixModel):
     prefix_ids: torch.Tensor
     prefix_embedding: nn.Parameter
     preprefix: str
-    def __init__(self, args: argparse.Namespace, loss_func: PrefixLoss, model: transformers.PreTrainedModel, tokenizer: transformers.PreTrainedTokenizer,
-        preprefix: str = 'The function to compute is'):
+    def __init__(
+            self,
+            args: argparse.Namespace,
+            loss_func: PrefixLoss,
+            model: transformers.PreTrainedModel,
+            tokenizer: transformers.PreTrainedTokenizer,
+            preprefix: str = 'The function to compute is'
+        ):
         super().__init__(
             args=args, loss_func=loss_func, model=model, tokenizer=tokenizer, preprefix=preprefix
         )

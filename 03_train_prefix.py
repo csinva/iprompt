@@ -189,7 +189,7 @@ if __name__ == '__main__':
                         help='number of learned prefix tokens (for gumbel, hotflip, prompt-tuning)')
     parser.add_argument('--use_preprefix', type=int, default=1, choices=(0, 1), 
                         help='whether to use a template pre-prefix')
-    parser.add_argument('--llm_parsimonious',  '--parsimonious', type=int, default=1, choices=(0, 1),
+    parser.add_argument('--llm_parsimonious',  '--parsimonious', type=int, default=0, choices=(0, 1),
                         help='if true, loads LLM in fp16 and at low-ram')
     parser.add_argument('--max_num_val_samples', type=int, default=0,
                         help='if > 0, max number of samples to use for post-epoch evaluation')
