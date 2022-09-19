@@ -2,6 +2,7 @@ from typing import Iterable, Optional, Tuple
 
 import argparse
 import os
+import random
 import pickle
 
 import torch
@@ -50,16 +51,21 @@ class HotFlipPrefixModel(PrefixModel):
         # disable grads to model
         for p in self.model.parameters(): p.requires_grad = False
 
-        # track epoch
+        # track data specific to HotFlip
         self._epoch = 0
         self._data = []
+        # TODO use some kind of fixed-size data structure
+        # if number of tested candidates is growing unboundedly
+        self._loss_for_prefix = {}
+        self._tested_prefix_ids = set()
     
     def _set_prefix_ids(self, new_ids: torch.Tensor) -> None:
-        self.prefix_ids = new_ids
-        # self.prefix_embedding = self.init_continuous_prefix()
+        self.prefix_ids = new_ids.to(device)
         self.prefix_embedding = nn.Parameter(
             self.token_embedding.forward(self.prefix_ids), requires_grad=True
         )
+        # track prefixes we've tried
+        self._tested_prefix_ids.add(tuple(new_ids.flatten().tolist()))
 
     def pre_epoch(self) -> None:
         # Print closest tokens at the beginning of each epoch.
@@ -132,25 +138,26 @@ class HotFlipPrefixModel(PrefixModel):
         top_tokens_per_position = (
             token_grads.topk(k=self._num_candidates_per_prefix_token, dim=1, largest=False).indices
         )
-        # breakpoint()
         assert top_tokens_per_position.shape == (self._num_tokens, self._num_candidates_per_prefix_token)
 
         top_swap_tokens = top_tokens_per_position[token_idx, :]
         #
         # Get most likely tokens.
         #
-        # prefix_until_swap_ids = torch.cat(
-        #     (self.preprefix_ids.to(device), self.prefix_ids[None, :token_idx].to(device)), dim=1
-        # ).to(device)
-        swap_token_logits = self.model(self.preprefix_ids[None].to(device)).logits[:, -1, :]
+        prefix_until_swap_ids = torch.cat(
+            (self.preprefix_ids.to(device), self.prefix_ids[:token_idx].to(device)), dim=0
+        )[None].to(device)
+        with torch.no_grad():
+            all_preprefix_logits = self.model(prefix_until_swap_ids)
+            swap_token_logits = all_preprefix_logits.logits[:, -1, :]
 
         rvocab = {v: k for k,v in self.tokenizer.vocab.items()}
         # dist_sum = (swap_token_logits.log_softmax(dim=1) * .7 + (-1 * token_grads).log_softmax(dim=1))
         # for v in (swap_token_logits.log_softmax(dim=1) * .7 + (-1 * token_grads).log_softmax(dim=1)).topk(10).indices.flatten(): print(rvocab[v.item()])
 
-
+        alpha = 1.0 # TODO argparse for this alpha
         token_losses = (
-            (swap_token_logits.log_softmax(dim=1) * 1.0 + (-1 * token_grads).log_softmax(dim=1))
+            (swap_token_logits.log_softmax(dim=1) * alpha + (-1 * token_grads).log_softmax(dim=1))
         )
         top_swap_tokens = token_losses.argsort(descending=True).flatten()
         top_swap_tokens = top_swap_tokens[:self._num_candidates_per_prefix_token]
@@ -165,6 +172,7 @@ class HotFlipPrefixModel(PrefixModel):
             torch.tensor(token_idx), num_classes=self._num_tokens
         ).bool().to(device)
 
+        # Evaluate each prefix.
         for batch in tqdm.tqdm(dataloader, desc='evaluating HotFlip candidates', colour='red', leave=False):
             # Loop in this order so we only tokenize each thing once.
             x_text = [f'. {prompt}' for prompt in batch['input']]
@@ -191,7 +199,6 @@ class HotFlipPrefixModel(PrefixModel):
                 all_candidate_losses[candidate_idx] += loss
                 all_n_correct[candidate_idx] += n_correct
 
-
         ##################################################################################################################
         hotflip_out_path = os.path.join(self.args.save_dir_unique, 'hotflip_grads_data.p')
         for _i in range(self._num_candidates_per_prefix_token):
@@ -204,15 +211,24 @@ class HotFlipPrefixModel(PrefixModel):
         ##################################################################################################################
 
         #
-        # Recreate prefix with min loss.
+        # Collect losses for all prefixes. Then set prefix to best one we haven't seen before.
         #
-        min_loss = all_candidate_losses.min()
-        best_candidate_idx = all_candidate_losses.argmin()
-
-        new_token_id = top_swap_tokens[best_candidate_idx]
-        best_prefix_ids = torch.where(
-            mask, new_token_id, self.prefix_ids.to(device)
-        ).to(device)
+        for candidate_idx in range(self._num_candidates_per_prefix_token):
+            new_token_id = top_swap_tokens[candidate_idx]
+            prefix_ids = tuple(
+                torch.where(
+                    mask, new_token_id, self.prefix_ids.to(device)
+                ).tolist()
+            )
+            self._loss_for_prefix[prefix_ids] = (
+                all_candidate_losses[candidate_idx].item(),
+                all_n_correct[candidate_idx].item()
+            )
+        
+        # next prefix is the one we know about with the min loss that we haven't tried
+        # so far.
+        best_prefix_ids = min(self._loss_for_prefix, key=lambda p: self._loss_for_prefix.get(p)[0])
+        best_loss, best_n_correct =  self._loss_for_prefix[best_prefix_ids]
 
         # if loss < self._min_loss:
         #     self._min_loss = loss
@@ -222,16 +238,13 @@ class HotFlipPrefixModel(PrefixModel):
         # Pick top candidate and reset self._min_loss. (TODO: Support beam width > 1.)
         # 
         old_prefix_str = self.tokenizer.decode(self.preprefix_ids.tolist() + self.prefix_ids.tolist())
-        new_prefix_str = self.tokenizer.decode(self.preprefix_ids.tolist() + best_prefix_ids.tolist())
-        print(f'[Loss = {min_loss/len(dataloader):.2f}] // Old prefix: {old_prefix_str} // New prefix: {new_prefix_str} // New n_correct = {all_n_correct[best_candidate_idx].item()}')
+        new_prefix_str = self.tokenizer.decode(self.preprefix_ids.tolist() + list(best_prefix_ids))
+        print(f'[Loss = {best_loss/len(dataloader):.2f}] // Old prefix: {old_prefix_str} // New prefix: {new_prefix_str} // New n_correct = {best_n_correct}')
 
-        if (best_prefix_ids == self.prefix_ids.to(device)).all():
-            print('no change in prefix, exiting')
-            exit()
-        self._set_prefix_ids(best_prefix_ids)
-        # breakpoint()
+        self._set_prefix_ids(torch.tensor(best_prefix_ids))
+        # self._swap_token_idx = (self._swap_token_idx + 1) % self._num_tokens
+        self._swap_token_idx = random.randint(0, (self._num_tokens-1))
 
-        self._swap_token_idx = (self._swap_token_idx + 1) % self._num_tokens
         return
 
     @property
