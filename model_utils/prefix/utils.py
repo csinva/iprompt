@@ -241,7 +241,7 @@ class PrefixModel(nn.Module, abc.ABC):
         print(f"start_word_id = {start_word_id}")
         return start_word_id.repeat((num_tokens,))
     
-    def compute_loss(
+    def compute_loss_and_call_backward(
             self,
             original_input_ids: torch.Tensor,
             next_token_ids: torch.Tensor,
@@ -269,4 +269,5 @@ class PrefixModel(nn.Module, abc.ABC):
             logits=outputs['logits'],
             answer_mask=possible_answer_mask
         )
+        loss.backward()
         return loss, n_correct
