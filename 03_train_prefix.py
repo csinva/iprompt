@@ -59,6 +59,12 @@ def train(
     model = model.to(device)
     dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=True, drop_last=False)
 
+    # Support computing things from just a single ´xample
+    val_dset = dset.shuffle()
+    if (args.max_num_val_samples > 0):
+         val_dset = val_dset.filter(lambda _, i: (i < args.max_num_val_samples), with_indices=True)
+    val_dataloader = DataLoader(val_dset, batch_size=args.batch_size, shuffle=False, drop_last=False)
+
     # optimizer
     optim = torch.optim.AdamW(model.trainable_params, lr=args.lr)
 
@@ -131,7 +137,7 @@ def train(
             os.makedirs(save_dir, exist_ok=True)
             pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
 
-        model.post_epoch(dataloader=dataloader, possible_answer_mask=possible_answer_mask)
+        model.post_epoch(dataloader=val_dataloader, possible_answer_mask=possible_answer_mask)
 
         # optimize
         optim.step()
@@ -183,6 +189,8 @@ if __name__ == '__main__':
                         help='whether to use a template pre-prefix')
     parser.add_argument('--llm_parsimonious',  '--parsimonious', type=int, default=1, choices=(0, 1),
                         help='if true, loads LLM in fp16 and at low-ram')
+    parser.add_argument('--max_num_val_samples', type=int, default=0,
+                        help='if > 0, max number of samples to use for post-epoch evaluation')
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",
                         choices=(
                             ############################
