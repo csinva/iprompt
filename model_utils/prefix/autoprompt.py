@@ -57,7 +57,7 @@ class AutoPrompt(HotFlip):
         # Get top token replacements
         # 
         token_grads = self._prefix_token_grad
-        assert token_grads.shape == (self._num_tokens, self.tokenizer.vocab_size)
+        assert token_grads.shape == (self._num_tokens, len(self.tokenizer.vocab))
         top_tokens_per_position = (
             token_grads.topk(k=self._num_candidates_per_prefix_token, dim=1, largest=False).indices
         )
@@ -105,7 +105,7 @@ class AutoPrompt(HotFlip):
         # it's not mentioned in the paper
         self._swap_token_idx = random.randint(0, (self._num_tokens-1))
 
-        return new_prefix_loss, n_correct
+        return new_prefix_loss, new_prefix_n_correct
         
     def post_epoch(self, dataloader: torch.utils.data.DataLoader, possible_answer_mask: torch.Tensor) -> None:
         # 
