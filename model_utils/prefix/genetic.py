@@ -34,7 +34,7 @@ class GeneticAutoPrompt(AutoPrompt):
             loss_func: PrefixLoss,
             model: transformers.PreTrainedModel,
             tokenizer: transformers.PreTrainedTokenizer,
-            preprefix: str = 'The function to compute is'
+            preprefix: str = ''
         ):
         super().__init__(
             args=args, loss_func=loss_func, model=model, tokenizer=tokenizer, preprefix=preprefix
@@ -47,15 +47,15 @@ class GeneticAutoPrompt(AutoPrompt):
         ####################################################################
         # TODO argparse for GA-specific hparams
         self._top_k_pop_sample = 32 # sample next population from this num of top things
-        self._pop_size = 6 
-        self._num_mutations_per_ex = 8 # num mutations for each population item
-        self._num_random_generations = 2 # extra random examples to throw in there
-        self._generation_temp = 1.0
-        self._generation_top_p = 1.0
+        self._pop_size = 15
+        self._num_mutations_per_ex = 4 # num mutations for each population item
+        self._num_random_generations = 1 # extra random examples to throw in there
+        self._generation_temp = 0.9
+        self._generation_top_p = 0.9
         ####################################################################
         # Initialize population
         self.model = self.model.to(device)
-        for _ in range(self._pop_size):
+        while len(self._genetic_pool_loss) < self._pop_size:
             input_ids = self._generate(input_ids=None)
             input_ids = tuple(input_ids.cpu().flatten().tolist())
             self._genetic_pool_loss[input_ids] = 10_000.0
@@ -84,8 +84,9 @@ class GeneticAutoPrompt(AutoPrompt):
     
     def _get_population(self) -> torch.Tensor:
         # TODO sample from population instead of taking top-k?
-        population_pool = self._select_pop_top_k(k=self._top_k_pop_sample)
-        population = random.sample(population_pool, self._pop_size)
+        population = self._select_pop_top_k(k=self._pop_size)
+        # population_pool = self._select_pop_top_k(k=self._top_k_pop_sample)
+        # population = random.sample(population_pool, self._pop_size)
         return torch.tensor(population).to(device)
     
     def _get_population_and_random_generations(self) -> torch.Tensor:
@@ -155,7 +156,6 @@ class GeneticAutoPrompt(AutoPrompt):
         self._print_pop()
         # Grab new population
         population_input_ids = self._get_population_and_random_generations()
-        # Truncate & generate
         population_input_ids = self._mutate(population_input_ids)
         # Re-score new guys
         self._score_population(

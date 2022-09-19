@@ -31,7 +31,7 @@ class HotFlip(PrefixModel):
             loss_func: PrefixLoss,
             model: transformers.PreTrainedModel,
             tokenizer: transformers.PreTrainedTokenizer,
-            preprefix: str = 'The function to compute is'
+            preprefix: str = ''
         ):
         super().__init__(
             args=args, loss_func=loss_func, model=model, tokenizer=tokenizer, preprefix=preprefix
