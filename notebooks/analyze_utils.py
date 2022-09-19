@@ -142,21 +142,22 @@ LEGEND_REMAP = {
 # reds ['#4c1d4b', '#a11a5b', '#e83f3f', '#f69c73']
 # greens ['#348ba6', '#38aaac', '#55caad', '#a1dfb9']
 COLORS = OrderedDict({
-    'Suffix, average-output decoding (1-Ex.)': '#9ecae1',
-    'Suffix, average-output decoding (5-Ex.)': '#4292c6',
-    'Suffix, average-output decoding (10-Ex.)': '#084594',
     'Suffix, single-output decoding (1-Ex.)': '#d9d9d9',
     'Suffix, single-output decoding (5-Ex.)': '#969696',
     'Suffix, single-output decoding (10-Ex.)': '#525252',
+    'Suffix, average-output decoding (1-Ex.)': '#9ecae1',
+    'Suffix, average-output decoding (5-Ex.)': '#4292c6',
+    'Suffix, average-output decoding (10-Ex.)': '#084594',
     ############################################################
-    'Prefix, average-output with reranking (1-Ex.)': '#f69c73', 
-    'Prefix, average-output with reranking (5-Ex.)': '#e83f3f',
-    'Prefix, average-output (1-Ex.)': '#a11a5b',
-    'Prefix, average-output (5-Ex.)': '#4c1d4b',
-    'Prefix, single-output (1-Ex.)': '#f0f0f0',
+    'Prefix, single-output (1-Ex.)': '#d9d9d9',
     'Prefix, single-output (5-Ex.)': '#bdbdbd',
     'Prefix, single-output with reranking (1-Ex.)': '#969696',
-    'Prefix, single-output (5-Ex.)': '#525252',
+    'Prefix, single-output with reranking (5-Ex.)': '#525252',
+    'Prefix, average-output (1-Ex.)': '#f69c73', 
+    'Prefix, average-output (5-Ex.)': '#e83f3f',
+    'Prefix, average-output with reranking (1-Ex.)': '#a11a5b',
+    'Prefix, average-output with reranking (5-Ex.)': '#4c1d4b',
+   
 }.items())
 SORTED_HUE_NAMES = list(COLORS.keys())
 
@@ -164,6 +165,7 @@ SORTED_HUE_NAMES = list(COLORS.keys())
 YLABS = {
     'final_num_suffixes_checked': 'Number of suffixes checked before finding correct answer\n(lower is better)',
     'final_answer_pos_initial_token': 'Rank of correct suffix (lower is better)',
+    'reciprocal_rank': 'Reciprocal rank (higher is better)',
 }
 
 
@@ -197,12 +199,12 @@ def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = 
                      data=tab, palette=COLORS)  # data=tab[tab['n_shots'] == 1])
     plt.xlabel('Model name')
     plt.ylabel(YLABS.get(metric_key, metric_key))
-    plt.title(title, fontsize='medium')
+    # plt.title(title, fontsize='medium')
 
     # remove legend title
     handles, labels = ax.get_legend_handles_labels()
-    ax.legend(handles=handles[:], labels=labels[:])
-    #   loc='center left', bbox_to_anchor=(1, 0.5))
+    ax.legend(handles=handles[:], labels=labels[:], bbox_to_anchor=(1, 0.9)) #, labelcolor='linecolor')
+    #   loc='center left')
 
     plt.tight_layout()
     # plt.show()
