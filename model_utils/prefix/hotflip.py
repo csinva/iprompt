@@ -1,6 +1,7 @@
 from typing import Iterable, Optional, Tuple
 
 import argparse
+import collections
 import os
 import random
 import pickle
@@ -36,13 +37,17 @@ class HotFlipPrefixModel(PrefixModel):
         self._num_tokens = args.num_learned_tokens # TODO argparse for n_tokens
         self._num_candidates_per_prefix_token = args.hotflip_num_candidates # TODO argparse for this too
         self._swap_token_idx = 0
+
+        self._tested_prefix_ids = collections.defaultdict(lambda: 0)
         # Sort both a version with a preprefix ("The function to compute is") and a version
         # where the full prefix is discovered by HotFlip without any assistance.
         preprefix_ids = [self.tokenizer.bos_token_id]
         if preprefix:
             preprefix_ids.extend(self.tokenizer.encode(preprefix))
         self.preprefix_ids = torch.tensor(preprefix_ids, dtype=int).to(device)
-        self.prefix_ids = self.init_discrete_prefix(num_tokens=self._num_tokens)
+        self._set_prefix_ids(
+            self.init_discrete_prefix(num_tokens=self._num_tokens)
+        )
         self.prefix_embedding = nn.Parameter(
             self.token_embedding.forward(self.prefix_ids), requires_grad=True
         )
@@ -57,15 +62,14 @@ class HotFlipPrefixModel(PrefixModel):
         # TODO use some kind of fixed-size data structure
         # if number of tested candidates is growing unboundedly
         self._loss_for_prefix = {}
-        self._tested_prefix_ids = set()
     
     def _set_prefix_ids(self, new_ids: torch.Tensor) -> None:
         self.prefix_ids = new_ids.to(device)
         self.prefix_embedding = nn.Parameter(
-            self.token_embedding.forward(self.prefix_ids), requires_grad=True
+            self.token_embedding.to(device).forward(self.prefix_ids), requires_grad=True
         )
         # track prefixes we've tried
-        self._tested_prefix_ids.add(tuple(new_ids.flatten().tolist()))
+        self._tested_prefix_ids[(tuple(new_ids.flatten().tolist()), self._swap_token_idx)] = 1
 
     def pre_epoch(self) -> None:
         # Print closest tokens at the beginning of each epoch.
@@ -160,7 +164,12 @@ class HotFlipPrefixModel(PrefixModel):
             (swap_token_logits.log_softmax(dim=1) * alpha + (-1 * token_grads).log_softmax(dim=1))
         )
         top_swap_tokens = token_losses.argsort(descending=True).flatten()
-        top_swap_tokens = top_swap_tokens[:self._num_candidates_per_prefix_token]
+
+        # if we've already tried this (prefix, swap_token_idx) combo, then let's try the next n candidates.
+        _n = self._tested_prefix_ids[tuple(self.prefix_ids.flatten().tolist()), token_idx] - 1
+        assert _n >= 0, "something went wrong"
+        if _n > 1: breakpoint()
+        top_swap_tokens = top_swap_tokens[(_n * self._num_candidates_per_prefix_token) : (_n+1) * self._num_candidates_per_prefix_token]
         # 
         # Evaluate candidates.
         # 
@@ -241,9 +250,10 @@ class HotFlipPrefixModel(PrefixModel):
         new_prefix_str = self.tokenizer.decode(self.preprefix_ids.tolist() + list(best_prefix_ids))
         print(f'[Loss = {best_loss/len(dataloader):.2f}] // Old prefix: {old_prefix_str} // New prefix: {new_prefix_str} // New n_correct = {best_n_correct}')
 
+        self._swap_token_idx = (self._swap_token_idx + 1) % self._num_tokens
+        # self._swap_token_idx = random.randint(0, (self._num_tokens-1))
+
         self._set_prefix_ids(torch.tensor(best_prefix_ids))
-        # self._swap_token_idx = (self._swap_token_idx + 1) % self._num_tokens
-        self._swap_token_idx = random.randint(0, (self._num_tokens-1))
 
         return
 

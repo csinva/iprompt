@@ -231,13 +231,13 @@ class PrefixModel(nn.Module, abc.ABC):
         # return nn.Parameter(prefix_emb[:, 0, :], requires_grad=True).to(device)
     
     def init_discrete_prefix(self, num_tokens: int) -> nn.Parameter:
-        # TODO: argparse for params
-        # start_word_id = torch.tensor([self.tokenizer.vocab['the']], dtype=int)
+        # TODO: argparse for starting token
         # start_word_id = torch.tensor([self.tokenizer.encode(' multiply')[0]], dtype=int)
         # start_word_id = torch.tensor([self.tokenizer.encode(' hello')[0]], dtype=int)
         # start_word_id = torch.tensor([self.tokenizer.encode('ogg')[0]], dtype=int)
         # start_word_id = torch.tensor([self.tokenizer.encode(' add')[0]], dtype=int)
         start_word_id = torch.tensor([self.tokenizer.encode('<|endoftext|>')[0]], dtype=int)
+        # start_word_id = torch.tensor([self.tokenizer.vocab['the']], dtype=int)
         print(f"start_word_id = {start_word_id}")
         return start_word_id.repeat((num_tokens,))
     
