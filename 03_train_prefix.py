@@ -16,7 +16,7 @@ import pandas as pd
 from tqdm import tqdm
 from collections import defaultdict
 from model_utils.prefix import (
-    AutoPrompt,
+    AutoPrompt, GeneticAutoPrompt,
     PrefixLoss, PrefixModel,
     PromptTunedModel, HotFlip, GumbelPrefixModel
 )
@@ -34,6 +34,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 model_cls_dict = {
     'autoprompt': AutoPrompt,
+    'genetic': GeneticAutoPrompt,
     'gumbel': GumbelPrefixModel,
     'hotflip': HotFlip,
     'prompt_tune': PromptTunedModel,
@@ -227,17 +228,14 @@ if __name__ == '__main__':
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     tokenizer.pad_token = tokenizer.eos_token
 
-    if args.model_cls == 'autoprompt':
-        args.accum_grad_over_epoch = 0
-
     if args.llm_parsimonious:
         lm = AutoModelForCausalLM.from_pretrained(
-            checkpoint, output_hidden_states=False,
+            checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id,
             revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True
         )
     else:    
         lm = AutoModelForCausalLM.from_pretrained(
-            checkpoint, output_hidden_states=False
+            checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id
         )
     loss_func = PrefixLoss(gamma=args.gamma, tokenizer=tokenizer)
 

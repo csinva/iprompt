@@ -5,8 +5,8 @@ import random
 import torch
 import transformers
 
-from .hotflip import HotFlip, device
-from .utils import PrefixLoss, PrefixModel
+from .hotflip import HotFlip
+from .utils import device, PrefixLoss, PrefixModel
 
 
 class AutoPrompt(HotFlip):

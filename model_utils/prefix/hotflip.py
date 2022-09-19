@@ -11,10 +11,7 @@ import torch.nn as nn
 import tqdm
 import transformers
 
-from .utils import PrefixLoss, PrefixModel
-
-
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+from .utils import device, PrefixLoss, PrefixModel
 
 VERBOSE = False # whether to print grads, etc.
 TOP_K = 20 # for printing grads, etc.
