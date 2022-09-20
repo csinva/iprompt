@@ -198,12 +198,20 @@ class GeneticAutoPrompt(AutoPrompt):
             full_text_ids (int torch.Tensor): input IDs for each data item in the batch. Intended
                 be used to do prefix generation conditioned on data
         """
+        assert population_input_ids.shape[1] == self._num_tokens
         input_ids = population_input_ids.repeat((self._num_mutations_per_ex, 1))
+
+        self._roll_before_truncation = True
+        if self._roll_before_truncation:
+            roll_amount = random.randint(0, self._num_tokens-1)
+            input_ids = torch.roll(input_ids, roll_amount, dims=[1])
+
         truncate_position = random.randint(0, self._num_tokens-1)
+        truncated_input_ids = input_ids[:, :truncate_position]
 
         random_idxs = torch.randint(low=0, high=len(full_text_ids), size=(len(input_ids), ))
         random_full_text_ids = full_text_ids[random_idxs]
-        conditional_input_ids = torch.cat((random_full_text_ids, input_ids[:, :truncate_position]), dim=1)
+        conditional_input_ids = torch.cat((random_full_text_ids, truncated_input_ids), dim=1)
 
         num_conditional_tokens = full_text_ids.shape[1]
         new_input_ids = self._generate(
