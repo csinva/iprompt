@@ -16,7 +16,9 @@ import json
 import os
 
 
-def load_results_and_cache(results_dir: str, save_file: str='r.pkl') -> pd.DataFrame:
+def load_results_and_cache(results_dir: str, save_file: str = 'r.pkl') -> pd.DataFrame:
+    """Suffix script stores results_final.pkl instead of results.json
+    """
     dir_names = sorted([fname
                         for fname in os.listdir(results_dir)
                         if os.path.isdir(oj(results_dir, fname))
@@ -31,7 +33,7 @@ def load_results_and_cache(results_dir: str, save_file: str='r.pkl') -> pd.DataF
             ser_scalar = ser[~ser.apply(
                 lambda x: isinstance(x, list)).values.astype(bool)]
             results_list.append(ser_scalar)
-        except:
+        except Exception as e:
             print('skipping', dir_name)
 
     r = pd.concat(results_list, axis=1).T.infer_objects()
@@ -39,7 +41,9 @@ def load_results_and_cache(results_dir: str, save_file: str='r.pkl') -> pd.DataF
     return r
 
 
-def load_results_and_cache_prefix_json(results_dir: str, save_file: str='r.pkl') -> pd.DataFrame:
+def load_results_and_cache_prefix_json(results_dir: str, save_file: str = 'r.pkl') -> pd.DataFrame:
+    """Prefix script stores results.json instead of results_final.pkl
+    """
     dir_names = sorted([fname
                         for fname in os.listdir(results_dir)
                         if os.path.isdir(oj(results_dir, fname))
@@ -50,7 +54,8 @@ def load_results_and_cache_prefix_json(results_dir: str, save_file: str='r.pkl')
         try:
             json_filename = oj(results_dir, dir_name, 'results.json')
             json_dict = json.load(open(json_filename, 'r'))
-            del json_dict['task_name_list'] # backwards compatibility with prev unneeded key
+            # backwards compatibility with prev unneeded key
+            del json_dict['task_name_list']
             df = pd.DataFrame.from_dict(json_dict)
             df['json_filename'] = json_filename
 
@@ -61,14 +66,15 @@ def load_results_and_cache_prefix_json(results_dir: str, save_file: str='r.pkl')
 
             # get index of first answer, which will be nan if there isn't one (if all
             # answers were wrong).
-            first_answer_idx = (df.index[df['prefixes__check_answer_func']]).min()
+            first_answer_idx = (
+                df.index[df['prefixes__check_answer_func']]).min()
             if pd.isna(first_answer_idx):
                 df['final_answer_full'] = np.NaN
                 df['final_answer_pos_initial_token'] = float('inf')
             else:
-                df['final_answer_full'] =  df.prefixes.iloc[first_answer_idx]
+                df['final_answer_full'] = df.prefixes.iloc[first_answer_idx]
                 df['final_answer_pos_initial_token'] = first_answer_idx
-            
+
             dfs.append(df)
         except Exception as e:
             print("e:", e)
@@ -153,11 +159,11 @@ COLORS = OrderedDict({
     'Prefix, single-output (5-Ex.)': '#bdbdbd',
     'Prefix, single-output with reranking (1-Ex.)': '#969696',
     'Prefix, single-output with reranking (5-Ex.)': '#525252',
-    'Prefix, average-output (1-Ex.)': '#f69c73', 
+    'Prefix, average-output (1-Ex.)': '#f69c73',
     'Prefix, average-output (5-Ex.)': '#e83f3f',
     'Prefix, average-output with reranking (1-Ex.)': '#a11a5b',
     'Prefix, average-output with reranking (5-Ex.)': '#4c1d4b',
-   
+
 }.items())
 SORTED_HUE_NAMES = list(COLORS.keys())
 
@@ -185,25 +191,43 @@ def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = 
     # sort the plot
     hue_order = get_hue_order(tab['legend'])
 
+
+
+    CHECKPOINT_RENAME = {
+        'gpt2-medium': 'GPT-2 (345M)',
+        'gpt2-large': 'GPT-2 (774M)',
+        'gpt2-xl': 'GPT-2 (1.5B)',
+        'EleutherAI/gpt-neo-2.7B': 'GPT-Neo (2.7B)',
+        'EleutherAI/gpt-j-6B': 'GPT-J (6B)',
+        'EleutherAI/gpt-neox-20b': 'GPT-Neo (20B)',
+    }
     SORTED_MODEL_NAMES = [
         'gpt2-medium', 'gpt2-large', 'gpt2-xl',
-        'EleutherAI/gpt-neo-2.7B', 'EleutherAI/gpt-j-6B', 'EleutherAI/gpt-neox-20b', 
+        'EleutherAI/gpt-neo-2.7B', 'EleutherAI/gpt-j-6B', 'EleutherAI/gpt-neox-20b',
     ]
     for checkpoint in tab['checkpoint'].unique():
         assert checkpoint in SORTED_MODEL_NAMES, checkpoint + \
             ' not in ' + str(SORTED_MODEL_NAMES)
-    order = [k for k in SORTED_MODEL_NAMES if k in tab['checkpoint'].unique()]
+    order = [CHECKPOINT_RENAME[k] for k in SORTED_MODEL_NAMES if k in tab['checkpoint'].unique()]
+
+    
+    # print(tab['checkpoint'].map(CHECKPOINT_RENAME))
 
     # make plot
-    ax = sns.barplot(x='checkpoint', y=metric_key, hue='legend', hue_order=hue_order, order=order,
-                     data=tab, palette=COLORS)  # data=tab[tab['n_shots'] == 1])
+    # ax = sns.barplot(x=tab['checkpoint'], y=metric_key, hue='legend', hue_order=hue_order, order=order,
+    #  data=tab, palette=COLORS)  # data=tab[tab['n_shots'] == 1])
+    ax = sns.barplot(x=tab['checkpoint'].map(CHECKPOINT_RENAME).tolist(),
+                     y=tab[metric_key], hue=tab['legend'], hue_order=hue_order, order=order, palette=COLORS)  # data=tab[tab['n_shots'] == 1])
+    # ax = sns.barplot(x=tab['checkpoint'].map(CHECKPOINT_RENAME).tolist(),
+                    #  y=tab[metric_key], hue=tab['legend'], palette=COLORS)
     plt.xlabel('Model name')
     plt.ylabel(YLABS.get(metric_key, metric_key))
     # plt.title(title, fontsize='medium')
 
     # remove legend title
     handles, labels = ax.get_legend_handles_labels()
-    ax.legend(handles=handles[:], labels=labels[:], bbox_to_anchor=(1, 0.9)) #, labelcolor='linecolor')
+    # , labelcolor='linecolor')
+    ax.legend(handles=handles[:], labels=labels[:], bbox_to_anchor=(1, 0.95), frameon=False)
     #   loc='center left')
 
     plt.tight_layout()
