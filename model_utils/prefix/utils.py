@@ -146,7 +146,6 @@ class PrefixLoss:
             )
         )
 
-        if DEBUG_LOSS: print(f"[] loss for input_ids: {self.tokenizer.decode(input_ids[0])}")
         token_loss = (
             self._compute_token_loss(
                 next_token_logits=logits[:, -1, :],
@@ -156,7 +155,9 @@ class PrefixLoss:
         )
 
         loss = token_loss + (self.gamma * fluency_loss)
-        if DEBUG_LOSS: print(f"\tLoss = {loss:.3f}")
+        if DEBUG_LOSS: 
+            print(f">> loss for input string: {self.tokenizer.decode(input_ids[0])}")
+            print(f"\tLoss = {loss:.3f}")
         return loss
 
 
@@ -255,7 +256,8 @@ class PrefixModel(nn.Module, abc.ABC):
             self,
             x_tokenized: transformers.BatchEncoding,
             y_tokenized: transformers.BatchEncoding,
-            possible_answer_mask: Optional[torch.Tensor]
+            possible_answer_mask: Optional[torch.Tensor],
+            full_text_tokenized: Optional[transformers.BatchEncoding] = None
         ) -> Tuple[torch.Tensor, int]:
         """Computes loss using `self.loss_func`.
         

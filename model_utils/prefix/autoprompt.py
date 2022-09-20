@@ -35,7 +35,8 @@ class AutoPrompt(HotFlip):
             self,
             x_tokenized: transformers.BatchEncoding,
             y_tokenized: transformers.BatchEncoding,
-            possible_answer_mask: torch.Tensor
+            possible_answer_mask: torch.Tensor,
+            full_text_tokenized: Optional[transformers.BatchEncoding] = None
         ) -> Tuple[torch.Tensor, int]:
         """Computes loss using `self.loss_func`.
         

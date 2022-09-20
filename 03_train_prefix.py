@@ -1,5 +1,7 @@
 from typing import Dict, List
+
 import datasets
+import functools
 import os
 import random
 import string
@@ -108,17 +110,16 @@ def train(
         for idx, batch in pbar:
             x_text, y_text = model.prepare_batch(batch=batch)
 
-            x_tokenized = model.tokenizer(
-                x_text, return_tensors='pt', padding='longest'
-            ).to(device)
-            y_tokenized = tokenizer(
-                y_text, return_tensors='pt', padding='longest'
-            ).to(device)
+            tok = functools.partial(model.tokenizer, return_tensors='pt', padding='longest')
+            x_tokenized = tok(x_text).to(device)
+            y_tokenized = tok(y_text).to(device)
+            full_text_tokenized = tok(batch['text']).to(device)
 
             loss, n_correct = model.compute_loss_and_call_backward(
                 x_tokenized=x_tokenized,
                 y_tokenized=y_tokenized,
-                possible_answer_mask=possible_answer_mask
+                possible_answer_mask=possible_answer_mask,
+                full_text_tokenized=full_text_tokenized,
             )
 
             total_n += len(x_text)
