@@ -52,11 +52,12 @@ class GeneticAutoPrompt(AutoPrompt):
         ####################################################################
         # TODO argparse for GA-specific hparams
         self._top_k_pop_sample = 32 # sample next population from this num of top things
-        self._pop_size = 7
-        self._num_mutations_per_ex = 6 # num mutations for each population item
-        self._num_random_generations = 1 # extra random examples to throw in there
+        self._pop_size = 8
+        self._num_mutations_per_ex = 4 # num mutations for each population item
+        self._num_random_generations = 0 # extra random examples to throw in there
         self._generation_temp = 1.0
         self._generation_top_p = 1.0
+        self._generation_repetition_penalty = 20.0 # 1 means no penalty
         self._pop_initialized = False
         ####################################################################
         self._pre_data_token_ids = self.tokenizer("Data:\n\n", return_tensors='pt').input_ids
@@ -99,6 +100,8 @@ class GeneticAutoPrompt(AutoPrompt):
             max_length=output_length,
             temperature=self._generation_temp,
             top_p=self._generation_top_p,
+            repetition_penalty=self._generation_repetition_penalty,
+            # bad_words_ids=input_ids
             do_sample=True
         )
     
