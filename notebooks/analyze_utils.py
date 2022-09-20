@@ -15,6 +15,52 @@ import pickle as pkl
 import json
 import os
 
+CHECKPOINT_RENAME = {
+    'gpt2-medium': 'GPT-2 (345M)',
+    'gpt2-large': 'GPT-2 (774M)',
+    'gpt2-xl': 'GPT-2 (1.5B)',
+    'EleutherAI/gpt-neo-2.7B': 'GPT-Neo (2.7B)',
+    'EleutherAI/gpt-j-6B': 'GPT-J (6B)',
+    'EleutherAI/gpt-neox-20b': 'GPT-Neo (20B)',
+    'gpt3': 'GPT-3 (175B)',
+}
+
+LEGEND_REMAP = {
+    'Single-query': 'Single-output sampling, suffix',
+    'Avg suffix': 'Average-output sampling, suffix',
+}
+# light to dark
+# blues ['#f7fbff','#deebf7','#c6dbef','#9ecae1','#6baed6','#4292c6','#2171b5','#084594']
+# grays ['#ffffff','#f0f0f0','#d9d9d9','#bdbdbd','#969696','#737373','#525252','#252525']
+# reds ['#4c1d4b', '#a11a5b', '#e83f3f', '#f69c73']
+# greens ['#348ba6', '#38aaac', '#55caad', '#a1dfb9']
+COLORS = OrderedDict({
+    'Suffix, single-output decoding (1-Ex.)': '#d9d9d9',
+    'Suffix, single-output decoding (5-Ex.)': '#969696',
+    'Suffix, single-output decoding (10-Ex.)': '#525252',
+    'Suffix, average-output decoding (1-Ex.)': '#9ecae1',
+    'Suffix, average-output decoding (5-Ex.)': '#4292c6',
+    'Suffix, average-output decoding (10-Ex.)': '#084594',
+    ############################################################
+    'Prefix, single-output (1-Ex.)': '#d9d9d9',
+    'Prefix, single-output (5-Ex.)': '#bdbdbd',
+    'Prefix, single-output with reranking (1-Ex.)': '#969696',
+    'Prefix, single-output with reranking (5-Ex.)': '#525252',
+    'Prefix, average-output (1-Ex.)': '#f69c73',
+    'Prefix, average-output (5-Ex.)': '#e83f3f',
+    'Prefix, average-output with reranking (1-Ex.)': '#a11a5b',
+    'Prefix, average-output with reranking (5-Ex.)': '#4c1d4b',
+
+}.items())
+SORTED_HUE_NAMES = list(COLORS.keys())
+
+
+YLABS = {
+    'final_num_suffixes_checked': 'Number of suffixes checked before finding correct answer\n(lower is better)',
+    'final_answer_pos_initial_token': 'Rank of correct suffix (lower is better)',
+    'reciprocal_rank': 'Reciprocal rank (higher is better)',
+    'reciprocal_rank_multi': 'Reciprocal rank (higher is better)',
+}
 
 def load_results_and_cache(results_dir: str, save_file: str = 'r.pkl') -> pd.DataFrame:
     """Suffix script stores results_final.pkl instead of results.json
@@ -126,9 +172,11 @@ def postprocess_results(r):
         metric_key = f'Recall @ {i} suffixes'
         r[metric_key] = (r['final_answer_pos_initial_token'] <= i)
         metric_keys.append(metric_key)
-    r['reciprocal_rank'] = r['final_answer_pos_initial_token'].map(lambda n: 1/(n+1))
+    r['reciprocal_rank'] = r['final_answer_pos_initial_token'].map(
+        lambda n: 1/(n+1))
     if 'final_num_suffixes_checked' in r.columns:
-        r['reciprocal_rank_multi'] = r['final_num_suffixes_checked'].map(lambda n: 1/(n+1)) # use the results found by beam search
+        r['reciprocal_rank_multi'] = r['final_num_suffixes_checked'].map(
+            lambda n: 1/(n+1))  # use the results found by beam search
     return r
 
 
@@ -139,44 +187,6 @@ def num_suffixes_checked_tab(tab, metric_key='final_num_suffixes_checked'):
             .mean()
             .reset_index()
             )
-
-
-LEGEND_REMAP = {
-    'Single-query': 'Single-output sampling, suffix',
-    'Avg suffix': 'Average-output sampling, suffix',
-}
-# light to dark
-# blues ['#f7fbff','#deebf7','#c6dbef','#9ecae1','#6baed6','#4292c6','#2171b5','#084594']
-# grays ['#ffffff','#f0f0f0','#d9d9d9','#bdbdbd','#969696','#737373','#525252','#252525']
-# reds ['#4c1d4b', '#a11a5b', '#e83f3f', '#f69c73']
-# greens ['#348ba6', '#38aaac', '#55caad', '#a1dfb9']
-COLORS = OrderedDict({
-    'Suffix, single-output decoding (1-Ex.)': '#d9d9d9',
-    'Suffix, single-output decoding (5-Ex.)': '#969696',
-    'Suffix, single-output decoding (10-Ex.)': '#525252',
-    'Suffix, average-output decoding (1-Ex.)': '#9ecae1',
-    'Suffix, average-output decoding (5-Ex.)': '#4292c6',
-    'Suffix, average-output decoding (10-Ex.)': '#084594',
-    ############################################################
-    'Prefix, single-output (1-Ex.)': '#d9d9d9',
-    'Prefix, single-output (5-Ex.)': '#bdbdbd',
-    'Prefix, single-output with reranking (1-Ex.)': '#969696',
-    'Prefix, single-output with reranking (5-Ex.)': '#525252',
-    'Prefix, average-output (1-Ex.)': '#f69c73',
-    'Prefix, average-output (5-Ex.)': '#e83f3f',
-    'Prefix, average-output with reranking (1-Ex.)': '#a11a5b',
-    'Prefix, average-output with reranking (5-Ex.)': '#4c1d4b',
-
-}.items())
-SORTED_HUE_NAMES = list(COLORS.keys())
-
-
-YLABS = {
-    'final_num_suffixes_checked': 'Number of suffixes checked before finding correct answer\n(lower is better)',
-    'final_answer_pos_initial_token': 'Rank of correct suffix (lower is better)',
-    'reciprocal_rank': 'Reciprocal rank (higher is better)',
-    'reciprocal_rank_multi': 'Reciprocal rank (higher is better)',
-}
 
 
 def get_hue_order(legend_names):
@@ -196,16 +206,6 @@ def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = 
     # sort the plot
     hue_order = get_hue_order(tab['legend'])
 
-
-
-    CHECKPOINT_RENAME = {
-        'gpt2-medium': 'GPT-2 (345M)',
-        'gpt2-large': 'GPT-2 (774M)',
-        'gpt2-xl': 'GPT-2 (1.5B)',
-        'EleutherAI/gpt-neo-2.7B': 'GPT-Neo (2.7B)',
-        'EleutherAI/gpt-j-6B': 'GPT-J (6B)',
-        'EleutherAI/gpt-neox-20b': 'GPT-Neo (20B)',
-    }
     SORTED_MODEL_NAMES = [
         'gpt2-medium', 'gpt2-large', 'gpt2-xl',
         'EleutherAI/gpt-neo-2.7B', 'EleutherAI/gpt-j-6B', 'EleutherAI/gpt-neox-20b',
@@ -213,9 +213,9 @@ def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = 
     for checkpoint in tab['checkpoint'].unique():
         assert checkpoint in SORTED_MODEL_NAMES, checkpoint + \
             ' not in ' + str(SORTED_MODEL_NAMES)
-    order = [CHECKPOINT_RENAME[k] for k in SORTED_MODEL_NAMES if k in tab['checkpoint'].unique()]
+    order = [CHECKPOINT_RENAME[k]
+             for k in SORTED_MODEL_NAMES if k in tab['checkpoint'].unique()]
 
-    
     # print(tab['checkpoint'].map(CHECKPOINT_RENAME))
 
     # make plot
@@ -224,7 +224,7 @@ def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = 
     ax = sns.barplot(x=tab['checkpoint'].map(CHECKPOINT_RENAME).tolist(),
                      y=tab[metric_key], hue=tab['legend'], hue_order=hue_order, order=order, palette=COLORS)  # data=tab[tab['n_shots'] == 1])
     # ax = sns.barplot(x=tab['checkpoint'].map(CHECKPOINT_RENAME).tolist(),
-                    #  y=tab[metric_key], hue=tab['legend'], palette=COLORS)
+    #  y=tab[metric_key], hue=tab['legend'], palette=COLORS)
     plt.xlabel('Model name')
     plt.ylabel(YLABS.get(metric_key, metric_key))
     # plt.title(title, fontsize='medium')
@@ -233,7 +233,8 @@ def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = 
     handles, labels = ax.get_legend_handles_labels()
     # , labelcolor='linecolor')
     if legend_on_side:
-        ax.legend(handles=handles[:], labels=labels[:], bbox_to_anchor=(1, 0.95), frameon=False)
+        ax.legend(handles=handles[:], labels=labels[:],
+                  bbox_to_anchor=(1, 0.95), frameon=False)
     else:
         plt.legend()
     #   loc='center left')
