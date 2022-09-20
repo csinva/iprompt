@@ -57,25 +57,49 @@ class GeneticAutoPrompt(AutoPrompt):
         self._num_random_generations = 1 # extra random examples to throw in there
         self._generation_temp = 1.0
         self._generation_top_p = 1.0
-        ####################################################################
         self._pop_initialized = False
+        ####################################################################
+        self._pre_data_token_ids = self.tokenizer("Data:\n\n", return_tensors='pt').input_ids
+        self._post_data_token_ids = self.tokenizer("\n\nExplanation:", return_tensors='pt').input_ids
+        ####################################################################
+        self._verbose = True
     
-    def _initialize_pop_once(self):
+    def _initialize_pop_once(self, full_text_ids: torch.Tensor):
         if self._pop_initialized: return
 
         while len(self._genetic_pool_loss) < self._pop_size:
-            input_ids = self._generate(input_ids=None)
-            input_ids = tuple(input_ids.cpu().flatten().tolist())
+            conditional_input_ids = random.choice(full_text_ids)[None]
+            num_conditional_tokens = conditional_input_ids.numel()
+            input_ids = self._generate(
+                input_ids=conditional_input_ids,
+                num_conditional_tokens=num_conditional_tokens
+            )
+            input_ids = input_ids[0, num_conditional_tokens:]
+            input_ids = tuple(input_ids.cpu().tolist())
+            assert len(input_ids) == self._num_tokens
             self._genetic_pool_loss[input_ids] = 10_000.0
             self._genetic_pool_n_correct[input_ids] = 0
         print('Original population:', self._genetic_pool_loss.keys())
 
         self._pop_initialized = True
     
-    def _generate(self, input_ids: torch.Tensor) -> torch.Tensor:
+    def _generate(self, input_ids: torch.Tensor, num_conditional_tokens: int) -> torch.Tensor:
+        """Generates some text using the model and preset hparams.
+
+        If `num_conditional_tokens` > 0, generates extra text because there was an additional
+        prefix set.
+        """
+        output_length = self._num_tokens + num_conditional_tokens
+        if self._verbose:
+            print(">", self.tokenizer.decode(random.choice(input_ids)).replace('\n', '\\n'))
         return self.model.generate(
             # add one to max length to account for BOS token
-            input_ids=input_ids, min_length=(self._num_tokens+1), max_length=(self._num_tokens+1), temperature=self._generation_temp, top_p=self._generation_top_p, do_sample=True
+            input_ids=input_ids,
+            min_length=output_length,
+            max_length=output_length,
+            temperature=self._generation_temp,
+            top_p=self._generation_top_p,
+            do_sample=True
         )
     
     def _select_pop_top_k(self, k: int) -> List[Tuple[int]]:
@@ -100,6 +124,7 @@ class GeneticAutoPrompt(AutoPrompt):
         return torch.tensor(population).to(device)
     
     def _get_population_and_random_generations(self) -> torch.Tensor:
+        raise NotImplementedError('doesn\'t work yet with conditional (TODO!)')
         population = self._get_population()
         starting_tensor = (
             torch.tensor([self.tokenizer.bos_token_id], dtype=int).to(device).repeat((self._num_random_generations, 1))
@@ -112,22 +137,42 @@ class GeneticAutoPrompt(AutoPrompt):
         )
         return full_population
     
-    def _mutate(self, input_ids: torch.Tensor) -> List[torch.Tensor]:
+    def _mutate(self, population_input_ids: torch.Tensor, full_text_ids: torch.Tensor) -> List[torch.Tensor]:
         """Mutates a population of prefixes.
 
         Truncates to a random place and then generates new options
         to try.
+
+        Args:
+            population_input_ids (int torch.Tensor): input IDs for each prefix in population
+            full_text_ids (int torch.Tensor): input IDs for each data item in the batch. Intended
+                be used to do prefix generation conditioned on data
         """
-        input_ids = input_ids.repeat((self._num_mutations_per_ex, 1))
+        input_ids = population_input_ids.repeat((self._num_mutations_per_ex, 1))
         truncate_position = random.randint(0, self._num_tokens-1)
-        if truncate_position == 0:
-            starting_tensor = (
-                torch.tensor([self.tokenizer.bos_token_id], dtype=int).to(device)
-                    .repeat((len(input_ids), 1))
-            )
-            new_input_ids = self._generate(input_ids=starting_tensor)
-        else:
-            new_input_ids = self._generate(input_ids=input_ids[:, :truncate_position])
+
+        rand_idxs = torch.randint(low=0, high=len(full_text_ids), size=(len(input_ids), ))
+        random_full_text_ids = full_text_ids[rand_idxs]
+        conditional_input_ids = torch.cat((random_full_text_ids, input_ids[:, :truncate_position]), dim=1)
+
+
+        num_conditional_tokens = full_text_ids.shape[1]
+        new_input_ids = self._generate(
+            input_ids=conditional_input_ids,
+            num_conditional_tokens=num_conditional_tokens
+        )
+        # Split off the conditional part, we only want the prefix part, which
+        # starts after the conditional part.
+        new_input_ids = new_input_ids[:, num_conditional_tokens:]
+
+        # if truncate_position == 0:
+        #     starting_tensor = (
+        #         torch.tensor([self.tokenizer.bos_token_id], dtype=int).to(device)
+        #             .repeat((len(input_ids), 1))
+        #     )
+        #     new_input_ids = self._generate(input_ids=full_text_ids)
+        # else:
+        #     new_input_ids = self._generate(input_ids=)
         return new_input_ids
     
     def _score_population(self, population_input_ids: torch.Tensor, input_ids: torch.Tensor, next_token_ids: torch.Tensor, possible_answer_mask: torch.Tensor):
@@ -156,7 +201,7 @@ class GeneticAutoPrompt(AutoPrompt):
         # breakpoint()
         for i in range(pop_size):
             new_pop_input_ids = tuple(population_input_ids[i].cpu().tolist())
-            assert len(new_pop_input_ids) == (self._num_tokens + 1) # includes BOS token
+            assert len(new_pop_input_ids) == self._num_tokens
 
             # todo abstract these data strcutures into a class
             self._genetic_pool_all_losses[new_pop_input_ids].append(all_candidate_losses[i].item())
@@ -171,6 +216,21 @@ class GeneticAutoPrompt(AutoPrompt):
         y_text = [answer for answer in batch['output']] # strip newlines and periods.
         # y_text = [answer.replace('.', '').rstrip() for answer in batch['output']] # strip newlines and periods.
         return x_text, y_text
+    
+    def _create_full_text_ids(
+        self, original_input_ids: torch.Tensor, next_token_ids: torch.Tensor) -> torch.Tensor:
+        """Creates input for generating explanation.
+
+        Takes tokenized inputs (like: "Input: 7 8 Output: ...") and outputs (like: " 15")
+        and makes a full string that looks like "Data:\n\n Input: .... 15 \n\nExplanation:\n\n",
+        using whatever template is defined by pre-data and post-data.
+        """
+        B = len(original_input_ids)
+        pre_data = self._pre_data_token_ids.repeat((B, 1)).to(device)
+        post_data = self._post_data_token_ids.repeat((B, 1)).to(device)
+        output = torch.cat((pre_data, original_input_ids, next_token_ids[:, None], post_data), dim=1)
+        return output
+
 
     def compute_loss_and_call_backward(
             self,
@@ -186,14 +246,22 @@ class GeneticAutoPrompt(AutoPrompt):
             loss (float torch.Tensor) -- the loss
             num_correct (int): number of examples where prediction was correct
         """
-        self._initialize_pop_once()
+        full_text_ids = self._create_full_text_ids(
+            original_input_ids=original_input_ids,
+            next_token_ids=next_token_ids
+        )
+        self._initialize_pop_once(full_text_ids=full_text_ids)
         # full_input = torch.cat((original_input_ids, next_token_ids[:, None]), dim=1)[0]
         self._print_pop()
         # Grab new population
-        # population_input_ids = self._get_population()
-        population_input_ids = self._get_population_and_random_generations()
+        population_input_ids = self._get_population()
+        # TODO: Consider restoring random generations from below
+        # population_input_ids = self._get_population_and_random_generations()
+        mutated_population_input_ids = self._mutate(
+            population_input_ids=population_input_ids, full_text_ids=full_text_ids
+        )
         population_input_ids = torch.cat(
-            (population_input_ids, self._mutate(population_input_ids)), dim=0
+            (population_input_ids, mutated_population_input_ids), dim=0
         )
         # Re-score new guys
         self._score_population(
