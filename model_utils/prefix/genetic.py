@@ -201,7 +201,7 @@ class GeneticAutoPrompt(AutoPrompt):
         assert population_input_ids.shape[1] == self._num_tokens
         input_ids = population_input_ids.repeat((self._num_mutations_per_ex, 1))
 
-        self._roll_before_truncation = True
+        self._roll_before_truncation = False
         if self._roll_before_truncation:
             roll_amount = random.randint(0, self._num_tokens-1)
             input_ids = torch.roll(input_ids, roll_amount, dims=[1])

@@ -113,11 +113,17 @@ class HotFlip(PrefixModel):
         if (attention_mask == self.tokenizer.pad_token_id).any():
             breakpoint()
         next_token_logits = outputs.logits[:, -1, :]
-        n_correct = (
-            next_token_logits.argmax(dim=-1)
-                ==
-            next_token_ids
-        ).int().sum()
+
+        if possible_answer_mask is None:
+            n_correct = (
+                next_token_logits.argmax(dim=-1) == next_token_ids
+            ).int().sum()
+        else:
+            n_correct = (
+                (next_token_logits.exp() * possible_answer_mask).argmax(dim=-1)
+                    ==
+                next_token_ids
+            ).int().sum()
 
         original_loss = self.loss_func(
             input_ids=input_ids,

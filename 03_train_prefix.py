@@ -93,12 +93,15 @@ def train(
     print(f"Training with {num_unique_answers} possible answers / random acc {random_acc:.1f}% / majority acc {majority_acc:.1f}%")
     
     vocab_size = len(tokenizer.vocab)
-    # possible_answer_mask = (
-    #     torch.arange(start=0, end=vocab_size)[:, None]
-    #     == 
-    #     possible_answer_ids[None, :]
-    # ).any(dim=1).to(device)
-    possible_answer_mask = None
+
+    if args.mask_possible_answers:
+        possible_answer_mask = (
+            torch.arange(start=0, end=vocab_size)[:, None]
+            == 
+            possible_answer_ids[None, :]
+        ).any(dim=1).to(device)
+    else:
+        possible_answer_mask = None
 
     for epoch in range(args.n_epochs):
         model.pre_epoch()
@@ -109,6 +112,8 @@ def train(
         total_n_correct = 0
         pbar = tqdm(enumerate(dataloader), total=len(dataloader))
         for idx, batch in pbar:
+            if args.single_shot_loss:
+                batch['input'] = batch['last_input']
             x_text, y_text = model.prepare_batch(batch=batch)
 
             tok = functools.partial(model.tokenizer, return_tensors='pt', padding='longest')
@@ -188,6 +193,10 @@ if __name__ == '__main__':
                         help='name of task')
     parser.add_argument('--n_shots', type=int, default=1,
                         help='number of shots in the prompt')
+    parser.add_argument('--single_shot_loss', type=int, default=0,
+                        help='if n_shots==0, load multiple shots but only use one compute loss')
+    parser.add_argument('--mask_possible_answers', type=int, default=0,
+                        help='only compute loss over possible answer tokens')
     parser.add_argument('--hotflip_num_candidates', type=int, default=10,
                         help='number of candidates to rerank, for hotflip')
     parser.add_argument('--accum_grad_over_epoch', type=int, default=0, choices=(0, 1),
