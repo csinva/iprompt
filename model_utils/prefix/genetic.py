@@ -167,17 +167,23 @@ class GeneticAutoPrompt(AutoPrompt):
         population = random.sample(population_pool, self._pop_size)
         return torch.tensor(population).to(device)
     
-    def _get_population_and_random_generations(self) -> torch.Tensor:
-        raise NotImplementedError('doesn\'t work yet with conditional (TODO!)')
+    def _get_population_and_random_generations(self, full_text_ids: torch.Tensor) -> torch.Tensor:
         population = self._get_population()
-        starting_tensor = (
-            torch.tensor([self.tokenizer.bos_token_id], dtype=int).to(device).repeat((self._num_random_generations, 1))
+
+        random_idxs = torch.randint(
+            low=0, high=len(full_text_ids), size=(self._num_random_generations,)
         )
-        random_population = self._generate(starting_tensor)
+        random_full_text_ids = full_text_ids[random_idxs]
+        num_conditional_tokens = full_text_ids.shape[1]
+        random_population = self._generate(
+            input_ids=random_full_text_ids,
+            num_conditional_tokens=num_conditional_tokens
+        )[:, num_conditional_tokens:]
+
         full_population = torch.cat((population, random_population), dim=0)
         assert full_population.shape == (
             self._pop_size + self._num_random_generations,
-            self._num_tokens+1
+            self._num_tokens
         )
         return full_population
     
@@ -195,8 +201,8 @@ class GeneticAutoPrompt(AutoPrompt):
         input_ids = population_input_ids.repeat((self._num_mutations_per_ex, 1))
         truncate_position = random.randint(0, self._num_tokens-1)
 
-        rand_idxs = torch.randint(low=0, high=len(full_text_ids), size=(len(input_ids), ))
-        random_full_text_ids = full_text_ids[rand_idxs]
+        random_idxs = torch.randint(low=0, high=len(full_text_ids), size=(len(input_ids), ))
+        random_full_text_ids = full_text_ids[random_idxs]
         conditional_input_ids = torch.cat((random_full_text_ids, input_ids[:, :truncate_position]), dim=1)
 
         num_conditional_tokens = full_text_ids.shape[1]
@@ -204,8 +210,6 @@ class GeneticAutoPrompt(AutoPrompt):
             input_ids=conditional_input_ids,
             num_conditional_tokens=num_conditional_tokens
         )
-        if (new_input_ids==self.tokenizer.pad_token_id).any():
-            breakpoint()
         # Split off the conditional part, we only want the prefix part, which
         # starts after the conditional part.
         new_input_ids = new_input_ids[:, num_conditional_tokens:]
@@ -288,9 +292,11 @@ class GeneticAutoPrompt(AutoPrompt):
         self._print_pop()
 
         # Grab new population
-        population_input_ids = self._get_population()
+        # population_input_ids = self._get_population()
         # TODO: Consider restoring random generations from below
-        # population_input_ids = self._get_population_and_random_generations()
+        population_input_ids = self._get_population_and_random_generations(
+            full_text_ids=full_text_tokenized.input_ids,
+        )
         mutated_population_input_ids = self._mutate(
             population_input_ids=population_input_ids, full_text_ids=full_text_ids
         )

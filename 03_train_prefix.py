@@ -58,6 +58,7 @@ def train(
     """
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
+    transformers.set_seed(args.seed)
 
     model.train() 
 
