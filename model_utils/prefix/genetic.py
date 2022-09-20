@@ -61,7 +61,7 @@ class GeneticAutoPrompt(AutoPrompt):
         self._generation_top_p = 1.0
         self._generation_repetition_penalty = 20.0 # 1 means no penalty
         self._pop_initialized = False
-        self._pop_selection_criterion = 'combined' # in ['loss', 'acc', 'combined']
+        self._pop_selection_criterion = 'loss' # in ['loss', 'acc', 'combined']
         self._generation_bad_words_ids = [
             self.tokenizer.encode('\n'),
             self.tokenizer.encode('\n\n'),
@@ -69,7 +69,7 @@ class GeneticAutoPrompt(AutoPrompt):
         ]
         ####################################################################
         self._pre_data_token_ids = self.tokenizer("Data:\n\n", return_tensors='pt').input_ids.to(device)
-        self._post_data_token_ids = self.tokenizer("Prompt:", return_tensors='pt').input_ids.to(device)
+        self._post_data_token_ids = self.tokenizer("Prompt: answer 'F' or 'M' if", return_tensors='pt').input_ids.to(device)
         ####################################################################
         self._verbose = True
     
@@ -126,7 +126,7 @@ class GeneticAutoPrompt(AutoPrompt):
         return g
     
     def _select_pop_top_k(self, k: int, min_ocurrences: int = None) -> List[Tuple[int]]:
-        prefixes = self._genetic_pool_all_accuracy.keys()
+        prefixes = self._genetic_pool_loss.keys()
         if min_ocurrences:
             prefixes = {
                 prefix for prefix in prefixes
@@ -136,11 +136,15 @@ class GeneticAutoPrompt(AutoPrompt):
         criterion = self._pop_selection_criterion
         if criterion == 'loss':
             # sort by min loss
-            population = [(loss, prefix_ids) for prefix_ids, loss in items()]
+            population = [
+                (self._genetic_pool_all_losses[prefix_ids], prefix_ids) for prefix_ids in prefixes
+            ]
             topk_pop = heapq.nsmallest(k, population)
         elif criterion == 'combined':
             population = [
-                ((self._genetic_pool_accuracy[prefix_ids], (-1 * loss)), prefix_ids)
+                (
+                    (self._genetic_pool_accuracy[prefix_ids], (-1 * self._genetic_pool_all_losses[prefix_ids])), prefix_ids
+                )
                 for prefix_ids, loss in self._genetic_pool_accuracy.items()
             ]
             topk_pop = heapq.nlargest(k, population)

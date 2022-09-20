@@ -79,7 +79,7 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1):
             #
             last_input = all_shots.tail(n=1)['input'].values[0]
             d2['input'].append(''.join(all_shots['text'].values[:-1]) + last_input)
-            d2['last_input'] = last_input
+            d2['last_input'].append(last_input)
             #
             last_output = all_shots.tail(n=1)['output'].values[0]
             d2['output'].append(last_output)

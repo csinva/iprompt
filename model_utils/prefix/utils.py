@@ -199,7 +199,7 @@ class PrefixModel(nn.Module, abc.ABC):
         """Preprocesses text from `batch['input']` and `batch['output']` for inputting into prefix model.
         """
         x_text = [f'. {prompt}' for prompt in batch['input']]
-        y_text = [answer.replace('.', '').rstrip() for answer in batch['output']] # strip newlines and periods.
+        y_text = [answer.rstrip() for answer in batch['output']] # strip whitespace at the end.
         return x_text, y_text
 
     def forward(
