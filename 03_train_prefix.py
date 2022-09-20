@@ -106,8 +106,7 @@ def train(
         total_n_correct = 0
         pbar = tqdm(enumerate(dataloader), total=len(dataloader))
         for idx, batch in pbar:
-            x_text = [f'. {prompt}' for prompt in batch['input']]
-            y_text = [answer.replace('.', '').rstrip() for answer in batch['output']] # strip newlines and periods.
+            x_text, y_text = model.prepare_batch(batch=batch)
 
             input_ids = model.tokenizer(
                 x_text, return_tensors='pt', padding='longest')['input_ids'].to(device)

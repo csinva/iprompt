@@ -193,6 +193,13 @@ class PrefixModel(nn.Module, abc.ABC):
     @property 
     def token_embedding_dim(self) -> int:
         return self.token_embedding.weight.shape[1] # often 768, or 2560 for some larger models
+    
+    def prepare_batch(self, batch: Dict[str, str]) -> Tuple[str, str]:
+        """Preprocesses text from `batch['input']` and `batch['output']` for inputting into prefix model.
+        """
+        x_text = [f'. {prompt}' for prompt in batch['input']]
+        y_text = [answer.replace('.', '').rstrip() for answer in batch['output']] # strip newlines and periods.
+        return x_text, y_text
 
     def forward(self,
             input_ids: torch.Tensor,

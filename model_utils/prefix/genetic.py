@@ -1,6 +1,7 @@
-from typing import List, Tuple
+from typing import Dict, List, Tuple, Union
 
 import argparse
+import collections
 import heapq
 import random
 import torch
@@ -19,6 +20,8 @@ generation example:
     tokenizer.decode(lm.generate(input_ids=None, max_length=15, temperature=0.8, top_p=0.8, do_sample=True)[0])
 """
 
+def mean(_list: List[Union[int, float]]) -> float:
+    return sum(_list) / len(_list)
 
 class GeneticAutoPrompt(AutoPrompt):
     args: argparse.Namespace
@@ -42,30 +45,37 @@ class GeneticAutoPrompt(AutoPrompt):
         # GeneticAutoPrompt-specific parameters
         # tuple (input_ids) -> float (loss)
         self._genetic_pool_loss = {}
+        self._genetic_pool_all_losses = collections.defaultdict(list)
         # tuple (input_ids) -> int (n_correct)
         self._genetic_pool_n_correct = {}
+        self._genetic_pool_all_n_correct = collections.defaultdict(list)
         ####################################################################
         # TODO argparse for GA-specific hparams
         self._top_k_pop_sample = 32 # sample next population from this num of top things
-        self._pop_size = 15
-        self._num_mutations_per_ex = 4 # num mutations for each population item
+        self._pop_size = 7
+        self._num_mutations_per_ex = 6 # num mutations for each population item
         self._num_random_generations = 1 # extra random examples to throw in there
-        self._generation_temp = 0.9
-        self._generation_top_p = 0.9
+        self._generation_temp = 1.0
+        self._generation_top_p = 1.0
         ####################################################################
-        # Initialize population
-        self.model = self.model.to(device)
+        self._pop_initialized = False
+    
+    def _initialize_pop_once(self):
+        if self._pop_initialized: return
+
         while len(self._genetic_pool_loss) < self._pop_size:
             input_ids = self._generate(input_ids=None)
             input_ids = tuple(input_ids.cpu().flatten().tolist())
             self._genetic_pool_loss[input_ids] = 10_000.0
             self._genetic_pool_n_correct[input_ids] = 0
         print('Original population:', self._genetic_pool_loss.keys())
+
+        self._pop_initialized = True
     
     def _generate(self, input_ids: torch.Tensor) -> torch.Tensor:
         return self.model.generate(
             # add one to max length to account for BOS token
-            input_ids=input_ids, max_length=(self._num_tokens+1), temperature=self._generation_temp, top_p=self._generation_top_p, do_sample=True
+            input_ids=input_ids, min_length=(self._num_tokens+1), max_length=(self._num_tokens+1), temperature=self._generation_temp, top_p=self._generation_top_p, do_sample=True
         )
     
     def _select_pop_top_k(self, k: int) -> List[Tuple[int]]:
@@ -84,9 +94,9 @@ class GeneticAutoPrompt(AutoPrompt):
     
     def _get_population(self) -> torch.Tensor:
         # TODO sample from population instead of taking top-k?
-        population = self._select_pop_top_k(k=self._pop_size)
-        # population_pool = self._select_pop_top_k(k=self._top_k_pop_sample)
-        # population = random.sample(population_pool, self._pop_size)
+        # population = self._select_pop_top_k(k=self._pop_size)
+        population_pool = self._select_pop_top_k(k=self._top_k_pop_sample)
+        population = random.sample(population_pool, self._pop_size)
         return torch.tensor(population).to(device)
     
     def _get_population_and_random_generations(self) -> torch.Tensor:
@@ -111,9 +121,14 @@ class GeneticAutoPrompt(AutoPrompt):
         input_ids = input_ids.repeat((self._num_mutations_per_ex, 1))
         truncate_position = random.randint(0, self._num_tokens-1)
         if truncate_position == 0:
-            return self._generate(input_ids=None)
+            starting_tensor = (
+                torch.tensor([self.tokenizer.bos_token_id], dtype=int).to(device)
+                    .repeat((len(input_ids), 1))
+            )
+            new_input_ids = self._generate(input_ids=starting_tensor)
         else:
-            return self._generate(input_ids=input_ids[:, :truncate_position])
+            new_input_ids = self._generate(input_ids=input_ids[:, :truncate_position])
+        return new_input_ids
     
     def _score_population(self, population_input_ids: torch.Tensor, input_ids: torch.Tensor, next_token_ids: torch.Tensor, possible_answer_mask: torch.Tensor):
         """Scores a population of prefixes and updates `self._genetic_pool`."""
@@ -133,11 +148,29 @@ class GeneticAutoPrompt(AutoPrompt):
             all_candidate_losses[i] += cand_loss
             all_n_correct[i] += cand_n_correct
         
+        # TO IMPLEMENT AND TEST ON GPT2:
+        # - TODO: prepend examples to every call to generate() !
+        # - TODO: average loss for pop over every new batch so a few can't get stuck at the top
+        # bc they randomly got low losses.
+        # - ?? todo: take random spans instead of truncating from beginning
+        # breakpoint()
         for i in range(pop_size):
             new_pop_input_ids = tuple(population_input_ids[i].cpu().tolist())
             assert len(new_pop_input_ids) == (self._num_tokens + 1) # includes BOS token
-            self._genetic_pool_loss[new_pop_input_ids] = all_candidate_losses[i].item()
-            self._genetic_pool_n_correct[new_pop_input_ids] = all_n_correct[i].item()
+
+            # todo abstract these data strcutures into a class
+            self._genetic_pool_all_losses[new_pop_input_ids].append(all_candidate_losses[i].item())
+            self._genetic_pool_loss[new_pop_input_ids] = mean(self._genetic_pool_all_losses[new_pop_input_ids])
+            self._genetic_pool_all_n_correct[new_pop_input_ids].append(all_n_correct[i].item())
+            self._genetic_pool_n_correct[new_pop_input_ids] = mean(self._genetic_pool_all_n_correct[new_pop_input_ids])
+    
+    def prepare_batch(self, batch: Dict[str, str]) -> Tuple[str, str]:
+        """Preprocesses text from `batch['input']` and `batch['output']` for inputting into prefix model.
+        """
+        x_text = [prompt for prompt in batch['input']]
+        y_text = [answer for answer in batch['output']] # strip newlines and periods.
+        # y_text = [answer.replace('.', '').rstrip() for answer in batch['output']] # strip newlines and periods.
+        return x_text, y_text
 
     def compute_loss_and_call_backward(
             self,
@@ -153,10 +186,15 @@ class GeneticAutoPrompt(AutoPrompt):
             loss (float torch.Tensor) -- the loss
             num_correct (int): number of examples where prediction was correct
         """
+        self._initialize_pop_once()
+        # full_input = torch.cat((original_input_ids, next_token_ids[:, None]), dim=1)[0]
         self._print_pop()
         # Grab new population
+        # population_input_ids = self._get_population()
         population_input_ids = self._get_population_and_random_generations()
-        population_input_ids = self._mutate(population_input_ids)
+        population_input_ids = torch.cat(
+            (population_input_ids, self._mutate(population_input_ids)), dim=0
+        )
         # Re-score new guys
         self._score_population(
             population_input_ids=population_input_ids,
