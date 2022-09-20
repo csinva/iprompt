@@ -68,8 +68,10 @@ class GeneticAutoPrompt(AutoPrompt):
             self.tokenizer.encode('\n\n\n')
         ]
         ####################################################################
+        prompt_str = args.genetic_preprefix_str.lstrip()
+        prompt_str = (' ' + prompt_str) if len(prompt_str) else ''
         self._pre_data_token_ids = self.tokenizer("Data:\n\n", return_tensors='pt').input_ids.to(device)
-        self._post_data_token_ids = self.tokenizer("Prompt: answer 'F' or 'M' if", return_tensors='pt').input_ids.to(device)
+        self._post_data_token_ids = self.tokenizer("Prompt:" + prompt_str, return_tensors='pt').input_ids.to(device)
         ####################################################################
         self._verbose = True
     
@@ -137,13 +139,13 @@ class GeneticAutoPrompt(AutoPrompt):
         if criterion == 'loss':
             # sort by min loss
             population = [
-                (self._genetic_pool_all_losses[prefix_ids], prefix_ids) for prefix_ids in prefixes
+                (self._genetic_pool_loss[prefix_ids], prefix_ids) for prefix_ids in prefixes
             ]
             topk_pop = heapq.nsmallest(k, population)
         elif criterion == 'combined':
             population = [
                 (
-                    (self._genetic_pool_accuracy[prefix_ids], (-1 * self._genetic_pool_all_losses[prefix_ids])), prefix_ids
+                    (self._genetic_pool_accuracy[prefix_ids], (-1 * self._genetic_pool_loss[prefix_ids])), prefix_ids
                 )
                 for prefix_ids, loss in self._genetic_pool_accuracy.items()
             ]
@@ -157,7 +159,7 @@ class GeneticAutoPrompt(AutoPrompt):
     
     def _print_pop(self, top_k: int = 6) -> None:
         print((" " * 40), ("*" * 20), "Population", ("*" * 20))
-        for token_ids in self._select_pop_top_k(k=top_k, min_ocurrences=3):
+        for token_ids in self._select_pop_top_k(k=top_k, min_ocurrences=2):
             prefix_str = "{:>70}".format(self.tokenizer.decode(list(token_ids)).replace("\n", "\\\\n"))
             loss_str = f"{self._genetic_pool_loss[token_ids]:.3f}"
             acc_str = f"{self._genetic_pool_accuracy[token_ids]:.2f}"
