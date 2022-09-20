@@ -201,14 +201,17 @@ class PrefixModel(nn.Module, abc.ABC):
         y_text = [answer.replace('.', '').rstrip() for answer in batch['output']] # strip newlines and periods.
         return x_text, y_text
 
-    def forward(self,
+    def forward(
+            self,
             input_ids: torch.Tensor,
             prefix_ids: Optional[torch.Tensor],
             attention_mask: Optional[torch.Tensor] = None
         ) -> torch.Tensor:
-        input_ids, embeddings = self.embed_input_ids(input_ids=input_ids, prefix_ids=prefix_ids)
-        assert input_ids.shape == embeddings.shape[0:2]
-        return input_ids, self.model(inputs_embeds=embeddings, attention_mask=attention_mask)
+        new_input_ids, embeddings = self.embed_input_ids(
+            input_ids=input_ids, prefix_ids=prefix_ids
+        )
+        assert new_input_ids.shape == embeddings.shape[0:2]
+        return new_input_ids, self.model(inputs_embeds=embeddings, attention_mask=attention_mask)
     
     def pre_epoch(self) -> None:
         return
@@ -250,8 +253,8 @@ class PrefixModel(nn.Module, abc.ABC):
     
     def compute_loss_and_call_backward(
             self,
-            original_input_ids: torch.Tensor,
-            next_token_ids: torch.Tensor,
+            x_tokenized: transformers.BatchEncoding,
+            y_tokenized: transformers.BatchEncoding,
             possible_answer_mask: Optional[torch.Tensor]
         ) -> Tuple[torch.Tensor, int]:
         """Computes loss using `self.loss_func`.
@@ -260,6 +263,9 @@ class PrefixModel(nn.Module, abc.ABC):
             loss (float torch.Tensor) -- the loss
             num_correct (int): number of examples where prediction was correct
         """
+        original_input_ids = x_tokenized.input_ids
+        next_token_ids = y_tokenized.input_ids[:, 0] # only compute loss over next token
+
         input_ids, outputs = self.forward(input_ids=original_input_ids, prefix_ids=None)
 
         next_token_logits = outputs.logits[:, -1, :]

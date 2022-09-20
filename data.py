@@ -76,8 +76,15 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1):
         for i in range(args.max_dset_size):
             all_shots = df.sample(n=n_shots, replace=False)
             d2['text'].append(''.join(all_shots['text'].values))
+            #
+            last_input = all_shots.tail(n=1)['input'].values[0]
+            d2['input'].append(''.join(all_shots['text'].values[:-1]) + last_input)
+            #
             last_output = all_shots.tail(n=1)['output'].values[0]
             d2['output'].append(last_output)
+            #
+
+
         df = pd.DataFrame.from_dict(d2)
         # shuffle rows
 

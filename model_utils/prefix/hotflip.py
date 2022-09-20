@@ -99,7 +99,16 @@ class HotFlip(PrefixModel):
             possible_answer_mask: torch.Tensor,
             prefix_ids: Optional[torch.Tensor] = None
         ) -> torch.Tensor:
-        input_ids, outputs = self.forward(input_ids=original_input_ids, prefix_ids=prefix_ids)
+    
+        _full_input = torch.cat(
+             (prefix_ids[None].repeat(len(original_input_ids), 1), original_input_ids), dim=1
+        )
+        attention_mask = ~(_full_input == self.tokenizer.pad_token_id)
+        input_ids, outputs = self.forward(
+            input_ids=original_input_ids, 
+            attention_mask=attention_mask,
+            prefix_ids=prefix_ids,
+        )
 
         next_token_logits = outputs.logits[:, -1, :]
         n_correct = (
@@ -118,8 +127,8 @@ class HotFlip(PrefixModel):
 
     def compute_loss_and_call_backward(
             self,
-            original_input_ids: torch.Tensor,
-            next_token_ids: torch.Tensor,
+            x_tokenized: transformers.BatchEncoding,
+            y_tokenized: transformers.BatchEncoding,
             possible_answer_mask: torch.Tensor
         ) -> Tuple[torch.Tensor, int]:
         """Computes loss using `self.loss_func`.
@@ -128,9 +137,12 @@ class HotFlip(PrefixModel):
             loss (float torch.Tensor) -- the loss
             num_correct (int): number of examples where prediction was correct
         """
+        original_input_ids = x_tokenized.input_ids
+        next_token_ids = y_tokenized.input_ids[:, 0] # only compute loss over next token
+
         _input_ids, loss, n_correct = self._compute_loss_with_set_prefix(
             original_input_ids=original_input_ids,
-            next_token_ids=next_token_ids,
+            next_token_ids=next_token_ids[:, 0], # only compute loss over next token
             possible_answer_mask=possible_answer_mask
         )
 

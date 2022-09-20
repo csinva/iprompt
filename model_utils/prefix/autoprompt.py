@@ -33,8 +33,8 @@ class AutoPrompt(HotFlip):
 
     def compute_loss_and_call_backward(
             self,
-            original_input_ids: torch.Tensor,
-            next_token_ids: torch.Tensor,
+            x_tokenized: transformers.BatchEncoding,
+            y_tokenized: transformers.BatchEncoding,
             possible_answer_mask: torch.Tensor
         ) -> Tuple[torch.Tensor, int]:
         """Computes loss using `self.loss_func`.
@@ -43,6 +43,9 @@ class AutoPrompt(HotFlip):
             loss (float torch.Tensor) -- the loss
             num_correct (int): number of examples where prediction was correct
         """
+        original_input_ids = x_tokenized.input_ids
+        next_token_ids = y_tokenized.input_ids[:, 0] # only compute loss over next token
+
         _input_ids, loss, n_correct = self._compute_loss_with_set_prefix(
             original_input_ids=original_input_ids,
             next_token_ids=next_token_ids,

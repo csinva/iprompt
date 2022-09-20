@@ -108,19 +108,20 @@ def train(
         for idx, batch in pbar:
             x_text, y_text = model.prepare_batch(batch=batch)
 
-            input_ids = model.tokenizer(
-                x_text, return_tensors='pt', padding='longest')['input_ids'].to(device)
-            next_token_ids = tokenizer(y_text, return_tensors='pt', padding='longest')['input_ids'].to(device)
-            # only evaluate on single next-token
-            next_token_ids = next_token_ids[:, 0]
+            x_tokenized = model.tokenizer(
+                x_text, return_tensors='pt', padding='longest'
+            ).to(device)
+            y_tokenized = tokenizer(
+                y_text, return_tensors='pt', padding='longest'
+            ).to(device)
 
             loss, n_correct = model.compute_loss_and_call_backward(
-                original_input_ids=input_ids,
-                next_token_ids=next_token_ids,
+                x_tokenized=x_tokenized,
+                y_tokenized=y_tokenized,
                 possible_answer_mask=possible_answer_mask
             )
 
-            total_n += len(next_token_ids)
+            total_n += len(x_text)
             total_n_correct += n_correct
 
             all_losses.append(loss)
