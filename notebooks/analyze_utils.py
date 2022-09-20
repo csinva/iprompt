@@ -126,6 +126,9 @@ def postprocess_results(r):
         metric_key = f'Recall @ {i} suffixes'
         r[metric_key] = (r['final_answer_pos_initial_token'] <= i)
         metric_keys.append(metric_key)
+    r['reciprocal_rank'] = r['final_answer_pos_initial_token'].map(lambda n: 1/(n+1))
+    if 'final_num_suffixes_checked' in r.columns:
+        r['reciprocal_rank_multi'] = r['final_num_suffixes_checked'].map(lambda n: 1/(n+1)) # use the results found by beam search
     return r
 
 
@@ -172,6 +175,7 @@ YLABS = {
     'final_num_suffixes_checked': 'Number of suffixes checked before finding correct answer\n(lower is better)',
     'final_answer_pos_initial_token': 'Rank of correct suffix (lower is better)',
     'reciprocal_rank': 'Reciprocal rank (higher is better)',
+    'reciprocal_rank_multi': 'Reciprocal rank (higher is better)',
 }
 
 
@@ -182,7 +186,8 @@ def get_hue_order(legend_names):
     return [k for k in SORTED_HUE_NAMES if k in legend_names.unique()]
 
 
-def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = True):
+def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = True, legend_on_side=True):
+
     # reformat legend
     if add_legend:
         tab['legend'] = tab['use_single_query'].map(
@@ -227,7 +232,10 @@ def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = 
     # remove legend title
     handles, labels = ax.get_legend_handles_labels()
     # , labelcolor='linecolor')
-    ax.legend(handles=handles[:], labels=labels[:], bbox_to_anchor=(1, 0.95), frameon=False)
+    if legend_on_side:
+        ax.legend(handles=handles[:], labels=labels[:], bbox_to_anchor=(1, 0.95), frameon=False)
+    else:
+        plt.legend()
     #   loc='center left')
 
     plt.tight_layout()
