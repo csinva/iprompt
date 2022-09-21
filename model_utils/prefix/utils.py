@@ -247,8 +247,8 @@ class PrefixModel(nn.Module, abc.ABC):
         # start_word_id = torch.tensor([self.tokenizer.encode(' hello')[0]], dtype=int)
         # start_word_id = torch.tensor([self.tokenizer.encode('ogg')[0]], dtype=int)
         # start_word_id = torch.tensor([self.tokenizer.encode(' add')[0]], dtype=int)
-        start_word_id = torch.tensor([self.tokenizer.encode('<|endoftext|>')[0]], dtype=int)
-        # start_word_id = torch.tensor([self.tokenizer.vocab['the']], dtype=int)
+        # start_word_id = torch.tensor([self.tokenizer.encode('<|endoftext|>')[0]], dtype=int)
+        start_word_id = torch.tensor([self.tokenizer.vocab['the']], dtype=int)
         print(f"start_word_id = {start_word_id}")
         return start_word_id.repeat((num_tokens,))
     
