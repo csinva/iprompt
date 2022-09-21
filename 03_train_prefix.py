@@ -135,6 +135,7 @@ def train(
             pbar.set_description(f"Loss = {torch.tensor(all_losses).mean():.3f}")
 
             if not args.accum_grad_over_epoch:
+                # if hotflip, autoprompt, etc., grad will be zero
                 optim.step()
                 optim.zero_grad()
         
