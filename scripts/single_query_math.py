@@ -19,13 +19,14 @@ else:
 ##########################################
 PARAMS_SHARED_DICT = {
     # things we vary
+    'max_num_tokens': [4],
     'use_single_query': [1],
     'beam_size_extra': [50],
     'n_shots': [1, 5, 10],
     'task_name_list': [['add_two', 'multiply_two', 'divide_two', 'subtract_two',
              'max_two', 'first_two',
              'square_one', 'exp_one', 'double_one', 'fibonacci_one']],
-    'max_num_tokens': [1],
+    # 'max_num_tokens': [1],
 
     # parallel settings
     'use_parallelformers': [0],

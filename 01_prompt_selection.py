@@ -27,13 +27,12 @@ if __name__ == '__main__':
     args = argparse.Namespace(**args_dict)
 
     # model_name = 'EleutherAI/gpt-j-6B'  # 'EleutherAI/gpt-neox-20b'
-    model_name = 'gpt2-xl'  # 'EleutherAI/gpt-neox-20b'
+    model_name = 'EleutherAI/gpt-neo-2.7B'
+    # model_name = 'gpt2-xl'  # 'EleutherAI/gpt-neox-20b'
     # model_name = 'gpt2-medium'  # 'EleutherAI/gpt-neox-20b'
     # model_name = 'gpt3'
-    if model_name == 'gpt3':
-        print('*** Warning: GPT-3 specified, so making calls to GPT-3 API ***')
     # model_name = 'facebook/opt-1.3b'
-    # model_name = 'EleutherAI/gpt-neox-20b'
+    # model_name = 'EleutherAI/gpt-neox-20b'    
     save_dir = 'results/prompt_classification'
     # task_names = TASKS.keys()
     task_names = ['add_two', 'divide_two', 'max_two',
@@ -44,6 +43,8 @@ if __name__ == '__main__':
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     # set up tasks
+    if model_name == 'gpt3':
+        print('*** Warning: GPT-3 specified, so making calls to GPT-3 API ***')
     print('set up tasks')
     task_information = {}
     task_descriptions = []

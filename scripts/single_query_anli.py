@@ -22,6 +22,7 @@ else:
 ##########################################
 PARAMS_SHARED_DICT = {
     # things to vary
+    'max_num_tokens': [4],
     'use_single_query': [1],
     'n_shots': [1, 5, 10],
     'beam_size_extra': [50],
@@ -29,8 +30,7 @@ PARAMS_SHARED_DICT = {
                         'task1149_item_check_edible', 'task183_rhyme_generation', 'task1191_food_veg_nonveg',
                         'task092_check_prime_classification', 'task088_identify_typo_verification',
                         'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql']],
-    'max_num_tokens': [1],
-
+ 
     # parallel settings
     'use_parallelformers': [0],
     'use_cpu_only': [0],

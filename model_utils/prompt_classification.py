@@ -99,8 +99,11 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
     assert len(
         possible_answer_ids) > 0, "need multiple answers for multiple choice"
 
+
+    # set up possible answers
     possible_answer_ids = torch.tensor(possible_answer_ids)
-    vocab_size = model.tokenizer.vocab_size
+    # vocab_size = model.tokenizer.vocab_size
+    vocab_size = model.get_logits(['dummy text']).shape[-1]
     possible_answer_mask = (
         torch.arange(start=0, end=vocab_size)[:, None]
         ==
