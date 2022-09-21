@@ -53,7 +53,7 @@ class PrefixGeneticPool:
         return self._avg_loss.keys()
     
     def print(self, topk: int) -> None:
-        top_token_ids = self.topk_all(k=topk, min_ocurrences=2)
+        top_token_ids = self.topk(k=topk, min_ocurrences=2)
         if not len(top_token_ids): return
         print((" " * 40), ("*" * 20), "Population", ("*" * 20))
         for token_ids in top_token_ids:
@@ -174,7 +174,7 @@ class GeneticAutoPrompt(AutoPrompt):
         ####################################################################
         self._gene_pool = PrefixGeneticPool(
             tokenizer=self.tokenizer,
-            criterion='combined'  # in ['loss', 'acc', 'combined']
+            criterion='loss'  # in ['loss', 'acc', 'combined']
         )
         ####################################################################
         prompt_str = args.genetic_preprefix_str.lstrip()
