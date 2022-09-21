@@ -208,7 +208,7 @@ if __name__ == '__main__':
     parser.add_argument('--genetic_preprefix_str', type=str, default='',
                     help='Text like "Output the number that" or "Answer F/M if"...'
     )
-    parser.add_argument('--llm_parsimonious',  '--parsimonious', type=int, default=0, choices=(0, 1),
+    parser.add_argument('--llm_float16', '--float16', '--parsimonious', type=int, default=0, choices=(0, 1),
                         help='if true, loads LLM in fp16 and at low-ram')
     parser.add_argument('--max_num_val_samples', type=int, default=0,
                         help='if > 0, max number of samples to use for post-epoch evaluation')
@@ -242,7 +242,7 @@ if __name__ == '__main__':
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     tokenizer.pad_token = tokenizer.eos_token
 
-    if args.llm_parsimonious:
+    if args.llm_float16:
         lm = AutoModelForCausalLM.from_pretrained(
             checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id,
             revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True

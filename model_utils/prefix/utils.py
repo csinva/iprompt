@@ -12,7 +12,7 @@ from torch import nn
 import tqdm
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-DEBUG_LOSS = False
+DEBUG_LOSS = True
 
 
 def get_token_replacements_single_mask(
@@ -206,11 +206,11 @@ class PrefixModel(nn.Module, abc.ABC):
             self,
             input_ids: torch.Tensor,
             prefix_ids: Optional[torch.Tensor],
-            attention_mask: Optional[torch.Tensor] = None
         ) -> torch.Tensor:
         new_input_ids, embeddings = self.embed_input_ids(
             input_ids=input_ids, prefix_ids=prefix_ids
         )
+        attention_mask = ~(new_input_ids == self.tokenizer.pad_token_id)
         assert new_input_ids.shape == embeddings.shape[0:2]
         return new_input_ids, self.model(inputs_embeds=embeddings, attention_mask=attention_mask)
     

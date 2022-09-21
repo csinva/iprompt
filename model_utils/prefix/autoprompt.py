@@ -17,6 +17,8 @@ class AutoPrompt(HotFlip):
     prefix_ids: torch.Tensor
     prefix_embedding: torch.nn.Parameter
     preprefix: str
+    _best_loss: float
+    _best_n_correct: int
     def __init__(
             self,
             args: argparse.Namespace,
@@ -30,6 +32,8 @@ class AutoPrompt(HotFlip):
         )
         # AutoPrompt-specific parameters.
         self._num_candidates_per_prefix_token = args.hotflip_num_candidates # V_cand in autoprompt paper
+        self._best_loss = float('inf')
+        self._best_n_correct = 0
 
     def compute_loss_and_call_backward(
             self,
@@ -95,6 +99,10 @@ class AutoPrompt(HotFlip):
                 )
             all_candidate_losses[i] += cand_loss
             all_n_correct[i] += cand_n_correct
+
+        # don't reset prefix if one of these candidates makes the score worse
+        if all_candidate_losses.argmin() > self._best_loss:
+            return self._best_loss, self._best_n_correct
         
         # compute new prefix
         new_prefix_idx = all_candidate_losses.argmin()
@@ -109,6 +117,8 @@ class AutoPrompt(HotFlip):
         # it's not mentioned in the paper
         self._swap_token_idx = random.randint(0, (self._num_tokens-1))
 
+        # reset metrics & return
+        self._best_loss, self._best_n_correct = new_prefix_loss, new_prefix_n_correct
         return new_prefix_loss, new_prefix_n_correct
         
     def post_epoch(self, dataloader: torch.utils.data.DataLoader, possible_answer_mask: torch.Tensor) -> None:

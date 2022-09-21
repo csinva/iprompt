@@ -99,19 +99,12 @@ class HotFlip(PrefixModel):
             possible_answer_mask: torch.Tensor,
             prefix_ids: Optional[torch.Tensor] = None
         ) -> torch.Tensor:
-    
-        _full_input = torch.cat(
-             (prefix_ids[None].repeat(len(original_input_ids), 1), original_input_ids), dim=1
-        )
-        attention_mask = ~(_full_input == self.tokenizer.pad_token_id)
+
+        # feed into the model. prefix-handling is implemented in PrefixModel::forward.
         input_ids, outputs = self.forward(
             input_ids=original_input_ids, 
-            attention_mask=attention_mask,
             prefix_ids=prefix_ids,
         )
-
-        if (attention_mask == self.tokenizer.pad_token_id).any():
-            breakpoint()
         next_token_logits = outputs.logits[:, -1, :]
 
         if possible_answer_mask is None:

@@ -1,18 +1,18 @@
 from typing import Callable, Dict, List
 
+from collections import defaultdict
+from copy import deepcopy
 import logging
 import os
 import random
 import string
-import torch
 import argparse
-from copy import deepcopy
-from collections import defaultdict
 
 import datasets
-from datasets import Dataset
 import numpy as np
 import pandas as pd
+import torch
+import transformers
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from tqdm import tqdm
@@ -89,7 +89,7 @@ def rerank_prefix_list(
     logger.info('got %d prefixes, now computing losses', len(prefix_list))
 
 
-    if args.llm_parsimonious:
+    if args.llm_float16:
         lm = AutoModelForCausalLM.from_pretrained(
             checkpoint, output_hidden_states=False,
             revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True
@@ -258,7 +258,7 @@ if __name__ == '__main__':
                         ),
                         help='model checkpoint to use'
     )
-    parser.add_argument('--llm_parsimonious', '--parsimonious', type=int, default=1, choices=(0, 1),
+    parser.add_argument('--llm_float16', '--float16', '--parsimonious', type=int, default=0, choices=(0, 1),
                         help='if true, loads LLM in fp16 and at low-ram')
     args = parser.parse_args()
     args_ignore_for_caching = {k for k in vars(
@@ -300,6 +300,7 @@ if __name__ == '__main__':
 
         np.random.seed(args.seed)
         torch.manual_seed(args.seed)
+        transformers.set_seed(args.seed)
 
         # Support computing things from just a single ´xample
         dset = dset.shuffle()
