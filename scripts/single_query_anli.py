@@ -40,6 +40,7 @@ PARAMS_SHARED_DICT['seed'] = [1, 2, 3]
 PARAMS_SHARED_DICT['save_dir'] = [f'/home/chansingh/mntv1/single_query_anli_long_suffs_full']
 PARAMS_SHARED_DICT['max_num_tokens'] = [5]
 PARAMS_SHARED_DICT['use_early_stopping'] = [0]
+PARAMS_SHARED_DICT['use_generic_query'] = [1]
 
 cmd_python = 'python'
 ks_final, param_combos_final = submit_utils.combine_param_dicts(

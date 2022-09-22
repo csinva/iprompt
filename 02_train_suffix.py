@@ -57,6 +57,8 @@ def add_main_args(parser):
                         help='boolean 0 or 1: whether to allow stopwords when searching for prompt')
     parser.add_argument('--use_early_stopping', type=int, default=1,
                         help='whether to stop searching once finding correct answer')
+    parser.add_argument('--use_generic_query', type=int, default=0,
+                        help='whether to use a generic query template instead of a task-specific one (harder)')
 
     # training misc args
     parser.add_argument('--seed', type=int, default=1,
