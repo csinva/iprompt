@@ -33,11 +33,11 @@ PARAMS_SHARED_DICT = {
     'num_learned_tokens': [2, 4, 8],
 
     # things to average over
-    'seed': [1],
+    'seed': [2],
 
     # stopping criteria
     'max_n_datapoints': [4000],
-    'early_stopping_steps': [40],
+    'early_stopping_steps': [20], # scale up with lower batch size
 
     # fixed params
     'max_digit': [100],
@@ -47,12 +47,12 @@ PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 
 PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
     ('checkpoint', 'batch_size', 'float16'): [
-        ('gpt2', 32, 0),
+        # ('gpt2', 32, 0),
         # ('gpt2-medium', 200, 0),
         # ('gpt2-large', 100, 0),
         # ('gpt2-xl', 32, 0),
         # ('EleutherAI/gpt-neo-2.7B', 16, 0),
-        # ('EleutherAI/gpt-j-6B', 8, 1)
+        ('EleutherAI/gpt-j-6B', 32, 1)
         # ('EleutherAI/gpt-neox-20b', 1, 0),
     ],
 }

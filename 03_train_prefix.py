@@ -355,52 +355,61 @@ if __name__ == '__main__':
     torch.manual_seed(args.seed)
     transformers.set_seed(args.seed)
 
-    print("")
     assert (not ((args.mask_possible_answers) and (args.train_split_frac))), (
         "mask possible answers not supported for eval"
     )
 
-
-    r = defaultdict(list)
-    r.update(vars(args))
-    logger = logging.getLogger()
-    logging.basicConfig(level=logging.INFO)
-
-    logger.info('loading model and data...')
-    checkpoint = args.checkpoint
-    tokenizer = AutoTokenizer.from_pretrained(checkpoint)
-    tokenizer.pad_token = tokenizer.eos_token
-
-    if args.llm_float16:
-        lm = AutoModelForCausalLM.from_pretrained(
-            checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id,
-            revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True
-        )
-    else:    
-        lm = AutoModelForCausalLM.from_pretrained(
-            checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id
-        )
-    loss_func = PrefixLoss(gamma=args.gamma, tokenizer=tokenizer)
-
-    # set up saving
-    save_dir_unique = datetime.now().strftime("%b_%d_%H_%M_") + ''.join(random.choices(string.ascii_lowercase, k=12))
-    save_dir = os.path.join(args.save_dir, save_dir_unique)
-    logging.info('saving to ' + save_dir)
-    args.save_dir_unique = save_dir
-
-    preprefix = data.get_init_suffix(args) if args.use_preprefix else '' 
-    model = model_cls_dict[args.model_cls](
-        args=args,
-        loss_func=loss_func, model=lm, tokenizer=tokenizer, preprefix=preprefix
-    )
-    dset, check_answer_func, description = data.get_data(
-        args=args, task_name=args.task_name, n_shots=args.n_shots, train_split_frac=args.train_split_frac)
-    print(f'Attempting task with description: "{description}"')
-
-    logger.info('beginning training...')
-
-    if args.train_split_frac is None:
-        r = train(args=args, r=r, dset=dset, model=model, tokenizer=tokenizer)
+    # iterate over tasks
+    if args.task_name_list is not None:
+        logging.info('using task_name_list ' + str(args.task_name_list))
     else:
-        dset_train, dset_test = dset
-        r = train_mode
+        args.task_name_list = [args.task_name]
+    for task_idx, task_name in enumerate(args.task_name_list):
+        print(f'*** Executing task {task_idx+1}/{len(args.task_name_list)}')
+        # actually set the task
+        args.task_name = task_name
+        
+        r = defaultdict(list)
+        r.update(vars(args))
+        logger = logging.getLogger()
+        logging.basicConfig(level=logging.INFO)
+
+        logger.info('loading model and data...')
+        checkpoint = args.checkpoint
+        tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+        tokenizer.pad_token = tokenizer.eos_token
+
+        if args.llm_float16:
+            lm = AutoModelForCausalLM.from_pretrained(
+                checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id,
+                revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True
+            )
+        else:    
+            lm = AutoModelForCausalLM.from_pretrained(
+                checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id
+            )
+        loss_func = PrefixLoss(gamma=args.gamma, tokenizer=tokenizer)
+
+        # set up saving
+        save_dir_unique = datetime.now().strftime("%b_%d_%H_%M_") + ''.join(random.choices(string.ascii_lowercase, k=12))
+        save_dir = os.path.join(args.save_dir, save_dir_unique)
+        logging.info('saving to ' + save_dir)
+        args.save_dir_unique = save_dir
+
+        preprefix = data.get_init_suffix(args) if args.use_preprefix else '' 
+        model = model_cls_dict[args.model_cls](
+            args=args,
+            loss_func=loss_func, model=lm, tokenizer=tokenizer, preprefix=preprefix
+        )
+        dset, check_answer_func, description = data.get_data(
+            args=args, task_name=args.task_name, n_shots=args.n_shots, train_split_frac=args.train_split_frac)
+        print(f'Attempting task with description: "{description}"')
+
+        logger.info('beginning training...')
+
+        if args.train_split_frac is None:
+            r = train(args=args, r=r, dset=dset, model=model, tokenizer=tokenizer)
+        else:
+            dset_train, dset_test = dset
+            r = train_model(args=args, r=r, dset=dset_train, model=model, tokenizer=tokenizer)
+            r = eval_model(args=args, r=r, dset=dset_test, model=model, tokenizer=tokenizer)
