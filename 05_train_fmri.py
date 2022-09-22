@@ -86,8 +86,8 @@ with torch.no_grad():
             all_logits[i: i + batch_size] = next_token_logits
 
             # save
-            if i % 500 == 99:
-                pkl.dump(all_logits, open(
-                    oj(save_dir, f'all_logits_seed={seed}_{i + 1}.pkl'), 'wb'))
+            # if i % 500 == 99:
+                # pkl.dump(all_logits, open(
+                    # oj(save_dir, f'all_logits_seed={seed}_{i + 1}.pkl'), 'wb'))
         pkl.dump(all_logits, open(
             oj(save_dir, f'all_logits_seed={seed}.pkl'), 'wb'))
