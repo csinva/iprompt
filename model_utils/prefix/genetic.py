@@ -83,8 +83,8 @@ class GeneticAutoPrompt(AutoPrompt):
         r["generation_top_p"] = self._generation_top_p
         r["generation_repetition_penalty"] = self._generation_repetition_penalty
         r["generation_bad_words_ids"] = self._generation_bad_words_ids
-        r["pre_data_prompt_str"] = self.tokenizer.decode(self._pre_data_token_ids)
-        r["post_data_prompt_str"] = self.tokenizer.decode(self._post_data_token_ids)
+        r["pre_data_prompt_str"] = self.tokenizer.decode(self._pre_data_token_ids.flatten())
+        r["post_data_prompt_str"] = self.tokenizer.decode(self._post_data_token_ids.flatten())
         return r
     
     def _initialize_pop_once(self, full_text_ids: torch.Tensor):
@@ -285,6 +285,8 @@ class GeneticAutoPrompt(AutoPrompt):
             loss (float torch.Tensor) -- the loss
             num_correct (int): number of examples where prediction was correct
         """
+        self.model.eval()
+
         full_text_ids = self._create_full_text_ids(
             full_text_input_ids=full_text_tokenized.input_ids,
         )
@@ -318,6 +320,9 @@ class GeneticAutoPrompt(AutoPrompt):
         best_prefix_last_loss = self._prefix_pool._all_losses[best_prefix_ids][-1]
         best_prefix_last_accuracy = self._prefix_pool._all_accuracy[best_prefix_ids][-1]
         best_prefix_last_n_correct = best_prefix_last_accuracy * len(full_text_ids)
+
+        # Reset prefix IDs so that the model can be readily used for eval.
+        self._set_prefix_ids(torch.tensor(best_prefix_ids).to(device))
 
         return best_prefix_last_loss, best_prefix_last_n_correct
         

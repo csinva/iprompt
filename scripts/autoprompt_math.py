@@ -11,24 +11,52 @@ save_dir = '/home/jxm3/random/interpretable-autoprompting/results/autoprompt_add
 
 cmd_python = 'python'
 
+
+"""
+example_command:
+
+torch ❯ python 03_train_prefix.py  --use_preprefix=0 --num_learned_tokens=8 
+--batch_size=16  --accum_grad_over_epoch=0 --model_cls=genetic 
+--checkpoint="EleutherAI/gpt-j-6B" --n_shots=1 --seed=1  
+--task_name add_two --max_n_steps=500 --train_split_frac=0.8 
+--max_digit=100 --float16=1 
+--early_stopping_steps=10
+"""
 PARAMS_SHARED_DICT = {
     # things to vary
     'n_shots': [1],
-    task_name_list = [['add_two']],
+    'task_name_list': [['add_two']],
     # 'task_name_list': [['add_two', 'multiply_two', 'divide_two', 'subtract_two',
     #          'max_two', 'first_two',
     #          'square_one', 'exp_one', 'double_one', 'fibonacci_one']],
 
     # things to average over
-    'seed': [1],
+    'seed': [1, 2],
     'template_num_init_string': [0], #, 1, 2],
     'template_num_task_phrasing': [0], #, 1, 2],
+    'model_cls': 'autoprompt',
+
+    # stopping criteria
+    'max_n_datapoints': [5000],
+    'early_stopping_steps': [10],
 
     # fixed params
-    'max_digit': [10],
+    'max_digit': [100],
+    'train_split_frac': [0.8],
 }
-PARAMS_SHARED_DICT.update(submit_utils.PARAMS_SHARED_DICT_PREFIX)
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
+
+PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
+    ('checkpoint', 'batch_size', 'float16'): [
+        # ('gpt2', 32, 0),
+        # ('gpt2-medium', 200, 0),
+        # ('gpt2-large', 100, 0),
+        # ('gpt2-xl', 32, 0),
+        # ('EleutherAI/gpt-neo-2.7B', 16, 0),
+        ('EleutherAI/gpt-j-6B', 8, 1)
+        # ('EleutherAI/gpt-neox-20b', 1, 0),
+    ],
+}
 
 # # Temp stuff: only need to re-run 5-shot experiments,
 # # with reranking, with max 64 examples.

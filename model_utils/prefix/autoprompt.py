@@ -44,15 +44,17 @@ class AutoPrompt(HotFlip):
         save_dir = self.args.save_dir_unique
         os.makedirs(save_dir, exist_ok=True)
         # pickle.dump(self._prefix_pool, open(os.path.join(save_dir, 'prefix_pool.p'), 'wb'))
-        top_prefixes = self._prefix_pool.topk(k=1000, min_occurrences=3)
+        top_prefixes = self._prefix_pool.topk(k=1024, min_occurrences=3)
+        top_prefixes_str = [self.tokenizer.decode(p) for p in top_prefixes]
         top_prefix_accs = [self._prefix_pool._avg_loss[p] for p in top_prefixes]
         top_prefix_losses = [self._prefix_pool._avg_accuracy[p] for p in top_prefixes]
         top_prefix_n_queries = [len(self._prefix_pool._all_losses[p]) for p in top_prefixes]
         return {
-            "top_prefixes": top_prefixes,
-            "top_prefix_accs": top_prefix_accs,
-            "top_prefix_losses": top_prefix_losses,
-            "top_prefix_n_queries": top_prefix_n_queries,
+            "prefix_ids": top_prefixes,
+            "prefixes": top_prefixes_str,
+            "prefix_accs": top_prefix_accs,
+            "prefix_losses": top_prefix_losses,
+            "prefix_n_queries": top_prefix_n_queries,
         }
 
     def compute_loss_and_call_backward(

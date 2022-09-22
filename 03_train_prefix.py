@@ -43,7 +43,7 @@ model_cls_dict = {
 }
 
 
-def train(
+def train_model(
         args: argparse.Namespace,
         r: Dict[str, List],
         dset: datasets.Dataset,
@@ -51,6 +51,8 @@ def train(
         tokenizer: transformers.PreTrainedTokenizer
     ):
     """
+    Trains a model, either by optimizing continuous embeddings or finding an optimal discrete embedding.
+
     Params
     ------
     r: dict
@@ -60,12 +62,6 @@ def train(
 
     model = model.to(device)
     dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=True, drop_last=False)
-
-    # Support computing things from just a single ´xample
-    val_dset = dset.shuffle()
-    if (args.max_n_val_samples > 0):
-         val_dset = val_dset.filter(lambda _, i: (i < args.max_n_val_samples), with_indices=True)
-    val_dataloader = DataLoader(val_dset, batch_size=args.batch_size, shuffle=False, drop_last=False)
 
     # optimizer
     optim = torch.optim.AdamW(model.trainable_params, lr=args.lr)
@@ -109,7 +105,6 @@ def train(
         
         total_n = 0
         total_n_correct = 0
-        total_n_datapoints = 0
         pbar = tqdm(enumerate(dataloader), total=len(dataloader))
         for idx, batch in pbar:
             total_n_steps += 1
@@ -131,7 +126,6 @@ def train(
 
             total_n += len(x_text)
             total_n_correct += n_correct
-            total_n_datapoints += len(x_text)
 
             all_losses.append(loss)
             pbar.set_description(f"Loss = {torch.tensor(all_losses).mean():.3f}")
@@ -142,7 +136,7 @@ def train(
                 optim.zero_grad()
             
             # Early stopping, check after step
-            if (total_n_datapoints > args.max_n_datapoints) or (total_n_steps > args.max_n_steps) or model.check_early_stop():
+            if (total_n > args.max_n_datapoints) or (total_n_steps > args.max_n_steps) or model.check_early_stop():
                 stopping_early = True
                 break
     
@@ -160,7 +154,7 @@ def train(
             os.makedirs(save_dir, exist_ok=True)
             pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
 
-        model.post_epoch(dataloader=val_dataloader, possible_answer_mask=possible_answer_mask)
+        model.post_epoch(dataloader=dataloader, possible_answer_mask=possible_answer_mask)
 
         if args.accum_grad_over_epoch:
             optim.step()
@@ -168,15 +162,69 @@ def train(
 
         # Early stopping, check after epoch
         if stopping_early:
-            print(f"Stopping early after {total_n_steps} steps and {total_n_datapoints} datapoints")
+            print(f"Stopping early after {total_n_steps} steps and {total_n} datapoints")
             break
         
-    # Serialize model-specific stuff
+    # Serialize model-specific stuff (prefixes & losses for autoprompt, embeddings for prompt tuning, etc.)
     r.update(model.serialize())
+
+    # save whether prefixes fit the template
+    if "prefixes" in r:
+        r["prefixes__check_answer_func"] = list(map(check_answer_func, r["prefixes"]))
+
     pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
 
     return r
 
+
+
+
+def eval_model(
+        args: argparse.Namespace,
+        r: Dict[str, List],
+        dset: datasets.Dataset,
+        model: PrefixModel,
+        tokenizer: transformers.PreTrainedTokenizer
+    ):
+    """
+    Evaluates a model based on the learned prefix.
+
+    Params
+    ------
+    r: dict
+        dictionary of things to save
+    """
+    model.eval()
+    dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=False, drop_last=False)
+
+    pbar = tqdm(enumerate(dataloader), total=len(dataloader), desc='evaluating data', colour='red')
+    total_loss = 0.0
+    total_n = 0
+    total_n_correct = 0
+    for idx, batch in pbar:
+        x_text, y_text = model.prepare_batch(batch=batch)
+
+        tok = functools.partial(model.tokenizer, return_tensors='pt', padding='longest')
+        x_tokenized = tok(x_text).to(device)
+        y_tokenized = tok(y_text).to(device)
+        full_text_tokenized = tok(batch['text']).to(device)
+
+        with torch.no_grad():
+            _input_ids, loss, n_correct = model._compute_loss_with_set_prefix(
+                original_input_ids=x_tokenized.input_ids,
+                next_token_ids=y_tokenized.input_ids[:, 0],
+                possible_answer_mask=None, # TODO: implement eval verbalizer
+                prefix_ids=None,
+            )
+
+        total_n += len(x_text)
+        total_n_correct += n_correct
+
+        pbar.set_description(f"Acc = {total_n_correct}/{total_n} {(total_n_correct/total_n*100):.2f}%")
+
+    pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
+
+    return r
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -187,16 +235,18 @@ if __name__ == '__main__':
                     help='model type to use for training')
     parser.add_argument('--batch_size', type=int, default=500,
                         help='batch size for training')
-    parser.add_argument('--max_dset_size', type=int,
-                        default=10000, help='maximum allowable dataset size')
     parser.add_argument('--seed', type=int, default=1,
                         help='random seed')
-    parser.add_argument('--n_epochs', type=int, default=10000,
+    parser.add_argument('--n_epochs', type=int, default=100,
                         help='number of epochs for training')
     parser.add_argument('--max_n_steps', type=int, default=10**10,
                         help='max number of steps for training')
     parser.add_argument('--max_n_datapoints', type=int, default=10**10,
                         help='max number of datapoints for training')
+    parser.add_argument('--train_split_frac', type=float,
+                        default=None, help='fraction for train-test split if desired')
+    parser.add_argument('--max_dset_size', type=int,
+                        default=1000, help='maximum allowable dataset size')
     parser.add_argument('--early_stopping_steps', type=int, default=-1,
                         help='if > 0, number of steps until stopping early after no improvement')
     parser.add_argument('--max_digit', type=int, default=100,
@@ -235,8 +285,6 @@ if __name__ == '__main__':
     )
     parser.add_argument('--llm_float16', '--float16', '--parsimonious', type=int, default=0, choices=(0, 1),
                         help='if true, loads LLM in fp16 and at low-ram')
-    parser.add_argument('--max_n_val_samples', type=int, default=0,
-                        help='if > 0, max number of samples to use for post-epoch evaluation')
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",
                         choices=(
                             ############################
@@ -261,6 +309,12 @@ if __name__ == '__main__':
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
     transformers.set_seed(args.seed)
+
+    print("")
+    assert (not ((args.mask_possible_answers) and (args.train_split_frac))), (
+        "mask possible answers not supported for eval"
+    )
+
 
     r = defaultdict(list)
     r.update(vars(args))
@@ -295,8 +349,14 @@ if __name__ == '__main__':
         loss_func=loss_func, model=lm, tokenizer=tokenizer, preprefix=preprefix
     )
     dset, check_answer_func, description = data.get_data(
-        args=args, task_name=args.task_name, n_shots=args.n_shots)
+        args=args, task_name=args.task_name, n_shots=args.n_shots, train_split_frac=args.train_split_frac)
     print(f'Attempting task with description: "{description}"')
 
     logger.info('beginning training...')
-    r = train(args=args, r=r, dset=dset, model=model, tokenizer=tokenizer)
+
+    if args.train_split_frac is None:
+        r = train(args=args, r=r, dset=dset, model=model, tokenizer=tokenizer)
+    else:
+        dset_train, dset_test = dset
+        r = train_model(args=args, r=r, dset=dset_train, model=model, tokenizer=tokenizer)
+        r = eval_model(args=args, r=r, dset=dset_test, model=model, tokenizer=tokenizer)

@@ -244,19 +244,45 @@ class PrefixModel(nn.Module, abc.ABC):
         return nn.Parameter(
             self.token_embedding.weight.mean(dim=0, keepdim=True)[None].repeat(1, num_tokens, 1), requires_grad=True
         )
-        # return nn.Parameter(torch.randu((1, 1, emb_dim)), requires_grad=True).to(device)
-        # return nn.Parameter(prefix_emb[:, 0, :], requires_grad=True).to(device)
     
     def init_discrete_prefix(self, num_tokens: int) -> nn.Parameter:
-        # TODO: argparse for starting token
-        # start_word_id = torch.tensor([self.tokenizer.encode(' multiply')[0]], dtype=int)
-        # start_word_id = torch.tensor([self.tokenizer.encode(' hello')[0]], dtype=int)
-        # start_word_id = torch.tensor([self.tokenizer.encode('ogg')[0]], dtype=int)
-        # start_word_id = torch.tensor([self.tokenizer.encode(' add')[0]], dtype=int)
-        # start_word_id = torch.tensor([self.tokenizer.encode('<|endoftext|>')[0]], dtype=int)
         start_word_id = torch.tensor([self.tokenizer.vocab['the']], dtype=int)
         print(f"start_word_id = {start_word_id}")
         return start_word_id.repeat((num_tokens,))
+
+    def _compute_loss_with_set_prefix(
+            self,
+            original_input_ids: torch.Tensor,
+            next_token_ids: torch.Tensor,
+            possible_answer_mask: torch.Tensor,
+            prefix_ids: Optional[torch.Tensor] = None
+        ) -> torch.Tensor:
+
+        # feed into the model. prefix-handling is implemented in PrefixModel::forward.
+        full_input_ids, outputs = self.forward(
+            input_ids=original_input_ids, 
+            prefix_ids=prefix_ids,
+        )
+        next_token_logits = outputs.logits[:, -1, :]
+
+        if possible_answer_mask is None:
+            n_correct = (
+                next_token_logits.argmax(dim=-1) == next_token_ids
+            ).int().sum()
+        else:
+            n_correct = (
+                (next_token_logits.exp() * possible_answer_mask).argmax(dim=-1)
+                    ==
+                next_token_ids
+            ).int().sum()
+
+        original_loss = self.loss_func(
+            input_ids=full_input_ids,
+            next_token_ids=next_token_ids,
+            logits=outputs['logits'],
+            answer_mask=possible_answer_mask
+        )
+        return full_input_ids, original_loss, n_correct
     
     def compute_loss_and_call_backward(
             self,

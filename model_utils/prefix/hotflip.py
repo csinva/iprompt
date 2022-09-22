@@ -108,41 +108,7 @@ class HotFlip(PrefixModel):
     def _prefix_token_grad(self) -> torch.Tensor:
         """Gradient of the prefix tokens wrt the token embedding matrix."""
         return torch.einsum('nd,vd->nv', self.prefix_embedding.grad, self.token_embedding.weight)
-
-    def _compute_loss_with_set_prefix(
-            self,
-            original_input_ids: torch.Tensor,
-            next_token_ids: torch.Tensor,
-            possible_answer_mask: torch.Tensor,
-            prefix_ids: Optional[torch.Tensor] = None
-        ) -> torch.Tensor:
-
-        # feed into the model. prefix-handling is implemented in PrefixModel::forward.
-        input_ids, outputs = self.forward(
-            input_ids=original_input_ids, 
-            prefix_ids=prefix_ids,
-        )
-        next_token_logits = outputs.logits[:, -1, :]
-
-        if possible_answer_mask is None:
-            n_correct = (
-                next_token_logits.argmax(dim=-1) == next_token_ids
-            ).int().sum()
-        else:
-            n_correct = (
-                (next_token_logits.exp() * possible_answer_mask).argmax(dim=-1)
-                    ==
-                next_token_ids
-            ).int().sum()
-
-        original_loss = self.loss_func(
-            input_ids=input_ids,
-            next_token_ids=next_token_ids,
-            logits=outputs['logits'],
-            answer_mask=possible_answer_mask
-        )
-        return input_ids, original_loss, n_correct
-
+    
     def compute_loss_and_call_backward(
             self,
             x_tokenized: transformers.BatchEncoding,
