@@ -7,7 +7,7 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
 # save_dir = f'/home/chansingh/mntv1/prefix_math_{submit_utils.JOB_SUFFIX}'
 # save_dir = f'/home/jxm3/random/interpretable-autoprompting/results/tst2/prefix_math_{submit_utils.JOB_SUFFIX}'
-save_dir = '/home/jxm3/random/interpretable-autoprompting/results/autoprompt_add_test'
+save_dir = '/home/jxm3/random/interpretable-autoprompting/results/autoprompt_add_test_2'
 
 cmd_python = 'python'
 
@@ -24,24 +24,27 @@ torch ❯ python 03_train_prefix.py  --use_preprefix=0 --num_learned_tokens=8
 """
 PARAMS_SHARED_DICT = {
     # things to vary
-    'n_shots': [1],
+    'n_shots': [1, 5],
     'task_name_list': [['add_two']],
     # 'task_name_list': [['add_two', 'multiply_two', 'divide_two', 'subtract_two',
     #          'max_two', 'first_two',
     #          'square_one', 'exp_one', 'double_one', 'fibonacci_one']],
-    'model_cls': ['autoprompt', 'genetic'],
-    'num_learned_tokens': [2, 4, 8],
+    'model_cls': ['genetic', 'autoprompt'],
+    'num_learned_tokens': [3, 6],
 
     # things to average over
-    'seed': [2],
+    'seed': [1],
+    # TODO: average over pre-prompt/post-prompt for genetic,
+    # possibly initialization  or num candidates for autoprompt.
 
     # stopping criteria
     'max_n_datapoints': [4000],
-    'early_stopping_steps': [20], # scale up with lower batch size
+    'early_stopping_steps': [20],
 
     # fixed params
     'max_digit': [100],
     'train_split_frac': [0.75],
+    'single_shot_loss': [0, 1],
 }
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 
@@ -57,11 +60,6 @@ PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gp
     ],
 }
 
-# # Temp stuff: only need to re-run 5-shot experiments,
-# # with reranking, with max 64 examples.
-# PARAMS_SHARED_DICT['do_reranking'] = [0, 1]
-# PARAMS_SHARED_DICT['n_shots'] = [5]
-# PARAMS_SHARED_DICT['max_num_samples'] = [64]
 
 ks_final, param_combos_final = submit_utils.combine_param_dicts(
     PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT)

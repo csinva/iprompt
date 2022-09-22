@@ -362,7 +362,7 @@ class PrefixPool:
         if not len(top_token_ids): return
         print((" " * 50), ("*" * 20), "Population", ("*" * 20))
         for token_ids in top_token_ids:
-            prefix_str = "{:>60}".format(self.tokenizer.decode(list(token_ids)).replace("\n", "\\\\n"))
+            prefix_str = "{:>65}".format(self.tokenizer.decode(list(token_ids)).replace("\n", "\\\\n"))
             loss_str = f"{self._avg_loss[token_ids]:.3f}"
             acc_str = f"{self._avg_accuracy[token_ids]:.2f}"
             print(prefix_str, "\t\t", loss_str, "\t\t", acc_str)
