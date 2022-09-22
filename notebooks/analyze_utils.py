@@ -63,6 +63,7 @@ YLABS = {
     'reciprocal_rank_multi': 'Reciprocal rank (higher is better)',
 }
 
+
 class CPU_Unpickler(pkl.Unpickler):
     def find_class(self, module, name):
         if module == 'torch.storage' and name == '_load_from_bytes':
@@ -70,7 +71,9 @@ class CPU_Unpickler(pkl.Unpickler):
         else:
             return super().find_class(module, name)
 
-def load_results_and_cache(results_dir: str, save_file: str = 'r.pkl') -> pd.DataFrame:
+
+def load_results_and_cache(results_dir: str, save_file: str = 'r.pkl',
+                           only_keep_scalar: bool = True) -> pd.DataFrame:
     """Suffix script stores results_final.pkl instead of results.json
     """
     dir_names = sorted([fname
@@ -83,10 +86,10 @@ def load_results_and_cache(results_dir: str, save_file: str = 'r.pkl') -> pd.Dat
         try:
             ser = pd.Series(
                 pkl.load(open(oj(results_dir, dir_name, 'results_final.pkl'), "rb")))
-            # only keep scalar-valued vars
-            ser_scalar = ser[~ser.apply(
-                lambda x: isinstance(x, list)).values.astype(bool)]
-            results_list.append(ser_scalar)
+            if only_keep_scalar:
+                ser = ser[~ser.apply(
+                    lambda x: isinstance(x, list)).values.astype(bool)]
+            results_list.append(ser)
         except Exception as e:
             print('skipping', dir_name)
 
@@ -102,9 +105,11 @@ def load_results_and_cache_prefix_json(results_dir: str, save_file: str = 'r.pkl
                         for fname in os.listdir(results_dir)
                         if os.path.isdir(oj(results_dir, fname))
                         and (
-                            os.path.exists(oj(results_dir, fname, 'results.json'))
-                            or 
-                            os.path.exists(oj(results_dir, fname, 'results.pkl'))
+                            os.path.exists(
+                                oj(results_dir, fname, 'results.json'))
+                            or
+                            os.path.exists(
+                                oj(results_dir, fname, 'results.pkl'))
                         )
                         ])
     dfs = []
@@ -116,10 +121,10 @@ def load_results_and_cache_prefix_json(results_dir: str, save_file: str = 'r.pkl
             else:
                 pickle_filename = oj(results_dir, dir_name, 'results.pkl')
                 json_dict = CPU_Unpickler(open(pickle_filename, 'rb')).load()
-            
+
             # remove unneeded keys
-            del json_dict['task_name_list'] 
-            del json_dict['losses'] 
+            del json_dict['task_name_list']
+            del json_dict['losses']
 
             df = pd.DataFrame.from_dict(json_dict)
             df['json_filename'] = json_filename
@@ -156,9 +161,11 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
                         for fname in os.listdir(results_dir)
                         if os.path.isdir(oj(results_dir, fname))
                         and (
-                            os.path.exists(oj(results_dir, fname, 'results.json'))
-                            or 
-                            os.path.exists(oj(results_dir, fname, 'results.pkl'))
+                            os.path.exists(
+                                oj(results_dir, fname, 'results.json'))
+                            or
+                            os.path.exists(
+                                oj(results_dir, fname, 'results.pkl'))
                         )
                         ])
     dfs = []
@@ -167,26 +174,28 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
         json_dict = CPU_Unpickler(open(pickle_filename, 'rb')).load()
 
         # drop half-finished runs
-        if "prefix_test_loss" not in json_dict: 
+        if "prefix_test_loss" not in json_dict:
             print("skipping", dir_name)
             continue
 
         # remove unneeded keys
-        del json_dict['task_name_list'] 
-        del json_dict['losses'] 
+        del json_dict['task_name_list']
+        del json_dict['losses']
 
         # list to str
         if len(json_dict['generation_bad_words_ids']):
             json_dict['generation_bad_words_ids'] = json_dict['generation_bad_words_ids'][0]
-            json_dict['generation_bad_words_ids'] = ', '.join(map(str, json_dict['generation_bad_words_ids']))
+            json_dict['generation_bad_words_ids'] = ', '.join(
+                map(str, json_dict['generation_bad_words_ids']))
         else:
             json_dict['generation_bad_words_ids'] = ''
 
-        print({ k: len(v) for k,v in json_dict.items() if (hasattr(v, '__len__') and not isinstance(v, str))})
+        print({k: len(v) for k, v in json_dict.items() if (
+            hasattr(v, '__len__') and not isinstance(v, str))})
 
         df = pd.DataFrame.from_dict(json_dict)
         df['pickle_filename'] = pickle_filename
-        
+
         # tensor -> float
         df['prefix_test_acc'] = df['prefix_test_acc'].map(lambda t: t.item())
 
@@ -195,6 +204,7 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
     r = pd.concat(dfs, axis=0)
     r.to_pickle(oj(results_dir, save_file))
     return r
+
 
 def postprocess_results(r):
     """
