@@ -177,6 +177,11 @@ def postprocess_results(r):
     if 'final_num_suffixes_checked' in r.columns:
         r['reciprocal_rank_multi'] = r['final_num_suffixes_checked'].map(
             lambda n: 1/(n+1))  # use the results found by beam search
+
+    if not 'train_split_frac' in r.columns:
+        r['train_split_frac'] = 1
+    else:
+        r['train_split_frac'] = r['train_split_frac'].fillna(1)
     return r
 
 
