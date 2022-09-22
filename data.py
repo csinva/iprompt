@@ -16,13 +16,19 @@ from data_utils.anli import TASKS_ANLI
 TASKS = {**TASKS_TWO_NUMS, **TASKS_ONE_NUM, **TASKS_ANLI}
 
 
-def get_data(args, task_name: str = 'add_two', n_shots: int = 1):
-    """Return
+def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_frac: float=None):
+    """
+
+    Params
+    ------
     dset: huggingface dataset
     check_answer_func: func
         returns boolean when a string semantically matches the description of a task
     description: str
         string brief description of the task
+    train_split: float
+        fraction of data to use for training
+        Note: if specified, returns tuple of (dset_train, dset_test) instead of single dset_train
     """
     d = defaultdict(list)
     rng = np.random.default_rng(12345)
@@ -94,7 +100,6 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1):
     # print(df.head())
     # trim max size (should already be controlled)
     df = df.iloc[:args.max_dset_size]
-    dset = Dataset.from_pandas(df)
 
     # return check answer func
     check_answer_func = TASKS[task_name]['check_answer_func']
@@ -103,7 +108,15 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1):
             check_answer_func, re.IGNORECASE).search
 
         def check_answer_func(x): return bool(check_answer_func_re(x))
-    return dset, check_answer_func, task['description']
+
+    if train_split_frac:
+        n_train = int(df.shape[0] * train_split_frac)
+        dset_train = Dataset.from_pandas(df.iloc[:n_train])
+        dset_test = Dataset.from_pandas(df.iloc[n_train:])
+        return (dset_train, dset_test), check_answer_func, task['description']
+    else:
+        dset = Dataset.from_pandas(df)
+        return dset, check_answer_func, task['description']
 
 
 
