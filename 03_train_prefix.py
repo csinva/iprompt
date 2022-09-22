@@ -1,4 +1,4 @@
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
 import datasets
 import functools
@@ -177,27 +177,25 @@ def train_model(
     return r
 
 
-
-
-def eval_model(
+def eval_model_with_set_prefix(
         args: argparse.Namespace,
         r: Dict[str, List],
-        dset: datasets.Dataset,
+        dataloader: DataLoader,
         model: PrefixModel,
         tokenizer: transformers.PreTrainedTokenizer
-    ):
+    ) -> Tuple[float, float]:
     """
-    Evaluates a model based on the learned prefix.
+    Evaluates a model based on set prefix. May be called multiple times with different prefixes
 
     Params
     ------
     r: dict
         dictionary of things to save
-    """
-    model.eval()
-    dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=False, drop_last=False)
 
-    pbar = tqdm(enumerate(dataloader), total=len(dataloader), desc='evaluating data', colour='red')
+    Returns: Tuple[float, float]
+        average loss, accuracy per sample over eval dataset
+    """
+    pbar = tqdm(enumerate(dataloader), total=len(dataloader), desc='evaluating data', colour='red', leave=False)
     total_loss = 0.0
     total_n = 0
     total_n_correct = 0
@@ -217,13 +215,58 @@ def eval_model(
                 prefix_ids=None,
             )
 
+        total_loss += loss.item()
         total_n += len(x_text)
         total_n_correct += n_correct
 
         pbar.set_description(f"Acc = {total_n_correct}/{total_n} {(total_n_correct/total_n*100):.2f}%")
+    
+    return (total_loss / total_n), (total_n_correct / total_n)
+
+
+def eval_model(
+        args: argparse.Namespace,
+        r: Dict[str, List],
+        dset: datasets.Dataset,
+        model: PrefixModel,
+        tokenizer: transformers.PreTrainedTokenizer
+    ):
+    """
+    Evaluates a model based on the learned prefix(es).
+
+    Params
+    ------
+    r: dict
+        dictionary of things to save
+    """
+    model.eval()
+    dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=False, drop_last=False)
+
+    if r["prefixes"]:
+        # if we specified multiple prefixes (autoprompt or genetic), let's evaluate them all!
+
+        for prefix_ids in tqdm(r["prefix_ids"], desc="evaluating prefixes"):
+            model._set_prefix_ids(new_ids=torch.tensor(prefix_ids).to(device))
+
+            loss, acc = eval_model_with_set_prefix(
+                args=args, r=r, dataloader=dataloader, model=model, tokenizer=tokenizer
+            )
+
+            r["prefix_test_loss"].append(loss)
+            r["prefix_test_acc"].append(acc)
+        r["num_prefixes_used_for_test"] = len(r["prefixes"])
+    
+    else:
+        # otherwise, there's just one prefix (like for prompt tuning) so just run single eval loop.
+        loss, acc = eval_model_with_set_prefix(
+            args=args, r=r, dataloader=dataloader, model=model, tokenizer=tokenizer
+        )
+        r["prefix_test_acc"] = loss
+        r["prefix_test_loss"] = acc
+        r["num_prefixes_used_for_test"] = 1
+
 
     pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
-
     return r
 
 if __name__ == '__main__':
@@ -266,6 +309,8 @@ if __name__ == '__main__':
     parser.add_argument('--task_name', type=str, default='add_two',
                         choices=(data.TASKS.keys() - {'SUFFIX'}),
                         help='name of task')
+    parser.add_argument('--task_name_list', nargs="*", default=None,
+                        help='names of tasks as list; alternative to passing task_name')
     parser.add_argument('--n_shots', type=int, default=1,
                         help='number of shots in the prompt')
     parser.add_argument('--single_shot_loss', type=int, default=0,
@@ -358,5 +403,4 @@ if __name__ == '__main__':
         r = train(args=args, r=r, dset=dset, model=model, tokenizer=tokenizer)
     else:
         dset_train, dset_test = dset
-        r = train_model(args=args, r=r, dset=dset_train, model=model, tokenizer=tokenizer)
-        r = eval_model(args=args, r=r, dset=dset_test, model=model, tokenizer=tokenizer)
+        r = train_mode

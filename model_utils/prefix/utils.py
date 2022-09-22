@@ -357,8 +357,8 @@ class PrefixPool:
     def prefixes(self) -> List[Tuple[int]]:
         return self._avg_loss.keys()
     
-    def print(self, topk: int) -> None:
-        top_token_ids = self.topk(k=topk, min_occurrences=2)
+    def print(self, topk: int, min_occurrences: int = 2) -> None:
+        top_token_ids = self.topk(k=topk, min_occurrences=min_occurrences)
         if not len(top_token_ids): return
         print((" " * 50), ("*" * 20), "Population", ("*" * 20))
         for token_ids in top_token_ids:

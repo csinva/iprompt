@@ -29,31 +29,30 @@ PARAMS_SHARED_DICT = {
     # 'task_name_list': [['add_two', 'multiply_two', 'divide_two', 'subtract_two',
     #          'max_two', 'first_two',
     #          'square_one', 'exp_one', 'double_one', 'fibonacci_one']],
+    'model_cls': ['autoprompt', 'genetic'],
+    'num_learned_tokens': [2, 4, 8],
 
     # things to average over
-    'seed': [1, 2],
-    'template_num_init_string': [0], #, 1, 2],
-    'template_num_task_phrasing': [0], #, 1, 2],
-    'model_cls': 'autoprompt',
+    'seed': [1],
 
     # stopping criteria
-    'max_n_datapoints': [5000],
-    'early_stopping_steps': [10],
+    'max_n_datapoints': [4000],
+    'early_stopping_steps': [40],
 
     # fixed params
     'max_digit': [100],
-    'train_split_frac': [0.8],
+    'train_split_frac': [0.75],
 }
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 
 PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
     ('checkpoint', 'batch_size', 'float16'): [
-        # ('gpt2', 32, 0),
+        ('gpt2', 32, 0),
         # ('gpt2-medium', 200, 0),
         # ('gpt2-large', 100, 0),
         # ('gpt2-xl', 32, 0),
         # ('EleutherAI/gpt-neo-2.7B', 16, 0),
-        ('EleutherAI/gpt-j-6B', 8, 1)
+        # ('EleutherAI/gpt-j-6B', 8, 1)
         # ('EleutherAI/gpt-neox-20b', 1, 0),
     ],
 }
@@ -65,8 +64,8 @@ PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gp
 # PARAMS_SHARED_DICT['max_num_samples'] = [64]
 
 ks_final, param_combos_final = submit_utils.combine_param_dicts(
-    PARAMS_SHARED_DICT, submit_utils.PARAMS_COUPLED_DICT)
+    PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT)
 
 submit_utils.run_dicts(ks_final, param_combos_final, cmd_python=cmd_python,
-                       script_name='03_rerank_prefix.py', actually_run=True
+                       script_name='03_train_prefix.py', actually_run=True
 )
