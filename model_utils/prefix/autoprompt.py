@@ -31,7 +31,7 @@ class AutoPrompt(HotFlip):
             args=args, loss_func=loss_func, model=model, tokenizer=tokenizer, preprefix=preprefix
         )
         # AutoPrompt-specific parameters.
-        self._num_candidates_per_prefix_token = args.hotflip_num_candidates # V_cand in autoprompt paper
+        self._num_candidates_per_prefix_token = 32 # V_cand in autoprompt paper
         # This helps us know which were the best prefixes to return over time
         self._prefix_pool = PrefixPool(
             tokenizer=self.tokenizer,

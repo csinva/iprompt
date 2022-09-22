@@ -98,6 +98,7 @@ def train_model(
 
     stopping_early = False
     total_n_steps = 0
+    total_n_datapoints = 0
     for epoch in range(args.n_epochs):
         model.pre_epoch()
 
@@ -125,10 +126,11 @@ def train_model(
             )
 
             total_n += len(x_text)
+            total_n_datapoints += len(x_text)
             total_n_correct += n_correct
 
             all_losses.append(loss)
-            pbar.set_description(f"Loss = {torch.tensor(all_losses).mean():.3f}")
+            pbar.set_description(f"Loss = {loss:.3f}")
 
             if not args.accum_grad_over_epoch:
                 # if hotflip, autoprompt, etc., grad will be zero
@@ -136,7 +138,11 @@ def train_model(
                 optim.zero_grad()
             
             # Early stopping, check after step
-            if (total_n > args.max_n_datapoints) or (total_n_steps > args.max_n_steps) or model.check_early_stop():
+            model_check_early_stop = model.check_early_stop()
+            if model_check_early_stop:
+                print("model_check_early_stop returned true")
+                breakpoint()
+            if (total_n_datapoints > args.max_n_datapoints) or (total_n_steps > args.max_n_steps) or model_check_early_stop:
                 stopping_early = True
                 break
     
@@ -149,7 +155,7 @@ def train_model(
         for key, val in model.compute_metrics().items():
             r[key].append(val)
 
-        r['losses'].append(avg_loss)
+        # r['losses'].append(avg_loss)
         if epoch % args.epoch_save_interval == 0:
             os.makedirs(save_dir, exist_ok=True)
             pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
@@ -162,7 +168,7 @@ def train_model(
 
         # Early stopping, check after epoch
         if stopping_early:
-            print(f"Stopping early after {total_n_steps} steps and {total_n} datapoints")
+            print(f"Stopping early after {total_n_steps} steps and {total_n_datapoints} datapoints")
             break
         
     # Serialize model-specific stuff (prefixes & losses for autoprompt, embeddings for prompt tuning, etc.)
@@ -368,7 +374,7 @@ if __name__ == '__main__':
         print(f'*** Executing task {task_idx+1}/{len(args.task_name_list)}')
         # actually set the task
         args.task_name = task_name
-        
+
         r = defaultdict(list)
         r.update(vars(args))
         logger = logging.getLogger()

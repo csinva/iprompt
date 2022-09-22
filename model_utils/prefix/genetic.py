@@ -71,7 +71,7 @@ class GeneticAutoPrompt(AutoPrompt):
         self._pre_data_token_ids = self.tokenizer("Data:\n\n", return_tensors='pt').input_ids.to(device)
         self._post_data_token_ids = self.tokenizer("Prompt:" + prompt_str, return_tensors='pt').input_ids.to(device)
         ####################################################################
-        self._verbose = False
+        self._verbose = True
     
     def serialize(self) -> Dict[str, Any]:
         r = super().serialize()
@@ -142,7 +142,7 @@ class GeneticAutoPrompt(AutoPrompt):
 
     def _track_early_stopping(self):
         """Track changes in population to tell when to stop early."""
-        __n_early_stop = 8
+        __n_early_stop = 4
         population = set(self._select_pop_topk(k=__n_early_stop, min_occurrences=3))
         if (len(population) == __n_early_stop) and (self._last_population == population):
             self._steps_since_new_population += 1
@@ -158,7 +158,7 @@ class GeneticAutoPrompt(AutoPrompt):
         """Allow prefix models to stop early."""
         if self.args.early_stopping_steps == -1:
             return False
-        return self._steps_since_new_prefix >= self.args.early_stopping_steps
+        return self._steps_since_new_population >= self.args.early_stopping_steps
     
     def _get_population_and_random_generations(self, full_text_ids: torch.Tensor) -> torch.Tensor:
         population_pool = self._select_pop_topk(k=self._topk_pop_sample)
