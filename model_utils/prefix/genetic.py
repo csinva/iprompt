@@ -1,14 +1,13 @@
-from typing import Dict, Iterable, List, Optional, Tuple, Union
+from typing import List, Optional, Tuple
 
 import argparse
 import collections
-import heapq
 import random
 import torch
 import transformers
 
 from .autoprompt import AutoPrompt
-from .utils import device, PrefixLoss, PrefixModel
+from .utils import device, PrefixLoss, PrefixModel, PrefixPool
 
 
 """
@@ -19,119 +18,6 @@ docs for generate():
 generation example:
     tokenizer.decode(lm.generate(input_ids=None, max_length=15, temperature=0.8, top_p=0.8, do_sample=True)[0])
 """
-
-def mean(_list: List[Union[int, float]]) -> float:
-    return sum(_list) / len(_list)
-
-
-class PrefixGeneticPool:
-    criterion: str
-    tokenizer: transformers.PreTrainedTokenizer
-    # 
-    _all_losses: Dict[Tuple[int], List[float]]
-    _avg_loss: Dict[Tuple[int], float]
-    _all_accuracy: Dict[Tuple[int], List[float]]
-    _avg_accuracy: Dict[Tuple[int], float]
-    _best_prefix_by_start_token: Dict[int, Tuple[Tuple[int], float]]
-
-    def __init__(self, tokenizer: transformers.PreTrainedTokenizer, criterion: str):
-        self.tokenizer = tokenizer
-        self.criterion = criterion
-        # tuple (input_ids) -> float (loss)
-        self._avg_loss = {}
-        self._all_losses = collections.defaultdict(list)
-        # tuple (input_ids) -> int (n_correct)
-        self._avg_accuracy = {}
-        self._all_accuracy = collections.defaultdict(list)
-        # 
-        self._best_prefix_by_start_token = {}
-        # 
-        self._topk_strategy = 'different_start_token' # ['different_start_token', 'all']
-    
-    @property
-    def prefixes(self) -> List[Tuple[int]]:
-        return self._avg_loss.keys()
-    
-    def print(self, topk: int) -> None:
-        top_token_ids = self.topk(k=topk, min_ocurrences=2)
-        if not len(top_token_ids): return
-        print((" " * 40), ("*" * 20), "Population", ("*" * 20))
-        for token_ids in top_token_ids:
-            prefix_str = "{:>70}".format(self.tokenizer.decode(list(token_ids)).replace("\n", "\\\\n"))
-            loss_str = f"{self._avg_loss[token_ids]:.3f}"
-            acc_str = f"{self._avg_accuracy[token_ids]:.2f}"
-            print(prefix_str, "\t\t", loss_str, "\t\t", acc_str)
-        print()
-    
-    def initialize_prefix(self, prefix: torch.Tensor):
-        prefix = tuple(prefix.cpu().tolist())
-        self._avg_loss[prefix] = 10_000.0
-        self._avg_accuracy[prefix] = 0
-        self._best_prefix_by_start_token.setdefault(prefix[0], (prefix, (10_000.0,)))
-
-    def topk(self, *args, **kwargs):
-        if self._topk_strategy == 'different_start_token':
-            return self.topk_with_different_start_token(*args, **kwargs)
-        elif self._topk_strategy == 'all':
-            return self.topk_all(*args, **kwargs)
-        else:
-            raise ValueError(f'Unknown strategy {self._topk_strategy}')
-
-    def topk_with_different_start_token(self, k: int, min_ocurrences: Optional[int]=None):
-        if len(self._best_prefix_by_start_token.keys()) < k:
-            # fallback if we don't have enough first-tokens yet
-            return self.topk_all(k=k, min_ocurrences=min_ocurrences)
-        else:
-            all_prefixes = [p for p, score in self._best_prefix_by_start_token.values()]
-            return self._topk_from_prefixes(
-                all_prefixes, k=k, min_ocurrences=min_ocurrences
-            )
-
-    def topk_all(self, k: int, min_ocurrences: Optional[int] = None):
-        all_prefixes = self._avg_loss.keys()
-        return self._topk_from_prefixes(
-            all_prefixes, k=k, min_ocurrences=min_ocurrences
-        )
-    
-    def _score(self, prefix: Tuple[int]) -> Tuple[float]:
-        criterion = self.criterion
-        if criterion == 'loss':
-            # sort by min loss
-            return (self._avg_loss[prefix], )
-        elif criterion == 'combined':
-            return (-1 * round(self._avg_accuracy[prefix], 2), self._avg_loss[prefix])
-        else:
-            return (-1 * round(self._avg_accuracy[prefix], 2), )
-    
-    def _topk_from_prefixes(self, prefixes: Iterable[Tuple[int]], k: int, min_ocurrences: Optional[int] = None) -> List[Tuple[int]]:
-        if min_ocurrences:
-            prefixes = {
-                prefix for prefix in prefixes
-                if len(self._all_accuracy[prefix]) > min_ocurrences
-            }
-
-        population = [(self._score(p), p) for p in prefixes]
-        topk_pop = heapq.nsmallest(k, population)
-            
-        return [prefix_ids for _, prefix_ids in topk_pop]
-
-    def update(self, prefix: torch.Tensor, loss: torch.Tensor, accuracy: torch.Tensor):
-        # todo abstract these data strcutures into a class
-        prefix = tuple(prefix.cpu().tolist())
-        self._all_losses[prefix].append(loss.item())
-        self._avg_loss[prefix] = mean(self._all_losses[prefix])
-        self._all_accuracy[prefix].append(accuracy.item())
-        self._avg_accuracy[prefix] = mean(self._all_accuracy[prefix])
-
-        # track best score for each starting token
-        self._best_prefix_by_start_token.setdefault(prefix[0], (prefix, (1000.0,)))
-        score = self._score(prefix)
-        best_prefix, best_score = self._best_prefix_by_start_token[prefix[0]]
-        if score < best_score:
-            self._best_prefix_by_start_token[prefix[0]] = (prefix, score)
-    
-    def __len__(self) -> int:
-        return len(self._avg_loss)
 
 
 class GeneticAutoPrompt(AutoPrompt):
@@ -172,7 +58,7 @@ class GeneticAutoPrompt(AutoPrompt):
             self.tokenizer.encode('\n\n\n')
         ]
         ####################################################################
-        self._gene_pool = PrefixGeneticPool(
+        self._prefix_pool = PrefixPool(
             tokenizer=self.tokenizer,
             criterion='loss'  # in ['loss', 'acc', 'combined']
         )
@@ -187,7 +73,7 @@ class GeneticAutoPrompt(AutoPrompt):
     def _initialize_pop_once(self, full_text_ids: torch.Tensor):
         if self._pop_initialized: return
 
-        while len(self._gene_pool) < self._pop_size:
+        while len(self._prefix_pool) < self._pop_size:
             conditional_input_ids = random.choice(full_text_ids)[None]
             num_conditional_tokens = conditional_input_ids.numel()
             input_ids = self._generate(
@@ -196,8 +82,8 @@ class GeneticAutoPrompt(AutoPrompt):
             )
             input_ids = input_ids[0, num_conditional_tokens:]
             assert input_ids.numel() == self._num_tokens
-            self._gene_pool.initialize_prefix(input_ids)
-        print('Original population:', self._gene_pool.prefixes)
+            self._prefix_pool.initialize_prefix(input_ids)
+        print('Original population:', self._prefix_pool.prefixes)
 
         self._pop_initialized = True
     
@@ -235,7 +121,7 @@ class GeneticAutoPrompt(AutoPrompt):
         return g
     
     def _select_pop_topk(self, k: int, min_ocurrences: int = None) -> List[Tuple[int]]:
-        return self._gene_pool.topk(k=k, min_ocurrences=min_ocurrences)
+        return self._prefix_pool.topk(k=k, min_ocurrences=min_ocurrences)
     
     def _get_population(self) -> torch.Tensor:
         # TODO sample from population instead of taking top-k?
@@ -334,7 +220,7 @@ class GeneticAutoPrompt(AutoPrompt):
         for i in range(pop_size):
             new_pop_input_ids = tuple(population_input_ids[i].cpu().tolist())
             assert len(new_pop_input_ids) == self._num_tokens
-            self._gene_pool.update(
+            self._prefix_pool.update(
                 population_input_ids[i], all_candidate_losses[i], all_accuracy[i]
             )
     
@@ -371,7 +257,7 @@ class GeneticAutoPrompt(AutoPrompt):
             full_text_input_ids=full_text_tokenized.input_ids,
         )
         self._initialize_pop_once(full_text_ids=full_text_ids)
-        self._gene_pool.print(topk=10)
+        self._prefix_pool.print(topk=10)
 
         # Grab new population
         # population_input_ids = self._get_population()
@@ -394,9 +280,9 @@ class GeneticAutoPrompt(AutoPrompt):
         )
         # Return best one
         # TODO move these lines of code to GenePool class
-        best_prefix_ids = min(self._gene_pool._avg_loss, key=self._gene_pool._avg_loss.get)
-        best_prefix_last_loss = self._gene_pool._all_losses[best_prefix_ids][-1]
-        best_prefix_last_accuracy = self._gene_pool._all_accuracy[best_prefix_ids][-1]
+        best_prefix_ids = min(self._prefix_pool._avg_loss, key=self._prefix_pool._avg_loss.get)
+        best_prefix_last_loss = self._prefix_pool._all_losses[best_prefix_ids][-1]
+        best_prefix_last_accuracy = self._prefix_pool._all_accuracy[best_prefix_ids][-1]
         best_prefix_last_n_correct = best_prefix_last_accuracy * len(full_text_ids)
 
         return best_prefix_last_loss, best_prefix_last_n_correct

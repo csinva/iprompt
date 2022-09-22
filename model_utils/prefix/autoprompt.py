@@ -6,7 +6,7 @@ import torch
 import transformers
 
 from .hotflip import HotFlip
-from .utils import device, PrefixLoss, PrefixModel
+from .utils import device, PrefixLoss, PrefixModel, PrefixPool
 
 
 class AutoPrompt(HotFlip):
@@ -30,6 +30,11 @@ class AutoPrompt(HotFlip):
         )
         # AutoPrompt-specific parameters.
         self._num_candidates_per_prefix_token = args.hotflip_num_candidates # V_cand in autoprompt paper
+        # This helps us know which were the best prefixes to return over time
+        self._prefix_pool = PrefixPool(
+            tokenizer=self.tokenizer,
+            criterion='loss'  # in ['loss', 'acc', 'combined']
+        )
 
     def compute_loss_and_call_backward(
             self,
@@ -47,16 +52,19 @@ class AutoPrompt(HotFlip):
         original_input_ids = x_tokenized.input_ids
         next_token_ids = y_tokenized.input_ids[:, 0] # only compute loss over next token
 
-        _input_ids, current_loss, current_n_correct = self._compute_loss_with_set_prefix(
+        current_input_ids, current_loss, current_n_correct = self._compute_loss_with_set_prefix(
             original_input_ids=original_input_ids,
             next_token_ids=next_token_ids,
             possible_answer_mask=possible_answer_mask,
             prefix_ids=None,
         )
         current_loss.backward()
-
-        # TODO check grad computation
-        # TODO make sure grad is zero'd out between steps
+        # track running accuracy of this prefix.
+        self._prefix_pool.update(
+            prefix=self.prefix_ids,
+            loss=current_loss,
+            accuracy=(current_n_correct/len(original_input_ids))
+        )
         # 
         # Get top token replacements
         # 
@@ -85,7 +93,7 @@ class AutoPrompt(HotFlip):
         all_n_correct = torch.zeros(self._num_candidates_per_prefix_token, dtype=int).to(device)
         for i in range(self._num_candidates_per_prefix_token):
             with torch.no_grad():
-                _cand_input_ids, cand_loss, cand_n_correct = (
+                cand_input_ids, cand_loss, cand_n_correct = (
                     self._compute_loss_with_set_prefix(
                         original_input_ids=original_input_ids,
                         next_token_ids=next_token_ids,
@@ -93,28 +101,41 @@ class AutoPrompt(HotFlip):
                         prefix_ids=candidate_prefix_ids[i],
                     )
                 )
-            all_candidate_losses[i] += cand_loss
-            all_n_correct[i] += cand_n_correct
+            all_candidate_losses[i] = cand_loss
+            all_n_correct[i] = cand_n_correct
+
+            self._prefix_pool.update(
+                prefix=candidate_prefix_ids[i],
+                loss=cand_loss,
+                accuracy=(cand_n_correct / len(original_input_ids))
+            )
 
         # randomly change the token to swap
         self._swap_token_idx = random.randint(0, (self._num_tokens-1))
-        # don't reset prefix if one of these candidates makes the score worse
-        if all_candidate_losses.min() > current_loss:
-            # reset prefix so we don't allow gradient to accumulate
-            self._set_prefix_ids(self.prefix_ids)
-            return current_loss, current_n_correct
+        # get best prefix we've seen
+        best_prefix = self._prefix_pool.topk(k=1)[0]
+        self._set_prefix_ids(torch.tensor(best_prefix).to(device))
+        best_prefix_loss = self._prefix_pool._avg_loss[best_prefix]
+        best_prefix_n_correct = (self._prefix_pool._avg_accuracy[best_prefix] * len(x_tokenized.input_ids))
+        return best_prefix_loss, best_prefix_n_correct
+        ###################
+        # # don't reset prefix if one of these candidates makes the score worse
+        # if all_candidate_losses.min() > current_loss:
+        #     # reset prefix so we don't allow gradient to accumulate
+        #     self._set_prefix_ids(self.prefix_ids)
+        #     return current_loss, current_n_correct
         
-        # compute new prefix
-        new_prefix_idx = all_candidate_losses.argmin()
-        new_prefix = candidate_prefix_ids[new_prefix_idx]
-        new_prefix_str = self.tokenizer.decode(new_prefix)
-        self._set_prefix_ids(new_prefix)
-        new_prefix_loss = all_candidate_losses[new_prefix_idx]
-        new_prefix_n_correct = all_n_correct[new_prefix_idx]
-        print(f'New prefix: {new_prefix_str} Loss = {new_prefix_loss:.3f} n_correct={new_prefix_n_correct}')
+        # # compute new prefix
+        # new_prefix_idx = all_candidate_losses.argmin()
+        # new_prefix = candidate_prefix_ids[new_prefix_idx]
+        # new_prefix_str = self.tokenizer.decode(new_prefix)
+        # self._set_prefix_ids(new_prefix)
+        # new_prefix_loss = all_candidate_losses[new_prefix_idx]
+        # new_prefix_n_correct = all_n_correct[new_prefix_idx]
+        # print(f'New prefix: {new_prefix_str} Loss = {new_prefix_loss:.3f} n_correct={new_prefix_n_correct}')
 
         # reset metrics & return
-        return new_prefix_loss, new_prefix_n_correct
+        # return new_prefix_loss, new_prefix_n_correct
         
     def post_epoch(self, dataloader: torch.utils.data.DataLoader, possible_answer_mask: torch.Tensor) -> None:
         # 

@@ -13,6 +13,7 @@ import transformers
 
 from .utils import device, PrefixLoss, PrefixModel
 
+
 VERBOSE = False # whether to print grads, etc.
 TOP_K = 20 # for printing grads, etc.
 
@@ -68,6 +69,8 @@ class HotFlip(PrefixModel):
         self._loss_for_prefix = {}
     
     def _set_prefix_ids(self, new_ids: torch.Tensor) -> None:
+        print("** set_prefix_ids new_ids:", new_ids)
+        assert new_ids.ndim == 1, "cannot set prefix with more than 1 dim (need list of IDs)"
         self.prefix_ids = new_ids.to(device)
         self.prefix_embedding = nn.Parameter(
             self.token_embedding.to(device).forward(self.prefix_ids), requires_grad=True
