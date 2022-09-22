@@ -65,6 +65,7 @@ def create_model(model_name: str) -> Model:
 def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.PreTrainedModel,
                                    prefix: str = '', batch_size: int = 16) -> float:
     """Tests a given language model on a dataset and returns {zero,few}-shot loss. 
+    Note: accuracy is computed over the set of possible answers found in the original dataset.
 
     Args:
         dset (datasets.Dataset): dataset of examples 
@@ -76,40 +77,42 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
     Returns:
         loss (float): language modeling loss on examples in dataset
     """
-    np.random.seed(42)
-    torch.manual_seed(42)
+  
+    def get_possible_answer_mask(dataloader, model):
+        """Compute loss only over possible answers to make task easier
+        """
+        possible_answer_ids = []
+        for batch in dataloader:
+            y_text = [answer for answer in batch['output']]
+            # print(y_text)
+            y_tokenized = model.tokenizer(y_text, return_tensors='pt', padding='longest')
+            # only test on the single next token
+            true_next_token_ids = y_tokenized['input_ids'][:, 0]
+            possible_answer_ids.extend(true_next_token_ids.tolist())
+        assert len(
+            possible_answer_ids) > 0, "need multiple answers for multiple choice"
+
+
+        # set up possible answers
+        possible_answer_ids = torch.tensor(possible_answer_ids)
+        vocab_size = model.get_logits(['dummy text']).shape[-1] # vocab_size = model.tokenizer.vocab_size
+        possible_answer_mask = (
+            torch.arange(start=0, end=vocab_size)[:, None]
+            ==
+            possible_answer_ids[None, :]
+        ).any(dim=1).to(device)
+        return possible_answer_mask
 
     # set up dataloader
+    np.random.seed(42)
+    torch.manual_seed(42)
     dataloader = torch.utils.data.DataLoader(
         dset, batch_size=batch_size, shuffle=False, drop_last=False)
-    
+    possible_answer_mask = get_possible_answer_mask(dataloader, model)
 
-    # Compute loss only over possible answers to make task easier
     total_loss = 0.0
     total_n = 0
     total_n_correct = 0.0
-    possible_answer_ids = []
-    for batch in dataloader:
-        y_text = [answer for answer in batch['output']]
-        # print(y_text)
-        y_tokenized = model.tokenizer(y_text, return_tensors='pt', padding='longest')
-        # only test on the single next token
-        true_next_token_ids = y_tokenized['input_ids'][:, 0]
-        possible_answer_ids.extend(true_next_token_ids.tolist())
-    assert len(
-        possible_answer_ids) > 0, "need multiple answers for multiple choice"
-
-
-    # set up possible answers
-    possible_answer_ids = torch.tensor(possible_answer_ids)
-    # vocab_size = model.tokenizer.vocab_size
-    vocab_size = model.get_logits(['dummy text']).shape[-1]
-    possible_answer_mask = (
-        torch.arange(start=0, end=vocab_size)[:, None]
-        ==
-        possible_answer_ids[None, :]
-    ).any(dim=1).to(device)
-
     for idx, batch in enumerate(dataloader):
         x_text = [(prefix + prompt) for prompt in batch['input']]
         y_text = [answer for answer in batch['output']]
