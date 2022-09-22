@@ -56,10 +56,6 @@ def train(
     r: dict
         dictionary of things to save
     """
-    np.random.seed(args.seed)
-    torch.manual_seed(args.seed)
-    transformers.set_seed(args.seed)
-
     model.train() 
 
     model = model.to(device)
@@ -67,8 +63,8 @@ def train(
 
     # Support computing things from just a single ´xample
     val_dset = dset.shuffle()
-    if (args.max_num_val_samples > 0):
-         val_dset = val_dset.filter(lambda _, i: (i < args.max_num_val_samples), with_indices=True)
+    if (args.max_n_val_samples > 0):
+         val_dset = val_dset.filter(lambda _, i: (i < args.max_n_val_samples), with_indices=True)
     val_dataloader = DataLoader(val_dset, batch_size=args.batch_size, shuffle=False, drop_last=False)
 
     # optimizer
@@ -120,7 +116,6 @@ def train(
             if (args.n_shots > 1) and (args.single_shot_loss):
                 batch['input'] = batch['last_input']
             x_text, y_text = model.prepare_batch(batch=batch)
-            total_n_datapoints += len(x_text)
 
             tok = functools.partial(model.tokenizer, return_tensors='pt', padding='longest')
             x_tokenized = tok(x_text).to(device)
@@ -136,6 +131,7 @@ def train(
 
             total_n += len(x_text)
             total_n_correct += n_correct
+            total_n_datapoints += len(x_text)
 
             all_losses.append(loss)
             pbar.set_description(f"Loss = {torch.tensor(all_losses).mean():.3f}")
@@ -174,6 +170,9 @@ def train(
         if stopping_early:
             print(f"Stopping early after {total_n_steps} steps and {total_n_datapoints} datapoints")
             break
+        
+    # Serialize model-specific stuff
+    r.update(model.serialize())
 
     return r
 
@@ -197,6 +196,8 @@ if __name__ == '__main__':
                         help='max number of steps for training')
     parser.add_argument('--max_n_datapoints', type=int, default=10**10,
                         help='max number of datapoints for training')
+    parser.add_argument('--early_stopping_steps', type=int, default=-1,
+                        help='if > 0, number of steps until stopping early after no improvement')
     parser.add_argument('--max_digit', type=int, default=100,
                         help='maximum value of each digit in summand')
     parser.add_argument('--template_num_init_string', type=int, default=0,
@@ -226,8 +227,6 @@ if __name__ == '__main__':
                         help='should we clear gradients after a batch, or only at the end of the epoch?')
     parser.add_argument('--num_learned_tokens', type=int, default=1,
                         help='number of learned prefix tokens (for gumbel, hotflip, autoprompt, prompt-tuning)')
-    parser.add_argument('--early_stopping_steps', type=int, default=-1,
-                        help='if > 0, number of steps until stopping early after no improvement')
     parser.add_argument('--use_preprefix', type=int, default=1, choices=(0, 1), 
                         help='whether to use a template pre-prefix')
     parser.add_argument('--genetic_preprefix_str', type=str, default='',
@@ -235,7 +234,7 @@ if __name__ == '__main__':
     )
     parser.add_argument('--llm_float16', '--float16', '--parsimonious', type=int, default=0, choices=(0, 1),
                         help='if true, loads LLM in fp16 and at low-ram')
-    parser.add_argument('--max_num_val_samples', type=int, default=0,
+    parser.add_argument('--max_n_val_samples', type=int, default=0,
                         help='if > 0, max number of samples to use for post-epoch evaluation')
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",
                         choices=(
@@ -257,6 +256,11 @@ if __name__ == '__main__':
                         help='model checkpoint to use'
     )
     args = parser.parse_args()
+    random.seed(args.seed)
+    np.random.seed(args.seed)
+    torch.manual_seed(args.seed)
+    transformers.set_seed(args.seed)
+    
     r = defaultdict(list)
     r.update(vars(args))
     logger = logging.getLogger()

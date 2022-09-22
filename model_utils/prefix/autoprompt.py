@@ -1,6 +1,8 @@
-from typing import Optional, Tuple
+from typing import Any, Dict, Optional, Tuple
 
 import argparse
+import os
+import pickle
 import random
 import torch
 import transformers
@@ -35,6 +37,23 @@ class AutoPrompt(HotFlip):
             tokenizer=self.tokenizer,
             criterion='loss'  # in ['loss', 'acc', 'combined']
         )
+    
+    def serialize(self) -> Dict[str, Any]:
+        """Writes stuff to disk. Saves other stuff to save as full results file.
+        """
+        save_dir = self.args.save_dir_unique
+        os.makedirs(save_dir, exist_ok=True)
+        pickle.dump(self._prefix_pool, open(os.path.join(save_dir, 'prefix_pool.p'), 'wb'))
+        top_prefixes = self._prefix_pool.topk(k=1000, min_ocurrences=3)
+        top_prefix_accs = [self._prefix_pool._avg_loss[p] for p in top_prefixes]
+        top_prefix_losses = [self._prefix_pool._avg_accuracy[p] for p in top_prefixes]
+        top_prefix_n_queries = [len(self._prefix_pool._all_losses[p]) for p in top_prefixes]
+        return {
+            "top_prefixes": top_prefixes,
+            "top_prefix_accs": top_prefix_accs,
+            "top_prefix_losses": top_prefix_losses,
+            "top_prefix_n_queries": top_prefix_n_queries,
+        }
 
     def compute_loss_and_call_backward(
             self,

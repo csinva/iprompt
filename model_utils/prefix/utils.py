@@ -224,6 +224,10 @@ class PrefixModel(nn.Module, abc.ABC):
     
     def compute_metrics(self) -> Dict[str, Any]:
         return {}
+    
+    def serialize(self) -> Dict[str, Any]:
+        """Writes stuff to disk after training."""
+        return {}
 
     @abc.abstractproperty
     def trainable_params(self) -> Iterable[nn.Parameter]:
@@ -330,7 +334,7 @@ class PrefixPool:
     def print(self, topk: int) -> None:
         top_token_ids = self.topk(k=topk, min_ocurrences=2)
         if not len(top_token_ids): return
-        print((" " * 40), ("*" * 20), "Population", ("*" * 20))
+        print((" " * 50), ("*" * 20), "Population", ("*" * 20))
         for token_ids in top_token_ids:
             prefix_str = "{:>70}".format(self.tokenizer.decode(list(token_ids)).replace("\n", "\\\\n"))
             loss_str = f"{self._avg_loss[token_ids]:.3f}"

@@ -1,4 +1,4 @@
-from typing import List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 import argparse
 import collections
@@ -73,6 +73,20 @@ class GeneticAutoPrompt(AutoPrompt):
         ####################################################################
         self._verbose = False
     
+    def serialize(self) -> Dict[str, Any]:
+        r = super().serialize()
+        r["topk_pop_sample"] = self._topk_pop_sample
+        r["pop_size"] = self._pop_size
+        r["num_mutations_per_ex"] = self._num_mutations_per_ex
+        r["num_random_generations"] = self._num_random_generations
+        r["generation_temp"] = self._generation_temp
+        r["generation_top_p"] = self._generation_top_p
+        r["generation_repetition_penalty"] = self._generation_repetition_penalty
+        r["generation_bad_words_ids"] = self._generation_bad_words_ids
+        r["pre_data_prompt_str"] = self.tokenizer.decode(self._pre_data_token_ids)
+        r["post_data_prompt_str"] = self.tokenizer.decode(self._post_data_token_ids)
+        return r
+    
     def _initialize_pop_once(self, full_text_ids: torch.Tensor):
         if self._pop_initialized: return
 
@@ -86,7 +100,7 @@ class GeneticAutoPrompt(AutoPrompt):
             input_ids = input_ids[0, num_conditional_tokens:]
             assert input_ids.numel() == self._num_tokens
             self._prefix_pool.initialize_prefix(input_ids)
-        print('Original population:', self._prefix_pool.prefixes)
+        print('Original population:', [self.tokenizer.decode(p) for p in self._prefix_pool.prefixes])
 
         self._pop_initialized = True
     
@@ -132,11 +146,13 @@ class GeneticAutoPrompt(AutoPrompt):
         population = set(self._select_pop_topk(k=__n_early_stop, min_ocurrences=3))
         if (len(population) == __n_early_stop) and (self._last_population == population):
             self._steps_since_new_population += 1
-            print("self._steps_since_new_population:", self._steps_since_new_population)
+            if True or self._verbose:
+                print("self._steps_since_new_population:", self._steps_since_new_population)
         else:
             self._last_population = population
             self._steps_since_new_population = 0
-            print("new population:", [self.tokenizer.decode(p) for p in sorted(population)])
+            if True or self._verbose:
+                print("new population:", [self.tokenizer.decode(p) for p in sorted(population)])
 
     def check_early_stop(self) -> bool:
         """Allow prefix models to stop early."""
