@@ -3,7 +3,7 @@ import os
 from os.path import dirname
 import sys
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
-
+SAVE_DIR = '/home/chansingh/mntv1/'
 JOB_SUFFIX = 'long_suffs'
 PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
     ('checkpoint', 'batch_size'): [
