@@ -62,13 +62,16 @@ class GeneticAutoPrompt(AutoPrompt):
             tokenizer=self.tokenizer,
             criterion='loss'  # in ['loss', 'acc', 'combined']
         )
+        # Suff to track for early stopping
+        self._last_population = None
+        self._steps_since_new_population = 0
         ####################################################################
         prompt_str = args.genetic_preprefix_str.lstrip()
         prompt_str = (' ' + prompt_str) if len(prompt_str) else ''
         self._pre_data_token_ids = self.tokenizer("Data:\n\n", return_tensors='pt').input_ids.to(device)
         self._post_data_token_ids = self.tokenizer("Prompt:" + prompt_str, return_tensors='pt').input_ids.to(device)
         ####################################################################
-        self._verbose = True
+        self._verbose = False
     
     def _initialize_pop_once(self, full_text_ids: torch.Tensor):
         if self._pop_initialized: return
@@ -122,16 +125,30 @@ class GeneticAutoPrompt(AutoPrompt):
     
     def _select_pop_topk(self, k: int, min_ocurrences: int = None) -> List[Tuple[int]]:
         return self._prefix_pool.topk(k=k, min_ocurrences=min_ocurrences)
-    
-    def _get_population(self) -> torch.Tensor:
-        # TODO sample from population instead of taking top-k?
-        # population = self._select_pop_topk(k=self._pop_size)
-        population_pool = self._select_pop_topk(k=self._topk_pop_sample)
-        population = random.sample(population_pool, self._pop_size)
-        return torch.tensor(population).to(device)
+
+    def _track_early_stopping(self):
+        """Track changes in population to tell when to stop early."""
+        __n_early_stop = 8
+        population = set(self._select_pop_topk(k=__n_early_stop, min_ocurrences=3))
+        if (len(population) == __n_early_stop) and (self._last_population == population):
+            self._steps_since_new_population += 1
+            print("self._steps_since_new_population:", self._steps_since_new_population)
+        else:
+            self._last_population = population
+            self._steps_since_new_population = 0
+            print("new population:", [self.tokenizer.decode(p) for p in sorted(population)])
+
+    def check_early_stop(self) -> bool:
+        """Allow prefix models to stop early."""
+        if self.args.early_stopping_steps == -1:
+            return False
+        return self._steps_since_new_prefix >= self.args.early_stopping_steps
     
     def _get_population_and_random_generations(self, full_text_ids: torch.Tensor) -> torch.Tensor:
-        population = self._get_population()
+        population_pool = self._select_pop_topk(k=self._topk_pop_sample)
+        population = random.sample(population_pool, self._pop_size)
+        population = torch.tensor(population).to(device)
+        # Track changes in population to enable early stopping.
 
         random_idxs = torch.randint(
             low=0, high=len(full_text_ids), size=(self._num_random_generations,)
@@ -186,7 +203,6 @@ class GeneticAutoPrompt(AutoPrompt):
         new_input_ids = new_input_ids[:, num_conditional_tokens:]
         
         # TODO consider adding crossover (combining spans?) here.
-
         return new_input_ids
     
     def _score_population(
@@ -260,8 +276,6 @@ class GeneticAutoPrompt(AutoPrompt):
         self._prefix_pool.print(topk=10)
 
         # Grab new population
-        # population_input_ids = self._get_population()
-        # TODO: Consider restoring random generations from below
         population_input_ids = self._get_population_and_random_generations(
             full_text_ids=full_text_ids,
         )
@@ -278,6 +292,10 @@ class GeneticAutoPrompt(AutoPrompt):
             population_input_ids=full_population_input_ids,
             possible_answer_mask=possible_answer_mask
         )
+
+        # Compute population for early-stopping
+        self._track_early_stopping()
+
         # Return best one
         # TODO move these lines of code to GenePool class
         best_prefix_ids = min(self._prefix_pool._avg_loss, key=self._prefix_pool._avg_loss.get)

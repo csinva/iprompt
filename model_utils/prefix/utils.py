@@ -14,7 +14,7 @@ from torch import nn
 import tqdm
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-DEBUG_LOSS = True
+DEBUG_LOSS = False
 
 
 def get_token_replacements_single_mask(
@@ -344,7 +344,7 @@ class PrefixPool:
         self._avg_accuracy[prefix] = 0
         self._best_prefix_by_start_token.setdefault(prefix[0], (prefix, (10_000.0,)))
 
-    def topk(self, *args, **kwargs):
+    def topk(self, *args, **kwargs) -> List[Tuple[int]]:
         if self._topk_strategy == 'different_start_token':
             return self.topk_with_different_start_token(*args, **kwargs)
         elif self._topk_strategy == 'all':
@@ -352,7 +352,11 @@ class PrefixPool:
         else:
             raise ValueError(f'Unknown strategy {self._topk_strategy}')
 
-    def topk_with_different_start_token(self, k: int, min_ocurrences: Optional[int]=None):
+    def topk_with_different_start_token(
+        self,
+        k: int,
+        min_ocurrences: Optional[int] = None
+        ) -> List[Tuple[int]]:
         if len(self._best_prefix_by_start_token.keys()) < k:
             # fallback if we don't have enough first-tokens yet
             return self.topk_all(k=k, min_ocurrences=min_ocurrences)
@@ -362,7 +366,7 @@ class PrefixPool:
                 all_prefixes, k=k, min_ocurrences=min_ocurrences
             )
 
-    def topk_all(self, k: int, min_ocurrences: Optional[int] = None):
+    def topk_all(self, k: int, min_ocurrences: Optional[int] = None) -> List[Tuple[int]]:
         all_prefixes = self._avg_loss.keys()
         return self._topk_from_prefixes(
             all_prefixes, k=k, min_ocurrences=min_ocurrences
@@ -378,7 +382,12 @@ class PrefixPool:
         else:
             return (-1 * round(self._avg_accuracy[prefix], 2), )
     
-    def _topk_from_prefixes(self, prefixes: Iterable[Tuple[int]], k: int, min_ocurrences: Optional[int] = None) -> List[Tuple[int]]:
+    def _topk_from_prefixes(
+        self,
+        prefixes: Iterable[Tuple[int]],
+        k: int, 
+        min_ocurrences: Optional[int] = None
+        ) -> List[Tuple[int]]:
         if min_ocurrences:
             prefixes = {
                 prefix for prefix in prefixes

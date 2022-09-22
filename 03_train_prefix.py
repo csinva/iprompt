@@ -103,6 +103,9 @@ def train(
     else:
         possible_answer_mask = None
 
+
+    stopping_early = False
+    total_n_steps = 0
     for epoch in range(args.n_epochs):
         model.pre_epoch()
 
@@ -110,11 +113,14 @@ def train(
         
         total_n = 0
         total_n_correct = 0
+        total_n_datapoints = 0
         pbar = tqdm(enumerate(dataloader), total=len(dataloader))
         for idx, batch in pbar:
+            total_n_steps += 1
             if (args.n_shots > 1) and (args.single_shot_loss):
                 batch['input'] = batch['last_input']
             x_text, y_text = model.prepare_batch(batch=batch)
+            total_n_datapoints += len(x_text)
 
             tok = functools.partial(model.tokenizer, return_tensors='pt', padding='longest')
             x_tokenized = tok(x_text).to(device)
@@ -138,7 +144,14 @@ def train(
                 # if hotflip, autoprompt, etc., grad will be zero
                 optim.step()
                 optim.zero_grad()
-        
+            
+            # Early stopping, check after step
+            if (total_n_datapoints > args.max_n_datapoints) or (total_n_steps > args.max_n_steps) or model.check_early_stop():
+                stopping_early = True
+                break
+    
+        if stopping_early:
+            print(f"Ending epoch {epoch} early...")
         avg_loss = sum(all_losses) / len(all_losses)
         print(f"Epoch {epoch}. average loss = {avg_loss:.3f} / {total_n_correct} / {total_n} correct ({total_n_correct/total_n*100:.2f}%)")
 
@@ -156,6 +169,11 @@ def train(
         if args.accum_grad_over_epoch:
             optim.step()
             optim.zero_grad()
+
+        # Early stopping, check after epoch
+        if stopping_early:
+            print(f"Stopping early after {total_n_steps} steps and {total_n_datapoints} datapoints")
+            break
 
     return r
 
@@ -175,6 +193,10 @@ if __name__ == '__main__':
                         help='random seed')
     parser.add_argument('--n_epochs', type=int, default=10000,
                         help='number of epochs for training')
+    parser.add_argument('--max_n_steps', type=int, default=10**10,
+                        help='max number of steps for training')
+    parser.add_argument('--max_n_datapoints', type=int, default=10**10,
+                        help='max number of datapoints for training')
     parser.add_argument('--max_digit', type=int, default=100,
                         help='maximum value of each digit in summand')
     parser.add_argument('--template_num_init_string', type=int, default=0,
@@ -204,6 +226,8 @@ if __name__ == '__main__':
                         help='should we clear gradients after a batch, or only at the end of the epoch?')
     parser.add_argument('--num_learned_tokens', type=int, default=1,
                         help='number of learned prefix tokens (for gumbel, hotflip, autoprompt, prompt-tuning)')
+    parser.add_argument('--early_stopping_steps', type=int, default=-1,
+                        help='if > 0, number of steps until stopping early after no improvement')
     parser.add_argument('--use_preprefix', type=int, default=1, choices=(0, 1), 
                         help='whether to use a template pre-prefix')
     parser.add_argument('--genetic_preprefix_str', type=str, default='',

@@ -118,24 +118,6 @@ class AutoPrompt(HotFlip):
         best_prefix_loss = self._prefix_pool._avg_loss[best_prefix]
         best_prefix_n_correct = (self._prefix_pool._avg_accuracy[best_prefix] * len(x_tokenized.input_ids))
         return best_prefix_loss, best_prefix_n_correct
-        ###################
-        # # don't reset prefix if one of these candidates makes the score worse
-        # if all_candidate_losses.min() > current_loss:
-        #     # reset prefix so we don't allow gradient to accumulate
-        #     self._set_prefix_ids(self.prefix_ids)
-        #     return current_loss, current_n_correct
-        
-        # # compute new prefix
-        # new_prefix_idx = all_candidate_losses.argmin()
-        # new_prefix = candidate_prefix_ids[new_prefix_idx]
-        # new_prefix_str = self.tokenizer.decode(new_prefix)
-        # self._set_prefix_ids(new_prefix)
-        # new_prefix_loss = all_candidate_losses[new_prefix_idx]
-        # new_prefix_n_correct = all_n_correct[new_prefix_idx]
-        # print(f'New prefix: {new_prefix_str} Loss = {new_prefix_loss:.3f} n_correct={new_prefix_n_correct}')
-
-        # reset metrics & return
-        # return new_prefix_loss, new_prefix_n_correct
         
     def post_epoch(self, dataloader: torch.utils.data.DataLoader, possible_answer_mask: torch.Tensor) -> None:
         # 

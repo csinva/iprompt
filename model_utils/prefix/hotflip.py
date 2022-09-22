@@ -50,6 +50,7 @@ class HotFlip(PrefixModel):
         if preprefix:
             preprefix_ids.extend(self.tokenizer.encode(preprefix))
         self.preprefix_ids = torch.tensor(preprefix_ids, dtype=int).to(device)
+        self.prefix_ids = None
         self._set_prefix_ids(
             self.init_discrete_prefix(num_tokens=self._num_tokens)
         )
@@ -67,10 +68,23 @@ class HotFlip(PrefixModel):
         # TODO use some kind of fixed-size data structure
         # if number of tested candidates is growing unboundedly
         self._loss_for_prefix = {}
+
+    def check_early_stop(self) -> bool:
+        """Allow prefix models to stop early."""
+        if self.args.early_stopping_steps == -1:
+            return False
+        return self._steps_since_new_prefix >= self.args.early_stopping_steps
     
     def _set_prefix_ids(self, new_ids: torch.Tensor) -> None:
-        print("** set_prefix_ids new_ids:", new_ids)
         assert new_ids.ndim == 1, "cannot set prefix with more than 1 dim (need list of IDs)"
+
+        # Track steps since new prefix to enable early stopping
+        if (self.prefix_ids is not None) and (self.prefix_ids == new_ids).all():
+            self._steps_since_new_prefix += 1
+        else:
+            self._steps_since_new_prefix = 0
+        
+
         self.prefix_ids = new_ids.to(device)
         self.prefix_embedding = nn.Parameter(
             self.token_embedding.to(device).forward(self.prefix_ids), requires_grad=True
