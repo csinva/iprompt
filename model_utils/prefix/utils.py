@@ -332,7 +332,7 @@ class PrefixPool:
         return self._avg_loss.keys()
     
     def print(self, topk: int) -> None:
-        top_token_ids = self.topk(k=topk, min_ocurrences=2)
+        top_token_ids = self.topk(k=topk, min_occurrences=2)
         if not len(top_token_ids): return
         print((" " * 50), ("*" * 20), "Population", ("*" * 20))
         for token_ids in top_token_ids:
@@ -359,21 +359,21 @@ class PrefixPool:
     def topk_with_different_start_token(
         self,
         k: int,
-        min_ocurrences: Optional[int] = None
+        min_occurrences: Optional[int] = None
         ) -> List[Tuple[int]]:
         if len(self._best_prefix_by_start_token.keys()) < k:
             # fallback if we don't have enough first-tokens yet
-            return self.topk_all(k=k, min_ocurrences=min_ocurrences)
+            return self.topk_all(k=k, min_occurrences=min_occurrences)
         else:
             all_prefixes = [p for p, score in self._best_prefix_by_start_token.values()]
             return self._topk_from_prefixes(
-                all_prefixes, k=k, min_ocurrences=min_ocurrences
+                all_prefixes, k=k, min_occurrences=min_occurrences
             )
 
-    def topk_all(self, k: int, min_ocurrences: Optional[int] = None) -> List[Tuple[int]]:
+    def topk_all(self, k: int, min_occurrences: Optional[int] = None) -> List[Tuple[int]]:
         all_prefixes = self._avg_loss.keys()
         return self._topk_from_prefixes(
-            all_prefixes, k=k, min_ocurrences=min_ocurrences
+            all_prefixes, k=k, min_occurrences=min_occurrences
         )
     
     def _score(self, prefix: Tuple[int]) -> Tuple[float]:
@@ -390,12 +390,12 @@ class PrefixPool:
         self,
         prefixes: Iterable[Tuple[int]],
         k: int, 
-        min_ocurrences: Optional[int] = None
+        min_occurrences: Optional[int] = None
         ) -> List[Tuple[int]]:
-        if min_ocurrences:
+        if min_occurrences:
             prefixes = {
                 prefix for prefix in prefixes
-                if len(self._all_accuracy[prefix]) > min_ocurrences
+                if len(self._all_accuracy[prefix]) > min_occurrences
             }
 
         population = [(self._score(p), p) for p in prefixes]

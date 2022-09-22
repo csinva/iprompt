@@ -137,13 +137,13 @@ class GeneticAutoPrompt(AutoPrompt):
 
         return g
     
-    def _select_pop_topk(self, k: int, min_ocurrences: int = None) -> List[Tuple[int]]:
-        return self._prefix_pool.topk(k=k, min_ocurrences=min_ocurrences)
+    def _select_pop_topk(self, k: int, min_occurrences: int = None) -> List[Tuple[int]]:
+        return self._prefix_pool.topk(k=k, min_occurrences=min_occurrences)
 
     def _track_early_stopping(self):
         """Track changes in population to tell when to stop early."""
         __n_early_stop = 8
-        population = set(self._select_pop_topk(k=__n_early_stop, min_ocurrences=3))
+        population = set(self._select_pop_topk(k=__n_early_stop, min_occurrences=3))
         if (len(population) == __n_early_stop) and (self._last_population == population):
             self._steps_since_new_population += 1
             if True or self._verbose:

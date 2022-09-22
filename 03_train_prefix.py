@@ -173,6 +173,7 @@ def train(
         
     # Serialize model-specific stuff
     r.update(model.serialize())
+    pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
 
     return r
 
@@ -260,7 +261,7 @@ if __name__ == '__main__':
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
     transformers.set_seed(args.seed)
-    
+
     r = defaultdict(list)
     r.update(vars(args))
     logger = logging.getLogger()
