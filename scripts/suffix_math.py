@@ -43,7 +43,7 @@ PARAMS_SHARED_DICT['save_dir'] = [f'/home/chansingh/mntv1/suffix_math_long_suffs
 PARAMS_SHARED_DICT['max_num_tokens'] = [3, 6]
 PARAMS_SHARED_DICT['use_early_stopping'] = [0]
 PARAMS_SHARED_DICT['use_generic_query'] = [1]
-PARAMS_SHARED_DICT['n-shots'] = [1, 5]
+PARAMS_SHARED_DICT['n_shots'] = [1, 5]
 
 cmd_python = 'python'
 ks_final, param_combos_final = submit_utils.combine_param_dicts(
