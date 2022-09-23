@@ -25,10 +25,13 @@ torch ❯ python 03_train_prefix.py  --use_preprefix=0 --num_learned_tokens=8
 PARAMS_SHARED_DICT = {
     # things to vary
     'n_shots': [1, 5],
-    'task_name_list': [['add_two']],
-    # 'task_name_list': [['add_two', 'multiply_two', 'divide_two', 'subtract_two',
-    #          'max_two', 'first_two',
-    #          'square_one', 'exp_one', 'double_one', 'fibonacci_one']],
+    # 'task_name_list': [['add_two']],
+    'task_name_list': [
+        'add_two', 'multiply_two', 
+        'subtract_two',
+        'max_two', 'first_two',
+        'square_one', 'double_one',
+    ], # 'exp_one',  'fibonacci_one', 'divide_two', 
     'model_cls': ['genetic', 'autoprompt'],
     'num_learned_tokens': [3, 6],
 
@@ -39,13 +42,13 @@ PARAMS_SHARED_DICT = {
 
     # stopping criteria
     'max_dset_size': [1000],
-    'max_n_datapoints': [5000],
-    'early_stopping_steps': [25],
+    'max_n_datapoints': [4000],
+    'early_stopping_steps': [20],
 
     # fixed params
     'max_digit': [10],
     'train_split_frac': [0.75],
-    'single_shot_loss': [0, 1],
+    'single_shot_loss': [1],
 }
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 
@@ -66,5 +69,5 @@ ks_final, param_combos_final = submit_utils.combine_param_dicts(
     PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT)
 
 submit_utils.run_dicts(ks_final, param_combos_final, cmd_python=cmd_python,
-                       script_name='03_train_prefix.py', actually_run=True
+                       script_name='03_train_prefix.py', actually_run=False
 )
