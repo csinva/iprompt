@@ -222,7 +222,7 @@ def eval_model_with_set_prefix(
         with torch.no_grad():
             _input_ids, loss, n_correct = model._compute_loss_with_set_prefix(
                 original_input_ids=x_tokenized.input_ids,
-                next_token_ids=y_tokenized.input_ids[:, 0],
+                next_token_ids=y_tokenized.input_ids,
                 possible_answer_mask=None, # TODO: implement eval verbalizer
                 prefix_ids=None,
             )

@@ -43,9 +43,17 @@ class AutoPrompt(HotFlip):
         """
         save_dir = self.args.save_dir_unique
         os.makedirs(save_dir, exist_ok=True)
+
+        # Uncomment following line to save all the prefixes we tested.
         # pickle.dump(self._prefix_pool, open(os.path.join(save_dir, 'prefix_pool.p'), 'wb'))
+        
         N_p = 64 # num prefixes to save
-        topk_prefixes = self._prefix_pool.topk_all(k=N_p, min_occurrences=3)
+        
+        # logic here is that we want to see a sample a good number of times before
+        # we actually have a good estimate of its loss.
+        num_min_occurrences = 3
+
+        topk_prefixes = self._prefix_pool.topk_all(k=N_p, min_occurrences=num_min_occurrences)
         topk_different_prefixes = self._prefix_pool.topk_with_different_start_token(k=N_p, min_occurrences=3)
         top_prefixes = topk_prefixes + topk_different_prefixes
         top_prefix_types = ((["topk_all"] * len(topk_prefixes)) + (["topk_with_different_start_token"] * len(topk_different_prefixes)))
@@ -76,7 +84,7 @@ class AutoPrompt(HotFlip):
             num_correct (int): number of examples where prediction was correct
         """
         original_input_ids = x_tokenized.input_ids
-        next_token_ids = y_tokenized.input_ids[:, 0] # only compute loss over next token
+        next_token_ids = y_tokenized.input_ids # only compute loss over next token
 
         current_input_ids, current_loss, current_n_correct = self._compute_loss_with_set_prefix(
             original_input_ids=original_input_ids,

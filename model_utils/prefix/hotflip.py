@@ -123,11 +123,11 @@ class HotFlip(PrefixModel):
             num_correct (int): number of examples where prediction was correct
         """
         original_input_ids = x_tokenized.input_ids
-        next_token_ids = y_tokenized.input_ids[:, 0] # only compute loss over next token
+        next_token_ids = y_tokenized.input_ids # only compute loss over next token
 
         _input_ids, loss, n_correct = self._compute_loss_with_set_prefix(
             original_input_ids=original_input_ids,
-            next_token_ids=next_token_ids[:, 0], # only compute loss over next token
+            next_token_ids=next_token_ids, # only compute loss over next token
             possible_answer_mask=possible_answer_mask
         )
 

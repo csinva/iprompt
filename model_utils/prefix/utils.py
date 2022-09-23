@@ -260,29 +260,54 @@ class PrefixModel(nn.Module, abc.ABC):
 
         # feed into the model. prefix-handling is implemented in PrefixModel::forward.
         full_input_ids, outputs = self.forward(
-            input_ids=original_input_ids, 
+            input_ids=torch.cat((original_input_ids, next_token_ids), dim=1), 
             prefix_ids=prefix_ids,
         )
-        next_token_logits = outputs.logits[:, -1, :]
+        # make sure we have same number of predictions as tokens
+        assert full_input_ids.shape == outputs.logits.shape[:2]
 
+        # get first predicted token logits
+        last_token_idx = (~(full_input_ids == self.tokenizer.eos_token_id)).cumsum(dim=1).argmax(dim=1)
+        next_token_logits = outputs.logits[torch.arange(len(original_input_ids)), last_token_idx]
+
+        # compute first-token acc
         if possible_answer_mask is None:
             n_correct = (
-                next_token_logits.argmax(dim=-1) == next_token_ids
+                next_token_logits.argmax(dim=-1) == next_token_ids[:, 0]
             ).int().sum()
         else:
             n_correct = (
                 (next_token_logits.exp() * possible_answer_mask).argmax(dim=-1)
                     ==
-                next_token_ids
+                next_token_ids[:, 0]
             ).int().sum()
 
-        original_loss = self.loss_func(
+        first_token_loss = self.loss_func(
             input_ids=full_input_ids,
-            next_token_ids=next_token_ids,
-            logits=outputs['logits'],
+            next_token_ids=next_token_ids[:, 0],
+            logits=outputs.logits,
             answer_mask=possible_answer_mask
         )
-        return full_input_ids, original_loss, n_correct
+
+        # add loss from other tokens
+        b, label_sequence_length = next_token_ids.shape
+        other_next_token_logits = (
+            outputs.logits[:, -label_sequence_length:-1]
+                .reshape((b * (label_sequence_length-1), -1))
+        )
+        other_next_token_ids = (
+            next_token_ids[:, 1:]
+                .reshape((b * (label_sequence_length-1),))
+        )
+        other_tokens_loss = torch.nn.functional.cross_entropy(
+            input=other_next_token_logits,
+            target=other_next_token_ids,
+            ignore_index=self.tokenizer.pad_token_id,
+            reduction='mean'
+        )   
+
+        loss = first_token_loss + other_tokens_loss
+        return full_input_ids, loss, n_correct
     
     def compute_loss_and_call_backward(
             self,
@@ -357,14 +382,27 @@ class PrefixPool:
     def prefixes(self) -> List[Tuple[int]]:
         return self._avg_loss.keys()
     
+    @property
+    def num_start_tokens(self) -> int:
+        """Number of different start tokens seen across all prefixes."""
+        return len(self._best_prefix_by_start_token.keys())
+    
     def print(self, topk: int, min_occurrences: int = 2) -> None:
         top_token_ids = self.topk(k=topk, min_occurrences=min_occurrences)
+        ########################### Debugging code ##########################
+        # import pandas as pd
+        # vd = pd.DataFrame(self._avg_loss.items(), columns=['prefix', 'loss'])
+        # vd['prefix_str'] = vd['prefix'].map(self.tokenizer.decode)
+        # vd['n'] = vd['prefix'].map(lambda p: len(self._all_losses[p]))
+        # vd.sort_values(by='loss')["prefix_str"].iloc[:25]
+        # vd.sort_values(by=['n', 'loss'], ascending=[False, True])[["n", "prefix_str"]].iloc[:25]
+        #####################################################################
         if not len(top_token_ids): return
         print((" " * 50), ("*" * 20), "Population", ("*" * 20))
         for token_ids in top_token_ids:
             prefix_str = "{:>65}".format(self.tokenizer.decode(list(token_ids)).replace("\n", "\\\\n"))
             loss_str = f"{self._avg_loss[token_ids]:.3f}"
-            acc_str = f"{self._avg_accuracy[token_ids]:.2f}"
+            acc_str = f"{self._avg_accuracy[token_ids]*100:.1f}"
             print(prefix_str, "\t\t", loss_str, "\t\t", acc_str)
         print()
     
@@ -387,14 +425,22 @@ class PrefixPool:
         k: int,
         min_occurrences: Optional[int] = None
         ) -> List[Tuple[int]]:
-        if len(self._best_prefix_by_start_token.keys()) < k:
+        all_prefixes = [p for p, score in self._best_prefix_by_start_token.values()]
+        top_prefixes = self._topk_from_prefixes(
+            all_prefixes, k=k, min_occurrences=min_occurrences
+        )
+        n_so_far = len(top_prefixes)
+        if n_so_far < k:
             # fallback if we don't have enough first-tokens yet
-            return self.topk_all(k=k, min_occurrences=min_occurrences)
-        else:
-            all_prefixes = [p for p, score in self._best_prefix_by_start_token.values()]
-            return self._topk_from_prefixes(
-                all_prefixes, k=k, min_occurrences=min_occurrences
+            more_prefixes = (
+                set(self.topk_all(k=k, min_occurrences=min_occurrences))
+                - set(top_prefixes)
             )
+            num_prefixes_to_add = k - len(top_prefixes)
+            num_prefixes_to_add = min(len(more_prefixes), num_prefixes_to_add)
+            top_prefixes += random.sample(more_prefixes, num_prefixes_to_add)
+        top_prefixes.sort(key=self._score)
+        return top_prefixes
 
     def topk_all(self, k: int, min_occurrences: Optional[int] = None) -> List[Tuple[int]]:
         all_prefixes = self._avg_loss.keys()
@@ -410,7 +456,7 @@ class PrefixPool:
         elif criterion == 'combined':
             return (-1 * round(self._avg_accuracy[prefix], 2), self._avg_loss[prefix])
         else:
-            return (-1 * round(self._avg_accuracy[prefix], 2), )
+            return (-1 * self._avg_accuracy[prefix], 2)
     
     def _topk_from_prefixes(
         self,
@@ -426,7 +472,7 @@ class PrefixPool:
 
         population = [(self._score(p), p) for p in prefixes]
         topk_pop = heapq.nsmallest(k, population)
-            
+        topk_pop.sort(key = lambda t: t[0])
         return [prefix_ids for _, prefix_ids in topk_pop]
 
     def update(self, prefix: torch.Tensor, loss: torch.Tensor, accuracy: torch.Tensor):

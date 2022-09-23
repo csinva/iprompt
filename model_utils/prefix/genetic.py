@@ -162,9 +162,9 @@ class GeneticAutoPrompt(AutoPrompt):
     
     def _get_population_and_random_generations(self, full_text_ids: torch.Tensor) -> torch.Tensor:
         population_pool = self._select_pop_topk(k=self._topk_pop_sample)
+        # print("population_pool:", [self.tokenizer.decode(p) for p in population_pool])
         population = random.sample(population_pool, self._pop_size)
         population = torch.tensor(population).to(device)
-        # Track changes in population to enable early stopping.
 
         random_idxs = torch.randint(
             low=0, high=len(full_text_ids), size=(self._num_random_generations,)
@@ -240,7 +240,7 @@ class GeneticAutoPrompt(AutoPrompt):
                 _cand_input_ids, cand_loss, cand_n_correct = (
                     self._compute_loss_with_set_prefix(
                         original_input_ids=x_tokenized.input_ids,
-                        next_token_ids=y_tokenized.input_ids[:, 0],
+                        next_token_ids=y_tokenized.input_ids,
                         possible_answer_mask=possible_answer_mask,
                         prefix_ids=prefix_ids,
                     )
@@ -287,11 +287,15 @@ class GeneticAutoPrompt(AutoPrompt):
         """
         self.model.eval()
 
+        # logic here is that we want to see a sample a good number of times before
+        # we actually have a good estimate of its loss.
+        num_min_occurrences = 3
+
         full_text_ids = self._create_full_text_ids(
             full_text_input_ids=full_text_tokenized.input_ids,
         )
         self._initialize_pop_once(full_text_ids=full_text_ids)
-        self._prefix_pool.print(topk=10)
+        self._prefix_pool.print(topk=10, min_occurrences=num_min_occurrences)
 
         # Grab new population
         population_input_ids = self._get_population_and_random_generations(
@@ -311,7 +315,7 @@ class GeneticAutoPrompt(AutoPrompt):
             possible_answer_mask=possible_answer_mask
         )
 
-        # Compute population for early-stopping
+        # Track changes in population to enable early stopping.
         self._track_early_stopping()
 
         # Return best one
