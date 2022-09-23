@@ -11,7 +11,7 @@ cmd_python = 'python'
 
 PARAMS_SHARED_DICT = {
     # things to vary
-    'n_shots': [1, 5, 10],
+    'n_shots': [1, 5],
     'task_name_list': [
         [
         'task1146_country_capital',
@@ -26,7 +26,7 @@ PARAMS_SHARED_DICT = {
         'task107_splash_question_to_sql'
     ],
     'model_cls': ['genetic', 'autoprompt'],
-    'num_learned_tokens': [3, 6, 12],
+    'num_learned_tokens': [3, 6],
 
     # things to average over
     'seed': [1],

@@ -13,7 +13,7 @@ cmd_python = 'python'
 
 PARAMS_SHARED_DICT = {
     # things to vary
-    'n_shots': [1, 5, 10],
+    'n_shots': [1, 5],
     # 'task_name_list': [['add_two']],
     'task_name_list': [
         'add_two', 'multiply_two', 
@@ -22,7 +22,7 @@ PARAMS_SHARED_DICT = {
         'square_one', 'double_one',
     ], # 'exp_one',  'fibonacci_one', 'divide_two', 
     'model_cls': ['genetic', 'autoprompt'],
-    'num_learned_tokens': [3, 6, 12],
+    'num_learned_tokens': [3, 6],
 
     # things to average over
     'seed': [1],
