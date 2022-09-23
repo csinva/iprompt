@@ -72,6 +72,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                                    prefix: str = '', batch_size: int = 16,
                                    restrict_to_valid_answers=True,
                                    multi_token=False,
+                                   max_new_tokens=7,
                                    ) -> float:
     """Tests a given language model on a dataset and returns {zero,few}-shot loss. 
     Note: accuracy is computed over the set of possible answers found in the original dataset.
@@ -138,36 +139,57 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
         x_text = [(prefix + prompt) for prompt in batch['input']]
         y_text = [answer for answer in batch['output']]
         if idx == 0:
-            print(list(zip(x_text[:2], y_text[:2])))
+            print('x_text[0]:' + repr(x_text[0]))
+            print('y_text[0]:' + repr(y_text[0]))
 
         y_tokenized = model.tokenizer(
             y_text, return_tensors='pt', padding='longest').to(device)
 
-        # only test on the single next token
-        true_next_token_ids = y_tokenized['input_ids'][:, 0]
-
         # note: this part currently assumes there aren't extra padding tokens at the end
         with torch.no_grad():
-            # this function ensures that padded tokens are properly dealt with
-            ex_inputs = model.tokenizer(x_text, padding='longest', return_tensors='pt').to(model.model.device)
-            pred_next_token_logits = suffix.get_next_token_logits(ex_inputs, model.model) # note, this will break for gpt-3
-            # all_token_logits = model.get_logits(x_text)
-            # pred_next_token_logits = all_token_logits[:, -1, :]
+            ex_inputs = model.tokenizer(
+                x_text, padding='longest', return_tensors='pt').to(model.model.device)
 
-            # optionally take a mask over some tokens
-            pred_next_token_logits = torch.where(
-                possible_answer_mask, pred_next_token_logits, torch.tensor(
-                    float('-inf')).to(device)
-            )
+            # just decode a single token
+            if not multi_token:
+                # this function ensures that padded tokens are properly dealt with
+                pred_next_token_logits = suffix.get_next_token_logits(
+                    ex_inputs, model.model)  # note, this will break for gpt-3
+                # all_token_logits = model.get_logits(x_text)
+                # pred_next_token_logits = all_token_logits[:, -1, :]
 
-            # compute loss
-            loss = torch.nn.functional.nll_loss(
-                input=pred_next_token_logits, target=true_next_token_ids, reduction='sum')
+                # optionally take a mask over some tokens
+                pred_next_token_logits = torch.where(
+                    possible_answer_mask, pred_next_token_logits, torch.tensor(
+                        float('-inf')).to(device)
+                )
+
+                # only test on the single next token
+                true_next_token_ids = y_tokenized['input_ids'][:, 0]
+
+                # compute loss
+                loss = torch.nn.functional.nll_loss(
+                    input=pred_next_token_logits, target=true_next_token_ids, reduction='sum')
+
+                # check if correct
+                total_n_correct += (pred_next_token_logits.argmax(dim=-1)
+                            == true_next_token_ids.flatten()).int().sum().item()
+
+            # deccode multiple tokens
+            elif multi_token:
+                samples_t = model.model.generate(**ex_inputs,
+                                                 num_beams=4,
+                                                 max_new_tokens=max_new_tokens,
+                                                 length_penalty=0.6,
+                                                 num_return_squences=20)
+                samples = model.tokenizer.batch_decode(samples_t)
+                for i in range(len(samples)):
+                    print(i, x_text[i], samples[i])
+                
 
         total_loss += loss.item()
         total_n += len(x_text)
-        total_n_correct += (pred_next_token_logits.argmax(dim=-1)
-                            == true_next_token_ids.flatten()).int().sum().item()
+        
 
     print(f"Percent correct: {(total_n_correct * 100.0 / total_n):.2f}")
     return (total_loss / total_n), (total_n_correct * 100.0 / total_n)
