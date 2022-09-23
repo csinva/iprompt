@@ -133,6 +133,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
         # only test on the single next token
         true_next_token_ids = y_tokenized['input_ids'][:, 0]
 
+        # note: this part currently assumes there aren't extra padding tokens at the end
         with torch.no_grad():
             all_token_logits = model.get_logits(x_text)
             pred_next_token_logits = all_token_logits[:, -1, :]

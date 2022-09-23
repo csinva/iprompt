@@ -36,9 +36,10 @@ PARAMS_COUPLED_DICT = submit_utils.PARAMS_COUPLED_DICT
 
 # long_suffs_full
 PARAMS_SHARED_DICT['save_dir'] = [f'/home/chansingh/mntv1/suffix_anli_long_suffs_full']
-PARAMS_SHARED_DICT['max_num_tokens'] = [5]
+PARAMS_SHARED_DICT['max_num_tokens'] = [3, 6]
 PARAMS_SHARED_DICT['use_early_stopping'] = [0]
 PARAMS_SHARED_DICT['use_generic_query'] = [1]
+PARAMS_SHARED_DICT['n-shots'] = [1, 5]
 
 
 cmd_python = 'python'
