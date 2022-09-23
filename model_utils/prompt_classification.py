@@ -10,18 +10,19 @@ import torch
 import transformers
 from tqdm.notebook import tqdm, trange
 import matplotlib.pyplot as plt
-
+from . import suffix
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 class Model:
     def __init__(self, model_name: str):
-        self.model = transformers.AutoModelForCausalLM.from_pretrained(model_name)
+        self.model = transformers.AutoModelForCausalLM.from_pretrained(
+            model_name)
         self.tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.model.eval()
         self.model.to(device)
-    
+
     def get_logits(self, x_text: List[str]) -> torch.Tensor:
         x_tokenized = self.tokenizer(
             x_text, return_tensors='pt', padding='longest'
@@ -37,21 +38,25 @@ class Gpt3Model(Model):
         self._num_requests = 0
         self.tokenizer = transformers.AutoTokenizer.from_pretrained('gpt2')
         self.tokenizer.pad_token = self.tokenizer.eos_token
-        self._api_kwargs = { "model": "text-davinci-002", "temperature": 0.0, "max_tokens": 1, "logprobs": 5 }
+        self._api_kwargs = {"model": "text-davinci-002",
+                            "temperature": 0.0, "max_tokens": 1, "logprobs": 5}
         print("Initializing for calls to GPT-3 API")
-    
+
     def get_logits(self, x_text: List[str]) -> torch.Tensor:
         # all negative logits
         logits = np.zeros((len(x_text), self.tokenizer.vocab_size)) - 1e4
 
         for i, prompt in enumerate(x_text):
-            response = openai.Completion.create(prompt=prompt, **self._api_kwargs)
-            token_logprobs = response.choices[0]['logprobs']['top_logprobs'][0].to_dict()
+            response = openai.Completion.create(
+                prompt=prompt, **self._api_kwargs)
+            token_logprobs = response.choices[0]['logprobs']['top_logprobs'][0].to_dict(
+            )
             for token, prob in token_logprobs.items():
                 token_id = self.tokenizer.encode(token)
-                assert len(token_id) == 1, f"token mismatch for input '{token}': {token_ids}"
-                logits[i][token_id[0]] = prob # set logits for the top 5 items
-        
+                assert len(
+                    token_id) == 1, f"token mismatch for input '{token}': {token_ids}"
+                logits[i][token_id[0]] = prob  # set logits for the top 5 items
+
         logits = torch.tensor(logits).unsqueeze(dim=1)
         return logits.to(device).float()
 
@@ -62,8 +67,12 @@ def create_model(model_name: str) -> Model:
     else:
         return Model(model_name=model_name)
 
+
 def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.PreTrainedModel,
-                                   prefix: str = '', batch_size: int = 16, restrict_to_valid_answers=True) -> float:
+                                   prefix: str = '', batch_size: int = 16,
+                                   restrict_to_valid_answers=True,
+                                   multi_token=False,
+                                   ) -> float:
     """Tests a given language model on a dataset and returns {zero,few}-shot loss. 
     Note: accuracy is computed over the set of possible answers found in the original dataset.
 
@@ -76,11 +85,13 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
     batch_size (int): batch size for evaluation
     restrict_to_valid_answers
         Whether to restrict evaluation over all tokens present in the answers
+    multi_token
+        Whether to allow multiple tokens (uses beam search)
 
     Returns:
         loss (float): language modeling loss on examples in dataset
     """
-  
+
     def get_possible_answer_mask(dataloader, model, vocab_size):
         """Compute loss only over possible answers to make task easier
         """
@@ -88,13 +99,13 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
         for batch in dataloader:
             y_text = [answer for answer in batch['output']]
             # print(y_text)
-            y_tokenized = model.tokenizer(y_text, return_tensors='pt', padding='longest')
+            y_tokenized = model.tokenizer(
+                y_text, return_tensors='pt', padding='longest')
             # only test on the single next token
             true_next_token_ids = y_tokenized['input_ids'][:, 0]
             possible_answer_ids.extend(true_next_token_ids.tolist())
         assert len(
             possible_answer_ids) > 0, "need multiple answers for multiple choice"
-
 
         # set up possible answers
         possible_answer_ids = torch.tensor(possible_answer_ids)
@@ -105,14 +116,6 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
         ).any(dim=1).to(device)
         return possible_answer_mask
 
-
-    # set up mask for possible answers
-    vocab_size = model.get_logits(['dummy text']).shape[-1] # vocab_size = model.tokenizer.vocab_size
-    if restrict_to_valid_answers:
-        possible_answer_mask = get_possible_answer_mask(dataloader, model)
-    else:
-        possible_answer_mask = torch.ones(vocab_size).bool()
-
     # initialize
     np.random.seed(42)
     torch.manual_seed(42)
@@ -121,6 +124,16 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
     total_n_correct = 0.0
     dataloader = torch.utils.data.DataLoader(
         dset, batch_size=batch_size, shuffle=False, drop_last=False)
+
+    # set up mask for possible answers
+    # vocab_size = model.tokenizer.vocab_size
+    vocab_size = model.get_logits(['dummy text']).shape[-1]
+    if restrict_to_valid_answers:
+        possible_answer_mask = get_possible_answer_mask(
+            dataloader, model, vocab_size)
+    else:
+        possible_answer_mask = torch.ones(vocab_size).bool()
+
     for idx, batch in enumerate(dataloader):
         x_text = [(prefix + prompt) for prompt in batch['input']]
         y_text = [answer for answer in batch['output']]
@@ -135,20 +148,26 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
 
         # note: this part currently assumes there aren't extra padding tokens at the end
         with torch.no_grad():
-            all_token_logits = model.get_logits(x_text)
-            pred_next_token_logits = all_token_logits[:, -1, :]
+            # this function ensures that padded tokens are properly dealt with
+            ex_inputs = model.tokenizer(x_text, padding='longest', return_tensors='pt').to(model.model.device)
+            pred_next_token_logits = suffix.get_next_token_logits(ex_inputs, model.model) # note, this will break for gpt-3
+            # all_token_logits = model.get_logits(x_text)
+            # pred_next_token_logits = all_token_logits[:, -1, :]
+
+            # optionally take a mask over some tokens
             pred_next_token_logits = torch.where(
                 possible_answer_mask, pred_next_token_logits, torch.tensor(
                     float('-inf')).to(device)
             )
+
+            # compute loss
             loss = torch.nn.functional.nll_loss(
                 input=pred_next_token_logits, target=true_next_token_ids, reduction='sum')
-            
+
         total_loss += loss.item()
         total_n += len(x_text)
         total_n_correct += (pred_next_token_logits.argmax(dim=-1)
                             == true_next_token_ids.flatten()).int().sum().item()
-
 
     print(f"Percent correct: {(total_n_correct * 100.0 / total_n):.2f}")
     return (total_loss / total_n), (total_n_correct * 100.0 / total_n)
