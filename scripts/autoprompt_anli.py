@@ -62,5 +62,5 @@ print('running job')
 submit_utils.run_dicts(
     ks_final, param_combos_final, cmd_python=cmd_python,
     script_name='03_train_prefix.py', actually_run=True,
-    use_slurm=True, save_dir=save_dir, slurm_gpu_str='gpu:a6000:1',
+    use_slurm=False, save_dir=save_dir, slurm_gpu_str='gpu:a6000:1',
 )
