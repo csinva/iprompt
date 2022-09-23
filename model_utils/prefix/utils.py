@@ -291,7 +291,6 @@ class PrefixModel(nn.Module, abc.ABC):
 
         # add loss from other tokens
         b, label_sequence_length = next_token_ids.shape
-        print("label_sequence_length =", label_sequence_length)
         if label_sequence_length > 1:
             other_next_token_logits = (
                 outputs.logits[:, -label_sequence_length:-1]
