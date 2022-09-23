@@ -16,11 +16,18 @@ PARAMS_SHARED_DICT = {
     'n_shots': [1, 5, 10],
     # 'task_name_list': [['add_two']],
     'task_name_list': [
-        'add_two', 'multiply_two', 
-        'subtract_two',
-        'max_two', 'first_two',
-        'square_one', 'double_one',
-    ], # 'exp_one',  'fibonacci_one', 'divide_two', 
+        [
+        'task1146_country_capital',
+        'task1509_evalution_antonyms',
+        'task1147_country_currency',
+        'task1149_item_check_edible',
+        'task183_rhyme_generation',
+        'task1191_food_veg_nonveg',
+        'task092_check_prime_classification',
+        'task088_identify_typo_verification',
+        'task1336_peixian_equity_evaluation_corpus_gender_classifier',
+        'task107_splash_question_to_sql'
+    ],
     'model_cls': ['genetic', 'autoprompt'],
     'num_learned_tokens': [3, 6, 12],
 
@@ -28,12 +35,12 @@ PARAMS_SHARED_DICT = {
     'seed': [1],
 
     # stopping criteria
-    'max_dset_size': [5000],
-    'max_n_datapoints': [5000],
-    'early_stopping_steps': [25],
+    'max_dset_size': [10000],
+    'max_n_datapoints': [10000],
+    'early_stopping_steps': [50],
 
     # fixed params
-    'max_digit': [100],
+    'max_digit': [10],
     'train_split_frac': [0.75],
     'single_shot_loss': [1],
 }
@@ -50,13 +57,6 @@ PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gp
         # ('EleutherAI/gpt-neox-20b', 1, 0),
     ],
 }
-
-## ***** tmp, for testing
-# PARAMS_SHARED_DICT['n_shots'] = [1]
-# PARAMS_SHARED_DICT['num_learned_tokens'] = [3]
-# PARAMS_SHARED_DICT['task_name_list'] = ['exp_one']
-# PARAMS_SHARED_DICT['max_n_datapoints'] = ['50']
-## ******
 
 ks_final, param_combos_final = submit_utils.combine_param_dicts(
     PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT)

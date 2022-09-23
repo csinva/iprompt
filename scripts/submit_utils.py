@@ -103,10 +103,11 @@ def run_command_bash(cmd: str) -> None:
     os.system(cmd)
 
 def run_command_slurm(
-    python_cmd: str, save_dir: str,
-    gpu_str: str = 'gpu:a6000:1',
-    mem_str: str = '32G',
-    num_cpus: int = 4,
+        python_cmd: str,
+        save_dir: str,
+        gpu_str: str,
+        mem_str: str = '32G',
+        num_cpus: int = 4,
     ) -> None:
     dir_path = dirname(os.path.realpath(__file__))
     slurm_template_file = open(oj(dir_path, 'slurm_template.slurm'))
@@ -133,6 +134,7 @@ def run_dicts(
         script_name: str = '02_train_suffix.py',
         actually_run: bool = True,
         use_slurm: bool = False,
+        slurm_gpu_str: str = 'gpu:a6000:1',
         save_dir: str = '',
     ):
     for i in range(len(param_combos_final)):
@@ -149,7 +151,11 @@ def run_dicts(
         try:
             if actually_run:
                 if use_slurm:
-                    run_command_slurm(python_cmd=param_str, save_dir=save_dir)
+                    run_command_slurm(
+                        python_cmd=param_str,
+                        gpu_str=slurm_gpu_str,
+                        save_dir=save_dir
+                    )
                 else:
                     run_command_bash(param_str)
         except Exception as e:
