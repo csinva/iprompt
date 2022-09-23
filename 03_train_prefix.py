@@ -304,7 +304,7 @@ if __name__ == '__main__':
     parser.add_argument('--train_split_frac', type=float,
                         default=None, help='fraction for train-test split if desired')
     parser.add_argument('--max_dset_size', type=int,
-                        default=1000, help='maximum allowable dataset size')
+                        default=10**10, help='maximum allowable dataset size')
     parser.add_argument('--early_stopping_steps', type=int, default=-1,
                         help='if > 0, number of steps until stopping early after no improvement')
     parser.add_argument('--max_digit', type=int, default=100,
