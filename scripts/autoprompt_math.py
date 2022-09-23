@@ -7,7 +7,7 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
 # save_dir = f'/home/chansingh/mntv1/prefix_math_{submit_utils.JOB_SUFFIX}'
 # save_dir = f'/home/jxm3/random/interpretable-autoprompting/results/tst2/prefix_math_{submit_utils.JOB_SUFFIX}'
-save_dir = '/home/jxm3/random/interpretable-autoprompting/results/autoprompt_add_test_2'
+save_dir = '/home/jxm3/random/interpretable-autoprompting/results/autoprompt_arithmetic'
 
 cmd_python = 'python'
 
@@ -28,9 +28,9 @@ PARAMS_SHARED_DICT = {
     # 'task_name_list': [['add_two']],
     'task_name_list': [
         'add_two', 'multiply_two', 
-        'subtract_two',
-        'max_two', 'first_two',
-        'square_one', 'double_one',
+        # 'subtract_two',
+        # 'max_two', 'first_two',
+        # 'square_one', 'double_one',
     ], # 'exp_one',  'fibonacci_one', 'divide_two', 
     'model_cls': ['genetic', 'autoprompt'],
     'num_learned_tokens': [3, 6],
@@ -69,5 +69,5 @@ ks_final, param_combos_final = submit_utils.combine_param_dicts(
     PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT)
 
 submit_utils.run_dicts(ks_final, param_combos_final, cmd_python=cmd_python,
-                       script_name='03_train_prefix.py', actually_run=False
+                       script_name='03_train_prefix.py', actually_run=True
 )

@@ -370,7 +370,9 @@ if __name__ == '__main__':
     torch.manual_seed(args.seed)
     transformers.set_seed(args.seed)
 
-    if (not ((args.mask_possible_answers) and (args.train_split_frac is not None))):
+    args.use_generic_query = 0
+
+    if (args.mask_possible_answers) and (args.train_split_frac is not None):
         print("Warning: mask possible answers not supported for eval")
 
     # iterate over tasks
