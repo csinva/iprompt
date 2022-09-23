@@ -26,7 +26,6 @@ PARAMS_SHARED_DICT_MATH = {
     'task_name_list': [['add_two', 'multiply_two', 'divide_two', 'subtract_two',
              'max_two', 'first_two',
              'square_one', 'exp_one', 'double_one', 'fibonacci_one']],
-
     # things to average over
     'seed': [1],
     'template_num_init_string': [0], #, 1, 2],
@@ -39,11 +38,13 @@ PARAMS_SHARED_DICT_MATH = {
 PARAMS_SHARED_DICT_ANLI = {
     # things to vary
     'n_shots': [1, 5],
-    'task_name_list': [['task1146_country_capital', 'task1509_evalution_antonyms', 'task1147_country_currency',
-             'task1149_item_check_edible', 'task183_rhyme_generation', 'task1191_food_veg_nonveg',
-             'task092_check_prime_classification', 'task088_identify_typo_verification',
-             'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql']],
-
+    'task_name_list': [
+        ['task1146_country_capital', 'task1509_evalution_antonyms', 'task1147_country_currency',
+         'task1149_item_check_edible', 'task183_rhyme_generation', 'task1191_food_veg_nonveg',
+         'task092_check_prime_classification', 'task088_identify_typo_verification',
+          'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql'
+        ]
+    ],
     # things to average over
     'seed': [1],
     'template_num_init_string': [0],

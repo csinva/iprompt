@@ -178,6 +178,11 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
             print("skipping", dir_name)
             continue
 
+        # fix extra types for missing prefixes when there weren't enough starting with
+        # different tokens to save
+        if 'prefix_type' in json_dict:
+            json_dict['prefix_type'] = json_dict['prefix_type'][:len(json_dict['prefixes'])]
+
         # remove unneeded keys
         del json_dict['task_name_list'] 
         if 'losses' in json_dict: del json_dict['losses'] 
@@ -190,8 +195,8 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
         else:
             json_dict['generation_bad_words_ids'] = ''
 
-        print({k: len(v) for k, v in json_dict.items() if (
-            hasattr(v, '__len__') and not isinstance(v, str))})
+        # this line of code debugs lengths of things in the dict -- TODO change to assert on list sizes
+        # print({k: len(v) for k, v in json_dict.items() if (hasattr(v, '__len__') and not isinstance(v, str))})
 
         df = pd.DataFrame.from_dict(json_dict)
         df['pickle_filename'] = pickle_filename
