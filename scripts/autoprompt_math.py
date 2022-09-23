@@ -38,11 +38,12 @@ PARAMS_SHARED_DICT = {
     # possibly initialization  or num candidates for autoprompt.
 
     # stopping criteria
-    'max_n_datapoints': [4000],
-    'early_stopping_steps': [20],
+    'max_dset_size': [1000],
+    'max_n_datapoints': [5000],
+    'early_stopping_steps': [25],
 
     # fixed params
-    'max_digit': [100],
+    'max_digit': [10],
     'train_split_frac': [0.75],
     'single_shot_loss': [0, 1],
 }

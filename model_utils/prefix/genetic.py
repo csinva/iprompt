@@ -142,7 +142,7 @@ class GeneticAutoPrompt(AutoPrompt):
 
     def _track_early_stopping(self):
         """Track changes in population to tell when to stop early."""
-        __n_early_stop = 4
+        __n_early_stop = 5
         population = set(self._select_pop_topk(k=__n_early_stop, min_occurrences=3))
         if (len(population) == __n_early_stop) and (self._last_population == population):
             self._steps_since_new_population += 1

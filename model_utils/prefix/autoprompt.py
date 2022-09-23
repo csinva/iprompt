@@ -44,13 +44,18 @@ class AutoPrompt(HotFlip):
         save_dir = self.args.save_dir_unique
         os.makedirs(save_dir, exist_ok=True)
         # pickle.dump(self._prefix_pool, open(os.path.join(save_dir, 'prefix_pool.p'), 'wb'))
-        top_prefixes = self._prefix_pool.topk(k=256, min_occurrences=3)
+        N_p = 64 # num prefixes to save
+        top_prefixes = (
+            self._prefix_pool.topk_all(k=N_p, min_occurrences=3) + 
+            self._prefix_pool.topk_with_different_start_token(k=N_p, min_occurrences=3)
+        )
         top_prefixes_str = [self.tokenizer.decode(p) for p in top_prefixes]
         top_prefix_accs = [self._prefix_pool._avg_accuracy[p] for p in top_prefixes]
         top_prefix_losses = [self._prefix_pool._avg_loss[p] for p in top_prefixes]
         top_prefix_n_queries = [len(self._prefix_pool._all_losses[p]) for p in top_prefixes]
         return {
             "prefix_ids": top_prefixes,
+            "prefix_type": ((["topk_all"] * N_p) + (["topk_with_different_start_token"] * N_p)),
             "prefixes": top_prefixes_str,
             "prefix_train_acc": top_prefix_accs,
             "prefix_train_loss": top_prefix_losses,

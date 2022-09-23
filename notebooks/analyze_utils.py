@@ -173,7 +173,7 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
 
         # remove unneeded keys
         del json_dict['task_name_list'] 
-        del json_dict['losses'] 
+        if 'losses' in json_dict: del json_dict['losses'] 
 
         # list to str
         if len(json_dict['generation_bad_words_ids']):

@@ -6,6 +6,7 @@ import os
 import random
 import string
 import numpy as np
+import time
 import torch
 from torch import nn
 import transformers
@@ -58,6 +59,8 @@ def train_model(
     r: dict
         dictionary of things to save
     """
+
+    r['train_start_time'] = time.time()
     model.train() 
 
     model = model.to(device)
@@ -141,7 +144,6 @@ def train_model(
             model_check_early_stop = model.check_early_stop()
             if model_check_early_stop:
                 print("model_check_early_stop returned true")
-                breakpoint()
             if (total_n_datapoints > args.max_n_datapoints) or (total_n_steps > args.max_n_steps) or model_check_early_stop:
                 stopping_early = True
                 break
@@ -177,6 +179,10 @@ def train_model(
     # save whether prefixes fit the template
     if "prefixes" in r:
         r["prefixes__check_answer_func"] = list(map(check_answer_func, r["prefixes"]))
+    
+
+    r['train_end_time'] = time.time()
+    r['train_time_elapsed'] = r['train_end_time'] - r['train_start_time']
 
     pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
 
@@ -245,6 +251,7 @@ def eval_model(
     r: dict
         dictionary of things to save
     """
+    r["test_start_time"] = time.time()
     model.eval()
     dataloader = DataLoader(dset, batch_size=args.batch_size, shuffle=False, drop_last=False)
 
@@ -272,6 +279,8 @@ def eval_model(
         r["num_prefixes_used_for_test"] = 1
 
 
+    r["test_end_time"] = time.time()
+    r["test_time_elapsed"] = r["test_end_time"] - r["test_start_time"]
     pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
     return r
 
@@ -361,9 +370,8 @@ if __name__ == '__main__':
     torch.manual_seed(args.seed)
     transformers.set_seed(args.seed)
 
-    assert (not ((args.mask_possible_answers) and (args.train_split_frac))), (
-        "mask possible answers not supported for eval"
-    )
+    if (not ((args.mask_possible_answers) and (args.train_split_frac is not None))):
+        print("Warning: mask possible answers not supported for eval")
 
     # iterate over tasks
     if args.task_name_list is not None:
@@ -414,7 +422,7 @@ if __name__ == '__main__':
         logger.info('beginning training...')
 
         if args.train_split_frac is None:
-            r = train(args=args, r=r, dset=dset, model=model, tokenizer=tokenizer)
+            r = train_model(args=args, r=r, dset=dset, model=model, tokenizer=tokenizer)
         else:
             dset_train, dset_test = dset
             r = train_model(args=args, r=r, dset=dset_train, model=model, tokenizer=tokenizer)
