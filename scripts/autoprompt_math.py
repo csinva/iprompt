@@ -7,7 +7,7 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
 # save_dir = f'/home/chansingh/mntv1/prefix_math_{submit_utils.JOB_SUFFIX}'
 # save_dir = f'/home/jxm3/random/interpretable-autoprompting/results/tst2/prefix_math_{submit_utils.JOB_SUFFIX}'
-save_dir = '/home/jxm3/random/interpretable-autoprompting/results/autoprompt_arithmetic'
+save_dir = '/home/jxm3/random/interpretable-autoprompting/results/slurm_test'
 
 cmd_python = 'python'
 
@@ -54,20 +54,29 @@ PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 
 PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
     ('checkpoint', 'batch_size', 'float16'): [
-        # ('gpt2', 32, 0),
+        ('gpt2', 32, 0),
         # ('gpt2-medium', 200, 0),
         # ('gpt2-large', 100, 0),
         # ('gpt2-xl', 32, 0),
         # ('EleutherAI/gpt-neo-2.7B', 16, 0),
-        ('EleutherAI/gpt-j-6B', 32, 1)
+        # ('EleutherAI/gpt-j-6B', 32, 1)
         # ('EleutherAI/gpt-neox-20b', 1, 0),
     ],
 }
 
+## ***** tmp, for testing
+PARAMS_SHARED_DICT['n_shots'] = [1]
+PARAMS_SHARED_DICT['num_learned_tokens'] = [3]
+PARAMS_SHARED_DICT['task_name_list'] = ['exp_one']
+PARAMS_SHARED_DICT['max_n_datapoints'] = ['50']
+## ******
 
 ks_final, param_combos_final = submit_utils.combine_param_dicts(
     PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT)
 
-submit_utils.run_dicts(ks_final, param_combos_final, cmd_python=cmd_python,
-                       script_name='03_train_prefix.py', actually_run=True
+print('running job')
+submit_utils.run_dicts(
+    ks_final, param_combos_final, cmd_python=cmd_python,
+    script_name='03_train_prefix.py', actually_run=True,
+    use_slurm=True, save_dir=save_dir
 )

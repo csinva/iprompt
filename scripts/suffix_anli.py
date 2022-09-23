@@ -34,8 +34,10 @@ PARAMS_COUPLED_DICT = submit_utils.PARAMS_COUPLED_DICT
 # PARAMS_SHARED_DICT['save_dir'] = [f'/home/chansingh/mntv1/suffix_anli_long_suffs']
 # PARAMS_SHARED_DICT['max_num_tokens'] = [4] 
 
+save_dir = f'/home/chansingh/mntv1/suffix_anli_long_suffs_full'
+
 # long_suffs_full
-PARAMS_SHARED_DICT['save_dir'] = [f'/home/chansingh/mntv1/suffix_anli_long_suffs_full']
+PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 PARAMS_SHARED_DICT['max_num_tokens'] = [3, 6]
 PARAMS_SHARED_DICT['use_early_stopping'] = [0]
 PARAMS_SHARED_DICT['use_generic_query'] = [1]
@@ -47,4 +49,6 @@ ks_final, param_combos_final = submit_utils.combine_param_dicts(
     PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT)
 
 submit_utils.run_dicts(ks_final, param_combos_final, cmd_python=cmd_python,
-                       script_name='02_train_suffix.py', actually_run=True)
+                       script_name='02_train_suffix.py', actually_run=True,
+                       use_slurm=False, save_dir=save_dir
+)

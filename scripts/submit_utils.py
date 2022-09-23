@@ -1,7 +1,12 @@
+from typing import Dict, List
+
 import itertools
 import os
 from os.path import dirname
+from os.path import join as oj
 import sys
+import tempfile
+
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 SAVE_DIR = '/home/chansingh/mntv1/'
 JOB_SUFFIX = 'long_suffs'
@@ -94,8 +99,42 @@ def combine_param_dicts(PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT):
     return ks_final, param_combos_final
 
 
-def run_dicts(ks_final, param_combos_final, cmd_python='python',
-              script_name='02_train_suffix.py', actually_run=True):
+def run_command_bash(cmd: str) -> None:
+    os.system(cmd)
+
+def run_command_slurm(
+    python_cmd: str, save_dir: str,
+    gpu_str: str = 'gpu:a6000:1',
+    mem_str: str = '32G',
+    num_cpus: int = 4,
+    ) -> None:
+    dir_path = dirname(os.path.realpath(__file__))
+    slurm_template_file = open(oj(dir_path, 'slurm_template.slurm'))
+    new_slurm_file_text = slurm_template_file.read().format(
+        save_dir=save_dir,
+        job_name='interpretable-autoprompting',
+        gpu=gpu_str,
+        mem=mem_str,
+        num_cpus=str(num_cpus),
+        python_cmd=python_cmd
+    )
+    tmp_slurm_file = tempfile.NamedTemporaryFile(
+        dir=save_dir, suffix=".tmp", delete=False
+    )
+    tmp_slurm_file.write((new_slurm_file_text + '\n').encode())
+    tmp_slurm_file.close()
+    run_command_bash(f'sbatch {tmp_slurm_file.name}') # will block until slurm processes file.
+    print(f'launched slurm command, removing temporary file {tmp_slurm_file.name}')
+    os.remove(tmp_slurm_file.name)
+
+def run_dicts(
+        ks_final: List, param_combos_final: List,
+        cmd_python: str ='python',
+        script_name: str = '02_train_suffix.py',
+        actually_run: bool = True,
+        use_slurm: bool = False,
+        save_dir: str = '',
+    ):
     for i in range(len(param_combos_final)):
         param_str = cmd_python + ' ' + \
             os.path.join(repo_dir, script_name + ' ')
@@ -109,7 +148,10 @@ def run_dicts(ks_final, param_combos_final, cmd_python='python',
             f'\n\n-------------------{i + 1}/{len(param_combos_final)}--------------------\n', param_str)
         try:
             if actually_run:
-                os.system(param_str)
+                if use_slurm:
+                    run_command_slurm(python_cmd=param_str, save_dir=save_dir)
+                else:
+                    run_command_bash(param_str)
         except Exception as e:
             print(e)
 
