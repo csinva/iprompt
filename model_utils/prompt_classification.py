@@ -63,53 +63,64 @@ def create_model(model_name: str) -> Model:
         return Model(model_name=model_name)
 
 def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.PreTrainedModel,
-                                   prefix: str = '', batch_size: int = 16) -> float:
+                                   prefix: str = '', batch_size: int = 16, restrict_to_valid_answers=True) -> float:
     """Tests a given language model on a dataset and returns {zero,few}-shot loss. 
+    Note: accuracy is computed over the set of possible answers found in the original dataset.
 
-    Args:
-        dset (datasets.Dataset): dataset of examples 
-        model (transformers.PreTrainedModel): language model for testing
-        tokenizer (transformers.PreTrainedModel): tokenizer to accompany `model`
-        prefix (str): Prefix that will be prepended to each example
-        batch_size (int): batch size for evaluation
+    Params
+    ------
+    dset (datasets.Dataset): dataset of examples 
+    model (transformers.PreTrainedModel): language model for testing
+    tokenizer (transformers.PreTrainedModel): tokenizer to accompany `model`
+    prefix (str): Prefix that will be prepended to each example
+    batch_size (int): batch size for evaluation
+    restrict_to_valid_answers
+        Whether to restrict evaluation over all tokens present in the answers
 
     Returns:
         loss (float): language modeling loss on examples in dataset
     """
+  
+    def get_possible_answer_mask(dataloader, model, vocab_size):
+        """Compute loss only over possible answers to make task easier
+        """
+        possible_answer_ids = []
+        for batch in dataloader:
+            y_text = [answer for answer in batch['output']]
+            # print(y_text)
+            y_tokenized = model.tokenizer(y_text, return_tensors='pt', padding='longest')
+            # only test on the single next token
+            true_next_token_ids = y_tokenized['input_ids'][:, 0]
+            possible_answer_ids.extend(true_next_token_ids.tolist())
+        assert len(
+            possible_answer_ids) > 0, "need multiple answers for multiple choice"
+
+
+        # set up possible answers
+        possible_answer_ids = torch.tensor(possible_answer_ids)
+        possible_answer_mask = (
+            torch.arange(start=0, end=vocab_size)[:, None]
+            ==
+            possible_answer_ids[None, :]
+        ).any(dim=1).to(device)
+        return possible_answer_mask
+
+
+    # set up mask for possible answers
+    vocab_size = model.get_logits(['dummy text']).shape[-1] # vocab_size = model.tokenizer.vocab_size
+    if restrict_to_valid_answers:
+        possible_answer_mask = get_possible_answer_mask(dataloader, model)
+    else:
+        possible_answer_mask = torch.ones(vocab_size).bool()
+
+    # initialize
     np.random.seed(42)
     torch.manual_seed(42)
-
-    # set up dataloader
-    dataloader = torch.utils.data.DataLoader(
-        dset, batch_size=batch_size, shuffle=False, drop_last=False)
-    
-
-    # Compute loss only over possible answers to make task easier
     total_loss = 0.0
     total_n = 0
     total_n_correct = 0.0
-    possible_answer_ids = []
-    for batch in dataloader:
-        y_text = [answer for answer in batch['output']]
-        # print(y_text)
-        y_tokenized = model.tokenizer(y_text, return_tensors='pt', padding='longest')
-        # only test on the single next token
-        true_next_token_ids = y_tokenized['input_ids'][:, 0]
-        possible_answer_ids.extend(true_next_token_ids.tolist())
-    assert len(
-        possible_answer_ids) > 0, "need multiple answers for multiple choice"
-
-
-    # set up possible answers
-    possible_answer_ids = torch.tensor(possible_answer_ids)
-    # vocab_size = model.tokenizer.vocab_size
-    vocab_size = model.get_logits(['dummy text']).shape[-1]
-    possible_answer_mask = (
-        torch.arange(start=0, end=vocab_size)[:, None]
-        ==
-        possible_answer_ids[None, :]
-    ).any(dim=1).to(device)
-
+    dataloader = torch.utils.data.DataLoader(
+        dset, batch_size=batch_size, shuffle=False, drop_last=False)
     for idx, batch in enumerate(dataloader):
         x_text = [(prefix + prompt) for prompt in batch['input']]
         y_text = [answer for answer in batch['output']]
@@ -122,7 +133,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
         # only test on the single next token
         true_next_token_ids = y_tokenized['input_ids'][:, 0]
 
-
+        # note: this part currently assumes there aren't extra padding tokens at the end
         with torch.no_grad():
             all_token_logits = model.get_logits(x_text)
             pred_next_token_logits = all_token_logits[:, -1, :]

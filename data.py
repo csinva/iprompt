@@ -124,6 +124,8 @@ def get_init_suffix(args) -> List:
     # Note: don't change the order of these (higher ones should be better)
     """Note: questions should end with 2 newlines, so can directly start suffix.
     """
+    if args.use_generic_query:
+        return 'To get the answer from the input, return'
     if args.task_name in TASKS_TWO_NUMS.keys():
         init_suffixes = TASKS_TWO_NUMS['SUFFIXES'][args.task_name]
     elif args.task_name in TASKS_ONE_NUM.keys():

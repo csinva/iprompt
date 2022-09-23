@@ -55,10 +55,10 @@ def add_main_args(parser):
                         help='boolean 0 or 1: use baseline model? only uses a single example to prompt rather than the entire dset')
     parser.add_argument('--use_stopwords', type=int, default=1,
                         help='boolean 0 or 1: whether to allow stopwords when searching for prompt')
-
-    # parser.add_argument('--early_stopping', dest='early_stopping', default=True,
-    #     help='whether to stop searching once finding correct answer - for suffix, this currently has to be true',
-    #     action='store_true')
+    parser.add_argument('--use_early_stopping', type=int, default=1,
+                        help='whether to stop searching once finding correct answer')
+    parser.add_argument('--use_generic_query', type=int, default=0,
+                        help='whether to use a generic query template instead of a task-specific one (harder)')
 
     # training misc args
     parser.add_argument('--seed', type=int, default=1,
@@ -113,7 +113,8 @@ if __name__ == '__main__':
         args.task_name = task_name
 
         # set up saving directory before seeding
-        save_dir_unique_hash = utils.get_unique_dir_hash(parser, args, args_ignore_for_caching)
+        save_dir_unique_hash = utils.get_unique_dir_hash(
+            parser, args, args_ignore_for_caching)
         save_dir_random_suffix = ''.join(
             random.choices(string.ascii_lowercase, k=4))
         save_dir = os.path.join(
@@ -122,7 +123,8 @@ if __name__ == '__main__':
 
         # check for cached run with these same args
         if args.use_cache and utils.check_cached(save_dir_unique_hash, args, args_ignore_for_caching, parser, args.save_dir):
-            logging.info(f'cached version exists for {task_name}!\nsuccessfully skipping :)\n\n\n')
+            logging.info(
+                f'cached version exists for {task_name}!\nsuccessfully skipping :)\n\n\n')
             continue
 
         # set seed

@@ -208,7 +208,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
                 for i in range(beam_size_for_saving)
             })
 
-        # find answer position (only if we're at the first token)
+        # find answer rank (only if we're at the first token)
         # in the best case, it is at position 0 (most likely completion)
         if suffix_dict['num_tokens_added'] == 0:
             pos_correct = np.array(
@@ -219,33 +219,35 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
 
         # break if we've added enough tokens
         if suffix_dict['num_tokens_added'] + 1 >= args.max_num_tokens:
-            logging.info('failed early stopping :/')
-            logging.info('\t' + 'pos_initial_token: ' +
-                         repr(r['final_answer_pos_initial_token']))
-            break
+            continue
 
         # check larger than args.beam_size in case the answer was basically right there
         for beam_num in range(args.beam_size + args.beam_size_extra):
             suffix_new = suffix_str + top_decoded_tokens[beam_num]
-            if check_answer_func(suffix_new):  # and args.early_stopping
-                r['final_answer_full'] = suffix_new
-                r['final_answer_added'] = suffix_new[r['len_suffix_str_init']:]
-                r['final_model_queries'] = num_model_queries
-                r['final_num_suffixes_checked'] = num_suffixes_checked + \
-                    beam_num + 1
-                r['final_answer_depth'] = suffix_dict['num_tokens_added'] + 1
-                logging.info('successful early stopping :)')
-                logging.info('\t' + repr(r['suffix_str_init']))
-                logging.info('\t' + repr(r['final_answer_added']))
-                logging.info('\t' + 'pos_initial_token: ' +
-                             repr(r['final_answer_pos_initial_token']))
-                logging.info(save_dir)
-                utils.save(args, save_dir, r, final=True)
-                utils.save_json(r={  # save some key outputs in readable form
-                    k: r[k]
-                    for k in r if isinstance(r[k], str) or isinstance(r[k], int)
-                }, save_dir=save_dir, fname='final.json')
-                return
+            if check_answer_func(suffix_new):
+                # save the first answer we find
+                if not 'final_answer_full' in r.keys():
+                    r['final_answer_full'] = suffix_new
+                    r['final_answer_added'] = suffix_new[r['len_suffix_str_init']:]
+                    r['final_model_queries'] = num_model_queries
+                    r['final_num_suffixes_checked'] = num_suffixes_checked + \
+                        beam_num + 1
+                    r['final_answer_depth'] = suffix_dict['num_tokens_added'] + 1
+                    logging.info('successful early stopping :)')
+                    logging.info('\t' + repr(r['suffix_str_init']))
+                    logging.info('\t' + repr(r['final_answer_added']))
+                    logging.info('\t' + 'pos_initial_token: ' +
+                                 repr(r['final_answer_pos_initial_token']))
+                    logging.info(save_dir)
+                    utils.save(args, save_dir, r, final=True)
+                    utils.save_json(r={  # save some key outputs in readable form
+                        k: r[k]
+                        for k in r if isinstance(r[k], str) or isinstance(r[k], int)
+                    }, save_dir=save_dir, fname='final.json')
+
+                # usually we just return after finding the answer
+                if args.use_early_stopping:
+                    return
 
             # for bfs insert at beginning (dfs would append at end)
             if beam_num < args.beam_size:
@@ -260,4 +262,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
                 })
 
     # failed to find anything, save and return
+    logging.info('failed early stopping :/')
+    logging.info('\t' + 'pos_initial_token: ' +
+                 repr(r['final_answer_pos_initial_token']))
     utils.save(args, save_dir, r, final=True)
