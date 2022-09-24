@@ -7,6 +7,7 @@ import datasets
 import numpy as np
 import os
 import torch
+import string
 import transformers
 from tqdm.notebook import tqdm, trange
 import matplotlib.pyplot as plt
@@ -85,7 +86,8 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
     prefix (str): Prefix that will be prepended to each example
     batch_size (int): batch size for evaluation
     restrict_to_valid_answers
-        Whether to restrict evaluation over all tokens present in the answers
+        Whether to restrict evaluation over all tokens present in the answers.
+        Only applied when multi_token is false.
     multi_token
         Whether to allow multiple tokens (uses beam search)
 
@@ -126,14 +128,6 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
     dataloader = torch.utils.data.DataLoader(
         dset, batch_size=batch_size, shuffle=False, drop_last=False)
 
-    # set up mask for possible answers
-    # vocab_size = model.tokenizer.vocab_size
-    vocab_size = model.get_logits(['dummy text']).shape[-1]
-    if restrict_to_valid_answers:
-        possible_answer_mask = get_possible_answer_mask(
-            dataloader, model, vocab_size)
-    else:
-        possible_answer_mask = torch.ones(vocab_size).bool()
 
     for idx, batch in enumerate(dataloader):
         x_text = [(prefix + prompt) for prompt in batch['input']]
@@ -158,6 +152,16 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                 # all_token_logits = model.get_logits(x_text)
                 # pred_next_token_logits = all_token_logits[:, -1, :]
 
+                # set up mask for possible answers
+                # vocab_size = model.tokenizer.vocab_size
+                vocab_size = model.get_logits(['dummy text']).shape[-1]
+                if restrict_to_valid_answers:
+                    possible_answer_mask = get_possible_answer_mask(
+                        dataloader, model, vocab_size)
+                else:
+                    possible_answer_mask = torch.ones(vocab_size).bool()
+
+
                 # optionally take a mask over some tokens
                 pred_next_token_logits = torch.where(
                     possible_answer_mask, pred_next_token_logits, torch.tensor(
@@ -175,21 +179,43 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                 total_n_correct += (pred_next_token_logits.argmax(dim=-1)
                             == true_next_token_ids.flatten()).int().sum().item()
 
+                total_loss += loss.item()
+
             # deccode multiple tokens
             elif multi_token:
                 samples_t = model.model.generate(**ex_inputs,
                                                  num_beams=4,
+                                                 do_sample=False, # no randomness
                                                  max_new_tokens=max_new_tokens,
                                                  length_penalty=0.6,
-                                                 num_return_squences=20)
-                samples = model.tokenizer.batch_decode(samples_t)
-                for i in range(len(samples)):
-                    print(i, x_text[i], samples[i])
+                                                 num_return_squences=1,
+                                                #  output_scores=True,
+                                                 return_dict_in_generate=True,
+                                                 )
                 
+                samples = model.tokenizer.batch_decode(samples_t['sequences'])
+                for i in range(len(samples)):
+                    new_text = samples[i][len(x_text[i]):]
+                    y_pred = y_text[i].rstrip(string.punctuation + string.whitespace)
+                    """
+                    print(i)
+                    print('\tx_text', repr(x_text[i]))
+                    print('\tnew_text', repr(new_text))
+                    print('\ty_text', repr(y_text[i]))
+                    print('\ty_pred', repr(y_pred))
+                    """
+                    
+                    # correct if true answer is contained in the generation
+                    total_n_correct += int(y_pred.strip() in new_text)
 
-        total_loss += loss.item()
+                # loss = torch.nn.functional.nll_loss(
+                #     input=pred_next_token_logits, target=true_next_token_ids, reduction='sum')
+                
         total_n += len(x_text)
         
 
     print(f"Percent correct: {(total_n_correct * 100.0 / total_n):.2f}")
-    return (total_loss / total_n), (total_n_correct * 100.0 / total_n)
+    if not multi_token:
+        return (total_loss / total_n), (total_n_correct * 100.0 / total_n)
+    else:
+        return np.nan, (total_n_correct * 100.0 / total_n)
