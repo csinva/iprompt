@@ -153,6 +153,13 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
         suffix_str = suffix_dict['s']
         num_suffixes_checked = suffix_dict['num_suffixes_checked']
 
+        # save results for suffix_str
+        r['suffix_str_added'].append(suffix_str[r['len_suffix_str_init']:])
+        
+        # break if we've added enough tokens
+        if suffix_dict['num_tokens_added'] >= args.max_num_tokens:
+            continue
+
         # get avg_probs
         if args.use_single_query:
             avg_probs = get_probs_single_query_next_token(
@@ -193,9 +200,6 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
         logging.debug('\t' + 'idxs_correct: ' + str(np.argwhere(
             [check_answer_func(x) for x in top_decoded_tokens]).flatten().tolist()))
 
-        # save results for suffix_str
-        r['suffix_str_added'].append(suffix_str[r['len_suffix_str_init']:])
-
         # if we made it here, we did not find the answer
         r['num_model_queries'].append(num_model_queries)
         r['running_prob'].append(suffix_dict['running_prob'])
@@ -216,10 +220,6 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
             r['final_answer_pos_initial_token'] = np.where(pos_correct)[
                 0].min()
         utils.save(args, save_dir, r, epoch=None, final=True)
-
-        # break if we've added enough tokens
-        if suffix_dict['num_tokens_added'] + 1 >= args.max_num_tokens:
-            continue
 
         # check larger than args.beam_size in case the answer was basically right there
         for beam_num in range(args.beam_size + args.beam_size_extra):
@@ -266,3 +266,4 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
     logging.info('\t' + 'pos_initial_token: ' +
                  repr(r['final_answer_pos_initial_token']))
     utils.save(args, save_dir, r, final=True)
+    print(r)
