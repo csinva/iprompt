@@ -48,7 +48,7 @@ PARAMS_SHARED_DICT['n_shots'] = [1, 5]
 PARAMS_SHARED_DICT['train_split_frac'] = [0.75]
 PARAMS_SHARED_DICT['float16'] = [1]
 PARAMS_SHARED_DICT['max_digit'] = [100]
-PARAMS_SHARED_DICT['max_dset_size'] = 5000
+PARAMS_SHARED_DICT['max_dset_size'] = [5000]
 PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
     ('checkpoint', 'batch_size'): [
         ('EleutherAI/gpt-j-6B', 8)
