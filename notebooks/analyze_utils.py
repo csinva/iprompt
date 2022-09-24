@@ -183,6 +183,8 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
         if 'prefix_type' in json_dict:
             json_dict['prefix_type'] = json_dict['prefix_type'][:len(json_dict['prefixes'])]
 
+        json_dict['prefixes_top_1'] = json_dict['prefixes'][0]
+
         # remove unneeded keys
         del json_dict['task_name_list'] 
         if 'losses' in json_dict: del json_dict['losses'] 
