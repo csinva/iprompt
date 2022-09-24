@@ -50,13 +50,13 @@ SUFFIXES_TWO_NUMS = {
 TASKS_TWO_NUMS = {
     'add_two': {
         'prompt_template_funcs': PROMPT_TEMPLATE_TWO_NUMS,
-        'check_answer_func': r'add|sum',
+        'check_answer_func': r'add|sum|\+',
         'gen_func': sum,
         'description': "Return the sum of the inputs.",
     },
     'multiply_two': {
         'prompt_template_funcs': PROMPT_TEMPLATE_TWO_NUMS,
-        'check_answer_func': r'multiply|product',
+        'check_answer_func': r'multiply|product|\*',
         'gen_func': np.prod,
         'description': "Return the product of the inputs.",
     },
@@ -68,7 +68,7 @@ TASKS_TWO_NUMS = {
     },
     'subtract_two': {
         'prompt_template_funcs': PROMPT_TEMPLATE_TWO_NUMS,
-        'check_answer_func': r'subtract|difference',
+        'check_answer_func': r'subtract|difference|\-',
         'gen_func': lambda l: l[0] - l[1],
         'description': "Return the difference of the inputs.",
     },
