@@ -16,13 +16,16 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 class Model:
-    def __init__(self, model_name: str):
+    def __init__(self, model_name: str, float16=True):
         self.model = transformers.AutoModelForCausalLM.from_pretrained(
             model_name)
         self.tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.model.eval()
+        if float16:
+            self.model = self.model.half()
         self.model.to(device)
+        
 
     def get_logits(self, x_text: List[str]) -> torch.Tensor:
         x_tokenized = self.tokenizer(
@@ -74,6 +77,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                                    restrict_to_valid_answers=True,
                                    multi_token=False,
                                    max_new_tokens=7,
+                                   verbose=True,
                                    ) -> float:
     """Tests a given language model on a dataset and returns {zero,few}-shot loss. 
     Note: accuracy is computed over the set of possible answers found in the original dataset.
@@ -134,7 +138,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
     for idx, batch in enumerate(dataloader):
         x_text = [(prefix + prompt) for prompt in batch['input']]
         y_text = [answer for answer in batch['output']]
-        if idx == 0:
+        if idx == 0 and verbose:
             print('x_text[0]:' + repr(x_text[0]))
             print('y_text[0]:' + repr(y_text[0]))
 
@@ -186,6 +190,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
             # deccode multiple tokens
             elif multi_token:
                 samples_t = model.model.generate(**ex_inputs,
+                                                 pad_token_id=model.tokenizer.eos_token_id,
                                                  num_beams=4,
                                                  do_sample=False, # no randomness
                                                  max_new_tokens=max_new_tokens,
@@ -215,8 +220,8 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                 
         total_n += len(x_text)
         
-
-    print(f"Percent correct: {(total_n_correct * 100.0 / total_n):.2f}")
+    if verbose:
+        print(f"Percent correct: {(total_n_correct * 100.0 / total_n):.2f}")
     if not multi_token:
         return (total_loss / total_n), (total_n_correct * 100.0 / total_n)
     else:

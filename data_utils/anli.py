@@ -8,7 +8,9 @@ from os.path import join as oj
 ANLI_PROCESSED_DIR = oj(dirname(os.path.abspath(__file__)), 'anli_processed')
 DESCRIPTIONS_DICT = json.load(open(
     # oj(ANLI_PROCESSED_DIR, 'task_defs_brief.json'), 'r'))
-    oj(ANLI_PROCESSED_DIR, 'task_defs.json'), 'r'))
+    oj(ANLI_PROCESSED_DIR, 'task_defs.json'), 'r')
+)
+DESCRIPTIONS_DICT['task107_splash_question_to_sql'] = "Generate an SQL statement from a question asking for certain data." # manually override SQL descr which is very long
 
 
 def fetch_data(task_name_anli):
