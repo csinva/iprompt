@@ -85,11 +85,13 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
     tokenizer (transformers.PreTrainedModel): tokenizer to accompany `model`
     prefix (str): Prefix that will be prepended to each example
     batch_size (int): batch size for evaluation
-    restrict_to_valid_answers
+    restrict_to_valid_answers (bool):
         Whether to restrict evaluation over all tokens present in the answers.
         Only applied when multi_token is false.
-    multi_token
+    multi_token (bool):
         Whether to allow multiple tokens (uses beam search)
+    max_new_tokens (int):
+        number of tokens to generate when checking multi-token output
 
     Returns:
         loss (float): language modeling loss on examples in dataset
@@ -159,7 +161,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                     possible_answer_mask = get_possible_answer_mask(
                         dataloader, model, vocab_size)
                 else:
-                    possible_answer_mask = torch.ones(vocab_size).bool()
+                    possible_answer_mask = torch.ones(vocab_size).bool().to(device)
 
 
                 # optionally take a mask over some tokens
