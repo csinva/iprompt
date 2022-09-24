@@ -39,6 +39,8 @@ def add_main_args(parser):
                         help='the number of the manually-specified prefix to be initialize with')
     parser.add_argument('--template_num_task_phrasing', type=int, default=0,
                         help='the number of the manual template for any given task (number of options varies with task')
+    parser.add_argument('--train_split_frac', type=float,
+                        default=None, help='fraction for train-test split if desired')
 
     # algorithm args
     # gpt # "gpt2-medium" (355M), "gpt2-large" (774M), "gpt2-xl" (1.5B)
@@ -59,6 +61,8 @@ def add_main_args(parser):
                         help='whether to stop searching once finding correct answer')
     parser.add_argument('--use_generic_query', type=int, default=0,
                         help='whether to use a generic query template instead of a task-specific one (harder)')
+    parser.add_argument('--float16', type=int, default=0,
+                        help='whether to use float16 / low cpu mem')
 
     # training misc args
     parser.add_argument('--seed', type=int, default=1,
@@ -133,8 +137,12 @@ if __name__ == '__main__':
 
         # load data
         logger.info('loading data...')
-        dset, check_answer_func, descr = data.get_data(
-            args, args.task_name, n_shots=args.n_shots)
+        if args.train_split_frac:
+            (dset, dset_test), check_answer_func, descr = data.get_data(
+                args, args.task_name, n_shots=args.n_shots, train_split_frac=args.train_split_frac)
+        else:
+            dset, check_answer_func, descr = data.get_data(
+                args, args.task_name, n_shots=args.n_shots, train_split_frac=args.train_split_frac)
         dataloader = DataLoader(
             dset, batch_size=min(args.batch_size, len(dset)), shuffle=True, drop_last=True)
         logging.info(
@@ -147,8 +155,14 @@ if __name__ == '__main__':
             checkpoint = args.checkpoint
             tokenizer = AutoTokenizer.from_pretrained(checkpoint)
             tokenizer.pad_token = tokenizer.eos_token
-            model = AutoModelForCausalLM.from_pretrained(
-                checkpoint, output_hidden_states=False)
+            if args.float16:
+                model = AutoModelForCausalLM.from_pretrained(
+                    checkpoint, output_hidden_states=False)
+            else:
+                model = AutoModelForCausalLM.from_pretrained(
+                    checkpoint, output_hidden_states=False,
+                    revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True
+                    )     
             model = parallel.model_to_device(args, model)
 
         # set up saving
