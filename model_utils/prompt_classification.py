@@ -16,13 +16,16 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 class Model:
-    def __init__(self, model_name: str):
+    def __init__(self, model_name: str, float16=True):
         self.model = transformers.AutoModelForCausalLM.from_pretrained(
             model_name)
         self.tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.model.eval()
+        if float16:
+            self.model = self.model.half()
         self.model.to(device)
+        
 
     def get_logits(self, x_text: List[str]) -> torch.Tensor:
         x_tokenized = self.tokenizer(

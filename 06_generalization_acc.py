@@ -41,13 +41,18 @@ task_names = ['add_two', 'multiply_two', 'divide_two', 'subtract_two',
      'task092_check_prime_classification', 'task088_identify_typo_verification',
      'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql'
      ]
-
+batch_sizes = {
+    'gpt2-medium': 32,
+    'EleutherAI/gpt-j-6B': 8,
+    'EleutherAI/gpt-neox-20b': 1,
+}
 for checkpoint in ['gpt2-medium', 'EleutherAI/gpt-j-6B', 'gpt2-xl', 'EleutherAI/gpt-neox-20b']:
     d = defaultdict(list)
     print('loading', checkpoint)
     model = prompt_classification.create_model(checkpoint)
-    for prompt in ['', 'manual']:
-        for task_name in tqdm(task_names):
+    print('calculating accs...')
+    for task_name in tqdm(task_names):
+        for prompt in ['', 'manual']:
             for n_shots in [1, 5]: 
                     args.task_name = task_name
                     args.n_shots = n_shots
@@ -62,11 +67,12 @@ for checkpoint in ['gpt2-medium', 'EleutherAI/gpt-j-6B', 'gpt2-xl', 'EleutherAI/
                     else:
                         prompt_actual = prompt
                     d['prompt_actual'].append(prompt_actual)
-                    batch_size = 16
-                    if checkpoint == 'EleutherAI/gpt-neox-20b':
-                        batch_size = 1
+                    batch_size = batch_sizes.get(checkpoint, 16)
+                    if task_name == 'task107_splash_question_to_sql':
+                        batch_size = max(1, batch_size//4)
                     loss, acc = prompt_classification.test_model_on_task_with_prefix(
                         dset=dset, model=model, prefix=prompt_actual, multi_token=True, verbose=False,
+                        batch_size=batch_size,
                     )
                     d['acc'].append(acc)
         pkl.dump(d, open(f'results/generalization_acc/baseline_accs_{checkpoint.replace("/", "___")}.pkl', 'wb'))

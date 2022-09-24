@@ -29,6 +29,8 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_fra
     train_split: float
         fraction of data to use for training
         Note: if specified, returns tuple of (dset_train, dset_test) instead of single dset_train
+    args.max_dset_size: int
+        Data (even for NLI datasets) will be truncated to have at most this many rows
     """
     d = defaultdict(list)
     rng = np.random.default_rng(12345)
