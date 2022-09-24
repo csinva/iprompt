@@ -74,6 +74,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                                    restrict_to_valid_answers=True,
                                    multi_token=False,
                                    max_new_tokens=7,
+                                   verbose=True,
                                    ) -> float:
     """Tests a given language model on a dataset and returns {zero,few}-shot loss. 
     Note: accuracy is computed over the set of possible answers found in the original dataset.
@@ -134,7 +135,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
     for idx, batch in enumerate(dataloader):
         x_text = [(prefix + prompt) for prompt in batch['input']]
         y_text = [answer for answer in batch['output']]
-        if idx == 0:
+        if idx == 0 and verbose:
             print('x_text[0]:' + repr(x_text[0]))
             print('y_text[0]:' + repr(y_text[0]))
 
@@ -186,6 +187,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
             # deccode multiple tokens
             elif multi_token:
                 samples_t = model.model.generate(**ex_inputs,
+                                                 pad_token_id=model.tokenizer.eos_token_id,
                                                  num_beams=4,
                                                  do_sample=False, # no randomness
                                                  max_new_tokens=max_new_tokens,
@@ -215,8 +217,8 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                 
         total_n += len(x_text)
         
-
-    print(f"Percent correct: {(total_n_correct * 100.0 / total_n):.2f}")
+    if verbose:
+        print(f"Percent correct: {(total_n_correct * 100.0 / total_n):.2f}")
     if not multi_token:
         return (total_loss / total_n), (total_n_correct * 100.0 / total_n)
     else:
