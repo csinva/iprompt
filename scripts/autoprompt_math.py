@@ -7,13 +7,14 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
 # save_dir = f'/home/chansingh/mntv1/prefix_math_{submit_utils.JOB_SUFFIX}'
 # save_dir = f'/home/jxm3/random/interpretable-autoprompting/results/tst2/prefix_math_{submit_utils.JOB_SUFFIX}'
-save_dir = '/home/jxm3/random/interpretable-autoprompting/results/slurm_math_exps'
+# save_dir = '/home/jxm3/random/interpretable-autoprompting/results/slurm_math_exps'
+save_dir = '/home/johnmorris/interpretable-autoprompting/results/math_gcloud'
 
 cmd_python = 'python'
 
 PARAMS_SHARED_DICT = {
     # things to vary
-    'n_shots': [1, 5],
+    'n_shots': [1, 5, 10],
     # 'task_name_list': [['add_two']],
     'task_name_list': [
         'add_two', 'multiply_two', 
@@ -64,6 +65,6 @@ ks_final, param_combos_final = submit_utils.combine_param_dicts(
 print('running job')
 submit_utils.run_dicts(
     ks_final, param_combos_final, cmd_python=cmd_python,
-    script_name='03_train_prefix.py', actually_run=True,
-    use_slurm=True, save_dir=save_dir, slurm_gpu_str='gpu:a6000:1',
+    script_name='03_train_prefix.py', actually_run=False,
+    use_slurm=False, save_dir=save_dir, slurm_gpu_str='gpu:a6000:1',
 )

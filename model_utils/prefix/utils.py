@@ -176,7 +176,6 @@ class PrefixModel(nn.Module, abc.ABC):
         self.model = model
         self.tokenizer = tokenizer
 
-    @functools.cached_property
     def id_to_word(self) -> Dict[int, str]:
         # track token-to-word mapping 
         return {num: word for word, num in self.tokenizer.vocab.items()}
@@ -201,7 +200,7 @@ class PrefixModel(nn.Module, abc.ABC):
         """Preprocesses text from `batch['input']` and `batch['output']` for inputting into prefix model.
         """
         x_text = [f'. {prompt}' for prompt in batch['input']]
-        y_text = [answer.rstrip() for answer in batch['output']] # strip whitespace at the end.
+        y_text = [answer.rstrip().rstrip('.') for answer in batch['output']] # strip whitespace at the end.
         return x_text, y_text
 
     def forward(
@@ -267,8 +266,8 @@ class PrefixModel(nn.Module, abc.ABC):
         assert full_input_ids.shape == outputs.logits.shape[:2]
 
         # get first predicted token logits
-        last_token_idx = (~(full_input_ids == self.tokenizer.eos_token_id)).cumsum(dim=1).argmax(dim=1)
-        next_token_logits = outputs.logits[torch.arange(len(original_input_ids)), last_token_idx]
+        next_token_idx = (~(full_input_ids == self.tokenizer.eos_token_id)).cumsum(dim=1).argmax(dim=1)
+        next_token_logits = outputs.logits[torch.arange(len(original_input_ids)), next_token_idx-1]
 
         # compute first-token acc
         if possible_answer_mask is None:
@@ -282,11 +281,12 @@ class PrefixModel(nn.Module, abc.ABC):
                 next_token_ids[:, 0]
             ).int().sum()
 
-        loss = self.loss_func(
-            input_ids=full_input_ids,
-            next_token_ids=next_token_ids[:, 0],
-            logits=outputs.logits,
-            answer_mask=possible_answer_mask
+        # compute loss from first token
+        loss = torch.nn.functional.cross_entropy(
+            input=next_token_logits,
+            target=next_token_ids[:, 0],
+            ignore_index=self.tokenizer.pad_token_id,
+            reduction='mean'
         )
 
         # add loss from other tokens
@@ -300,12 +300,13 @@ class PrefixModel(nn.Module, abc.ABC):
                 next_token_ids[:, 1:]
                     .reshape((b * (label_sequence_length-1),))
             )
-            loss += torch.nn.functional.cross_entropy(
+            other_loss = torch.nn.functional.cross_entropy(
                 input=other_next_token_logits,
                 target=other_next_token_ids,
                 ignore_index=self.tokenizer.pad_token_id,
                 reduction='mean'
             )
+            loss += other_loss
         return full_input_ids, loss, n_correct
     
     def compute_loss_and_call_backward(
