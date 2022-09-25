@@ -1,0 +1,2491 @@
+*** Executing task 1/1
+start_word_id = tensor([1169])
+preprefix: ''
+Attempting task with description: "Exponentiate the input to get the output. "
+Training with 7 possible answers / random acc 14.3% / majority acc 14.3%
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: n and then
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt:  >>>1
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: How about [
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt: How Many Dig
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: What value of
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: What we want
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: What algorithm did
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt: Type in an
+Original population: [' n and then', '  >>>1', ' How about [', ' How Many Dig', ' What value of', ' What we want', ' What algorithm did', ' Type in an']
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: Enter a number
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: Enter a number
+new population: [' Enter a number']
+Epoch 0. average loss = 5.962 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   Enter a number 		 6.609 		 0.0
+
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: "Enter an
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: \n 
+new population: [' n and then', ' what does that', ' Can you explain', ' Type in an', ' Enter a number']
+Epoch 1. average loss = 5.916 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt: 5-15
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: Please enter a
+new population: ['\r...>', ' what does that', ' Can you explain', ' Please enter a', ' Type in an']
+Epoch 2. average loss = 5.916 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                    Type out your 		 6.176 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                    Enter a value 		 6.570 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: Enter a number
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: "How did
+new population: [' what does that', ' Can you explain', ' Do you agree', ' Please enter a', ' Type in an']
+Epoch 3. average loss = 5.660 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+                                                 Write a function 		 7.045 		 0.0
+
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: The question above
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: Given a sample
+self._steps_since_new_population: 1
+Epoch 4. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                    Type out your 		 6.176 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt: Enter next integer
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: What kind of
+self._steps_since_new_population: 2
+Epoch 5. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                    Enter a value 		 6.570 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt: Write a function
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: "2 of
+self._steps_since_new_population: 3
+Epoch 6. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+                                                   Input a number 		 6.708 		 0.0
+
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: Give me 5
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt: What am I
+new population: [' what does that', ' [0 1', ' Can you explain', ' Do you agree', ' Please enter a']
+Epoch 7. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: Type h()
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt: Type hint
+self._steps_since_new_population: 1
+Epoch 8. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt: A simple number
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt: What? Well
+self._steps_since_new_population: 2
+Epoch 9. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: Enter a real
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: What do you
+self._steps_since_new_population: 3
+Epoch 10. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt: What about 5
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: What happens if
+self._steps_since_new_population: 4
+Epoch 11. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: Input a number
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: Input must be
+self._steps_since_new_population: 5
+Epoch 12. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: Write a function
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt: Do I have
+self._steps_since_new_population: 6
+Epoch 13. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: Given an integer
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt:>  Input
+self._steps_since_new_population: 7
+Epoch 14. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt: write your function
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt:  enter a
+self._steps_since_new_population: 8
+Epoch 15. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: Given a function
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: The prompt says
+self._steps_since_new_population: 9
+Epoch 16. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: "What will
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: Type in an
+self._steps_since_new_population: 10
+Epoch 17. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: a - b
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: Find F_
+self._steps_since_new_population: 11
+Epoch 18. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt: Please type a
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt:  A number
+self._steps_since_new_population: 12
+Epoch 19. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: enter any positive
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt: enter any two
+self._steps_since_new_population: 13
+Epoch 20. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+                                                         (Write a 		 6.705 		 0.0
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt:  (1
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: Given that you
+self._steps_since_new_population: 14
+Epoch 21. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                             Your function should 		 6.395 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: How do you
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt: What does it
+self._steps_since_new_population: 15
+Epoch 22. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                             Your function should 		 6.395 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: Enter a value
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: Given a variable
+self._steps_since_new_population: 16
+Epoch 23. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                             Your function should 		 6.395 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: What does your
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: Do you really
+self._steps_since_new_population: 17
+Epoch 24. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                             Your function should 		 6.395 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: What's wrong
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: Do you know
+self._steps_since_new_population: 18
+Epoch 25. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                             Your function should 		 6.395 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: A user-
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt:  Write a
+self._steps_since_new_population: 19
+Epoch 26. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                             Your function should 		 6.395 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: what happened to
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt: given this problem
+self._steps_since_new_population: 20
+Epoch 27. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                             Your function should 		 6.395 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt:  If we
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: 6). Find
+self._steps_since_new_population: 21
+Epoch 28. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                             Your function should 		 6.395 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                   Enter a number 		 6.609 		 0.0
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt: Use a for
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: "Enter a
+self._steps_since_new_population: 22
+Epoch 29. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                             Your function should 		 6.395 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                       Use a loop 		 6.517 		 0.0
+
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: What happens if
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: Input a number
+self._steps_since_new_population: 23
+Epoch 30. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                             Your function should 		 6.395 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                       Use a loop 		 6.517 		 0.0
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt: What I used
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: What would be
+self._steps_since_new_population: 24
+Epoch 31. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   what does that 		 5.962 		 0.0
+                                                             [0 1 		 6.020 		 0.0
+                                                   Please enter a 		 6.115 		 0.0
+                                                     Do you agree 		 6.117 		 0.0
+                                                  Can you explain 		 6.264 		 0.0
+                                                       Type in an 		 6.279 		 0.0
+                                                            ...> 		 6.312 		 0.0
+                                             Your function should 		 6.395 		 0.0
+                                                       n and then 		 6.402 		 0.0
+                                                       Use a loop 		 6.517 		 0.0
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: Enter your guess
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: Enter your choice
+self._steps_since_new_population: 25
+model_check_early_stop returned true
+Ending epoch 32 early...
+Epoch 32. average loss = 5.544 / 0.0 / 7 correct (0.00%)
+Stopping early after 33 steps and 231 datapoints
+*** Executing task 1/1
+start_word_id = tensor([1169])
+preprefix: ''
+Attempting task with description: "Exponentiate the input to get the output. "
+Training with 7 possible answers / random acc 14.3% / majority acc 14.3%
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: n and then p as shown
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: How many iterations does it take
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: What value of y will produce
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt: What algorithm did you use to
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: What do you mean by "
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: Write down what you can think
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: Type out your program as you
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt: Write a function that accepts an
+Original population: [' n and then p as shown', ' How many iterations does it take', ' What value of y will produce', ' What algorithm did you use to', ' What do you mean by "', ' Write down what you can think', ' Type out your program as you', ' Write a function that accepts an']
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: What do you mean by '
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: What do you observe? Do
+new population: []
+Epoch 0. average loss = 5.714 / 0.0 / 7 correct (0.00%)
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: Given value as string or number
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: I don't know how to
+new population: [' n>2 & m<', ' Is this a correct implementation?', ' What value of y will produce', ' Enter an integer between 0 and', ' Given value as string or number']
+Epoch 1. average loss = 5.714 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+                                                         n>2 & m< 		 6.352 		 0.0
+                                   Enter an integer between 0 and 		 6.369 		 0.0
+                                              I don't know how to 		 6.458 		 0.0
+                                  Given value as string or number 		 6.684 		 0.0
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt: What does "20" mean
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: Enter a number n greater than
+new population: [" I don't know how to", " I don't know how many", ' Is this a correct implementation?', ' What value of y will produce', ' Given value as string or number']
+Epoch 2. average loss = 5.714 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+                                            I don't know how many 		 6.259 		 0.0
+                                                         n>2 & m< 		 6.352 		 0.0
+                                   Enter an integer between 0 and 		 6.369 		 0.0
+                                              I don't know how to 		 6.458 		 0.0
+                                  Given value as string or number 		 6.684 		 0.0
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt: type 1 -> Answer in two
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: Enter a number X to print
+new population: [" I don't know how many", " (I'm sorry; it", ' Is this a correct implementation?', ' What value of y will produce', ' Use a loop to change your']
+Epoch 3. average loss = 5.569 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+                                            I don't know how many 		 6.259 		 0.0
+                                                         n>2 & m< 		 6.352 		 0.0
+                                   Enter an integer between 0 and 		 6.369 		 0.0
+                                              I don't know how to 		 6.458 		 0.0
+                                  Given value as string or number 		 6.684 		 0.0
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt: Given an array of three consecutive
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: How do we get to this
+self._steps_since_new_population: 1
+Epoch 4. average loss = 5.500 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+                                            I don't know how many 		 6.259 		 0.0
+                                                         n>2 & m< 		 6.352 		 0.0
+                                   Enter an integer between 0 and 		 6.369 		 0.0
+                                              I don't know how to 		 6.458 		 0.0
+                                  Given value as string or number 		 6.684 		 0.0
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt:  Given a sequence of non
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt: How do I use that?
+self._steps_since_new_population: 2
+Epoch 5. average loss = 5.500 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                            What do you mean by ' 		 5.861 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                           What does it mean? The 		 5.998 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+                                            I don't know how many 		 6.259 		 0.0
+                                   Enter an integer between 0 and 		 6.369 		 0.0
+                                              I don't know how to 		 6.458 		 0.0
+                                  Given value as string or number 		 6.684 		 0.0
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: Write your code to check if
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt: 5-10K times for
+new population: [" (I'm sorry; it", ' given an integer or decimal number', ' What value of y will produce', ' Use a loop to change your', ' Calculate a double value for']
+Epoch 6. average loss = 5.421 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                     Calculate a double value for 		 5.597 		 0.0
+                                            What do you mean by ' 		 5.861 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+                                            I don't know how many 		 6.259 		 0.0
+                                   Enter an integer between 0 and 		 6.369 		 0.0
+                                  Given value as string or number 		 6.684 		 0.0
+
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt: What I'm trying to do
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt: 1/6 # 0 ==
+new population: ['> <1><a></', " (I'm sorry; it", ' given an integer or decimal number', ' Use a loop to change your', ' Calculate a double value for']
+Epoch 7. average loss = 5.421 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                     Calculate a double value for 		 5.597 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                        What does this mean? That 		 5.955 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+                                            I don't know how many 		 6.259 		 0.0
+                                  Given value as string or number 		 6.684 		 0.0
+
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: enter any positive nonzero number
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: Given value as an integer and
+new population: ['> <1><a></', " (I'm sorry; it", ' given an integer or decimal number', ' >6=403%&', ' Calculate a double value for']
+Epoch 8. average loss = 5.347 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                     Calculate a double value for 		 5.597 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+                                            I don't know how many 		 6.259 		 0.0
+                                  Given value as string or number 		 6.684 		 0.0
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt: Type a number in base 24
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: Enter a number that's div
+self._steps_since_new_population: 1
+Epoch 9. average loss = 5.347 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                     Calculate a double value for 		 5.597 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+                                            I don't know how many 		 6.259 		 0.0
+                                  Given value as string or number 		 6.684 		 0.0
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt: 0 to 1000 (inclusive
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: >6=y>3
+self._steps_since_new_population: 2
+Epoch 10. average loss = 5.347 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                     Calculate a double value for 		 5.597 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+                                            I don't know how many 		 6.259 		 0.0
+                                  Given value as string or number 		 6.684 		 0.0
+
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt: A user-defined function takes
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt:  y = func_2
+self._steps_since_new_population: 3
+Epoch 11. average loss = 5.344 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                     Calculate a double value for 		 5.597 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+                                            I don't know how many 		 6.259 		 0.0
+                                  Given value as string or number 		 6.684 		 0.0
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt:  If you would try to
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: 5 > 4  9 +
+self._steps_since_new_population: 4
+Epoch 12. average loss = 5.344 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                     Calculate a double value for 		 5.597 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+                                            I don't know how many 		 6.259 		 0.0
+                                  Given value as string or number 		 6.684 		 0.0
+
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: Given X and Y are each
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: n/a (as expected
+self._steps_since_new_population: 5
+Epoch 13. average loss = 5.341 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                     Calculate a double value for 		 5.597 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+                                            I don't know how many 		 6.259 		 0.0
+                                  Given value as string or number 		 6.684 		 0.0
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt: Can you find any mistakes?
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: Enter a number or "" to
+new population: [" (I'm sorry; it", ' given an integer or decimal number', ' >6=403%&', ' Please enter a valid floating point', ' Calculate a double value for']
+Epoch 14. average loss = 5.341 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+                                            I don't know how many 		 6.259 		 0.0
+
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: "Enter a value for X
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt: (0<= _n
+self._steps_since_new_population: 1
+Epoch 15. average loss = 5.341 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+                                            I don't know how many 		 6.259 		 0.0
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt:  (Input and Output in
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt: Calculate a double value for
+self._steps_since_new_population: 2
+Epoch 16. average loss = 5.202 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+                                            I don't know how many 		 6.259 		 0.0
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt: Calculate and display a mathematical
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: Given a list of integers and
+new population: [' A function that returns a floating', ' given an integer or decimal number', ' >6=403%&', ' Please enter a valid floating point', ' Calculate a double value for']
+Epoch 17. average loss = 5.202 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: Enter a number between -20
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt:> <1>(<2
+self._steps_since_new_population: 1
+Epoch 18. average loss = 5.202 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: Input number '1' as
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt: Enter your problem statement (maximum
+self._steps_since_new_population: 2
+Epoch 19. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt: write a function that calculates an
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: Calculate F for a =
+self._steps_since_new_population: 3
+Epoch 20. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: "Hint! You are
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: What's next? Let me
+self._steps_since_new_population: 4
+Epoch 21. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: How does a neural network perform
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: A function that returns its argument
+self._steps_since_new_population: 5
+Epoch 22. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: Given n=5 as an
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt: What does this number stand for
+self._steps_since_new_population: 6
+Epoch 23. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt: What did we do wrong?
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt: Can you explain its details?
+self._steps_since_new_population: 7
+Epoch 24. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt:  A function of a single
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt: Given a positive integer n and
+self._steps_since_new_population: 8
+Epoch 25. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: Your code must return a float
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: Given value in y equals 18
+self._steps_since_new_population: 9
+Epoch 26. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: Given an object as a parameter
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: Given an exponent a and base
+self._steps_since_new_population: 10
+Epoch 27. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt: How can we make it faster
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: Write some code to calculate and
+self._steps_since_new_population: 11
+Epoch 28. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt:  What's your best guess
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: Enter a double value (1
+self._steps_since_new_population: 12
+Epoch 29. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: 0=A; 1 =
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt: Given an initial seed random number
+self._steps_since_new_population: 13
+Epoch 30. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt: What was your mistake in this
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt: Enter a number to get its
+self._steps_since_new_population: 14
+Epoch 31. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: Use two nested functions to compute
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt:  (0 - 5),
+self._steps_since_new_population: 15
+Epoch 32. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt:  What would be a good
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt: When I type this in J
+self._steps_since_new_population: 16
+Epoch 33. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 20.09.\n\n<|endoftext|>Prompt: 0 1 2... 9 10
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: Enter a number and then hit
+self._steps_since_new_population: 17
+Epoch 34. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt: Given a set of n numbers
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: Enter a double and integer pair
+self._steps_since_new_population: 18
+Epoch 35. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt:>0  1 2 3
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt:>0->9-->8
+self._steps_since_new_population: 19
+Epoch 36. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 7.39.\n\n<|endoftext|>Prompt:  A function that takes an
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt: I don't know why they
+self._steps_since_new_population: 20
+Epoch 37. average loss = 5.110 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt:  Given an integer n and
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: Please enter a valid double or
+self._steps_since_new_population: 21
+Epoch 38. average loss = 5.091 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: a ==> b  Output
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt: Please explain your answer in as
+self._steps_since_new_population: 22
+Epoch 39. average loss = 5.091 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: Write a short program to calculate
+>> Data:\n\nGiven the input x is 4, the output f(x) is 54.6.\n\n<|endoftext|>Prompt: Calculate and display a linear
+self._steps_since_new_population: 23
+Epoch 40. average loss = 5.091 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 6, the output f(x) is 403.43.\n\n<|endoftext|>Prompt: Given any integer number N and
+>> Data:\n\nGiven the input x is 1, the output f(x) is 2.72.\n\n<|endoftext|>Prompt: what are all pairs of digits
+self._steps_since_new_population: 24
+Epoch 41. average loss = 5.091 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                              Please enter a valid floating point 		 5.569 		 0.0
+                                     Calculate a double value for 		 5.597 		 0.0
+                               A function that returns a floating 		 5.621 		 0.0
+                                                         >6=403%& 		 5.695 		 0.0
+                               given an integer or decimal number 		 5.925 		 0.0
+                                                   (I'm sorry; it 		 5.943 		 0.0
+                                                       > <1><a></ 		 5.956 		 0.0
+                                        Use a loop to change your 		 6.134 		 0.0
+                                     What value of y will produce 		 6.219 		 0.0
+                                Is this a correct implementation? 		 6.257 		 0.0
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 8103.08.\n\nPrompt:  Write a function called g
+>> Data:\n\nGiven the input x is 0, the output f(x) is 1.0.\n\n<|endoftext|>Prompt: Write a function sumf that
+self._steps_since_new_population: 25
+model_check_early_stop returned true
+Ending epoch 42 early...
+Epoch 42. average loss = 5.091 / 0.0 / 7 correct (0.00%)
+Stopping early after 43 steps and 301 datapoints
+*** Executing task 1/1
+start_word_id = tensor([1169])
+preprefix: 'To compute the answer, take the input number x and return'
+Attempting task with description: "Exponentiate the input to get the output. "
+Training with 7 possible answers / random acc 14.3% / majority acc 14.3%
+Epoch 0. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+
+Epoch 1. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+
+Epoch 2. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+
+Epoch 3. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+
+Epoch 4. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 5. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 6. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 7. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 8. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 9. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 10. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 11. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 12. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 13. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 14. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 15. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 16. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 17. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 18. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 19. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 20. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 21. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 22. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 23. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+Epoch 24. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                      fractthethe 		 5.164 		 0.0
+                                                    elapsedthethe 		 5.466 		 0.0
+                                                      ilogythethe 		 5.521 		 0.0
+                                                       blobthethe 		 5.525 		 0.0
+                                             understandablethethe 		 5.551 		 0.0
+                                                   inferredthethe 		 5.567 		 0.0
+                                                     dumpedthethe 		 5.593 		 0.0
+                                                     Objectthethe 		 5.612 		 0.0
+                                                     scrapethethe 		 5.637 		 0.0
+                                                        767thethe 		 5.656 		 0.0
+
+model_check_early_stop returned true
+Ending epoch 25 early...
+Epoch 25. average loss = 5.164 / 0.0 / 7 correct (0.00%)
+Stopping early after 26 steps and 182 datapoints
+*** Executing task 1/1
+start_word_id = tensor([1169])
+preprefix: 'To compute the answer, take the input number x and return'
+Attempting task with description: "Exponentiate the input to get the output. "
+Training with 7 possible answers / random acc 14.3% / majority acc 14.3%
+Epoch 0. average loss = 5.147 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                             fractthethethethethe 		 5.147 		 0.0
+
+Epoch 1. average loss = 5.147 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                             fractthethethethethe 		 5.147 		 0.0
+
+Epoch 2. average loss = 5.147 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                             fractthethethethethe 		 5.147 		 0.0
+
+Epoch 3. average loss = 5.147 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                             fractthethethethethe 		 5.147 		 0.0
+
+Epoch 4. average loss = 5.147 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                             fractthethethethethe 		 5.147 		 0.0
+
+Epoch 5. average loss = 5.147 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                             fractthethethethethe 		 5.147 		 0.0
+
+Epoch 6. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+                                          Snapchatthethethethethe 		 5.677 		 0.0
+
+Epoch 7. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+                                          Snapchatthethethethethe 		 5.677 		 0.0
+
+Epoch 8. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+                                          Snapchatthethethethethe 		 5.677 		 0.0
+
+Epoch 9. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 10. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 11. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 12. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 13. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 14. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 15. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 16. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 17. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 18. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 19. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 20. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 21. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 22. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 23. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 24. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 25. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 26. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 27. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 28. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 29. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+Epoch 30. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                           webpagethethethethethe 		 5.137 		 0.0
+                                               IPvthethethethethe 		 5.146 		 0.0
+                                             fractthethethethethe 		 5.147 		 0.0
+                                           capsulethethethethethe 		 5.526 		 0.0
+                                             tuplethethethethethe 		 5.533 		 0.0
+                                             ilogythethethethethe 		 5.533 		 0.0
+                                               DACthethethethethe 		 5.570 		 0.0
+                                              blobthethethethethe 		 5.591 		 0.0
+                                               bdathethethethethe 		 5.626 		 0.0
+                                              evalthethethethethe 		 5.656 		 0.0
+
+model_check_early_stop returned true
+Ending epoch 31 early...
+Epoch 31. average loss = 5.137 / 0.0 / 7 correct (0.00%)
+Stopping early after 32 steps and 224 datapoints
+*** Executing task 1/1
+start_word_id = tensor([1169])
+preprefix: ''
+Attempting task with description: "Given an input x, return the xth fibonacci number. "
+Training with 6 possible answers / random acc 16.7% / majority acc 28.6%
+>> Data:\n\nGiven the input x is 4, the output f(x) is 3.\n\nPrompt: n and then
+>> Data:\n\nGiven the input x is 1, the output f(x) is 1.\n\nPrompt:  I write
+>> Data:\n\nGiven the input x is 0, the output f(x) is 0.\n\nPrompt: How about [
+>> Data:\n\nGiven the input x is 9, the output f(x) is 34.\n\nPrompt: How Many Dig
+>> Data:\n\nGiven the input x is 0, the output f(x) is 0.\n\nPrompt: What value of
+>> Data:\n\nGiven the input x is 2, the output f(x) is 1.\n\nPrompt: What we want
+>> Data:\n\nGiven the input x is 1, the output f(x) is 1.\n\nPrompt: What does that
+>> Data:\n\nGiven the input x is 3, the output f(x) is 2.\n\nPrompt: Type in an
+Original population: [' n and then', '  I write', ' How about [', ' How Many Dig', ' What value of', ' What we want', ' What does that', ' Type in an']
+>> Data:\n\nGiven the input x is 2, the output f(x) is 1.\n\nPrompt: What do you
+>> Data:\n\nGiven the input x is 0, the output f(x) is 0.\n\nPrompt: a function g
+new population: []
+Epoch 0. average loss = 2.874 / 2.000000089406967 / 7 correct (28.57%)
+>> Data:\n\nGiven the input x is 1, the output f(x) is 1.\n\nPrompt: "Enter an
+>> Data:\n\nGiven the input x is 4, the output f(x) is 3.\n\nPrompt:  >>> def
+new population: ['\r...>', ' What do you', ' What should be', ' Please try it', ' Find a linear']
+Epoch 1. average loss = 2.874 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                    Find a linear 		 2.970 		 14.3
+                                                       How do you 		 2.996 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   What should be 		 3.051 		 14.3
+                                                      What do you 		 3.067 		 0.0
+                                                            ...> 		 3.079 		 14.3
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 2.\n\nPrompt: What does $
+>> Data:\n\nGiven the input x is 0, the output f(x) is 0.\n\nPrompt: Find all values
+new population: ['\r...>', ' what does that', ' Please try it', ' Enter a number', ' Find a linear']
+Epoch 2. average loss = 2.874 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                    Find a linear 		 2.970 		 14.3
+                                                       How do you 		 2.996 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                   What should be 		 3.051 		 14.3
+                                                      What do you 		 3.067 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Enter a number 		 3.207 		 14.3
+                                                 Write a function 		 3.232 		 0.0
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 2.\n\nPrompt:  Given an
+>> Data:\n\nGiven the input x is 2, the output f(x) is 1.\n\nPrompt: Input a non
+new population: ['\r...>', ' what does that', ' If no more', ' Please try it', ' Find a linear']
+Epoch 3. average loss = 2.857 / 0.0 / 7 correct (0.00%)
+                                              ******************** Population ********************
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                       How do you 		 2.996 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                   What should be 		 3.051 		 14.3
+                                                      What do you 		 3.067 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Enter a number 		 3.207 		 14.3
+                                                 Write a function 		 3.232 		 0.0
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 34.\n\nPrompt:  | Write
+>> Data:\n\nGiven the input x is 1, the output f(x) is 1.\n\nPrompt: The first statement
+new population: [' what does that', ' If no more', ' Please try it', ' Find a linear', ' Could you explain']
+Epoch 4. average loss = 2.817 / 3.000000238418579 / 7 correct (42.86%)
+                                              ******************** Population ********************
+                                               Given two positive 		 2.874 		 28.6
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                   What should be 		 3.051 		 14.3
+                                                      What do you 		 3.067 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Enter a number 		 3.207 		 14.3
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 2.\n\nPrompt: "In this
+>> Data:\n\nGiven the input x is 6, the output f(x) is 8.\n\nPrompt: What else do
+self._steps_since_new_population: 1
+Epoch 5. average loss = 2.817 / 3.000000238418579 / 7 correct (42.86%)
+                                              ******************** Population ********************
+                                                Could you explain 		 2.927 		 14.3
+                                                     How Many Dig 		 2.943 		 14.3
+                                                         Given an 		 2.947 		 0.0
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                      What do you 		 3.067 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Enter a number 		 3.207 		 14.3
+
+>> Data:\n\nGiven the input x is 4, the output f(x) is 3.\n\nPrompt: Given some n
+>> Data:\n\nGiven the input x is 9, the output f(x) is 34.\n\nPrompt: If you know
+self._steps_since_new_population: 2
+Epoch 6. average loss = 2.807 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                Could you explain 		 2.927 		 14.3
+                                                         Given an 		 2.947 		 0.0
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                     If there are 		 2.989 		 28.6
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                      What do you 		 3.067 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Enter a number 		 3.207 		 14.3
+
+>> Data:\n\nGiven the input x is 6, the output f(x) is 8.\n\nPrompt: A prompt was
+>> Data:\n\nGiven the input x is 6, the output f(x) is 8.\n\nPrompt: The prompt may
+self._steps_since_new_population: 3
+Epoch 7. average loss = 2.807 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                               Given two positive 		 2.874 		 28.6
+                                                Could you explain 		 2.927 		 14.3
+                                                          Given a 		 2.930 		 0.0
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                     If there are 		 2.989 		 28.6
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Enter a number 		 3.207 		 14.3
+
+>> Data:\n\nGiven the input x is 1, the output f(x) is 1.\n\nPrompt:  Are there
+>> Data:\n\nGiven the input x is 4, the output f(x) is 3.\n\nPrompt:  A good
+self._steps_since_new_population: 4
+Epoch 8. average loss = 2.807 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  The truth table 		 2.817 		 42.9
+                                                       Given that 		 2.925 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                          Given a 		 2.930 		 0.0
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Enter a number 		 3.207 		 14.3
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 34.\n\nPrompt: Write a function
+>> Data:\n\nGiven the input x is 4, the output f(x) is 3.\n\nPrompt: Given two integers
+self._steps_since_new_population: 5
+Epoch 9. average loss = 2.807 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  The truth table 		 2.817 		 42.9
+                                               Given two positive 		 2.874 		 28.6
+                                                    Given we have 		 2.890 		 0.0
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Enter a number 		 3.207 		 14.3
+
+>> Data:\n\nGiven the input x is 6, the output f(x) is 8.\n\nPrompt: If there are
+>> Data:\n\nGiven the input x is 9, the output f(x) is 34.\n\nPrompt: Given an integer
+self._steps_since_new_population: 6
+Epoch 10. average loss = 2.807 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                              Given two functions 		 2.897 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                               Given two integers 		 2.933 		 14.3
+                                                        Given y = 		 2.942 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Enter a number 		 3.207 		 14.3
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 2.\n\nPrompt:  What
+>> Data:\n\nGiven the input x is 1, the output f(x) is 1.\n\nPrompt: What should it
+new population: [' how can we', ' If no more', ' Please try it', ' Find a linear', ' Could you explain']
+Epoch 11. average loss = 2.807 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                               Given two positive 		 2.874 		 28.6
+                                                       how can we 		 2.905 		 14.3
+                                                       Given that 		 2.925 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Enter a number 		 3.207 		 14.3
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 34.\n\nPrompt: given a non
+>> Data:\n\nGiven the input x is 3, the output f(x) is 2.\n\nPrompt: Use function to
+self._steps_since_new_population: 1
+Epoch 12. average loss = 2.807 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                Given an infinite 		 2.884 		 14.3
+                                              Given two functions 		 2.897 		 14.3
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Enter a number 		 3.207 		 14.3
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 34.\n\nPrompt: Write code to
+>> Data:\n\nGiven the input x is 2, the output f(x) is 1.\n\nPrompt: Given some parameters
+self._steps_since_new_population: 2
+Epoch 13. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                   What algorithm 		 2.807 		 28.6
+                                                       how can we 		 2.905 		 14.3
+                                                 Given a positive 		 2.923 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Enter a number 		 3.207 		 14.3
+
+>> Data:\n\nGiven the input x is 4, the output f(x) is 3.\n\nPrompt:>1 2
+>> Data:\n\nGiven the input x is 3, the output f(x) is 2.\n\nPrompt: write a function
+self._steps_since_new_population: 3
+Epoch 14. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                   Given two sets 		 2.882 		 14.3
+                                                        Show that 		 2.901 		 0.0
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Enter a number 		 3.207 		 14.3
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 34.\n\nPrompt: Given an integer
+>> Data:\n\nGiven the input x is 4, the output f(x) is 3.\n\nPrompt: Given we are
+new population: [' Inference Rules', ' how can we', ' If no more', ' Find a linear', ' Could you explain']
+Epoch 15. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                   Given a binary 		 2.874 		 28.6
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Enter a number 		 3.207 		 14.3
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 34.\n\nPrompt:  When you
+>> Data:\n\nGiven the input x is 2, the output f(x) is 1.\n\nPrompt: What does it
+self._steps_since_new_population: 1
+Epoch 16. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                      Given a set 		 2.870 		 14.3
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Enter a number 		 3.207 		 14.3
+
+>> Data:\n\nGiven the input x is 1, the output f(x) is 1.\n\nPrompt: "Enter an
+>> Data:\n\nGiven the input x is 0, the output f(x) is 0.\n\nPrompt: "Enter an
+self._steps_since_new_population: 2
+Epoch 17. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                       Given an m 		 2.833 		 0.0
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Enter a number 		 3.207 		 14.3
+
+>> Data:\n\nGiven the input x is 1, the output f(x) is 1.\n\nPrompt: how do you
+>> Data:\n\nGiven the input x is 6, the output f(x) is 8.\n\nPrompt: A=6
+self._steps_since_new_population: 3
+Epoch 18. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Enter a number 		 3.207 		 14.3
+                                                 enter an integer 		 3.218 		 0.0
+
+>> Data:\n\nGiven the input x is 4, the output f(x) is 3.\n\nPrompt:   
+>> Data:\n\nGiven the input x is 3, the output f(x) is 2.\n\nPrompt: Type in a
+self._steps_since_new_population: 4
+Epoch 19. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Input a number 		 3.191 		 0.0
+                                                   Enter a number 		 3.207 		 14.3
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 2.\n\nPrompt: what's my
+>> Data:\n\nGiven the input x is 0, the output f(x) is 0.\n\nPrompt: enter value for
+self._steps_since_new_population: 5
+Epoch 20. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Input a number 		 3.191 		 0.0
+                                                   Enter a number 		 3.207 		 14.3
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 2.\n\nPrompt: What do you
+>> Data:\n\nGiven the input x is 9, the output f(x) is 34.\n\nPrompt: 2 seconds maximum
+self._steps_since_new_population: 6
+Epoch 21. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                   Input a number 		 3.191 		 0.0
+                                                   Enter a number 		 3.207 		 14.3
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 1.\n\nPrompt: You cannot do
+>> Data:\n\nGiven the input x is 1, the output f(x) is 1.\n\nPrompt: What if your
+self._steps_since_new_population: 7
+Epoch 22. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                       Use a loop 		 3.172 		 14.3
+                                                   Input a number 		 3.191 		 0.0
+
+>> Data:\n\nGiven the input x is 1, the output f(x) is 1.\n\nPrompt:  A Turing
+>> Data:\n\nGiven the input x is 1, the output f(x) is 1.\n\nPrompt: enter your code
+self._steps_since_new_population: 8
+Epoch 23. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                       Use a loop 		 3.172 		 14.3
+                                                   Input a number 		 3.191 		 0.0
+
+>> Data:\n\nGiven the input x is 1, the output f(x) is 1.\n\nPrompt: why does this
+>> Data:\n\nGiven the input x is 2, the output f(x) is 1.\n\nPrompt: In-Order
+self._steps_since_new_population: 9
+Epoch 24. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                       Use a loop 		 3.172 		 14.3
+                                                   Input a number 		 3.191 		 0.0
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 34.\n\nPrompt:  What does
+>> Data:\n\nGiven the input x is 2, the output f(x) is 1.\n\nPrompt: Do I have
+self._steps_since_new_population: 10
+Epoch 25. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                      Do you have 		 2.992 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                       Use a loop 		 3.172 		 14.3
+
+>> Data:\n\nGiven the input x is 6, the output f(x) is 8.\n\nPrompt: What did you
+>> Data:\n\nGiven the input x is 2, the output f(x) is 1.\n\nPrompt: [3]
+self._steps_since_new_population: 11
+Epoch 26. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                      Do you have 		 2.992 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                       Use a loop 		 3.172 		 14.3
+
+>> Data:\n\nGiven the input x is 4, the output f(x) is 3.\n\nPrompt: "Give your
+>> Data:\n\nGiven the input x is 6, the output f(x) is 8.\n\nPrompt: Write a function
+self._steps_since_new_population: 12
+Epoch 27. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                      Do you have 		 2.992 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                       Use a loop 		 3.172 		 14.3
+
+>> Data:\n\nGiven the input x is 0, the output f(x) is 0.\n\nPrompt:  Write a
+>> Data:\n\nGiven the input x is 4, the output f(x) is 3.\n\nPrompt: Write code that
+self._steps_since_new_population: 13
+Epoch 28. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                      Do you have 		 2.992 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                       Use a loop 		 3.172 		 14.3
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 2.\n\nPrompt: enter 'X
+>> Data:\n\nGiven the input x is 0, the output f(x) is 0.\n\nPrompt: Find all possible
+self._steps_since_new_population: 14
+Epoch 29. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                      Do you have 		 2.992 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                       Use a loop 		 3.172 		 14.3
+
+>> Data:\n\nGiven the input x is 4, the output f(x) is 3.\n\nPrompt: Write a function
+>> Data:\n\nGiven the input x is 6, the output f(x) is 8.\n\nPrompt: Print 5 times
+self._steps_since_new_population: 15
+Epoch 30. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                      Do you have 		 2.992 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                       Use a loop 		 3.172 		 14.3
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 34.\n\nPrompt: What do you
+>> Data:\n\nGiven the input x is 3, the output f(x) is 2.\n\nPrompt: Enter a number
+self._steps_since_new_population: 16
+Epoch 31. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                      Do you have 		 2.992 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                       Use a loop 		 3.172 		 14.3
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 1.\n\nPrompt: "What should
+>> Data:\n\nGiven the input x is 2, the output f(x) is 1.\n\nPrompt: Find a way
+self._steps_since_new_population: 17
+Epoch 32. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                      Do you have 		 2.992 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                       Use a loop 		 3.172 		 14.3
+
+>> Data:\n\nGiven the input x is 4, the output f(x) is 3.\n\nPrompt: Given a list
+>> Data:\n\nGiven the input x is 2, the output f(x) is 1.\n\nPrompt: What's your
+self._steps_since_new_population: 18
+Epoch 33. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                      Do you have 		 2.992 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                            ...> 		 3.079 		 14.3
+                                                       Use a loop 		 3.172 		 14.3
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 1.\n\nPrompt:  If you
+>> Data:\n\nGiven the input x is 3, the output f(x) is 2.\n\nPrompt: Given a number
+self._steps_since_new_population: 19
+Epoch 34. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                      Do you have 		 2.992 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                              [1] 		 3.064 		 28.6
+                                                            ...> 		 3.079 		 14.3
+
+>> Data:\n\nGiven the input x is 1, the output f(x) is 1.\n\nPrompt:  Inputs
+>> Data:\n\nGiven the input x is 0, the output f(x) is 0.\n\nPrompt: y>1
+self._steps_since_new_population: 20
+Epoch 35. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                      Do you have 		 2.992 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                              [1] 		 3.064 		 28.6
+                                                            ...> 		 3.079 		 14.3
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 1.\n\nPrompt:  (a
+>> Data:\n\nGiven the input x is 4, the output f(x) is 3.\n\nPrompt:  "Give
+self._steps_since_new_population: 21
+Epoch 36. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                      Do you have 		 2.992 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                              [1] 		 3.064 		 28.6
+                                                            ...> 		 3.079 		 14.3
+
+>> Data:\n\nGiven the input x is 2, the output f(x) is 1.\n\nPrompt: You can write
+>> Data:\n\nGiven the input x is 6, the output f(x) is 8.\n\nPrompt: enter y>
+self._steps_since_new_population: 22
+Epoch 37. average loss = 2.770 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                      Do you have 		 2.992 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                              [1] 		 3.064 		 28.6
+                                                            ...> 		 3.079 		 14.3
+
+>> Data:\n\nGiven the input x is 3, the output f(x) is 2.\n\nPrompt: What are all
+>> Data:\n\nGiven the input x is 2, the output f(x) is 1.\n\nPrompt: Given a function
+self._steps_since_new_population: 23
+Epoch 38. average loss = 2.644 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                      Do you have 		 2.992 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                              [1] 		 3.064 		 28.6
+                                                            ...> 		 3.079 		 14.3
+
+>> Data:\n\nGiven the input x is 4, the output f(x) is 3.\n\nPrompt: given a list
+>> Data:\n\nGiven the input x is 6, the output f(x) is 8.\n\nPrompt: Given an argument
+self._steps_since_new_population: 24
+Epoch 39. average loss = 2.644 / 2.000000089406967 / 7 correct (28.57%)
+                                              ******************** Population ********************
+                                                  Inference Rules 		 2.849 		 42.9
+                                                       how can we 		 2.905 		 14.3
+                                                Could you explain 		 2.927 		 14.3
+                                                       If no more 		 2.965 		 28.6
+                                                    Find a linear 		 2.970 		 14.3
+                                                      Do you have 		 2.992 		 0.0
+                                                    Please try it 		 3.010 		 0.0
+                                                   what does that 		 3.010 		 0.0
+                                                     given a list 		 3.050 		 14.3
+                                                              [1] 		 3.064 		 28.6
+
+>> Data:\n\nGiven the input x is 9, the output f(x) is 34.\n\nPrompt: Type in some
+>> Data:\n\nGiven the input x is 2, the output f(x) is 1.\n\nPrompt: Type in any
+self._steps_since_new_population: 25
+model_check_early_stop returned true
+Ending epoch 40 early...
+Epoch 40. average loss = 2.644 / 2.000000089406967 / 7 correct (28.57%)
+Stopping early after 41 steps and 287 datapoints

@@ -36,21 +36,18 @@ LEGEND_REMAP = {
 # reds ['#4c1d4b', '#a11a5b', '#e83f3f', '#f69c73']
 # greens ['#348ba6', '#38aaac', '#55caad', '#a1dfb9']
 COLORS = OrderedDict({
-    'Suffix, single-output decoding (1-Ex.)': '#d9d9d9',
-    'Suffix, single-output decoding (5-Ex.)': '#969696',
+    'Suffix, single-output decoding (Zero-shot)': '#d9d9d9',
+    'Suffix, single-output decoding (4-shot)': '#969696',
     'Suffix, single-output decoding (10-Ex.)': '#525252',
-    'Suffix, average-output decoding (1-Ex.)': '#9ecae1',
-    'Suffix, average-output decoding (5-Ex.)': '#4292c6',
+    'Suffix, average-output decoding (Zero-shot)': '#9ecae1',
+    'Suffix, average-output decoding (4-shot)': '#4292c6',
     'Suffix, average-output decoding (10-Ex.)': '#084594',
     ############################################################
-    'Prefix, single-output (1-Ex.)': '#d9d9d9',
-    'Prefix, single-output (5-Ex.)': '#bdbdbd',
-    'Prefix, single-output with reranking (1-Ex.)': '#969696',
-    'Prefix, single-output with reranking (5-Ex.)': '#525252',
-    'Prefix, average-output (1-Ex.)': '#f69c73',
-    'Prefix, average-output (5-Ex.)': '#e83f3f',
-    'Prefix, average-output with reranking (1-Ex.)': '#a11a5b',
-    'Prefix, average-output with reranking (5-Ex.)': '#4c1d4b',
+    'AutoPrompt (Zero-shot)': '#d9d9d9',
+    'AutoPrompt (4-shot)': '#bdbdbd',
+    ############################################################
+    'EvoPrompt (Zero-shot)': '#f69c73',
+    'EvoPrompt (4-shot)': '#e83f3f',
 
 }.items())
 SORTED_HUE_NAMES = list(COLORS.keys())
@@ -183,8 +180,6 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
         if 'prefix_type' in json_dict:
             json_dict['prefix_type'] = json_dict['prefix_type'][:len(json_dict['prefixes'])]
 
-        json_dict['prefixes_top_1'] = json_dict['prefixes'][0]
-
         # remove unneeded keys
         del json_dict['task_name_list'] 
         if 'losses' in json_dict: del json_dict['losses'] 
@@ -205,6 +200,14 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
 
         # tensor -> float
         df['prefix_test_acc'] = df['prefix_test_acc'].map(lambda t: t.item())
+
+        # compute rank
+        if df["prefixes__check_answer_func"].sum() == 0:
+            df['final_answer_pos_initial_token'] = 10_000
+        else:
+            df['final_answer_pos_initial_token'] = df["prefixes__check_answer_func"].idxmax()
+        df['reciprocal_rank'] = df['final_answer_pos_initial_token'].map(
+            lambda n: 1/(n+1))
 
         dfs.append(df)
 
