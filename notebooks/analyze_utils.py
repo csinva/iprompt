@@ -43,8 +43,8 @@ COLORS = OrderedDict({
     'Suffix, average-output decoding (4-shot)': '#4292c6',
     'Suffix, average-output decoding (10-Ex.)': '#084594',
     ############################################################
-    'AutoPrompt (Zero-shot)': '#d9d9d9',
-    'AutoPrompt (4-shot)': '#bdbdbd',
+    'AutoPrompt (Zero-shot)': '#74c476',
+    'AutoPrompt (4-shot)': '#31a354',
     ############################################################
     'EvoPrompt (Zero-shot)': '#f69c73',
     'EvoPrompt (4-shot)': '#e83f3f',
