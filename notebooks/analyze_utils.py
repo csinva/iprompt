@@ -170,11 +170,6 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
         pickle_filename = oj(results_dir, dir_name, 'results.pkl')
         json_dict = CPU_Unpickler(open(pickle_filename, 'rb')).load()
 
-        # drop half-finished runs
-        if "prefix_test_loss" not in json_dict:
-            print("skipping", dir_name)
-            continue
-
         # fix extra types for missing prefixes when there weren't enough starting with
         # different tokens to save
         if 'prefix_type' in json_dict:
@@ -199,7 +194,8 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
         df['pickle_filename'] = pickle_filename
 
         # tensor -> float
-        df['prefix_test_acc'] = df['prefix_test_acc'].map(lambda t: t.item())
+        if 'prefix_test_acc' in df:
+            df['prefix_test_acc'] = df['prefix_test_acc'].map(lambda t: t.item())
 
         # compute rank
         if df["prefixes__check_answer_func"].sum() == 0:
