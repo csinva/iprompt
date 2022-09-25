@@ -176,6 +176,7 @@ class PrefixModel(nn.Module, abc.ABC):
         self.model = model
         self.tokenizer = tokenizer
 
+    @property
     def id_to_word(self) -> Dict[int, str]:
         # track token-to-word mapping 
         return {num: word for word, num in self.tokenizer.vocab.items()}
@@ -281,12 +282,19 @@ class PrefixModel(nn.Module, abc.ABC):
                 next_token_ids[:, 0]
             ).int().sum()
 
-        # compute loss from first token
-        loss = torch.nn.functional.cross_entropy(
+        # apply possible answer mask for single-token
+        if possible_answer_mask is not None:
+            next_token_logits = torch.where(
+                possible_answer_mask[None],
+                next_token_logits, torch.tensor(float('-inf')).to(device)
+            )
+
+        # compute loss from first
+        original_losses = torch.nn.functional.cross_entropy(
             input=next_token_logits,
             target=next_token_ids[:, 0],
             ignore_index=self.tokenizer.pad_token_id,
-            reduction='mean'
+            reduction='none'
         )
 
         # add loss from other tokens
@@ -300,13 +308,24 @@ class PrefixModel(nn.Module, abc.ABC):
                 next_token_ids[:, 1:]
                     .reshape((b * (label_sequence_length-1),))
             )
-            other_loss = torch.nn.functional.cross_entropy(
+            other_losses = torch.nn.functional.cross_entropy(
                 input=other_next_token_logits,
                 target=other_next_token_ids,
                 ignore_index=self.tokenizer.pad_token_id,
-                reduction='mean'
+                reduction='none'
             )
-            loss += other_loss
+            # take the mean of losses on the batch level, and normalize for length
+            all_losses = torch.cat(
+                (original_losses[:, None], other_losses.reshape((b, -1))), dim=1
+            )
+            num_tokens_per_output = (
+                ~(next_token_ids == self.tokenizer.bos_token_id)).sum(dim=1)
+            all_losses = all_losses.sum(dim=1) / num_tokens_per_output
+            assert all_losses.shape == (b,)
+            loss = all_losses.mean()
+        else:
+            loss = original_losses.mean()
+
         return full_input_ids, loss, n_correct
     
     def compute_loss_and_call_backward(
