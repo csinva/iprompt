@@ -52,8 +52,8 @@ for checkpoint in ['gpt2-medium', 'EleutherAI/gpt-j-6B', 'gpt2-xl', 'EleutherAI/
     model = prompt_classification.create_model(checkpoint)
     print('calculating accs...')
     for task_name in tqdm(task_names):
-        for prompt in ['', 'manual']:
-            for n_shots in [1, 5]: 
+        for n_shots in [10, 5, 1]: 
+            for prompt in ['', 'manual']:    
                     args.task_name = task_name
                     args.n_shots = n_shots
                     (dset, dset_test), check_answer_func, descr = data.get_data(
@@ -75,4 +75,5 @@ for checkpoint in ['gpt2-medium', 'EleutherAI/gpt-j-6B', 'gpt2-xl', 'EleutherAI/
                         batch_size=batch_size,
                     )
                     d['acc'].append(acc)
-        pkl.dump(d, open(f'results/generalization_acc/baseline_accs_{checkpoint.replace("/", "___")}.pkl', 'wb'))
+            save_name = f'results/generalization_acc/baseline_accs_{checkpoint.replace("/", "___")}___nshots={n_shots}.pkl'
+            pkl.dump(d, open(save_name, 'wb'))

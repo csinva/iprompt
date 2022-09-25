@@ -111,14 +111,19 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_fra
 
         def check_answer_func(x): return bool(check_answer_func_re(x))
 
+    # set up task descr
+    descr = task['description']
+    if not descr.endswith(' '):
+        descr += ' '
+
     if train_split_frac:
         n_train = int(df.shape[0] * train_split_frac)
         dset_train = Dataset.from_pandas(df.iloc[:n_train])
         dset_test = Dataset.from_pandas(df.iloc[n_train:])
-        return (dset_train, dset_test), check_answer_func, task['description']
+        return (dset_train, dset_test), check_answer_func, descr
     else:
         dset = Dataset.from_pandas(df)
-        return dset, check_answer_func, task['description']
+        return dset, check_answer_func, descr
 
 
 

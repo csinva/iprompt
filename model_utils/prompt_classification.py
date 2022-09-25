@@ -17,13 +17,15 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 class Model:
     def __init__(self, model_name: str, float16=True):
-        self.model = transformers.AutoModelForCausalLM.from_pretrained(
-            model_name)
+        if float16:
+            self.model = transformers.AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.float16)
+            self.model = self.model.half()
+        else:
+            self.model = transformers.AutoModelForCausalLM.from_pretrained(model_name)
         self.tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.model.eval()
-        if float16:
-            self.model = self.model.half()
+        
         self.model.to(device)
         
 
@@ -189,11 +191,16 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
 
             # deccode multiple tokens
             elif multi_token:
+                bad_words = [[model.tokenizer.eos_token_id]]
+                if isinstance(model.model.config.bad_words_ids, list):
+                    bad_words.append(model.model.config.bad_words_ids)
                 samples_t = model.model.generate(**ex_inputs,
                                                  pad_token_id=model.tokenizer.eos_token_id,
                                                  num_beams=4,
+                                                 bad_words_ids=bad_words,
                                                  do_sample=False, # no randomness
                                                  max_new_tokens=max_new_tokens,
+                                                 min_length=1,
                                                  length_penalty=0.6,
                                                  num_return_squences=1,
                                                 #  output_scores=True,
@@ -205,11 +212,12 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                     new_text = samples[i][len(x_text[i]):]
                     y_pred = y_text[i].rstrip(string.punctuation + string.whitespace)
                     """
-                    print(i)
-                    print('\tx_text', repr(x_text[i]))
-                    print('\tnew_text', repr(new_text))
-                    print('\ty_text', repr(y_text[i]))
-                    print('\ty_pred', repr(y_pred))
+                    if verbose:
+                        print(i)
+                        print('\tx_text', repr(x_text[i]))
+                        print('\tnew_text', repr(new_text))
+                        print('\ty_text', repr(y_text[i]))
+                        print('\ty_pred', repr(y_pred))
                     """
                     
                     # correct if true answer is contained in the generation

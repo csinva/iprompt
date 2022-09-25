@@ -5,7 +5,9 @@ import sys
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-save_dir = '/home/jxm3/random/interpretable-autoprompting/results/slurm_anli_exps'
+# save_dir = '/home/jxm3/random/interpretable-autoprompting/results/slurm_anli_exps'
+save_dir = f'/home/chansingh/mntv1/autoprompt_anli_exps'
+# save_dir = '/home/jxm3/random/interpretable-autoprompting/results/slurm_anli_exps'
 
 cmd_python = 'python'
 
@@ -13,12 +15,11 @@ PARAMS_SHARED_DICT = {
     # things to vary
     'n_shots': [1, 5],
     'task_name_list': [
-        [
-        'task1146_country_capital',
-        'task1509_evalution_antonyms',
-        'task1147_country_currency',
-        'task1149_item_check_edible',
-        'task183_rhyme_generation',
+        # 'task1146_country_capital',
+        # 'task1509_evalution_antonyms',
+        # 'task1147_country_currency',
+        # 'task1149_item_check_edible',
+        # 'task183_rhyme_generation',
         'task1191_food_veg_nonveg',
         'task092_check_prime_classification',
         'task088_identify_typo_verification',
