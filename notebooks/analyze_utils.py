@@ -36,18 +36,19 @@ LEGEND_REMAP = {
 # reds ['#4c1d4b', '#a11a5b', '#e83f3f', '#f69c73']
 # greens ['#348ba6', '#38aaac', '#55caad', '#a1dfb9']
 COLORS = OrderedDict({
-    'Suffix, single-output decoding (Zero-shot)': '#d9d9d9',
-    'Suffix, single-output decoding (4-shot)': '#969696',
-    'Suffix, single-output decoding (10-Ex.)': '#525252',
-    'Suffix, average-output decoding (Zero-shot)': '#9ecae1',
-    'Suffix, average-output decoding (4-shot)': '#4292c6',
-    'Suffix, average-output decoding (10-Ex.)': '#084594',
+    # 'Suffix, single-output decoding (Zero-shot)': '#d9d9d9',
+    # 'Suffix, single-output decoding (4-shot)': '#969696',
+    # 'Suffix, single-output decoding (10-Ex.)': '#525252',
+    'Templated suffix, average-output decoding': '#9ecae1',
+    # 'Templated suffix, average-output decoding': '#4292c6',
+    # 'Templated suffix, average-output decoding': '#084594',
     ############################################################
-    'AutoPrompt (Zero-shot)': '#74c476',
-    'AutoPrompt (4-shot)': '#31a354',
+    'AutoPrompt (3 tokens)': '#74c476',
+    'AutoPrompt (6 tokens)': '#31a354',
+    # 'AutoPrompt (4-shot)': '#31a354',
     ############################################################
-    'EvoPrompt (Zero-shot)': '#f69c73',
-    'EvoPrompt (4-shot)': '#e83f3f',
+    'EvoPrompt (3 tokens)': '#f69c73',
+    'EvoPrompt (6 tokens)': '#e83f3f',
 
 }.items())
 SORTED_HUE_NAMES = list(COLORS.keys())
@@ -199,7 +200,7 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
 
         # compute rank
         if df["prefixes__check_answer_func"].sum() == 0:
-            df['final_answer_pos_initial_token'] = 10_000
+            df['final_answer_pos_initial_token'] = 10**10
         else:
             df['final_answer_pos_initial_token'] = df["prefixes__check_answer_func"].idxmax()
         df['reciprocal_rank'] = df['final_answer_pos_initial_token'].map(
@@ -328,7 +329,9 @@ def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = 
     # ax = sns.barplot(x=tab['checkpoint'], y=metric_key, hue='legend', hue_order=hue_order, order=order,
     #  data=tab, palette=COLORS)  # data=tab[tab['n_shots'] == 1])
     ax = sns.barplot(x=tab['checkpoint'].map(CHECKPOINT_RENAME).tolist(),
-                     y=tab[metric_key], hue=tab['legend'], hue_order=hue_order, order=order, palette=COLORS)  # data=tab[tab['n_shots'] == 1])
+                     y=tab[metric_key], hue=tab['legend'],
+                     hue_order=hue_order, order=order, palette=COLORS
+    )  # data=tab[tab['n_shots'] == 1])
     # ax = sns.barplot(x=tab['checkpoint'].map(CHECKPOINT_RENAME).tolist(),
     #  y=tab[metric_key], hue=tab['legend'], palette=COLORS)
     plt.xlabel('Model name')
