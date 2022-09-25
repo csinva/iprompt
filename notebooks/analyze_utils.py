@@ -308,7 +308,6 @@ def get_top_candidates_and_probs_suff(args):
     return suffix_str_added, probs
 
 def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = True, legend_on_side=True):
-
     # reformat legend
     if add_legend:
         tab['legend'] = tab['use_single_query'].map(
