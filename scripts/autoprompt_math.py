@@ -8,25 +8,28 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 # save_dir = f'/home/chansingh/mntv1/prefix_math_{submit_utils.JOB_SUFFIX}'
 # save_dir = f'/home/jxm3/random/interpretable-autoprompting/results/tst2/prefix_math_{submit_utils.JOB_SUFFIX}'
 # save_dir = '/home/jxm3/random/interpretable-autoprompting/results/slurm_math_exps'
-save_dir = '/home/johnmorris/interpretable-autoprompting/results/math_gcloud'
+save_dir = '/home/johnmorris/interpretable-autoprompting/results/autoprompt_arithmetic'
 
 cmd_python = 'python'
 
 PARAMS_SHARED_DICT = {
-    # things to vary
-    'n_shots': [1, 5, 10],
-    # 'task_name_list': [['add_two']],
-    'task_name_list': [
-        'add_two', 'multiply_two', 
-        'subtract_two',
-        'max_two', 'first_two',
-        'square_one', 'double_one',
-    ], # 'exp_one',  'fibonacci_one', 'divide_two', 
-    'model_cls': ['genetic', 'autoprompt'],
-    'num_learned_tokens': [3, 6],
-
     # things to average over
     'seed': [1],
+
+    # things to vary
+    'n_shots': [1, 5],
+
+    # 'task_name_list': [['add_two']],
+    'task_name_list': [
+        # 'add_two', 'multiply_two', 
+        # 'subtract_two',
+        # 'max_two', 'first_two',
+        # 'square_one', 'double_one',
+        'exp_one',  'fibonacci_one',
+        'divide_two', 
+    ],
+    'model_cls': ['genetic', 'autoprompt'],
+    'num_learned_tokens': [3, 6],
 
     # stopping criteria
     'max_dset_size': [5000],
@@ -34,7 +37,7 @@ PARAMS_SHARED_DICT = {
     'early_stopping_steps': [25],
 
     # fixed params
-    'max_digit': [100],
+    'max_digit': [10],
     'train_split_frac': [0.75],
     'single_shot_loss': [1],
 }

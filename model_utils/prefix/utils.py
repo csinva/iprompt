@@ -506,10 +506,7 @@ class PrefixPool:
         self._best_prefix_by_start_token.setdefault(prefix[0], (prefix, (1000.0,)))
         score = self._score(prefix)
         best_prefix, best_score = self._best_prefix_by_start_token[prefix[0]]
-        if DEBUG_VERBOSE and (score < best_score) and (best_score < (1000.0,)):
-            bp = self.tokenizer.decode(best_prefix)
-            np = self.tokenizer.decode(prefix)
-            print(f"token {prefix[0]}: swap {bp} (score {best_score[0]:.2f}) for {np} (score {score[0]:.2f})")
+        if score < best_score:
             self._best_prefix_by_start_token[prefix[0]] = (prefix, score)
     
     def __len__(self) -> int:
