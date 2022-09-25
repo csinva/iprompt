@@ -14,7 +14,7 @@ from torch import nn
 import tqdm
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-DEBUG_LOSS = False
+DEBUG_VERBOSE = False
 
 
 def get_token_replacements_single_mask(
@@ -157,7 +157,7 @@ class PrefixLoss:
         )
 
         loss = token_loss + (self.gamma * fluency_loss)
-        if DEBUG_LOSS: 
+        if DEBUG_VERBOSE: 
             print(f">> loss for input string: {self.tokenizer.decode(input_ids[0])}")
             print(f"\tLoss = {loss:.3f}")
         return loss
@@ -417,7 +417,7 @@ class PrefixPool:
         # vd.sort_values(by=['n', 'loss'], ascending=[False, True])[["n", "prefix_str"]].iloc[:25]
         #####################################################################
         if not len(top_token_ids): return
-        print((" " * 50), ("*" * 20), "Population", ("*" * 20))
+        print((" " * 45), ("*" * 20), "Population", ("*" * 20))
         for token_ids in top_token_ids:
             prefix_str = "{:>65}".format(self.tokenizer.decode(list(token_ids)).replace("\n", "\\\\n"))
             loss_str = f"{self._avg_loss[token_ids]:.3f}"
@@ -446,7 +446,7 @@ class PrefixPool:
         ) -> List[Tuple[int]]:
         all_prefixes = [p for p, score in self._best_prefix_by_start_token.values()]
         top_prefixes = self._topk_from_prefixes(
-            all_prefixes, k=k, min_occurrences=min_occurrences
+            all_prefixes, k=k, min_occurrences=1
         )
         n_so_far = len(top_prefixes)
         if n_so_far < k:
@@ -506,7 +506,10 @@ class PrefixPool:
         self._best_prefix_by_start_token.setdefault(prefix[0], (prefix, (1000.0,)))
         score = self._score(prefix)
         best_prefix, best_score = self._best_prefix_by_start_token[prefix[0]]
-        if score < best_score:
+        if DEBUG_VERBOSE and (score < best_score) and (best_score < (1000.0,)):
+            bp = self.tokenizer.decode(best_prefix)
+            np = self.tokenizer.decode(prefix)
+            print(f"token {prefix[0]}: swap {bp} (score {best_score[0]:.2f}) for {np} (score {score[0]:.2f})")
             self._best_prefix_by_start_token[prefix[0]] = (prefix, score)
     
     def __len__(self) -> int:
