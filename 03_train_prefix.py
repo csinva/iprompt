@@ -132,6 +132,7 @@ def train_model(
             )
 
             r["all_losses"].append(loss)
+            r["all_n_correct"].append(n_correct)
 
             total_n += len(x_text)
             total_n_datapoints += len(x_text)
