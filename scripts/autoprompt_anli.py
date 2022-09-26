@@ -33,8 +33,8 @@ PARAMS_SHARED_DICT = {
     'seed': [1],
 
     # stopping criteria
-    'max_dset_size': [10000],
-    'max_n_datapoints': [10000],
+    'max_dset_size': [5000],
+    'max_n_datapoints': [5000],
     'early_stopping_steps': [50],
 
     # fixed params
