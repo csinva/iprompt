@@ -23,8 +23,8 @@ PARAMS_SHARED_DICT = {
     # iprompt_generation_repetition_penalty: [1.0, 1.5, 2.0],
 
     # stopping criteria
-    'max_dset_size': [2_000], # sst2 has 10k sentences but could be more with a higher n_shots.
-    'max_n_datapoints': [2_000],
+    'max_dset_size': [10_000], # sst2 has 10k sentences but could be more with a higher n_shots.
+    'max_n_datapoints': [10_000],
     'early_stopping_steps': [50],
 
     # fixed params

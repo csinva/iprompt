@@ -166,7 +166,7 @@ def load_results_and_cache_prefix_json(results_dir: str, save_file: str = 'r.pkl
     return r
 
 
-def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r.pkl') -> pd.DataFrame:
+def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r.pkl', include_losses: bool = False) -> pd.DataFrame:
     """Prefix script stores results.json instead of results_final.pkl
     """
     dir_names = sorted([fname
@@ -181,6 +181,7 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
                         )
                         ])
     dfs = []
+    all_losses = []
     for dir_name in tqdm(dir_names):
         pickle_filename = oj(results_dir, dir_name, 'results.pkl')
         json_dict = CPU_Unpickler(open(pickle_filename, 'rb')).load()
@@ -190,6 +191,7 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
             continue
         
         # remove list of losses (shouldn't be loaded in df, and will be a different length.)
+        all_losses.append(json_dict.get('all_losses'))
         if 'all_losses' in json_dict:
             del json_dict['all_losses']
 
@@ -200,7 +202,6 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
 
         # remove unneeded keys
         del json_dict['task_name_list'] 
-        if 'losses' in json_dict: del json_dict['losses'] 
 
         # list to str
         if len(json_dict['generation_bad_words_ids']):
@@ -232,7 +233,11 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
 
     r = pd.concat(dfs, axis=0)
     r.to_pickle(oj(results_dir, save_file))
-    return r
+
+    if include_losses:
+        return (r, all_losses)
+    else:
+        return r
 
 
 def postprocess_results(r):

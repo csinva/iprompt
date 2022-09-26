@@ -19,12 +19,12 @@ PARAMS_SHARED_DICT = {
     'num_learned_tokens': [3, 6, 12, 24, 48],
 
     # things to average over
-    'seed': [1, 2],
+    'seed': [1],
 
     # stopping criteria
     'n_epochs': 1000,
-    'max_dset_size': [100_000],
-    'max_n_datapoints': [100_000],
+    'max_dset_size': [10_000],
+    'max_n_datapoints': [10_000],
     'early_stopping_steps': [50],
 
     # fixed params
