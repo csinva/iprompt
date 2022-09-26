@@ -39,10 +39,11 @@ task_names_anli = ['task1146_country_capital', 'task1509_evalution_antonyms', 't
 
 ######################## ACTUAL HYPERPARAMS ################################
 checkpoints_test = [
-    'EleutherAI/gpt-j-6B',
-    'facebook/opt-2.7b',
-    'facebook/opt-6.7b',
-    'EleutherAI/gpt-neo-2.7B',
+    # 'EleutherAI/gpt-j-6B',
+    # 'facebook/opt-2.7b',
+    # 'facebook/opt-6.7b',
+    # 'EleutherAI/gpt-neo-2.7B',
+    'EleutherAI/gpt-neox-20b',
 ]
 TASK_SETTINGS = {
     'one_digit_all': {
