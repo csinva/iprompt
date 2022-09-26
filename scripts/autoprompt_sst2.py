@@ -15,13 +15,17 @@ cmd_python = 'python'
 # --single_shot_loss=1   --mask_possible_answers=0   --task_name sst2_train
 PARAMS_SHARED_DICT = {
     # things to vary
-    'task_name_list': ['sst2_train'],
+    # 'mask_possible_answers': [0, 1],
+    'mask_possible_answers': [0],
     'model_cls': ['genetic', 'autoprompt'],
     'num_learned_tokens': [16],
+    'task_name_list': ['sst2_train'],
+
+    # iprompt_generation_repetition_penalty: [1.0, 1.5, 2.0],
 
     # stopping criteria
-    'max_dset_size': [25_000], # sst2 has 10k sentences but could be more with a higher n_shots.
-    'max_n_datapoints': [25_000],
+    'max_dset_size': [10_000], # sst2 has 10k sentences but could be more with a higher n_shots.
+    'max_n_datapoints': [10_000],
     'early_stopping_steps': [50],
 
     # fixed params
@@ -29,7 +33,7 @@ PARAMS_SHARED_DICT = {
     'single_shot_loss': [1],
     'n_shots': [5],
     'seed': [1],
-    'mask_possible_answers': [0],
+    'max_length': [64],
 }
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 

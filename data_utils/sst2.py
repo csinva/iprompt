@@ -9,13 +9,13 @@ SPLIT_DICT = {
     "sst2_validation": "validation",
     "sst2_test": "test",
 }
-SENTIMENT_STR = {
-    0: "negative", 1: "positive"
+LABEL_MAP = {
+    0: "No", 1: "Yes"
 }
 
 def make_row_sst2(row: Dict[str, str]) -> Dict[str, str]:
     text_input = f'Input: {row["sentence"]} Answer:'
-    sentiment = SENTIMENT_STR[row['label']]
+    sentiment = LABEL_MAP[row['label']]
     text_output =  f' {sentiment}\n'
     return {
         "input": text_input,
@@ -32,7 +32,7 @@ def fetch_sst2_data(dataset_split: str) -> pd.DataFrame:
 
 
 SST2_CHECK_ANSWER_FUNC = r'positive|good|happy|negative|bad|sad'
-SST2_DESCRIPTION = 'Answer "positive" or "negative" depending on the sentiment of the input."'
+SST2_DESCRIPTION = 'Answer Yes if the input is positive and No if the input is negative.'
 
 
 TASKS_SST2 = {}
