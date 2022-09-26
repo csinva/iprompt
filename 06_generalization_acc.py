@@ -38,45 +38,57 @@ task_names_anli = ['task1146_country_capital', 'task1509_evalution_antonyms', 't
 
 
 ######################## ACTUAL HYPERPARAMS ################################
-checkpoints_test = ['EleutherAI/gpt-neo-2.7B', 'EleutherAI/gpt-j-6B']
+checkpoints_test = [
+    # 'facebook/opt-2.7b',
+    'facebook/opt-6.7b',
+    # 'EleutherAI/gpt-neo-2.7B', 'EleutherAI/gpt-j-6B'
+]
 TASK_SETTINGS = {
     'one_digit_all': {
         'task_names': task_names_math_one + task_names_math_two + task_names_anli,
         'max_digit': 10,
         'n_shots': [1, 5, 10],
         'prompt_types': ['', 'manual'],
+        'train_split_frac': None,
     },
     'double_digit_two_nums': {
         'task_names': task_names_math_two,
         'max_digit': 100,
         'n_shots': [1, 5, 10],
         'prompt_types': ['', 'manual'],
+        'train_split_frac': None,
     },
     'one_digit_three_nums': {
         'task_names': task_names_math_three,
         'max_digit': 10,
         'n_shots': [1, 5, 10],
         'prompt_types': ['', 'manual'],
+        'train_split_frac': None,
     },
     'sweep_in_distr_math': {
         'task_names': task_names_math_one + task_names_math_two, # + task_names_anli,
         'max_digit': 10,
         'n_shots': [1],
         'prompt_types': ['autoprompt', 'iprompt', '', 'manual'],  # ['', 'manual'],
+        'train_split_frac': 0.75,
     },
     'sweep_double_digit_math': {
         'task_names': task_names_math_two,
         'max_digit': 100,
         'n_shots': [1],
         'prompt_types': ['autoprompt', 'iprompt', '', 'manual'], 
+        'train_split_frac': None,
     },
     'sweep_one_digit_three_nums_math': {
         'task_names': task_names_math_three,
         'max_digit': 10,
         'n_shots': [1],
         'prompt_types': ['autoprompt', 'iprompt', '', 'manual'], 
+        'train_split_frac': None,
     },
 }
+# task_key = 'sweep_in_distr_math'
+# task_key = 'sweep_double_digit_math'
 task_key = 'sweep_one_digit_three_nums_math'
 ############################################################################
 
@@ -106,6 +118,7 @@ args = fake_args()
 np.random.seed(args.seed)
 settings = TASK_SETTINGS[task_key]
 args.max_digit = settings['max_digit']
+args.train_split_frac = settings['train_split_frac']
 prompts_saved = pkl.load(open(oj(results_acc_dir, 'prompts.pkl'), 'rb'))
 
 for checkpoint in checkpoints_test:
@@ -118,15 +131,20 @@ for checkpoint in checkpoints_test:
             for n_shots in settings['n_shots']:
                 args.task_name = task_name
                 args.n_shots = n_shots
-                (dset, dset_test), check_answer_func, descr = data.get_data(
-                    args, args.task_name, n_shots=args.n_shots,
-                    train_split_frac=args.train_split_frac
-                )
+                if args.train_split_frac:
+                    (dset, dset_test), check_answer_func, descr = data.get_data(
+                        args, args.task_name, n_shots=args.n_shots,
+                        train_split_frac=args.train_split_frac)
+                else:
+                    dset_test, check_answer_func, descr = data.get_data(
+                            args, args.task_name, n_shots=args.n_shots,
+                            train_split_frac=args.train_split_frac) 
                 d['checkpoint'].append(checkpoint)
                 d['prompt'].append(prompt_type)
                 d['task_name'].append(task_name)
                 d['n_shots'].append(n_shots)
                 d['max_digit'].append(args.max_digit)
+                d['train_split_frac'].append(args.train_split_frac)
                 if prompt_type == 'manual':
                     prompt_actual = descr
                 elif prompt_type in ['autoprompt', 'iprompt']:
