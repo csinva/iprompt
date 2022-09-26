@@ -38,6 +38,8 @@ LEGEND_REMAP = {
 # reds ['#4c1d4b', '#a11a5b', '#e83f3f', '#f69c73']
 # greens ['#348ba6', '#38aaac', '#55caad', '#a1dfb9']
 COLORS = OrderedDict({
+    'No prompt': '#525252',
+    'Human-written prompt': '#f0f0f0',
     # 'Suffix, single-output decoding (Zero-shot)': '#d9d9d9',
     # 'Suffix, single-output decoding (4-shot)': '#969696',
     # 'Suffix, single-output decoding (10-Ex.)': '#525252',
