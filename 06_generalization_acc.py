@@ -39,9 +39,10 @@ task_names_anli = ['task1146_country_capital', 'task1509_evalution_antonyms', 't
 
 ######################## ACTUAL HYPERPARAMS ################################
 checkpoints_test = [
-    # 'facebook/opt-2.7b',
+    'EleutherAI/gpt-j-6B',
+    'facebook/opt-2.7b',
     'facebook/opt-6.7b',
-    # 'EleutherAI/gpt-neo-2.7B', 'EleutherAI/gpt-j-6B'
+    'EleutherAI/gpt-neo-2.7B',
 ]
 TASK_SETTINGS = {
     'one_digit_all': {
@@ -86,10 +87,18 @@ TASK_SETTINGS = {
         'prompt_types': ['autoprompt', 'iprompt', '', 'manual'], 
         'train_split_frac': None,
     },
+    'sweep_in_distr_anli': {
+        'task_names': task_names_anli,
+        'n_shots': [1],
+        'prompt_types': ['autoprompt', 'iprompt', '', 'manual'],  # ['', 'manual'],
+        'train_split_frac': 0.75,
+        'max_digit': 10,
+    },    
 }
 # task_key = 'sweep_in_distr_math'
 # task_key = 'sweep_double_digit_math'
-task_key = 'sweep_one_digit_three_nums_math'
+# task_key = 'sweep_one_digit_three_nums_math'
+task_key = 'sweep_in_distr_anli'
 ############################################################################
 
 
@@ -119,7 +128,7 @@ np.random.seed(args.seed)
 settings = TASK_SETTINGS[task_key]
 args.max_digit = settings['max_digit']
 args.train_split_frac = settings['train_split_frac']
-prompts_saved = pkl.load(open(oj(results_acc_dir, 'prompts.pkl'), 'rb'))
+prompts_saved = pkl.load(open(oj(results_acc_dir, 'prompts_all.pkl'), 'rb'))
 
 for checkpoint in checkpoints_test:
     print('loading', checkpoint)
