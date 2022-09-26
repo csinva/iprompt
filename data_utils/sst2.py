@@ -14,13 +14,13 @@ SENTIMENT_STR = {
 }
 
 def make_row_sst2(row: Dict[str, str]) -> Dict[str, str]:
-    text_input = f'Input: {row["sentence"]}'
+    text_input = f'Input: {row["sentence"]} Answer:'
     sentiment = SENTIMENT_STR[row['label']]
-    text_output =  f' Answer: {sentiment}\n'
+    text_output =  f' {sentiment}\n'
     return {
         "input": text_input,
         "output": text_output,
-        "text": (text_input + text_output),
+        "text": (text_input + text_output + '\n\n'),
     }
 
 

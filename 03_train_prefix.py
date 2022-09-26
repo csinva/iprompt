@@ -19,7 +19,7 @@ import pandas as pd
 from tqdm import tqdm
 from collections import defaultdict
 from model_utils.prefix import (
-    AutoPrompt, GeneticAutoPrompt,
+    AutoPrompt, iPrompt,
     PrefixLoss, PrefixModel,
     PromptTunedModel, HotFlip, GumbelPrefixModel
 )
@@ -37,7 +37,8 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 model_cls_dict = {
     'autoprompt': AutoPrompt,
-    'genetic': GeneticAutoPrompt,
+    'genetic': iPrompt, # outdated alias
+    'iprompt': iPrompt,
     'gumbel': GumbelPrefixModel,
     'hotflip': HotFlip,
     'prompt_tune': PromptTunedModel,
@@ -116,7 +117,9 @@ def train_model(
                 batch['input'] = batch['last_input']
             x_text, y_text = model.prepare_batch(batch=batch)
 
-            tok = functools.partial(model.tokenizer, return_tensors='pt', padding='longest')
+            tok = functools.partial(
+                model.tokenizer, return_tensors='pt', padding='longest',
+                truncation=True, max_length=args.max_length)
             x_tokenized = tok(x_text).to(device)
             y_tokenized = tok(y_text).to(device)
             full_text_tokenized = tok(batch['text']).to(device)
@@ -259,7 +262,6 @@ def eval_model(
 
     if r["prefixes"]:
         # if we specified multiple prefixes (autoprompt or genetic), let's evaluate them all!
-
         for prefix_ids in tqdm(r["prefix_ids"], desc="evaluating prefixes"):
             model._set_prefix_ids(new_ids=torch.tensor(prefix_ids).to(device))
 
@@ -319,6 +321,8 @@ if __name__ == '__main__':
                         help='directory for saving')
     parser.add_argument('--epoch_save_interval', type=int, default=1,
                         help='interval to save results')
+    parser.add_argument('--iprompt_generation_repetition_penalty', type=float, default=2.0,
+                        help='repetition penalty for iprompt generations')
     parser.add_argument('--lr', type=float, default=1e-4,
                         help='learning rate')
     parser.add_argument('--gamma', type=float, default=0.0,
@@ -330,6 +334,7 @@ if __name__ == '__main__':
                         help='names of tasks as list; alternative to passing task_name')
     parser.add_argument('--n_shots', type=int, default=1,
                         help='number of shots in the prompt')
+    parser.add_argument('--max_length', type=int, default=128, help='maximum length for inputs')
     parser.add_argument('--single_shot_loss', type=int, default=0,
                         help='if n_shots==0, load multiple shots but only use one compute loss')
     parser.add_argument('--mask_possible_answers', type=int, default=0,
@@ -342,7 +347,7 @@ if __name__ == '__main__':
                         help='number of learned prefix tokens (for gumbel, hotflip, autoprompt, prompt-tuning)')
     parser.add_argument('--use_preprefix', type=int, default=1, choices=(0, 1), 
                         help='whether to use a template pre-prefix')
-    parser.add_argument('--genetic_preprefix_str', type=str, default='',
+    parser.add_argument('--iprompt_preprefix_str', type=str, default='',
                     help='Text like "Output the number that" or "Answer F/M if"...'
     )
     parser.add_argument('--llm_float16', '--float16', '--parsimonious', type=int, default=0, choices=(0, 1),

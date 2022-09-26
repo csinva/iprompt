@@ -185,6 +185,14 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
         pickle_filename = oj(results_dir, dir_name, 'results.pkl')
         json_dict = CPU_Unpickler(open(pickle_filename, 'rb')).load()
 
+        if 'prefixes' not in json_dict:
+            print(f'skipping {pickle_filename} (run still in progress?)')
+            continue
+        
+        # remove list of losses (shouldn't be loaded in df, and will be a different length.)
+        if 'all_losses' in json_dict:
+            del json_dict['all_losses']
+
         # fix extra types for missing prefixes when there weren't enough starting with
         # different tokens to save
         if 'prefix_type' in json_dict:

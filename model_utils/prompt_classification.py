@@ -191,7 +191,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
 
                 total_loss += loss.item()
 
-            # deccode multiple tokens
+            # decode multiple tokens
             elif multi_token:
                 bad_words = [[model.tokenizer.eos_token_id]]
                 if isinstance(model.model.config.bad_words_ids, list):
@@ -204,7 +204,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                                                  max_new_tokens=max_new_tokens,
                                                  min_length=1,
                                                  length_penalty=0.6,
-                                                 num_return_squences=1,
+                                                 num_return_sequences=1,
                                                 #  output_scores=True,
                                                  return_dict_in_generate=True,
                                                  )

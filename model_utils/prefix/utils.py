@@ -212,9 +212,15 @@ class PrefixModel(nn.Module, abc.ABC):
         new_input_ids, embeddings = self.embed_input_ids(
             input_ids=input_ids, prefix_ids=prefix_ids
         )
+
+        # Automatically set attention mask and position-ids
         attention_mask = ~(new_input_ids == self.tokenizer.pad_token_id)
+
         assert new_input_ids.shape == embeddings.shape[0:2]
-        return new_input_ids, self.model(inputs_embeds=embeddings, attention_mask=attention_mask)
+        return new_input_ids, self.model(
+            inputs_embeds=embeddings,
+            attention_mask=attention_mask,
+        )
     
     def pre_epoch(self) -> None:
         return
@@ -257,10 +263,26 @@ class PrefixModel(nn.Module, abc.ABC):
             possible_answer_mask: torch.Tensor,
             prefix_ids: Optional[torch.Tensor] = None
         ) -> torch.Tensor:
+        # roll tensors together to put padding at the end. slow but I know it's right. (TODO: tensorize)
+        input_ids = []
+        num_pad_tokens = (original_input_ids == self.tokenizer.eos_token_id).sum(dim=1)
+        for i in range(len(original_input_ids)):
+            if num_pad_tokens[i] == 0:
+                next_tensor = torch.cat((original_input_ids[i], next_token_ids[i]), dim=0)
+            else:
+                num_non_pad_tokens = original_input_ids.shape[1] - num_pad_tokens[i]
+                padding = torch.full(size=(num_pad_tokens[i], ), fill_value=self.tokenizer.eos_token_id).to(device)
+                next_tensor = torch.cat((original_input_ids[i][:num_non_pad_tokens], next_token_ids[i], padding), dim=0)
+            input_ids.append(
+                next_tensor
+            )
+
+        input_ids = torch.stack(input_ids)
+        assert input_ids.shape == (original_input_ids.shape[0], original_input_ids.shape[1] + next_token_ids.shape[1])
 
         # feed into the model. prefix-handling is implemented in PrefixModel::forward.
         full_input_ids, outputs = self.forward(
-            input_ids=torch.cat((original_input_ids, next_token_ids), dim=1), 
+            input_ids=input_ids,
             prefix_ids=prefix_ids,
         )
         # make sure we have same number of predictions as tokens
@@ -276,20 +298,18 @@ class PrefixModel(nn.Module, abc.ABC):
                 next_token_logits.argmax(dim=-1) == next_token_ids[:, 0]
             ).int().sum()
         else:
+            # apply possible answer mask for single-token
+            next_token_logits = torch.where(
+                possible_answer_mask[None],
+                next_token_logits, torch.tensor(float('-inf')).to(device)
+            )
             n_correct = (
                 (next_token_logits.exp() * possible_answer_mask).argmax(dim=-1)
                     ==
                 next_token_ids[:, 0]
             ).int().sum()
 
-        # apply possible answer mask for single-token
-        if possible_answer_mask is not None:
-            next_token_logits = torch.where(
-                possible_answer_mask[None],
-                next_token_logits, torch.tensor(float('-inf')).to(device)
-            )
-
-        # compute loss from first
+        # compute loss from first token
         original_losses = torch.nn.functional.cross_entropy(
             input=next_token_logits,
             target=next_token_ids[:, 0],
@@ -325,6 +345,10 @@ class PrefixModel(nn.Module, abc.ABC):
             loss = all_losses.mean()
         else:
             loss = original_losses.mean()
+        
+        if DEBUG_VERBOSE: 
+            print(f">> loss for input string: {self.tokenizer.decode(full_input_ids[0])}")
+            print(f"\tLoss = {loss:.3f}")
 
         return full_input_ids, loss, n_correct
     
@@ -446,18 +470,26 @@ class PrefixPool:
         ) -> List[Tuple[int]]:
         all_prefixes = [p for p, score in self._best_prefix_by_start_token.values()]
         top_prefixes = self._topk_from_prefixes(
-            all_prefixes, k=k, min_occurrences=1
+            all_prefixes, k=k, min_occurrences=min_occurrences
         )
+        if not len(top_prefixes):
+            # get top prefixes the first time
+            top_prefixes = self._topk_from_prefixes(
+                all_prefixes, k=k, min_occurrences=0
+            )
         n_so_far = len(top_prefixes)
         if n_so_far < k:
             # fallback if we don't have enough first-tokens yet
-            more_prefixes = (
-                set(self.topk_all(k=k, min_occurrences=min_occurrences))
-                - set(top_prefixes)
-            )
+            # more_prefixes = (
+            #     set(self.topk_all(k=k, min_occurrences=min_occurrences))
+            #     - set(top_prefixes)
+            # )
             num_prefixes_to_add = k - len(top_prefixes)
-            num_prefixes_to_add = min(len(more_prefixes), num_prefixes_to_add)
-            top_prefixes += random.sample(more_prefixes, num_prefixes_to_add)
+            # num_prefixes_to_add = min(len(more_prefixes), num_prefixes_to_add)
+            more_prefixes = [
+                random.choice(top_prefixes) for _ in range(num_prefixes_to_add)
+            ]
+            top_prefixes += more_prefixes
         top_prefixes.sort(key=self._score)
         return top_prefixes
 
