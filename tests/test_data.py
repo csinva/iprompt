@@ -71,6 +71,12 @@ def test_get_data():
           repr(dset[0]['text']))
     print('\tlen', len(dset))
 
+    dset, check_answer_func, descr = get_data(
+        args, task_name='add_three', n_shots=1)
+    print(f'Example add_three 1-shot',
+          repr(dset[0]['text']))
+    print('\tlen', len(dset))
+
     print('\n\n################Lets look at how answers are checked############\n')
     task_name = 'add_two'
     task = TASKS[task_name]
