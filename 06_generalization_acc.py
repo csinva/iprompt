@@ -20,6 +20,39 @@ import dvu
 dvu.set_style()
 
 
+task_names_math_one = ['square_one', 'exp_one', 'double_one', 'fibonacci_one']
+task_names_math_two = ['add_two', 'multiply_two', 'divide_two', 'subtract_two',
+                       'max_two', 'first_two']
+task_names_math_three = ['add_three', 'multiply_three', 'max_three', 'first_three']
+task_names_anli = ['task1146_country_capital', 'task1509_evalution_antonyms', 'task1147_country_currency',
+                   'task1149_item_check_edible', 'task183_rhyme_generation', 'task1191_food_veg_nonveg',
+                   'task092_check_prime_classification', 'task088_identify_typo_verification',
+                   'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql'
+                   ]
+
+
+
+######################## ACTUAL HYPERPARAMS ################################
+checkpoints = ['EleutherAI/gpt-neo-2.7B', 'EleutherAI/gpt-j-6B']
+max_digit = 10 # If this is not 10, only math gets run!
+TASK_SETTINGS = {
+    'one_digit_all': task_names_math_one + task_names_math_two + task_names_anli,
+    'double_digit_two_nums': task_names_math_two,
+    'one_digit_three_nums': task_names_math_three,
+}
+task_key = 'one_digit_three_nums'
+tasks = TASK_SETTINGS[task_key]
+############################################################################
+
+
+
+# prepare the args
+batch_sizes = {
+    'gpt2-medium': 32,
+    'EleutherAI/gpt-j-6B': 8,
+    'EleutherAI/gpt-neo-2.7B': 16,
+    'EleutherAI/gpt-neox-20b': 1,
+}
 class fake_args:
     template_num_task_phrasing = 0
     max_dset_size = 1000
@@ -34,35 +67,6 @@ class fake_args:
 
 args = fake_args()
 np.random.seed(args.seed)
-
-task_names_math_one = ['square_one', 'exp_one', 'double_one', 'fibonacci_one']
-task_names_math_two = ['add_two', 'multiply_two', 'divide_two', 'subtract_two',
-                       'max_two', 'first_two']
-task_names_math_three = ['add_three', 'multiply_three', 'max_three', 'first_three']
-task_names_anli = ['task1146_country_capital', 'task1509_evalution_antonyms', 'task1147_country_currency',
-                   'task1149_item_check_edible', 'task183_rhyme_generation', 'task1191_food_veg_nonveg',
-                   'task092_check_prime_classification', 'task088_identify_typo_verification',
-                   'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql'
-                   ]
-
-batch_sizes = {
-    'gpt2-medium': 32,
-    'EleutherAI/gpt-j-6B': 8,
-    'EleutherAI/gpt-neo-2.7B': 16,
-    'EleutherAI/gpt-neox-20b': 1,
-}
-
-######################## ACTUAL HYPERPARAMS
-checkpoints = ['EleutherAI/gpt-neo-2.7B', 'EleutherAI/gpt-j-6B']
-max_digit = 10 # If this is not 10, only math gets run!
-
-TASK_SETTINGS = {
-    'one_digit_all': task_names_math_one + task_names_math_two + task_names_anli,
-    'double_digit_two_nums': task_names_math_two,
-    'one_digit_three_nums': task_names_math_three,
-}
-task_key = 'one_digit_three_nums'
-tasks = TASK_SETTINGS[task_key]
 
 # , , 'gpt2-xl', 'EleutherAI/gpt-neox-20b']:
 for checkpoint in checkpoints:
