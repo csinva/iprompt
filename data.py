@@ -11,12 +11,13 @@ import torch.nn
 from data_utils import data_funcs
 from data_utils.one_num import TASKS_ONE_NUM
 from data_utils.two_num import TASKS_TWO_NUMS
+from data_utils.three_num import TASKS_THREE_NUMS
 from data_utils.anli import TASKS_ANLI
 
-TASKS = {**TASKS_TWO_NUMS, **TASKS_ONE_NUM, **TASKS_ANLI}
+TASKS = {**TASKS_THREE_NUMS, **TASKS_TWO_NUMS, **TASKS_ONE_NUM, **TASKS_ANLI}
 
 
-def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_frac: float=None):
+def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_frac: float = None):
     """
 
     Params
@@ -34,6 +35,8 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_fra
     """
     d = defaultdict(list)
     rng = np.random.default_rng(12345)
+    # 2nd rng to not break compatibility with earlier data
+    rng2 = np.random.default_rng(13)
     task = TASKS[task_name]
 
     if task_name not in TASKS or task_name == 'SUFFIXES':
@@ -41,12 +44,17 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_fra
                         str(TASKS.keys()) + ' or is "SUFFIXES"')
 
     # synthetic math task
-    if task_name in TASKS_ONE_NUM.keys() or task_name in TASKS_TWO_NUMS.keys():
+    if task_name in TASKS_ONE_NUM.keys() \
+            or task_name in TASKS_TWO_NUMS.keys() \
+            or task_name in TASKS_THREE_NUMS.keys():
         template = task['prompt_template_funcs'][args.template_num_task_phrasing]
         if task_name in TASKS_ONE_NUM.keys():
             num_inputs = 1
-        if task_name in TASKS_TWO_NUMS.keys():
+        elif task_name in TASKS_TWO_NUMS.keys():
             num_inputs = 2
+        elif task_name in TASKS_THREE_NUMS.keys():
+            num_inputs = 3
+
         # dont make unnecessarily big if we're just repeating point
         actual_max_dset_size = min(
             pow(args.max_digit, num_inputs), args.max_dset_size)
@@ -58,13 +66,16 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_fra
             else:
                 num1 = rng.integers(low=0, high=args.max_digit)
                 num2 = rng.integers(low=0, high=args.max_digit)
+                num3 = rng2.integers(low=0, high=args.max_digit)
 
             gen_func = task['gen_func']
             if num_inputs == 1:
                 x, y = template(num2, gen_func)
             elif num_inputs == 2:
                 x, y = template(num1, num2, gen_func)
-            
+            elif num_inputs == 3:
+                x, y = template(num1, num2, num3, gen_func)
+
             d['text'].append(x + y)
             d['input'].append(x)
             d['output'].append(y)
@@ -86,13 +97,13 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_fra
             d2['text'].append(''.join(all_shots['text'].values))
             #
             last_input = all_shots.tail(n=1)['input'].values[0]
-            d2['input'].append(''.join(all_shots['text'].values[:-1]) + last_input)
+            d2['input'].append(
+                ''.join(all_shots['text'].values[:-1]) + last_input)
             d2['last_input'].append(last_input)
             #
             last_output = all_shots.tail(n=1)['output'].values[0]
             d2['output'].append(last_output)
             #
-
 
         df = pd.DataFrame.from_dict(d2)
         # shuffle rows
@@ -124,7 +135,6 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_fra
     else:
         dset = Dataset.from_pandas(df)
         return dset, check_answer_func, descr
-
 
 
 def get_init_suffix(args) -> List:
