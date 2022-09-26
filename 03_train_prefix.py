@@ -128,6 +128,8 @@ def train_model(
                 full_text_tokenized=full_text_tokenized,
             )
 
+            r["all_losses"].append(loss)
+
             total_n += len(x_text)
             total_n_datapoints += len(x_text)
             total_n_correct += n_correct
