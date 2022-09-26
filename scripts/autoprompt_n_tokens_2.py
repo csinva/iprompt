@@ -13,7 +13,7 @@ PARAMS_SHARED_DICT = {
     # things to vary
     'n_shots': [1],
     'task_name_list': [
-        'add_two', 'multiply_two',
+        'multiply_two',
     ],
     'model_cls': ['genetic', 'autoprompt'],
     'num_learned_tokens': [3, 6, 12, 24, 48],
@@ -23,12 +23,12 @@ PARAMS_SHARED_DICT = {
 
     # stopping criteria
     'n_epochs': 1000,
-    'max_dset_size': [100000],
-    'max_n_datapoints': [100000],
+    'max_dset_size': [100_000],
+    'max_n_datapoints': [100_000],
     'early_stopping_steps': [50],
 
     # fixed params
-    'max_digit': [10],
+    'max_digit': [100],
     'train_split_frac': [0.75],
     'single_shot_loss': [1],
 }

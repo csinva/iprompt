@@ -1,3 +1,5 @@
+from typing import Dict
+
 import numpy as np
 import torch
 from torch import nn
@@ -39,7 +41,8 @@ COLORS = OrderedDict({
     # 'Suffix, single-output decoding (Zero-shot)': '#d9d9d9',
     # 'Suffix, single-output decoding (4-shot)': '#969696',
     # 'Suffix, single-output decoding (10-Ex.)': '#525252',
-    'Templated suffix, average-output decoding': '#9ecae1',
+    # 'Templated suffix, average-output decoding': '#9ecae1',
+    'Templated suffix': '#9ecae1',
     # 'Templated suffix, average-output decoding': '#4292c6',
     # 'Templated suffix, average-output decoding': '#084594',
     ############################################################
@@ -47,12 +50,21 @@ COLORS = OrderedDict({
     'AutoPrompt (6 tokens)': '#31a354',
     # 'AutoPrompt (4-shot)': '#31a354',
     ############################################################
-    'EvoPrompt (3 tokens)': '#f69c73',
-    'EvoPrompt (6 tokens)': '#e83f3f',
+    'iPrompt (3 tokens)': '#f69c73',
+    'iPrompt (6 tokens)': '#e83f3f',
 
 }.items())
 SORTED_HUE_NAMES = list(COLORS.keys())
 
+
+
+METHOD_NAMES = {
+    'autoprompt': 'AutoPrompt',
+    'genetic': 'iPrompt',
+}
+def get_legend__autoprompt(row: Dict) -> str:
+    nt = f'{row["num_learned_tokens"]} tokens'
+    return METHOD_NAMES.get(row["model_cls"]) + f' ({nt})'
 
 YLABS = {
     'final_num_suffixes_checked': 'Number of suffixes checked before finding correct answer\n(lower is better)',
