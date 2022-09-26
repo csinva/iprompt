@@ -109,13 +109,13 @@ args.max_digit = settings['max_digit']
 prompts_saved = pkl.load(open(oj(results_acc_dir, 'prompts.pkl'), 'rb'))
 
 for checkpoint in checkpoints_test:
-    d = defaultdict(list)
     print('loading', checkpoint)
     model = prompt_classification.create_model(checkpoint)
     print('calculating accs...')
     for task_name in tqdm(settings['task_names']):
-        for n_shots in settings['n_shots']:
-            for prompt_type in settings['prompt_types']:
+        for prompt_type in settings['prompt_types']:
+            d = defaultdict(list)
+            for n_shots in settings['n_shots']:
                 args.task_name = task_name
                 args.n_shots = n_shots
                 (dset, dset_test), check_answer_func, descr = data.get_data(
@@ -131,7 +131,10 @@ for checkpoint in checkpoints_test:
                     prompt_actual = descr
                 elif prompt_type in ['autoprompt', 'iprompt']:
                     # get saved prompt
-                    prompt_actual = prompts_saved.loc[task_name][prompt_type]
+                    task_name_train = task_name
+                    if task_name.endswith('three'):
+                        task_name_train = task_name.replace('three', 'two')
+                    prompt_actual = prompts_saved.loc[task_name_train][prompt_type]
                 elif prompt_type == '':
                     prompt_actual = prompt_type
 
@@ -140,7 +143,7 @@ for checkpoint in checkpoints_test:
                 if task_name == 'task107_splash_question_to_sql':
                     batch_size = max(1, batch_size//4)
                 loss, acc = prompt_classification.test_model_on_task_with_prefix(
-                    dset=dset, model=model, prefix=prompt_actual, multi_token=True, verbose=False,
+                    dset=dset_test, model=model, prefix=prompt_actual, multi_token=True, verbose=False,
                     batch_size=batch_size,
                 )
                 d['acc'].append(acc)
