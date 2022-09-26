@@ -435,4 +435,4 @@ if __name__ == '__main__':
         else:
             dset_train, dset_test = dset
             r = train_model(args=args, r=r, dset=dset_train, model=model, tokenizer=tokenizer)
-            # r = eval_model(args=args, r=r, dset=dset_test[:128], model=model, tokenizer=tokenizer)
+            r = eval_model(args=args, r=r, dset=Dataset.from_dict(dset_test[:128]), model=model, tokenizer=tokenizer)
