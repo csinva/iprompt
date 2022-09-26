@@ -12,8 +12,9 @@ from data_utils import data_funcs
 from data_utils.one_num import TASKS_ONE_NUM
 from data_utils.two_num import TASKS_TWO_NUMS
 from data_utils.anli import TASKS_ANLI
+from data_utils.sst2 import TASKS_SST2
 
-TASKS = {**TASKS_TWO_NUMS, **TASKS_ONE_NUM, **TASKS_ANLI}
+TASKS = {**TASKS_TWO_NUMS, **TASKS_ONE_NUM, **TASKS_ANLI, **TASKS_SST2}
 
 
 def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_frac: float=None):
@@ -70,9 +71,16 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_fra
             d['output'].append(y)
         df = pd.DataFrame.from_dict(d)
 
-    # NLI task
-    elif task_name in TASKS_ANLI.keys():
+    # NLI task, or SST-2
+    else:
         df = task['gen_func'](task_name)
+    
+    assert {'text', 'input', 'output'} <= set(df.columns), f"got bad columns {df.columns}"
+
+    # Example dataframe row:
+    # {'text': 'Given the input numbers 69 and 22, the answer is 91.\n\n', 
+    # 'input': 'Given the input numbers 69 and 22, the answer is', 
+    # 'output': ' 91.\n\n'}
 
     df = df.sample(n=min(df.shape[0], args.max_dset_size),
                    replace=False)  # shuffle rows
@@ -139,4 +147,8 @@ def get_init_suffix(args) -> List:
         init_suffixes = TASKS_ONE_NUM['SUFFIXES'][args.task_name]
     elif args.task_name in TASKS_ANLI.keys():
         init_suffixes = TASKS_ANLI['SUFFIXES'][args.task_name]
+    elif args.task_name in TASKS_SST2.keys():
+        init_suffixes = TASKS_SST2['SUFFIXES'][args.task_name]
+    else:
+        raise Exception(f'no suffix found for task {args.task_name}')
     return init_suffixes[args.template_num_init_string]
