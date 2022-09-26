@@ -16,8 +16,7 @@ cmd_python = 'python'
 PARAMS_SHARED_DICT = {
     # things to vary
     'mask_possible_answers': [0, 1],
-    'mask_possible_answers': [0],
-    'model_cls': ['autoprompt', 'genetic'],
+    'model_cls': ['genetic', 'autoprompt'],
     'num_learned_tokens': [16],
     'task_name_list': ['sst2_train'],
 

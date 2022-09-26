@@ -37,7 +37,7 @@ class AutoPrompt(HotFlip):
             tokenizer=self.tokenizer,
             criterion='loss'  # in ['loss', 'acc', 'combined']
         )
-        self._VERBOSE = True
+        self._VERBOSE = False
         self._num_min_occurrences = 1
     
     def serialize(self) -> Dict[str, Any]:
@@ -160,7 +160,7 @@ class AutoPrompt(HotFlip):
         # randomly change the token to swap
         self._swap_token_idx = random.randint(0, (self._num_tokens-1))
         # get best prefix we've seen
-        best_prefix = candidate_prefix_ids[all_candidate_losses.argmin()
+        best_prefix = candidate_prefix_ids[all_candidate_losses.argmin()]
         best_prefix_loss = all_candidate_losses.min()
         best_prefix_n_correct = all_n_correct[all_candidate_losses.argmin()]
         if self._VERBOSE: print("** set new prefix", best_prefix)
