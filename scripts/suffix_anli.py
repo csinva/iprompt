@@ -36,7 +36,8 @@ PARAMS_COUPLED_DICT = submit_utils.PARAMS_COUPLED_DICT
 
 # long_suffs_full
 PARAMS_SHARED_DICT['save_dir'] = [f'/home/chansingh/mntv1/suffix_long_rerun']
-PARAMS_SHARED_DICT['max_num_tokens'] = [3, 6]
+PARAMS_SHARED_DICT['beam_size'] = [4]
+PARAMS_SHARED_DICT['max_num_tokens'] = [6, 3]
 PARAMS_SHARED_DICT['use_early_stopping'] = [0]
 PARAMS_SHARED_DICT['use_generic_query'] = [1]
 PARAMS_SHARED_DICT['n_shots'] = [1]
@@ -45,7 +46,7 @@ PARAMS_SHARED_DICT['float16'] = [1]
 PARAMS_SHARED_DICT['max_dset_size'] = [5000]
 PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
     ('checkpoint', 'batch_size'): [
-        ('EleutherAI/gpt-j-6B', 8)
+        ('EleutherAI/gpt-j-6B', 16)
     ],
 }
 
@@ -53,8 +54,8 @@ PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gp
 cmd_python = 'python'
 ks_final, param_combos_final = submit_utils.combine_param_dicts(
     PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT)
-
-submit_utils.run_dicts(ks_final, param_combos_final, cmd_python=cmd_python,
+print(param_combos_final)
+submit_utils.run_dicts(ks_final, param_combos_final[::-1], cmd_python=cmd_python,
                        script_name='02_train_suffix.py', actually_run=True,
                        use_slurm=False, save_dir=PARAMS_SHARED_DICT['save_dir']
 )

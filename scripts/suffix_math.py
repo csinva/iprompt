@@ -41,7 +41,8 @@ PARAMS_COUPLED_DICT = submit_utils.PARAMS_COUPLED_DICT
 
 # long_suffs_full
 PARAMS_SHARED_DICT['save_dir'] = [f'/home/chansingh/mntv1/suffix_long_rerun']
-PARAMS_SHARED_DICT['max_num_tokens'] = [3, 6]
+PARAMS_SHARED_DICT['beam_size'] = [4]
+PARAMS_SHARED_DICT['max_num_tokens'] = [6, 3]
 PARAMS_SHARED_DICT['use_early_stopping'] = [0]
 PARAMS_SHARED_DICT['use_generic_query'] = [1]
 PARAMS_SHARED_DICT['n_shots'] = [1]
@@ -51,7 +52,7 @@ PARAMS_SHARED_DICT['max_digit'] = [10]
 PARAMS_SHARED_DICT['max_dset_size'] = [5000]
 PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
     ('checkpoint', 'batch_size'): [
-        ('EleutherAI/gpt-j-6B', 8)
+        ('EleutherAI/gpt-j-6B', 12)
     ],
 }
 

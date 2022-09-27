@@ -157,12 +157,12 @@ if __name__ == '__main__':
             tokenizer.pad_token = tokenizer.eos_token
             if args.float16:
                 model = AutoModelForCausalLM.from_pretrained(
-                    checkpoint, output_hidden_states=False)
-            else:
-                model = AutoModelForCausalLM.from_pretrained(
                     checkpoint, output_hidden_states=False,
                     revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True
                     )     
+            else:
+                model = AutoModelForCausalLM.from_pretrained(
+                    checkpoint, output_hidden_states=False)
             model = parallel.model_to_device(args, model)
 
         # set up saving

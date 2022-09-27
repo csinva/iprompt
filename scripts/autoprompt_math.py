@@ -50,7 +50,7 @@ PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gp
         # ('gpt2-large', 100, 0),
         # ('gpt2-xl', 32, 0),
         # ('EleutherAI/gpt-neo-2.7B', 16, 0),
-        ('EleutherAI/gpt-j-6B', 32, 1)
+        ('EleutherAI/gpt-j-6B', 64, 1)
         # ('EleutherAI/gpt-neox-20b', 1, 0),
     ],
 }

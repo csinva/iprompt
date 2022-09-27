@@ -59,7 +59,7 @@ PARAMS_SHARED_DICT_ANLI = {
 
 PARAMS_SHARED_DICT_SUFFIX = {
     # fixed params
-    'beam_size': [5],
+    'beam_size': [4],
     'beam_size_extra': [50],
     'max_num_tokens': [1],
     # parallel settings
