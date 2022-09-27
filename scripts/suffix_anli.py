@@ -55,7 +55,7 @@ cmd_python = 'python'
 ks_final, param_combos_final = submit_utils.combine_param_dicts(
     PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT)
 print(param_combos_final)
-submit_utils.run_dicts(ks_final, param_combos_final[::-1], cmd_python=cmd_python,
+submit_utils.run_dicts(ks_final, param_combos_final, cmd_python=cmd_python,
                        script_name='02_train_suffix.py', actually_run=True,
                        use_slurm=False, save_dir=PARAMS_SHARED_DICT['save_dir']
 )
