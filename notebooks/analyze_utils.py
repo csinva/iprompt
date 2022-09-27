@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Union
 
 import numpy as np
 import torch
@@ -50,10 +50,12 @@ COLORS = OrderedDict({
     ############################################################
     'AutoPrompt (3 tokens)': '#74c476',
     'AutoPrompt (6 tokens)': '#31a354',
+    'AutoPrompt (16 tokens)': '#31a354',
     # 'AutoPrompt (4-shot)': '#31a354',
     ############################################################
     'iPrompt (3 tokens)': '#f69c73',
     'iPrompt (6 tokens)': '#e83f3f',
+    'iPrompt (16 tokens)': '#e83f3f',
 
 }.items())
 SORTED_HUE_NAMES = list(COLORS.keys())
@@ -75,6 +77,11 @@ YLABS = {
     'reciprocal_rank_multi': 'Reciprocal rank (higher is better)',
 }
 
+def t_item(t: Union[float, torch.Tensor]) -> float:
+    if isinstance(t, torch.Tensor):
+        return t.item()
+    else:
+        return t
 
 class CPU_Unpickler(pkl.Unpickler):
     def find_class(self, module, name):
@@ -169,17 +176,18 @@ def load_results_and_cache_prefix_json(results_dir: str, save_file: str = 'r.pkl
 def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r.pkl', include_losses: bool = False) -> pd.DataFrame:
     """Prefix script stores results.json instead of results_final.pkl
     """
-    dir_names = sorted([fname
-                        for fname in os.listdir(results_dir)
-                        if os.path.isdir(oj(results_dir, fname))
-                        and (
-                            os.path.exists(
-                                oj(results_dir, fname, 'results.json'))
-                            or
-                            os.path.exists(
-                                oj(results_dir, fname, 'results.pkl'))
-                        )
-                        ])
+    dir_names = sorted(
+        [fname
+        for fname in os.listdir(results_dir)
+        if os.path.isdir(oj(results_dir, fname))
+        and (
+            os.path.exists(
+                oj(results_dir, fname, 'results.json'))
+            or
+            os.path.exists(
+                oj(results_dir, fname, 'results.pkl'))
+        )
+    ])
     dfs = []
     all_losses = []
     for dir_name in tqdm(dir_names):
@@ -191,8 +199,8 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
             continue
         
         # remove list of losses (shouldn't be loaded in df, and will be a different length.)
-        all_losses.append(json_dict.get('all_losses'))
         if 'all_losses' in json_dict:
+            all_losses.append(list(map(t_item, json_dict['all_losses'])))
             del json_dict['all_losses']
         if 'all_n_correct' in json_dict:
             del json_dict['all_n_correct']
@@ -232,6 +240,10 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
             lambda n: 1/(n+1))
 
         dfs.append(df)
+
+    if not len(dfs):
+        print(f'Warning: no valid dfs found in {results_dir}')
+        return None
 
     r = pd.concat(dfs, axis=0)
     r.to_pickle(oj(results_dir, save_file))

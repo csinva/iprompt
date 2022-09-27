@@ -81,6 +81,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                                    restrict_to_valid_answers=True,
                                    multi_token=False,
                                    max_new_tokens=7,
+                                   max_length=256,
                                    verbose=True,
                                    ) -> float:
     """Tests a given language model on a dataset and returns {zero,few}-shot loss. 
@@ -98,6 +99,8 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
         Only applied when multi_token is false.
     multi_token (bool):
         Whether to allow multiple tokens (uses beam search)
+    max_length (int):
+        Max length for truncation. Won't be applied to most datasets.
     max_new_tokens (int):
         number of tokens to generate when checking multi-token output
 
@@ -152,7 +155,9 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
         # note: this part currently assumes there aren't extra padding tokens at the end
         with torch.no_grad():
             ex_inputs = model.tokenizer(
-                x_text, padding='longest', return_tensors='pt').to(model.model.device)
+                x_text, padding='longest', truncation=True,
+                max_length=max_length,
+                return_tensors='pt').to(model.model.device)
 
             # just decode a single token
             if not multi_token:
