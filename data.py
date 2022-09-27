@@ -13,9 +13,9 @@ from data_utils.one_num import TASKS_ONE_NUM
 from data_utils.two_num import TASKS_TWO_NUMS
 from data_utils.three_num import TASKS_THREE_NUMS
 from data_utils.anli import TASKS_ANLI
-from data_utils.sst2 import TASKS_SST2
+from data_utils.classification import TASKS_CLASSIFICATION
 
-TASKS = {**TASKS_THREE_NUMS, **TASKS_TWO_NUMS, **TASKS_ONE_NUM, **TASKS_ANLI, **TASKS_SST2}
+TASKS = {**TASKS_THREE_NUMS, **TASKS_TWO_NUMS, **TASKS_ONE_NUM, **TASKS_ANLI, **TASKS_CLASSIFICATION}
 
 
 def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_frac: float = None):
@@ -82,7 +82,7 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_fra
             d['output'].append(y)
         df = pd.DataFrame.from_dict(d)
 
-    # NLI task, or SST-2
+    # NLI task, or classification
     else:
         df = task['gen_func'](task_name)
     
@@ -159,8 +159,8 @@ def get_init_suffix(args) -> List:
         init_suffixes = TASKS_THREE_NUMS['SUFFIXES'][args.task_name] 
     elif args.task_name in TASKS_ANLI.keys():
         init_suffixes = TASKS_ANLI['SUFFIXES'][args.task_name]
-    elif args.task_name in TASKS_SST2.keys():
-        init_suffixes = TASKS_SST2['SUFFIXES'][args.task_name]
+    elif args.task_name in TASKS_CLASSIFICATION.keys():
+        init_suffixes = TASKS_CLASSIFICATION['SUFFIXES'][args.task_name]
     else:
         raise Exception(f'no suffix found for task {args.task_name}')
     return init_suffixes[args.template_num_init_string]

@@ -5,7 +5,7 @@ import sys
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-save_dir = '/home/johnmorris/interpretable-autoprompting/results/autoprompt_sst2_2'
+save_dir = '/home/johnmorris/interpretable-autoprompting/results/autoprompt_sentiment/tweets'
 
 cmd_python = 'python'
 
@@ -15,10 +15,19 @@ cmd_python = 'python'
 # --single_shot_loss=1   --mask_possible_answers=0   --task_name sst2_train
 PARAMS_SHARED_DICT = {
     # things to vary
-    'mask_possible_answers': [0, 1],
-    'model_cls': ['autoprompt', 'genetic'],
+    'mask_possible_answers': [0],
+    'model_cls': [
+        'autoprompt',
+        'genetic'
+    ],
     'num_learned_tokens': [16],
-    'task_name_list': ['sst2_train'],
+    'task_name_list': [
+        # 'sst2_train',
+        # 'imdb_train',
+        # 'rt_train',
+        # 'ffb_train',
+        'tweets_train',
+    ],
 
     # iprompt_generation_repetition_penalty: [1.0, 1.5, 2.0],
 
@@ -28,18 +37,22 @@ PARAMS_SHARED_DICT = {
     'early_stopping_steps': [50],
 
     # fixed params
-    'train_split_frac': [1.0],
+    'train_split_frac': [0.75], # since some don't have a test set
     'single_shot_loss': [1],
     'n_shots': [5],
-    'seed': [1],
-    'max_length': [64],
+    'seed': [
+        3,
+        2,
+        1,
+    ],
+    'max_length': [128],
     'iprompt_generation_repetition_penalty': [1.0],
 }
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 
 PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
     ('checkpoint', 'batch_size', 'float16'): [
-        ('EleutherAI/gpt-j-6B', 16, 1)
+        ('EleutherAI/gpt-j-6B', 8, 1)
     ],
     # things to average over
     # ('seed', 'iprompt_generation_repetition_penalty'): [
