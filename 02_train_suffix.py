@@ -45,7 +45,7 @@ def add_main_args(parser):
     # algorithm args
     # gpt # "gpt2-medium" (355M), "gpt2-large" (774M), "gpt2-xl" (1.5B)
     # gpneo # "EleutherAI/gpt-neo-2.7B", "EleutherAI/gpt-j-6B", "EleutherAI/gpt-neox-20b"
-    parser.add_argument('--checkpoint', type=str, default="gpt2-medium",
+    parser.add_argument('--checkpoint', type=str, default="gpt2",
                         help='model checkpoint to use')
     parser.add_argument('--max_num_tokens', type=int, default=1,
                         help='max length of sequence to find (num tokens)')
