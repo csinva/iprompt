@@ -44,7 +44,8 @@ PARAMS_SHARED_DICT_ANLI = {
     # things to vary
     'n_shots': [1, 5],
     'task_name_list': [
-        ['task1146_country_capital', 'task1509_evalution_antonyms', 'task1147_country_currency',
+        [
+            'task1146_country_capital', 'task1509_evalution_antonyms', 'task1147_country_currency',
          'task1149_item_check_edible', 'task183_rhyme_generation', 'task1191_food_veg_nonveg',
          'task092_check_prime_classification', 'task088_identify_typo_verification',
           'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql'

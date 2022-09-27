@@ -57,7 +57,7 @@ def get_probs_avg_next_token(args, suffix_str: str, model, dataloader,
     """
     num_examples = 0
     cum_logits = None
-    for idx, batch in tqdm(enumerate(dataloader), total=len(dataloader)):
+    for idx, batch in enumerate(dataloader):
 
         # set up inputs
         text = batch['text']
