@@ -125,9 +125,23 @@ def get_probs_single_query_next_token(args, suffix_str: str, model, dataloader, 
 
     return next_token_logits
 
+def get_top_candidates_and_probs_suff(r, min_len=4):
+    probs = np.array(r['running_prob'])
+    suffix_str_added = np.array(r['suffix_str_added'])
+    num_tokens_added = np.array(r['num_tokens_added'])
+    idxs = (num_tokens_added == max(r['num_tokens_added']))
+
+    suffix_str_added = suffix_str_added[idxs]
+    probs = probs[idxs]
+
+
+    args_prob_sort = np.argsort(probs)[::-1]
+    suffix_str_added = suffix_str_added[args_prob_sort]
+    probs = probs[args_prob_sort]
+    return suffix_str_added, probs
 
 def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_dir,
-                 disallow_whitespace_tokens=True,
+                 disallow_whitespace_tokens=False,
                  beam_size_printing=1000,  # this might slow things down a bit but won't change anything
                  beam_size_for_saving=15
                  ):
@@ -155,6 +169,9 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
 
         # save results for suffix_str
         r['suffix_str_added'].append(suffix_str[r['len_suffix_str_init']:])
+        r['num_tokens_added'].append(suffix_dict['num_tokens_added'])
+        r['num_model_queries'].append(num_model_queries)
+        r['running_prob'].append(suffix_dict['running_prob'])
         
         # break if we've added enough tokens
         if suffix_dict['num_tokens_added'] >= args.max_num_tokens:
@@ -200,9 +217,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
         logging.debug('\t' + 'idxs_correct: ' + str(np.argwhere(
             [check_answer_func(x) for x in top_decoded_tokens]).flatten().tolist()))
 
-        # if we made it here, we did not find the answer
-        r['num_model_queries'].append(num_model_queries)
-        r['running_prob'].append(suffix_dict['running_prob'])
+        # if we made it here, we did not find the answer and early stop
         if args.use_verbose_saving:
             r['correct'].append(False)
             r['suffix_str_full'].append(suffix_str)
@@ -261,7 +276,13 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
                     'num_suffixes_checked': num_suffixes_checked + (args.beam_size + args.beam_size_extra) * (beam_num + 1)
                 })
 
-    # failed to find anything, save and return
+    if args.max_num_tokens > 1:
+        candidates, probs = get_top_candidates_and_probs_suff(r)    
+        r['top_prompt'] = candidates[0]
+        r['top_candidates'] = candidates
+        r['top_probs'] = probs
+
+    # failed to find anything (if early stopping), save and return
     logging.info('failed early stopping :/')
     logging.info('\t' + 'pos_initial_token: ' +
                  repr(r['final_answer_pos_initial_token']))

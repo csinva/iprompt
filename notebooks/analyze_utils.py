@@ -323,28 +323,6 @@ def get_hue_order(legend_names):
             ' not in ' + str(SORTED_HUE_NAMES)
     return [k for k in SORTED_HUE_NAMES if k in legend_names.unique()]
 
-def get_top_candidates_and_probs_suff(args):
-    probs = np.array(args['running_prob'])
-    suffix_str_added = np.array(args['suffix_str_added'])
-
-    def is_final_str(s, s_list):
-        """Return true if s is not contained in any other strings in s_list
-        """
-        for s1 in s_list:
-            if s1.startswith(s) and not s1 == s:
-                return False
-        return True
-    idxs = pd.Series(suffix_str_added).apply(lambda x: is_final_str(x, suffix_str_added)).values.astype(bool)
-
-    suffix_str_added = suffix_str_added[idxs]
-    probs = probs[idxs]
-
-
-    args_prob_sort = np.argsort(probs)[::-1]
-    suffix_str_added = suffix_str_added[args_prob_sort]
-    probs = probs[args_prob_sort]
-    return suffix_str_added, probs
-
 def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = True, legend_on_side=True):
     # reformat legend
     if add_legend:

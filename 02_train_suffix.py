@@ -45,7 +45,7 @@ def add_main_args(parser):
     # algorithm args
     # gpt # "gpt2-medium" (355M), "gpt2-large" (774M), "gpt2-xl" (1.5B)
     # gpneo # "EleutherAI/gpt-neo-2.7B", "EleutherAI/gpt-j-6B", "EleutherAI/gpt-neox-20b"
-    parser.add_argument('--checkpoint', type=str, default="gpt2-medium",
+    parser.add_argument('--checkpoint', type=str, default="gpt2",
                         help='model checkpoint to use')
     parser.add_argument('--max_num_tokens', type=int, default=1,
                         help='max length of sequence to find (num tokens)')
@@ -157,12 +157,12 @@ if __name__ == '__main__':
             tokenizer.pad_token = tokenizer.eos_token
             if args.float16:
                 model = AutoModelForCausalLM.from_pretrained(
-                    checkpoint, output_hidden_states=False)
-            else:
-                model = AutoModelForCausalLM.from_pretrained(
                     checkpoint, output_hidden_states=False,
                     revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True
                     )     
+            else:
+                model = AutoModelForCausalLM.from_pretrained(
+                    checkpoint, output_hidden_states=False)
             model = parallel.model_to_device(args, model)
 
         # set up saving
