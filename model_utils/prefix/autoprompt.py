@@ -167,8 +167,8 @@ class AutoPrompt(HotFlip):
             if self._VERBOSE: print("** set new prefix", best_prefix)
         else:
             best_prefix = self.prefix_ids
-            best_prefix_loss = all_candidate_losses.min()
-            best_prefix_n_correct = all_n_correct[all_candidate_losses.argmin()]
+            best_prefix_loss = current_loss
+            best_prefix_n_correct = current_n_correct
             if self._VERBOSE: print("** set same prefix", best_prefix)
 
 
