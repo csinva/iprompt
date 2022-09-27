@@ -5,7 +5,7 @@ import sys
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-save_dir = '/home/johnmorris/interpretable-autoprompting/results/autoprompt_sst2'
+save_dir = '/home/johnmorris/interpretable-autoprompting/results/autoprompt_sst2_2'
 
 cmd_python = 'python'
 
@@ -16,7 +16,7 @@ cmd_python = 'python'
 PARAMS_SHARED_DICT = {
     # things to vary
     'mask_possible_answers': [0, 1],
-    'model_cls': ['genetic', 'autoprompt'],
+    'model_cls': ['autoprompt', 'genetic'],
     'num_learned_tokens': [16],
     'task_name_list': ['sst2_train'],
 
@@ -33,6 +33,7 @@ PARAMS_SHARED_DICT = {
     'n_shots': [5],
     'seed': [1],
     'max_length': [64],
+    'iprompt_generation_repetition_penalty': [1.0],
 }
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 
@@ -41,11 +42,11 @@ PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gp
         ('EleutherAI/gpt-j-6B', 16, 1)
     ],
     # things to average over
-    ('seed', 'iprompt_generation_repetition_penalty'): [
-        (1, 1.1),
-        (2, 1.5),
-        (3, 2.0),
-    ]
+    # ('seed', 'iprompt_generation_repetition_penalty'): [
+    #     (1, 1.1),
+    #     (2, 1.5),
+    #     (3, 2.0),
+    # ]
 }
 
 ks_final, param_combos_final = submit_utils.combine_param_dicts(

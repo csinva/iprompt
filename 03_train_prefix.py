@@ -335,6 +335,7 @@ if __name__ == '__main__':
                         help='names of tasks as list; alternative to passing task_name')
     parser.add_argument('--n_shots', type=int, default=1,
                         help='number of shots in the prompt')
+    parser.add_argument('--autoprompt_init_strategy', type=str, default='the', choices=('random', 'the'), help='initialization strategy for discrete tokens')
     parser.add_argument('--max_length', type=int, default=128, help='maximum length for inputs')
     parser.add_argument('--single_shot_loss', type=int, default=0,
                         help='if n_shots==0, load multiple shots but only use one compute loss')

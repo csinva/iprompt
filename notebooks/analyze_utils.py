@@ -194,6 +194,8 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
         all_losses.append(json_dict.get('all_losses'))
         if 'all_losses' in json_dict:
             del json_dict['all_losses']
+        if 'all_n_correct' in json_dict:
+            del json_dict['all_n_correct']
 
         # fix extra types for missing prefixes when there weren't enough starting with
         # different tokens to save

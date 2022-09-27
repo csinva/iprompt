@@ -160,10 +160,17 @@ class AutoPrompt(HotFlip):
         # randomly change the token to swap
         self._swap_token_idx = random.randint(0, (self._num_tokens-1))
         # get best prefix we've seen
-        best_prefix = candidate_prefix_ids[all_candidate_losses.argmin()]
-        best_prefix_loss = all_candidate_losses.min()
-        best_prefix_n_correct = all_n_correct[all_candidate_losses.argmin()]
-        if self._VERBOSE: print("** set new prefix", best_prefix)
+        if all_candidate_losses.min() < current_loss:
+            best_prefix = candidate_prefix_ids[all_candidate_losses.argmin()]
+            best_prefix_loss = all_candidate_losses.min()
+            best_prefix_n_correct = all_n_correct[all_candidate_losses.argmin()]
+            if self._VERBOSE: print("** set new prefix", best_prefix)
+        else:
+            best_prefix = self.prefix_ids
+            best_prefix_loss = all_candidate_losses.min()
+            best_prefix_n_correct = all_n_correct[all_candidate_losses.argmin()]
+            if self._VERBOSE: print("** set same prefix", best_prefix)
+
 
         self._set_prefix_ids(best_prefix)
         return best_prefix_loss, best_prefix_n_correct
