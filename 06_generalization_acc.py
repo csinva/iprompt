@@ -3,21 +3,17 @@ import data
 import numpy as np
 import torch
 from torch import nn
-import matplotlib.pyplot as plt
 from copy import deepcopy
 import pandas as pd
 from tqdm import tqdm
 from collections import defaultdict
 from transformers import AutoTokenizer
 import pandas as pd
-import seaborn as sns
 from types import SimpleNamespace
 from datasets import Dataset
 from os.path import join as oj
 import pickle as pkl
 import os
-import dvu
-dvu.set_style()
 from os.path import dirname
 repo_dir = dirname(os.path.abspath(__file__))
 results_acc_dir = oj(repo_dir, 'results', 'generalization_acc')
@@ -39,11 +35,11 @@ task_names_anli = ['task1146_country_capital', 'task1509_evalution_antonyms', 't
 
 ######################## ACTUAL HYPERPARAMS ################################
 checkpoints_test = [
-    'EleutherAI/gpt-j-6B',
-    'facebook/opt-2.7b',
-    'facebook/opt-6.7b',
-    'EleutherAI/gpt-neo-2.7B',
-    # 'EleutherAI/gpt-neox-20b',
+    # 'facebook/opt-2.7b',
+    # 'EleutherAI/gpt-j-6B',
+    # 'facebook/opt-6.7b',
+    # 'EleutherAI/gpt-neo-2.7B',
+    'EleutherAI/gpt-neox-20b',
 ]
 TASK_SETTINGS = {
     'one_digit_all': {
@@ -158,7 +154,7 @@ for task_key in task_keys:
                     d['train_split_frac'].append(args.train_split_frac)
                     if prompt_type == 'manual':
                         prompt_actual = descr
-                    elif prompt_type in ['autoprompt', 'iprompt']:
+                    elif prompt_type in ['autoprompt', 'iprompt', 'suffix']:
                         # get saved prompt
                         task_name_train = task_name
                         if task_name.endswith('three'):
