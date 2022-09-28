@@ -24,12 +24,12 @@ PARAMS_SHARED_DICT = {
         # 'task1509_evalution_antonyms',
         # 'task1149_item_check_edible',
         # 'task183_rhyme_generation',
-        # 'task1191_food_veg_nonveg',
-        ############################### Chandan run things below this line #####
-        'task092_check_prime_classification',
-        'task088_identify_typo_verification',
-        'task1336_peixian_equity_evaluation_corpus_gender_classifier',
-        'task107_splash_question_to_sql'
+        'task1191_food_veg_nonveg',
+        # ############################### Chandan run things below this line #####
+        # 'task092_check_prime_classification',
+        # 'task088_identify_typo_verification',
+        # 'task1336_peixian_equity_evaluation_corpus_gender_classifier',
+        # 'task107_splash_question_to_sql'
     ],
     'model_cls': ['genetic', 'autoprompt'],
     'num_learned_tokens': [12],
@@ -43,7 +43,7 @@ PARAMS_SHARED_DICT = {
     'max_length': [128],
     'train_split_frac': [0.75],
     'single_shot_loss': [1],
-    'iprompt_generation_repetition_penalty': [1.0],
+    'iprompt_generation_repetition_penalty': [1.5],
 }
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 
