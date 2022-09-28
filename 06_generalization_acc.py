@@ -31,15 +31,19 @@ task_names_anli = ['task1146_country_capital', 'task1509_evalution_antonyms', 't
                    'task092_check_prime_classification', 'task088_identify_typo_verification',
                    'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql'
                    ]
+task_names_sentiment = ['ffb_train', 'imdb_train', 'rt_train', 'sst2_train', 'tweets_train']
 
 
 ######################## ACTUAL HYPERPARAMS ################################
 checkpoints_test = [
+    # 'gpt2',
     # 'facebook/opt-2.7b',
-    # 'EleutherAI/gpt-j-6B',
+    'EleutherAI/gpt-j-6B',
     # 'facebook/opt-6.7b',
     # 'EleutherAI/gpt-neo-2.7B',
-    'EleutherAI/gpt-neox-20b',
+    # 'EleutherAI/gpt-neox-20b',
+    # 'facebook/opt-66b',
+    # 'gpt3',
 ]
 TASK_SETTINGS = {
     'one_digit_all': {
@@ -67,36 +71,53 @@ TASK_SETTINGS = {
         'task_names': task_names_math_one + task_names_math_two, # + task_names_anli,
         'max_digit': 10,
         'n_shots': [1],
-        'prompt_types': ['suffix'], # ['autoprompt', 'iprompt', '', 'manual'],  # ['', 'manual'],
+        'prompt_types': ['autoprompt', 'iprompt', '', 'manual', 'suffix'],
         'train_split_frac': 0.75,
     },
     'sweep_double_digit_math': {
         'task_names': task_names_math_two,
         'max_digit': 100,
         'n_shots': [1],
-        'prompt_types': ['suffix'], #['autoprompt', 'iprompt', '', 'manual'], 
+        'prompt_types': ['suffix', 'autoprompt', 'iprompt', '', 'manual'], 
         'train_split_frac': None,
     },
     'sweep_one_digit_three_nums_math': {
         'task_names': task_names_math_three,
         'max_digit': 10,
         'n_shots': [1],
-        'prompt_types': 'suffix', ## ['autoprompt', 'iprompt', '', 'manual'], 
+        'prompt_types': ['suffix', 'autoprompt', 'iprompt', '', 'manual'], 
         'train_split_frac': None,
     },
     'sweep_in_distr_anli': {
         'task_names': task_names_anli,
         'n_shots': [1],
-        'prompt_types': ['suffix'], # ['autoprompt', 'iprompt', '', 'manual'],  # ['', 'manual'],
+        'prompt_types': ['autoprompt', 'iprompt', '', 'manual', 'suffix'],
         'train_split_frac': 0.75,
         'max_digit': 10,
     },    
+    'sweep_sentiment': {
+        'task_names': task_names_sentiment,
+        'max_digit': 10,
+        'n_shots': [1],
+        'prompt_types': ['autoprompt', 'iprompt', '', 'manual'], 
+        'train_split_frac': None,
+    },
+    'sweep_sentiment_cross_distr': {
+        'task_names': task_names_sentiment,
+        'task_names_prompt': task_names_sentiment, # get prompts from a different distr than testing
+        'max_digit': 10,
+        'n_shots': [1],
+        'prompt_types': ['autoprompt', 'iprompt', '', 'manual'], 
+        'train_split_frac': None,
+    }
 }
 
-task_keys = ['sweep_in_distr_math', 'sweep_in_distr_anli']
+# task_keys = ['sweep_in_distr_math', 'sweep_in_distr_anli']
+# task_keys = ['sweep_sentiment']
+task_keys = ['sweep_sentiment_cross_distr']
+parallelize = False
 # task_keys = ['sweep_in_distr_math']
-# task_keys = ['sweep_double_digit_math']
-# task_keys = ['sweep_one_digit_three_nums_math']
+# task_keys = ['sweep_double_digit_math', 'sweep_one_digit_three_nums_math']
 # task_keys = ['sweep_in_distr_anli']
 for task_key in task_keys:
 
@@ -127,60 +148,106 @@ for task_key in task_keys:
     args.max_digit = settings['max_digit']
     args.train_split_frac = settings['train_split_frac']
     prompts_saved = pkl.load(open(oj(results_acc_dir, 'prompts_all.pkl'), 'rb'))
+    prompts_sent = pkl.load(open(oj(repo_dir, 'results/autoprompt_sentiment/prompts.pkl'), 'rb')).reset_index()
 
     for checkpoint in checkpoints_test:
         print('loading', checkpoint)
-        model = prompt_classification.create_model(checkpoint)
+        model = prompt_classification.create_model(checkpoint, parallelize)
         print('calculating accs...')
-        for task_name in tqdm(settings['task_names']):
-            for prompt_type in settings['prompt_types']:
-                d = defaultdict(list)
-                for n_shots in settings['n_shots']:
-                    args.task_name = task_name
-                    args.n_shots = n_shots
-                    if args.train_split_frac:
-                        (dset, dset_test), check_answer_func, descr = data.get_data(
-                            args, args.task_name, n_shots=args.n_shots,
-                            train_split_frac=args.train_split_frac)
-                    else:
-                        dset_test, check_answer_func, descr = data.get_data(
+        # which task to test on
+        for task_name_test in tqdm(settings['task_names']):
+
+            # which task to get prompt from
+            if 'task_names_prompt' in settings:
+                task_names_prompt = settings['task_names_prompt']
+            else:
+                task_names_prompt = [task_name_test]
+            for task_name_prompt in task_names_prompt:
+                for prompt_type in settings['prompt_types']:
+                    d = defaultdict(list)
+                    for n_shots in settings['n_shots']:
+                        
+                        # load the data we are going to test on
+                        if task_name_test in task_names_sentiment:
+                            # remap key for sentiment (train and test on different dsets)
+                            if task_name_test.endswith('train'):
+                                args.task_name = task_name_test.replace('train', 'test')
+                            else:
+                                args.task_name = task_name_test
+                        else:
+                            args.task_name = task_name_test
+                        args.n_shots = n_shots
+                        if args.train_split_frac:
+                            (_, dset_test), _, descr = data.get_data(
                                 args, args.task_name, n_shots=args.n_shots,
-                                train_split_frac=args.train_split_frac) 
-                    d['checkpoint'].append(checkpoint)
-                    d['prompt'].append(prompt_type)
-                    d['task_name'].append(task_name)
-                    d['n_shots'].append(n_shots)
-                    d['max_digit'].append(args.max_digit)
-                    d['train_split_frac'].append(args.train_split_frac)
-                    if prompt_type == 'manual':
-                        prompt_actual = descr
-                    elif prompt_type in ['autoprompt', 'iprompt', 'suffix']:
-                        # get saved prompt
-                        task_name_train = task_name
-                        if task_name.endswith('three'):
-                            task_name_train = task_name.replace('three', 'two')
-                        prompt_actual = prompts_saved.loc[task_name_train][prompt_type]
-                    elif prompt_type == '':
-                        prompt_actual = prompt_type
+                                train_split_frac=args.train_split_frac)
+                        else:
+                            dset_test, _, descr = data.get_data(
+                                    args, args.task_name, n_shots=args.n_shots,
+                                    train_split_frac=args.train_split_frac) 
 
-                    d['prompt_actual'].append(prompt_actual)
-                    batch_size = batch_sizes.get(checkpoint, 16)
-                    if task_name == 'task107_splash_question_to_sql':
-                        batch_size = max(1, batch_size//4)
-                    loss, acc = prompt_classification.test_model_on_task_with_prefix(
-                        dset=dset_test, model=model, prefix=prompt_actual, multi_token=True, verbose=False,
-                        batch_size=batch_size,
-                    )
-                    d['acc'].append(acc)
+                        # load the prompt we are going to use
+                        if prompt_type == 'manual':
+                            prompt_actual = descr
+                        elif prompt_type in ['autoprompt', 'iprompt', 'suffix']:
+                            if task_name_prompt.endswith('three'):
+                                task_name_prompt = task_name_prompt.replace('three', 'two')
+                            elif task_name_prompt in task_names_sentiment:
+                                # remap some keys for sentiment
+                                if prompt_type == 'iprompt':
+                                    pt = 'genetic'
+                                else:
+                                    pt = prompt_type
+                                prompt_actual = prompts_sent[
+                                    (prompts_sent.task_name == task_name_prompt) * \
+                                        (prompts_sent.model_cls == pt) * \
+                                            (prompts_sent.seed == 1)
+                                ]['prefixes'].iloc[0]
+                            else:
+                                # get saved prompt
+                                prompt_actual = prompts_saved.loc[task_name_prompt][prompt_type]
+                        elif prompt_type == '':
+                            prompt_actual = prompt_type
+                        
+                        # calculate acc
+                        batch_size = batch_sizes.get(checkpoint, 16)
+                        if task_name_test == 'task107_splash_question_to_sql':
+                            batch_size = max(1, batch_size//4)
+                        if checkpoint == 'gpt3':
+                            acc = prompt_classification.test_gpt_model_on_task_with_prefix(
+                                dset=dset_test, prefix=prompt_actual, verbose=False
+                            )
+                        else:
+                            _, acc = prompt_classification.test_model_on_task_with_prefix(
+                                dset=dset_test, model=model, prefix=prompt_actual, multi_token=True, verbose=False,
+                                batch_size=batch_size,
+                            )
 
-                baseline_acc_dir = oj(results_acc_dir, 'baseline_accs')
-                ckpt = checkpoint.replace("/", "___")
-                if task_key == 'one_digit_all':
-                    save_name = oj(baseline_acc_dir, f'baseline_accs_{ckpt}___nshots={n_shots}.pkl')
-                elif task_key == 'double_digit_two_nums':
-                    save_name = oj(baseline_acc_dir, f'baseline_accs_{ckpt}___nshots={n_shots}___maxdigit={args.max_digit}.pkl')
-                elif task_key == 'one_digit_three_nums':
-                    save_name = oj(baseline_acc_dir, f'baseline_accs_{ckpt}___nshots={n_shots}___three_nums.pkl')
-                elif task_key.startswith('sweep'):
-                    save_name = oj(results_acc_dir, f'accs_sweep/accs_{ckpt}__{task_key}__{task_name}__prompt_type={prompt_type}.pkl')
-                pkl.dump(d, open(save_name, 'wb'))
+                        # save stuff
+                        d['checkpoint'].append(checkpoint)
+                        d['prompt'].append(prompt_type)
+                        d['task_name'].append(task_name_test)
+                        d['n_shots'].append(n_shots)
+                        d['max_digit'].append(args.max_digit)
+                        d['train_split_frac'].append(args.train_split_frac)
+                        d['prompt_actual'].append(prompt_actual)
+                        d['acc'].append(acc)
+
+                    baseline_acc_dir = oj(results_acc_dir, 'baseline_accs')
+                    ckpt = checkpoint.replace("/", "___")
+                    if task_key == 'one_digit_all':
+                        save_name = oj(baseline_acc_dir, f'baseline_accs_{ckpt}___nshots={n_shots}.pkl')
+                    elif task_key == 'double_digit_two_nums':
+                        save_name = oj(baseline_acc_dir, f'baseline_accs_{ckpt}___nshots={n_shots}___maxdigit={args.max_digit}.pkl')
+                    elif task_key == 'one_digit_three_nums':
+                        save_name = oj(baseline_acc_dir, f'baseline_accs_{ckpt}___nshots={n_shots}___three_nums.pkl')
+                    elif task_key.startswith('sweep'):
+                        if not task_name_prompt == task_name_test:
+                            fname_suffix = f'___{task_name_prompt}'
+                        else:
+                            fname_suffix = ''
+                        save_name = oj(
+                            results_acc_dir,
+                            f'accs_sweep/accs_{ckpt}__{task_key}__{task_name_test}__prompt_type={prompt_type}{fname_suffix}.pkl'
+                        )
+                    pkl.dump(d, open(save_name, 'wb'))
