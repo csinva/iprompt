@@ -39,7 +39,9 @@ checkpoints_test = [
     # 'EleutherAI/gpt-j-6B',
     # 'facebook/opt-6.7b',
     # 'EleutherAI/gpt-neo-2.7B',
-    'EleutherAI/gpt-neox-20b',
+    # 'EleutherAI/gpt-neox-20b',
+    # 'facebook/opt-66b',
+    'gpt3',
 ]
 TASK_SETTINGS = {
     'one_digit_all': {
@@ -67,7 +69,7 @@ TASK_SETTINGS = {
         'task_names': task_names_math_one + task_names_math_two, # + task_names_anli,
         'max_digit': 10,
         'n_shots': [1],
-        'prompt_types': ['suffix'], # ['autoprompt', 'iprompt', '', 'manual'],  # ['', 'manual'],
+        'prompt_types': ['autoprompt', 'iprompt', '', 'manual', 'suffix'],
         'train_split_frac': 0.75,
     },
     'sweep_double_digit_math': {
@@ -81,19 +83,20 @@ TASK_SETTINGS = {
         'task_names': task_names_math_three,
         'max_digit': 10,
         'n_shots': [1],
-        'prompt_types': 'suffix', ## ['autoprompt', 'iprompt', '', 'manual'], 
+        'prompt_types': ['suffix'], ## ['autoprompt', 'iprompt', '', 'manual'], 
         'train_split_frac': None,
     },
     'sweep_in_distr_anli': {
         'task_names': task_names_anli,
         'n_shots': [1],
-        'prompt_types': ['suffix'], # ['autoprompt', 'iprompt', '', 'manual'],  # ['', 'manual'],
+        'prompt_types': ['autoprompt', 'iprompt', '', 'manual', 'suffix'],
         'train_split_frac': 0.75,
         'max_digit': 10,
     },    
 }
 
 task_keys = ['sweep_in_distr_math', 'sweep_in_distr_anli']
+paralleize = True
 # task_keys = ['sweep_in_distr_math']
 # task_keys = ['sweep_double_digit_math']
 # task_keys = ['sweep_one_digit_three_nums_math']
@@ -130,7 +133,7 @@ for task_key in task_keys:
 
     for checkpoint in checkpoints_test:
         print('loading', checkpoint)
-        model = prompt_classification.create_model(checkpoint)
+        model = prompt_classification.create_model(checkpoint, paralleize)
         print('calculating accs...')
         for task_name in tqdm(settings['task_names']):
             for prompt_type in settings['prompt_types']:
@@ -167,10 +170,15 @@ for task_key in task_keys:
                     batch_size = batch_sizes.get(checkpoint, 16)
                     if task_name == 'task107_splash_question_to_sql':
                         batch_size = max(1, batch_size//4)
-                    loss, acc = prompt_classification.test_model_on_task_with_prefix(
-                        dset=dset_test, model=model, prefix=prompt_actual, multi_token=True, verbose=False,
-                        batch_size=batch_size,
-                    )
+                    if checkpoint == 'gpt3':
+                        acc = prompt_classification.test_gpt_model_on_task_with_prefix(
+                            dset=dset_test, prefix=prompt_actual,
+                        )
+                    else:
+                        loss, acc = prompt_classification.test_model_on_task_with_prefix(
+                            dset=dset_test, model=model, prefix=prompt_actual, multi_token=True, verbose=False,
+                            batch_size=batch_size,
+                        )
                     d['acc'].append(acc)
 
                 baseline_acc_dir = oj(results_acc_dir, 'baseline_accs')

@@ -8,7 +8,6 @@ import os
 import torch
 import string
 import transformers
-from tqdm.notebook import tqdm, trange
 from . import suffix
 
 
@@ -16,12 +15,28 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 class Model:
-    def __init__(self, model_name: str, float16=True):
-        if float16:
-            self.model = transformers.AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.float16)
-            self.model = self.model.half()
+    def __init__(self, model_name: str, float16=True, parallelize=False):
+        if parallelize:
+            # this requires installing accelerate, bitsandbytes
+            free_in_GB = int(torch.cuda.mem_get_info()[0]/1024**3)
+            max_mem = f'{free_in_GB-2}GB'
+            n_gpus = torch.cuda.device_count()
+            max_memory = {i: max_mem for i in range(n_gpus)}
+            print('\tloading in parallel', model_name, 'n_gpus', n_gpus, 'max_memory', max_memory)
+            self.model = transformers.AutoModelForCausalLM.from_pretrained(
+                model_name,
+                device_map='auto',
+                max_memory=max_memory,
+                low_cpu_mem_usage=True,
+                load_in_8bit=True,
+                offload_folder='~/tmp',
+            ) #, torch_dtype=torch.float16
         else:
             self.model = transformers.AutoModelForCausalLM.from_pretrained(model_name)
+        if float16:
+            print('\tconverting to half precision')
+            self.model = self.model.half()
+            
         self.tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.model.eval()
@@ -60,18 +75,42 @@ class Gpt3Model(Model):
             for token, prob in token_logprobs.items():
                 token_id = self.tokenizer.encode(token)
                 assert len(
-                    token_id) == 1, f"token mismatch for input '{token}': {token_ids}"
+                    token_id) == 1, f"token mismatch for input '{token}': {token_id}"
                 logits[i][token_id[0]] = prob  # set logits for the top 5 items
 
         logits = torch.tensor(logits).unsqueeze(dim=1)
         return logits.to(device).float()
 
 
-def create_model(model_name: str) -> Model:
+def create_model(model_name: str, parallelize=False) -> Model:
     if model_name == 'gpt3':
         return Gpt3Model()
     else:
-        return Model(model_name=model_name)
+        return Model(model_name=model_name, parallelize=parallelize)
+
+
+def test_gpt_model_on_task_with_prefix(dset, prefix, verbose=True):
+    import openai
+    total_n_correct = 0
+    for i in range(dset.shape[0]):
+        x_text = prefix + dset[i]['input']
+        y_text = dset[i]['output']
+
+        # call GPT3
+        api_kwargs = {"model": "text-davinci-002", "temperature": 0.0, "max_tokens": 7} #, "logprobs": 5}
+        response = openai.Completion.create(
+                prompt=x_text, **api_kwargs)
+        y_decoded = response.choices[0].text
+        y_decoded = y_decoded.rstrip(string.punctuation + string.whitespace)
+
+        # check acc 
+        y_gt = y_text.rstrip(string.punctuation + string.whitespace)
+        total_n_correct += int(y_gt.strip() in y_decoded)        
+    percent_correct = total_n_correct * 100.0 / dset.shape[0]
+    if verbose:
+        print(f"Percent correct: {percent_correct:.2f}")
+    return np.nan, percent_correct
+
 
 
 def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.PreTrainedModel,
