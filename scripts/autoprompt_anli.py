@@ -15,12 +15,13 @@ PARAMS_SHARED_DICT = {
     # things to vary
     'n_shots': [32],
     'task_name_list': [
-        # 'task1146_country_capital',
-        # 'task1147_country_currency',
-        'task1509_evalution_antonyms',
-        'task1149_item_check_edible',
-        'task183_rhyme_generation',
-        'task1191_food_veg_nonveg',
+        # # 'task1146_country_capital',
+        # # 'task1147_country_currency',
+        # 'task1509_evalution_antonyms',
+        # 'task1149_item_check_edible',
+        # 'task183_rhyme_generation',
+        # 'task1191_food_veg_nonveg',
+        ############################### Chandan run things below this line #####
         'task092_check_prime_classification',
         'task088_identify_typo_verification',
         'task1336_peixian_equity_evaluation_corpus_gender_classifier',
@@ -30,7 +31,7 @@ PARAMS_SHARED_DICT = {
     'num_learned_tokens': [12],
 
     # things to average over
-    'seed': [1, 2, 3],
+    'seed': [1, 2],
 
     # stopping criteria
     'max_dset_size': [5000],
@@ -39,7 +40,6 @@ PARAMS_SHARED_DICT = {
 
     # fixed params
     'max_length': [128],
-    'max_digit': [10],
     'train_split_frac': [0.75],
     'single_shot_loss': [1],
     'iprompt_generation_repetition_penalty': [1.0],
