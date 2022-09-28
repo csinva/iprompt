@@ -5,7 +5,7 @@ import sys
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-save_dir = '/home/johnmorris/interpretable-autoprompting/results/autoprompt_sentiment/tweets'
+save_dir = '/home/johnmorris/interpretable-autoprompting/results/autoprompt_sentiment_rerun/ffb'
 
 cmd_python = 'python'
 
@@ -25,8 +25,8 @@ PARAMS_SHARED_DICT = {
         # 'sst2_train',
         # 'imdb_train',
         # 'rt_train',
-        # 'ffb_train',
-        'tweets_train',
+        'ffb_train',
+        # 'tweets_train',
     ],
 
     # iprompt_generation_repetition_penalty: [1.0, 1.5, 2.0],
@@ -41,8 +41,8 @@ PARAMS_SHARED_DICT = {
     'single_shot_loss': [1],
     'n_shots': [5],
     'seed': [
-        3,
-        2,
+        # 3,
+        # 2,
         1,
     ],
     'max_length': [128],
@@ -54,12 +54,6 @@ PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gp
     ('checkpoint', 'batch_size', 'float16'): [
         ('EleutherAI/gpt-j-6B', 8, 1)
     ],
-    # things to average over
-    # ('seed', 'iprompt_generation_repetition_penalty'): [
-    #     (1, 1.1),
-    #     (2, 1.5),
-    #     (3, 2.0),
-    # ]
 }
 
 ks_final, param_combos_final = submit_utils.combine_param_dicts(

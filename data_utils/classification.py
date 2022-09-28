@@ -29,11 +29,11 @@ FFB_SPLIT_DICT = {
 
 TWEETS_SPLIT_DICT = {
     "tweets_train": "train",
-    "tweets_test": "train", # special case (see DATASETS_MISSING_TEST_SET)
+    "tweets_test": "test", # special case (see DATASETS_MISSING_TEST_SET)
 }
 
 
-DATASETS_MISSING_TEST_SET = {'financial_phrasebank' 'tweets_hate_speech_detection'}
+DATASETS_MISSING_TEST_SET = {'financial_phrasebank'}
 
 
 ALL_SPLIT_DICT = {**SST2_SPLIT_DICT, **IMDB_SPLIT_DICT, **RT_SPLIT_DICT, **FFB_SPLIT_DICT, **TWEETS_SPLIT_DICT}
@@ -72,7 +72,7 @@ LABEL_MAP = {
     # neg, neutral, pos
     "financial_phrasebank": { 0: "No", 1: "Maybe", 2: "Yes" },
     # not hate speech, yes hate speech
-    "tweets_hate_speech_detection": { 0: "No", 1: "Yes" },
+    "tweets_hate_speech": { 0: "No", 1: "Yes" },
 }
 
 
@@ -92,18 +92,20 @@ def fetch_classification_data(dataset_split: str, dataset_name: str, text_key: s
     # load dataset
     if dataset_name == 'financial_phrasebank':
         raw_dataset = datasets.load_dataset(dataset_name, 'sentences_allagree', split=ALL_SPLIT_DICT[dataset_split])
+    elif dataset_name == 'tweets_hate_speech':
+        raw_dataset = datasets.load_dataset('tweet_eval', 'hate', split=ALL_SPLIT_DICT[dataset_split])
     else:
         raw_dataset = datasets.load_dataset(dataset_name, split=ALL_SPLIT_DICT[dataset_split])
     raw_dataset = raw_dataset.shuffle(seed=2) # shuffle for label-matching
     # make train-test split, in special cases
     if dataset_name in DATASETS_MISSING_TEST_SET:
         __N = round(len(raw_dataset) * 0.75)
-        if dataset_split == 'train':
+        if ALL_SPLIT_DICT[dataset_split] == 'train':
             # take first 75%
-            raw_dataset = raw_dataset[:__N]
-        elif dataset_split == 'test':
+            raw_dataset = datasets.Dataset.from_dict(raw_dataset[:__N])
+        elif ALL_SPLIT_DICT[dataset_split] == 'test':
             # take last 25%
-            raw_dataset = raw_dataset[__N:]
+            raw_dataset = datasets.Dataset.from_dict(raw_dataset[__N:])
         else:
             raise ValueError(f'unknown dataset split {dataset_split} for dataset {dataset_name}')
     # get labels
@@ -165,7 +167,7 @@ for split_name in TWEETS_SPLIT_DICT.keys():
     TASKS_CLASSIFICATION[split_name] = {
         'check_answer_func': SENTIMENT_CHECK_ANSWER_FUNC,
         'description': HATESPEECH_DESCRIPTION,
-        'gen_func': functools.partial(fetch_classification_data, dataset_name="tweets_hate_speech_detection", text_key="tweet"),
+        'gen_func': functools.partial(fetch_classification_data, dataset_name="tweets_hate_speech", text_key="text"),
     }
     TASKS_CLASSIFICATION['SUFFIXES'][split_name] = SENTIMENT_SUFFIX
 
