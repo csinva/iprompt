@@ -89,7 +89,7 @@ def create_model(model_name: str, parallelize=False) -> Model:
         return Model(model_name=model_name, parallelize=parallelize)
 
 
-def test_gpt_model_on_task_with_prefix(dset, prefix, verbose=True):
+def test_gpt_model_on_task_with_prefix(dset, prefix, verbose=True, multi_token=True):
     import openai
     total_n_correct = 0
     for i in range(dset.shape[0]):
@@ -97,7 +97,10 @@ def test_gpt_model_on_task_with_prefix(dset, prefix, verbose=True):
         y_text = dset[i]['output']
 
         # call GPT3
-        api_kwargs = {"model": "text-davinci-002", "temperature": 0.0, "max_tokens": 5}
+        if multi_token:
+            api_kwargs = {"model": "text-davinci-002", "temperature": 0.0, "max_tokens": 5}
+        else:
+            api_kwargs = {"model": "text-davinci-002", "temperature": 0.0, "max_tokens": 1}
         response = openai.Completion.create(
                 prompt=x_text, **api_kwargs)
         y_decoded = response.choices[0].text
@@ -143,6 +146,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
 
     Returns:
         loss (float): language modeling loss on examples in dataset
+        acc (float)
     """
 
     def get_possible_answer_mask(dataloader, model, vocab_size):

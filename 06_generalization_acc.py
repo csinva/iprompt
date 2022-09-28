@@ -93,29 +93,47 @@ TASK_SETTINGS = {
         'n_shots': [1],
         'prompt_types': ['autoprompt', 'iprompt', '', 'manual', 'suffix'],
         'train_split_frac': 0.75,
-        'max_digit': 10,
     },    
-    'sweep_sentiment': {
+    'sweep_sentiment_1': {
         'task_names': task_names_sentiment,
-        'max_digit': 10,
         'n_shots': [1],
         'prompt_types': ['autoprompt', 'iprompt', '', 'manual'], 
         'train_split_frac': None,
+        'prompt_seed': 1,
+        'multi_token': False,
+    },
+    'sweep_sentiment_2': {
+        'task_names': task_names_sentiment,
+        'n_shots': [1],
+        'prompt_types': ['autoprompt', 'iprompt', '', 'manual'], 
+        'train_split_frac': None,
+        'prompt_seed': 2,
+        'multi_token': False,
+    },
+    'sweep_sentiment_3': {
+        'task_names': task_names_sentiment,
+        'n_shots': [1],
+        'prompt_types': ['autoprompt', 'iprompt', '', 'manual'], 
+        'train_split_frac': None,
+        'prompt_seed': 3,
+        'multi_token': False,
     },
     'sweep_sentiment_cross_distr': {
         'task_names': task_names_sentiment,
         'task_names_prompt': task_names_sentiment, # get prompts from a different distr than testing
-        'max_digit': 10,
+        'max_dset_size': 200,
         'n_shots': [1],
+        'prompt_seed': 1,
         'prompt_types': ['autoprompt', 'iprompt', '', 'manual'], 
         'train_split_frac': None,
+        'multi_token': False,
     }
 }
 
 # task_keys = ['sweep_in_distr_math', 'sweep_in_distr_anli']
 # task_keys = ['sweep_sentiment']
+# task_keys = ['sweep_sentiment_2', 'sweep_sentiment_3', 'sweep_sentiment_1']
 task_keys = ['sweep_sentiment_cross_distr']
-parallelize = False
 # task_keys = ['sweep_in_distr_math']
 # task_keys = ['sweep_double_digit_math', 'sweep_one_digit_three_nums_math']
 # task_keys = ['sweep_in_distr_anli']
@@ -141,14 +159,26 @@ for task_key in task_keys:
         n_shots = 1
         task_name = 'add_two'
 
-
+    parallelize = False
     args = fake_args()
     np.random.seed(args.seed)
     settings = TASK_SETTINGS[task_key]
-    args.max_digit = settings['max_digit']
+    if 'max_digit' in settings:
+        args.max_digit = settings['max_digit']
     args.train_split_frac = settings['train_split_frac']
+    if 'max_dset_size' in settings:
+        args.max_dset_size = settings['max_dset_size']
+    if 'prompt_seed' in settings:
+        prompt_seed = settings['prompt_seed']
+    else:
+        prompt_seed = 1
+    if 'multi_token' in settings:
+        multi_token = settings['multi_token']
+    else:
+        multi_token = True
     prompts_saved = pkl.load(open(oj(results_acc_dir, 'prompts_all.pkl'), 'rb'))
     prompts_sent = pkl.load(open(oj(repo_dir, 'results/autoprompt_sentiment/prompts.pkl'), 'rb')).reset_index()
+    
 
     for checkpoint in checkpoints_test:
         print('loading', checkpoint)
@@ -201,7 +231,7 @@ for task_key in task_keys:
                                 prompt_actual = prompts_sent[
                                     (prompts_sent.task_name == task_name_prompt) * \
                                         (prompts_sent.model_cls == pt) * \
-                                            (prompts_sent.seed == 1)
+                                            (prompts_sent.seed == prompt_seed)
                                 ]['prefixes'].iloc[0]
                             else:
                                 # get saved prompt
@@ -215,11 +245,11 @@ for task_key in task_keys:
                             batch_size = max(1, batch_size//4)
                         if checkpoint == 'gpt3':
                             acc = prompt_classification.test_gpt_model_on_task_with_prefix(
-                                dset=dset_test, prefix=prompt_actual, verbose=False
+                                dset=dset_test, prefix=prompt_actual, verbose=True, multi_token=multi_token,
                             )
                         else:
                             _, acc = prompt_classification.test_model_on_task_with_prefix(
-                                dset=dset_test, model=model, prefix=prompt_actual, multi_token=True, verbose=False,
+                                dset=dset_test, model=model, prefix=prompt_actual, multi_token=multi_token, verbose=False,
                                 batch_size=batch_size,
                             )
 
@@ -232,6 +262,8 @@ for task_key in task_keys:
                         d['train_split_frac'].append(args.train_split_frac)
                         d['prompt_actual'].append(prompt_actual)
                         d['acc'].append(acc)
+                        d['task_name_prompt'].append(task_name_prompt)
+                        d['prompt_seed'].append(prompt_seed)
 
                     baseline_acc_dir = oj(results_acc_dir, 'baseline_accs')
                     ckpt = checkpoint.replace("/", "___")
@@ -242,12 +274,14 @@ for task_key in task_keys:
                     elif task_key == 'one_digit_three_nums':
                         save_name = oj(baseline_acc_dir, f'baseline_accs_{ckpt}___nshots={n_shots}___three_nums.pkl')
                     elif task_key.startswith('sweep'):
+                        save_name = f'accs_sweep/accs_{ckpt}__{task_key}__{task_name_test}__prompt_type={prompt_type}'
                         if not task_name_prompt == task_name_test:
-                            fname_suffix = f'___{task_name_prompt}'
-                        else:
-                            fname_suffix = ''
+                            save_name += f'___{task_name_prompt}'
+                        if prompt_seed > 1:
+                            save_name += f'___ps={prompt_seed}'
                         save_name = oj(
                             results_acc_dir,
-                            f'accs_sweep/accs_{ckpt}__{task_key}__{task_name_test}__prompt_type={prompt_type}{fname_suffix}.pkl'
+                            f'{save_name}.pkl'
                         )
+                        print('save_name', save_name)
                     pkl.dump(d, open(save_name, 'wb'))
