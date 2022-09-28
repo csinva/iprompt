@@ -44,10 +44,10 @@ class iPrompt(AutoPrompt):
         ####################################################################
         # iPrompt-specific parameters
         # TODO argparse for GA-specific hparams
-        self._pop_size = 8
+        self._pop_size = args.iprompt_pop_size
         self._topk_pop_sample = (self._pop_size + 4) # sample next population from this num of top things. set higher for more randomness.
-        self._num_mutations_per_ex = 4 # num mutations for each population item
-        self._num_random_generations = 4 # extra random examples to throw in there (won't get mutated)
+        self._num_mutations_per_ex = args.iprompt_num_mutations # num mutations for each population item
+        self._num_random_generations = args.iprompt_num_random_generations # extra random examples to throw in there (won't get mutated)
         self._generation_temp = 1.0
         self._generation_top_p = 1.0
         self._generation_repetition_penalty = self.args.iprompt_generation_repetition_penalty # 1 means no penalty

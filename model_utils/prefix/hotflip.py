@@ -54,9 +54,6 @@ class HotFlip(PrefixModel):
         self._set_prefix_ids(
             self.init_discrete_prefix(num_tokens=self._num_tokens)
         )
-        self.prefix_embedding = nn.Parameter(
-            self.token_embedding.forward(self.prefix_ids), requires_grad=True
-        )
         print(f"preprefix: '{preprefix}'")
 
         # disable grads to model

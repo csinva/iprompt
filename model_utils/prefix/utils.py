@@ -180,18 +180,24 @@ class PrefixModel(nn.Module, abc.ABC):
     def id_to_word(self) -> Dict[int, str]:
         # track token-to-word mapping 
         return {num: word for word, num in self.tokenizer.vocab.items()}
+    
+    @property
+    def _is_gpt_neox(self) -> bool:
+        return isinstance(self.model, transformers.GPTNeoXModel) or isinstance(self.model, transformers.GPTNeoXForCausalLM)
 
     @property
     def transformer(self) -> nn.Module:
-        try:
-            return self.model._modules['transformer']
-        except KeyError:
-            # for gpt-neox 20b
+        if self._is_gpt_neox:
             return self.model._modules['gpt_neox']
+        else:
+            return self.model._modules['transformer']
 
     @property
     def token_embedding(self) -> nn.Embedding:
-        return self.transformer.wte
+        if self._is_gpt_neox:
+            return self.transformer.embed_in
+        else:
+            return self.transformer.wte
     
     @property
     def vocab_size(self) -> int:
