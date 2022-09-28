@@ -3,21 +3,17 @@ import data
 import numpy as np
 import torch
 from torch import nn
-import matplotlib.pyplot as plt
 from copy import deepcopy
 import pandas as pd
 from tqdm import tqdm
 from collections import defaultdict
 from transformers import AutoTokenizer
 import pandas as pd
-import seaborn as sns
 from types import SimpleNamespace
 from datasets import Dataset
 from os.path import join as oj
 import pickle as pkl
 import os
-import dvu
-dvu.set_style()
 from os.path import dirname
 repo_dir = dirname(os.path.abspath(__file__))
 results_acc_dir = oj(repo_dir, 'results', 'generalization_acc')
@@ -39,11 +35,11 @@ task_names_anli = ['task1146_country_capital', 'task1509_evalution_antonyms', 't
 
 ######################## ACTUAL HYPERPARAMS ################################
 checkpoints_test = [
-    'EleutherAI/gpt-j-6B',
-    'facebook/opt-2.7b',
-    'facebook/opt-6.7b',
-    'EleutherAI/gpt-neo-2.7B',
-    # 'EleutherAI/gpt-neox-20b',
+    # 'facebook/opt-2.7b',
+    # 'EleutherAI/gpt-j-6B',
+    # 'facebook/opt-6.7b',
+    # 'EleutherAI/gpt-neo-2.7B',
+    'EleutherAI/gpt-neox-20b',
 ]
 TASK_SETTINGS = {
     'one_digit_all': {
@@ -71,27 +67,27 @@ TASK_SETTINGS = {
         'task_names': task_names_math_one + task_names_math_two, # + task_names_anli,
         'max_digit': 10,
         'n_shots': [1],
-        'prompt_types': ['autoprompt', 'iprompt', '', 'manual'],  # ['', 'manual'],
+        'prompt_types': ['suffix'], # ['autoprompt', 'iprompt', '', 'manual'],  # ['', 'manual'],
         'train_split_frac': 0.75,
     },
     'sweep_double_digit_math': {
         'task_names': task_names_math_two,
         'max_digit': 100,
         'n_shots': [1],
-        'prompt_types': ['autoprompt', 'iprompt', '', 'manual'], 
+        'prompt_types': ['suffix'], #['autoprompt', 'iprompt', '', 'manual'], 
         'train_split_frac': None,
     },
     'sweep_one_digit_three_nums_math': {
         'task_names': task_names_math_three,
         'max_digit': 10,
         'n_shots': [1],
-        'prompt_types': ['autoprompt', 'iprompt', '', 'manual'], 
+        'prompt_types': 'suffix', ## ['autoprompt', 'iprompt', '', 'manual'], 
         'train_split_frac': None,
     },
     'sweep_in_distr_anli': {
         'task_names': task_names_anli,
         'n_shots': [1],
-        'prompt_types': ['autoprompt', 'iprompt', '', 'manual'],  # ['', 'manual'],
+        'prompt_types': ['suffix'], # ['autoprompt', 'iprompt', '', 'manual'],  # ['', 'manual'],
         'train_split_frac': 0.75,
         'max_digit': 10,
     },    
@@ -158,7 +154,7 @@ for task_key in task_keys:
                     d['train_split_frac'].append(args.train_split_frac)
                     if prompt_type == 'manual':
                         prompt_actual = descr
-                    elif prompt_type in ['autoprompt', 'iprompt']:
+                    elif prompt_type in ['autoprompt', 'iprompt', 'suffix']:
                         # get saved prompt
                         task_name_train = task_name
                         if task_name.endswith('three'):
