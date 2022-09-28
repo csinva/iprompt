@@ -15,9 +15,9 @@ PARAMS_SHARED_DICT = {
     # things to vary
     'n_shots': [32],
     'task_name_list': [
-        'task1146_country_capital',
+        # 'task1146_country_capital',
+        # 'task1147_country_currency',
         'task1509_evalution_antonyms',
-        'task1147_country_currency',
         'task1149_item_check_edible',
         'task183_rhyme_generation',
         'task1191_food_veg_nonveg',
@@ -27,10 +27,10 @@ PARAMS_SHARED_DICT = {
         'task107_splash_question_to_sql'
     ],
     'model_cls': ['genetic', 'autoprompt'],
-    'num_learned_tokens': [10],
+    'num_learned_tokens': [12],
 
     # things to average over
-    'seed': [1],
+    'seed': [1, 2, 3],
 
     # stopping criteria
     'max_dset_size': [5000],
@@ -53,7 +53,7 @@ PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gp
         # ('gpt2-large', 100, 0),
         # ('gpt2-xl', 32, 0),
         # ('EleutherAI/gpt-neo-2.7B', 16, 0),
-        ('EleutherAI/gpt-j-6B', 32, 1)
+        ('EleutherAI/gpt-j-6B', 8, 1)
         # ('EleutherAI/gpt-neox-20b', 1, 0),
     ],
 }
