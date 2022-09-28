@@ -13,7 +13,7 @@ cmd_python = 'python'
 
 PARAMS_SHARED_DICT = {
     # things to vary
-    'n_shots': [1],
+    'n_shots': [32],
     'task_name_list': [
         'task1146_country_capital',
         'task1509_evalution_antonyms',
@@ -27,7 +27,7 @@ PARAMS_SHARED_DICT = {
         'task107_splash_question_to_sql'
     ],
     'model_cls': ['genetic', 'autoprompt'],
-    'num_learned_tokens': [3, 6],
+    'num_learned_tokens': [10],
 
     # things to average over
     'seed': [1],
@@ -38,9 +38,11 @@ PARAMS_SHARED_DICT = {
     'early_stopping_steps': [50],
 
     # fixed params
+    'max_length': [128],
     'max_digit': [10],
     'train_split_frac': [0.75],
     'single_shot_loss': [1],
+    'iprompt_generation_repetition_penalty': [1.0],
 }
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 
