@@ -97,7 +97,7 @@ TASK_SETTINGS = {
     'sweep_sentiment_1': {
         'task_names': task_names_sentiment,
         'n_shots': [1],
-        'prompt_types': ['autoprompt', 'iprompt', '', 'manual'], 
+        'prompt_types': ['autoprompt', 'iprompt'], 
         'train_split_frac': None,
         'prompt_seed': 1,
         'multi_token': False,
@@ -105,7 +105,7 @@ TASK_SETTINGS = {
     'sweep_sentiment_2': {
         'task_names': task_names_sentiment,
         'n_shots': [1],
-        'prompt_types': ['autoprompt', 'iprompt', '', 'manual'], 
+        'prompt_types': ['autoprompt', 'iprompt'], 
         'train_split_frac': None,
         'prompt_seed': 2,
         'multi_token': False,
@@ -113,7 +113,7 @@ TASK_SETTINGS = {
     'sweep_sentiment_3': {
         'task_names': task_names_sentiment,
         'n_shots': [1],
-        'prompt_types': ['autoprompt', 'iprompt', '', 'manual'], 
+        'prompt_types': ['autoprompt', 'iprompt'], 
         'train_split_frac': None,
         'prompt_seed': 3,
         'multi_token': False,
@@ -274,7 +274,7 @@ for task_key in task_keys:
                     elif task_key == 'one_digit_three_nums':
                         save_name = oj(baseline_acc_dir, f'baseline_accs_{ckpt}___nshots={n_shots}___three_nums.pkl')
                     elif task_key.startswith('sweep'):
-                        save_name = f'accs_sweep/accs_{ckpt}__{task_key}__{task_name_test}__prompt_type={prompt_type}'
+                        save_name = f'accs_sent_rerun/accs_{ckpt}__{task_key}__{task_name_test}__prompt_type={prompt_type}'
                         if not task_name_prompt == task_name_test:
                             save_name += f'___{task_name_prompt}'
                         if prompt_seed > 1:
