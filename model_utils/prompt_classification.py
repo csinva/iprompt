@@ -97,7 +97,7 @@ def test_gpt_model_on_task_with_prefix(dset, prefix, verbose=True):
         y_text = dset[i]['output']
 
         # call GPT3
-        api_kwargs = {"model": "text-davinci-002", "temperature": 0.0, "max_tokens": 7} #, "logprobs": 5}
+        api_kwargs = {"model": "text-davinci-002", "temperature": 0.0, "max_tokens": 5}
         response = openai.Completion.create(
                 prompt=x_text, **api_kwargs)
         y_decoded = response.choices[0].text

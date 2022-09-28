@@ -36,14 +36,14 @@ task_names_sentiment = ['ffb_train', 'imdb_train', 'rt_train', 'sst2_train', 'tw
 
 ######################## ACTUAL HYPERPARAMS ################################
 checkpoints_test = [
-    'gpt2',
+    # 'gpt2',
     # 'facebook/opt-2.7b',
     # 'EleutherAI/gpt-j-6B',
     # 'facebook/opt-6.7b',
     # 'EleutherAI/gpt-neo-2.7B',
     # 'EleutherAI/gpt-neox-20b',
     # 'facebook/opt-66b',
-    # 'gpt3',
+    'gpt3',
 ]
 TASK_SETTINGS = {
     'one_digit_all': {
@@ -100,12 +100,12 @@ TASK_SETTINGS = {
         'max_digit': 10,
         'n_shots': [1],
         'prompt_types': ['autoprompt', 'iprompt', '', 'manual'], 
-        'train_split_frac': 0.75,
+        'train_split_frac': None,
     }
 }
 
-# task_keys = ['sweep_in_distr_math', 'sweep_in_distr_anli']
-task_keys = ['sweep_sentiment']
+task_keys = ['sweep_in_distr_math', 'sweep_in_distr_anli']
+# task_keys = ['sweep_sentiment']
 parallelize = False
 # task_keys = ['sweep_in_distr_math']
 # task_keys = ['sweep_double_digit_math']
