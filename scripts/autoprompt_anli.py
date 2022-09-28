@@ -6,12 +6,16 @@ import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
 # save_dir = '/home/jxm3/random/interpretable-autoprompting/results/slurm_anli_exps'
-save_dir = f'/home/chansingh/mntv1/autoprompt_anli_exps_rerun'
+# save_dir = f'/home/chansingh/mntv1/autoprompt_anli_exps_rerun'
 # save_dir = '/home/jxm3/random/interpretable-autoprompting/results/slurm_anli_exps'
+save_dir = '/root/interpretable-autoprompting/results/big_nli'
 
 cmd_python = 'python'
 
 PARAMS_SHARED_DICT = {
+    # things to average over
+    'seed': [1, 2, 3],
+
     # things to vary
     'n_shots': [32],
     'task_name_list': [
@@ -29,9 +33,6 @@ PARAMS_SHARED_DICT = {
     ],
     'model_cls': ['genetic', 'autoprompt'],
     'num_learned_tokens': [12],
-
-    # things to average over
-    'seed': [1, 2],
 
     # stopping criteria
     'max_dset_size': [5000],
