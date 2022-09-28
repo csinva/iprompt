@@ -405,10 +405,17 @@ if __name__ == '__main__':
         tokenizer.pad_token = tokenizer.eos_token
 
         if args.llm_float16:
-            lm = AutoModelForCausalLM.from_pretrained(
-                checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id,
-                revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True
-            )
+            try:
+                lm = AutoModelForCausalLM.from_pretrained(
+                    checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id,
+                    revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True
+                )
+            except: # revision not found (only certain models are pre-float16ed)
+                print(f"trying to convert {checkpoint} to float16...")
+                lm = transformers.AutoModelForCausalLM.from_pretrained(
+                    checkpoint, torch_dtype=torch.float16
+                )
+                lm = lm.half()
         else:    
             lm = AutoModelForCausalLM.from_pretrained(
                 checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id

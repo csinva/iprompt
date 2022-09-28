@@ -183,7 +183,11 @@ class PrefixModel(nn.Module, abc.ABC):
 
     @property
     def transformer(self) -> nn.Module:
-        return self.model._modules['transformer']
+        try:
+            return self.model._modules['transformer']
+        except KeyError:
+            # for gpt-neox 20b
+            return self.model._modules['gpt_neox']
 
     @property
     def token_embedding(self) -> nn.Embedding:

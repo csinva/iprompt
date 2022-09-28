@@ -8,8 +8,7 @@ import pandas as pd
 
 SST2_SPLIT_DICT = {
     "sst2_train": "train",
-    "sst2_validation": "validation",
-    "sst2_test": "test",
+    "sst2_test": "validation",
 }
 
 IMDB_SPLIT_DICT = {
@@ -25,11 +24,17 @@ RT_SPLIT_DICT = {
 
 FFB_SPLIT_DICT = {
     "ffb_train": "train",
+    "ffb_test": "train", # special case (see DATASETS_MISSING_TEST_SET)
 }
 
 TWEETS_SPLIT_DICT = {
-    "tweets_train": "train"
+    "tweets_train": "train",
+    "tweets_test": "train", # special case (see DATASETS_MISSING_TEST_SET)
 }
+
+
+DATASETS_MISSING_TEST_SET = {'financial_phrasebank' 'tweets_hate_speech_detection'}
+
 
 ALL_SPLIT_DICT = {**SST2_SPLIT_DICT, **IMDB_SPLIT_DICT, **RT_SPLIT_DICT, **FFB_SPLIT_DICT, **TWEETS_SPLIT_DICT}
 
@@ -84,11 +89,27 @@ def make_row_sentiment(row: Dict[str, str], dataset_name: str, text_key: str) ->
 
 def fetch_classification_data(dataset_split: str, dataset_name: str, text_key: str) -> pd.DataFrame:
     print("**loading data:", dataset_name, "//", ALL_SPLIT_DICT[dataset_split])
+    # load dataset
     if dataset_name == 'financial_phrasebank':
         raw_dataset = datasets.load_dataset(dataset_name, 'sentences_allagree', split=ALL_SPLIT_DICT[dataset_split])
     else:
         raw_dataset = datasets.load_dataset(dataset_name, split=ALL_SPLIT_DICT[dataset_split])
+    raw_dataset = raw_dataset.shuffle(seed=2) # shuffle for label-matching
+    # make train-test split, in special cases
+    if dataset_name in DATASETS_MISSING_TEST_SET:
+        __N = round(len(raw_dataset) * 0.75)
+        if dataset_split == 'train':
+            # take first 75%
+            raw_dataset = raw_dataset[:__N]
+        elif dataset_split == 'test':
+            # take last 25%
+            raw_dataset = raw_dataset[__N:]
+        else:
+            raise ValueError(f'unknown dataset split {dataset_split} for dataset {dataset_name}')
+    # get labels
     raw_dataset = raw_dataset.filter(lambda row: row["label"] in LABEL_MAP[dataset_name])
+    if not len(raw_dataset): raise ValueError("got no datapoints after filtering for valid labels")
+    # make rows
     dataset = raw_dataset.map(functools.partial(make_row_sentiment, dataset_name=dataset_name, text_key=text_key))
     return dataset.to_pandas()
 
@@ -151,5 +172,6 @@ for split_name in TWEETS_SPLIT_DICT.keys():
 if __name__ == '__main__':
     for split_name in TASKS_CLASSIFICATION.keys():
         if split_name == 'SUFFIXES': continue
-        TASKS_CLASSIFICATION[split_name]['gen_func'](split_name)
+        print(split_name)
+        print(TASKS_CLASSIFICATION[split_name]['gen_func'](split_name))
     print(TASKS_CLASSIFICATION)

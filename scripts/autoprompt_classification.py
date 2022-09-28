@@ -37,7 +37,7 @@ PARAMS_SHARED_DICT = {
     'early_stopping_steps': [50],
 
     # fixed params
-    'train_split_frac': [0.75], # since some don't have a test set
+    'train_split_frac': [1.0],
     'single_shot_loss': [1],
     'n_shots': [5],
     'seed': [
