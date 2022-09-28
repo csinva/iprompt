@@ -31,17 +31,19 @@ task_names_anli = ['task1146_country_capital', 'task1509_evalution_antonyms', 't
                    'task092_check_prime_classification', 'task088_identify_typo_verification',
                    'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql'
                    ]
+task_names_sentiment = ['ffb_train', 'imdb_train', 'rt_train', 'sst2_train', 'tweets_train']
 
 
 ######################## ACTUAL HYPERPARAMS ################################
 checkpoints_test = [
+    'gpt2',
     # 'facebook/opt-2.7b',
     # 'EleutherAI/gpt-j-6B',
     # 'facebook/opt-6.7b',
     # 'EleutherAI/gpt-neo-2.7B',
     # 'EleutherAI/gpt-neox-20b',
     # 'facebook/opt-66b',
-    'gpt3',
+    # 'gpt3',
 ]
 TASK_SETTINGS = {
     'one_digit_all': {
@@ -93,10 +95,18 @@ TASK_SETTINGS = {
         'train_split_frac': 0.75,
         'max_digit': 10,
     },    
+    'sweep_sentiment': {
+        'task_names': task_names_sentiment,
+        'max_digit': 10,
+        'n_shots': [1],
+        'prompt_types': ['autoprompt', 'iprompt', '', 'manual'], 
+        'train_split_frac': 0.75,
+    }
 }
 
-task_keys = ['sweep_in_distr_math', 'sweep_in_distr_anli']
-paralleize = True
+# task_keys = ['sweep_in_distr_math', 'sweep_in_distr_anli']
+task_keys = ['sweep_sentiment']
+parallelize = False
 # task_keys = ['sweep_in_distr_math']
 # task_keys = ['sweep_double_digit_math']
 # task_keys = ['sweep_one_digit_three_nums_math']
@@ -130,16 +140,24 @@ for task_key in task_keys:
     args.max_digit = settings['max_digit']
     args.train_split_frac = settings['train_split_frac']
     prompts_saved = pkl.load(open(oj(results_acc_dir, 'prompts_all.pkl'), 'rb'))
+    prompts_sent = pkl.load(open(oj(repo_dir, 'results/autoprompt_sentiment/prompts.pkl'), 'rb')).reset_index()
 
     for checkpoint in checkpoints_test:
         print('loading', checkpoint)
-        model = prompt_classification.create_model(checkpoint, paralleize)
+        model = prompt_classification.create_model(checkpoint, parallelize)
         print('calculating accs...')
         for task_name in tqdm(settings['task_names']):
             for prompt_type in settings['prompt_types']:
                 d = defaultdict(list)
                 for n_shots in settings['n_shots']:
-                    args.task_name = task_name
+                    # remap key for sentiment (train and test on different dsets)
+                    if task_name in task_names_sentiment:
+                        if task_name.endswith('train'):
+                            args.task_name = task_name.replace('train', 'test')
+                        else:
+                            args.task_name = task_name
+                    else:
+                        args.task_name = task_name
                     args.n_shots = n_shots
                     if args.train_split_frac:
                         (dset, dset_test), check_answer_func, descr = data.get_data(
@@ -162,7 +180,20 @@ for task_key in task_keys:
                         task_name_train = task_name
                         if task_name.endswith('three'):
                             task_name_train = task_name.replace('three', 'two')
-                        prompt_actual = prompts_saved.loc[task_name_train][prompt_type]
+
+                        # remap some keys for sentiment
+                        elif task_name in task_names_sentiment:
+                            if prompt_type == 'iprompt':
+                                pt = 'genetic'
+                            else:
+                                pt = prompt_type
+                            prompt_actual = prompts_sent[
+                                (prompts_sent.task_name == task_name_train) * \
+                                    (prompts_sent.model_cls == pt) * \
+                                        (prompts_sent.seed == 1)
+                            ]['prefixes'].iloc[0]
+                        else:
+                            prompt_actual = prompts_saved.loc[task_name_train][prompt_type]
                     elif prompt_type == '':
                         prompt_actual = prompt_type
 
@@ -172,7 +203,7 @@ for task_key in task_keys:
                         batch_size = max(1, batch_size//4)
                     if checkpoint == 'gpt3':
                         acc = prompt_classification.test_gpt_model_on_task_with_prefix(
-                            dset=dset_test, prefix=prompt_actual,
+                            dset=dset_test, prefix=prompt_actual, verbose=False
                         )
                     else:
                         loss, acc = prompt_classification.test_model_on_task_with_prefix(
