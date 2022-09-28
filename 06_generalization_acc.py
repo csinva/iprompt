@@ -121,7 +121,7 @@ TASK_SETTINGS = {
     'sweep_sentiment_cross_distr': {
         'task_names': task_names_sentiment,
         'task_names_prompt': task_names_sentiment, # get prompts from a different distr than testing
-        'max_dset_size': 200,
+        'max_dset_size': 100000, # use the whole dset
         'n_shots': [1],
         'prompt_seed': 1,
         'prompt_types': ['autoprompt', 'iprompt', '', 'manual'], 
