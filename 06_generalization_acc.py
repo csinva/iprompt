@@ -31,19 +31,19 @@ task_names_anli = ['task1146_country_capital', 'task1509_evalution_antonyms', 't
                    'task092_check_prime_classification', 'task088_identify_typo_verification',
                    'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql'
                    ]
-task_names_sentiment = ['ffb_train', 'imdb_train', 'rt_train', 'sst2_train', 'tweets_train']
+task_names_sentiment = ['ffb_train', 'imdb_train', 'rt_train', 'sst2_train'] #, 'tweets_train']
 
 
 ######################## ACTUAL HYPERPARAMS ################################
 checkpoints_test = [
     # 'gpt2',
     # 'facebook/opt-2.7b',
-    'EleutherAI/gpt-j-6B',
+    # 'EleutherAI/gpt-j-6B',
     # 'facebook/opt-6.7b',
     # 'EleutherAI/gpt-neo-2.7B',
     # 'EleutherAI/gpt-neox-20b',
     # 'facebook/opt-66b',
-    # 'gpt3',
+    'gpt3',
 ]
 TASK_SETTINGS = {
     'one_digit_all': {
@@ -100,7 +100,7 @@ TASK_SETTINGS = {
         'prompt_types': ['autoprompt', 'iprompt'], 
         'train_split_frac': None,
         'prompt_seed': 1,
-        'multi_token': False,
+        'multi_token': True,
     },
     'sweep_sentiment_2': {
         'task_names': task_names_sentiment,
@@ -108,7 +108,7 @@ TASK_SETTINGS = {
         'prompt_types': ['autoprompt', 'iprompt'], 
         'train_split_frac': None,
         'prompt_seed': 2,
-        'multi_token': False,
+        'multi_token': True,
     },
     'sweep_sentiment_3': {
         'task_names': task_names_sentiment,
@@ -116,7 +116,7 @@ TASK_SETTINGS = {
         'prompt_types': ['autoprompt', 'iprompt'], 
         'train_split_frac': None,
         'prompt_seed': 3,
-        'multi_token': False,
+        'multi_token': True,
     },
     'sweep_sentiment_cross_distr': {
         'task_names': task_names_sentiment,
@@ -132,8 +132,8 @@ TASK_SETTINGS = {
 
 # task_keys = ['sweep_in_distr_math', 'sweep_in_distr_anli']
 # task_keys = ['sweep_sentiment']
-# task_keys = ['sweep_sentiment_2', 'sweep_sentiment_3', 'sweep_sentiment_1']
-task_keys = ['sweep_sentiment_cross_distr']
+task_keys = ['sweep_sentiment_2'] #  (note, some missing prompts for sst2) 'sweep_sentiment_3', 'sweep_sentiment_1'
+# task_keys = ['sweep_sentiment_cross_distr']
 # task_keys = ['sweep_in_distr_math']
 # task_keys = ['sweep_double_digit_math', 'sweep_one_digit_three_nums_math']
 # task_keys = ['sweep_in_distr_anli']
