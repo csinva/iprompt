@@ -17,9 +17,9 @@ from torch.utils.data import DataLoader
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from tqdm import tqdm
 
-import data
+import iprompt.data_utils.data as data
 from model_utils.prefix import get_prefix_from_mlm, compute_log_ppl_loss
-import utils
+import iprompt.utils as utils
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -293,7 +293,7 @@ if __name__ == '__main__':
         logger.info('loading model and data...')
         checkpoint = args.checkpoint
         dset, check_answer_func, description = data.get_data(
-            args=args, task_name=args.task_name, n_shots=args.n_shots,
+            args=args, task_name=args.task_name, n_shots=args.n_shots, max_dset_size=args.max_dset_size,
         )
 
         print(f'Attempting task with description: "{description}"')

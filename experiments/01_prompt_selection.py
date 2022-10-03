@@ -46,7 +46,9 @@ if __name__ == '__main__':
     task_descriptions = []
     for name in task_names:
         dset, check_answer_func, description = get_data(
-            args=args, task_name=name)
+            args=args, task_name=name,
+            max_dset_size=args.max_dset_size,
+        )
         task_descriptions.append(description)
 
     # load stuff

@@ -12,10 +12,14 @@ from iprompt.data_utils.three_num import TASKS_THREE_NUMS
 from iprompt.data_utils.anli import TASKS_ANLI
 from iprompt.data_utils.classification import TASKS_CLASSIFICATION
 
-TASKS = {**TASKS_THREE_NUMS, **TASKS_TWO_NUMS, **TASKS_ONE_NUM, **TASKS_ANLI, **TASKS_CLASSIFICATION}
+TASKS = {**TASKS_THREE_NUMS, **TASKS_TWO_NUMS, **
+         TASKS_ONE_NUM, **TASKS_ANLI, **TASKS_CLASSIFICATION}
 
 
-def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_frac: float = None):
+def get_data(args, task_name: str = 'add_two',
+             n_shots: int = 1, train_split_frac: float = None,
+             max_dset_size: int=10000,
+    ):
     """
 
     Params
@@ -28,7 +32,7 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_fra
     train_split: float
         fraction of data to use for training
         Note: if specified, returns tuple of (dset_train, dset_test) instead of single dset_train
-    args.max_dset_size: int
+    max_dset_size: int
         Data (even for NLI datasets) will be truncated to have at most this many rows
     """
     d = defaultdict(list)
@@ -55,7 +59,7 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_fra
 
         # dont make unnecessarily big if we're just repeating point
         actual_max_dset_size = min(
-            pow(args.max_digit, num_inputs), args.max_dset_size)
+            pow(args.max_digit, num_inputs), max_dset_size)
         for i in range(actual_max_dset_size):
             # when there are very few possibilities, stratify to use them all
             if args.max_digit == 10 and num_inputs <= 2:
@@ -82,22 +86,23 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_fra
     # NLI task, or classification
     else:
         df = task['gen_func'](task_name)
-    
-    assert {'text', 'input', 'output'} <= set(df.columns), f"got bad columns {df.columns}"
+
+    assert {'text', 'input', 'output'} <= set(
+        df.columns), f"got bad columns {df.columns}"
 
     # Example dataframe row:
-    # {'text': 'Given the input numbers 69 and 22, the answer is 91.\n\n', 
-    # 'input': 'Given the input numbers 69 and 22, the answer is', 
+    # {'text': 'Given the input numbers 69 and 22, the answer is 91.\n\n',
+    # 'input': 'Given the input numbers 69 and 22, the answer is',
     # 'output': ' 91.\n\n'}
 
-    df = df.sample(n=min(df.shape[0], args.max_dset_size),
+    df = df.sample(n=min(df.shape[0], max_dset_size),
                    replace=False)  # shuffle rows
 
     # reprocess for the multi-shot setting
     if n_shots > 1:
         logging.debug('Note: multi-shot is not supported by prefix search')
         d2 = defaultdict(list)
-        for i in range(args.max_dset_size):
+        for i in range(max_dset_size):
             all_shots = df.sample(n=n_shots, replace=False)
             d2['text'].append(''.join(all_shots['text'].values))
             #
@@ -113,11 +118,11 @@ def get_data(args, task_name: str = 'add_two', n_shots: int = 1, train_split_fra
         df = pd.DataFrame.from_dict(d2)
         # shuffle rows
 
-        df = df.sample(n=args.max_dset_size, replace=False)
-    # print(df.shape[0], 'max_digit', args.max_digit, 'dset_size', args.max_dset_size, actual_max_dset_size)
+        df = df.sample(n=max_dset_size, replace=False)
+    # print(df.shape[0], 'max_digit', args.max_digit, 'dset_size', max_dset_size, actual_max_dset_size)
     # print(df.head())
     # trim max size (should already be controlled)
-    df = df.iloc[:args.max_dset_size]
+    df = df.iloc[:max_dset_size]
 
     # return check answer func
     check_answer_func = TASKS[task_name]['check_answer_func']
@@ -153,7 +158,7 @@ def get_init_suffix(args) -> List:
     elif args.task_name in TASKS_ONE_NUM.keys():
         init_suffixes = TASKS_ONE_NUM['SUFFIXES'][args.task_name]
     elif args.task_name in TASKS_THREE_NUMS.keys():
-        init_suffixes = TASKS_THREE_NUMS['SUFFIXES'][args.task_name] 
+        init_suffixes = TASKS_THREE_NUMS['SUFFIXES'][args.task_name]
     elif args.task_name in TASKS_ANLI.keys():
         init_suffixes = TASKS_ANLI['SUFFIXES'][args.task_name]
     elif args.task_name in TASKS_CLASSIFICATION.keys():

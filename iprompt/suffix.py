@@ -1,20 +1,8 @@
 import logging
-import pickle as pkl
-from collections import defaultdict
-from copy import deepcopy
-from datetime import datetime
 import string
 
-import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
-from datasets import Dataset
-from torch import nn
 import torch
-from torch.utils.data import DataLoader
-from tqdm import tqdm
-from transformers import (AutoModel, AutoModelForCausalLM, AutoTokenizer,
-                          pipeline, top_k_top_p_filtering)
 
 import iprompt.data as data
 import iprompt.parallel as parallel

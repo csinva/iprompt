@@ -432,7 +432,7 @@ if __name__ == '__main__':
             loss_func=loss_func, model=lm, tokenizer=tokenizer, preprefix=preprefix
         )
         dset, check_answer_func, description = data.get_data(
-            args=args, task_name=args.task_name, n_shots=args.n_shots, train_split_frac=args.train_split_frac)
+            args=args, task_name=args.task_name, n_shots=args.n_shots, train_split_frac=args.train_split_frac, max_dset_size=args.max_dset_size)
         print(f'Attempting task with description: "{description}"')
 
         logger.info('beginning training...')

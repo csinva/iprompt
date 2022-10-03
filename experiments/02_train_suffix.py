@@ -135,12 +135,13 @@ if __name__ == '__main__':
 
         # load data
         logger.info('loading data...')
+        data_kwargs = dict(
+            args=args, task_name=args.task_name, n_shots=args.n_shots, train_split_frac=args.train_split_frac, max_dset_size=args.max_dset_size,
+        )
         if args.train_split_frac:
-            (dset, dset_test), check_answer_func, descr = data.get_data(
-                args, args.task_name, n_shots=args.n_shots, train_split_frac=args.train_split_frac)
+            (dset, dset_test), check_answer_func, descr = data.get_data(**data_kwargs)
         else:
-            dset, check_answer_func, descr = data.get_data(
-                args, args.task_name, n_shots=args.n_shots, train_split_frac=args.train_split_frac)
+            dset, check_answer_func, descr = data.get_data(**data_kwargs)
         dataloader = DataLoader(
             dset, batch_size=min(args.batch_size, len(dset)), shuffle=True, drop_last=True)
         logging.info(
