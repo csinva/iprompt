@@ -135,9 +135,9 @@ if __name__ == '__main__':
 
         # load data
         logger.info('loading data...')
-        data_kwargs = dict(
-            args=args, task_name=args.task_name, n_shots=args.n_shots, train_split_frac=args.train_split_frac, max_dset_size=args.max_dset_size,
-        )
+        data_kwargs = dict(task_name=args.task_name, n_shots=args.n_shots, train_split_frac=args.train_split_frac, max_dset_size=args.max_dset_size,
+                           template_num_task_phrasing=args.template_num_task_phrasing, max_digit=args.max_digit,
+                           )
         if args.train_split_frac:
             (dset, dset_test), check_answer_func, descr = data.get_data(**data_kwargs)
         else:
@@ -158,7 +158,7 @@ if __name__ == '__main__':
                 model = AutoModelForCausalLM.from_pretrained(
                     checkpoint, output_hidden_states=False,
                     revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True
-                    )     
+                )
             else:
                 model = AutoModelForCausalLM.from_pretrained(
                     checkpoint, output_hidden_states=False)

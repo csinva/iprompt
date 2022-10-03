@@ -211,10 +211,11 @@ for task_key in task_keys:
                             args.task_name = task_name_test
                         args.n_shots = n_shots
                         data_kwargs = dict(
-                            args=args,
                             task_name=args.task_name, n_shots=args.n_shots,
                             train_split_frac=args.train_split_frac,
                             max_dset_size=args.max_dset_size,
+                            template_num_task_phrasing=args.template_num_task_phrasing,
+                            max_digit=args.max_digit,
                         )
                         if args.train_split_frac:
                             (_, dset_test), _, descr = data.get_data(**data_kwargs)

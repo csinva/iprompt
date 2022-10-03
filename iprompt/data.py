@@ -16,9 +16,11 @@ TASKS = {**TASKS_THREE_NUMS, **TASKS_TWO_NUMS, **
          TASKS_ONE_NUM, **TASKS_ANLI, **TASKS_CLASSIFICATION}
 
 
-def get_data(args, task_name: str = 'add_two',
+def get_data(task_name: str = 'add_two',
              n_shots: int = 1, train_split_frac: float = None,
              max_dset_size: int=10000,
+             template_num_task_phrasing: int=0,
+             max_digit: int = 10,
     ):
     """
 
@@ -49,7 +51,7 @@ def get_data(args, task_name: str = 'add_two',
     if task_name in TASKS_ONE_NUM.keys() \
             or task_name in TASKS_TWO_NUMS.keys() \
             or task_name in TASKS_THREE_NUMS.keys():
-        template = task['prompt_template_funcs'][args.template_num_task_phrasing]
+        template = task['prompt_template_funcs'][template_num_task_phrasing]
         if task_name in TASKS_ONE_NUM.keys():
             num_inputs = 1
         elif task_name in TASKS_TWO_NUMS.keys():
@@ -59,16 +61,16 @@ def get_data(args, task_name: str = 'add_two',
 
         # dont make unnecessarily big if we're just repeating point
         actual_max_dset_size = min(
-            pow(args.max_digit, num_inputs), max_dset_size)
+            pow(max_digit, num_inputs), max_dset_size)
         for i in range(actual_max_dset_size):
             # when there are very few possibilities, stratify to use them all
-            if args.max_digit == 10 and num_inputs <= 2:
+            if max_digit == 10 and num_inputs <= 2:
                 num1 = i // 10
                 num2 = i % 10
             else:
-                num1 = rng.integers(low=0, high=args.max_digit)
-                num2 = rng.integers(low=0, high=args.max_digit)
-                num3 = rng2.integers(low=0, high=args.max_digit)
+                num1 = rng.integers(low=0, high=max_digit)
+                num2 = rng.integers(low=0, high=max_digit)
+                num3 = rng2.integers(low=0, high=max_digit)
 
             gen_func = task['gen_func']
             if num_inputs == 1:
@@ -119,7 +121,7 @@ def get_data(args, task_name: str = 'add_two',
         # shuffle rows
 
         df = df.sample(n=max_dset_size, replace=False)
-    # print(df.shape[0], 'max_digit', args.max_digit, 'dset_size', max_dset_size, actual_max_dset_size)
+    # print(df.shape[0], 'max_digit', max_digit, 'dset_size', max_dset_size, actual_max_dset_size)
     # print(df.head())
     # trim max size (should already be controlled)
     df = df.iloc[:max_dset_size]
@@ -147,22 +149,22 @@ def get_data(args, task_name: str = 'add_two',
         return dset, check_answer_func, descr
 
 
-def get_init_suffix(args) -> List:
+def get_init_suffix(task_name: str, use_generic_query: bool=False, template_num_init_string: int=0) -> List:
     # Note: don't change the order of these (higher ones should be better)
     """Note: questions should end with 2 newlines, so can directly start suffix.
     """
-    if args.use_generic_query:
+    if use_generic_query:
         return 'To get the answer from the input, return'
-    if args.task_name in TASKS_TWO_NUMS.keys():
-        init_suffixes = TASKS_TWO_NUMS['SUFFIXES'][args.task_name]
-    elif args.task_name in TASKS_ONE_NUM.keys():
-        init_suffixes = TASKS_ONE_NUM['SUFFIXES'][args.task_name]
-    elif args.task_name in TASKS_THREE_NUMS.keys():
-        init_suffixes = TASKS_THREE_NUMS['SUFFIXES'][args.task_name]
-    elif args.task_name in TASKS_ANLI.keys():
-        init_suffixes = TASKS_ANLI['SUFFIXES'][args.task_name]
-    elif args.task_name in TASKS_CLASSIFICATION.keys():
-        init_suffixes = TASKS_CLASSIFICATION['SUFFIXES'][args.task_name]
+    if task_name in TASKS_TWO_NUMS.keys():
+        init_suffixes = TASKS_TWO_NUMS['SUFFIXES'][task_name]
+    elif task_name in TASKS_ONE_NUM.keys():
+        init_suffixes = TASKS_ONE_NUM['SUFFIXES'][task_name]
+    elif task_name in TASKS_THREE_NUMS.keys():
+        init_suffixes = TASKS_THREE_NUMS['SUFFIXES'][task_name]
+    elif task_name in TASKS_ANLI.keys():
+        init_suffixes = TASKS_ANLI['SUFFIXES'][task_name]
+    elif task_name in TASKS_CLASSIFICATION.keys():
+        init_suffixes = TASKS_CLASSIFICATION['SUFFIXES'][task_name]
     else:
-        raise Exception(f'no suffix found for task {args.task_name}')
-    return init_suffixes[args.template_num_init_string]
+        raise Exception(f'no suffix found for task {task_name}')
+    return init_suffixes[template_num_init_string]

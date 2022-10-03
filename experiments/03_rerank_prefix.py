@@ -293,7 +293,8 @@ if __name__ == '__main__':
         logger.info('loading model and data...')
         checkpoint = args.checkpoint
         dset, check_answer_func, description = data.get_data(
-            args=args, task_name=args.task_name, n_shots=args.n_shots, max_dset_size=args.max_dset_size,
+            task_name=args.task_name, n_shots=args.n_shots, max_dset_size=args.max_dset_size,
+            template_num_task_phrasing=args.template_num_task_phrasing, max_digit=args.max_digit,
         )
 
         print(f'Attempting task with description: "{description}"')

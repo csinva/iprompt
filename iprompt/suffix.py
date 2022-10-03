@@ -138,7 +138,7 @@ def train_suffix(args, r, model, dataloader, check_answer_func, tokenizer, save_
     """
 
     # set up BFS beam search
-    suffix_str = data.get_init_suffix(args)
+    suffix_str = data.get_init_suffix(args.task_name, args.use_generic_query, args.template_num_init_string)
 
     suffixes = [{'s': suffix_str, 'num_tokens_added': 0,
                  'running_prob': 1, 'num_suffixes_checked': 0}]

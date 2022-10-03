@@ -63,8 +63,7 @@ if __name__ == '__main__':
         name = task_names[i]
         for j in range(len(task_descriptions)):
             description = task_descriptions[j]
-            dset, check_answer_func, __this_task_description = get_data(
-                args=args, task_name=name)
+            dset, check_answer_func, __this_task_description = get_data(task_name=name, **args_dict)
             loss, acc = test_model_on_task_with_prefix(
                 dset=dset, model=model, prefix=f'{description} '
             )
