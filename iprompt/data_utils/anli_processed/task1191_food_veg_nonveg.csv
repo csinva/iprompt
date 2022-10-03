@@ -1,0 +1,203 @@
+input,output,text
+Butter chicken,no,"Input: Butter chicken Answer: no
+"
+Kadhi pakoda,yes,"Input: Kadhi pakoda Answer: yes
+"
+Doodhpak,yes,"Input: Doodhpak Answer: yes
+"
+Unni Appam,yes,"Input: Unni Appam Answer: yes
+"
+Kakinada khaja,yes,"Input: Kakinada khaja Answer: yes
+"
+Palathalikalu,yes,"Input: Palathalikalu Answer: yes
+"
+Prawn malai curry,no,"Input: Prawn malai curry Answer: no
+"
+Fara,yes,"Input: Fara Answer: yes
+"
+Sohan papdi,yes,"Input: Sohan papdi Answer: yes
+"
+Bandar laddu,yes,"Input: Bandar laddu Answer: yes
+"
+Ledikeni,yes,"Input: Ledikeni Answer: yes
+"
+Kheer sagar,yes,"Input: Kheer sagar Answer: yes
+"
+Lassi,yes,"Input: Lassi Answer: yes
+"
+Bhindi masala,yes,"Input: Bhindi masala Answer: yes
+"
+Kabiraji,no,"Input: Kabiraji Answer: no
+"
+Gajar ka halwa,yes,"Input: Gajar ka halwa Answer: yes
+"
+Anarsa,yes,"Input: Anarsa Answer: yes
+"
+Rasabali,yes,"Input: Rasabali Answer: yes
+"
+Basundi,yes,"Input: Basundi Answer: yes
+"
+Vindaloo,no,"Input: Vindaloo Answer: no
+"
+Kalakand,yes,"Input: Kalakand Answer: yes
+"
+Dhondas,yes,"Input: Dhondas Answer: yes
+"
+Boondi,yes,"Input: Boondi Answer: yes
+"
+Kadai paneer,yes,"Input: Kadai paneer Answer: yes
+"
+Haq Maas,no,"Input: Haq Maas Answer: no
+"
+Dharwad pedha,yes,"Input: Dharwad pedha Answer: yes
+"
+Maach Jhol,no,"Input: Maach Jhol Answer: no
+"
+Chana masala,yes,"Input: Chana masala Answer: yes
+"
+Pithe,yes,"Input: Pithe Answer: yes
+"
+Kaju katli,yes,"Input: Kaju katli Answer: yes
+"
+Jalebi,yes,"Input: Jalebi Answer: yes
+"
+Tandoori Fish Tikka,no,"Input: Tandoori Fish Tikka Answer: no
+"
+Kuzhi paniyaram,yes,"Input: Kuzhi paniyaram Answer: yes
+"
+Modak,yes,"Input: Modak Answer: yes
+"
+Daal baati churma,yes,"Input: Daal baati churma Answer: yes
+"
+Alu Pitika,no,"Input: Alu Pitika Answer: no
+"
+Kumol Sawul,no,"Input: Kumol Sawul Answer: no
+"
+Misti doi,yes,"Input: Misti doi Answer: yes
+"
+Poha,yes,"Input: Poha Answer: yes
+"
+Chicken razala,no,"Input: Chicken razala Answer: no
+"
+Laddu,yes,"Input: Laddu Answer: yes
+"
+Chhena poda,yes,"Input: Chhena poda Answer: yes
+"
+Double ka meetha,yes,"Input: Double ka meetha Answer: yes
+"
+Mihidana,yes,"Input: Mihidana Answer: yes
+"
+Chhena jalebi,yes,"Input: Chhena jalebi Answer: yes
+"
+Kheer,yes,"Input: Kheer Answer: yes
+"
+Aloo matar,yes,"Input: Aloo matar Answer: yes
+"
+Chicken Tikka,no,"Input: Chicken Tikka Answer: no
+"
+Chicken Varuval,no,"Input: Chicken Varuval Answer: no
+"
+Obbattu holige,yes,"Input: Obbattu holige Answer: yes
+"
+Koldil Chicken,no,"Input: Koldil Chicken Answer: no
+"
+Dum aloo,yes,"Input: Dum aloo Answer: yes
+"
+Gavvalu,yes,"Input: Gavvalu Answer: yes
+"
+Gulab jamun,yes,"Input: Gulab jamun Answer: yes
+"
+Tandoori Chicken,no,"Input: Tandoori Chicken Answer: no
+"
+Chole bhature,yes,"Input: Chole bhature Answer: yes
+"
+Aloo tikki,yes,"Input: Aloo tikki Answer: yes
+"
+Aloo methi,yes,"Input: Aloo methi Answer: yes
+"
+Koldil Duck,no,"Input: Koldil Duck Answer: no
+"
+Biryani,no,"Input: Biryani Answer: no
+"
+Dal makhani ,yes,"Input: Dal makhani  Answer: yes
+"
+Chingri malai curry,no,"Input: Chingri malai curry Answer: no
+"
+Ghevar,yes,"Input: Ghevar Answer: yes
+"
+Chikki,yes,"Input: Chikki Answer: yes
+"
+Sutar feni,yes,"Input: Sutar feni Answer: yes
+"
+Sohan halwa,yes,"Input: Sohan halwa Answer: yes
+"
+Shrikhand,yes,"Input: Shrikhand Answer: yes
+"
+Masor tenga,no,"Input: Masor tenga Answer: no
+"
+Rasgulla,yes,"Input: Rasgulla Answer: yes
+"
+Konir Dom,no,"Input: Konir Dom Answer: no
+"
+Bhatura,yes,"Input: Bhatura Answer: yes
+"
+Kachori,yes,"Input: Kachori Answer: yes
+"
+Galho,no,"Input: Galho Answer: no
+"
+Pootharekulu,yes,"Input: Pootharekulu Answer: yes
+"
+Singori,yes,"Input: Singori Answer: yes
+"
+Beef Fry,no,"Input: Beef Fry Answer: no
+"
+Kajjikaya,yes,"Input: Kajjikaya Answer: yes
+"
+Sandesh,yes,"Input: Sandesh Answer: yes
+"
+Kolim Jawla,no,"Input: Kolim Jawla Answer: no
+"
+Ariselu,yes,"Input: Ariselu Answer: yes
+"
+Mysore pak,yes,"Input: Mysore pak Answer: yes
+"
+Lyangcha,yes,"Input: Lyangcha Answer: yes
+"
+Ras malai,yes,"Input: Ras malai Answer: yes
+"
+Chak Hao Kheer,yes,"Input: Chak Hao Kheer Answer: yes
+"
+Bombil fry,no,"Input: Bombil fry Answer: no
+"
+Pantua,yes,"Input: Pantua Answer: yes
+"
+Mahim halwa,yes,"Input: Mahim halwa Answer: yes
+"
+Sheer korma,yes,"Input: Sheer korma Answer: yes
+"
+Aloo gobi,yes,"Input: Aloo gobi Answer: yes
+"
+Daal puri,yes,"Input: Daal puri Answer: yes
+"
+Phirni,yes,"Input: Phirni Answer: yes
+"
+Dal tadka,yes,"Input: Dal tadka Answer: yes
+"
+Imarti,yes,"Input: Imarti Answer: yes
+"
+Cham cham,yes,"Input: Cham cham Answer: yes
+"
+Chhena kheeri,yes,"Input: Chhena kheeri Answer: yes
+"
+Chicken Tikka masala,no,"Input: Chicken Tikka masala Answer: no
+"
+Qubani ka meetha,yes,"Input: Qubani ka meetha Answer: yes
+"
+Masor Koni,no,"Input: Masor Koni Answer: no
+"
+Adhirasam,yes,"Input: Adhirasam Answer: yes
+"
+Aloo shimla mirch,yes,"Input: Aloo shimla mirch Answer: yes
+"
+Shankarpali,yes,"Input: Shankarpali Answer: yes
+"

@@ -1,0 +1,465 @@
+input,output,text
+Afghanistan,Afghanistan Afghani,"Input: Afghanistan Answer: Afghanistan Afghani
+"
+Albania,Albanian Lek,"Input: Albania Answer: Albanian Lek
+"
+Algeria,Algerian Dinar,"Input: Algeria Answer: Algerian Dinar
+"
+American Samoa,US Dollar,"Input: American Samoa Answer: US Dollar
+"
+Andorra,Euro,"Input: Andorra Answer: Euro
+"
+Angola,Angolan Kwanza,"Input: Angola Answer: Angolan Kwanza
+"
+Anguilla,East Caribbean Dollar,"Input: Anguilla Answer: East Caribbean Dollar
+"
+Antarctica,East Caribbean Dollar,"Input: Antarctica Answer: East Caribbean Dollar
+"
+Antigua and Barbuda,East Caribbean Dollar,"Input: Antigua and Barbuda Answer: East Caribbean Dollar
+"
+Argentina,Argentine Peso,"Input: Argentina Answer: Argentine Peso
+"
+Armenia,Armenian Dram,"Input: Armenia Answer: Armenian Dram
+"
+Aruba,Aruban Guilder,"Input: Aruba Answer: Aruban Guilder
+"
+Australia,Australian Dollar,"Input: Australia Answer: Australian Dollar
+"
+Austria,Euro,"Input: Austria Answer: Euro
+"
+Azerbaijan,Azerbaijan New Manat,"Input: Azerbaijan Answer: Azerbaijan New Manat
+"
+Bahamas,Bahamian Dollar,"Input: Bahamas Answer: Bahamian Dollar
+"
+Bahrain,Bahraini Dinar,"Input: Bahrain Answer: Bahraini Dinar
+"
+Bangladesh,Bangladeshi Taka,"Input: Bangladesh Answer: Bangladeshi Taka
+"
+Barbados,Barbados Dollar,"Input: Barbados Answer: Barbados Dollar
+"
+Belarus,Belarussian Ruble,"Input: Belarus Answer: Belarussian Ruble
+"
+Belgium,Euro,"Input: Belgium Answer: Euro
+"
+Belize,Belize Dollar,"Input: Belize Answer: Belize Dollar
+"
+Benin,CFA Franc BCEAO,"Input: Benin Answer: CFA Franc BCEAO
+"
+Bermuda,Bermudian Dollar,"Input: Bermuda Answer: Bermudian Dollar
+"
+Bhutan,Bhutan Ngultrum,"Input: Bhutan Answer: Bhutan Ngultrum
+"
+Bolivia,Boliviano,"Input: Bolivia Answer: Boliviano
+"
+Bosnia-Herzegovina,Marka,"Input: Bosnia-Herzegovina Answer: Marka
+"
+Botswana,Botswana Pula,"Input: Botswana Answer: Botswana Pula
+"
+Bouvet Island,Norwegian Krone,"Input: Bouvet Island Answer: Norwegian Krone
+"
+Brazil,Brazilian Real,"Input: Brazil Answer: Brazilian Real
+"
+Brunei Darussalam,Brunei Dollar,"Input: Brunei Darussalam Answer: Brunei Dollar
+"
+Bulgaria,Bulgarian Lev,"Input: Bulgaria Answer: Bulgarian Lev
+"
+Burkina Faso,CFA Franc BCEAO,"Input: Burkina Faso Answer: CFA Franc BCEAO
+"
+Burundi,Burundi Franc,"Input: Burundi Answer: Burundi Franc
+"
+Cambodia,Kampuchean Riel,"Input: Cambodia Answer: Kampuchean Riel
+"
+Cameroon,CFA Franc BEAC,"Input: Cameroon Answer: CFA Franc BEAC
+"
+Canada,Canadian Dollar,"Input: Canada Answer: Canadian Dollar
+"
+Cape Verde,Cape Verde Escudo,"Input: Cape Verde Answer: Cape Verde Escudo
+"
+Cayman Islands,Cayman Islands Dollar,"Input: Cayman Islands Answer: Cayman Islands Dollar
+"
+Central African Republic,CFA Franc BEAC,"Input: Central African Republic Answer: CFA Franc BEAC
+"
+Chile,Chilean Peso,"Input: Chile Answer: Chilean Peso
+"
+China,Yuan Renminbi,"Input: China Answer: Yuan Renminbi
+"
+Christmas Island,Australian Dollar,"Input: Christmas Island Answer: Australian Dollar
+"
+Cocos (Keeling) Islands, Australian Dollar,"Input: Cocos (Keeling) Islands Answer:  Australian Dollar
+"
+Colombia,Colombian Peso,"Input: Colombia Answer: Colombian Peso
+"
+Comoros,Comoros Franc,"Input: Comoros Answer: Comoros Franc
+"
+Congo,CFA Franc BEAC,"Input: Congo Answer: CFA Franc BEAC
+"
+"Congo, Dem. Republic", Francs,"Input: Congo, Dem. Republic Answer:  Francs
+"
+Cook Islands,New Zealand Dollar,"Input: Cook Islands Answer: New Zealand Dollar
+"
+Costa Rica,Costa Rican Colon,"Input: Costa Rica Answer: Costa Rican Colon
+"
+Croatia,Croatian Kuna,"Input: Croatia Answer: Croatian Kuna
+"
+Cuba,Cuban Peso,"Input: Cuba Answer: Cuban Peso
+"
+Cyprus,Euro,"Input: Cyprus Answer: Euro
+"
+Czech Rep. ,Czech Koruna,"Input: Czech Rep.  Answer: Czech Koruna
+"
+Denmark,Danish Krone,"Input: Denmark Answer: Danish Krone
+"
+Djibouti,Djibouti Franc,"Input: Djibouti Answer: Djibouti Franc
+"
+Dominica,East Caribbean Dollar,"Input: Dominica Answer: East Caribbean Dollar
+"
+Dominican Republic,Dominican Peso,"Input: Dominican Republic Answer: Dominican Peso
+"
+Ecuador,Ecuador Sucre,"Input: Ecuador Answer: Ecuador Sucre
+"
+Egypt,Egyptian Pound,"Input: Egypt Answer: Egyptian Pound
+"
+El Salvador,El Salvador Colon,"Input: El Salvador Answer: El Salvador Colon
+"
+Equatorial Guinea,CFA Franc BEAC,"Input: Equatorial Guinea Answer: CFA Franc BEAC
+"
+Eritrea,Eritrean Nakfa,"Input: Eritrea Answer: Eritrean Nakfa
+"
+Estonia,Euro,"Input: Estonia Answer: Euro
+"
+Ethiopia,Ethiopian Birr,"Input: Ethiopia Answer: Ethiopian Birr
+"
+European Union,Euro,"Input: European Union Answer: Euro
+"
+Falkland Islands (Malvinas) ,Falkland Islands Pound,"Input: Falkland Islands (Malvinas)  Answer: Falkland Islands Pound
+"
+Faroe Islands, Danish Krone,"Input: Faroe Islands Answer:  Danish Krone
+"
+Fiji,Fiji Dollar,"Input: Fiji Answer: Fiji Dollar
+"
+Finland,Euro,"Input: Finland Answer: Euro
+"
+French Guiana,Euro,"Input: French Guiana Answer: Euro
+"
+French Southern Territories,Euro,"Input: French Southern Territories Answer: Euro
+"
+Gabon,CFA Franc BEAC,"Input: Gabon Answer: CFA Franc BEAC
+"
+Gambia,Gambian Dalasi,"Input: Gambia Answer: Gambian Dalasi
+"
+Georgia,Georgian Lari,"Input: Georgia Answer: Georgian Lari
+"
+Germany,Euro,"Input: Germany Answer: Euro
+"
+Ghana,Ghanaian Cedi,"Input: Ghana Answer: Ghanaian Cedi
+"
+Gibraltar,Gibraltar Pound,"Input: Gibraltar Answer: Gibraltar Pound
+"
+Great Britain,Pound Sterling,"Input: Great Britain Answer: Pound Sterling
+"
+Greece,Euro,"Input: Greece Answer: Euro
+"
+Greenland,Danish Krone,"Input: Greenland Answer: Danish Krone
+"
+Grenada,East Carribean Dollar,"Input: Grenada Answer: East Carribean Dollar
+"
+Guadeloupe (French) ,Euro,"Input: Guadeloupe (French)  Answer: Euro
+"
+Guam (USA) ,US Dollar,"Input: Guam (USA)  Answer: US Dollar
+"
+Guatemala,Guatemalan Quetzal,"Input: Guatemala Answer: Guatemalan Quetzal
+"
+Guernsey,Pound Sterling,"Input: Guernsey Answer: Pound Sterling
+"
+Guinea,Guinea Franc,"Input: Guinea Answer: Guinea Franc
+"
+Guinea Bissau,Guinea-Bissau Peso,"Input: Guinea Bissau Answer: Guinea-Bissau Peso
+"
+Guyana,Guyana Dollar,"Input: Guyana Answer: Guyana Dollar
+"
+Haiti,Haitian Gourde,"Input: Haiti Answer: Haitian Gourde
+"
+Heard Island and McDonald Islands,Australian Dollar,"Input: Heard Island and McDonald Islands Answer: Australian Dollar
+"
+Honduras,Honduran Lempira,"Input: Honduras Answer: Honduran Lempira
+"
+Hong Kong,Hong Kong Dollar,"Input: Hong Kong Answer: Hong Kong Dollar
+"
+Hungary,Hungarian Forint,"Input: Hungary Answer: Hungarian Forint
+"
+Iceland,Iceland Krona,"Input: Iceland Answer: Iceland Krona
+"
+Indonesia,Indonesian Rupiah,"Input: Indonesia Answer: Indonesian Rupiah
+"
+Iran,Iranian Rial,"Input: Iran Answer: Iranian Rial
+"
+Iraq,Iraqi Dinar,"Input: Iraq Answer: Iraqi Dinar
+"
+Ireland,Euro,"Input: Ireland Answer: Euro
+"
+Isle of Man,Pound Sterling,"Input: Isle of Man Answer: Pound Sterling
+"
+Israel,Israeli New Shekel,"Input: Israel Answer: Israeli New Shekel
+"
+Italy,Euro,"Input: Italy Answer: Euro
+"
+Ivory Coast,CFA Franc BCEAO,"Input: Ivory Coast Answer: CFA Franc BCEAO
+"
+Jamaica,Jamaican Dollar,"Input: Jamaica Answer: Jamaican Dollar
+"
+Japan,Japanese Yen,"Input: Japan Answer: Japanese Yen
+"
+Jersey,Pound Sterling,"Input: Jersey Answer: Pound Sterling
+"
+Jordan,Jordanian Dinar,"Input: Jordan Answer: Jordanian Dinar
+"
+Kazakhstan,Kazakhstan Tenge,"Input: Kazakhstan Answer: Kazakhstan Tenge
+"
+Kenya,Kenyan Shilling,"Input: Kenya Answer: Kenyan Shilling
+"
+Kiribati,Australian Dollar,"Input: Kiribati Answer: Australian Dollar
+"
+Kyrgyzstan,Som,"Input: Kyrgyzstan Answer: Som
+"
+Laos,Lao Kip,"Input: Laos Answer: Lao Kip
+"
+Latvia,Latvian Lats,"Input: Latvia Answer: Latvian Lats
+"
+Lebanon,Lebanese Pound,"Input: Lebanon Answer: Lebanese Pound
+"
+Lesotho,Lesotho Loti,"Input: Lesotho Answer: Lesotho Loti
+"
+Liberia,Liberian Dollar,"Input: Liberia Answer: Liberian Dollar
+"
+Libya,Libyan Dinar,"Input: Libya Answer: Libyan Dinar
+"
+Liechtenstein,Swiss Franc,"Input: Liechtenstein Answer: Swiss Franc
+"
+Lithuania,Lithuanian Litas,"Input: Lithuania Answer: Lithuanian Litas
+"
+Luxembourg,Euro,"Input: Luxembourg Answer: Euro
+"
+Macau,Macau Pataca,"Input: Macau Answer: Macau Pataca
+"
+Macedonia,Denar,"Input: Macedonia Answer: Denar
+"
+Madagascar,Malagasy Franc,"Input: Madagascar Answer: Malagasy Franc
+"
+Malawi,Malawi Kwacha,"Input: Malawi Answer: Malawi Kwacha
+"
+Malaysia,Malaysian Ringgit,"Input: Malaysia Answer: Malaysian Ringgit
+"
+Maldives,Maldive Rufiyaa,"Input: Maldives Answer: Maldive Rufiyaa
+"
+Mali,CFA Franc BCEAO,"Input: Mali Answer: CFA Franc BCEAO
+"
+Malta,Euro,"Input: Malta Answer: Euro
+"
+Marshall Islands,US Dollar,"Input: Marshall Islands Answer: US Dollar
+"
+Martinique (French), Euro,"Input: Martinique (French) Answer:  Euro
+"
+Mauritania,Mauritanian Ouguiya,"Input: Mauritania Answer: Mauritanian Ouguiya
+"
+Mauritius,Mauritius Rupee,"Input: Mauritius Answer: Mauritius Rupee
+"
+Mayotte,Euro,"Input: Mayotte Answer: Euro
+"
+Mexico,Mexican Nuevo Peso,"Input: Mexico Answer: Mexican Nuevo Peso
+"
+Micronesia,US Dollar,"Input: Micronesia Answer: US Dollar
+"
+Moldova,Moldovan Leu,"Input: Moldova Answer: Moldovan Leu
+"
+Mongolia,Mongolian Tugrik,"Input: Mongolia Answer: Mongolian Tugrik
+"
+Montenegro,Euro,"Input: Montenegro Answer: Euro
+"
+Montserrat,East Caribbean Dollar,"Input: Montserrat Answer: East Caribbean Dollar
+"
+Morocco,Moroccan Dirham,"Input: Morocco Answer: Moroccan Dirham
+"
+Mozambique,Mozambique Metical,"Input: Mozambique Answer: Mozambique Metical
+"
+Myanmar,Myanmar Kyat,"Input: Myanmar Answer: Myanmar Kyat
+"
+Namibia,Namibian Dollar,"Input: Namibia Answer: Namibian Dollar
+"
+Nauru,Australian Dollar,"Input: Nauru Answer: Australian Dollar
+"
+Nepal,Nepalese Rupee,"Input: Nepal Answer: Nepalese Rupee
+"
+Netherlands,Euro,"Input: Netherlands Answer: Euro
+"
+New Caledonia (French) ,CFP Franc,"Input: New Caledonia (French)  Answer: CFP Franc
+"
+New Zealand,New Zealand Dollar,"Input: New Zealand Answer: New Zealand Dollar
+"
+Nicaragua,Nicaraguan Cordoba Oro,"Input: Nicaragua Answer: Nicaraguan Cordoba Oro
+"
+Niger,CFA Franc BCEAO,"Input: Niger Answer: CFA Franc BCEAO
+"
+Nigeria,Nigerian Naira,"Input: Nigeria Answer: Nigerian Naira
+"
+Niue,New Zealand Dollar,"Input: Niue Answer: New Zealand Dollar
+"
+Norfolk Island,Australian Dollar,"Input: Norfolk Island Answer: Australian Dollar
+"
+North Korea,North Korean Won,"Input: North Korea Answer: North Korean Won
+"
+Norway,Norwegian Krone,"Input: Norway Answer: Norwegian Krone
+"
+Oman,Omani Rial,"Input: Oman Answer: Omani Rial
+"
+Pakistan,Pakistan Rupee,"Input: Pakistan Answer: Pakistan Rupee
+"
+Palau,US Dollar,"Input: Palau Answer: US Dollar
+"
+Panama,Panamanian Balboa,"Input: Panama Answer: Panamanian Balboa
+"
+Papua New Guinea,Papua New Guinea Kina,"Input: Papua New Guinea Answer: Papua New Guinea Kina
+"
+Paraguay,Paraguay Guarani,"Input: Paraguay Answer: Paraguay Guarani
+"
+Peru,Peruvian Nuevo Sol,"Input: Peru Answer: Peruvian Nuevo Sol
+"
+Philippines,Philippine Peso,"Input: Philippines Answer: Philippine Peso
+"
+Pitcairn Island,New Zealand Dollar,"Input: Pitcairn Island Answer: New Zealand Dollar
+"
+Poland,Polish Zloty,"Input: Poland Answer: Polish Zloty
+"
+Polynesia (French) ,CFP Franc,"Input: Polynesia (French)  Answer: CFP Franc
+"
+Portugal,Euro,"Input: Portugal Answer: Euro
+"
+Puerto Rico,US Dollar,"Input: Puerto Rico Answer: US Dollar
+"
+Qatar,Qatari Rial,"Input: Qatar Answer: Qatari Rial
+"
+Romania,Romanian New Leu,"Input: Romania Answer: Romanian New Leu
+"
+Russia,Russian Ruble,"Input: Russia Answer: Russian Ruble
+"
+Rwanda,Rwanda Franc,"Input: Rwanda Answer: Rwanda Franc
+"
+Saint Helena,St. Helena Pound,"Input: Saint Helena Answer: St. Helena Pound
+"
+Saint Lucia,East Caribbean Dollar,"Input: Saint Lucia Answer: East Caribbean Dollar
+"
+Saint Pierre and Miquelon, Euro,"Input: Saint Pierre and Miquelon Answer:  Euro
+"
+Saint Vincent &amp; Grenadines,East Caribbean Dollar,"Input: Saint Vincent &amp; Grenadines Answer: East Caribbean Dollar
+"
+Samoa,Samoan Tala,"Input: Samoa Answer: Samoan Tala
+"
+San Marino,Euro,"Input: San Marino Answer: Euro
+"
+Sao Tome and Principe, Dobra,"Input: Sao Tome and Principe Answer:  Dobra
+"
+Saudi Arabia,Saudi Riyal,"Input: Saudi Arabia Answer: Saudi Riyal
+"
+Senegal,CFA Franc BCEAO,"Input: Senegal Answer: CFA Franc BCEAO
+"
+Serbia,Dinar,"Input: Serbia Answer: Dinar
+"
+Seychelles,Seychelles Rupee,"Input: Seychelles Answer: Seychelles Rupee
+"
+Sierra Leone,Sierra Leone Leone,"Input: Sierra Leone Answer: Sierra Leone Leone
+"
+Singapore,Singapore Dollar,"Input: Singapore Answer: Singapore Dollar
+"
+Slovakia,Euro,"Input: Slovakia Answer: Euro
+"
+Slovenia,Euro,"Input: Slovenia Answer: Euro
+"
+Solomon Islands,Solomon Islands Dollar,"Input: Solomon Islands Answer: Solomon Islands Dollar
+"
+Somalia,Somali Shilling,"Input: Somalia Answer: Somali Shilling
+"
+South Africa,South African Rand,"Input: South Africa Answer: South African Rand
+"
+South Korea,Korean Won,"Input: South Korea Answer: Korean Won
+"
+South Georgia &amp; South Sandwich Islands,Pound Sterling,"Input: South Georgia &amp; South Sandwich Islands Answer: Pound Sterling
+"
+South Sudan,South Sudan Pound,"Input: South Sudan Answer: South Sudan Pound
+"
+Spain,Euro,"Input: Spain Answer: Euro
+"
+Sri Lanka,Sri Lanka Rupee,"Input: Sri Lanka Answer: Sri Lanka Rupee
+"
+Sudan,Sudanese Pound,"Input: Sudan Answer: Sudanese Pound
+"
+Suriname,Surinam Dollar,"Input: Suriname Answer: Surinam Dollar
+"
+Svalbard and Jan Mayen Islands,Norwegian Krone,"Input: Svalbard and Jan Mayen Islands Answer: Norwegian Krone
+"
+Swaziland,Swaziland Lilangeni,"Input: Swaziland Answer: Swaziland Lilangeni
+"
+Sweden,Swedish Krona,"Input: Sweden Answer: Swedish Krona
+"
+Switzerland,Swiss Franc,"Input: Switzerland Answer: Swiss Franc
+"
+Syria,Syrian Pound,"Input: Syria Answer: Syrian Pound
+"
+Taiwan,Taiwan Dollar,"Input: Taiwan Answer: Taiwan Dollar
+"
+Tajikistan,Tajik Somoni,"Input: Tajikistan Answer: Tajik Somoni
+"
+Tanzania,Tanzanian Shilling,"Input: Tanzania Answer: Tanzanian Shilling
+"
+Thailand,Thai Baht,"Input: Thailand Answer: Thai Baht
+"
+Togo,CFA Franc BCEAO,"Input: Togo Answer: CFA Franc BCEAO
+"
+Tokelau,New Zealand Dollar,"Input: Tokelau Answer: New Zealand Dollar
+"
+Tonga,Tongan Pa'anga,"Input: Tonga Answer: Tongan Pa'anga
+"
+Trinidad and Tobago,Trinidad and Tobago Dollar,"Input: Trinidad and Tobago Answer: Trinidad and Tobago Dollar
+"
+Tunisia,Tunisian Dollar,"Input: Tunisia Answer: Tunisian Dollar
+"
+Turkey,Turkish Lira,"Input: Turkey Answer: Turkish Lira
+"
+Turkmenistan,Manat,"Input: Turkmenistan Answer: Manat
+"
+Turks and Caicos Island, US Dollar,"Input: Turks and Caicos Island Answer:  US Dollar
+"
+Tuvalu,Australian Dollar,"Input: Tuvalu Answer: Australian Dollar
+"
+U.K. ,Pound Sterling,"Input: U.K.  Answer: Pound Sterling
+"
+Uganda,Uganda Shilling,"Input: Uganda Answer: Uganda Shilling
+"
+Ukraine,Ukraine Hryvnia,"Input: Ukraine Answer: Ukraine Hryvnia
+"
+United Arab Emirates,Arab Emirates Dirham,"Input: United Arab Emirates Answer: Arab Emirates Dirham
+"
+Uruguay,Uruguayan Peso,"Input: Uruguay Answer: Uruguayan Peso
+"
+Uzbekistan,Uzbekistan Sum,"Input: Uzbekistan Answer: Uzbekistan Sum
+"
+Vanuatu,Vanuatu Vatu,"Input: Vanuatu Answer: Vanuatu Vatu
+"
+Vatican, Euro,"Input: Vatican Answer:  Euro
+"
+Venezuela,Venezuelan Bolivar,"Input: Venezuela Answer: Venezuelan Bolivar
+"
+Vietnam,Vietnamese Dong,"Input: Vietnam Answer: Vietnamese Dong
+"
+Virgin Islands (British) ,US Dollar,"Input: Virgin Islands (British)  Answer: US Dollar
+"
+Virgin Islands (USA) ,US Dollar,"Input: Virgin Islands (USA)  Answer: US Dollar
+"
+Wallis and Futuna Islands,CFP Franc,"Input: Wallis and Futuna Islands Answer: CFP Franc
+"
+Western Sahara,Moroccan Dirham,"Input: Western Sahara Answer: Moroccan Dirham
+"
+Yemen,Yemeni Rial,"Input: Yemen Answer: Yemeni Rial
+"
+Zambia,Zambian Kwacha,"Input: Zambia Answer: Zambian Kwacha
+"
+Zimbabwe,Zimbabwe Dollar,"Input: Zimbabwe Answer: Zimbabwe Dollar
+"

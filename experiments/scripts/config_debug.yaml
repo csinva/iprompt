@@ -1,0 +1,27 @@
+description: Multi-gpu debugging
+environment:
+  image: pytorch/pytorch:1.7.1-cuda11.0-cudnn8-devel
+  setup:
+    - pip install -r requirements.txt --user
+
+code:
+  local_dir: $CONFIG_DIR/..
+
+target:
+  service: amlk8s
+  # run "amlt target list amlk8s" to list the names of available AMLK8s targets
+  name: itplabrr1cl1
+  vc: resrchvc
+
+storage:
+  output:
+    storage_account_name: chansingh
+    container_name: cs1
+    mount_dir: /mnt/output # dir on the local machine
+
+jobs:
+- name: debug_8gpus
+  # process_count_per_node: 8
+  sku: G8
+  command:
+  - sleep 3h

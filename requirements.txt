@@ -1,30 +1,34 @@
-accelerate
 dict_hash
 datasets
-dvu
-numpy
-openai
-pandas
-dict_hash
-scipy
 transformers[torch]
 torch
-torchvision
+
+
+numpy
+scipy
+pandas
+dict_hash
 scikit-learn
 tqdm
-matplotlib
-parallelformers
+
+
+# parallelization (optional)
+# parallelformers
+# accelerate
+# openai
 # nltk (optional if removing stopwords, which we usually don't do)
 # need to once run nltk.download('stopwords') from python
 
 # needed for processing speech data
-tables
+# tables
 
 
 # optional for launching jobs
 # amlt
 
-# optional for analysis
+# optional for visualization
+# dvu
+# matplotlib
 # jupyterlab
 # seaborn
 # pytest

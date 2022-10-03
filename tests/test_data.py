@@ -6,17 +6,17 @@ from os.path import dirname
 from os.path import join as oj
 REPO_DIR = dirname(dirname(os.path.abspath(__file__)))
 sys.path.append(REPO_DIR)
-from data_utils.anli import TASKS_ANLI
-from data import get_data
-from data_utils import data_funcs
-from data_utils.one_num import TASKS_ONE_NUM
-from data_utils.two_num import TASKS_TWO_NUMS
-from data_utils.anli import TASKS_ANLI
-from data import TASKS
+from iprompt.data_utils.anli import TASKS_ANLI
+from iprompt.data import get_data
+from iprompt.data_utils import data_funcs
+from iprompt.data_utils.one_num import TASKS_ONE_NUM
+from iprompt.data_utils.two_num import TASKS_TWO_NUMS
+from iprompt.data_utils.anli import TASKS_ANLI
+from iprompt.data import TASKS
 
 def test_data():
     repo_dir = dirname(dirname(os.path.abspath(__file__)))
-    exit_value = os.system('python ' + os.path.join(repo_dir, 'data.py '))
+    exit_value = os.system('python ' + os.path.join(repo_dir, 'iprompt', 'data.py '))
     assert exit_value == 0, 'default data loading passed'
 
 def test_get_data():

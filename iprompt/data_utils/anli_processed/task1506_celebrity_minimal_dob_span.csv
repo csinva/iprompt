@@ -1,0 +1,459 @@
+input,output,text
+"Bellucci was born 30 September 1964 in Città di Castello, Umbria, the only child of Brunella Briganti and Pasquale Bellucci, and grew up in Lama of San Giustino",30 September 1964,"Input: Bellucci was born 30 September 1964 in Città di Castello, Umbria, the only child of Brunella Briganti and Pasquale Bellucci, and grew up in Lama of San Giustino Answer: 30 September 1964
+"
+"Cruise was born on July 3, 1962, in Syracuse, New York, to electrical engineer Thomas Cruise Mapother III (1934–1984) and special education teacher Mary Lee (née Pfeiffer; 1936–2017)","July 3, 1962","Input: Cruise was born on July 3, 1962, in Syracuse, New York, to electrical engineer Thomas Cruise Mapother III (1934–1984) and special education teacher Mary Lee (née Pfeiffer; 1936–2017) Answer: July 3, 1962
+"
+"Johansson was born on November 22, 1984, in the Manhattan borough of New York City","November 22, 1984","Input: Johansson was born on November 22, 1984, in the Manhattan borough of New York City Answer: November 22, 1984
+"
+"Jason Statham was born on 26 July 1967 in Shirebrook, Derbyshire, to Eileen (née Yates), a dancer, and Barry Statham, a street seller",26 July 1967,"Input: Jason Statham was born on 26 July 1967 in Shirebrook, Derbyshire, to Eileen (née Yates), a dancer, and Barry Statham, a street seller Answer: 26 July 1967
+"
+"Dwayne Douglas Johnson was born in Hayward, California on May 2, 1972, the son of Ata Johnson (née Maivia; born 1948) and former professional wrestler Rocky Johnson (born Wayde Douglas Bowles; 1944–2020)","May 2, 1972","Input: Dwayne Douglas Johnson was born in Hayward, California on May 2, 1972, the son of Ata Johnson (née Maivia; born 1948) and former professional wrestler Rocky Johnson (born Wayde Douglas Bowles; 1944–2020) Answer: May 2, 1972
+"
+"Mayte Michelle Rodriguez was born on July 12, 1978, in San Antonio, Texas","July 12, 1978","Input: Mayte Michelle Rodriguez was born on July 12, 1978, in San Antonio, Texas Answer: July 12, 1978
+"
+"Thomas Jeffrey Hanks was born in Concord, California, on July 9, 1956, to hospital worker Janet Marylyn (née Frager) and itinerant cook Amos Mefford Hanks","July 9, 1956","Input: Thomas Jeffrey Hanks was born in Concord, California, on July 9, 1956, to hospital worker Janet Marylyn (née Frager) and itinerant cook Amos Mefford Hanks Answer: July 9, 1956
+"
+"Edward Thomas Hardy was born in the Hammersmith district of London on 15 September 1977, the only child of artist and painter Anne (née Barrett) and novelist and comedy writer Edward ""Chips"" Hardy",15 September 1977,"Input: Edward Thomas Hardy was born in the Hammersmith district of London on 15 September 1977, the only child of artist and painter Anne (née Barrett) and novelist and comedy writer Edward ""Chips"" Hardy Answer: 15 September 1977
+"
+"John Christopher Depp II was born on June 9, 1963, in Owensboro, Kentucky, the youngest of four children of waitress Betty Sue Palmer (née Wells) and civil engineer John Christopher Depp","June 9, 1963","Input: John Christopher Depp II was born on June 9, 1963, in Owensboro, Kentucky, the youngest of four children of waitress Betty Sue Palmer (née Wells) and civil engineer John Christopher Depp Answer: June 9, 1963
+"
+"Arnold Alois Schwarzenegger was born in Thal, Austria on July 30, 1947, the second son of Gustav Schwarzenegger and his wife, Aurelia (née Jadrny)","July 30, 1947","Input: Arnold Alois Schwarzenegger was born in Thal, Austria on July 30, 1947, the second son of Gustav Schwarzenegger and his wife, Aurelia (née Jadrny) Answer: July 30, 1947
+"
+"Christopher Hemsworth was born on 11 August 1983 in Melbourne, Victoria, to Leonie (née van Os), an English teacher, and Craig Hemsworth, a social-services counsellor",11 August 1983,"Input: Christopher Hemsworth was born on 11 August 1983 in Melbourne, Victoria, to Leonie (née van Os), an English teacher, and Craig Hemsworth, a social-services counsellor Answer: 11 August 1983
+"
+"Alexandra Anna Daddario was born in New York City, on March 16, 1986, the eldest child of Christina, a lawyer, and Richard Daddario, a prosecutor and former head of the New York City Police Department counterterrorism unit","March 16, 1986","Input: Alexandra Anna Daddario was born in New York City, on March 16, 1986, the eldest child of Christina, a lawyer, and Richard Daddario, a prosecutor and former head of the New York City Police Department counterterrorism unit Answer: March 16, 1986
+"
+"Philip Anthony Hopkins was born in the Margam suburb of Port Talbot on 31 December 1937, the son of Annie Muriel (née Yeates) and baker Richard Arthur Hopkins",31 December 1937,"Input: Philip Anthony Hopkins was born in the Margam suburb of Port Talbot on 31 December 1937, the son of Annie Muriel (née Yeates) and baker Richard Arthur Hopkins Answer: 31 December 1937
+"
+"Liu was born on December 2, 1968, in Jackson Heights, Queens, New York","December 2, 1968","Input: Liu was born on December 2, 1968, in Jackson Heights, Queens, New York Answer: December 2, 1968
+"
+"Beckinsale was born on 26 July 1973 in the Chiswick district of London, the only child of actors Richard Beckinsale and Judy Loe",26 July 1973,"Input: Beckinsale was born on 26 July 1973 in the Chiswick district of London, the only child of actors Richard Beckinsale and Judy Loe Answer: 26 July 1973
+"
+"Jordana Brewster was born in Panama City, Panama, on April 26, 1980, the older of two daughters","April 26, 1980","Input: Jordana Brewster was born in Panama City, Panama, on April 26, 1980, the older of two daughters Answer: April 26, 1980
+"
+"Benson was born on December 18, 1989, in Anaheim Hills, California, to parents Shannon and Jeff Benson","December 18, 1989","Input: Benson was born on December 18, 1989, in Anaheim Hills, California, to parents Shannon and Jeff Benson Answer: December 18, 1989
+"
+"Pike was born in 1979 in Hammersmith, London, the only child of opera singers Caroline Friend and Julian Pike",1979,"Input: Pike was born in 1979 in Hammersmith, London, the only child of opera singers Caroline Friend and Julian Pike Answer: 1979
+"
+"Christian Charles Philip Bale was born on 30 January 1974 in Haverfordwest, Pembrokeshire, to English parents—Jenny James, a circus performer, and David Bale, an entrepreneur and activist",30 January 1974,"Input: Christian Charles Philip Bale was born on 30 January 1974 in Haverfordwest, Pembrokeshire, to English parents—Jenny James, a circus performer, and David Bale, an entrepreneur and activist Answer: 30 January 1974
+"
+"Sandler was born in Brooklyn, New York, on September 9, 1966, to Judith ""Judy"" (née Levine), a nursery school teacher, and Stanley Sandler, an electrical engineer","September 9, 1966","Input: Sandler was born in Brooklyn, New York, on September 9, 1966, to Judith ""Judy"" (née Levine), a nursery school teacher, and Stanley Sandler, an electrical engineer Answer: September 9, 1966
+"
+"Walker was born on September 12, 1973 in Glendale, California","September 12, 1973","Input: Walker was born on September 12, 1973 in Glendale, California Answer: September 12, 1973
+"
+"Pitt was born on December 18, 1963, in Shawnee, Oklahoma, to William Alvin Pitt, the proprietor of a trucking company, and Jane Etta (née Hillhouse), a school counselor","December 18, 1963","Input: Pitt was born on December 18, 1963, in Shawnee, Oklahoma, to William Alvin Pitt, the proprietor of a trucking company, and Jane Etta (née Hillhouse), a school counselor Answer: December 18, 1963
+"
+"Amy Lou Adams was born on August 20, 1974, to American parents Richard and Kathryn Adams, when her father was stationed with the United States Army at the Caserma Ederle military complex in Vicenza, Italy","August 20, 1974","Input: Amy Lou Adams was born on August 20, 1974, to American parents Richard and Kathryn Adams, when her father was stationed with the United States Army at the Caserma Ederle military complex in Vicenza, Italy Answer: August 20, 1974
+"
+"Jovovich was born on December 17, 1975, in Kyiv, Ukrainian SSR, the daughter of Galina (née Loginova), a Soviet Russian actress, and Bogdan Jovović, a Serbian doctor","December 17, 1975","Input: Jovovich was born on December 17, 1975, in Kyiv, Ukrainian SSR, the daughter of Galina (née Loginova), a Soviet Russian actress, and Bogdan Jovović, a Serbian doctor Answer: December 17, 1975
+"
+"Edward Harrison Norton was born into a progressive Episcopalian family in Boston, Massachusetts, on August 18, 1969","August 18, 1969","Input: Edward Harrison Norton was born into a progressive Episcopalian family in Boston, Massachusetts, on August 18, 1969 Answer: August 18, 1969
+"
+"Moore was born Julie Anne Smith on December 3, 1960, at the Fort Bragg army installation in North Carolina, the oldest of three siblings","December 3, 1960,","Input: Moore was born Julie Anne Smith on December 3, 1960, at the Fort Bragg army installation in North Carolina, the oldest of three siblings Answer: December 3, 1960,
+"
+Lilly was born in Fort Saskatchewan in Alberta on 3 August 1979,3 August 1979,"Input: Lilly was born in Fort Saskatchewan in Alberta on 3 August 1979 Answer: 3 August 1979
+"
+"Forest Steven Whitaker was born on July 15, 1961, in Longview, Texas, the son of Laura Francis (née Smith), a special education teacher who put herself through college and earned two master's degrees while raising her children, and Forest E","July 15, 1961","Input: Forest Steven Whitaker was born on July 15, 1961, in Longview, Texas, the son of Laura Francis (née Smith), a special education teacher who put herself through college and earned two master's degrees while raising her children, and Forest E Answer: July 15, 1961
+"
+"Benjamin Edward Meara Stiller was born on November 30, 1965, in New York City and raised on the Upper West Side","November 30, 1965","Input: Benjamin Edward Meara Stiller was born on November 30, 1965, in New York City and raised on the Upper West Side Answer: November 30, 1965
+"
+"William John Neeson was born on 7 June 1952 in Ballymena, County Antrim, the son of cook Katherine ""Kitty"" Neeson (née Brown) and primary school caretaker Bernard ""Barney"" Neeson",7 June 1952,"Input: William John Neeson was born on 7 June 1952 in Ballymena, County Antrim, the son of cook Katherine ""Kitty"" Neeson (née Brown) and primary school caretaker Bernard ""Barney"" Neeson Answer: 7 June 1952
+"
+"Susan Alexandra Weaver was born in New York City on October 8, 1949","October 8, 1949","Input: Susan Alexandra Weaver was born in New York City on October 8, 1949 Answer: October 8, 1949
+"
+"Michael Sylvester Gardenzio Stallone was born in the Hell's Kitchen neighborhood of Manhattan, New York City on July 6, 1946, the elder son of Francesco ""Frank"" Stallone Sr","July 6, 1946","Input: Michael Sylvester Gardenzio Stallone was born in the Hell's Kitchen neighborhood of Manhattan, New York City on July 6, 1946, the elder son of Francesco ""Frank"" Stallone Sr Answer: July 6, 1946
+"
+"Mirren was born Helen Lydia Mironoff at Queen Charlotte's and Chelsea Hospital in the Hammersmith district of London on 26 July 1945, to an English mother and Russian father",26 July 1945,"Input: Mirren was born Helen Lydia Mironoff at Queen Charlotte's and Chelsea Hospital in the Hammersmith district of London on 26 July 1945, to an English mother and Russian father Answer: 26 July 1945
+"
+"Christopher Michael Pratt was born on June 21, 1979, in Virginia, Minnesota, the youngest child of Kathleen Louise (née Indahl), who worked at a Safeway supermarket, and Daniel Clifton Pratt, who worked in mining and later remodeling houses","June 21, 1979","Input: Christopher Michael Pratt was born on June 21, 1979, in Virginia, Minnesota, the youngest child of Kathleen Louise (née Indahl), who worked at a Safeway supermarket, and Daniel Clifton Pratt, who worked in mining and later remodeling houses Answer: June 21, 1979
+"
+"Law was born on 29 December 1972 in Lewisham, South London, the second child of junior and later on, comprehensive school teachers Margaret Anne Heyworth and Peter Robert Law; his father later became, according to Law, ""the youngest headmaster in London""",29 December 1972,"Input: Law was born on 29 December 1972 in Lewisham, South London, the second child of junior and later on, comprehensive school teachers Margaret Anne Heyworth and Peter Robert Law; his father later became, according to Law, ""the youngest headmaster in London"" Answer: 29 December 1972
+"
+"Matthew David McConaughey was born on November 4, 1969, in Uvalde, Texas","November 4, 1969","Input: Matthew David McConaughey was born on November 4, 1969, in Uvalde, Texas Answer: November 4, 1969
+"
+"Richard Tiffany Gere was born in Philadelphia on August 31, 1949, the eldest son and second child of housewife Doris Ann (née Tiffany; 1924–2016) and NMIC insurance agent Homer George Gere (born 1922)","August 31, 1949","Input: Richard Tiffany Gere was born in Philadelphia on August 31, 1949, the eldest son and second child of housewife Doris Ann (née Tiffany; 1924–2016) and NMIC insurance agent Homer George Gere (born 1922) Answer: August 31, 1949
+"
+"Kirsten Caroline Dunst was born on April 30, 1982, at Point Pleasant Hospital in Point Pleasant, New Jersey","April 30, 1982,","Input: Kirsten Caroline Dunst was born on April 30, 1982, at Point Pleasant Hospital in Point Pleasant, New Jersey Answer: April 30, 1982,
+"
+"Rami Said Malek was born in Torrance, California, on May 12, 1981, the son of Egyptian immigrant parents Nelly Abdel-Malek and Said Malek","May 12, 1981","Input: Rami Said Malek was born in Torrance, California, on May 12, 1981, the son of Egyptian immigrant parents Nelly Abdel-Malek and Said Malek Answer: May 12, 1981
+"
+"Shia Saide LaBeouf was born on June 11, 1986, in Los Angeles, California, the only child of Shayna (née Saide) and Jeffrey Craig LaBeouf","June 11, 1986","Input: Shia Saide LaBeouf was born on June 11, 1986, in Los Angeles, California, the only child of Shayna (née Saide) and Jeffrey Craig LaBeouf Answer: June 11, 1986
+"
+"Megan Denise Fox was born on May 16, 1986 in Oak Ridge, Tennessee, to parents Gloria Darlene (née Cisson) and Franklin Thomas Fox","May 16, 1986","Input: Megan Denise Fox was born on May 16, 1986 in Oak Ridge, Tennessee, to parents Gloria Darlene (née Cisson) and Franklin Thomas Fox Answer: May 16, 1986
+"
+"Saldaña was born on June 19, 1978, in Passaic, New Jersey","June 19, 1978","Input: Saldaña was born on June 19, 1978, in Passaic, New Jersey Answer: June 19, 1978
+"
+"Kristen Jaymes Stewart was born on April 9, 1990, in Los Angeles, California, to entertainment industry workers","April 9, 1990","Input: Kristen Jaymes Stewart was born on April 9, 1990, in Los Angeles, California, to entertainment industry workers Answer: April 9, 1990
+"
+"Diesel was born Mark Sinclair on July 18, 1967, in Alameda County, California, where his mother was also born, though later moved to New York City with his fraternal twin brother, Paul","July 18, 1967","Input: Diesel was born Mark Sinclair on July 18, 1967, in Alameda County, California, where his mother was also born, though later moved to New York City with his fraternal twin brother, Paul Answer: July 18, 1967
+"
+"Jones was born on September 15, 1946, in San Saba, Texas","September 15, 1946","Input: Jones was born on September 15, 1946, in San Saba, Texas Answer: September 15, 1946
+"
+"Justin Randall Timberlake was born on January 31, 1981 in Memphis, Tennessee, the son of Janet Lynn (Bomar) Harless and Charles Randall Timberlake, a Baptist church choir director","January 31, 1981","Input: Justin Randall Timberlake was born on January 31, 1981 in Memphis, Tennessee, the son of Janet Lynn (Bomar) Harless and Charles Randall Timberlake, a Baptist church choir director Answer: January 31, 1981
+"
+"Keanu Charles Reeves was born in Beirut, Lebanon, on September 2, 1964, the son of Patricia (née Taylor), a costume designer and performer, and Samuel Nowlin Reeves Jr","September 2, 1964","Input: Keanu Charles Reeves was born in Beirut, Lebanon, on September 2, 1964, the son of Patricia (née Taylor), a costume designer and performer, and Samuel Nowlin Reeves Jr Answer: September 2, 1964
+"
+"Fassbender was born in Heidelberg on 2 April 1977, the son of Northern Irish mother Adele (from Larne) and German father Josef Fassbender",2 April 1977,"Input: Fassbender was born in Heidelberg on 2 April 1977, the son of Northern Irish mother Adele (from Larne) and German father Josef Fassbender Answer: 2 April 1977
+"
+"Leonard Simon Nimoy was born on March 26, 1931, in the West End of Boston, Massachusetts, United States to Jewish immigrants from Iziaslav (in present-day Ukraine)","March 26, 1931","Input: Leonard Simon Nimoy was born on March 26, 1931, in the West End of Boston, Massachusetts, United States to Jewish immigrants from Iziaslav (in present-day Ukraine) Answer: March 26, 1931
+"
+"Dormer was born in Reading, Berkshire, England, on 11 February 1982, daughter of Gary Dormer and wife Claire Richards and sister of Mark Dormer and Samantha Dormer",11 February 1982,"Input: Dormer was born in Reading, Berkshire, England, on 11 February 1982, daughter of Gary Dormer and wife Claire Richards and sister of Mark Dormer and Samantha Dormer Answer: 11 February 1982
+"
+"Thomas Jacob Black was born in Santa Monica, California, on August 28, 1969, the son of satellite engineers Thomas William Black and Judith Love Cohen","August 28, 1969","Input: Thomas Jacob Black was born in Santa Monica, California, on August 28, 1969, the son of satellite engineers Thomas William Black and Judith Love Cohen Answer: August 28, 1969
+"
+"Aniston was born on February 11, 1969, in the Sherman Oaks neighborhood of Los Angeles to Greek-born actor John Aniston and actress Nancy Dow","February 11, 1969","Input: Aniston was born on February 11, 1969, in the Sherman Oaks neighborhood of Los Angeles to Greek-born actor John Aniston and actress Nancy Dow Answer: February 11, 1969
+"
+"Steven Allan Spielberg was born on December 18, 1946 in Cincinnati, Ohio","December 18, 1946","Input: Steven Allan Spielberg was born on December 18, 1946 in Cincinnati, Ohio Answer: December 18, 1946
+"
+"Selma Blair Beitner was born on June 23, 1972, in Southfield, Michigan, a suburb of Detroit","June 23, 1972","Input: Selma Blair Beitner was born on June 23, 1972, in Southfield, Michigan, a suburb of Detroit Answer: June 23, 1972
+"
+"Eastwood was born on May 31, 1930, at Saint Francis Memorial Hospital in San Francisco, California, to Ruth (née Runner; 1909–2006) and Clinton Eastwood (1906–1970)","May 31, 1930,","Input: Eastwood was born on May 31, 1930, at Saint Francis Memorial Hospital in San Francisco, California, to Ruth (née Runner; 1909–2006) and Clinton Eastwood (1906–1970) Answer: May 31, 1930,
+"
+"Winona Laura Horowitz was born on October 29, 1971, in Winona, Minnesota, to Cynthia Palmer (née Istas) and Michael D","October 29, 1971","Input: Winona Laura Horowitz was born on October 29, 1971, in Winona, Minnesota, to Cynthia Palmer (née Istas) and Michael D Answer: October 29, 1971
+"
+"Brosnan was born on 16 May 1953 at Our Lady of Lourdes Hospital in Drogheda, County Louth, the only child of May (née Smith) and carpenter Thomas Brosnan",16 May 1953,"Input: Brosnan was born on 16 May 1953 at Our Lady of Lourdes Hospital in Drogheda, County Louth, the only child of May (née Smith) and carpenter Thomas Brosnan Answer: 16 May 1953
+"
+"Morgan Freeman was born on June 1, 1937, in Memphis, Tennessee","June 1, 1937","Input: Morgan Freeman was born on June 1, 1937, in Memphis, Tennessee Answer: June 1, 1937
+"
+"Walter Bruce Willis was born in Idar-Oberstein, West Germany, on March 19, 1955","March 19, 1955","Input: Walter Bruce Willis was born in Idar-Oberstein, West Germany, on March 19, 1955 Answer: March 19, 1955
+"
+"Thomas Connery was born at the Royal Maternity Hospital in Edinburgh, Scotland on 25 August 1930; he was named after his paternal grandfather",25 August 1930,"Input: Thomas Connery was born at the Royal Maternity Hospital in Edinburgh, Scotland on 25 August 1930; he was named after his paternal grandfather Answer: 25 August 1930
+"
+"Daniel Jacob Radcliffe was born at Queen Charlotte's and Chelsea Hospital in the Hammersmith district of London on 23 July 1989, the only child of Marcia Jeannine Gresham (née Jacobson) and literary agent Alan George Radcliffe",23 July 1989,"Input: Daniel Jacob Radcliffe was born at Queen Charlotte's and Chelsea Hospital in the Hammersmith district of London on 23 July 1989, the only child of Marcia Jeannine Gresham (née Jacobson) and literary agent Alan George Radcliffe Answer: 23 July 1989
+"
+Cotillard was born on 30 September 1975 in Paris and grew up around Orléans in an artistically inclined household,30 September 1975,"Input: Cotillard was born on 30 September 1975 in Paris and grew up around Orléans in an artistically inclined household Answer: 30 September 1975
+"
+"Hoffman was born on July 23, 1967, in the Rochester suburb of Fairport, New York","July 23, 1967","Input: Hoffman was born on July 23, 1967, in the Rochester suburb of Fairport, New York Answer: July 23, 1967
+"
+"Paul Edward Valentine Giamatti was born June 6, 1967, in New Haven, Connecticut, the youngest of three children","June 6, 1967","Input: Paul Edward Valentine Giamatti was born June 6, 1967, in New Haven, Connecticut, the youngest of three children Answer: June 6, 1967
+"
+"Faris was born on November 29, 1976, in Baltimore, Maryland, the second child of Jack, a sociology professor, and Karen Faris, a special education teacher","November 29, 1976","Input: Faris was born on November 29, 1976, in Baltimore, Maryland, the second child of Jack, a sociology professor, and Karen Faris, a special education teacher Answer: November 29, 1976
+"
+"Bullock was born on July 26, 1964, in the Washington, DC.","July 26, 1964","Input: Bullock was born on July 26, 1964, in the Washington, DC. Answer: July 26, 1964
+"
+Catherine Elise Blanchett was born on 14 May 1969 in the Ivanhoe suburb of Melbourne,14 May 1969,"Input: Catherine Elise Blanchett was born on 14 May 1969 in the Ivanhoe suburb of Melbourne Answer: 14 May 1969
+"
+"Hurt was born John Vincent Hurt on 22 January 1940 in Chesterfield, Derbyshire, the son of Phyllis (née Massey; 1907–1975), an engineer and one-time actress, and Arnold Herbert Hurt (1904–1999), a mathematician who became a Church of England clergyman and served as vicar of Holy Trinity Church in Shirebrook, Derbyshire",22 January 1940,"Input: Hurt was born John Vincent Hurt on 22 January 1940 in Chesterfield, Derbyshire, the son of Phyllis (née Massey; 1907–1975), an engineer and one-time actress, and Arnold Herbert Hurt (1904–1999), a mathematician who became a Church of England clergyman and served as vicar of Holy Trinity Church in Shirebrook, Derbyshire Answer: 22 January 1940
+"
+"Nolte was born on February 8, 1941, in Omaha, Nebraska","February 8, 1941","Input: Nolte was born on February 8, 1941, in Omaha, Nebraska Answer: February 8, 1941
+"
+"Anne Jacqueline Hathaway was born on November 12, 1982, in the Brooklyn borough of New York City","November 12, 1982","Input: Anne Jacqueline Hathaway was born on November 12, 1982, in the Brooklyn borough of New York City Answer: November 12, 1982
+"
+"Clooney was born on May 6, 1961 in Lexington, Kentucky","May 6, 1961","Input: Clooney was born on May 6, 1961 in Lexington, Kentucky Answer: May 6, 1961
+"
+"Malkovich was born in Christopher, Illinois, on December 9, 1953","December 9, 1953","Input: Malkovich was born in Christopher, Illinois, on December 9, 1953 Answer: December 9, 1953
+"
+"Lane was born January 22, 1965, in New York City","January 22, 1965","Input: Lane was born January 22, 1965, in New York City Answer: January 22, 1965
+"
+"Angelina Jolie Voight was born on June 4, 1975, in Los Angeles, California, to actors Jon Voight and Marcheline Bertrand","June 4, 1975","Input: Angelina Jolie Voight was born on June 4, 1975, in Los Angeles, California, to actors Jon Voight and Marcheline Bertrand Answer: June 4, 1975
+"
+"Nicole Mary Kidman was born on 20 June 1967 in Honolulu, Hawaii, while her Australian parents were temporarily in the United States on student visas",20 June 1967,"Input: Nicole Mary Kidman was born on 20 June 1967 in Honolulu, Hawaii, while her Australian parents were temporarily in the United States on student visas Answer: 20 June 1967
+"
+"Colin James Farrell was born in the Castleknock suburb of Dublin on 31 May 1976, the son of Rita (née Monaghan) and Eamon Farrell",31 May 1976,"Input: Colin James Farrell was born in the Castleknock suburb of Dublin on 31 May 1976, the son of Rita (née Monaghan) and Eamon Farrell Answer: 31 May 1976
+"
+"Kate Elizabeth Winslet was born on 5 October 1975 in Reading, Berkshire to Sally Anne (née Bridges) and Roger John Winslet",5 October 1975,"Input: Kate Elizabeth Winslet was born on 5 October 1975 in Reading, Berkshire to Sally Anne (née Bridges) and Roger John Winslet Answer: 5 October 1975
+"
+"Carmen Electra was born Tara Leigh Patrick on April 20, 1972, in Sharonville, Ohio, to Harry Patrick, a guitarist and entertainer, and his wife Patricia (d","April 20, 1972","Input: Carmen Electra was born Tara Leigh Patrick on April 20, 1972, in Sharonville, Ohio, to Harry Patrick, a guitarist and entertainer, and his wife Patricia (d Answer: April 20, 1972
+"
+"Natalie Herschlag was born on June 9, 1981, in Jerusalem, to parents of Ashkenazi Jewish descent","June 9, 1981","Input: Natalie Herschlag was born on June 9, 1981, in Jerusalem, to parents of Ashkenazi Jewish descent Answer: June 9, 1981
+"
+"Emily Jean Stone was born on November 6, 1988, in Scottsdale, Arizona, to Jeffrey Charles Stone, the founder and CEO of a general-contracting company, and Krista Jean Stone (née Yeager), a homemaker","November 6, 1988","Input: Emily Jean Stone was born on November 6, 1988, in Scottsdale, Arizona, to Jeffrey Charles Stone, the founder and CEO of a general-contracting company, and Krista Jean Stone (née Yeager), a homemaker Answer: November 6, 1988
+"
+"Shaun Mark Bean was born on 17 April 1959 in Handsworth, a suburb of Sheffield, the son of Rita (née Tuckwood) and Brian K",17 April 1959,"Input: Shaun Mark Bean was born on 17 April 1959 in Handsworth, a suburb of Sheffield, the son of Rita (née Tuckwood) and Brian K Answer: 17 April 1959
+"
+"Ryan Rodney Reynolds was born on October 23, 1976, in Vancouver, British Columbia","October 23, 1976","Input: Ryan Rodney Reynolds was born on October 23, 1976, in Vancouver, British Columbia Answer: October 23, 1976
+"
+"Ryan Thomas Gosling was born on November 12, 1980, in London, Ontario, to Thomas Ray Gosling, a traveling salesman for a paper mill, and Donna, a secretary","November 12, 1980","Input: Ryan Thomas Gosling was born on November 12, 1980, in London, Ontario, to Thomas Ray Gosling, a traveling salesman for a paper mill, and Donna, a secretary Answer: November 12, 1980
+"
+"Harrison Ford was born at the Swedish Covenant Hospital in Chicago, Illinois, on July 13, 1942, to former radio actress Dorothy (née Nidelman) and advertising executive and former actor John William ""Christopher"" Ford","July 13, 1942","Input: Harrison Ford was born at the Swedish Covenant Hospital in Chicago, Illinois, on July 13, 1942, to former radio actress Dorothy (née Nidelman) and advertising executive and former actor John William ""Christopher"" Ford Answer: July 13, 1942
+"
+"Wilde was born Olivia Jane Cockburn in New York City on March 10, 1984","March 10, 1984","Input: Wilde was born Olivia Jane Cockburn in New York City on March 10, 1984 Answer: March 10, 1984
+"
+"Benjamin Géza Affleck-Boldt was born on August 15, 1972, in Berkeley, California","August 15, 1972","Input: Benjamin Géza Affleck-Boldt was born on August 15, 1972, in Berkeley, California Answer: August 15, 1972
+"
+Tara Johanna Elders was born on 17 January 1980 in Amsterdam in the Netherlands,17 January 1980,"Input: Tara Johanna Elders was born on 17 January 1980 in Amsterdam in the Netherlands Answer: 17 January 1980
+"
+"Alfredo James Pacino was born in the East Harlem neighborhood of New York City on April 25, 1940","April 25, 1940","Input: Alfredo James Pacino was born in the East Harlem neighborhood of New York City on April 25, 1940 Answer: April 25, 1940
+"
+"Milena Markovna Kunis was born on August 14, 1983, in Chernivtsi, Ukrainian SSR, in the Soviet Union","August 14, 1983","Input: Milena Markovna Kunis was born on August 14, 1983, in Chernivtsi, Ukrainian SSR, in the Soviet Union Answer: August 14, 1983
+"
+Edward John David Redmayne was born on 6 January 1982 in Westminster in London,6 January 1982,"Input: Edward John David Redmayne was born on 6 January 1982 in Westminster in London Answer: 6 January 1982
+"
+"Gerard James Butler was born on 13 November 1969 in Paisley, Renfrewshire, Scotland, the youngest of three children of Margaret and Edward Butler, a bookmaker",13 November 1969,"Input: Gerard James Butler was born on 13 November 1969 in Paisley, Renfrewshire, Scotland, the youngest of three children of Margaret and Edward Butler, a bookmaker Answer: 13 November 1969
+"
+"Amanda Michelle Seyfried was born on December 3, 1985, in Allentown, Pennsylvania","December 3, 1985","Input: Amanda Michelle Seyfried was born on December 3, 1985, in Allentown, Pennsylvania Answer: December 3, 1985
+"
+"Lena Kathren Headey was born in Hamilton on the island of Bermuda on 3 October 1973, the daughter of English parents Sue and John Headey",3 October 1973,"Input: Lena Kathren Headey was born in Hamilton on the island of Bermuda on 3 October 1973, the daughter of English parents Sue and John Headey Answer: 3 October 1973
+"
+"Wiig was born on August 22, 1973, in Canandaigua, New York, the daughter of Jon Wiig, who ran a lake marina in Western New York, and Laurie (née Johnston), an artist","August 22, 1973","Input: Wiig was born on August 22, 1973, in Canandaigua, New York, the daughter of Jon Wiig, who ran a lake marina in Western New York, and Laurie (née Johnston), an artist Answer: August 22, 1973
+"
+"Born on 1 July 1985, Seydoux is the daughter of businessman Henri Jérôme Seydoux-Fornier de Clausonne and Valérie Schlumberger",1 July 1985,"Input: Born on 1 July 1985, Seydoux is the daughter of businessman Henri Jérôme Seydoux-Fornier de Clausonne and Valérie Schlumberger Answer: 1 July 1985
+"
+"Yelchin was born on March 11, 1989, in Leningrad, Russian SFSR, Soviet Union (now Saint Petersburg, Russia)","March 11, 1989","Input: Yelchin was born on March 11, 1989, in Leningrad, Russian SFSR, Soviet Union (now Saint Petersburg, Russia) Answer: March 11, 1989
+"
+"Peter Hayden Dinklage was born on June 11, 1969, in Morristown, New Jersey, to John Carl Dinklage, an insurance salesman, and Diane Dinklage, an elementary-school music teacher","June 11, 1969","Input: Peter Hayden Dinklage was born on June 11, 1969, in Morristown, New Jersey, to John Carl Dinklage, an insurance salesman, and Diane Dinklage, an elementary-school music teacher Answer: June 11, 1969
+"
+"Bloom was born on 13 January 1977 in Canterbury, Kent, and was named after the 16th-century English composer Orlando Gibbons",13 January 1977,"Input: Bloom was born on 13 January 1977 in Canterbury, Kent, and was named after the 16th-century English composer Orlando Gibbons Answer: 13 January 1977
+"
+"Hopper was born on May 17, 1936, in Dodge City, Kansas, the son of Marjorie Mae (née Davis; July 12, 1917 – January 12, 2007) and James Millard Hopper (June 23, 1916 – August 7, 1982)","May 17, 1936","Input: Hopper was born on May 17, 1936, in Dodge City, Kansas, the son of Marjorie Mae (née Davis; July 12, 1917 – January 12, 2007) and James Millard Hopper (June 23, 1916 – August 7, 1982) Answer: May 17, 1936
+"
+"Daniel Wroughton Craig was born in Chester on 2 March 1968, the son of Carol Olivia (née Williams), an art teacher, and Timothy John Wroughton Craig (1943–2020), a midshipman in the Merchant Navy and steel erector",2 March 1968,"Input: Daniel Wroughton Craig was born in Chester on 2 March 1968, the son of Carol Olivia (née Williams), an art teacher, and Timothy John Wroughton Craig (1943–2020), a midshipman in the Merchant Navy and steel erector Answer: 2 March 1968
+"
+"Van Damme was born Jean-Claude Camille François Van Varenberg, on 18 October 1960, in Berchem-Sainte-Agathe, Brussels, Belgium, the son of Eliana and Eugène Van Varenberg, who was an accountant and florist",18 October 1960,"Input: Van Damme was born Jean-Claude Camille François Van Varenberg, on 18 October 1960, in Berchem-Sainte-Agathe, Brussels, Belgium, the son of Eliana and Eugène Van Varenberg, who was an accountant and florist Answer: 18 October 1960
+"
+"Strong was born in the Islington district of London on 5 August 1963, the son of an Austrian mother and Italian father",5 August 1963,"Input: Strong was born in the Islington district of London on 5 August 1963, the son of an Austrian mother and Italian father Answer: 5 August 1963
+"
+"Roberts was born on October 28, 1967, in Smyrna, Georgia, a suburb of Atlanta, to Betty Lou Bredemus (1934–2015) and Walter Grady Roberts (1933–1977)","October 28, 1967","Input: Roberts was born on October 28, 1967, in Smyrna, Georgia, a suburb of Atlanta, to Betty Lou Bredemus (1934–2015) and Walter Grady Roberts (1933–1977) Answer: October 28, 1967
+"
+"Edward Furlong was born August 2, 1977 in Glendale, California, the son of Eleanor Torres (née Tafoya), a youth-center worker and Heinrich Bruno Wittig","August 2, 1977","Input: Edward Furlong was born August 2, 1977 in Glendale, California, the son of Eleanor Torres (née Tafoya), a youth-center worker and Heinrich Bruno Wittig Answer: August 2, 1977
+"
+"Leonardo Wilhelm DiCaprio was born on November 11, 1974, in Los Angeles, California, the only child of Irmelin (née Indenbirken), a legal secretary, and George DiCaprio, an underground comix writer, publisher, and distributor of comic books","November 11, 1974","Input: Leonardo Wilhelm DiCaprio was born on November 11, 1974, in Los Angeles, California, the only child of Irmelin (née Indenbirken), a legal secretary, and George DiCaprio, an underground comix writer, publisher, and distributor of comic books Answer: November 11, 1974
+"
+"Jessica Marie Alba was born in Pomona, California, on April 28, 1981, to Catherine Louisa (née Jensen) and Mark David Alba","April 28, 1981","Input: Jessica Marie Alba was born in Pomona, California, on April 28, 1981, to Catherine Louisa (née Jensen) and Mark David Alba Answer: April 28, 1981
+"
+"Pine was born on August 26, 1980, in Los Angeles, California","August 26, 1980","Input: Pine was born on August 26, 1980, in Los Angeles, California Answer: August 26, 1980
+"
+"Emma Charlotte Duerre Watson was born on 15 April 1990 in Paris, to English lawyers Chris Watson and Jacqueline Luesby",15 April 1990,"Input: Emma Charlotte Duerre Watson was born on 15 April 1990 in Paris, to English lawyers Chris Watson and Jacqueline Luesby Answer: 15 April 1990
+"
+"Jonathan Vincent Voight was born on December 29, 1938, in Yonkers, New York, to Barbara (née Kamp) and Elmer Voight (Elemír Vojtka, Slovakia), a professional golfer","December 29, 1938","Input: Jonathan Vincent Voight was born on December 29, 1938, in Yonkers, New York, to Barbara (née Kamp) and Elmer Voight (Elemír Vojtka, Slovakia), a professional golfer Answer: December 29, 1938
+"
+"Cameron Michelle Diaz was born August 30, 1972, in San Diego, California to Billie (née Early), an import/export agent, and Emilio Diaz, a foreman of the California oil company Unocal","August 30, 1972","Input: Cameron Michelle Diaz was born August 30, 1972, in San Diego, California to Billie (née Early), an import/export agent, and Emilio Diaz, a foreman of the California oil company Unocal Answer: August 30, 1972
+"
+"Mendes was born on March 5, 1974, in Miami, Florida, to Cuban parents Eva Pérez Suárez and Juan Carlos Méndez, and was raised by her mother in the Los Angeles neighborhood of Silver Lake, after her parents' divorce","March 5, 1974","Input: Mendes was born on March 5, 1974, in Miami, Florida, to Cuban parents Eva Pérez Suárez and Juan Carlos Méndez, and was raised by her mother in the Los Angeles neighborhood of Silver Lake, after her parents' divorce Answer: March 5, 1974
+"
+"Emily Olivia Leah Blunt was born on 23 February 1983 in the London Borough of Wandsworth, the second of four children born to Joanna, a former actress and teacher, and barrister Oliver Blunt, QC",23 February 1983,"Input: Emily Olivia Leah Blunt was born on 23 February 1983 in the London Borough of Wandsworth, the second of four children born to Joanna, a former actress and teacher, and barrister Oliver Blunt, QC Answer: 23 February 1983
+"
+"Fiennes was born in Ipswich, England on 22 December 1962",22 December 1962,"Input: Fiennes was born in Ipswich, England on 22 December 1962 Answer: 22 December 1962
+"
+"Joaquin Rafael Bottom was born on October 28, 1974, in the Río Piedras district of San Juan, Puerto Rico, to John Lee Bottom, the founder of a landscape gardening company, and Arlyn ""Heart"" Bottom (née Dunetz), a secretary at NBC","October 28, 1974","Input: Joaquin Rafael Bottom was born on October 28, 1974, in the Río Piedras district of San Juan, Puerto Rico, to John Lee Bottom, the founder of a landscape gardening company, and Arlyn ""Heart"" Bottom (née Dunetz), a secretary at NBC Answer: October 28, 1974
+"
+"Jennifer Shrader Lawrence was born on August 15, 1990, in Indian Hills, Kentucky, to Gary, a construction company owner, and Karen (née Koch), a summer camp manager","August 15, 1990","Input: Jennifer Shrader Lawrence was born on August 15, 1990, in Indian Hills, Kentucky, to Gary, a construction company owner, and Karen (née Koch), a summer camp manager Answer: August 15, 1990
+"
+"Kate Rooney Mara was born on February 27, 1983, in Bedford, New York","February 27, 1983","Input: Kate Rooney Mara was born on February 27, 1983, in Bedford, New York Answer: February 27, 1983
+"
+"Nicholas Caradoc Hoult was born on 7 December 1989 in Wokingham, Berkshire, to Glenis (née Brown), a piano teacher, and Roger Hoult, a pilot",7 December 1989,"Input: Nicholas Caradoc Hoult was born on 7 December 1989 in Wokingham, Berkshire, to Glenis (née Brown), a piano teacher, and Roger Hoult, a pilot Answer: 7 December 1989
+"
+Chan was born on 7 April 1954 in Hong Kong as Chan Kong-sang (Chinese: 陳港生; lit,7 April 1954,"Input: Chan was born on 7 April 1954 in Hong Kong as Chan Kong-sang (Chinese: 陳港生; lit Answer: 7 April 1954
+"
+"Jessica Michelle Chastain was born on March 24, 1977, in Sacramento, California, to Jerri Renee Hastey (née Chastain) and rock musician Michael Monasterio","March 24, 1977","Input: Jessica Michelle Chastain was born on March 24, 1977, in Sacramento, California, to Jerri Renee Hastey (née Chastain) and rock musician Michael Monasterio Answer: March 24, 1977
+"
+"Clive Owen was born on 3 October 1964 in Keresley, Coventry (then in Warwickshire), the fourth of five sons born to Pamela (née Cotton) and Jess Owen",3 October 1964,"Input: Clive Owen was born on 3 October 1964 in Keresley, Coventry (then in Warwickshire), the fourth of five sons born to Pamela (née Cotton) and Jess Owen Answer: 3 October 1964
+"
+"D'Onofrio was born on June 30, 1959, in Bensonhurst, Brooklyn, New York City, New York","June 30, 1959","Input: D'Onofrio was born on June 30, 1959, in Bensonhurst, Brooklyn, New York City, New York Answer: June 30, 1959
+"
+"Bryan Lee Cranston was born on March 7, 1956, in Hollywood, Los Angeles, California, the second of three children born to Annalisa (née Sell; 1923–2004), a radio actress, and Joseph Louis Cranston (1924–2014), an actor and former amateur boxer","March 7, 1956","Input: Bryan Lee Cranston was born on March 7, 1956, in Hollywood, Los Angeles, California, the second of three children born to Annalisa (née Sell; 1923–2004), a radio actress, and Joseph Louis Cranston (1924–2014), an actor and former amateur boxer Answer: March 7, 1956
+"
+"Borgnine was born Ermes Effron Borgnino (Italian: [borˈɲiːno]) on January 24, 1917, in Hamden, Connecticut, the son of Italian immigrants","January 24, 1917","Input: Borgnine was born Ermes Effron Borgnino (Italian: [borˈɲiːno]) on January 24, 1917, in Hamden, Connecticut, the son of Italian immigrants Answer: January 24, 1917
+"
+"Woodrow Tracy Harrelson was born in Midland, Texas, on July 23, 1961, the son of secretary Diane (née Oswald) and convicted hitman Charles Voyde Harrelson","July 23, 1961","Input: Woodrow Tracy Harrelson was born in Midland, Texas, on July 23, 1961, the son of secretary Diane (née Oswald) and convicted hitman Charles Voyde Harrelson Answer: July 23, 1961
+"
+"Bell was born on July 18, 1980, in Huntington Woods, Michigan, a suburb of Detroit, where she was raised","July 18, 1980","Input: Bell was born on July 18, 1980, in Huntington Woods, Michigan, a suburb of Detroit, where she was raised Answer: July 18, 1980
+"
+"Claudia Cardinale was born Claude Joséphine Rose Cardinale in La Goulette, a neighbourhood of Tunis, French protectorate of Tunisia, on 15 April 1938",15 April 1938,"Input: Claudia Cardinale was born Claude Joséphine Rose Cardinale in La Goulette, a neighbourhood of Tunis, French protectorate of Tunisia, on 15 April 1938 Answer: 15 April 1938
+"
+"Tarantino was born on March 27, 1963, in Knoxville, Tennessee, the only child of Connie McHugh and aspiring actor Tony Tarantino, who left the family before his son's birth","March 27, 1963","Input: Tarantino was born on March 27, 1963, in Knoxville, Tennessee, the only child of Connie McHugh and aspiring actor Tony Tarantino, who left the family before his son's birth Answer: March 27, 1963
+"
+"Egerton was born on 10 November 1989 in Birkenhead, Merseyside",10 November 1989,"Input: Egerton was born on 10 November 1989 in Birkenhead, Merseyside Answer: 10 November 1989
+"
+"Luke George Evans was born on Easter Sunday, 15 April 1979, in Pontypool, and brought up in Aberbargoed, a small village in the Rhymney Valley, Wales, the only child of Yvonne and David Evans","Sunday, 15 April 1979","Input: Luke George Evans was born on Easter Sunday, 15 April 1979, in Pontypool, and brought up in Aberbargoed, a small village in the Rhymney Valley, Wales, the only child of Yvonne and David Evans Answer: Sunday, 15 April 1979
+"
+"Hall was born on 3 May 1982 in London, the daughter of American opera singer Maria Ewing and English stage director and Royal Shakespeare Company founder Peter Hall",3 May 1982,"Input: Hall was born on 3 May 1982 in London, the daughter of American opera singer Maria Ewing and English stage director and Royal Shakespeare Company founder Peter Hall Answer: 3 May 1982
+"
+"Mortensen was born in Watertown, New York, on October 20, 1958, the son of Grace Gamble (née Atkinson; July 8, 1928 – April 25, 2015) and Viggo Peter Mortensen Sr","October 20, 1958","Input: Mortensen was born in Watertown, New York, on October 20, 1958, the son of Grace Gamble (née Atkinson; July 8, 1928 – April 25, 2015) and Viggo Peter Mortensen Sr Answer: October 20, 1958
+"
+"Naomi Ellen Watts was born on 28 September 1968, in Shoreham, Kent, England",28 September 1968,"Input: Naomi Ellen Watts was born on 28 September 1968, in Shoreham, Kent, England Answer: 28 September 1968
+"
+"Ice Cube was born on June 15, 1969, in Los Angeles, to Doris, a hospital clerk and custodian, and Hosea Jackson, a machinist and UCLA groundskeeper","June 15, 1969","Input: Ice Cube was born on June 15, 1969, in Los Angeles, to Doris, a hospital clerk and custodian, and Hosea Jackson, a machinist and UCLA groundskeeper Answer: June 15, 1969
+"
+"Uma Karuna Thurman was born on April 29, 1970, in Boston, Massachusetts","April 29, 1970","Input: Uma Karuna Thurman was born on April 29, 1970, in Boston, Massachusetts Answer: April 29, 1970
+"
+"Scodelario was born Kaya Rose Humphrey on 13 March 1992 in Haywards Heath, West Sussex, England",13 March 1992,"Input: Scodelario was born Kaya Rose Humphrey on 13 March 1992 in Haywards Heath, West Sussex, England Answer: 13 March 1992
+"
+"Ferrell was born on July 16, 1967 in Irvine, California, to Betty Kay (née Overman; born 1940), a teacher who taught at Old Mill School elementary school and Santa Ana College and Roy Lee Ferrell Jr","July 16, 1967","Input: Ferrell was born on July 16, 1967 in Irvine, California, to Betty Kay (née Overman; born 1940), a teacher who taught at Old Mill School elementary school and Santa Ana College and Roy Lee Ferrell Jr Answer: July 16, 1967
+"
+"Seth Aaron Rogen was born on April 15, 1982 in Vancouver, British Columbia to a Jewish family of Ukrainian and Russian origin","April 15, 1982","Input: Seth Aaron Rogen was born on April 15, 1982 in Vancouver, British Columbia to a Jewish family of Ukrainian and Russian origin Answer: April 15, 1982
+"
+"Leguizamo was born in Bogotá, Colombia on July 22, 1964, to Alberto and Luz Leguizamo","July 22, 1964","Input: Leguizamo was born in Bogotá, Colombia on July 22, 1964, to Alberto and Luz Leguizamo Answer: July 22, 1964
+"
+"Gruffudd was born on 6 October 1973 in Aberdare, the eldest of three siblings",6 October 1973,"Input: Gruffudd was born on 6 October 1973 in Aberdare, the eldest of three siblings Answer: 6 October 1973
+"
+"Gainsbourg was born on 21 July 1971 in London, to English actress and singer Jane Birkin and French actor and singer-songwriter Serge Gainsbourg",21 July 1971,"Input: Gainsbourg was born on 21 July 1971 in London, to English actress and singer Jane Birkin and French actor and singer-songwriter Serge Gainsbourg Answer: 21 July 1971
+"
+"Viola Davis was born on August 11, 1965.","August 11, 1965","Input: Viola Davis was born on August 11, 1965. Answer: August 11, 1965
+"
+"Eric Marlon Bishop was born in Terrell, Texas, on December 13, 1967","December 13, 1967","Input: Eric Marlon Bishop was born in Terrell, Texas, on December 13, 1967 Answer: December 13, 1967
+"
+"Cara Jocelyn Delevingne was born on 12 August 1992, in Hammersmith, London, the daughter of Pandora Anne Delevigne (née Stevens) and property developer Charles Hamar Delevingne",12 August 1992,"Input: Cara Jocelyn Delevingne was born on 12 August 1992, in Hammersmith, London, the daughter of Pandora Anne Delevigne (née Stevens) and property developer Charles Hamar Delevingne Answer: 12 August 1992
+"
+"Gandolfini was born in Westwood, New Jersey on September 18, 1961","September 18, 1961","Input: Gandolfini was born in Westwood, New Jersey on September 18, 1961 Answer: September 18, 1961
+"
+"James Francis Cameron was born on August 16, 1954 in Kapuskasing, Ontario, the son of Philip Cameron, an electrical engineer, and Shirley (née Lowe), an artist and nurse","August 16, 1954","Input: James Francis Cameron was born on August 16, 1954 in Kapuskasing, Ontario, the son of Philip Cameron, an electrical engineer, and Shirley (née Lowe), an artist and nurse Answer: August 16, 1954
+"
+"Hill was born on December 20, 1983, in Los Angeles, California, to Sharon Lyn (née Chalkin), a costume designer and fashion stylist, and Richard Feldstein, a tour accountant for Guns N' Roses","December 20, 1983","Input: Hill was born on December 20, 1983, in Los Angeles, California, to Sharon Lyn (née Chalkin), a costume designer and fashion stylist, and Richard Feldstein, a tour accountant for Guns N' Roses Answer: December 20, 1983
+"
+"Kellan Christopher Lutz was born on March 15, 1985, in Dickinson, North Dakota, the son of Karla (née Theesfeld; b","March 15, 1985","Input: Kellan Christopher Lutz was born on March 15, 1985, in Dickinson, North Dakota, the son of Karla (née Theesfeld; b Answer: March 15, 1985
+"
+"McKellen was born on 25 May 1939 in Burnley, Lancashire, the son of Margery Lois (née Sutcliffe) and Denis Murray McKellen",25 May 1939,"Input: McKellen was born on 25 May 1939 in Burnley, Lancashire, the son of Margery Lois (née Sutcliffe) and Denis Murray McKellen Answer: 25 May 1939
+"
+"Garrett John Hedlund was born on September 3, 1984, in Roseau, Minnesota, to Kristine Anne (née Yanish) and Robert Martin Hedlund","September 3, 1984","Input: Garrett John Hedlund was born on September 3, 1984, in Roseau, Minnesota, to Kristine Anne (née Yanish) and Robert Martin Hedlund Answer: September 3, 1984
+"
+"Wood was born in Cedar Rapids, Iowa, on January 28, 1981, the second of three children born to Debbie (née Krause) and Warren Wood, who operated a delicatessen together","January 28, 1981","Input: Wood was born in Cedar Rapids, Iowa, on January 28, 1981, the second of three children born to Debbie (née Krause) and Warren Wood, who operated a delicatessen together Answer: January 28, 1981
+"
+"Eva Gaëlle Green was born two minutes earlier than her fraternal twin sister, Joy, on 6 July 1980",6 July 1980,"Input: Eva Gaëlle Green was born two minutes earlier than her fraternal twin sister, Joy, on 6 July 1980 Answer: 6 July 1980
+"
+"Thompson was born on May 31, 1961 in Rochester, Minnesota, one of five children of Clifford and Barbara Barry Thompson, a musician","May 31, 1961","Input: Thompson was born on May 31, 1961 in Rochester, Minnesota, one of five children of Clifford and Barbara Barry Thompson, a musician Answer: May 31, 1961
+"
+"Tweed was born on March 10, 1957 in Placentia, Newfoundland","March 10, 1957","Input: Tweed was born on March 10, 1957 in Placentia, Newfoundland Answer: March 10, 1957
+"
+"Hayley Elizabeth Atwell was born on 5 April 1982 in London, an only child",5 April 1982,"Input: Hayley Elizabeth Atwell was born on 5 April 1982 in London, an only child Answer: 5 April 1982
+"
+"George Raymond Stevenson was born in Lisburn on 25 May 1964, the second of three sons born to Irish parents",25 May 1964,"Input: George Raymond Stevenson was born in Lisburn on 25 May 1964, the second of three sons born to Irish parents Answer: 25 May 1964
+"
+"Gwyneth Kate Paltrow was born on September 27, 1972, in Los Angeles, to actress Blythe Danner and film producer-director Bruce Paltrow","September 27, 1972","Input: Gwyneth Kate Paltrow was born on September 27, 1972, in Los Angeles, to actress Blythe Danner and film producer-director Bruce Paltrow Answer: September 27, 1972
+"
+"Raymond Allen Liotta was born in Newark, New Jersey, on December 18, 1954","December 18, 1954","Input: Raymond Allen Liotta was born in Newark, New Jersey, on December 18, 1954 Answer: December 18, 1954
+"
+"Lloyd was born on October 22, 1938, in Stamford, Connecticut, the son of Ruth Lloyd (née Lapham; 1896–1984), a singer and sister of San Francisco mayor Roger Lapham, and her lawyer husband Samuel R","October 22, 1938","Input: Lloyd was born on October 22, 1938, in Stamford, Connecticut, the son of Ruth Lloyd (née Lapham; 1896–1984), a singer and sister of San Francisco mayor Roger Lapham, and her lawyer husband Samuel R Answer: October 22, 1938
+"
+"Welch was born as Jo Raquel Tejada on September 5, 1940 in Chicago, Illinois","September 5, 1940","Input: Welch was born as Jo Raquel Tejada on September 5, 1940 in Chicago, Illinois Answer: September 5, 1940
+"
+"Foster was born on November 19, 1962 in Los Angeles, the youngest child of Evelyn Ella (""Brandy""; née Almond) and Lucius Fisher Foster III","November 19, 1962","Input: Foster was born on November 19, 1962 in Los Angeles, the youngest child of Evelyn Ella (""Brandy""; née Almond) and Lucius Fisher Foster III Answer: November 19, 1962
+"
+"Grier was born on May 26, 1949, in Winston-Salem, North Carolina, the daughter of Gwendolyn Sylvia (née Samuels), a homemaker and nurse, and Clarence Ransom Grier, Jr","May 26, 1949","Input: Grier was born on May 26, 1949, in Winston-Salem, North Carolina, the daughter of Gwendolyn Sylvia (née Samuels), a homemaker and nurse, and Clarence Ransom Grier, Jr Answer: May 26, 1949
+"
+"Kim Victoria Cattrall was born on 21 August 1956 in the Mossley Hill district of Liverpool, the daughter of secretary Gladys Shane (née Baugh) and construction engineer Dennis Cattrall",21 August 1956,"Input: Kim Victoria Cattrall was born on 21 August 1956 in the Mossley Hill district of Liverpool, the daughter of secretary Gladys Shane (née Baugh) and construction engineer Dennis Cattrall Answer: 21 August 1956
+"
+"Damon was born in Cambridge, Massachusetts, on October 8, 1970, the second son of Kent Telfer Damon (1942–2017), a stockbroker, and Nancy Carlsson-Paige.","October 8, 1970","Input: Damon was born in Cambridge, Massachusetts, on October 8, 1970, the second son of Kent Telfer Damon (1942–2017), a stockbroker, and Nancy Carlsson-Paige. Answer: October 8, 1970
+"
+"Aaron Paul Sturtevant was born in Emmett, Idaho, on August 27, 1979, the youngest of four children born to Darla (née Haynes) and Baptist minister Robert Sturtevant","August 27, 1979","Input: Aaron Paul Sturtevant was born in Emmett, Idaho, on August 27, 1979, the youngest of four children born to Darla (née Haynes) and Baptist minister Robert Sturtevant Answer: August 27, 1979
+"
+"John Charles Carter was born on October 4, 1923, in Wilmette, Illinois, to Lilla (née Baines; 1899–1994) and Russell Whitford Carter (1897–1966), a sawmill operator","October 4, 1923","Input: John Charles Carter was born on October 4, 1923, in Wilmette, Illinois, to Lilla (née Baines; 1899–1994) and Russell Whitford Carter (1897–1966), a sawmill operator Answer: October 4, 1923
+"
+"Flanagan was born in Conant Gardens, Detroit, Michigan, on March 16, 1930","March 16, 1930","Input: Flanagan was born in Conant Gardens, Detroit, Michigan, on March 16, 1930 Answer: March 16, 1930
+"
+"Nicholson was born on April 22, 1937, in Neptune City, New Jersey, the son of a showgirl, June Frances Nicholson (stage name June Nilson; 1918–1963)","April 22, 1937","Input: Nicholson was born on April 22, 1937, in Neptune City, New Jersey, the son of a showgirl, June Frances Nicholson (stage name June Nilson; 1918–1963) Answer: April 22, 1937
+"
+"Sagal was born on January 19, 1954, in Los Angeles, California, to a show business family with five children","January 19, 1954","Input: Sagal was born on January 19, 1954, in Los Angeles, California, to a show business family with five children Answer: January 19, 1954
+"
+"Julia Elizabeth Wells was born on 1 October 1935 in Walton-on-Thames, Surrey, England",1 October 1935,"Input: Julia Elizabeth Wells was born on 1 October 1935 in Walton-on-Thames, Surrey, England Answer: 1 October 1935
+"
+"Harring was born in Los Mochis, Sinaloa, Mexico on March 3, 1964","March 3, 1964","Input: Harring was born in Los Mochis, Sinaloa, Mexico on March 3, 1964 Answer: March 3, 1964
+"
+"Bridges was born on December 9, 1941 in Los Angeles, California, the son of actors Lloyd Bridges (1913–1998) and Dorothy Bridges (née Simpson; 1915–2009)","December 9, 1941","Input: Bridges was born on December 9, 1941 in Los Angeles, California, the son of actors Lloyd Bridges (1913–1998) and Dorothy Bridges (née Simpson; 1915–2009) Answer: December 9, 1941
+"
+"Spader was born on February 7, 1960 in Boston, Massachusetts, and is the youngest of three children","February 7, 1960","Input: Spader was born on February 7, 1960 in Boston, Massachusetts, and is the youngest of three children Answer: February 7, 1960
+"
+"Sacha Noam Baron Cohen was born in the Hammersmith area of London on 13 October 1971, the son of Jewish parents",13 October 1971,"Input: Sacha Noam Baron Cohen was born in the Hammersmith area of London on 13 October 1971, the son of Jewish parents Answer: 13 October 1971
+"
+"Rai was born on 1 November 1973 into a Tulu-speaking Bunt family in Mangalore, Karnataka",1 November 1973,"Input: Rai was born on 1 November 1973 into a Tulu-speaking Bunt family in Mangalore, Karnataka Answer: 1 November 1973
+"
+"Catherine Zeta-Jones was born on 25 September 1969 in Swansea, Wales, to David Jones, the owner of a sweet factory, and his wife Patricia (née Fair), a seamstress",25 September 1969,"Input: Catherine Zeta-Jones was born on 25 September 1969 in Swansea, Wales, to David Jones, the owner of a sweet factory, and his wife Patricia (née Fair), a seamstress Answer: 25 September 1969
+"
+"Paul John McGann was born in Liverpool on 14 November 1959, into a Roman Catholic family of Irish origin",14 November 1959,"Input: Paul John McGann was born in Liverpool on 14 November 1959, into a Roman Catholic family of Irish origin Answer: 14 November 1959
+"
+"McAvoy was born on 21 April 1979 in Glasgow, to bus-driver-turned-builder James McAvoy Sr",21 April 1979,"Input: McAvoy was born on 21 April 1979 in Glasgow, to bus-driver-turned-builder James McAvoy Sr Answer: 21 April 1979
+"
+"Christina Rene Hendricks was born on May 3, 1975, in Knoxville, Tennessee, the second child of American mother Jackie Sue Hendricks (née Raymond), a psychologist, and English father Robert Hendricks, a Forest Service employee originally from Birmingham","May 3, 1975","Input: Christina Rene Hendricks was born on May 3, 1975, in Knoxville, Tennessee, the second child of American mother Jackie Sue Hendricks (née Raymond), a psychologist, and English father Robert Hendricks, a Forest Service employee originally from Birmingham Answer: May 3, 1975
+"
+"Wright was born April 8, 1966, in Dallas to Gayle, a cosmetics saleswoman for Mary Kay, and Fred Wright, a pharmaceutical company employee","April 8, 1966","Input: Wright was born April 8, 1966, in Dallas to Gayle, a cosmetics saleswoman for Mary Kay, and Fred Wright, a pharmaceutical company employee Answer: April 8, 1966
+"
+"Born Ha Lingchun (Chinese: 夏令震) in Hong Kong in 1957, he was the fifth child in a family of eight children",1957,"Input: Born Ha Lingchun (Chinese: 夏令震) in Hong Kong in 1957, he was the fifth child in a family of eight children Answer: 1957
+"
+"She was born 17 November 1966 in Paris, the second child of Simone (née Morisset), a shop assistant (d",17 November 1966,"Input: She was born 17 November 1966 in Paris, the second child of Simone (née Morisset), a shop assistant (d Answer: 17 November 1966
+"
+"Page was born on February 21, 1987, in Halifax, Nova Scotia, to Martha Philpotts, a teacher, and Dennis Page, a graphic designer","February 21, 1987","Input: Page was born on February 21, 1987, in Halifax, Nova Scotia, to Martha Philpotts, a teacher, and Dennis Page, a graphic designer Answer: February 21, 1987
+"
+"Hans Lundgren was born on 3 November 1957 in Spånga, the son of Sigrid Birgitta (née Tjerneld; 1932–1992), a language teacher, and Karl Hugo Johan Lundgren (1923–2000), an engineer (M",3 November 1957,"Input: Hans Lundgren was born on 3 November 1957 in Spånga, the son of Sigrid Birgitta (née Tjerneld; 1932–1992), a language teacher, and Karl Hugo Johan Lundgren (1923–2000), an engineer (M Answer: 3 November 1957
+"
+"Howard was born in Chicago, Illinois, on March 11, 1969, to Tyrone and Anita (née Williams) Howard, both of whom were biracial, with African and Anglo ancestry","March 11, 1969","Input: Howard was born in Chicago, Illinois, on March 11, 1969, to Tyrone and Anita (née Williams) Howard, both of whom were biracial, with African and Anglo ancestry Answer: March 11, 1969
+"
+"She was born on August 10, 1972, in Highland Park, Texas, the daughter of Daphne Demar (née Caravageli) and Lawrence Paul ""Larry"" Harmon, a hospital information network executive in Dallas, Texas","August 10, 1972","Input: She was born on August 10, 1972, in Highland Park, Texas, the daughter of Daphne Demar (née Caravageli) and Lawrence Paul ""Larry"" Harmon, a hospital information network executive in Dallas, Texas Answer: August 10, 1972
+"
+"Walken was born Ronald Walken on March 31, 1943, in Astoria, Queens, New York, the son of Rosalie Russell (May 16, 1907 – March 26, 2010), a Scottish immigrant from Glasgow, and Paul Wälken (October 5, 1903 – February 23, 2001), a German immigrant from Gelsenkirchen who owned and operated Walken's Bakery in Astoria","March 31, 1943","Input: Walken was born Ronald Walken on March 31, 1943, in Astoria, Queens, New York, the son of Rosalie Russell (May 16, 1907 – March 26, 2010), a Scottish immigrant from Glasgow, and Paul Wälken (October 5, 1903 – February 23, 2001), a German immigrant from Gelsenkirchen who owned and operated Walken's Bakery in Astoria Answer: March 31, 1943
+"
+"McDowell was born Malcolm John Taylor on 13 June 1943 in Horsforth, West Riding of Yorkshire, the son of hotelier Edna (née McDowell) and RAF officer (and later pub owner) Charles Taylor",13 June 1943,"Input: McDowell was born Malcolm John Taylor on 13 June 1943 in Horsforth, West Riding of Yorkshire, the son of hotelier Edna (née McDowell) and RAF officer (and later pub owner) Charles Taylor Answer: 13 June 1943
+"
+"Keira Christina Knightley was born on 26 March 1985 in the Teddington suburb of London, to stage actors Will Knightley and Sharman Macdonald",26 March 1985,"Input: Keira Christina Knightley was born on 26 March 1985 in the Teddington suburb of London, to stage actors Will Knightley and Sharman Macdonald Answer: 26 March 1985
+"
+"Cooper was born on January 5, 1975, in Abington Township, near Philadelphia, and grew up in the nearby communities of Jenkintown and Rydal","January 5, 1975","Input: Cooper was born on January 5, 1975, in Abington Township, near Philadelphia, and grew up in the nearby communities of Jenkintown and Rydal Answer: January 5, 1975
+"
+"Mikkelsen was born on 22 November 1965 in the Østerbro district of Copenhagen, Denmark, the son of mother Bente Christiansen and father Henning Mikkelsen, a cab driver",22 November 1965,"Input: Mikkelsen was born on 22 November 1965 in the Østerbro district of Copenhagen, Denmark, the son of mother Bente Christiansen and father Henning Mikkelsen, a cab driver Answer: 22 November 1965
+"
+"Born on 17 August 1920, O'Hara began life as Maureen FitzSimons on Beechwood Avenue in the Dublin suburb of Ranelagh",17 August 1920,"Input: Born on 17 August 1920, O'Hara began life as Maureen FitzSimons on Beechwood Avenue in the Dublin suburb of Ranelagh Answer: 17 August 1920
+"
+"Smith was born on September 25, 1968, in Philadelphia, Pennsylvania, to Caroline (née Bright), a Philadelphia school board administrator, and Willard Carroll Smith Sr","September 25, 1968","Input: Smith was born on September 25, 1968, in Philadelphia, Pennsylvania, to Caroline (née Bright), a Philadelphia school board administrator, and Willard Carroll Smith Sr Answer: September 25, 1968
+"
+"Katherine Victoria Litwack was born on June 13, 1986, in Bryn Mawr, Pennsylvania","June 13, 1986","Input: Katherine Victoria Litwack was born on June 13, 1986, in Bryn Mawr, Pennsylvania Answer: June 13, 1986
+"
+"Hart was born on July 6, 1979 in Philadelphia, Pennsylvania","July 6, 1979","Input: Hart was born on July 6, 1979 in Philadelphia, Pennsylvania Answer: July 6, 1979
+"
+"Duvall was born January 5, 1931, in San Diego, California, the son of Mildred Virginia (née Hart; 1901–1985), an amateur actress, and William Howard Duvall (1904–1984), a Virginia-born U","January 5, 1931","Input: Duvall was born January 5, 1931, in San Diego, California, the son of Mildred Virginia (née Hart; 1901–1985), an amateur actress, and William Howard Duvall (1904–1984), a Virginia-born U Answer: January 5, 1931
+"
+Felicity Rose Hadley Jones was born in Birmingham on 17 October 1983,17 October 1983,"Input: Felicity Rose Hadley Jones was born in Birmingham on 17 October 1983 Answer: 17 October 1983
+"
+"Howard was born in Duncan, Oklahoma in 1954, the elder son of Jean Speegle Howard (1927–2000), an actress, and Rance Howard (1928–2017), a director, writer, and actor",1954,"Input: Howard was born in Duncan, Oklahoma in 1954, the elder son of Jean Speegle Howard (1927–2000), an actress, and Rance Howard (1928–2017), a director, writer, and actor Answer: 1954
+"
+"Fonda was born on January 27, 1964, in Los Angeles, California, to a family of actors, including her grandfather Henry Fonda, father Peter Fonda, and her aunt Jane Fonda","January 27, 1964","Input: Fonda was born on January 27, 1964, in Los Angeles, California, to a family of actors, including her grandfather Henry Fonda, father Peter Fonda, and her aunt Jane Fonda Answer: January 27, 1964
+"
+"George Hosato Takei was born Hosato Takei on April 20, 1937 in Los Angeles, California, to Japanese-American parents Fumiko Emily Nakamura (born in Sacramento, California) and Takekuma Norman Takei (born in Yamanashi Prefecture), who worked in real estate","April 20, 1937","Input: George Hosato Takei was born Hosato Takei on April 20, 1937 in Los Angeles, California, to Japanese-American parents Fumiko Emily Nakamura (born in Sacramento, California) and Takekuma Norman Takei (born in Yamanashi Prefecture), who worked in real estate Answer: April 20, 1937
+"
+"Emmanuelle Grey Rossum was born on September 12, 1986, in New York City","September 12, 1986","Input: Emmanuelle Grey Rossum was born on September 12, 1986, in New York City Answer: September 12, 1986
+"
+"Widmark was born December 26, 1914 in Sunrise Township, Minnesota, the son of Ethel Mae (née Barr) and Carl Henry Widmark","December 26, 1914","Input: Widmark was born December 26, 1914 in Sunrise Township, Minnesota, the son of Ethel Mae (née Barr) and Carl Henry Widmark Answer: December 26, 1914
+"
+"Moore was born on April 10, 1984, in Nashua, New Hampshire, to Stacy (née Friedman), a former news reporter who once worked for the Orlando Sentinel, and Donald Moore, a pilot for American Airlines","April 10, 1984","Input: Moore was born on April 10, 1984, in Nashua, New Hampshire, to Stacy (née Friedman), a former news reporter who once worked for the Orlando Sentinel, and Donald Moore, a pilot for American Airlines Answer: April 10, 1984
+"
+"Thomas William Hiddleston was born on 9 February 1981 in the Westminster district of London, to Diana Patricia (née Servaes) Hiddleston, an arts administrator and former stage manager, and Dr",9 February 1981,"Input: Thomas William Hiddleston was born on 9 February 1981 in the Westminster district of London, to Diana Patricia (née Servaes) Hiddleston, an arts administrator and former stage manager, and Dr Answer: 9 February 1981
+"
+"Mendoza was born in Hong Kong in 1978, to mother Robin Jackson, an Australian television personality of English and German descent, and father Noel Mendoza, a jazz pianist and arranger of Filipino and Spanish descent",1978,"Input: Mendoza was born in Hong Kong in 1978, to mother Robin Jackson, an Australian television personality of English and German descent, and father Noel Mendoza, a jazz pianist and arranger of Filipino and Spanish descent Answer: 1978
+"
+"Lange was born in Cloquet, Minnesota, on April 20, 1949","April 20, 1949","Input: Lange was born in Cloquet, Minnesota, on April 20, 1949 Answer: April 20, 1949
+"
+"Margot Elise Robbie was born on 2 July 1990 in Dalby, Queensland, to Doug Robbie, a former farm-owner and sugarcane tycoon, and Sarie Kessler, a physiotherapist",2 July 1990,"Input: Margot Elise Robbie was born on 2 July 1990 in Dalby, Queensland, to Doug Robbie, a former farm-owner and sugarcane tycoon, and Sarie Kessler, a physiotherapist Answer: 2 July 1990
+"
+"Bautista was born January 18, 1969 in Washington, D","January 18, 1969","Input: Bautista was born January 18, 1969 in Washington, D Answer: January 18, 1969
+"
+"Hauer was born in Breukelen, in the Province of Utrecht, on 23 January 1944, while the Netherlands was under German occupation during World War II",23 January 1944,"Input: Hauer was born in Breukelen, in the Province of Utrecht, on 23 January 1944, while the Netherlands was under German occupation during World War II Answer: 23 January 1944
+"
+"Segel was born on January 18, 1980, in Los Angeles, to Jillian (née Jordan; born 1952) and Alvin Segel, a lawyer","January 18, 1980","Input: Segel was born on January 18, 1980, in Los Angeles, to Jillian (née Jordan; born 1952) and Alvin Segel, a lawyer Answer: January 18, 1980
+"
+"Melissa Ann McCarthy was born on August 26, 1970 in Plainfield, Illinois to Sandra and Michael McCarthy","August 26, 1970","Input: Melissa Ann McCarthy was born on August 26, 1970 in Plainfield, Illinois to Sandra and Michael McCarthy Answer: August 26, 1970
+"
+"Atkinson was born in Consett, County Durham, England, on 6 January 1955",6 January 1955,"Input: Atkinson was born in Consett, County Durham, England, on 6 January 1955 Answer: 6 January 1955
+"
+"McGregor was born on 31 March 1971 in Perth, Scotland, and was raised in nearby Crieff",31 March 1971,"Input: McGregor was born on 31 March 1971 in Perth, Scotland, and was raised in nearby Crieff Answer: 31 March 1971
+"
+"Lambert was born March 29, 1957, in Great Neck, New York, the son of Yolande Agnès Henriette (née de Caritat de Peruzzis;  1928) and Georges Lambert-Lamond (1910–2003), a French diplomat then at the United Nations","March 29, 1957","Input: Lambert was born March 29, 1957, in Great Neck, New York, the son of Yolande Agnès Henriette (née de Caritat de Peruzzis;  1928) and Georges Lambert-Lamond (1910–2003), a French diplomat then at the United Nations Answer: March 29, 1957
+"
+"Eddie Asner was born on November 15, 1929, in Kansas City, Missouri, and grew up in Kansas City, Kansas","November 15, 1929","Input: Eddie Asner was born on November 15, 1929, in Kansas City, Missouri, and grew up in Kansas City, Kansas Answer: November 15, 1929
+"
+"Christopher Julius Rock was born in Andrews, South Carolina on February 7, 1965","February 7, 1965","Input: Christopher Julius Rock was born in Andrews, South Carolina on February 7, 1965 Answer: February 7, 1965
+"
+"Martin was born on August 14, 1945 in Waco, Texas, the son of Mary Lee (née Stewart; 1913–2002) and Glenn Vernon Martin (1914–1997), a real estate salesman and aspiring actor","August 14, 1945","Input: Martin was born on August 14, 1945 in Waco, Texas, the son of Mary Lee (née Stewart; 1913–2002) and Glenn Vernon Martin (1914–1997), a real estate salesman and aspiring actor Answer: August 14, 1945
+"
+"Renée Kathleen Zellweger was born on April 25, 1969, in Katy, Texas","April 25, 1969","Input: Renée Kathleen Zellweger was born on April 25, 1969, in Katy, Texas Answer: April 25, 1969
+"
+"James Harrison Coburn III was born in Laurel, Nebraska on August 31, 1928, the son of James Harrison Coburn II (1902–1975) and Mylet S.","August 31, 1928","Input: James Harrison Coburn III was born in Laurel, Nebraska on August 31, 1928, the son of James Harrison Coburn II (1902–1975) and Mylet S. Answer: August 31, 1928
+"
+"Cook was born in 1903 in San Francisco, California, the son of Elisha Vanslyck Cook Sr",1903,"Input: Cook was born in 1903 in San Francisco, California, the son of Elisha Vanslyck Cook Sr Answer: 1903
+"
+"Harris was born on 1 October 1930, in Limerick",1 October 1930,"Input: Harris was born on 1 October 1930, in Limerick Answer: 1 October 1930
+"
+"On 19 August 1946, Ti was born as Tam Fu Wing (譚富榮) in Xinhui, Guangdong Province, China into a family with 4 members including himself, his parents and a younger sister",On 19 August 1946,"Input: On 19 August 1946, Ti was born as Tam Fu Wing (譚富榮) in Xinhui, Guangdong Province, China into a family with 4 members including himself, his parents and a younger sister Answer: On 19 August 1946
+"
+"Naomie Harris was born on 6 September 1976 in Islington, London, where she was raised",6 September 1976,"Input: Naomie Harris was born on 6 September 1976 in Islington, London, where she was raised Answer: 6 September 1976
+"
+"Caryn Elaine Johnson was born in Manhattan, New York City, on November 13, 1955, the daughter of Robert James Johnson Jr","November 13, 1955","Input: Caryn Elaine Johnson was born in Manhattan, New York City, on November 13, 1955, the daughter of Robert James Johnson Jr Answer: November 13, 1955
+"
+"Tobias Vincent Maguire was born on June 27, 1975, in Santa Monica, California, to Wendy and Vincent Maguire","June 27, 1975","Input: Tobias Vincent Maguire was born on June 27, 1975, in Santa Monica, California, to Wendy and Vincent Maguire Answer: June 27, 1975
+"
+"Rampling was born in 1946 in Sturmer, Essex, the daughter of Isabel Anne (née Gurteen; 1918–2001), a painter, and Godfrey Rampling (1909–2009), an Olympic gold medallist and British Army officer",1946,"Input: Rampling was born in 1946 in Sturmer, Essex, the daughter of Isabel Anne (née Gurteen; 1918–2001), a painter, and Godfrey Rampling (1909–2009), an Olympic gold medallist and British Army officer Answer: 1946
+"
+"Toni Collett was born on 1 November 1972, the eldest of three children; she has two younger brothers",1 November 1972,"Input: Toni Collett was born on 1 November 1972, the eldest of three children; she has two younger brothers Answer: 1 November 1972
+"
+"Tony Curtis was born Bernard Schwartz on June 3, 1925, at the Fifth Avenue Hospital corner of East 105th Street in Manhattan, New York City, the first of three boys born to Helen (née Klein) and Emanuel Schwartz","June 3, 1925","Input: Tony Curtis was born Bernard Schwartz on June 3, 1925, at the Fifth Avenue Hospital corner of East 105th Street in Manhattan, New York City, the first of three boys born to Helen (née Klein) and Emanuel Schwartz Answer: June 3, 1925
+"
+"Chaplin was born on 31 July 1969 in Windsor, in the county of Berkshire, England, the son of Cynthia (née Chaplin), a teacher, and Peter Greenwood CBE, a civil engineer",31 July 1969,"Input: Chaplin was born on 31 July 1969 in Windsor, in the county of Berkshire, England, the son of Cynthia (née Chaplin), a teacher, and Peter Greenwood CBE, a civil engineer Answer: 31 July 1969
+"
+"Kebbel was born on February 19, 1985, in Winter Park, Florida","February 19, 1985","Input: Kebbel was born on February 19, 1985, in Winter Park, Florida Answer: February 19, 1985
+"

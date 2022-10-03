@@ -133,10 +133,10 @@ dmypy.json
 results
 
 
-data_utils/natural-instructions
+iprompt/data_utils/natural-instructions
 **.png
 .autoprompt
 .vscode
 tmp
-data_utils/speechmodeltutorial/data
-data_utils/speechmodeltutorial
+iprompt/data_utils/speechmodeltutorial/data
+iprompt/data_utils/speechmodeltutorial

@@ -20,7 +20,7 @@ Experiments on a wide range of tasks, ranging from synthetic mathematics to dive
 </blockquote>
 
 ## Setup
-- `pip install -r requirements.txt`
+- `pip install -e .`
 
 ## File structure
 - `XX_train_XX.py` files each launch a job to fit a different task
