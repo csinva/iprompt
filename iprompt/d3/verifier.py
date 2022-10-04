@@ -10,12 +10,10 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, T5ForConditionalG
 
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
-max_seq_length = 128
 device_count = torch.cuda.device_count()
 BSIZE = 4
 if device_count == 4:
     BSIZE = 8
-t5tok = AutoTokenizer.from_pretrained('t5-small')
 
 
 def normalize(t):
@@ -30,7 +28,7 @@ class T5ZeroShotClfQA(torch.nn.Module):
 
     def __init__(self, qa_model_name, max_seq_length = 128, half_precision=False):
         super(T5ZeroShotClfQA, self).__init__()
-        self.tokenizer = t5tok
+        self.tokenizer = AutoTokenizer.from_pretrained('t5-small')
         self.model = T5ForConditionalGeneration.from_pretrained(qa_model_name)
         if half_precision:
             print('Using half precision')
@@ -77,7 +75,7 @@ class T5ZeroShotClfQA(torch.nn.Module):
         self.model.load_state_dict(torch.load(path))
 
 
-def resize(sent_A, sent_B, max_length):
+def resize(sent_A, sent_B, max_length, t5tok):
     combined_cap = max_length - 30
     toks_A = t5tok(sent_A)['input_ids']
     toks_B = t5tok(sent_B)['input_ids']
@@ -101,6 +99,7 @@ def resize(sent_A, sent_B, max_length):
 
 
 def query_paired_fitness_controlled_(h, pos, neg, num_examples, m, max_length=128):
+    t5tok = m.tokenizer
     q = 'Is it true that compared to sentence B, sentence A ' + h + '?'
     
     pairs = []
@@ -111,7 +110,7 @@ def query_paired_fitness_controlled_(h, pos, neg, num_examples, m, max_length=12
 
     qc_dicts = []
     for sent_A, sent_B in pairs:
-        sent_A, sent_B = resize(sent_A, sent_B, max_length)
+        sent_A, sent_B = resize(sent_A, sent_B, max_length, t5tok)
         c = 'sentence A: ' + sent_A + '\n\nsentence B: ' + sent_B
         qc_dicts.append({'q': q, 'c': c})
     positive_logits = m.get_logits_from_input_dict(qc_dicts, bsize=BSIZE)
@@ -120,7 +119,7 @@ def query_paired_fitness_controlled_(h, pos, neg, num_examples, m, max_length=12
     qc_dicts = []
 
     for sent_A, sent_B in pairs:
-        sent_A, sent_B = resize(sent_A, sent_B, max_length)
+        sent_A, sent_B = resize(sent_A, sent_B, max_length, t5tok)
         c = 'sentence A: ' + sent_B + '\n\nsentence B: ' + sent_A
         qc_dicts.append({'q': q, 'c': c})
     reverse_logits = m.get_logits_from_input_dict(qc_dicts, bsize=BSIZE)
