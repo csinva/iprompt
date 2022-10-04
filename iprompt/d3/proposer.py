@@ -160,6 +160,8 @@ class T5Proposer(Proposer):
         return all_hs
 
     def inference_on_ensemble_prompts(self, prompts, n, temperature, ensemble_method):
+        """Note: this is currently ignoring ensembling!!!
+        """
         input_dict = self.tok(prompts, return_tensors="pt",
                               padding=True).to(device)
         input_dict["bad_words_ids"] = self.discouraged_toks
@@ -168,7 +170,8 @@ class T5Proposer(Proposer):
                                                return_dict_in_generate=True,
                                                do_sample=True,
                                                top_k=0, num_return_sequences=n, temperature=temperature,
-                                               ensemble_sample=True, ensemble_method=ensemble_method)
+        )
+                                            #    ensemble_sample=True, ensemble_method=ensemble_method)
         completions = self.tok.batch_decode(
             generated_tokens.sequences, skip_special_tokens=True)
         return completions[:n]

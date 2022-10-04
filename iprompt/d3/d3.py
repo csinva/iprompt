@@ -1,6 +1,8 @@
 import os
 import random
 import pickle as pkl
+
+from traitlets import Dict
 from iprompt.d3.get_extreme import return_extreme_values
 from iprompt.d3.proposer import init_proposer
 from iprompt.d3.verifier import init_verifier
@@ -18,7 +20,10 @@ def explain_d3(
     num_steps=500, # default 2000
     num_folds=2,    # default 4
     batch_size=32,  # default 16
-):
+) -> Dict:
+    """
+    Warning: proposer.inference_on_ensemble_prompts is currently not using ensembling!
+    """
     # saving the initial arguments
     if save_folder is None:
         save_folder = 'end2end_jobs/' + str(random.random())
