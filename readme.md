@@ -9,8 +9,8 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/license-mit-blue.svg">
-  <img src="https://img.shields.io/badge/python-3.6--3.8-blue">
-  <img src="https://img.shields.io/pypi/v/iprompt?color=green">
+  <img src="https://img.shields.io/badge/python-3.6+-blue">
+  <img src="https://img.shields.io/pypi/v/imodelsx?color=green">
 </p>  
 
 
@@ -19,7 +19,7 @@
 
 
 # Quickstart
-**Installation**: `pip install iprompt` (or, for more control, clone and install from source)
+**Installation**: `pip install imodelsx` (or, for more control, clone and install from source)
 
 **Usage example** (see <a href="https://csinva.github.io/interpretable-autoprompting/">api</a> or <a href="https://github.com/csinva/interpretable-autoprompting/blob/master/demo.ipynb">demo notebook</a> for more details):
 
@@ -33,7 +33,7 @@ import datasets
 <b>Abstract</b>: Large language models (LLMs) have displayed an impressive ability to harness natural language to perform complex tasks. In this work, we explore whether we can leverage this learned ability to find and explain patterns in data. Specifically, given a pre-trained LLM and data examples, we introduce interpretable autoprompting (iPrompt), an algorithm that generates a natural-language string explaining the data. iPrompt iteratively alternates between generating explanations with an LLM and reranking them based on their performance when used as a prompt. Experiments on a wide range of datasets, from synthetic mathematics to natural-language understanding, show that iPrompt can yield meaningful insights by accurately finding groundtruth dataset descriptions. Moreover, the prompts produced by iPrompt are simultaneously human-interpretable and highly effective for generalization: on real-world sentiment classification datasets, iPrompt produces prompts that match or even improve upon human-written prompts for GPT-3. Finally, experiments with an fMRI dataset show the potential for iPrompt to aid in scientific discovery.
 </blockquote>
 
-- the main api requires simply importing `iprompt`
+- the main api requires simply importing `imodelsx`
 - the `experiments` and `experiments/scripts` folders contain hyperparameters for running sweeps contained in the paper
   - note: args that start with `use_` are boolean
 - the `notebooks` folder contains notebooks for analyzing the outputs + making figures
