@@ -10,6 +10,7 @@ pandas
 dict_hash
 scikit-learn
 tqdm
+imodelsx
 
 
 # parallelization (optional)
