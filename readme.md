@@ -14,7 +14,7 @@
 </p>  
 
 
-<b>Official code for using / reproducing iPrompt from the paper "Explaining Patterns in Data  with  Language Models via Interpretable Autoprompting" (<a href="https://arxiv.org/abs/2">Singh*, Morris*, Aneja, Rush & Gao, 2022</a>) </b> iPrompt generates a human-interpretable prompt that explains patterns in data while still inducing strong generalization performance.
+<b>Official code for using / reproducing iPrompt from the paper "Explaining Patterns in Data  with  Language Models via Interpretable Autoprompting" (<a href="https://arxiv.org/abs/2210.01848">Singh*, Morris*, Aneja, Rush, & Gao, 2022</a>) </b> iPrompt generates a human-interpretable prompt that explains patterns in data while still inducing strong generalization performance.
 
 
 
@@ -51,6 +51,11 @@ If this package is useful for you, please cite the following!
 
 ```r
 @article{singh2022iprompt,
+  title = {Explaining Patterns in Data with Language Models via Interpretable Autoprompting},
+  author = {Singh, Chandan and Morris, John X. and Aneja, Jyoti and Rush, Alexander M. and Gao, Jianfeng},
   year = {2022},
+  url = {https://arxiv.org/abs/2210.01848},
+  publisher = {arXiv},  
+  doi = {10.48550/ARXIV.2210.01848}  
 }
 ```
