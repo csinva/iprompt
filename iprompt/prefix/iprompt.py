@@ -73,8 +73,8 @@ class iPrompt(AutoPrompt):
         ####################################################################
         self._verbose = True
     
-    def serialize(self) -> Dict[str, Any]:
-        r = super().serialize()
+    def serialize(self, eval_dataloader: torch.utils.data.DataLoader, possible_answer_mask: torch.Tensor) -> Dict[str, Any]:
+        r = super().serialize(eval_dataloader=eval_dataloader, possible_answer_mask=possible_answer_mask)
         r["topk_pop_sample"] = self._topk_pop_sample
         r["pop_size"] = self._pop_size
         r["num_mutations_per_ex"] = self._num_mutations_per_ex

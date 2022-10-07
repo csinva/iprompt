@@ -179,7 +179,11 @@ def train_model(
             break
 
     # Serialize model-specific stuff (prefixes & losses for autoprompt, embeddings for prompt tuning, etc.)
-    r.update(model.serialize())
+    n_eval = 128
+    eval_dset = datasets.Dataset.from_dict(dset[:n_eval])
+    eval_dataloader = DataLoader(
+        eval_dset, batch_size=args.batch_size, shuffle=True, drop_last=False)
+    r.update(model.serialize(eval_dataloader, possible_answer_mask))
 
     # save whether prefixes fit the template
     if "prefixes" in r:

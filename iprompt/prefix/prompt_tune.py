@@ -30,7 +30,7 @@ class PromptTunedModel(PrefixModel):
     def trainable_params(self) -> Iterable[nn.Parameter]:
         return [self.prefix_embedding]
     
-    def serialize(self):
+    def serialize(self, *args):
         save_dir = self.args.save_dir_unique
         os.makedirs(save_dir, exist_ok=True)
         torch.save(self.prefix_embedding, open(os.path.join(save_dir, 'prefix_embedding.p'), 'wb'))

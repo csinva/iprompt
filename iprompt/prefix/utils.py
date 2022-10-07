@@ -241,7 +241,7 @@ class PrefixModel(nn.Module, abc.ABC):
     def compute_metrics(self) -> Dict[str, Any]:
         return {}
     
-    def serialize(self) -> Dict[str, Any]:
+    def serialize(self, eval_dataloader: torch.utils.data.DataLoader, possible_answer_mask: torch.Tensor) -> Dict[str, Any]:
         """Writes stuff to disk after training."""
         return {}
 
