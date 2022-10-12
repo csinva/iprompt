@@ -90,10 +90,17 @@ class AutoPrompt(HotFlip):
         all_losses, all_accuracies = self._test_prefixes(
             prefixes=all_prefixes, eval_dataloader=eval_dataloader, possible_answer_mask=possible_answer_mask
         )
-        df = pd.DataFrame(zip(*[all_prefixes, all_losses, all_accuracies]), columns=['prefix', 'loss', 'accuracy'])
-        df = df.sort_values(by='loss', ascending=True).reset_index()
+        df = pd.DataFrame(
+            zip(*[all_prefixes, all_losses, all_accuracies]),
+            columns=['prefix', 'loss', 'accuracy']
+        )
+        df = df.sort_values(by=['accuracy', 'loss'], ascending=[False, True]).reset_index()
+        # df = df.sort_values(by='loss', ascending=True).reset_index()
         df['prefix_str'] = df['prefix'].map(self.tokenizer.decode)
         df['n_queries'] = df['prefix'].map(lambda p_ids: len(self._prefix_pool._all_losses[p_ids]))
+
+        print('Final prefixes')
+        print(df.head())
 
         return {
             "prefix_ids": df['prefix'].tolist(),
