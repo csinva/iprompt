@@ -7,6 +7,8 @@ import dataclasses
 import functools
 import heapq
 import random
+
+import pandas as pd
 import transformers
 import torch
 from torch.utils.data import DataLoader
@@ -443,7 +445,7 @@ class PrefixPool:
         """Number of different start tokens seen across all prefixes."""
         return len(self._best_prefix_by_start_token.keys())
     
-    def print(self, topk: int, min_occurrences: int = 2) -> None:
+    def print(self, topk: int, min_occurrences: int = 2) -> pd.DataFrame:
         top_token_ids = self.topk(k=topk, min_occurrences=min_occurrences)
         ########################### Debugging code ##########################
         # import pandas as pd
@@ -455,12 +457,18 @@ class PrefixPool:
         #####################################################################
         if not len(top_token_ids): return
         print((" " * 45), ("*" * 20), "Population", ("*" * 20))
-        for token_ids in top_token_ids:
-            prefix_str = "{:>65}".format(self.tokenizer.decode(list(token_ids)).replace("\n", "\\\\n"))
-            loss_str = f"{self._avg_loss[token_ids]:.3f}"
-            acc_str = f"{self._avg_accuracy[token_ids]*100:.1f}"
+        output_rows = []
+        for idx, token_ids in enumerate(top_token_ids):
+            prefix = self.tokenizer.decode(list(token_ids))
+            loss = self._avg_loss[token_ids]
+            acc = self._avg_accuracy[token_ids]
+            prefix_str = "{:>65}".format(prefix.replace("\n", "\\\\n"))
+            loss_str = f"{loss:.3f}"
+            acc_str = f"{acc*100:.1f}"
             print(prefix_str, "\t\t", loss_str, "\t\t", acc_str)
+            output_rows.append([idx, prefix, loss, acc])
         print()
+        return pd.DataFrame(output_rows, columns=['idx', 'prefix', 'loss', 'accuracy'])
     
     def initialize_prefix(self, prefix: torch.Tensor):
         prefix = tuple(prefix.cpu().tolist())

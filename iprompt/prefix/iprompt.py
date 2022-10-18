@@ -2,7 +2,9 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import argparse
 import collections
+import os
 import random
+
 import torch
 import transformers
 
@@ -72,6 +74,7 @@ class iPrompt(AutoPrompt):
         self._post_data_token_ids = self.tokenizer("\n\nPrompt:" + prompt_str, return_tensors='pt').input_ids.to(device)
         ####################################################################
         self._verbose = True
+        self._step = 0
     
     def serialize(self, eval_dataloader: torch.utils.data.DataLoader, possible_answer_mask: torch.Tensor) -> Dict[str, Any]:
         r = super().serialize(eval_dataloader=eval_dataloader, possible_answer_mask=possible_answer_mask)
@@ -289,13 +292,19 @@ class iPrompt(AutoPrompt):
 
         # logic here is that we want to see a sample a good number of times before
         # we actually have a good estimate of its loss.
-        num_min_occurrences = 3
+        num_min_occurrences = 2
 
         full_text_ids = self._create_full_text_ids(
             full_text_input_ids=full_text_tokenized.input_ids,
         )
         self._initialize_pop_once(full_text_ids=full_text_ids)
-        self._prefix_pool.print(topk=10, min_occurrences=num_min_occurrences)
+
+        prefix_save_folder = os.path.join(self.args.save_dir_unique, 'prefix')
+        df_to_print = self._prefix_pool.print(topk=10, min_occurrences=num_min_occurrences)
+        os.makedirs(prefix_save_folder, exist_ok=True)
+        prefix_out_file = os.path.join(prefix_save_folder, f'prefix_{self._step}.p')
+        df_to_print.to_pickle(prefix_out_file)
+        print(f'wrote {len(df_to_print)} prefixes to {prefix_out_file}')
 
         # Grab new population
         population_input_ids = self._get_population_and_random_generations(
@@ -323,6 +332,7 @@ class iPrompt(AutoPrompt):
         self._set_prefix_ids(torch.tensor(best_prefix_ids).to(device))
         self.prefix_embedding.requires_grad = False
 
+        self._step += 1
         return all_candidate_losses.min(), all_candidate_n_correct.max()
         
     def post_epoch(self, dataloader: torch.utils.data.DataLoader, possible_answer_mask: torch.Tensor) -> None:

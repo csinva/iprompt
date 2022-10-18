@@ -387,6 +387,8 @@ if __name__ == '__main__':
                         help='model checkpoint to use'
                         )
     args = parser.parse_args()
+
+    random_str = ''.join(random.choices(string.ascii_lowercase, k=12))
     random.seed(args.seed)
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
@@ -438,7 +440,7 @@ if __name__ == '__main__':
 
         # set up saving
         save_dir_unique = datetime.now().strftime("%b_%d_%H_%M_") + \
-            ''.join(random.choices(string.ascii_lowercase, k=12))
+            random_str
         save_dir = os.path.join(args.save_dir, save_dir_unique)
         logging.info('saving to ' + save_dir)
         args.save_dir_unique = save_dir
@@ -446,7 +448,10 @@ if __name__ == '__main__':
         preprefix = data.get_init_suffix(args.task_name, args.use_generic_query, args.template_num_init_string) if args.use_preprefix else ''
         model = model_cls_dict[args.model_cls](
             args=args,
-            loss_func=loss_func, model=lm, tokenizer=tokenizer, preprefix=preprefix
+            loss_func=loss_func,
+            model=lm,
+            tokenizer=tokenizer,
+            preprefix=preprefix
         )
         dset, check_answer_func, description = data.get_data(
             task_name=args.task_name, n_shots=args.n_shots, train_split_frac=args.train_split_frac, max_dset_size=args.max_dset_size,
