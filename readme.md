@@ -16,7 +16,7 @@
 
 <b>Official code for using / reproducing iPrompt from the paper "Explaining Patterns in Data  with  Language Models via Interpretable Autoprompting" (<a href="https://arxiv.org/abs/2210.01848">Singh*, Morris*, Aneja, Rush, & Gao, 2022</a>) </b> iPrompt generates a human-interpretable prompt that explains patterns in data while still inducing strong generalization performance.
 
-
+https://user-images.githubusercontent.com/4960970/197355573-e5a1af4c-0784-4344-a314-79793f284b97.mov
 
 # Quickstart
 **Installation**: `pip install imodelsx` (or, for more control, clone and install from source)
