@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://csinva.github.io/interpretable-autoprompting/">📚 sklearn-friendly api</a> •
+  <a href="http://csinva.io/imodelsX/iprompt/api.html#imodelsx.iprompt.api.explain_dataset_iprompt">📚 sklearn-friendly api</a> •
   <a href="https://github.com/csinva/interpretable-autoprompting/blob/master/demo.ipynb">📖 demo notebook</a>
 </p>
 
@@ -29,7 +29,7 @@ from imodelsx import explain_dataset_iprompt, get_add_two_numbers_dataset
 # get a simple dataset of adding two numbers
 input_strings, output_strings = get_add_two_numbers_dataset(num_examples=100)
 for i in range(5):
-    print(repr(input_strings[i]), repr(output_strings[i]))o
+    print(repr(input_strings[i]), repr(output_strings[i]))
 
 # explain the relationship between the inputs and outputs
 # with a natural-language prompt string
@@ -38,11 +38,14 @@ prompts, metadata = explain_dataset_iprompt(
     output_strings=output_strings,
     checkpoint='EleutherAI/gpt-j-6B', # which language model to use
     num_learned_tokens=3, # how long of a prompt to learn
+    n_shots=3, # shots per example
 
     n_epochs=15, # how many epochs to search
     verbose=0, # how much to print
     llm_float16=True, # whether to load the model in float_16
 )
+--------
+prompts is a list of found natural-language prompt strings
 ```
 
 # Docs
