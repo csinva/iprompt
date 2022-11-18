@@ -17,7 +17,7 @@ import tqdm
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-DEBUG_VERBOSE = False
+DEBUG_VERBOSE = True
 
 
 def get_token_replacements_single_mask(
@@ -235,13 +235,18 @@ class PrefixModel(nn.Module, abc.ABC):
             input_ids=input_ids,
             prefix_ids=prefix_ids, 
         )
+        attention_mask = ~(new_input_ids == self.tokenizer.pad_token_id)
         outputs = self.model(
             inputs_embeds=embeddings,
+            attention_mask=attention_mask,
             labels=next_token_ids
         )
         n_correct = (
-            outputs.logits[:,0].argmax(dim=-1) == next_token_ids[:,0]
-        ).sum().item()
+            (outputs.logits.argmax(dim=-1) == next_token_ids)
+            |
+            (self.tokenizer.pad_token_id == next_token_ids)
+        ).all(dim=1).sum().item()
+        
         return n_correct, new_input_ids, outputs.loss
         # attention_mask = ~(new_input_ids == self.tokenizer.pad_token_id)
         # assert new_input_ids.shape == embeddings.shape[0:2]

@@ -99,8 +99,7 @@ class iPrompt(AutoPrompt):
             input_ids = self._generate(
                 input_ids=conditional_input_ids,
                 num_conditional_tokens=num_conditional_tokens
-            )
-            input_ids = input_ids[0, num_conditional_tokens:]
+            ).squeeze()
             assert input_ids.numel() == self._num_tokens
             self._prefix_pool.initialize_prefix(input_ids)
 
@@ -112,7 +111,11 @@ class iPrompt(AutoPrompt):
         If `num_conditional_tokens` > 0, generates extra text because there was an additional
         prefix set.
         """
-        output_length = self._num_tokens + num_conditional_tokens
+        if self._is_t5:
+            output_length = self._num_tokens + 1 # will add pad token
+        else:
+            output_length = self._num_tokens + num_conditional_tokens
+        
         attention_mask = ~(input_ids == self.tokenizer.pad_token_id)
         assert attention_mask.shape == input_ids.shape
         print("iPrompt._generate", input_ids.shape)
@@ -137,8 +140,13 @@ class iPrompt(AutoPrompt):
             # ).bool()
             random_sentence_ids = g[idx]
             print(">>", self.tokenizer.decode(random_sentence_ids).replace('\n', '\\n'))
-
-        return g
+        
+        if self._is_t5:
+            return g[:, 1:]
+        else:
+            # Split off the conditional part, we only want the prefix part, which
+            # starts after the conditional part.
+            return g[:, num_conditional_tokens:]
     
     def _select_pop_topk(self, k: int, min_occurrences: int = None) -> List[Tuple[int]]:
         return self._prefix_pool.topk(k=k, min_occurrences=min_occurrences)
@@ -178,7 +186,7 @@ class iPrompt(AutoPrompt):
         random_population = self._generate(
             input_ids=random_full_text_ids,
             num_conditional_tokens=num_conditional_tokens
-        )[:, num_conditional_tokens:]
+        )
 
         full_population = torch.cat((population, random_population), dim=0)
         assert full_population.shape == (
@@ -218,9 +226,6 @@ class iPrompt(AutoPrompt):
             input_ids=conditional_input_ids,
             num_conditional_tokens=num_conditional_tokens
         )
-        # Split off the conditional part, we only want the prefix part, which
-        # starts after the conditional part.
-        new_input_ids = new_input_ids[:, num_conditional_tokens:]
         
         # TODO consider adding crossover (combining spans?) here.
         return new_input_ids
