@@ -1,0 +1,6613 @@
+input,output,text
+time,i,"Input: time Answer: i
+"
+game,a,"Input: game Answer: a
+"
+film,i,"Input: film Answer: i
+"
+season,e,"Input: season Answer: e
+"
+year,e,"Input: year Answer: e
+"
+second,e,"Input: second Answer: e
+"
+album,l,"Input: album Answer: l
+"
+song,o,"Input: song Answer: o
+"
+number,u,"Input: number Answer: u
+"
+part,a,"Input: part Answer: a
+"
+team,e,"Input: team Answer: e
+"
+episode,p,"Input: episode Answer: p
+"
+work,o,"Input: work Answer: o
+"
+day,a,"Input: day Answer: a
+"
+end,n,"Input: end Answer: n
+"
+music,u,"Input: music Answer: u
+"
+state,t,"Input: state Answer: t
+"
+century,e,"Input: century Answer: e
+"
+area,r,"Input: area Answer: r
+"
+life,i,"Input: life Answer: i
+"
+city,i,"Input: city Answer: i
+"
+show,h,"Input: show Answer: h
+"
+war,a,"Input: war Answer: a
+"
+group,r,"Input: group Answer: r
+"
+character,h,"Input: character Answer: h
+"
+system,y,"Input: system Answer: y
+"
+name,a,"Input: name Answer: a
+"
+government,o,"Input: government Answer: o
+"
+line,i,"Input: line Answer: i
+"
+home,o,"Input: home Answer: o
+"
+band,a,"Input: band Answer: a
+"
+record,e,"Input: record Answer: e
+"
+ship,h,"Input: ship Answer: h
+"
+world,o,"Input: world Answer: o
+"
+death,e,"Input: death Answer: e
+"
+release,e,"Input: release Answer: e
+"
+video,i,"Input: video Answer: i
+"
+role,o,"Input: role Answer: o
+"
+match,a,"Input: match Answer: a
+"
+way,a,"Input: way Answer: a
+"
+south,o,"Input: south Answer: o
+"
+side,i,"Input: side Answer: i
+"
+career,a,"Input: career Answer: a
+"
+school,c,"Input: school Answer: c
+"
+production,r,"Input: production Answer: r
+"
+story,t,"Input: story Answer: t
+"
+water,a,"Input: water Answer: a
+"
+power,o,"Input: power Answer: o
+"
+form,o,"Input: form Answer: o
+"
+storm,t,"Input: storm Answer: t
+"
+player,l,"Input: player Answer: l
+"
+history,i,"Input: history Answer: i
+"
+version,e,"Input: version Answer: e
+"
+support,u,"Input: support Answer: u
+"
+book,o,"Input: book Answer: o
+"
+period,e,"Input: period Answer: e
+"
+half,a,"Input: half Answer: a
+"
+company,o,"Input: company Answer: o
+"
+position,o,"Input: position Answer: o
+"
+order,r,"Input: order Answer: r
+"
+attack,t,"Input: attack Answer: t
+"
+include,n,"Input: include Answer: n
+"
+building,u,"Input: building Answer: u
+"
+town,o,"Input: town Answer: o
+"
+performance,e,"Input: performance Answer: e
+"
+country,o,"Input: country Answer: o
+"
+west,e,"Input: west Answer: e
+"
+aircraft,i,"Input: aircraft Answer: i
+"
+father,a,"Input: father Answer: a
+"
+track,r,"Input: track Answer: r
+"
+club,l,"Input: club Answer: l
+"
+control,o,"Input: control Answer: o
+"
+development,e,"Input: development Answer: e
+"
+result,e,"Input: result Answer: e
+"
+title,i,"Input: title Answer: i
+"
+week,e,"Input: week Answer: e
+"
+class,l,"Input: class Answer: l
+"
+force,o,"Input: force Answer: o
+"
+land,a,"Input: land Answer: a
+"
+areas,r,"Input: areas Answer: r
+"
+house,o,"Input: house Answer: o
+"
+fire,i,"Input: fire Answer: i
+"
+television,e,"Input: television Answer: e
+"
+return,e,"Input: return Answer: e
+"
+head,e,"Input: head Answer: e
+"
+style,t,"Input: style Answer: t
+"
+design,e,"Input: design Answer: e
+"
+level,e,"Input: level Answer: e
+"
+success,u,"Input: success Answer: u
+"
+route,o,"Input: route Answer: o
+"
+member,e,"Input: member Answer: e
+"
+battle,a,"Input: battle Answer: a
+"
+addition,d,"Input: addition Answer: d
+"
+air,i,"Input: air Answer: i
+"
+road,o,"Input: road Answer: o
+"
+range,a,"Input: range Answer: a
+"
+age,g,"Input: age Answer: g
+"
+race,a,"Input: race Answer: a
+"
+body,o,"Input: body Answer: o
+"
+present,r,"Input: present Answer: r
+"
+action,c,"Input: action Answer: c
+"
+population,o,"Input: population Answer: o
+"
+campaign,a,"Input: campaign Answer: a
+"
+stage,t,"Input: stage Answer: t
+"
+station,t,"Input: station Answer: t
+"
+law,a,"Input: law Answer: a
+"
+party,a,"Input: party Answer: a
+"
+night,i,"Input: night Answer: i
+"
+construction,o,"Input: construction Answer: o
+"
+damage,a,"Input: damage Answer: a
+"
+case,a,"Input: case Answer: a
+"
+event,v,"Input: event Answer: v
+"
+scene,c,"Input: scene Answer: c
+"
+front,r,"Input: front Answer: r
+"
+ground,r,"Input: ground Answer: r
+"
+field,i,"Input: field Answer: i
+"
+region,e,"Input: region Answer: e
+"
+office,f,"Input: office Answer: f
+"
+example,x,"Input: example Answer: x
+"
+army,r,"Input: army Answer: r
+"
+victory,i,"Input: victory Answer: i
+"
+mph,p,"Input: mph Answer: p
+"
+mother,o,"Input: mother Answer: o
+"
+project,r,"Input: project Answer: r
+"
+rest,e,"Input: rest Answer: e
+"
+highway,i,"Input: highway Answer: i
+"
+training,r,"Input: training Answer: r
+"
+rock,o,"Input: rock Answer: o
+"
+shot,h,"Input: shot Answer: h
+"
+process,r,"Input: process Answer: r
+"
+command,o,"Input: command Answer: o
+"
+month,o,"Input: month Answer: o
+"
+crew,r,"Input: crew Answer: r
+"
+studio,t,"Input: studio Answer: t
+"
+director,i,"Input: director Answer: i
+"
+change,h,"Input: change Answer: h
+"
+appearance,p,"Input: appearance Answer: p
+"
+list,i,"Input: list Answer: i
+"
+goal,o,"Input: goal Answer: o
+"
+relationship,e,"Input: relationship Answer: e
+"
+court,o,"Input: court Answer: o
+"
+chart,h,"Input: chart Answer: h
+"
+church,h,"Input: church Answer: h
+"
+attempt,t,"Input: attempt Answer: t
+"
+recording,e,"Input: recording Answer: e
+"
+sound,o,"Input: sound Answer: o
+"
+cast,a,"Input: cast Answer: a
+"
+base,a,"Input: base Answer: a
+"
+interest,n,"Input: interest Answer: n
+"
+term,e,"Input: term Answer: e
+"
+post,o,"Input: post Answer: o
+"
+art,r,"Input: art Answer: r
+"
+future,u,"Input: future Answer: u
+"
+review,e,"Input: review Answer: e
+"
+cover,o,"Input: cover Answer: o
+"
+evidence,v,"Input: evidence Answer: v
+"
+idea,d,"Input: idea Answer: d
+"
+brother,r,"Input: brother Answer: r
+"
+football,o,"Input: football Answer: o
+"
+election,l,"Input: election Answer: l
+"
+loss,o,"Input: loss Answer: o
+"
+novel,o,"Input: novel Answer: o
+"
+coast,o,"Input: coast Answer: o
+"
+person,e,"Input: person Answer: e
+"
+sea,e,"Input: sea Answer: e
+"
+gun,u,"Input: gun Answer: u
+"
+hand,a,"Input: hand Answer: a
+"
+study,t,"Input: study Answer: t
+"
+response,e,"Input: response Answer: e
+"
+star,t,"Input: star Answer: t
+"
+decision,e,"Input: decision Answer: e
+"
+magazine,a,"Input: magazine Answer: a
+"
+issue,s,"Input: issue Answer: s
+"
+debut,e,"Input: debut Answer: e
+"
+program,r,"Input: program Answer: r
+"
+score,c,"Input: score Answer: c
+"
+money,o,"Input: money Answer: o
+"
+turn,u,"Input: turn Answer: u
+"
+community,o,"Input: community Answer: o
+"
+length,e,"Input: length Answer: e
+"
+king,i,"Input: king Answer: i
+"
+bridge,r,"Input: bridge Answer: r
+"
+plan,l,"Input: plan Answer: l
+"
+center,e,"Input: center Answer: e
+"
+business,u,"Input: business Answer: u
+"
+pressure,r,"Input: pressure Answer: r
+"
+percent,e,"Input: percent Answer: e
+"
+speed,p,"Input: speed Answer: p
+"
+president,r,"Input: president Answer: r
+"
+media,e,"Input: media Answer: e
+"
+summer,u,"Input: summer Answer: u
+"
+material,a,"Input: material Answer: a
+"
+cut,u,"Input: cut Answer: u
+"
+writer,r,"Input: writer Answer: r
+"
+date,a,"Input: date Answer: a
+"
+influence,n,"Input: influence Answer: n
+"
+fleet,l,"Input: fleet Answer: l
+"
+size,i,"Input: size Answer: i
+"
+structure,t,"Input: structure Answer: t
+"
+fact,a,"Input: fact Answer: a
+"
+past,a,"Input: past Answer: a
+"
+type,y,"Input: type Answer: y
+"
+daughter,a,"Input: daughter Answer: a
+"
+car,a,"Input: car Answer: a
+"
+food,o,"Input: food Answer: o
+"
+room,o,"Input: room Answer: o
+"
+movement,o,"Input: movement Answer: o
+"
+cost,o,"Input: cost Answer: o
+"
+river,i,"Input: river Answer: i
+"
+view,i,"Input: view Answer: i
+"
+language,a,"Input: language Answer: a
+"
+self,e,"Input: self Answer: e
+"
+staff,t,"Input: staff Answer: t
+"
+course,o,"Input: course Answer: o
+"
+experience,x,"Input: experience Answer: x
+"
+producer,r,"Input: producer Answer: r
+"
+research,e,"Input: research Answer: e
+"
+radio,a,"Input: radio Answer: a
+"
+space,p,"Input: space Answer: p
+"
+feature,e,"Input: feature Answer: e
+"
+division,i,"Input: division Answer: i
+"
+effect,f,"Input: effect Answer: f
+"
+leader,e,"Input: leader Answer: e
+"
+woman,o,"Input: woman Answer: o
+"
+voice,o,"Input: voice Answer: o
+"
+face,a,"Input: face Answer: a
+"
+gold,o,"Input: gold Answer: o
+"
+increase,n,"Input: increase Answer: n
+"
+friend,r,"Input: friend Answer: r
+"
+location,o,"Input: location Answer: o
+"
+status,t,"Input: status Answer: t
+"
+child,h,"Input: child Answer: h
+"
+report,e,"Input: report Answer: e
+"
+something,o,"Input: something Answer: o
+"
+village,i,"Input: village Answer: i
+"
+manager,a,"Input: manager Answer: a
+"
+majority,a,"Input: majority Answer: a
+"
+cause,a,"Input: cause Answer: a
+"
+act,c,"Input: act Answer: c
+"
+minute,i,"Input: minute Answer: i
+"
+meeting,e,"Input: meeting Answer: e
+"
+park,a,"Input: park Answer: a
+"
+nature,a,"Input: nature Answer: a
+"
+flight,l,"Input: flight Answer: l
+"
+information,n,"Input: information Answer: n
+"
+defeat,e,"Input: defeat Answer: e
+"
+singer,i,"Input: singer Answer: i
+"
+need,e,"Input: need Answer: e
+"
+industry,n,"Input: industry Answer: n
+"
+broadcast,r,"Input: broadcast Answer: r
+"
+interview,n,"Input: interview Answer: n
+"
+hour,o,"Input: hour Answer: o
+"
+audience,u,"Input: audience Answer: u
+"
+education,d,"Input: education Answer: d
+"
+trade,r,"Input: trade Answer: r
+"
+attention,t,"Input: attention Answer: t
+"
+operation,p,"Input: operation Answer: p
+"
+reach,e,"Input: reach Answer: e
+"
+officer,f,"Input: officer Answer: f
+"
+sister,i,"Input: sister Answer: i
+"
+ability,b,"Input: ability Answer: b
+"
+depression,e,"Input: depression Answer: e
+"
+pop,o,"Input: pop Answer: o
+"
+giving,i,"Input: giving Answer: i
+"
+deal,e,"Input: deal Answer: e
+"
+subject,u,"Input: subject Answer: u
+"
+commander,o,"Input: commander Answer: o
+"
+rate,a,"Input: rate Answer: a
+"
+produce,r,"Input: produce Answer: r
+"
+competition,o,"Input: competition Answer: o
+"
+unit,n,"Input: unit Answer: n
+"
+artist,r,"Input: artist Answer: r
+"
+energy,n,"Input: energy Answer: n
+"
+theme,h,"Input: theme Answer: h
+"
+wind,i,"Input: wind Answer: i
+"
+pass,a,"Input: pass Answer: a
+"
+centre,e,"Input: centre Answer: e
+"
+plot,l,"Input: plot Answer: l
+"
+access,c,"Input: access Answer: c
+"
+letter,e,"Input: letter Answer: e
+"
+practice,r,"Input: practice Answer: r
+"
+peak,e,"Input: peak Answer: e
+"
+capital,a,"Input: capital Answer: a
+"
+word,o,"Input: word Answer: o
+"
+edition,d,"Input: edition Answer: d
+"
+script,c,"Input: script Answer: c
+"
+health,e,"Input: health Answer: e
+"
+movie,o,"Input: movie Answer: o
+"
+network,e,"Input: network Answer: e
+"
+board,o,"Input: board Answer: o
+"
+effort,f,"Input: effort Answer: f
+"
+marriage,a,"Input: marriage Answer: a
+"
+college,o,"Input: college Answer: o
+"
+mass,a,"Input: mass Answer: a
+"
+cyclone,y,"Input: cyclone Answer: y
+"
+variety,a,"Input: variety Answer: a
+"
+morning,o,"Input: morning Answer: o
+"
+metal,e,"Input: metal Answer: e
+"
+combat,o,"Input: combat Answer: o
+"
+market,a,"Input: market Answer: a
+"
+coach,o,"Input: coach Answer: o
+"
+science,c,"Input: science Answer: c
+"
+source,o,"Input: source Answer: o
+"
+quality,u,"Input: quality Answer: u
+"
+fall,a,"Input: fall Answer: a
+"
+presence,r,"Input: presence Answer: r
+"
+oil,i,"Input: oil Answer: i
+"
+direction,i,"Input: direction Answer: i
+"
+break,r,"Input: break Answer: r
+"
+rule,u,"Input: rule Answer: u
+"
+enemy,n,"Input: enemy Answer: n
+"
+yard,a,"Input: yard Answer: a
+"
+concert,o,"Input: concert Answer: o
+"
+engine,n,"Input: engine Answer: n
+"
+traffic,r,"Input: traffic Answer: r
+"
+advance,d,"Input: advance Answer: d
+"
+mission,i,"Input: mission Answer: i
+"
+portion,o,"Input: portion Answer: o
+"
+scoring,c,"Input: scoring Answer: c
+"
+castle,a,"Input: castle Answer: a
+"
+property,r,"Input: property Answer: r
+"
+pair,a,"Input: pair Answer: a
+"
+award,w,"Input: award Answer: w
+"
+impact,m,"Input: impact Answer: m
+"
+call,a,"Input: call Answer: a
+"
+port,o,"Input: port Answer: o
+"
+approach,p,"Input: approach Answer: p
+"
+situation,i,"Input: situation Answer: i
+"
+distance,i,"Input: distance Answer: i
+"
+amount,m,"Input: amount Answer: m
+"
+test,e,"Input: test Answer: e
+"
+inch,n,"Input: inch Answer: n
+"
+actor,c,"Input: actor Answer: c
+"
+piece,i,"Input: piece Answer: i
+"
+dance,a,"Input: dance Answer: a
+"
+today,o,"Input: today Answer: o
+"
+train,r,"Input: train Answer: r
+"
+figure,i,"Input: figure Answer: i
+"
+trial,r,"Input: trial Answer: r
+"
+concept,o,"Input: concept Answer: o
+"
+scale,c,"Input: scale Answer: c
+"
+society,o,"Input: society Answer: o
+"
+job,o,"Input: job Answer: o
+"
+chief,h,"Input: chief Answer: h
+"
+author,u,"Input: author Answer: u
+"
+activity,c,"Input: activity Answer: c
+"
+policy,o,"Input: policy Answer: o
+"
+calling,a,"Input: calling Answer: a
+"
+cross,r,"Input: cross Answer: r
+"
+captain,a,"Input: captain Answer: a
+"
+account,c,"Input: account Answer: c
+"
+strength,t,"Input: strength Answer: t
+"
+plant,l,"Input: plant Answer: l
+"
+charge,h,"Input: charge Answer: h
+"
+county,o,"Input: county Answer: o
+"
+screen,c,"Input: screen Answer: c
+"
+wall,a,"Input: wall Answer: a
+"
+sense,e,"Input: sense Answer: e
+"
+pilot,i,"Input: pilot Answer: i
+"
+ice,c,"Input: ice Answer: c
+"
+reception,e,"Input: reception Answer: e
+"
+lot,o,"Input: lot Answer: o
+"
+winter,i,"Input: winter Answer: i
+"
+wing,i,"Input: wing Answer: i
+"
+focus,o,"Input: focus Answer: o
+"
+blood,l,"Input: blood Answer: l
+"
+weather,e,"Input: weather Answer: e
+"
+defense,e,"Input: defense Answer: e
+"
+student,t,"Input: student Answer: t
+"
+artillery,r,"Input: artillery Answer: r
+"
+executive,x,"Input: executive Answer: x
+"
+district,i,"Input: district Answer: i
+"
+image,m,"Input: image Answer: m
+"
+share,h,"Input: share Answer: h
+"
+border,o,"Input: border Answer: o
+"
+capture,a,"Input: capture Answer: a
+"
+injury,n,"Input: injury Answer: n
+"
+equipment,q,"Input: equipment Answer: q
+"
+organization,r,"Input: organization Answer: r
+"
+stone,t,"Input: stone Answer: t
+"
+growth,r,"Input: growth Answer: r
+"
+box,o,"Input: box Answer: o
+"
+husband,u,"Input: husband Answer: u
+"
+matter,a,"Input: matter Answer: a
+"
+content,o,"Input: content Answer: o
+"
+travel,r,"Input: travel Answer: r
+"
+heart,e,"Input: heart Answer: e
+"
+tournament,o,"Input: tournament Answer: o
+"
+conflict,o,"Input: conflict Answer: o
+"
+floor,l,"Input: floor Answer: l
+"
+couple,o,"Input: couple Answer: o
+"
+formation,o,"Input: formation Answer: o
+"
+reference,e,"Input: reference Answer: e
+"
+speech,p,"Input: speech Answer: p
+"
+territory,e,"Input: territory Answer: e
+"
+camp,a,"Input: camp Answer: a
+"
+value,a,"Input: value Answer: a
+"
+rainfall,a,"Input: rainfall Answer: a
+"
+championship,h,"Input: championship Answer: h
+"
+treatment,r,"Input: treatment Answer: r
+"
+university,n,"Input: university Answer: n
+"
+machine,a,"Input: machine Answer: a
+"
+guest,u,"Input: guest Answer: u
+"
+problem,r,"Input: problem Answer: r
+"
+reason,e,"Input: reason Answer: e
+"
+horse,o,"Input: horse Answer: o
+"
+governor,o,"Input: governor Answer: o
+"
+soundtrack,o,"Input: soundtrack Answer: o
+"
+offer,f,"Input: offer Answer: f
+"
+senior,e,"Input: senior Answer: e
+"
+background,a,"Input: background Answer: a
+"
+degree,e,"Input: degree Answer: e
+"
+railway,a,"Input: railway Answer: a
+"
+authority,u,"Input: authority Answer: u
+"
+birth,i,"Input: birth Answer: i
+"
+vote,o,"Input: vote Answer: o
+"
+website,e,"Input: website Answer: e
+"
+nothing,o,"Input: nothing Answer: o
+"
+filming,i,"Input: filming Answer: i
+"
+escape,s,"Input: escape Answer: s
+"
+capacity,a,"Input: capacity Answer: a
+"
+basis,a,"Input: basis Answer: a
+"
+fiction,i,"Input: fiction Answer: i
+"
+sequence,e,"Input: sequence Answer: e
+"
+weight,e,"Input: weight Answer: e
+"
+opposition,p,"Input: opposition Answer: p
+"
+newspaper,e,"Input: newspaper Answer: e
+"
+squadron,q,"Input: squadron Answer: q
+"
+risk,i,"Input: risk Answer: i
+"
+care,a,"Input: care Answer: a
+"
+contrast,o,"Input: contrast Answer: o
+"
+failure,a,"Input: failure Answer: a
+"
+nation,a,"Input: nation Answer: a
+"
+eye,y,"Input: eye Answer: y
+"
+threat,h,"Input: threat Answer: h
+"
+claim,l,"Input: claim Answer: l
+"
+supply,u,"Input: supply Answer: u
+"
+disease,i,"Input: disease Answer: i
+"
+drive,r,"Input: drive Answer: r
+"
+draft,r,"Input: draft Answer: r
+"
+bill,i,"Input: bill Answer: i
+"
+tower,o,"Input: tower Answer: o
+"
+administration,d,"Input: administration Answer: d
+"
+expansion,x,"Input: expansion Answer: x
+"
+boat,o,"Input: boat Answer: o
+"
+hospital,o,"Input: hospital Answer: o
+"
+leadership,e,"Input: leadership Answer: e
+"
+ring,i,"Input: ring Answer: i
+"
+management,a,"Input: management Answer: a
+"
+landing,a,"Input: landing Answer: a
+"
+data,a,"Input: data Answer: a
+"
+choice,h,"Input: choice Answer: h
+"
+silver,i,"Input: silver Answer: i
+"
+crossing,r,"Input: crossing Answer: r
+"
+fuel,u,"Input: fuel Answer: u
+"
+contact,o,"Input: contact Answer: o
+"
+gas,a,"Input: gas Answer: a
+"
+seat,e,"Input: seat Answer: e
+"
+girl,i,"Input: girl Answer: i
+"
+split,p,"Input: split Answer: p
+"
+committee,o,"Input: committee Answer: o
+"
+drama,r,"Input: drama Answer: r
+"
+sex,e,"Input: sex Answer: e
+"
+spring,p,"Input: spring Answer: p
+"
+beat,e,"Input: beat Answer: e
+"
+article,r,"Input: article Answer: r
+"
+animal,n,"Input: animal Answer: n
+"
+comedy,o,"Input: comedy Answer: o
+"
+transport,r,"Input: transport Answer: r
+"
+paper,a,"Input: paper Answer: a
+"
+leg,e,"Input: leg Answer: e
+"
+genus,e,"Input: genus Answer: e
+"
+flag,l,"Input: flag Answer: l
+"
+interchange,n,"Input: interchange Answer: n
+"
+purpose,u,"Input: purpose Answer: u
+"
+security,e,"Input: security Answer: e
+"
+infantry,n,"Input: infantry Answer: n
+"
+spread,p,"Input: spread Answer: p
+"
+search,e,"Input: search Answer: e
+"
+incident,n,"Input: incident Answer: n
+"
+mind,i,"Input: mind Answer: i
+"
+battalion,a,"Input: battalion Answer: a
+"
+text,e,"Input: text Answer: e
+"
+finish,i,"Input: finish Answer: i
+"
+critic,r,"Input: critic Answer: r
+"
+creation,r,"Input: creation Answer: r
+"
+mile,i,"Input: mile Answer: i
+"
+budget,u,"Input: budget Answer: u
+"
+flooding,l,"Input: flooding Answer: l
+"
+tradition,r,"Input: tradition Answer: r
+"
+arrival,r,"Input: arrival Answer: r
+"
+ceremony,e,"Input: ceremony Answer: e
+"
+condition,o,"Input: condition Answer: o
+"
+thing,h,"Input: thing Answer: h
+"
+color,o,"Input: color Answer: o
+"
+intensity,n,"Input: intensity Answer: n
+"
+street,t,"Input: street Answer: t
+"
+session,e,"Input: session Answer: e
+"
+wave,a,"Input: wave Answer: a
+"
+piano,i,"Input: piano Answer: i
+"
+criticism,r,"Input: criticism Answer: r
+"
+planet,l,"Input: planet Answer: l
+"
+reign,e,"Input: reign Answer: e
+"
+murder,u,"Input: murder Answer: u
+"
+selection,e,"Input: selection Answer: e
+"
+computer,o,"Input: computer Answer: o
+"
+council,o,"Input: council Answer: o
+"
+comic,o,"Input: comic Answer: o
+"
+peace,e,"Input: peace Answer: e
+"
+opportunity,p,"Input: opportunity Answer: p
+"
+question,u,"Input: question Answer: u
+"
+analysis,n,"Input: analysis Answer: n
+"
+shooting,h,"Input: shooting Answer: h
+"
+display,i,"Input: display Answer: i
+"
+deck,e,"Input: deck Answer: e
+"
+advantage,d,"Input: advantage Answer: d
+"
+conference,o,"Input: conference Answer: o
+"
+fan,a,"Input: fan Answer: a
+"
+prison,r,"Input: prison Answer: r
+"
+host,o,"Input: host Answer: o
+"
+volume,o,"Input: volume Answer: o
+"
+protection,r,"Input: protection Answer: r
+"
+target,a,"Input: target Answer: a
+"
+expedition,x,"Input: expedition Answer: x
+"
+publication,u,"Input: publication Answer: u
+"
+temperature,e,"Input: temperature Answer: e
+"
+economy,c,"Input: economy Answer: c
+"
+brief,r,"Input: brief Answer: r
+"
+edge,d,"Input: edge Answer: d
+"
+intersection,n,"Input: intersection Answer: n
+"
+motion,o,"Input: motion Answer: o
+"
+chance,h,"Input: chance Answer: h
+"
+label,a,"Input: label Answer: a
+"
+gain,a,"Input: gain Answer: a
+"
+element,l,"Input: element Answer: l
+"
+rear,e,"Input: rear Answer: e
+"
+literature,i,"Input: literature Answer: i
+"
+strike,t,"Input: strike Answer: t
+"
+technology,e,"Input: technology Answer: e
+"
+adult,d,"Input: adult Answer: d
+"
+anything,n,"Input: anything Answer: n
+"
+gameplay,a,"Input: gameplay Answer: a
+"
+resistance,e,"Input: resistance Answer: e
+"
+launch,a,"Input: launch Answer: a
+"
+storyline,t,"Input: storyline Answer: t
+"
+shape,h,"Input: shape Answer: h
+"
+sign,i,"Input: sign Answer: i
+"
+tax,a,"Input: tax Answer: a
+"
+agent,g,"Input: agent Answer: g
+"
+popularity,o,"Input: popularity Answer: o
+"
+reaction,e,"Input: reaction Answer: e
+"
+reputation,e,"Input: reputation Answer: e
+"
+estate,s,"Input: estate Answer: s
+"
+poem,o,"Input: poem Answer: o
+"
+southeast,o,"Input: southeast Answer: o
+"
+height,e,"Input: height Answer: e
+"
+alternative,l,"Input: alternative Answer: l
+"
+franchise,r,"Input: franchise Answer: r
+"
+opinion,p,"Input: opinion Answer: p
+"
+steel,t,"Input: steel Answer: t
+"
+planning,l,"Input: planning Answer: l
+"
+safety,a,"Input: safety Answer: a
+"
+existence,x,"Input: existence Answer: x
+"
+introduction,n,"Input: introduction Answer: n
+"
+promotion,r,"Input: promotion Answer: r
+"
+branch,r,"Input: branch Answer: r
+"
+product,r,"Input: product Answer: r
+"
+exchange,x,"Input: exchange Answer: x
+"
+defence,e,"Input: defence Answer: e
+"
+baseball,a,"Input: baseball Answer: a
+"
+platform,l,"Input: platform Answer: l
+"
+mouth,o,"Input: mouth Answer: o
+"
+request,e,"Input: request Answer: e
+"
+moment,o,"Input: moment Answer: o
+"
+freeway,r,"Input: freeway Answer: r
+"
+crowd,r,"Input: crowd Answer: r
+"
+settlement,e,"Input: settlement Answer: e
+"
+note,o,"Input: note Answer: o
+"
+method,e,"Input: method Answer: e
+"
+environment,n,"Input: environment Answer: n
+"
+iron,r,"Input: iron Answer: r
+"
+genre,e,"Input: genre Answer: e
+"
+composition,o,"Input: composition Answer: o
+"
+reserve,e,"Input: reserve Answer: e
+"
+knowledge,n,"Input: knowledge Answer: n
+"
+bank,a,"Input: bank Answer: a
+"
+statement,t,"Input: statement Answer: t
+"
+southwest,o,"Input: southwest Answer: o
+"
+rain,a,"Input: rain Answer: a
+"
+violence,i,"Input: violence Answer: i
+"
+function,u,"Input: function Answer: u
+"
+assault,s,"Input: assault Answer: s
+"
+battery,a,"Input: battery Answer: a
+"
+coal,o,"Input: coal Answer: o
+"
+candidate,a,"Input: candidate Answer: a
+"
+table,a,"Input: table Answer: a
+"
+distribution,i,"Input: distribution Answer: i
+"
+independence,n,"Input: independence Answer: n
+"
+contain,o,"Input: contain Answer: o
+"
+entrance,n,"Input: entrance Answer: n
+"
+combination,o,"Input: combination Answer: o
+"
+forest,o,"Input: forest Answer: o
+"
+stadium,t,"Input: stadium Answer: t
+"
+appeal,p,"Input: appeal Answer: p
+"
+campus,a,"Input: campus Answer: a
+"
+landfall,a,"Input: landfall Answer: a
+"
+cell,e,"Input: cell Answer: e
+"
+decade,e,"Input: decade Answer: e
+"
+boy,o,"Input: boy Answer: o
+"
+winner,i,"Input: winner Answer: i
+"
+evening,v,"Input: evening Answer: v
+"
+investigation,n,"Input: investigation Answer: n
+"
+message,e,"Input: message Answer: e
+"
+proposal,r,"Input: proposal Answer: r
+"
+trip,r,"Input: trip Answer: r
+"
+bit,i,"Input: bit Answer: i
+"
+duty,u,"Input: duty Answer: u
+"
+bomb,o,"Input: bomb Answer: o
+"
+phase,h,"Input: phase Answer: h
+"
+religion,e,"Input: religion Answer: e
+"
+hair,a,"Input: hair Answer: a
+"
+controversy,o,"Input: controversy Answer: o
+"
+hall,a,"Input: hall Answer: a
+"
+everything,v,"Input: everything Answer: v
+"
+breeding,r,"Input: breeding Answer: r
+"
+tail,a,"Input: tail Answer: a
+"
+importance,m,"Input: importance Answer: m
+"
+actress,c,"Input: actress Answer: c
+"
+bird,i,"Input: bird Answer: i
+"
+owner,w,"Input: owner Answer: w
+"
+steam,t,"Input: steam Answer: t
+"
+opera,p,"Input: opera Answer: p
+"
+nomination,o,"Input: nomination Answer: o
+"
+entry,n,"Input: entry Answer: n
+"
+crime,r,"Input: crime Answer: r
+"
+composer,o,"Input: composer Answer: o
+"
+transfer,r,"Input: transfer Answer: r
+"
+promote,r,"Input: promote Answer: r
+"
+price,r,"Input: price Answer: r
+"
+firm,i,"Input: firm Answer: i
+"
+extension,x,"Input: extension Answer: x
+"
+someone,o,"Input: someone Answer: o
+"
+roof,o,"Input: roof Answer: o
+"
+driving,r,"Input: driving Answer: r
+"
+identity,d,"Input: identity Answer: d
+"
+bottom,o,"Input: bottom Answer: o
+"
+zone,o,"Input: zone Answer: o
+"
+challenge,h,"Input: challenge Answer: h
+"
+lane,a,"Input: lane Answer: a
+"
+rail,a,"Input: rail Answer: a
+"
+noting,o,"Input: noting Answer: o
+"
+hotel,o,"Input: hotel Answer: o
+"
+relief,e,"Input: relief Answer: e
+"
+debate,e,"Input: debate Answer: e
+"
+depth,e,"Input: depth Answer: e
+"
+purchase,u,"Input: purchase Answer: u
+"
+departure,e,"Input: departure Answer: e
+"
+income,n,"Input: income Answer: n
+"
+decline,e,"Input: decline Answer: e
+"
+accident,c,"Input: accident Answer: c
+"
+recognition,e,"Input: recognition Answer: e
+"
+connection,o,"Input: connection Answer: o
+"
+mode,o,"Input: mode Answer: o
+"
+progress,r,"Input: progress Answer: r
+"
+sequel,e,"Input: sequel Answer: e
+"
+disc,i,"Input: disc Answer: i
+"
+museum,u,"Input: museum Answer: u
+"
+armor,r,"Input: armor Answer: r
+"
+measure,e,"Input: measure Answer: e
+"
+terminus,e,"Input: terminus Answer: e
+"
+department,e,"Input: department Answer: e
+"
+demand,e,"Input: demand Answer: e
+"
+spot,p,"Input: spot Answer: p
+"
+tank,a,"Input: tank Answer: a
+"
+circulation,i,"Input: circulation Answer: i
+"
+intelligence,n,"Input: intelligence Answer: n
+"
+possibility,o,"Input: possibility Answer: o
+"
+journey,o,"Input: journey Answer: o
+"
+freedom,r,"Input: freedom Answer: r
+"
+drug,r,"Input: drug Answer: r
+"
+generation,e,"Input: generation Answer: e
+"
+replacement,e,"Input: replacement Answer: e
+"
+downtown,o,"Input: downtown Answer: o
+"
+assistance,s,"Input: assistance Answer: s
+"
+destruction,e,"Input: destruction Answer: e
+"
+youth,o,"Input: youth Answer: o
+"
+medal,e,"Input: medal Answer: e
+"
+finishing,i,"Input: finishing Answer: i
+"
+atmosphere,t,"Input: atmosphere Answer: t
+"
+task,a,"Input: task Answer: a
+"
+block,l,"Input: block Answer: l
+"
+guard,u,"Input: guard Answer: u
+"
+theatre,h,"Input: theatre Answer: h
+"
+chorus,h,"Input: chorus Answer: h
+"
+hip,i,"Input: hip Answer: i
+"
+honor,o,"Input: honor Answer: o
+"
+establishment,s,"Input: establishment Answer: s
+"
+store,t,"Input: store Answer: t
+"
+completion,o,"Input: completion Answer: o
+"
+origin,r,"Input: origin Answer: r
+"
+responsibility,e,"Input: responsibility Answer: e
+"
+warning,a,"Input: warning Answer: a
+"
+skin,k,"Input: skin Answer: k
+"
+page,a,"Input: page Answer: a
+"
+province,r,"Input: province Answer: r
+"
+glass,l,"Input: glass Answer: l
+"
+path,a,"Input: path Answer: a
+"
+passage,a,"Input: passage Answer: a
+"
+aboard,b,"Input: aboard Answer: b
+"
+counter,o,"Input: counter Answer: o
+"
+breed,r,"Input: breed Answer: r
+"
+association,s,"Input: association Answer: s
+"
+cruiser,r,"Input: cruiser Answer: r
+"
+climate,l,"Input: climate Answer: l
+"
+classification,l,"Input: classification Answer: l
+"
+vehicle,e,"Input: vehicle Answer: e
+"
+reality,e,"Input: reality Answer: e
+"
+picture,i,"Input: picture Answer: i
+"
+memory,e,"Input: memory Answer: e
+"
+segment,e,"Input: segment Answer: e
+"
+bar,a,"Input: bar Answer: a
+"
+touchdown,o,"Input: touchdown Answer: o
+"
+difficulty,i,"Input: difficulty Answer: i
+"
+flow,l,"Input: flow Answer: l
+"
+basketball,a,"Input: basketball Answer: a
+"
+programme,r,"Input: programme Answer: r
+"
+cavalry,a,"Input: cavalry Answer: a
+"
+discovery,i,"Input: discovery Answer: i
+"
+inspiration,n,"Input: inspiration Answer: n
+"
+anniversary,n,"Input: anniversary Answer: n
+"
+funding,u,"Input: funding Answer: u
+"
+spoke,p,"Input: spoke Answer: p
+"
+praise,r,"Input: praise Answer: r
+"
+penalty,e,"Input: penalty Answer: e
+"
+pitch,i,"Input: pitch Answer: i
+"
+batting,a,"Input: batting Answer: a
+"
+pattern,a,"Input: pattern Answer: a
+"
+heat,e,"Input: heat Answer: e
+"
+commission,o,"Input: commission Answer: o
+"
+strategy,t,"Input: strategy Answer: t
+"
+documentary,o,"Input: documentary Answer: o
+"
+cap,a,"Input: cap Answer: a
+"
+architecture,r,"Input: architecture Answer: r
+"
+determine,e,"Input: determine Answer: e
+"
+involvement,n,"Input: involvement Answer: n
+"
+none,o,"Input: none Answer: o
+"
+category,a,"Input: category Answer: a
+"
+contest,o,"Input: contest Answer: o
+"
+plane,l,"Input: plane Answer: l
+"
+minister,i,"Input: minister Answer: i
+"
+adaptation,d,"Input: adaptation Answer: d
+"
+ensure,n,"Input: ensure Answer: n
+"
+champion,h,"Input: champion Answer: h
+"
+scheme,c,"Input: scheme Answer: c
+"
+library,i,"Input: library Answer: i
+"
+sale,a,"Input: sale Answer: a
+"
+fit,i,"Input: fit Answer: i
+"
+fighter,i,"Input: fighter Answer: i
+"
+throne,h,"Input: throne Answer: h
+"
+rival,i,"Input: rival Answer: i
+"
+passenger,a,"Input: passenger Answer: a
+"
+partner,a,"Input: partner Answer: a
+"
+reviewer,e,"Input: reviewer Answer: e
+"
+submarine,u,"Input: submarine Answer: u
+"
+absence,b,"Input: absence Answer: b
+"
+door,o,"Input: door Answer: o
+"
+engineer,n,"Input: engineer Answer: n
+"
+airport,i,"Input: airport Answer: i
+"
+interior,n,"Input: interior Answer: n
+"
+behavior,e,"Input: behavior Answer: e
+"
+attacking,t,"Input: attacking Answer: t
+"
+respect,e,"Input: respect Answer: e
+"
+conclusion,o,"Input: conclusion Answer: o
+"
+acid,c,"Input: acid Answer: c
+"
+facility,a,"Input: facility Answer: a
+"
+retirement,e,"Input: retirement Answer: e
+"
+colony,o,"Input: colony Answer: o
+"
+fashion,a,"Input: fashion Answer: a
+"
+convection,o,"Input: convection Answer: o
+"
+everyone,v,"Input: everyone Answer: v
+"
+legislation,e,"Input: legislation Answer: e
+"
+favor,a,"Input: favor Answer: a
+"
+kingdom,i,"Input: kingdom Answer: i
+"
+rescue,e,"Input: rescue Answer: e
+"
+farm,a,"Input: farm Answer: a
+"
+crash,r,"Input: crash Answer: r
+"
+battleship,a,"Input: battleship Answer: a
+"
+habitat,a,"Input: habitat Answer: a
+"
+hop,o,"Input: hop Answer: o
+"
+anyone,n,"Input: anyone Answer: n
+"
+judge,u,"Input: judge Answer: u
+"
+chairman,h,"Input: chairman Answer: h
+"
+outbreak,u,"Input: outbreak Answer: u
+"
+arrangement,r,"Input: arrangement Answer: r
+"
+sport,p,"Input: sport Answer: p
+"
+dog,o,"Input: dog Answer: o
+"
+step,t,"Input: step Answer: t
+"
+fruit,r,"Input: fruit Answer: r
+"
+grade,r,"Input: grade Answer: r
+"
+emergency,m,"Input: emergency Answer: m
+"
+limit,i,"Input: limit Answer: i
+"
+cancer,a,"Input: cancer Answer: a
+"
+shark,h,"Input: shark Answer: h
+"
+festival,e,"Input: festival Answer: e
+"
+siege,i,"Input: siege Answer: i
+"
+successor,u,"Input: successor Answer: u
+"
+narrative,a,"Input: narrative Answer: a
+"
+cycle,y,"Input: cycle Answer: y
+"
+hill,i,"Input: hill Answer: i
+"
+belt,e,"Input: belt Answer: e
+"
+journalist,o,"Input: journalist Answer: o
+"
+concern,o,"Input: concern Answer: o
+"
+object,b,"Input: object Answer: b
+"
+childhood,h,"Input: childhood Answer: h
+"
+conduct,o,"Input: conduct Answer: o
+"
+hunting,u,"Input: hunting Answer: u
+"
+ride,i,"Input: ride Answer: i
+"
+talk,a,"Input: talk Answer: a
+"
+chapter,h,"Input: chapter Answer: h
+"
+footage,o,"Input: footage Answer: o
+"
+exception,x,"Input: exception Answer: x
+"
+difference,i,"Input: difference Answer: i
+"
+arm,r,"Input: arm Answer: r
+"
+device,e,"Input: device Answer: e
+"
+animation,n,"Input: animation Answer: n
+"
+poet,o,"Input: poet Answer: o
+"
+brain,r,"Input: brain Answer: r
+"
+stock,t,"Input: stock Answer: t
+"
+chain,h,"Input: chain Answer: h
+"
+retreat,e,"Input: retreat Answer: e
+"
+poetry,o,"Input: poetry Answer: o
+"
+dialogue,i,"Input: dialogue Answer: i
+"
+colour,o,"Input: colour Answer: o
+"
+format,o,"Input: format Answer: o
+"
+universe,n,"Input: universe Answer: n
+"
+instance,n,"Input: instance Answer: n
+"
+shell,h,"Input: shell Answer: h
+"
+union,n,"Input: union Answer: n
+"
+convoy,o,"Input: convoy Answer: o
+"
+afternoon,f,"Input: afternoon Answer: f
+"
+belief,e,"Input: belief Answer: e
+"
+valley,a,"Input: valley Answer: a
+"
+driver,r,"Input: driver Answer: r
+"
+teeth,e,"Input: teeth Answer: e
+"
+diameter,i,"Input: diameter Answer: i
+"
+convention,o,"Input: convention Answer: o
+"
+junior,u,"Input: junior Answer: u
+"
+founder,o,"Input: founder Answer: o
+"
+hero,e,"Input: hero Answer: e
+"
+code,o,"Input: code Answer: o
+"
+crisis,r,"Input: crisis Answer: r
+"
+engineering,n,"Input: engineering Answer: n
+"
+designer,e,"Input: designer Answer: e
+"
+reform,e,"Input: reform Answer: e
+"
+fear,e,"Input: fear Answer: e
+"
+technique,e,"Input: technique Answer: e
+"
+weekend,e,"Input: weekend Answer: e
+"
+mix,i,"Input: mix Answer: i
+"
+tone,o,"Input: tone Answer: o
+"
+spending,p,"Input: spending Answer: p
+"
+finale,i,"Input: finale Answer: i
+"
+permission,e,"Input: permission Answer: e
+"
+advice,d,"Input: advice Answer: d
+"
+maintenance,a,"Input: maintenance Answer: a
+"
+weapon,e,"Input: weapon Answer: e
+"
+factor,a,"Input: factor Answer: a
+"
+vice,i,"Input: vice Answer: i
+"
+address,d,"Input: address Answer: d
+"
+verse,e,"Input: verse Answer: e
+"
+bus,u,"Input: bus Answer: u
+"
+window,i,"Input: window Answer: i
+"
+personality,e,"Input: personality Answer: e
+"
+squad,q,"Input: squad Answer: q
+"
+mainstream,a,"Input: mainstream Answer: a
+"
+chemical,h,"Input: chemical Answer: h
+"
+spirit,p,"Input: spirit Answer: p
+"
+vision,i,"Input: vision Answer: i
+"
+hockey,o,"Input: hockey Answer: o
+"
+channel,h,"Input: channel Answer: h
+"
+carbon,a,"Input: carbon Answer: a
+"
+drawing,r,"Input: drawing Answer: r
+"
+dynasty,y,"Input: dynasty Answer: y
+"
+approval,p,"Input: approval Answer: p
+"
+housing,o,"Input: housing Answer: o
+"
+card,a,"Input: card Answer: a
+"
+intention,n,"Input: intention Answer: n
+"
+creator,r,"Input: creator Answer: r
+"
+symbol,y,"Input: symbol Answer: y
+"
+listing,i,"Input: listing Answer: i
+"
+tribute,r,"Input: tribute Answer: r
+"
+collapse,o,"Input: collapse Answer: o
+"
+protagonist,r,"Input: protagonist Answer: r
+"
+link,i,"Input: link Answer: i
+"
+folk,o,"Input: folk Answer: o
+"
+tie,i,"Input: tie Answer: i
+"
+designation,e,"Input: designation Answer: e
+"
+radar,a,"Input: radar Answer: a
+"
+load,o,"Input: load Answer: o
+"
+appointment,p,"Input: appointment Answer: p
+"
+possession,o,"Input: possession Answer: o
+"
+surprise,u,"Input: surprise Answer: u
+"
+occupation,c,"Input: occupation Answer: c
+"
+suicide,u,"Input: suicide Answer: u
+"
+dispute,i,"Input: dispute Answer: i
+"
+survey,u,"Input: survey Answer: u
+"
+canal,a,"Input: canal Answer: a
+"
+benefit,e,"Input: benefit Answer: e
+"
+struggle,t,"Input: struggle Answer: t
+"
+fishing,i,"Input: fishing Answer: i
+"
+soil,o,"Input: soil Answer: o
+"
+balance,a,"Input: balance Answer: a
+"
+favour,a,"Input: favour Answer: a
+"
+schedule,c,"Input: schedule Answer: c
+"
+column,o,"Input: column Answer: o
+"
+teacher,e,"Input: teacher Answer: e
+"
+brand,r,"Input: brand Answer: r
+"
+evolution,v,"Input: evolution Answer: v
+"
+wedding,e,"Input: wedding Answer: e
+"
+cent,e,"Input: cent Answer: e
+"
+earth,a,"Input: earth Answer: a
+"
+alignment,l,"Input: alignment Answer: l
+"
+faith,a,"Input: faith Answer: a
+"
+concrete,o,"Input: concrete Answer: o
+"
+shear,h,"Input: shear Answer: h
+"
+map,a,"Input: map Answer: a
+"
+opponent,p,"Input: opponent Answer: p
+"
+foundation,o,"Input: foundation Answer: o
+"
+copy,o,"Input: copy Answer: o
+"
+citing,i,"Input: citing Answer: i
+"
+percentage,e,"Input: percentage Answer: e
+"
+argument,r,"Input: argument Answer: r
+"
+ammunition,m,"Input: ammunition Answer: m
+"
+arrest,r,"Input: arrest Answer: r
+"
+resolution,e,"Input: resolution Answer: e
+"
+railroad,a,"Input: railroad Answer: a
+"
+disaster,i,"Input: disaster Answer: i
+"
+attendance,t,"Input: attendance Answer: t
+"
+household,o,"Input: household Answer: o
+"
+restaurant,e,"Input: restaurant Answer: e
+"
+honour,o,"Input: honour Answer: o
+"
+junction,u,"Input: junction Answer: u
+"
+funeral,u,"Input: funeral Answer: u
+"
+affair,f,"Input: affair Answer: f
+"
+compilation,o,"Input: compilation Answer: o
+"
+exit,x,"Input: exit Answer: x
+"
+statue,t,"Input: statue Answer: t
+"
+explosion,x,"Input: explosion Answer: x
+"
+professor,r,"Input: professor Answer: r
+"
+mention,e,"Input: mention Answer: e
+"
+oxygen,x,"Input: oxygen Answer: x
+"
+collaboration,o,"Input: collaboration Answer: o
+"
+sector,e,"Input: sector Answer: e
+"
+tunnel,u,"Input: tunnel Answer: u
+"
+pain,a,"Input: pain Answer: a
+"
+entertainment,n,"Input: entertainment Answer: n
+"
+residence,e,"Input: residence Answer: e
+"
+preparation,r,"Input: preparation Answer: r
+"
+alliance,l,"Input: alliance Answer: l
+"
+orbit,r,"Input: orbit Answer: r
+"
+restoration,e,"Input: restoration Answer: e
+"
+touring,o,"Input: touring Answer: o
+"
+detail,e,"Input: detail Answer: e
+"
+coverage,o,"Input: coverage Answer: o
+"
+wear,e,"Input: wear Answer: e
+"
+partnership,a,"Input: partnership Answer: a
+"
+horror,o,"Input: horror Answer: o
+"
+grant,r,"Input: grant Answer: r
+"
+option,p,"Input: option Answer: p
+"
+racing,a,"Input: racing Answer: a
+"
+communication,o,"Input: communication Answer: o
+"
+neck,e,"Input: neck Answer: e
+"
+transition,r,"Input: transition Answer: r
+"
+engagement,n,"Input: engagement Answer: n
+"
+walk,a,"Input: walk Answer: a
+"
+repair,e,"Input: repair Answer: e
+"
+ownership,w,"Input: ownership Answer: w
+"
+perspective,e,"Input: perspective Answer: e
+"
+cargo,a,"Input: cargo Answer: a
+"
+bear,e,"Input: bear Answer: e
+"
+solution,o,"Input: solution Answer: o
+"
+patrol,a,"Input: patrol Answer: a
+"
+occasion,c,"Input: occasion Answer: c
+"
+militia,i,"Input: militia Answer: i
+"
+bowling,o,"Input: bowling Answer: o
+"
+crown,r,"Input: crown Answer: r
+"
+comparison,o,"Input: comparison Answer: o
+"
+flagship,l,"Input: flagship Answer: l
+"
+spend,p,"Input: spend Answer: p
+"
+jazz,a,"Input: jazz Answer: a
+"
+circuit,i,"Input: circuit Answer: i
+"
+bed,e,"Input: bed Answer: e
+"
+application,p,"Input: application Answer: p
+"
+pace,a,"Input: pace Answer: a
+"
+agency,g,"Input: agency Answer: g
+"
+satellite,a,"Input: satellite Answer: a
+"
+truth,r,"Input: truth Answer: r
+"
+palace,a,"Input: palace Answer: a
+"
+storage,t,"Input: storage Answer: t
+"
+frame,r,"Input: frame Answer: r
+"
+flank,l,"Input: flank Answer: l
+"
+exhibition,x,"Input: exhibition Answer: x
+"
+monument,o,"Input: monument Answer: o
+"
+predecessor,r,"Input: predecessor Answer: r
+"
+surgery,u,"Input: surgery Answer: u
+"
+poll,o,"Input: poll Answer: o
+"
+labor,a,"Input: labor Answer: a
+"
+philosophy,h,"Input: philosophy Answer: h
+"
+adventure,d,"Input: adventure Answer: d
+"
+apartment,p,"Input: apartment Answer: p
+"
+kick,i,"Input: kick Answer: i
+"
+dollar,o,"Input: dollar Answer: o
+"
+protest,r,"Input: protest Answer: r
+"
+layer,a,"Input: layer Answer: a
+"
+catch,a,"Input: catch Answer: a
+"
+gap,a,"Input: gap Answer: a
+"
+phone,h,"Input: phone Answer: h
+"
+context,o,"Input: context Answer: o
+"
+casting,a,"Input: casting Answer: a
+"
+protein,r,"Input: protein Answer: r
+"
+wicket,i,"Input: wicket Answer: i
+"
+reconnaissance,e,"Input: reconnaissance Answer: e
+"
+spin,p,"Input: spin Answer: p
+"
+legacy,e,"Input: legacy Answer: e
+"
+drum,r,"Input: drum Answer: r
+"
+typhoon,y,"Input: typhoon Answer: y
+"
+justice,u,"Input: justice Answer: u
+"
+illness,l,"Input: illness Answer: l
+"
+shipping,h,"Input: shipping Answer: h
+"
+merchant,e,"Input: merchant Answer: e
+"
+revenue,e,"Input: revenue Answer: e
+"
+bombing,o,"Input: bombing Answer: o
+"
+fund,u,"Input: fund Answer: u
+"
+console,o,"Input: console Answer: o
+"
+bow,o,"Input: bow Answer: o
+"
+definition,e,"Input: definition Answer: e
+"
+meat,e,"Input: meat Answer: e
+"
+artwork,r,"Input: artwork Answer: r
+"
+guitarist,u,"Input: guitarist Answer: u
+"
+extend,x,"Input: extend Answer: x
+"
+marketing,a,"Input: marketing Answer: a
+"
+dancing,a,"Input: dancing Answer: a
+"
+ruling,u,"Input: ruling Answer: u
+"
+factory,a,"Input: factory Answer: a
+"
+profile,r,"Input: profile Answer: r
+"
+print,r,"Input: print Answer: r
+"
+mining,i,"Input: mining Answer: i
+"
+pursue,u,"Input: pursue Answer: u
+"
+bonus,o,"Input: bonus Answer: o
+"
+theater,h,"Input: theater Answer: h
+"
+organisation,r,"Input: organisation Answer: r
+"
+clothing,l,"Input: clothing Answer: l
+"
+delivery,e,"Input: delivery Answer: e
+"
+armour,r,"Input: armour Answer: r
+"
+coin,o,"Input: coin Answer: o
+"
+pit,i,"Input: pit Answer: i
+"
+elevation,l,"Input: elevation Answer: l
+"
+strip,t,"Input: strip Answer: t
+"
+flood,l,"Input: flood Answer: l
+"
+dress,r,"Input: dress Answer: r
+"
+triple,r,"Input: triple Answer: r
+"
+punk,u,"Input: punk Answer: u
+"
+organ,r,"Input: organ Answer: r
+"
+architect,r,"Input: architect Answer: r
+"
+legislature,e,"Input: legislature Answer: e
+"
+musician,u,"Input: musician Answer: u
+"
+diet,i,"Input: diet Answer: i
+"
+conversion,o,"Input: conversion Answer: o
+"
+concentration,o,"Input: concentration Answer: o
+"
+aftermath,f,"Input: aftermath Answer: f
+"
+danger,a,"Input: danger Answer: a
+"
+wrestling,r,"Input: wrestling Answer: r
+"
+solar,o,"Input: solar Answer: o
+"
+expand,x,"Input: expand Answer: x
+"
+string,t,"Input: string Answer: t
+"
+meter,e,"Input: meter Answer: e
+"
+sub,u,"Input: sub Answer: u
+"
+removal,e,"Input: removal Answer: e
+"
+interpretation,n,"Input: interpretation Answer: n
+"
+venue,e,"Input: venue Answer: e
+"
+cult,u,"Input: cult Answer: u
+"
+encounter,n,"Input: encounter Answer: n
+"
+publishing,u,"Input: publishing Answer: u
+"
+remix,e,"Input: remix Answer: e
+"
+turret,u,"Input: turret Answer: u
+"
+quarterback,u,"Input: quarterback Answer: u
+"
+rebellion,e,"Input: rebellion Answer: e
+"
+panel,a,"Input: panel Answer: a
+"
+announcement,n,"Input: announcement Answer: n
+"
+soldier,o,"Input: soldier Answer: o
+"
+placing,l,"Input: placing Answer: l
+"
+discussion,i,"Input: discussion Answer: i
+"
+behaviour,e,"Input: behaviour Answer: e
+"
+loan,o,"Input: loan Answer: o
+"
+roll,o,"Input: roll Answer: o
+"
+aspect,s,"Input: aspect Answer: s
+"
+talent,a,"Input: talent Answer: a
+"
+landscape,a,"Input: landscape Answer: a
+"
+withdrawal,i,"Input: withdrawal Answer: i
+"
+angle,n,"Input: angle Answer: n
+"
+margin,a,"Input: margin Answer: a
+"
+circle,i,"Input: circle Answer: i
+"
+trouble,r,"Input: trouble Answer: r
+"
+exposure,x,"Input: exposure Answer: x
+"
+specimen,p,"Input: specimen Answer: p
+"
+density,e,"Input: density Answer: e
+"
+pool,o,"Input: pool Answer: o
+"
+constitution,o,"Input: constitution Answer: o
+"
+beam,e,"Input: beam Answer: e
+"
+shift,h,"Input: shift Answer: h
+"
+duo,u,"Input: duo Answer: u
+"
+membership,e,"Input: membership Answer: e
+"
+loop,o,"Input: loop Answer: o
+"
+plate,l,"Input: plate Answer: l
+"
+magic,a,"Input: magic Answer: a
+"
+expression,x,"Input: expression Answer: x
+"
+skull,k,"Input: skull Answer: k
+"
+emphasis,m,"Input: emphasis Answer: m
+"
+alcohol,l,"Input: alcohol Answer: l
+"
+exercise,x,"Input: exercise Answer: x
+"
+basin,a,"Input: basin Answer: a
+"
+assembly,s,"Input: assembly Answer: s
+"
+prize,r,"Input: prize Answer: r
+"
+sole,o,"Input: sole Answer: o
+"
+portrayal,o,"Input: portrayal Answer: o
+"
+bid,i,"Input: bid Answer: i
+"
+advertising,d,"Input: advertising Answer: d
+"
+regime,e,"Input: regime Answer: e
+"
+birthday,i,"Input: birthday Answer: i
+"
+delay,e,"Input: delay Answer: e
+"
+employment,m,"Input: employment Answer: m
+"
+jury,u,"Input: jury Answer: u
+"
+attitude,t,"Input: attitude Answer: t
+"
+hydrogen,y,"Input: hydrogen Answer: y
+"
+software,o,"Input: software Answer: o
+"
+drinking,r,"Input: drinking Answer: r
+"
+translation,r,"Input: translation Answer: r
+"
+cousin,o,"Input: cousin Answer: o
+"
+swimming,w,"Input: swimming Answer: w
+"
+commentary,o,"Input: commentary Answer: o
+"
+lawyer,a,"Input: lawyer Answer: a
+"
+imagery,m,"Input: imagery Answer: m
+"
+execution,x,"Input: execution Answer: x
+"
+thirteen,h,"Input: thirteen Answer: h
+"
+terrain,e,"Input: terrain Answer: e
+"
+electricity,l,"Input: electricity Answer: l
+"
+duration,u,"Input: duration Answer: u
+"
+tenure,e,"Input: tenure Answer: e
+"
+friendship,r,"Input: friendship Answer: r
+"
+dream,r,"Input: dream Answer: r
+"
+succession,u,"Input: succession Answer: u
+"
+bone,o,"Input: bone Answer: o
+"
+trading,r,"Input: trading Answer: r
+"
+rhythm,h,"Input: rhythm Answer: h
+"
+coup,o,"Input: coup Answer: o
+"
+shop,h,"Input: shop Answer: h
+"
+publisher,u,"Input: publisher Answer: u
+"
+component,o,"Input: component Answer: o
+"
+uncle,n,"Input: uncle Answer: n
+"
+parliament,a,"Input: parliament Answer: a
+"
+sun,u,"Input: sun Answer: u
+"
+precipitation,r,"Input: precipitation Answer: r
+"
+slavery,l,"Input: slavery Answer: l
+"
+tube,u,"Input: tube Answer: u
+"
+radiation,a,"Input: radiation Answer: a
+"
+virus,i,"Input: virus Answer: i
+"
+contribution,o,"Input: contribution Answer: o
+"
+earthquake,a,"Input: earthquake Answer: a
+"
+scholar,c,"Input: scholar Answer: c
+"
+songwriter,o,"Input: songwriter Answer: o
+"
+fill,i,"Input: fill Answer: i
+"
+debt,e,"Input: debt Answer: e
+"
+ticket,i,"Input: ticket Answer: i
+"
+frequency,r,"Input: frequency Answer: r
+"
+coat,o,"Input: coat Answer: o
+"
+destroyer,e,"Input: destroyer Answer: e
+"
+improvement,m,"Input: improvement Answer: m
+"
+doctor,o,"Input: doctor Answer: o
+"
+profit,r,"Input: profit Answer: r
+"
+trust,r,"Input: trust Answer: r
+"
+touch,o,"Input: touch Answer: o
+"
+ballad,a,"Input: ballad Answer: a
+"
+bay,a,"Input: bay Answer: a
+"
+investment,n,"Input: investment Answer: n
+"
+cannon,a,"Input: cannon Answer: a
+"
+trough,r,"Input: trough Answer: r
+"
+praising,r,"Input: praising Answer: r
+"
+photography,h,"Input: photography Answer: h
+"
+output,u,"Input: output Answer: u
+"
+regard,e,"Input: regard Answer: e
+"
+parody,a,"Input: parody Answer: a
+"
+phrase,h,"Input: phrase Answer: h
+"
+trail,r,"Input: trail Answer: r
+"
+ruler,u,"Input: ruler Answer: u
+"
+confidence,o,"Input: confidence Answer: o
+"
+shoulder,h,"Input: shoulder Answer: h
+"
+survival,u,"Input: survival Answer: u
+"
+signature,i,"Input: signature Answer: i
+"
+communist,o,"Input: communist Answer: o
+"
+uranium,r,"Input: uranium Answer: r
+"
+melody,e,"Input: melody Answer: e
+"
+copper,o,"Input: copper Answer: o
+"
+wish,i,"Input: wish Answer: i
+"
+minority,i,"Input: minority Answer: i
+"
+instrument,n,"Input: instrument Answer: n
+"
+revolt,e,"Input: revolt Answer: e
+"
+tip,i,"Input: tip Answer: i
+"
+escort,s,"Input: escort Answer: s
+"
+programming,r,"Input: programming Answer: r
+"
+conservation,o,"Input: conservation Answer: o
+"
+sky,k,"Input: sky Answer: k
+"
+climb,l,"Input: climb Answer: l
+"
+representation,e,"Input: representation Answer: e
+"
+magnitude,a,"Input: magnitude Answer: a
+"
+hole,o,"Input: hole Answer: o
+"
+prisoner,r,"Input: prisoner Answer: r
+"
+autumn,u,"Input: autumn Answer: u
+"
+stream,t,"Input: stream Answer: t
+"
+abuse,b,"Input: abuse Answer: b
+"
+chair,h,"Input: chair Answer: h
+"
+sample,a,"Input: sample Answer: a
+"
+warfare,a,"Input: warfare Answer: a
+"
+rivalry,i,"Input: rivalry Answer: i
+"
+airing,i,"Input: airing Answer: i
+"
+lighting,i,"Input: lighting Answer: i
+"
+biographer,i,"Input: biographer Answer: i
+"
+waste,a,"Input: waste Answer: a
+"
+experiment,x,"Input: experiment Answer: x
+"
+guide,u,"Input: guide Answer: u
+"
+multiplayer,u,"Input: multiplayer Answer: u
+"
+medicine,e,"Input: medicine Answer: e
+"
+participation,a,"Input: participation Answer: a
+"
+slave,l,"Input: slave Answer: l
+"
+transportation,r,"Input: transportation Answer: r
+"
+liquid,i,"Input: liquid Answer: i
+"
+institution,n,"Input: institution Answer: n
+"
+parent,a,"Input: parent Answer: a
+"
+salary,a,"Input: salary Answer: a
+"
+recovery,e,"Input: recovery Answer: e
+"
+count,o,"Input: count Answer: o
+"
+doubt,o,"Input: doubt Answer: o
+"
+revolution,e,"Input: revolution Answer: e
+"
+cinema,i,"Input: cinema Answer: i
+"
+cloud,l,"Input: cloud Answer: l
+"
+drummer,r,"Input: drummer Answer: r
+"
+cabinet,a,"Input: cabinet Answer: a
+"
+significance,i,"Input: significance Answer: i
+"
+neighborhood,e,"Input: neighborhood Answer: e
+"
+compound,o,"Input: compound Answer: o
+"
+legend,e,"Input: legend Answer: e
+"
+jump,u,"Input: jump Answer: u
+"
+inclusion,n,"Input: inclusion Answer: n
+"
+tale,a,"Input: tale Answer: a
+"
+wealth,e,"Input: wealth Answer: e
+"
+mate,a,"Input: mate Answer: a
+"
+ratio,a,"Input: ratio Answer: a
+"
+liner,i,"Input: liner Answer: i
+"
+journal,o,"Input: journal Answer: o
+"
+grandfather,r,"Input: grandfather Answer: r
+"
+throw,h,"Input: throw Answer: h
+"
+summit,u,"Input: summit Answer: u
+"
+descent,e,"Input: descent Answer: e
+"
+gender,e,"Input: gender Answer: e
+"
+playoff,l,"Input: playoff Answer: l
+"
+sentence,e,"Input: sentence Answer: e
+"
+beauty,e,"Input: beauty Answer: e
+"
+beating,e,"Input: beating Answer: e
+"
+heritage,e,"Input: heritage Answer: e
+"
+accommodate,c,"Input: accommodate Answer: c
+"
+altitude,l,"Input: altitude Answer: l
+"
+trend,r,"Input: trend Answer: r
+"
+humor,u,"Input: humor Answer: u
+"
+presentation,r,"Input: presentation Answer: r
+"
+agriculture,g,"Input: agriculture Answer: g
+"
+resident,e,"Input: resident Answer: e
+"
+sailing,a,"Input: sailing Answer: a
+"
+intervention,n,"Input: intervention Answer: n
+"
+fame,a,"Input: fame Answer: a
+"
+tribe,r,"Input: tribe Answer: r
+"
+mythology,y,"Input: mythology Answer: y
+"
+wine,i,"Input: wine Answer: i
+"
+confusion,o,"Input: confusion Answer: o
+"
+error,r,"Input: error Answer: r
+"
+answer,n,"Input: answer Answer: n
+"
+victim,i,"Input: victim Answer: i
+"
+worship,o,"Input: worship Answer: o
+"
+fate,a,"Input: fate Answer: a
+"
+sight,i,"Input: sight Answer: i
+"
+jurisdiction,u,"Input: jurisdiction Answer: u
+"
+knee,n,"Input: knee Answer: n
+"
+observation,b,"Input: observation Answer: b
+"
+interaction,n,"Input: interaction Answer: n
+"
+voyage,o,"Input: voyage Answer: o
+"
+girlfriend,i,"Input: girlfriend Answer: i
+"
+advancing,d,"Input: advancing Answer: d
+"
+sculpture,c,"Input: sculpture Answer: c
+"
+principle,r,"Input: principle Answer: r
+"
+demo,e,"Input: demo Answer: e
+"
+fossil,o,"Input: fossil Answer: o
+"
+streak,t,"Input: streak Answer: t
+"
+lifetime,i,"Input: lifetime Answer: i
+"
+infrastructure,n,"Input: infrastructure Answer: n
+"
+fee,e,"Input: fee Answer: e
+"
+disturbance,i,"Input: disturbance Answer: i
+"
+gift,i,"Input: gift Answer: i
+"
+variation,a,"Input: variation Answer: a
+"
+tension,e,"Input: tension Answer: e
+"
+tag,a,"Input: tag Answer: a
+"
+holiday,o,"Input: holiday Answer: o
+"
+impression,m,"Input: impression Answer: m
+"
+naming,a,"Input: naming Answer: a
+"
+pack,a,"Input: pack Answer: a
+"
+shock,h,"Input: shock Answer: h
+"
+tape,a,"Input: tape Answer: a
+"
+ashore,s,"Input: ashore Answer: s
+"
+weakening,e,"Input: weakening Answer: e
+"
+stretch,t,"Input: stretch Answer: t
+"
+divorce,i,"Input: divorce Answer: i
+"
+motor,o,"Input: motor Answer: o
+"
+pursuit,u,"Input: pursuit Answer: u
+"
+fortress,o,"Input: fortress Answer: o
+"
+manuscript,a,"Input: manuscript Answer: a
+"
+teammate,e,"Input: teammate Answer: e
+"
+gate,a,"Input: gate Answer: a
+"
+dinner,i,"Input: dinner Answer: i
+"
+tempo,e,"Input: tempo Answer: e
+"
+span,p,"Input: span Answer: p
+"
+bypass,y,"Input: bypass Answer: y
+"
+chemistry,h,"Input: chemistry Answer: h
+"
+screenplay,c,"Input: screenplay Answer: c
+"
+manufacturing,a,"Input: manufacturing Answer: a
+"
+handling,a,"Input: handling Answer: a
+"
+guy,u,"Input: guy Answer: u
+"
+mixture,i,"Input: mixture Answer: i
+"
+census,e,"Input: census Answer: e
+"
+velocity,e,"Input: velocity Answer: e
+"
+examination,x,"Input: examination Answer: x
+"
+lift,i,"Input: lift Answer: i
+"
+trailer,r,"Input: trailer Answer: r
+"
+pitcher,i,"Input: pitcher Answer: i
+"
+skill,k,"Input: skill Answer: k
+"
+sword,w,"Input: sword Answer: w
+"
+net,e,"Input: net Answer: e
+"
+capturing,a,"Input: capturing Answer: a
+"
+cable,a,"Input: cable Answer: a
+"
+uniform,n,"Input: uniform Answer: n
+"
+bombardment,o,"Input: bombardment Answer: o
+"
+costume,o,"Input: costume Answer: o
+"
+tissue,i,"Input: tissue Answer: i
+"
+prototype,r,"Input: prototype Answer: r
+"
+celebration,e,"Input: celebration Answer: e
+"
+tornado,o,"Input: tornado Answer: o
+"
+promise,r,"Input: promise Answer: r
+"
+laboratory,a,"Input: laboratory Answer: a
+"
+craft,r,"Input: craft Answer: r
+"
+dozen,o,"Input: dozen Answer: o
+"
+marking,a,"Input: marking Answer: a
+"
+separation,e,"Input: separation Answer: e
+"
+feud,e,"Input: feud Answer: e
+"
+chest,h,"Input: chest Answer: h
+"
+revival,e,"Input: revival Answer: e
+"
+nickname,i,"Input: nickname Answer: i
+"
+politician,o,"Input: politician Answer: o
+"
+consumption,o,"Input: consumption Answer: o
+"
+cup,u,"Input: cup Answer: u
+"
+handle,a,"Input: handle Answer: a
+"
+harbour,a,"Input: harbour Answer: a
+"
+biography,i,"Input: biography Answer: i
+"
+deputy,e,"Input: deputy Answer: e
+"
+mixing,i,"Input: mixing Answer: i
+"
+usage,s,"Input: usage Answer: s
+"
+evacuation,v,"Input: evacuation Answer: v
+"
+clock,l,"Input: clock Answer: l
+"
+exile,x,"Input: exile Answer: x
+"
+seed,e,"Input: seed Answer: e
+"
+lawsuit,a,"Input: lawsuit Answer: a
+"
+cathedral,a,"Input: cathedral Answer: a
+"
+relation,e,"Input: relation Answer: e
+"
+speculation,p,"Input: speculation Answer: p
+"
+intent,n,"Input: intent Answer: n
+"
+debris,e,"Input: debris Answer: e
+"
+sleep,l,"Input: sleep Answer: l
+"
+decrease,e,"Input: decrease Answer: e
+"
+conquest,o,"Input: conquest Answer: o
+"
+mechanism,e,"Input: mechanism Answer: e
+"
+nose,o,"Input: nose Answer: o
+"
+vicinity,i,"Input: vicinity Answer: i
+"
+killer,i,"Input: killer Answer: i
+"
+humanity,u,"Input: humanity Answer: u
+"
+exhibit,x,"Input: exhibit Answer: x
+"
+conversation,o,"Input: conversation Answer: o
+"
+disorder,i,"Input: disorder Answer: i
+"
+suspension,u,"Input: suspension Answer: u
+"
+boyfriend,o,"Input: boyfriend Answer: o
+"
+helicopter,e,"Input: helicopter Answer: e
+"
+metre,e,"Input: metre Answer: e
+"
+infection,n,"Input: infection Answer: n
+"
+metric,e,"Input: metric Answer: e
+"
+stress,t,"Input: stress Answer: t
+"
+taste,a,"Input: taste Answer: a
+"
+portrait,o,"Input: portrait Answer: o
+"
+jet,e,"Input: jet Answer: e
+"
+acre,c,"Input: acre Answer: c
+"
+peninsula,e,"Input: peninsula Answer: e
+"
+attorney,t,"Input: attorney Answer: t
+"
+heir,e,"Input: heir Answer: e
+"
+roadway,o,"Input: roadway Answer: o
+"
+truck,r,"Input: truck Answer: r
+"
+bowl,o,"Input: bowl Answer: o
+"
+user,s,"Input: user Answer: s
+"
+lover,o,"Input: lover Answer: o
+"
+closure,l,"Input: closure Answer: l
+"
+wheel,h,"Input: wheel Answer: h
+"
+suggestion,u,"Input: suggestion Answer: u
+"
+reporting,e,"Input: reporting Answer: e
+"
+proof,r,"Input: proof Answer: r
+"
+fungus,u,"Input: fungus Answer: u
+"
+conspiracy,o,"Input: conspiracy Answer: o
+"
+attraction,t,"Input: attraction Answer: t
+"
+faculty,a,"Input: faculty Answer: a
+"
+reporter,e,"Input: reporter Answer: e
+"
+romance,o,"Input: romance Answer: o
+"
+license,i,"Input: license Answer: i
+"
+grass,r,"Input: grass Answer: r
+"
+sheep,h,"Input: sheep Answer: h
+"
+publicity,u,"Input: publicity Answer: u
+"
+parking,a,"Input: parking Answer: a
+"
+surge,u,"Input: surge Answer: u
+"
+stability,t,"Input: stability Answer: t
+"
+patient,a,"Input: patient Answer: a
+"
+noise,o,"Input: noise Answer: o
+"
+companion,o,"Input: companion Answer: o
+"
+drink,r,"Input: drink Answer: r
+"
+resignation,e,"Input: resignation Answer: e
+"
+check,h,"Input: check Answer: h
+"
+telephone,e,"Input: telephone Answer: e
+"
+preceding,r,"Input: preceding Answer: r
+"
+cruise,r,"Input: cruise Answer: r
+"
+roster,o,"Input: roster Answer: o
+"
+comment,o,"Input: comment Answer: o
+"
+tune,u,"Input: tune Answer: u
+"
+paint,a,"Input: paint Answer: a
+"
+insurance,n,"Input: insurance Answer: n
+"
+photo,h,"Input: photo Answer: h
+"
+cash,a,"Input: cash Answer: a
+"
+creature,r,"Input: creature Answer: r
+"
+crop,r,"Input: crop Answer: r
+"
+rice,i,"Input: rice Answer: i
+"
+diversity,i,"Input: diversity Answer: i
+"
+pole,o,"Input: pole Answer: o
+"
+stuff,t,"Input: stuff Answer: t
+"
+scholarship,c,"Input: scholarship Answer: c
+"
+rotation,o,"Input: rotation Answer: o
+"
+wartime,a,"Input: wartime Answer: a
+"
+pink,i,"Input: pink Answer: i
+"
+monastery,o,"Input: monastery Answer: o
+"
+reconstruction,e,"Input: reconstruction Answer: e
+"
+mill,i,"Input: mill Answer: i
+"
+spacecraft,p,"Input: spacecraft Answer: p
+"
+dual,u,"Input: dual Answer: u
+"
+egg,g,"Input: egg Answer: g
+"
+distinction,i,"Input: distinction Answer: i
+"
+commitment,o,"Input: commitment Answer: o
+"
+routing,o,"Input: routing Answer: o
+"
+radius,a,"Input: radius Answer: a
+"
+crest,r,"Input: crest Answer: r
+"
+conducting,o,"Input: conducting Answer: o
+"
+cemetery,e,"Input: cemetery Answer: e
+"
+labour,a,"Input: labour Answer: a
+"
+revenge,e,"Input: revenge Answer: e
+"
+exterior,x,"Input: exterior Answer: x
+"
+consequence,o,"Input: consequence Answer: o
+"
+expert,x,"Input: expert Answer: x
+"
+formula,o,"Input: formula Answer: o
+"
+runner,u,"Input: runner Answer: u
+"
+dust,u,"Input: dust Answer: u
+"
+proportion,r,"Input: proportion Answer: r
+"
+scandal,c,"Input: scandal Answer: c
+"
+shield,h,"Input: shield Answer: h
+"
+mansion,a,"Input: mansion Answer: a
+"
+electron,l,"Input: electron Answer: l
+"
+outcome,u,"Input: outcome Answer: u
+"
+logo,o,"Input: logo Answer: o
+"
+propaganda,r,"Input: propaganda Answer: r
+"
+transmission,r,"Input: transmission Answer: r
+"
+consideration,o,"Input: consideration Answer: o
+"
+autobiography,u,"Input: autobiography Answer: u
+"
+vegetation,e,"Input: vegetation Answer: e
+"
+rider,i,"Input: rider Answer: i
+"
+orchestral,r,"Input: orchestral Answer: r
+"
+depiction,e,"Input: depiction Answer: e
+"
+monster,o,"Input: monster Answer: o
+"
+punishment,u,"Input: punishment Answer: u
+"
+routine,o,"Input: routine Answer: o
+"
+worker,o,"Input: worker Answer: o
+"
+presidency,r,"Input: presidency Answer: r
+"
+doctrine,o,"Input: doctrine Answer: o
+"
+pound,o,"Input: pound Answer: o
+"
+assassination,s,"Input: assassination Answer: s
+"
+sum,u,"Input: sum Answer: u
+"
+municipal,u,"Input: municipal Answer: u
+"
+achievement,c,"Input: achievement Answer: c
+"
+payment,a,"Input: payment Answer: a
+"
+consciousness,o,"Input: consciousness Answer: o
+"
+priority,r,"Input: priority Answer: r
+"
+nephew,e,"Input: nephew Answer: e
+"
+switch,w,"Input: switch Answer: w
+"
+phenomenon,h,"Input: phenomenon Answer: h
+"
+width,i,"Input: width Answer: i
+"
+silent,i,"Input: silent Answer: i
+"
+venture,e,"Input: venture Answer: e
+"
+argue,r,"Input: argue Answer: r
+"
+hypothesis,y,"Input: hypothesis Answer: y
+"
+mail,a,"Input: mail Answer: a
+"
+coaching,o,"Input: coaching Answer: o
+"
+witness,i,"Input: witness Answer: i
+"
+poverty,o,"Input: poverty Answer: o
+"
+finance,i,"Input: finance Answer: i
+"
+awareness,w,"Input: awareness Answer: w
+"
+corruption,o,"Input: corruption Answer: o
+"
+curve,u,"Input: curve Answer: u
+"
+scientist,c,"Input: scientist Answer: c
+"
+flower,l,"Input: flower Answer: l
+"
+exploration,x,"Input: exploration Answer: x
+"
+bell,e,"Input: bell Answer: e
+"
+procedure,r,"Input: procedure Answer: r
+"
+choir,h,"Input: choir Answer: h
+"
+shaft,h,"Input: shaft Answer: h
+"
+ceiling,e,"Input: ceiling Answer: e
+"
+mystery,y,"Input: mystery Answer: y
+"
+villain,i,"Input: villain Answer: i
+"
+spite,p,"Input: spite Answer: p
+"
+mbar,b,"Input: mbar Answer: b
+"
+cat,a,"Input: cat Answer: a
+"
+martial,a,"Input: martial Answer: a
+"
+processing,r,"Input: processing Answer: r
+"
+polar,o,"Input: polar Answer: o
+"
+requirement,e,"Input: requirement Answer: e
+"
+acceptance,c,"Input: acceptance Answer: c
+"
+horsepower,o,"Input: horsepower Answer: o
+"
+associate,s,"Input: associate Answer: s
+"
+cubic,u,"Input: cubic Answer: u
+"
+bond,o,"Input: bond Answer: o
+"
+resemble,e,"Input: resemble Answer: e
+"
+navigation,a,"Input: navigation Answer: a
+"
+cameo,a,"Input: cameo Answer: a
+"
+compromise,o,"Input: compromise Answer: o
+"
+treat,r,"Input: treat Answer: r
+"
+web,e,"Input: web Answer: e
+"
+mood,o,"Input: mood Answer: o
+"
+genera,e,"Input: genera Answer: e
+"
+faction,a,"Input: faction Answer: a
+"
+gauge,a,"Input: gauge Answer: a
+"
+eruption,r,"Input: eruption Answer: r
+"
+dive,i,"Input: dive Answer: i
+"
+goddess,o,"Input: goddess Answer: o
+"
+consensus,o,"Input: consensus Answer: o
+"
+tooth,o,"Input: tooth Answer: o
+"
+variant,a,"Input: variant Answer: a
+"
+monarch,o,"Input: monarch Answer: o
+"
+grid,r,"Input: grid Answer: r
+"
+loyalty,o,"Input: loyalty Answer: o
+"
+cotton,o,"Input: cotton Answer: o
+"
+battlefield,a,"Input: battlefield Answer: a
+"
+assessment,s,"Input: assessment Answer: s
+"
+printing,r,"Input: printing Answer: r
+"
+pounder,o,"Input: pounder Answer: o
+"
+songwriting,o,"Input: songwriting Answer: o
+"
+seal,e,"Input: seal Answer: e
+"
+dealt,e,"Input: dealt Answer: e
+"
+batsman,a,"Input: batsman Answer: a
+"
+wire,i,"Input: wire Answer: i
+"
+highlight,i,"Input: highlight Answer: i
+"
+instrumentation,n,"Input: instrumentation Answer: n
+"
+reader,e,"Input: reader Answer: e
+"
+clip,l,"Input: clip Answer: l
+"
+flesh,l,"Input: flesh Answer: l
+"
+vocalist,o,"Input: vocalist Answer: o
+"
+sheet,h,"Input: sheet Answer: h
+"
+referee,e,"Input: referee Answer: e
+"
+declaration,e,"Input: declaration Answer: e
+"
+missile,i,"Input: missile Answer: i
+"
+airfield,i,"Input: airfield Answer: i
+"
+rap,a,"Input: rap Answer: a
+"
+discipline,i,"Input: discipline Answer: i
+"
+mistake,i,"Input: mistake Answer: i
+"
+sacrifice,a,"Input: sacrifice Answer: a
+"
+gallery,a,"Input: gallery Answer: a
+"
+interference,n,"Input: interference Answer: n
+"
+audition,u,"Input: audition Answer: u
+"
+harm,a,"Input: harm Answer: a
+"
+frigate,r,"Input: frigate Answer: r
+"
+expense,x,"Input: expense Answer: x
+"
+syndrome,y,"Input: syndrome Answer: y
+"
+troop,r,"Input: troop Answer: r
+"
+caliber,a,"Input: caliber Answer: a
+"
+supporter,u,"Input: supporter Answer: u
+"
+machinery,a,"Input: machinery Answer: a
+"
+migration,i,"Input: migration Answer: i
+"
+locomotive,o,"Input: locomotive Answer: o
+"
+gaming,a,"Input: gaming Answer: a
+"
+stroke,t,"Input: stroke Answer: t
+"
+custody,u,"Input: custody Answer: u
+"
+shopping,h,"Input: shopping Answer: h
+"
+hunt,u,"Input: hunt Answer: u
+"
+proximity,r,"Input: proximity Answer: r
+"
+joke,o,"Input: joke Answer: o
+"
+currency,u,"Input: currency Answer: u
+"
+bore,o,"Input: bore Answer: o
+"
+whale,h,"Input: whale Answer: h
+"
+beer,e,"Input: beer Answer: e
+"
+rocket,o,"Input: rocket Answer: o
+"
+aviation,v,"Input: aviation Answer: v
+"
+spell,p,"Input: spell Answer: p
+"
+gathering,a,"Input: gathering Answer: a
+"
+cylinder,y,"Input: cylinder Answer: y
+"
+cave,a,"Input: cave Answer: a
+"
+leaf,e,"Input: leaf Answer: e
+"
+screening,c,"Input: screening Answer: c
+"
+stick,t,"Input: stick Answer: t
+"
+installation,n,"Input: installation Answer: n
+"
+massacre,a,"Input: massacre Answer: a
+"
+editing,d,"Input: editing Answer: d
+"
+tourism,o,"Input: tourism Answer: o
+"
+sporting,p,"Input: sporting Answer: p
+"
+gravity,r,"Input: gravity Answer: r
+"
+therapy,h,"Input: therapy Answer: h
+"
+neighbouring,e,"Input: neighbouring Answer: e
+"
+widow,i,"Input: widow Answer: i
+"
+hook,o,"Input: hook Answer: o
+"
+deployment,e,"Input: deployment Answer: e
+"
+milk,i,"Input: milk Answer: i
+"
+transit,r,"Input: transit Answer: r
+"
+prospect,r,"Input: prospect Answer: r
+"
+cooperation,o,"Input: cooperation Answer: o
+"
+captivity,a,"Input: captivity Answer: a
+"
+gear,e,"Input: gear Answer: e
+"
+corridor,o,"Input: corridor Answer: o
+"
+volcano,o,"Input: volcano Answer: o
+"
+jumping,u,"Input: jumping Answer: u
+"
+atmospheric,t,"Input: atmospheric Answer: t
+"
+shirt,h,"Input: shirt Answer: h
+"
+farming,a,"Input: farming Answer: a
+"
+delegation,e,"Input: delegation Answer: e
+"
+rapper,a,"Input: rapper Answer: a
+"
+hybrid,y,"Input: hybrid Answer: y
+"
+coalition,o,"Input: coalition Answer: o
+"
+developer,e,"Input: developer Answer: e
+"
+trick,r,"Input: trick Answer: r
+"
+jaw,a,"Input: jaw Answer: a
+"
+thickness,h,"Input: thickness Answer: h
+"
+kiss,i,"Input: kiss Answer: i
+"
+operator,p,"Input: operator Answer: p
+"
+pregnancy,r,"Input: pregnancy Answer: r
+"
+trophy,r,"Input: trophy Answer: r
+"
+oak,a,"Input: oak Answer: a
+"
+file,i,"Input: file Answer: i
+"
+percussion,e,"Input: percussion Answer: e
+"
+acquisition,c,"Input: acquisition Answer: c
+"
+collision,o,"Input: collision Answer: o
+"
+kitchen,i,"Input: kitchen Answer: i
+"
+conjunction,o,"Input: conjunction Answer: o
+"
+scenario,c,"Input: scenario Answer: c
+"
+package,a,"Input: package Answer: a
+"
+substance,u,"Input: substance Answer: u
+"
+roller,o,"Input: roller Answer: o
+"
+tennis,e,"Input: tennis Answer: e
+"
+motorway,o,"Input: motorway Answer: o
+"
+lifestyle,i,"Input: lifestyle Answer: i
+"
+petition,e,"Input: petition Answer: e
+"
+diving,i,"Input: diving Answer: i
+"
+progression,r,"Input: progression Answer: r
+"
+topic,o,"Input: topic Answer: o
+"
+demonstration,e,"Input: demonstration Answer: e
+"
+erosion,r,"Input: erosion Answer: r
+"
+climbing,l,"Input: climbing Answer: l
+"
+suburb,u,"Input: suburb Answer: u
+"
+muzzle,u,"Input: muzzle Answer: u
+"
+plutonium,l,"Input: plutonium Answer: l
+"
+wound,o,"Input: wound Answer: o
+"
+monitor,o,"Input: monitor Answer: o
+"
+dawn,a,"Input: dawn Answer: a
+"
+attachment,t,"Input: attachment Answer: t
+"
+essay,s,"Input: essay Answer: s
+"
+golf,o,"Input: golf Answer: o
+"
+grain,r,"Input: grain Answer: r
+"
+amendment,m,"Input: amendment Answer: m
+"
+internet,n,"Input: internet Answer: n
+"
+pleasure,l,"Input: pleasure Answer: l
+"
+flee,l,"Input: flee Answer: l
+"
+upgrade,p,"Input: upgrade Answer: p
+"
+securing,e,"Input: securing Answer: e
+"
+hamlet,a,"Input: hamlet Answer: a
+"
+backup,a,"Input: backup Answer: a
+"
+stance,t,"Input: stance Answer: t
+"
+wreck,r,"Input: wreck Answer: r
+"
+muscle,u,"Input: muscle Answer: u
+"
+grandson,r,"Input: grandson Answer: r
+"
+citizen,i,"Input: citizen Answer: i
+"
+ensemble,n,"Input: ensemble Answer: n
+"
+speaker,p,"Input: speaker Answer: p
+"
+input,n,"Input: input Answer: n
+"
+item,t,"Input: item Answer: t
+"
+barrier,a,"Input: barrier Answer: a
+"
+rookie,o,"Input: rookie Answer: o
+"
+scrap,c,"Input: scrap Answer: c
+"
+layout,a,"Input: layout Answer: a
+"
+compensation,o,"Input: compensation Answer: o
+"
+darkness,a,"Input: darkness Answer: a
+"
+invitation,n,"Input: invitation Answer: n
+"
+notion,o,"Input: notion Answer: o
+"
+monarchy,o,"Input: monarchy Answer: o
+"
+midnight,i,"Input: midnight Answer: i
+"
+diary,i,"Input: diary Answer: i
+"
+locate,o,"Input: locate Answer: o
+"
+consent,o,"Input: consent Answer: o
+"
+disappointment,i,"Input: disappointment Answer: i
+"
+employee,m,"Input: employee Answer: m
+"
+identification,d,"Input: identification Answer: d
+"
+anger,n,"Input: anger Answer: n
+"
+destination,e,"Input: destination Answer: e
+"
+inscription,n,"Input: inscription Answer: n
+"
+lineup,i,"Input: lineup Answer: i
+"
+celebrity,e,"Input: celebrity Answer: e
+"
+soap,o,"Input: soap Answer: o
+"
+tide,i,"Input: tide Answer: i
+"
+fusion,u,"Input: fusion Answer: u
+"
+assignment,s,"Input: assignment Answer: s
+"
+mirror,i,"Input: mirror Answer: i
+"
+physician,h,"Input: physician Answer: h
+"
+testimony,e,"Input: testimony Answer: e
+"
+accuracy,c,"Input: accuracy Answer: c
+"
+cartoon,a,"Input: cartoon Answer: a
+"
+arcade,r,"Input: arcade Answer: r
+"
+drainage,r,"Input: drainage Answer: r
+"
+rifle,i,"Input: rifle Answer: i
+"
+momentum,o,"Input: momentum Answer: o
+"
+clergy,l,"Input: clergy Answer: l
+"
+swing,w,"Input: swing Answer: w
+"
+hardware,a,"Input: hardware Answer: a
+"
+colonel,o,"Input: colonel Answer: o
+"
+nobility,o,"Input: nobility Answer: o
+"
+liver,i,"Input: liver Answer: i
+"
+blast,l,"Input: blast Answer: l
+"
+bassist,a,"Input: bassist Answer: a
+"
+teenage,e,"Input: teenage Answer: e
+"
+bench,e,"Input: bench Answer: e
+"
+enforcement,n,"Input: enforcement Answer: n
+"
+myth,y,"Input: myth Answer: y
+"
+duet,u,"Input: duet Answer: u
+"
+freight,r,"Input: freight Answer: r
+"
+congregation,o,"Input: congregation Answer: o
+"
+maturity,a,"Input: maturity Answer: a
+"
+commerce,o,"Input: commerce Answer: o
+"
+municipality,u,"Input: municipality Answer: u
+"
+imprisonment,m,"Input: imprisonment Answer: m
+"
+skeleton,k,"Input: skeleton Answer: k
+"
+extinction,x,"Input: extinction Answer: x
+"
+passion,a,"Input: passion Answer: a
+"
+prayer,r,"Input: prayer Answer: r
+"
+limestone,i,"Input: limestone Answer: i
+"
+specialist,p,"Input: specialist Answer: p
+"
+sketch,k,"Input: sketch Answer: k
+"
+scope,c,"Input: scope Answer: c
+"
+burn,u,"Input: burn Answer: u
+"
+nationalist,a,"Input: nationalist Answer: a
+"
+conviction,o,"Input: conviction Answer: o
+"
+subsidiary,u,"Input: subsidiary Answer: u
+"
+resort,e,"Input: resort Answer: e
+"
+efficiency,f,"Input: efficiency Answer: f
+"
+volunteer,o,"Input: volunteer Answer: o
+"
+pointing,o,"Input: pointing Answer: o
+"
+runway,u,"Input: runway Answer: u
+"
+sphere,p,"Input: sphere Answer: p
+"
+summary,u,"Input: summary Answer: u
+"
+trademark,r,"Input: trademark Answer: r
+"
+instruction,n,"Input: instruction Answer: n
+"
+perception,e,"Input: perception Answer: e
+"
+garage,a,"Input: garage Answer: a
+"
+sexuality,e,"Input: sexuality Answer: e
+"
+lock,o,"Input: lock Answer: o
+"
+freshman,r,"Input: freshman Answer: r
+"
+tool,o,"Input: tool Answer: o
+"
+domain,o,"Input: domain Answer: o
+"
+rape,a,"Input: rape Answer: a
+"
+inquiry,n,"Input: inquiry Answer: n
+"
+tendency,e,"Input: tendency Answer: e
+"
+permit,e,"Input: permit Answer: e
+"
+athlete,t,"Input: athlete Answer: t
+"
+coffee,o,"Input: coffee Answer: o
+"
+scorer,c,"Input: scorer Answer: c
+"
+mask,a,"Input: mask Answer: a
+"
+prosecution,r,"Input: prosecution Answer: r
+"
+pitching,i,"Input: pitching Answer: i
+"
+effectiveness,f,"Input: effectiveness Answer: f
+"
+availability,v,"Input: availability Answer: v
+"
+synthesis,y,"Input: synthesis Answer: y
+"
+painter,a,"Input: painter Answer: a
+"
+referendum,e,"Input: referendum Answer: e
+"
+basement,a,"Input: basement Answer: a
+"
+judgment,u,"Input: judgment Answer: u
+"
+quest,u,"Input: quest Answer: u
+"
+cream,r,"Input: cream Answer: r
+"
+ballot,a,"Input: ballot Answer: a
+"
+adoption,d,"Input: adoption Answer: d
+"
+placement,l,"Input: placement Answer: l
+"
+homage,o,"Input: homage Answer: o
+"
+citizenship,i,"Input: citizenship Answer: i
+"
+skiing,k,"Input: skiing Answer: k
+"
+regulation,e,"Input: regulation Answer: e
+"
+possess,o,"Input: possess Answer: o
+"
+mouse,o,"Input: mouse Answer: o
+"
+countryside,o,"Input: countryside Answer: o
+"
+export,x,"Input: export Answer: x
+"
+goalkeeper,o,"Input: goalkeeper Answer: o
+"
+cabin,a,"Input: cabin Answer: a
+"
+colleague,o,"Input: colleague Answer: o
+"
+millimeter,i,"Input: millimeter Answer: i
+"
+solve,o,"Input: solve Answer: o
+"
+receiver,e,"Input: receiver Answer: e
+"
+stomach,t,"Input: stomach Answer: t
+"
+democracy,e,"Input: democracy Answer: e
+"
+dominance,o,"Input: dominance Answer: o
+"
+installment,n,"Input: installment Answer: n
+"
+throat,h,"Input: throat Answer: h
+"
+genius,e,"Input: genius Answer: e
+"
+keyboard,e,"Input: keyboard Answer: e
+"
+fortune,o,"Input: fortune Answer: o
+"
+correspondence,o,"Input: correspondence Answer: o
+"
+diagnosis,i,"Input: diagnosis Answer: i
+"
+mud,u,"Input: mud Answer: u
+"
+silence,i,"Input: silence Answer: i
+"
+activist,c,"Input: activist Answer: c
+"
+preservation,r,"Input: preservation Answer: r
+"
+businessman,u,"Input: businessman Answer: u
+"
+commit,o,"Input: commit Answer: o
+"
+editorial,d,"Input: editorial Answer: d
+"
+cluster,l,"Input: cluster Answer: l
+"
+detachment,e,"Input: detachment Answer: e
+"
+configuration,o,"Input: configuration Answer: o
+"
+complement,o,"Input: complement Answer: o
+"
+conductor,o,"Input: conductor Answer: o
+"
+plastic,l,"Input: plastic Answer: l
+"
+boarding,o,"Input: boarding Answer: o
+"
+trilogy,r,"Input: trilogy Answer: r
+"
+fault,a,"Input: fault Answer: a
+"
+unity,n,"Input: unity Answer: n
+"
+immigration,m,"Input: immigration Answer: m
+"
+determination,e,"Input: determination Answer: e
+"
+infant,n,"Input: infant Answer: n
+"
+steering,t,"Input: steering Answer: t
+"
+fever,e,"Input: fever Answer: e
+"
+persuade,e,"Input: persuade Answer: e
+"
+reward,e,"Input: reward Answer: e
+"
+depot,e,"Input: depot Answer: e
+"
+prominence,r,"Input: prominence Answer: r
+"
+tier,i,"Input: tier Answer: i
+"
+bowler,o,"Input: bowler Answer: o
+"
+inability,n,"Input: inability Answer: n
+"
+lion,i,"Input: lion Answer: i
+"
+thrust,h,"Input: thrust Answer: h
+"
+overtime,v,"Input: overtime Answer: v
+"
+fraud,r,"Input: fraud Answer: r
+"
+graduation,r,"Input: graduation Answer: r
+"
+transformation,r,"Input: transformation Answer: r
+"
+finger,i,"Input: finger Answer: i
+"
+filter,i,"Input: filter Answer: i
+"
+spectrum,p,"Input: spectrum Answer: p
+"
+sovereignty,o,"Input: sovereignty Answer: o
+"
+accommodation,c,"Input: accommodation Answer: c
+"
+shortage,h,"Input: shortage Answer: h
+"
+galaxy,a,"Input: galaxy Answer: a
+"
+quantity,u,"Input: quantity Answer: u
+"
+funk,u,"Input: funk Answer: u
+"
+blame,l,"Input: blame Answer: l
+"
+enthusiasm,n,"Input: enthusiasm Answer: n
+"
+sentiment,e,"Input: sentiment Answer: e
+"
+compact,o,"Input: compact Answer: o
+"
+relay,e,"Input: relay Answer: e
+"
+recommendation,e,"Input: recommendation Answer: e
+"
+strain,t,"Input: strain Answer: t
+"
+clearing,l,"Input: clearing Answer: l
+"
+array,r,"Input: array Answer: r
+"
+flash,l,"Input: flash Answer: l
+"
+propeller,r,"Input: propeller Answer: r
+"
+confrontation,o,"Input: confrontation Answer: o
+"
+narrator,a,"Input: narrator Answer: a
+"
+nucleus,u,"Input: nucleus Answer: u
+"
+pollution,o,"Input: pollution Answer: o
+"
+heating,e,"Input: heating Answer: e
+"
+displacement,i,"Input: displacement Answer: i
+"
+dock,o,"Input: dock Answer: o
+"
+superstructure,u,"Input: superstructure Answer: u
+"
+pocket,o,"Input: pocket Answer: o
+"
+welfare,e,"Input: welfare Answer: e
+"
+spur,p,"Input: spur Answer: p
+"
+imagination,m,"Input: imagination Answer: m
+"
+anchor,n,"Input: anchor Answer: n
+"
+criteria,r,"Input: criteria Answer: r
+"
+undergraduate,n,"Input: undergraduate Answer: n
+"
+captive,a,"Input: captive Answer: a
+"
+preference,r,"Input: preference Answer: r
+"
+trout,r,"Input: trout Answer: r
+"
+silk,i,"Input: silk Answer: i
+"
+rebuilding,e,"Input: rebuilding Answer: e
+"
+steal,t,"Input: steal Answer: t
+"
+weakness,e,"Input: weakness Answer: e
+"
+viewer,i,"Input: viewer Answer: i
+"
+accompany,c,"Input: accompany Answer: c
+"
+disk,i,"Input: disk Answer: i
+"
+breakdown,r,"Input: breakdown Answer: r
+"
+everybody,v,"Input: everybody Answer: v
+"
+parade,a,"Input: parade Answer: a
+"
+platoon,l,"Input: platoon Answer: l
+"
+photographer,h,"Input: photographer Answer: h
+"
+detect,e,"Input: detect Answer: e
+"
+dedication,e,"Input: dedication Answer: e
+"
+manufacturer,a,"Input: manufacturer Answer: a
+"
+calendar,a,"Input: calendar Answer: a
+"
+medley,e,"Input: medley Answer: e
+"
+monitoring,o,"Input: monitoring Answer: o
+"
+implementation,m,"Input: implementation Answer: m
+"
+deer,e,"Input: deer Answer: e
+"
+discrimination,i,"Input: discrimination Answer: i
+"
+breast,r,"Input: breast Answer: r
+"
+concentrate,o,"Input: concentrate Answer: o
+"
+emotion,m,"Input: emotion Answer: m
+"
+freestyle,r,"Input: freestyle Answer: r
+"
+grandmother,r,"Input: grandmother Answer: r
+"
+marble,a,"Input: marble Answer: a
+"
+civilization,i,"Input: civilization Answer: i
+"
+rode,o,"Input: rode Answer: o
+"
+guidance,u,"Input: guidance Answer: u
+"
+controller,o,"Input: controller Answer: o
+"
+hometown,o,"Input: hometown Answer: o
+"
+slot,l,"Input: slot Answer: l
+"
+mortality,o,"Input: mortality Answer: o
+"
+gospel,o,"Input: gospel Answer: o
+"
+nesting,e,"Input: nesting Answer: e
+"
+coaster,o,"Input: coaster Answer: o
+"
+capability,a,"Input: capability Answer: a
+"
+statute,t,"Input: statute Answer: t
+"
+communicate,o,"Input: communicate Answer: o
+"
+accounting,c,"Input: accounting Answer: c
+"
+torture,o,"Input: torture Answer: o
+"
+demolition,e,"Input: demolition Answer: e
+"
+farmland,a,"Input: farmland Answer: a
+"
+copyright,o,"Input: copyright Answer: o
+"
+complexity,o,"Input: complexity Answer: o
+"
+recipient,e,"Input: recipient Answer: e
+"
+nurse,u,"Input: nurse Answer: u
+"
+interface,n,"Input: interface Answer: n
+"
+manufacture,a,"Input: manufacture Answer: a
+"
+qualification,u,"Input: qualification Answer: u
+"
+cancellation,a,"Input: cancellation Answer: a
+"
+helium,e,"Input: helium Answer: e
+"
+violation,i,"Input: violation Answer: i
+"
+discharge,i,"Input: discharge Answer: i
+"
+broadcasting,r,"Input: broadcasting Answer: r
+"
+bedroom,e,"Input: bedroom Answer: e
+"
+tackle,a,"Input: tackle Answer: a
+"
+ancestor,n,"Input: ancestor Answer: n
+"
+premise,r,"Input: premise Answer: r
+"
+trace,r,"Input: trace Answer: r
+"
+boost,o,"Input: boost Answer: o
+"
+offspring,f,"Input: offspring Answer: f
+"
+perimeter,e,"Input: perimeter Answer: e
+"
+oxide,x,"Input: oxide Answer: x
+"
+nitrogen,i,"Input: nitrogen Answer: i
+"
+dioxide,i,"Input: dioxide Answer: i
+"
+auction,u,"Input: auction Answer: u
+"
+defender,e,"Input: defender Answer: e
+"
+dining,i,"Input: dining Answer: i
+"
+yield,i,"Input: yield Answer: i
+"
+kit,i,"Input: kit Answer: i
+"
+courage,o,"Input: courage Answer: o
+"
+livestock,i,"Input: livestock Answer: i
+"
+starter,t,"Input: starter Answer: t
+"
+opener,p,"Input: opener Answer: p
+"
+patent,a,"Input: patent Answer: a
+"
+mortar,o,"Input: mortar Answer: o
+"
+plumage,l,"Input: plumage Answer: l
+"
+isolation,s,"Input: isolation Answer: s
+"
+particle,a,"Input: particle Answer: a
+"
+aesthetic,e,"Input: aesthetic Answer: e
+"
+patch,a,"Input: patch Answer: a
+"
+feedback,e,"Input: feedback Answer: e
+"
+brass,r,"Input: brass Answer: r
+"
+ballet,a,"Input: ballet Answer: a
+"
+combine,o,"Input: combine Answer: o
+"
+hiatus,i,"Input: hiatus Answer: i
+"
+orientation,r,"Input: orientation Answer: r
+"
+stunt,t,"Input: stunt Answer: t
+"
+cooking,o,"Input: cooking Answer: o
+"
+clause,l,"Input: clause Answer: l
+"
+corporation,o,"Input: corporation Answer: o
+"
+slope,l,"Input: slope Answer: l
+"
+broader,r,"Input: broader Answer: r
+"
+instructor,n,"Input: instructor Answer: n
+"
+uncertainty,n,"Input: uncertainty Answer: n
+"
+wrestler,r,"Input: wrestler Answer: r
+"
+wildlife,i,"Input: wildlife Answer: i
+"
+alert,l,"Input: alert Answer: l
+"
+triumph,r,"Input: triumph Answer: r
+"
+conning,o,"Input: conning Answer: o
+"
+makeup,a,"Input: makeup Answer: a
+"
+ramp,a,"Input: ramp Answer: a
+"
+reflection,e,"Input: reflection Answer: e
+"
+kilometre,i,"Input: kilometre Answer: i
+"
+senator,e,"Input: senator Answer: e
+"
+nominee,o,"Input: nominee Answer: o
+"
+antagonist,n,"Input: antagonist Answer: n
+"
+triangle,r,"Input: triangle Answer: r
+"
+ghost,h,"Input: ghost Answer: h
+"
+shadow,h,"Input: shadow Answer: h
+"
+resemblance,e,"Input: resemblance Answer: e
+"
+diesel,i,"Input: diesel Answer: i
+"
+purchasing,u,"Input: purchasing Answer: u
+"
+filling,i,"Input: filling Answer: i
+"
+lunch,u,"Input: lunch Answer: u
+"
+comedian,o,"Input: comedian Answer: o
+"
+elimination,l,"Input: elimination Answer: l
+"
+outfit,u,"Input: outfit Answer: u
+"
+canon,a,"Input: canon Answer: a
+"
+caution,a,"Input: caution Answer: a
+"
+teenager,e,"Input: teenager Answer: e
+"
+similarity,i,"Input: similarity Answer: i
+"
+poster,o,"Input: poster Answer: o
+"
+log,o,"Input: log Answer: o
+"
+ancestry,n,"Input: ancestry Answer: n
+"
+realism,e,"Input: realism Answer: e
+"
+dragon,r,"Input: dragon Answer: r
+"
+patronage,a,"Input: patronage Answer: a
+"
+shipyard,h,"Input: shipyard Answer: h
+"
+entity,n,"Input: entity Answer: n
+"
+soccer,o,"Input: soccer Answer: o
+"
+deadline,e,"Input: deadline Answer: e
+"
+enzyme,n,"Input: enzyme Answer: n
+"
+powder,o,"Input: powder Answer: o
+"
+seating,e,"Input: seating Answer: e
+"
+drunk,r,"Input: drunk Answer: r
+"
+insect,n,"Input: insect Answer: n
+"
+biology,i,"Input: biology Answer: i
+"
+cloth,l,"Input: cloth Answer: l
+"
+supervision,u,"Input: supervision Answer: u
+"
+climax,l,"Input: climax Answer: l
+"
+hosting,o,"Input: hosting Answer: o
+"
+sitcom,i,"Input: sitcom Answer: i
+"
+unrest,n,"Input: unrest Answer: n
+"
+abundance,b,"Input: abundance Answer: b
+"
+invention,n,"Input: invention Answer: n
+"
+deity,e,"Input: deity Answer: e
+"
+horn,o,"Input: horn Answer: o
+"
+spore,p,"Input: spore Answer: p
+"
+complaint,o,"Input: complaint Answer: o
+"
+prose,r,"Input: prose Answer: r
+"
+gasoline,a,"Input: gasoline Answer: a
+"
+constituency,o,"Input: constituency Answer: o
+"
+beta,e,"Input: beta Answer: e
+"
+humour,u,"Input: humour Answer: u
+"
+stake,t,"Input: stake Answer: t
+"
+deficit,e,"Input: deficit Answer: e
+"
+collector,o,"Input: collector Answer: o
+"
+overlap,v,"Input: overlap Answer: v
+"
+integration,n,"Input: integration Answer: n
+"
+blocking,l,"Input: blocking Answer: l
+"
+pride,r,"Input: pride Answer: r
+"
+boxing,o,"Input: boxing Answer: o
+"
+coronation,o,"Input: coronation Answer: o
+"
+crossover,r,"Input: crossover Answer: r
+"
+posting,o,"Input: posting Answer: o
+"
+comeback,o,"Input: comeback Answer: o
+"
+mob,o,"Input: mob Answer: o
+"
+registration,e,"Input: registration Answer: e
+"
+button,u,"Input: button Answer: u
+"
+fungi,u,"Input: fungi Answer: u
+"
+shooter,h,"Input: shooter Answer: h
+"
+renovation,e,"Input: renovation Answer: e
+"
+warrant,a,"Input: warrant Answer: a
+"
+terrorist,e,"Input: terrorist Answer: e
+"
+reactor,e,"Input: reactor Answer: e
+"
+matching,a,"Input: matching Answer: a
+"
+compose,o,"Input: compose Answer: o
+"
+hate,a,"Input: hate Answer: a
+"
+lecture,e,"Input: lecture Answer: e
+"
+stealing,t,"Input: stealing Answer: t
+"
+calcium,a,"Input: calcium Answer: a
+"
+recruiting,e,"Input: recruiting Answer: e
+"
+hub,u,"Input: hub Answer: u
+"
+framework,r,"Input: framework Answer: r
+"
+tragedy,r,"Input: tragedy Answer: r
+"
+papal,a,"Input: papal Answer: a
+"
+recall,e,"Input: recall Answer: e
+"
+implement,m,"Input: implement Answer: m
+"
+designing,e,"Input: designing Answer: e
+"
+client,l,"Input: client Answer: l
+"
+striker,t,"Input: striker Answer: t
+"
+embassy,m,"Input: embassy Answer: m
+"
+plaque,l,"Input: plaque Answer: l
+"
+knife,n,"Input: knife Answer: n
+"
+consultant,o,"Input: consultant Answer: o
+"
+pyramid,y,"Input: pyramid Answer: y
+"
+continuation,o,"Input: continuation Answer: o
+"
+corn,o,"Input: corn Answer: o
+"
+thirteenth,h,"Input: thirteenth Answer: h
+"
+rope,o,"Input: rope Answer: o
+"
+monsoon,o,"Input: monsoon Answer: o
+"
+barrel,a,"Input: barrel Answer: a
+"
+gravel,r,"Input: gravel Answer: r
+"
+fuselage,u,"Input: fuselage Answer: u
+"
+membrane,e,"Input: membrane Answer: e
+"
+merchandise,e,"Input: merchandise Answer: e
+"
+cure,u,"Input: cure Answer: u
+"
+mentor,e,"Input: mentor Answer: e
+"
+dancer,a,"Input: dancer Answer: a
+"
+intercept,n,"Input: intercept Answer: n
+"
+detection,e,"Input: detection Answer: e
+"
+spy,p,"Input: spy Answer: p
+"
+abbey,b,"Input: abbey Answer: b
+"
+hyphae,y,"Input: hyphae Answer: y
+"
+curriculum,u,"Input: curriculum Answer: u
+"
+contingent,o,"Input: contingent Answer: o
+"
+motif,o,"Input: motif Answer: o
+"
+reservoir,e,"Input: reservoir Answer: e
+"
+concurrency,o,"Input: concurrency Answer: o
+"
+battlecruiser,a,"Input: battlecruiser Answer: a
+"
+bankruptcy,a,"Input: bankruptcy Answer: a
+"
+goaltender,o,"Input: goaltender Answer: o
+"
+guilt,u,"Input: guilt Answer: u
+"
+tobacco,o,"Input: tobacco Answer: o
+"
+punt,u,"Input: punt Answer: u
+"
+halfway,a,"Input: halfway Answer: a
+"
+fitness,i,"Input: fitness Answer: i
+"
+decoration,e,"Input: decoration Answer: e
+"
+consumer,o,"Input: consumer Answer: o
+"
+intensification,n,"Input: intensification Answer: n
+"
+storey,t,"Input: storey Answer: t
+"
+gambling,a,"Input: gambling Answer: a
+"
+ankle,n,"Input: ankle Answer: n
+"
+vinyl,i,"Input: vinyl Answer: i
+"
+profession,r,"Input: profession Answer: r
+"
+submission,u,"Input: submission Answer: u
+"
+visibility,i,"Input: visibility Answer: i
+"
+cease,e,"Input: cease Answer: e
+"
+mobility,o,"Input: mobility Answer: o
+"
+propulsion,r,"Input: propulsion Answer: r
+"
+furniture,u,"Input: furniture Answer: u
+"
+melting,e,"Input: melting Answer: e
+"
+inspection,n,"Input: inspection Answer: n
+"
+luxury,u,"Input: luxury Answer: u
+"
+sprint,p,"Input: sprint Answer: p
+"
+predator,r,"Input: predator Answer: r
+"
+interact,n,"Input: interact Answer: n
+"
+fog,o,"Input: fog Answer: o
+"
+superhero,u,"Input: superhero Answer: u
+"
+relegation,e,"Input: relegation Answer: e
+"
+sink,i,"Input: sink Answer: i
+"
+shrine,h,"Input: shrine Answer: h
+"
+precursor,r,"Input: precursor Answer: r
+"
+ecology,c,"Input: ecology Answer: c
+"
+convey,o,"Input: convey Answer: o
+"
+plug,l,"Input: plug Answer: l
+"
+liberty,i,"Input: liberty Answer: i
+"
+replica,e,"Input: replica Answer: e
+"
+gale,a,"Input: gale Answer: a
+"
+visitor,i,"Input: visitor Answer: i
+"
+ministry,i,"Input: ministry Answer: i
+"
+pipe,i,"Input: pipe Answer: i
+"
+counsel,o,"Input: counsel Answer: o
+"
+latitude,a,"Input: latitude Answer: a
+"
+reproduction,e,"Input: reproduction Answer: e
+"
+marching,a,"Input: marching Answer: a
+"
+unemployment,n,"Input: unemployment Answer: n
+"
+duck,u,"Input: duck Answer: u
+"
+farmer,a,"Input: farmer Answer: a
+"
+recreation,e,"Input: recreation Answer: e
+"
+gunfire,u,"Input: gunfire Answer: u
+"
+accent,c,"Input: accent Answer: c
+"
+cage,a,"Input: cage Answer: a
+"
+maneuver,a,"Input: maneuver Answer: a
+"
+utility,t,"Input: utility Answer: t
+"
+moisture,o,"Input: moisture Answer: o
+"
+bread,r,"Input: bread Answer: r
+"
+harmony,a,"Input: harmony Answer: a
+"
+carriage,a,"Input: carriage Answer: a
+"
+morality,o,"Input: morality Answer: o
+"
+amidships,m,"Input: amidships Answer: m
+"
+academy,c,"Input: academy Answer: c
+"
+reunion,e,"Input: reunion Answer: e
+"
+appreciation,p,"Input: appreciation Answer: p
+"
+counterattack,o,"Input: counterattack Answer: o
+"
+ideology,d,"Input: ideology Answer: d
+"
+downstream,o,"Input: downstream Answer: o
+"
+censorship,e,"Input: censorship Answer: e
+"
+isotope,s,"Input: isotope Answer: s
+"
+outflow,u,"Input: outflow Answer: u
+"
+turnpike,u,"Input: turnpike Answer: u
+"
+prosperity,r,"Input: prosperity Answer: r
+"
+suspicion,u,"Input: suspicion Answer: u
+"
+suite,u,"Input: suite Answer: u
+"
+poison,o,"Input: poison Answer: o
+"
+courtyard,o,"Input: courtyard Answer: o
+"
+gravitational,r,"Input: gravitational Answer: r
+"
+coinage,o,"Input: coinage Answer: o
+"
+indication,n,"Input: indication Answer: n
+"
+escorting,s,"Input: escorting Answer: s
+"
+dinosaur,i,"Input: dinosaur Answer: i
+"
+resource,e,"Input: resource Answer: e
+"
+equality,q,"Input: equality Answer: q
+"
+abortion,b,"Input: abortion Answer: b
+"
+raiding,a,"Input: raiding Answer: a
+"
+retrieve,e,"Input: retrieve Answer: e
+"
+constellation,o,"Input: constellation Answer: o
+"
+snake,n,"Input: snake Answer: n
+"
+supervisor,u,"Input: supervisor Answer: u
+"
+airplay,i,"Input: airplay Answer: i
+"
+granite,r,"Input: granite Answer: r
+"
+superiority,u,"Input: superiority Answer: u
+"
+icon,c,"Input: icon Answer: c
+"
+menu,e,"Input: menu Answer: e
+"
+alpha,l,"Input: alpha Answer: l
+"
+persecution,e,"Input: persecution Answer: e
+"
+wolf,o,"Input: wolf Answer: o
+"
+occurrence,c,"Input: occurrence Answer: c
+"
+swim,w,"Input: swim Answer: w
+"
+slide,l,"Input: slide Answer: l
+"
+upstream,p,"Input: upstream Answer: p
+"
+cockpit,o,"Input: cockpit Answer: o
+"
+elephant,l,"Input: elephant Answer: l
+"
+novelist,o,"Input: novelist Answer: o
+"
+accession,c,"Input: accession Answer: c
+"
+verdict,e,"Input: verdict Answer: e
+"
+integrity,n,"Input: integrity Answer: n
+"
+wage,a,"Input: wage Answer: a
+"
+bottle,o,"Input: bottle Answer: o
+"
+backdrop,a,"Input: backdrop Answer: a
+"
+dissolution,i,"Input: dissolution Answer: i
+"
+fiscal,i,"Input: fiscal Answer: i
+"
+jacket,a,"Input: jacket Answer: a
+"
+pianist,i,"Input: pianist Answer: i
+"
+ambush,m,"Input: ambush Answer: m
+"
+blog,l,"Input: blog Answer: l
+"
+bag,a,"Input: bag Answer: a
+"
+sweep,w,"Input: sweep Answer: w
+"
+puzzle,u,"Input: puzzle Answer: u
+"
+emergence,m,"Input: emergence Answer: m
+"
+foul,o,"Input: foul Answer: o
+"
+anthology,n,"Input: anthology Answer: n
+"
+update,p,"Input: update Answer: p
+"
+potassium,o,"Input: potassium Answer: o
+"
+innovation,n,"Input: innovation Answer: n
+"
+fairy,a,"Input: fairy Answer: a
+"
+nobody,o,"Input: nobody Answer: o
+"
+plasma,l,"Input: plasma Answer: l
+"
+coral,o,"Input: coral Answer: o
+"
+trunkline,r,"Input: trunkline Answer: r
+"
+interception,n,"Input: interception Answer: n
+"
+camouflage,a,"Input: camouflage Answer: a
+"
+affiliate,f,"Input: affiliate Answer: f
+"
+cooling,o,"Input: cooling Answer: o
+"
+spokesman,p,"Input: spokesman Answer: p
+"
+gunnery,u,"Input: gunnery Answer: u
+"
+treasure,r,"Input: treasure Answer: r
+"
+spider,p,"Input: spider Answer: p
+"
+defendant,e,"Input: defendant Answer: e
+"
+postseason,o,"Input: postseason Answer: o
+"
+enhance,n,"Input: enhance Answer: n
+"
+autonomy,u,"Input: autonomy Answer: u
+"
+spiral,p,"Input: spiral Answer: p
+"
+disposal,i,"Input: disposal Answer: i
+"
+certification,e,"Input: certification Answer: e
+"
+funnel,u,"Input: funnel Answer: u
+"
+fleeing,l,"Input: fleeing Answer: l
+"
+pose,o,"Input: pose Answer: o
+"
+commissioner,o,"Input: commissioner Answer: o
+"
+ditch,i,"Input: ditch Answer: i
+"
+texture,e,"Input: texture Answer: e
+"
+virtue,i,"Input: virtue Answer: i
+"
+treason,r,"Input: treason Answer: r
+"
+grace,r,"Input: grace Answer: r
+"
+inflation,n,"Input: inflation Answer: n
+"
+contributor,o,"Input: contributor Answer: o
+"
+oxidation,x,"Input: oxidation Answer: x
+"
+targeting,a,"Input: targeting Answer: a
+"
+pet,e,"Input: pet Answer: e
+"
+hunter,u,"Input: hunter Answer: u
+"
+drought,r,"Input: drought Answer: r
+"
+midst,i,"Input: midst Answer: i
+"
+conscience,o,"Input: conscience Answer: o
+"
+theology,h,"Input: theology Answer: h
+"
+backwards,a,"Input: backwards Answer: a
+"
+trunk,r,"Input: trunk Answer: r
+"
+anticipation,n,"Input: anticipation Answer: n
+"
+sodium,o,"Input: sodium Answer: o
+"
+ambition,m,"Input: ambition Answer: m
+"
+correspondent,o,"Input: correspondent Answer: o
+"
+customer,u,"Input: customer Answer: u
+"
+mercury,e,"Input: mercury Answer: e
+"
+aggression,g,"Input: aggression Answer: g
+"
+columnist,o,"Input: columnist Answer: o
+"
+advisor,d,"Input: advisor Answer: d
+"
+sponsor,p,"Input: sponsor Answer: p
+"
+conception,o,"Input: conception Answer: o
+"
+continuity,o,"Input: continuity Answer: o
+"
+plantation,l,"Input: plantation Answer: l
+"
+habit,a,"Input: habit Answer: a
+"
+tributary,r,"Input: tributary Answer: r
+"
+outline,u,"Input: outline Answer: u
+"
+numbering,u,"Input: numbering Answer: u
+"
+staging,t,"Input: staging Answer: t
+"
+surgeon,u,"Input: surgeon Answer: u
+"
+keeper,e,"Input: keeper Answer: e
+"
+agenda,g,"Input: agenda Answer: g
+"
+devotion,e,"Input: devotion Answer: e
+"
+pin,i,"Input: pin Answer: i
+"
+ladder,a,"Input: ladder Answer: a
+"
+sophomore,o,"Input: sophomore Answer: o
+"
+comfort,o,"Input: comfort Answer: o
+"
+modification,o,"Input: modification Answer: o
+"
+rehearsal,e,"Input: rehearsal Answer: e
+"
+facto,a,"Input: facto Answer: a
+"
+archipelago,r,"Input: archipelago Answer: r
+"
+psychology,s,"Input: psychology Answer: s
+"
+redevelopment,e,"Input: redevelopment Answer: e
+"
+somebody,o,"Input: somebody Answer: o
+"
+supplement,u,"Input: supplement Answer: u
+"
+bicycle,i,"Input: bicycle Answer: i
+"
+homosexuality,o,"Input: homosexuality Answer: o
+"
+sympathy,y,"Input: sympathy Answer: y
+"
+disagreement,i,"Input: disagreement Answer: i
+"
+fixture,i,"Input: fixture Answer: i
+"
+corpse,o,"Input: corpse Answer: o
+"
+bullet,u,"Input: bullet Answer: u
+"
+blew,l,"Input: blew Answer: l
+"
+lighthouse,i,"Input: lighthouse Answer: i
+"
+joy,o,"Input: joy Answer: o
+"
+hitter,i,"Input: hitter Answer: i
+"
+allegiance,l,"Input: allegiance Answer: l
+"
+wheat,h,"Input: wheat Answer: h
+"
+rehabilitation,e,"Input: rehabilitation Answer: e
+"
+demise,e,"Input: demise Answer: e
+"
+phenomena,h,"Input: phenomena Answer: h
+"
+slip,l,"Input: slip Answer: l
+"
+decree,e,"Input: decree Answer: e
+"
+inheritance,n,"Input: inheritance Answer: n
+"
+employer,m,"Input: employer Answer: m
+"
+twist,w,"Input: twist Answer: w
+"
+cope,o,"Input: cope Answer: o
+"
+repertoire,e,"Input: repertoire Answer: e
+"
+spectral,p,"Input: spectral Answer: p
+"
+surveillance,u,"Input: surveillance Answer: u
+"
+folklore,o,"Input: folklore Answer: o
+"
+compensate,o,"Input: compensate Answer: o
+"
+athletics,t,"Input: athletics Answer: t
+"
+equation,q,"Input: equation Answer: q
+"
+pen,e,"Input: pen Answer: e
+"
+thesis,h,"Input: thesis Answer: h
+"
+welding,e,"Input: welding Answer: e
+"
+distress,i,"Input: distress Answer: i
+"
+exploit,x,"Input: exploit Answer: x
+"
+racism,a,"Input: racism Answer: a
+"
+dialect,i,"Input: dialect Answer: i
+"
+anxiety,n,"Input: anxiety Answer: n
+"
+lab,a,"Input: lab Answer: a
+"
+sculptor,c,"Input: sculptor Answer: c
+"
+confirmation,o,"Input: confirmation Answer: o
+"
+masterpiece,a,"Input: masterpiece Answer: a
+"
+commentator,o,"Input: commentator Answer: o
+"
+congestion,o,"Input: congestion Answer: o
+"
+emission,m,"Input: emission Answer: m
+"
+banking,a,"Input: banking Answer: a
+"
+evaluation,v,"Input: evaluation Answer: v
+"
+financing,i,"Input: financing Answer: i
+"
+disappearance,i,"Input: disappearance Answer: i
+"
+premier,r,"Input: premier Answer: r
+"
+viewership,i,"Input: viewership Answer: i
+"
+stole,t,"Input: stole Answer: t
+"
+breakaway,r,"Input: breakaway Answer: r
+"
+basal,a,"Input: basal Answer: a
+"
+barrage,a,"Input: barrage Answer: a
+"
+contender,o,"Input: contender Answer: o
+"
+lateral,a,"Input: lateral Answer: a
+"
+toss,o,"Input: toss Answer: o
+"
+warship,a,"Input: warship Answer: a
+"
+zoo,o,"Input: zoo Answer: o
+"
+laugh,a,"Input: laugh Answer: a
+"
+overhaul,v,"Input: overhaul Answer: v
+"
+fix,i,"Input: fix Answer: i
+"
+escaping,s,"Input: escaping Answer: s
+"
+invade,n,"Input: invade Answer: n
+"
+tenor,e,"Input: tenor Answer: e
+"
+warehouse,a,"Input: warehouse Answer: a
+"
+pope,o,"Input: pope Answer: o
+"
+plenty,l,"Input: plenty Answer: l
+"
+pipeline,i,"Input: pipeline Answer: i
+"
+butterfly,u,"Input: butterfly Answer: u
+"
+meal,e,"Input: meal Answer: e
+"
+globe,l,"Input: globe Answer: l
+"
+admit,d,"Input: admit Answer: d
+"
+ethanol,t,"Input: ethanol Answer: t
+"
+cultivation,u,"Input: cultivation Answer: u
+"
+balloon,a,"Input: balloon Answer: a
+"
+dish,i,"Input: dish Answer: i
+"
+turbine,u,"Input: turbine Answer: u
+"
+chloride,h,"Input: chloride Answer: h
+"
+competitor,o,"Input: competitor Answer: o
+"
+detention,e,"Input: detention Answer: e
+"
+preview,r,"Input: preview Answer: r
+"
+cuisine,u,"Input: cuisine Answer: u
+"
+overthrow,v,"Input: overthrow Answer: v
+"
+malaria,a,"Input: malaria Answer: a
+"
+excitement,x,"Input: excitement Answer: x
+"
+foraging,o,"Input: foraging Answer: o
+"
+reasoning,e,"Input: reasoning Answer: e
+"
+grammar,r,"Input: grammar Answer: r
+"
+kid,i,"Input: kid Answer: i
+"
+pub,u,"Input: pub Answer: u
+"
+catalog,a,"Input: catalog Answer: a
+"
+revelation,e,"Input: revelation Answer: e
+"
+freshwater,r,"Input: freshwater Answer: r
+"
+fence,e,"Input: fence Answer: e
+"
+asylum,s,"Input: asylum Answer: s
+"
+preseason,r,"Input: preseason Answer: r
+"
+morphology,o,"Input: morphology Answer: o
+"
+logic,o,"Input: logic Answer: o
+"
+precedent,r,"Input: precedent Answer: r
+"
+sulfur,u,"Input: sulfur Answer: u
+"
+showcase,h,"Input: showcase Answer: h
+"
+pronunciation,r,"Input: pronunciation Answer: r
+"
+mantle,a,"Input: mantle Answer: a
+"
+cricketer,r,"Input: cricketer Answer: r
+"
+database,a,"Input: database Answer: a
+"
+mock,o,"Input: mock Answer: o
+"
+illustration,l,"Input: illustration Answer: l
+"
+administrator,d,"Input: administrator Answer: d
+"
+ion,o,"Input: ion Answer: o
+"
+catalogue,a,"Input: catalogue Answer: a
+"
+laser,a,"Input: laser Answer: a
+"
+surname,u,"Input: surname Answer: u
+"
+storytelling,t,"Input: storytelling Answer: t
+"
+assumption,s,"Input: assumption Answer: s
+"
+essence,s,"Input: essence Answer: s
+"
+hostage,o,"Input: hostage Answer: o
+"
+curtain,u,"Input: curtain Answer: u
+"
+plateau,l,"Input: plateau Answer: l
+"
+theft,h,"Input: theft Answer: h
+"
+trafficking,r,"Input: trafficking Answer: r
+"
+kilogram,i,"Input: kilogram Answer: i
+"
+belly,e,"Input: belly Answer: e
+"
+robot,o,"Input: robot Answer: o
+"
+hymn,y,"Input: hymn Answer: y
+"
+cheese,h,"Input: cheese Answer: h
+"
+atom,t,"Input: atom Answer: t
+"
+midfielder,i,"Input: midfielder Answer: i
+"
+spinning,p,"Input: spinning Answer: p
+"
+bike,i,"Input: bike Answer: i
+"
+diocese,i,"Input: diocese Answer: i
+"
+measurement,e,"Input: measurement Answer: e
+"
+sperm,p,"Input: sperm Answer: p
+"
+seizure,e,"Input: seizure Answer: e
+"
+tolerance,o,"Input: tolerance Answer: o
+"
+replay,e,"Input: replay Answer: e
+"
+excavation,x,"Input: excavation Answer: x
+"
+crude,r,"Input: crude Answer: r
+"
+liberation,i,"Input: liberation Answer: i
+"
+inception,n,"Input: inception Answer: n
+"
+frog,r,"Input: frog Answer: r
+"
+metaphor,e,"Input: metaphor Answer: e
+"
+candidacy,a,"Input: candidacy Answer: a
+"
+gunpowder,u,"Input: gunpowder Answer: u
+"
+equity,q,"Input: equity Answer: q
+"
+governance,o,"Input: governance Answer: o
+"
+index,n,"Input: index Answer: n
+"
+drift,r,"Input: drift Answer: r
+"
+subplot,u,"Input: subplot Answer: u
+"
+epithet,p,"Input: epithet Answer: p
+"
+dirt,i,"Input: dirt Answer: i
+"
+vacuum,a,"Input: vacuum Answer: a
+"
+kickoff,i,"Input: kickoff Answer: i
+"
+affection,f,"Input: affection Answer: f
+"
+suffrage,u,"Input: suffrage Answer: u
+"
+lineage,i,"Input: lineage Answer: i
+"
+probability,r,"Input: probability Answer: r
+"
+maker,a,"Input: maker Answer: a
+"
+fauna,a,"Input: fauna Answer: a
+"
+addiction,d,"Input: addiction Answer: d
+"
+piercing,i,"Input: piercing Answer: i
+"
+cleaning,l,"Input: cleaning Answer: l
+"
+smell,m,"Input: smell Answer: m
+"
+composite,o,"Input: composite Answer: o
+"
+halftime,a,"Input: halftime Answer: a
+"
+pig,i,"Input: pig Answer: i
+"
+splitting,p,"Input: splitting Answer: p
+"
+instability,n,"Input: instability Answer: n
+"
+trauma,r,"Input: trauma Answer: r
+"
+trainer,r,"Input: trainer Answer: r
+"
+flashback,l,"Input: flashback Answer: l
+"
+luck,u,"Input: luck Answer: u
+"
+coloration,o,"Input: coloration Answer: o
+"
+gesture,e,"Input: gesture Answer: e
+"
+duel,u,"Input: duel Answer: u
+"
+clash,l,"Input: clash Answer: l
+"
+necessity,e,"Input: necessity Answer: e
+"
+naturalist,a,"Input: naturalist Answer: a
+"
+quote,u,"Input: quote Answer: u
+"
+delegate,e,"Input: delegate Answer: e
+"
+innocence,n,"Input: innocence Answer: n
+"
+certificate,e,"Input: certificate Answer: e
+"
+mascot,a,"Input: mascot Answer: a
+"
+motivation,o,"Input: motivation Answer: o
+"
+comprise,o,"Input: comprise Answer: o
+"
+sponsorship,p,"Input: sponsorship Answer: p
+"
+slate,l,"Input: slate Answer: l
+"
+thunderstorm,h,"Input: thunderstorm Answer: h
+"
+exploitation,x,"Input: exploitation Answer: x
+"
+neighbor,e,"Input: neighbor Answer: e
+"
+crust,r,"Input: crust Answer: r
+"
+dimension,i,"Input: dimension Answer: i
+"
+nursing,u,"Input: nursing Answer: u
+"
+switching,w,"Input: switching Answer: w
+"
+severity,e,"Input: severity Answer: e
+"
+apology,p,"Input: apology Answer: p
+"
+footballer,o,"Input: footballer Answer: o
+"
+parachute,a,"Input: parachute Answer: a
+"
+absorption,b,"Input: absorption Answer: b
+"
+motto,o,"Input: motto Answer: o
+"
+mutiny,u,"Input: mutiny Answer: u
+"
+merge,e,"Input: merge Answer: e
+"
+trigger,r,"Input: trigger Answer: r
+"
+vacation,a,"Input: vacation Answer: a
+"
+contention,o,"Input: contention Answer: o
+"
+spelling,p,"Input: spelling Answer: p
+"
+nominate,o,"Input: nominate Answer: o
+"
+skating,k,"Input: skating Answer: k
+"
+tract,r,"Input: tract Answer: r
+"
+shipment,h,"Input: shipment Answer: h
+"
+organism,r,"Input: organism Answer: r
+"
+astronomy,s,"Input: astronomy Answer: s
+"
+riff,i,"Input: riff Answer: i
+"
+soprano,o,"Input: soprano Answer: o
+"
+geometry,e,"Input: geometry Answer: e
+"
+glee,l,"Input: glee Answer: l
+"
+insistence,n,"Input: insistence Answer: n
+"
+coordination,o,"Input: coordination Answer: o
+"
+penetrate,e,"Input: penetrate Answer: e
+"
+pending,e,"Input: pending Answer: e
+"
+collaborator,o,"Input: collaborator Answer: o
+"
+procession,r,"Input: procession Answer: r
+"
+spokesperson,p,"Input: spokesperson Answer: p
+"
+motorcycle,o,"Input: motorcycle Answer: o
+"
+resonance,e,"Input: resonance Answer: e
+"
+astronomer,s,"Input: astronomer Answer: s
+"
+noon,o,"Input: noon Answer: o
+"
+draught,r,"Input: draught Answer: r
+"
+physicist,h,"Input: physicist Answer: h
+"
+filmmaker,i,"Input: filmmaker Answer: i
+"
+baptism,a,"Input: baptism Answer: a
+"
+crater,r,"Input: crater Answer: r
+"
+decompression,e,"Input: decompression Answer: e
+"
+grief,r,"Input: grief Answer: r
+"
+admiration,d,"Input: admiration Answer: d
+"
+anybody,n,"Input: anybody Answer: n
+"
+retaliation,e,"Input: retaliation Answer: e
+"
+symphony,y,"Input: symphony Answer: y
+"
+hierarchy,i,"Input: hierarchy Answer: i
+"
+screenwriter,c,"Input: screenwriter Answer: c
+"
+flame,l,"Input: flame Answer: l
+"
+monkey,o,"Input: monkey Answer: o
+"
+dose,o,"Input: dose Answer: o
+"
+contestant,o,"Input: contestant Answer: o
+"
+voltage,o,"Input: voltage Answer: o
+"
+cry,r,"Input: cry Answer: r
+"
+terror,e,"Input: terror Answer: e
+"
+institute,n,"Input: institute Answer: n
+"
+licence,i,"Input: licence Answer: i
+"
+cottage,o,"Input: cottage Answer: o
+"
+equilibrium,q,"Input: equilibrium Answer: q
+"
+theorem,h,"Input: theorem Answer: h
+"
+sanctuary,a,"Input: sanctuary Answer: a
+"
+flotilla,l,"Input: flotilla Answer: l
+"
+offence,f,"Input: offence Answer: f
+"
+sin,i,"Input: sin Answer: i
+"
+airplane,i,"Input: airplane Answer: i
+"
+sparrow,p,"Input: sparrow Answer: p
+"
+coordinator,o,"Input: coordinator Answer: o
+"
+expressway,x,"Input: expressway Answer: x
+"
+pupil,u,"Input: pupil Answer: u
+"
+wheelchair,h,"Input: wheelchair Answer: h
+"
+enterprise,n,"Input: enterprise Answer: n
+"
+memoir,e,"Input: memoir Answer: e
+"
+projection,r,"Input: projection Answer: r
+"
+blade,l,"Input: blade Answer: l
+"
+extraction,x,"Input: extraction Answer: x
+"
+microphone,i,"Input: microphone Answer: i
+"
+recruitment,e,"Input: recruitment Answer: e
+"
+synthesizer,y,"Input: synthesizer Answer: y
+"
+stamp,t,"Input: stamp Answer: t
+"
+pseudonym,s,"Input: pseudonym Answer: s
+"
+spun,p,"Input: spun Answer: p
+"
+cycling,y,"Input: cycling Answer: y
+"
+fundraising,u,"Input: fundraising Answer: u
+"
+elevator,l,"Input: elevator Answer: l
+"
+probe,r,"Input: probe Answer: r
+"
+midway,i,"Input: midway Answer: i
+"
+fission,i,"Input: fission Answer: i
+"
+descendant,e,"Input: descendant Answer: e
+"
+leak,e,"Input: leak Answer: e
+"
+cruising,r,"Input: cruising Answer: r
+"
+cavity,a,"Input: cavity Answer: a
+"
+catcher,a,"Input: catcher Answer: a
+"
+explorer,x,"Input: explorer Answer: x
+"
+happiness,a,"Input: happiness Answer: a
+"
+deposit,e,"Input: deposit Answer: e
+"
+compare,o,"Input: compare Answer: o
+"
+revision,e,"Input: revision Answer: e
+"
+salmon,a,"Input: salmon Answer: a
+"
+marijuana,a,"Input: marijuana Answer: a
+"
+deception,e,"Input: deception Answer: e
+"
+millennium,i,"Input: millennium Answer: i
+"
+mourning,o,"Input: mourning Answer: o
+"
+collar,o,"Input: collar Answer: o
+"
+cancel,a,"Input: cancel Answer: a
+"
+canopy,a,"Input: canopy Answer: a
+"
+willingness,i,"Input: willingness Answer: i
+"
+sleeve,l,"Input: sleeve Answer: l
+"
+dealer,e,"Input: dealer Answer: e
+"
+lent,e,"Input: lent Answer: e
+"
+geology,e,"Input: geology Answer: e
+"
+anatomy,n,"Input: anatomy Answer: n
+"
+moist,o,"Input: moist Answer: o
+"
+lip,i,"Input: lip Answer: i
+"
+emblem,m,"Input: emblem Answer: m
+"
+pneumonia,n,"Input: pneumonia Answer: n
+"
+predation,r,"Input: predation Answer: r
+"
+portal,o,"Input: portal Answer: o
+"
+confluence,o,"Input: confluence Answer: o
+"
+fraternity,r,"Input: fraternity Answer: r
+"
+immunity,m,"Input: immunity Answer: m
+"
+glider,l,"Input: glider Answer: l
+"
+fortification,o,"Input: fortification Answer: o
+"
+tactic,a,"Input: tactic Answer: a
+"
+impedance,m,"Input: impedance Answer: m
+"
+fabric,a,"Input: fabric Answer: a
+"
+disruption,i,"Input: disruption Answer: i
+"
+synagogue,y,"Input: synagogue Answer: y
+"
+import,m,"Input: import Answer: m
+"
+influenza,n,"Input: influenza Answer: n
+"
+pavilion,a,"Input: pavilion Answer: a
+"
+concession,o,"Input: concession Answer: o
+"
+smallpox,m,"Input: smallpox Answer: m
+"
+pottery,o,"Input: pottery Answer: o
+"
+trumpet,r,"Input: trumpet Answer: r
+"
+surf,u,"Input: surf Answer: u
+"
+sensitivity,e,"Input: sensitivity Answer: e
+"
+mandate,a,"Input: mandate Answer: a
+"
+beef,e,"Input: beef Answer: e
+"
+auto,u,"Input: auto Answer: u
+"
+mistress,i,"Input: mistress Answer: i
+"
+breakfast,r,"Input: breakfast Answer: r
+"
+slogan,l,"Input: slogan Answer: l
+"
+taxation,a,"Input: taxation Answer: a
+"
+spine,p,"Input: spine Answer: p
+"
+reprise,e,"Input: reprise Answer: e
+"
+nuclei,u,"Input: nuclei Answer: u
+"
+inauguration,n,"Input: inauguration Answer: n
+"
+abolition,b,"Input: abolition Answer: b
+"
+hostility,o,"Input: hostility Answer: o
+"
+influx,n,"Input: influx Answer: n
+"
+packaging,a,"Input: packaging Answer: a
+"
+underside,n,"Input: underside Answer: n
+"
+millimetre,i,"Input: millimetre Answer: i
+"
+hind,i,"Input: hind Answer: i
+"
+subway,u,"Input: subway Answer: u
+"
+scarce,c,"Input: scarce Answer: c
+"
+predict,r,"Input: predict Answer: r
+"
+backstage,a,"Input: backstage Answer: a
+"
+reissue,e,"Input: reissue Answer: e
+"
+respiratory,e,"Input: respiratory Answer: e
+"
+endorsement,n,"Input: endorsement Answer: n
+"
+aristocracy,r,"Input: aristocracy Answer: r
+"
+disability,i,"Input: disability Answer: i
+"
+prohibition,r,"Input: prohibition Answer: r
+"
+feast,e,"Input: feast Answer: e
+"
+shower,h,"Input: shower Answer: h
+"
+symmetry,y,"Input: symmetry Answer: y
+"
+pirate,i,"Input: pirate Answer: i
+"
+confession,o,"Input: confession Answer: o
+"
+nationalism,a,"Input: nationalism Answer: a
+"
+module,o,"Input: module Answer: o
+"
+neutrality,e,"Input: neutrality Answer: e
+"
+wisdom,i,"Input: wisdom Answer: i
+"
+communism,o,"Input: communism Answer: o
+"
+mast,a,"Input: mast Answer: a
+"
+desk,e,"Input: desk Answer: e
+"
+kicking,i,"Input: kicking Answer: i
+"
+homeland,o,"Input: homeland Answer: o
+"
+undertaking,n,"Input: undertaking Answer: n
+"
+robbery,o,"Input: robbery Answer: o
+"
+survivor,u,"Input: survivor Answer: u
+"
+takeover,a,"Input: takeover Answer: a
+"
+casino,a,"Input: casino Answer: a
+"
+facade,a,"Input: facade Answer: a
+"
+township,o,"Input: township Answer: o
+"
+pulp,u,"Input: pulp Answer: u
+"
+chronicle,h,"Input: chronicle Answer: h
+"
+toxicity,o,"Input: toxicity Answer: o
+"
+deploy,e,"Input: deploy Answer: e
+"
+researcher,e,"Input: researcher Answer: e
+"
+timeslot,i,"Input: timeslot Answer: i
+"
+niece,i,"Input: niece Answer: i
+"
+ecosystem,c,"Input: ecosystem Answer: c
+"
+incarnation,n,"Input: incarnation Answer: n
+"
+shutout,h,"Input: shutout Answer: h
+"
+suppression,u,"Input: suppression Answer: u
+"
+plague,l,"Input: plague Answer: l
+"
+hemisphere,e,"Input: hemisphere Answer: e
+"
+cadet,a,"Input: cadet Answer: a
+"
+inventory,n,"Input: inventory Answer: n
+"
+donation,o,"Input: donation Answer: o
+"
+calibre,a,"Input: calibre Answer: a
+"
+relocation,e,"Input: relocation Answer: e
+"
+journalism,o,"Input: journalism Answer: o
+"
+aluminium,l,"Input: aluminium Answer: l
+"
+curse,u,"Input: curse Answer: u
+"
+annexation,n,"Input: annexation Answer: n
+"
+canvas,a,"Input: canvas Answer: a
+"
+crush,r,"Input: crush Answer: r
+"
+quadruple,u,"Input: quadruple Answer: u
+"
+offset,f,"Input: offset Answer: f
+"
+reliance,e,"Input: reliance Answer: e
+"
+authenticity,u,"Input: authenticity Answer: u
+"
+interval,n,"Input: interval Answer: n
+"
+eligibility,l,"Input: eligibility Answer: l
+"
+breath,r,"Input: breath Answer: r
+"
+cane,a,"Input: cane Answer: a
+"
+crack,r,"Input: crack Answer: r
+"
+sediment,e,"Input: sediment Answer: e
+"
+pension,e,"Input: pension Answer: e
+"
+textile,e,"Input: textile Answer: e
+"
+coincide,o,"Input: coincide Answer: o
+"
+bathroom,a,"Input: bathroom Answer: a
+"
+dental,e,"Input: dental Answer: e
+"
+drain,r,"Input: drain Answer: r
+"
+nightclub,i,"Input: nightclub Answer: i
+"
+salvage,a,"Input: salvage Answer: a
+"
+rage,a,"Input: rage Answer: a
+"
+disguise,i,"Input: disguise Answer: i
+"
+electro,l,"Input: electro Answer: l
+"
+stiff,t,"Input: stiff Answer: t
+"
+renewal,e,"Input: renewal Answer: e
+"
+workshop,o,"Input: workshop Answer: o
+"
+incorporation,n,"Input: incorporation Answer: n
+"
+vault,a,"Input: vault Answer: a
+"
+tuberculosis,u,"Input: tuberculosis Answer: u
+"
+timeline,i,"Input: timeline Answer: i
+"
+cow,o,"Input: cow Answer: o
+"
+breakup,r,"Input: breakup Answer: r
+"
+enclosure,n,"Input: enclosure Answer: n
+"
+milestone,i,"Input: milestone Answer: i
+"
+pairing,a,"Input: pairing Answer: a
+"
+graph,r,"Input: graph Answer: r
+"
+scrutiny,c,"Input: scrutiny Answer: c
+"
+bust,u,"Input: bust Answer: u
+"
+shuttle,h,"Input: shuttle Answer: h
+"
+illusion,l,"Input: illusion Answer: l
+"
+experimentation,x,"Input: experimentation Answer: x
+"
+privilege,r,"Input: privilege Answer: r
+"
+bend,e,"Input: bend Answer: e
+"
+circus,i,"Input: circus Answer: i
+"
+doll,o,"Input: doll Answer: o
+"
+enrollment,n,"Input: enrollment Answer: n
+"
+beak,e,"Input: beak Answer: e
+"
+lumber,u,"Input: lumber Answer: u
+"
+monopoly,o,"Input: monopoly Answer: o
+"
+curving,u,"Input: curving Answer: u
+"
+lacrosse,a,"Input: lacrosse Answer: a
+"
+captaincy,a,"Input: captaincy Answer: a
+"
+snout,n,"Input: snout Answer: n
+"
+populace,o,"Input: populace Answer: o
+"
+trait,r,"Input: trait Answer: r
+"
+dislike,i,"Input: dislike Answer: i
+"
+pamphlet,a,"Input: pamphlet Answer: a
+"
+porch,o,"Input: porch Answer: o
+"
+cement,e,"Input: cement Answer: e
+"
+gradient,r,"Input: gradient Answer: r
+"
+terrorism,e,"Input: terrorism Answer: e
+"
+finalist,i,"Input: finalist Answer: i
+"
+wilderness,i,"Input: wilderness Answer: i
+"
+playwright,l,"Input: playwright Answer: l
+"
+irrigation,r,"Input: irrigation Answer: r
+"
+turmoil,u,"Input: turmoil Answer: u
+"
+chocolate,h,"Input: chocolate Answer: h
+"
+equator,q,"Input: equator Answer: q
+"
+proclamation,r,"Input: proclamation Answer: r
+"
+reconciliation,e,"Input: reconciliation Answer: e
+"
+plea,l,"Input: plea Answer: l
+"
+broadcaster,r,"Input: broadcaster Answer: r
+"
+weaponry,e,"Input: weaponry Answer: e
+"
+friction,r,"Input: friction Answer: r
+"
+dignity,i,"Input: dignity Answer: i
+"
+advocacy,d,"Input: advocacy Answer: d
+"
+activism,c,"Input: activism Answer: c
+"
+diplomat,i,"Input: diplomat Answer: i
+"
+punch,u,"Input: punch Answer: u
+"
+denial,e,"Input: denial Answer: e
+"
+fraction,r,"Input: fraction Answer: r
+"
+prediction,r,"Input: prediction Answer: r
+"
+dictator,i,"Input: dictator Answer: i
+"
+fragment,r,"Input: fragment Answer: r
+"
+boycott,o,"Input: boycott Answer: o
+"
+sweeping,w,"Input: sweeping Answer: w
+"
+fielding,i,"Input: fielding Answer: i
+"
+ambulance,m,"Input: ambulance Answer: m
+"
+encouragement,n,"Input: encouragement Answer: n
+"
+mice,i,"Input: mice Answer: i
+"
+critique,r,"Input: critique Answer: r
+"
+peat,e,"Input: peat Answer: e
+"
+backstory,a,"Input: backstory Answer: a
+"
+satisfaction,a,"Input: satisfaction Answer: a
+"
+lithium,i,"Input: lithium Answer: i
+"
+bunch,u,"Input: bunch Answer: u
+"
+sensation,e,"Input: sensation Answer: e
+"
+scenery,c,"Input: scenery Answer: c
+"
+courthouse,o,"Input: courthouse Answer: o
+"
+bride,r,"Input: bride Answer: r
+"
+medication,e,"Input: medication Answer: e
+"
+archaeology,r,"Input: archaeology Answer: r
+"
+likelihood,i,"Input: likelihood Answer: i
+"
+vaccine,a,"Input: vaccine Answer: a
+"
+telegraph,e,"Input: telegraph Answer: e
+"
+fond,o,"Input: fond Answer: o
+"
+contractor,o,"Input: contractor Answer: o
+"
+taxi,a,"Input: taxi Answer: a
+"
+connector,o,"Input: connector Answer: o
+"
+mess,e,"Input: mess Answer: e
+"
+grip,r,"Input: grip Answer: r
+"
+headline,e,"Input: headline Answer: e
+"
+dividing,i,"Input: dividing Answer: i
+"
+participant,a,"Input: participant Answer: a
+"
+brake,r,"Input: brake Answer: r
+"
+murderer,u,"Input: murderer Answer: u
+"
+pumping,u,"Input: pumping Answer: u
+"
+haul,a,"Input: haul Answer: a
+"
+synth,y,"Input: synth Answer: y
+"
+fluoride,l,"Input: fluoride Answer: l
+"
+spinal,p,"Input: spinal Answer: p
+"
+guarding,u,"Input: guarding Answer: u
+"
+expertise,x,"Input: expertise Answer: x
+"
+citadel,i,"Input: citadel Answer: i
+"
+cord,o,"Input: cord Answer: o
+"
+cinematography,i,"Input: cinematography Answer: i
+"
+autism,u,"Input: autism Answer: u
+"
+lesson,e,"Input: lesson Answer: e
+"
+intake,n,"Input: intake Answer: n
+"
+exam,x,"Input: exam Answer: x
+"
+thematic,h,"Input: thematic Answer: h
+"
+genome,e,"Input: genome Answer: e
+"
+diffusion,i,"Input: diffusion Answer: i
+"
+privacy,r,"Input: privacy Answer: r
+"
+apparatus,p,"Input: apparatus Answer: p
+"
+libretto,i,"Input: libretto Answer: i
+"
+knocking,n,"Input: knocking Answer: n
+"
+peasant,e,"Input: peasant Answer: e
+"
+capitalism,a,"Input: capitalism Answer: a
+"
+contempt,o,"Input: contempt Answer: o
+"
+booklet,o,"Input: booklet Answer: o
+"
+prosecutor,r,"Input: prosecutor Answer: r
+"
+chorale,h,"Input: chorale Answer: h
+"
+amusement,m,"Input: amusement Answer: m
+"
+royalty,o,"Input: royalty Answer: o
+"
+expose,x,"Input: expose Answer: x
+"
+restriction,e,"Input: restriction Answer: e
+"
+gust,u,"Input: gust Answer: u
+"
+tent,e,"Input: tent Answer: e
+"
+expectation,x,"Input: expectation Answer: x
+"
+aluminum,l,"Input: aluminum Answer: l
+"
+pilgrimage,i,"Input: pilgrimage Answer: i
+"
+legitimacy,e,"Input: legitimacy Answer: e
+"
+meditation,e,"Input: meditation Answer: e
+"
+streaming,t,"Input: streaming Answer: t
+"
+analogy,n,"Input: analogy Answer: n
+"
+socialism,o,"Input: socialism Answer: o
+"
+commuter,o,"Input: commuter Answer: o
+"
+limb,i,"Input: limb Answer: i
+"
+cake,a,"Input: cake Answer: a
+"
+vitamin,i,"Input: vitamin Answer: i
+"
+podium,o,"Input: podium Answer: o
+"
+algorithm,l,"Input: algorithm Answer: l
+"
+segregation,e,"Input: segregation Answer: e
+"
+worry,o,"Input: worry Answer: o
+"
+molecule,o,"Input: molecule Answer: o
+"
+tech,e,"Input: tech Answer: e
+"
+teaser,e,"Input: teaser Answer: e
+"
+nursery,u,"Input: nursery Answer: u
+"
+chancellor,h,"Input: chancellor Answer: h
+"
+nasal,a,"Input: nasal Answer: a
+"
+daytime,a,"Input: daytime Answer: a
+"
+cook,o,"Input: cook Answer: o
+"
+lure,u,"Input: lure Answer: u
+"
+scratch,c,"Input: scratch Answer: c
+"
+vulnerability,u,"Input: vulnerability Answer: u
+"
+staple,t,"Input: staple Answer: t
+"
+sortie,o,"Input: sortie Answer: o
+"
+guess,u,"Input: guess Answer: u
+"
+gamma,a,"Input: gamma Answer: a
+"
+bubble,u,"Input: bubble Answer: u
+"
+exclusion,x,"Input: exclusion Answer: x
+"
+relativity,e,"Input: relativity Answer: e
+"
+sociology,o,"Input: sociology Answer: o
+"
+stealth,t,"Input: stealth Answer: t
+"
+scouting,c,"Input: scouting Answer: c
+"
+affinity,f,"Input: affinity Answer: f
+"
+litter,i,"Input: litter Answer: i
+"
+domination,o,"Input: domination Answer: o
+"
+outlet,u,"Input: outlet Answer: u
+"
+cheek,h,"Input: cheek Answer: h
+"
+forehead,o,"Input: forehead Answer: o
+"
+discretion,i,"Input: discretion Answer: i
+"
+stature,t,"Input: stature Answer: t
+"
+obligation,b,"Input: obligation Answer: b
+"
+valve,a,"Input: valve Answer: a
+"
+dependence,e,"Input: dependence Answer: e
+"
+flour,l,"Input: flour Answer: l
+"
+wrist,r,"Input: wrist Answer: r
+"
+takeoff,a,"Input: takeoff Answer: a
+"
+literacy,i,"Input: literacy Answer: i
+"
+outlook,u,"Input: outlook Answer: u
+"
+premium,r,"Input: premium Answer: r
+"
+mutation,u,"Input: mutation Answer: u
+"
+invest,n,"Input: invest Answer: n
+"
+archaeologist,r,"Input: archaeologist Answer: r
+"
+activation,c,"Input: activation Answer: c
+"
+simulation,i,"Input: simulation Answer: i
+"
+linebacker,i,"Input: linebacker Answer: i
+"
+subscription,u,"Input: subscription Answer: u
+"
+synonym,y,"Input: synonym Answer: y
+"
+recession,e,"Input: recession Answer: e
+"
+hunger,u,"Input: hunger Answer: u
+"
+validity,a,"Input: validity Answer: a
+"
+parkway,a,"Input: parkway Answer: a
+"
+yoga,o,"Input: yoga Answer: o
+"
+induction,n,"Input: induction Answer: n
+"
+thread,h,"Input: thread Answer: h
+"
+plaster,l,"Input: plaster Answer: l
+"
+cinematographer,i,"Input: cinematographer Answer: i
+"
+generator,e,"Input: generator Answer: e
+"
+narration,a,"Input: narration Answer: a
+"
+obstacle,b,"Input: obstacle Answer: b
+"
+subfamily,u,"Input: subfamily Answer: u
+"
+senate,e,"Input: senate Answer: e
+"
+reservation,e,"Input: reservation Answer: e
+"
+workforce,o,"Input: workforce Answer: o
+"
+assemble,s,"Input: assemble Answer: s
+"
+attribute,t,"Input: attribute Answer: t
+"
+pond,o,"Input: pond Answer: o
+"
+par,a,"Input: par Answer: a
+"
+vibe,i,"Input: vibe Answer: i
+"
+fatigue,a,"Input: fatigue Answer: a
+"
+flexibility,l,"Input: flexibility Answer: l
+"
+crane,r,"Input: crane Answer: r
+"
+cassette,a,"Input: cassette Answer: a
+"
+courtship,o,"Input: courtship Answer: o
+"
+adulthood,d,"Input: adulthood Answer: d
+"
+seller,e,"Input: seller Answer: e
+"
+grunge,r,"Input: grunge Answer: r
+"
+sergeant,e,"Input: sergeant Answer: e
+"
+ventilation,e,"Input: ventilation Answer: e
+"
+consort,o,"Input: consort Answer: o
+"
+peer,e,"Input: peer Answer: e
+"
+humidity,u,"Input: humidity Answer: u
+"
+documentation,o,"Input: documentation Answer: o
+"
+masonry,a,"Input: masonry Answer: a
+"
+bunker,u,"Input: bunker Answer: u
+"
+obsession,b,"Input: obsession Answer: b
+"
+contamination,o,"Input: contamination Answer: o
+"
+rewards,e,"Input: rewards Answer: e
+"
+sickness,i,"Input: sickness Answer: i
+"
+antiquity,n,"Input: antiquity Answer: n
+"
+prostitution,r,"Input: prostitution Answer: r
+"
+listener,i,"Input: listener Answer: i
+"
+cocaine,o,"Input: cocaine Answer: o
+"
+standout,t,"Input: standout Answer: t
+"
+reel,e,"Input: reel Answer: e
+"
+vocabulary,o,"Input: vocabulary Answer: o
+"
+birthplace,i,"Input: birthplace Answer: i
+"
+spectacle,p,"Input: spectacle Answer: p
+"
+swamp,w,"Input: swamp Answer: w
+"
+crusade,r,"Input: crusade Answer: r
+"
+ink,n,"Input: ink Answer: n
+"
+deposition,e,"Input: deposition Answer: e
+"
+penis,e,"Input: penis Answer: e
+"
+logging,o,"Input: logging Answer: o
+"
+pathway,a,"Input: pathway Answer: a
+"
+prejudice,r,"Input: prejudice Answer: r
+"
+analyst,n,"Input: analyst Answer: n
+"
+bravery,r,"Input: bravery Answer: r
+"
+clone,l,"Input: clone Answer: l
+"
+rudder,u,"Input: rudder Answer: u
+"
+shake,h,"Input: shake Answer: h
+"
+swift,w,"Input: swift Answer: w
+"
+wardrobe,a,"Input: wardrobe Answer: a
+"
+liquor,i,"Input: liquor Answer: i
+"
+reliability,e,"Input: reliability Answer: e
+"
+pectoral,e,"Input: pectoral Answer: e
+"
+consistency,o,"Input: consistency Answer: o
+"
+prostitute,r,"Input: prostitute Answer: r
+"
+degradation,e,"Input: degradation Answer: e
+"
+rendezvous,e,"Input: rendezvous Answer: e
+"
+stripe,t,"Input: stripe Answer: t
+"
+cloverleaf,l,"Input: cloverleaf Answer: l
+"
+receptor,e,"Input: receptor Answer: e
+"
+antibody,n,"Input: antibody Answer: n
+"
+salvation,a,"Input: salvation Answer: a
+"
+alphabet,l,"Input: alphabet Answer: l
+"
+awarding,w,"Input: awarding Answer: w
+"
+foliage,o,"Input: foliage Answer: o
+"
+modernization,o,"Input: modernization Answer: o
+"
+creativity,r,"Input: creativity Answer: r
+"
+sampling,a,"Input: sampling Answer: a
+"
+botanist,o,"Input: botanist Answer: o
+"
+injection,n,"Input: injection Answer: n
+"
+flowering,l,"Input: flowering Answer: l
+"
+diabetes,i,"Input: diabetes Answer: i
+"
+wreckage,r,"Input: wreckage Answer: r
+"
+obituary,b,"Input: obituary Answer: b
+"
+aggregator,g,"Input: aggregator Answer: g
+"
+cone,o,"Input: cone Answer: o
+"
+messenger,e,"Input: messenger Answer: e
+"
+endurance,n,"Input: endurance Answer: n
+"
+abandonment,b,"Input: abandonment Answer: b
+"
+localization,o,"Input: localization Answer: o
+"
+rubble,u,"Input: rubble Answer: u
+"
+dissent,i,"Input: dissent Answer: i
+"
+granddaughter,r,"Input: granddaughter Answer: r
+"
+advancement,d,"Input: advancement Answer: d
+"
+credibility,r,"Input: credibility Answer: r
+"
+excellence,x,"Input: excellence Answer: x
+"
+winding,i,"Input: winding Answer: i
+"
+repetition,e,"Input: repetition Answer: e
+"
+intricate,n,"Input: intricate Answer: n
+"
+neglect,e,"Input: neglect Answer: e
+"
+flanking,l,"Input: flanking Answer: l
+"
+perfection,e,"Input: perfection Answer: e
+"
+forage,o,"Input: forage Answer: o
+"
+voter,o,"Input: voter Answer: o
+"
+hiking,i,"Input: hiking Answer: i
+"
+paperback,a,"Input: paperback Answer: a
+"
+witchcraft,i,"Input: witchcraft Answer: i
+"
+ceasefire,e,"Input: ceasefire Answer: e
+"
+accompaniment,c,"Input: accompaniment Answer: c
+"
+periphery,e,"Input: periphery Answer: e
+"
+modeling,o,"Input: modeling Answer: o
+"
+vapor,a,"Input: vapor Answer: a
+"
+inventor,n,"Input: inventor Answer: n
+"
+quartet,u,"Input: quartet Answer: u
+"
+asset,s,"Input: asset Answer: s
+"
+posture,o,"Input: posture Answer: o
+"
+container,o,"Input: container Answer: o
+"
+mainline,a,"Input: mainline Answer: a
+"
+flavor,l,"Input: flavor Answer: l
+"
+discontent,i,"Input: discontent Answer: i
+"
+resentment,e,"Input: resentment Answer: e
+"
+envelope,n,"Input: envelope Answer: n
+"
+cartoonist,a,"Input: cartoonist Answer: a
+"
+sailor,a,"Input: sailor Answer: a
+"
+tumor,u,"Input: tumor Answer: u
+"
+landslide,a,"Input: landslide Answer: a
+"
+shelf,h,"Input: shelf Answer: h
+"
+affiliation,f,"Input: affiliation Answer: f
+"
+residency,e,"Input: residency Answer: e
+"
+deterioration,e,"Input: deterioration Answer: e
+"
+metabolism,e,"Input: metabolism Answer: e
+"
+thorium,h,"Input: thorium Answer: h
+"
+echo,c,"Input: echo Answer: c
+"
+wounding,o,"Input: wounding Answer: o
+"
+recapture,e,"Input: recapture Answer: e
+"
+stud,t,"Input: stud Answer: t
+"
+sermon,e,"Input: sermon Answer: e
+"
+mathematician,a,"Input: mathematician Answer: a
+"
+troupe,r,"Input: troupe Answer: r
+"
+anterior,n,"Input: anterior Answer: n
+"
+overseeing,v,"Input: overseeing Answer: v
+"
+shootout,h,"Input: shootout Answer: h
+"
+liaison,i,"Input: liaison Answer: i
+"
+expulsion,x,"Input: expulsion Answer: x
+"
+pollen,o,"Input: pollen Answer: o
+"
+concussion,o,"Input: concussion Answer: o
+"
+jewellery,e,"Input: jewellery Answer: e
+"
+purity,u,"Input: purity Answer: u
+"
+eclipse,c,"Input: eclipse Answer: c
+"
+scheduling,c,"Input: scheduling Answer: c
+"
+compartment,o,"Input: compartment Answer: o
+"
+excuse,x,"Input: excuse Answer: x
+"
+lobbying,o,"Input: lobbying Answer: o
+"
+elbow,l,"Input: elbow Answer: l
+"
+pardon,a,"Input: pardon Answer: a
+"
+scent,c,"Input: scent Answer: c
+"
+setlist,e,"Input: setlist Answer: e
+"
+pot,o,"Input: pot Answer: o
+"
+restraint,e,"Input: restraint Answer: e
+"
+superintendent,u,"Input: superintendent Answer: u
+"
+exhaust,x,"Input: exhaust Answer: x
+"
+capita,a,"Input: capita Answer: a
+"
+semifinal,e,"Input: semifinal Answer: e
+"
+objection,b,"Input: objection Answer: b
+"
+deficiency,e,"Input: deficiency Answer: e
+"
+terrace,e,"Input: terrace Answer: e
+"
+fertility,e,"Input: fertility Answer: e
+"
+chemist,h,"Input: chemist Answer: h
+"
+renew,e,"Input: renew Answer: e
+"
+parrot,a,"Input: parrot Answer: a
+"
+vernacular,e,"Input: vernacular Answer: e
+"
+handing,a,"Input: handing Answer: a
+"
+smile,m,"Input: smile Answer: m
+"
+luminosity,u,"Input: luminosity Answer: u
+"
+stereo,t,"Input: stereo Answer: t
+"
+battling,a,"Input: battling Answer: a
+"
+float,l,"Input: float Answer: l
+"
+stallion,t,"Input: stallion Answer: t
+"
+planting,l,"Input: planting Answer: l
+"
+supremacy,u,"Input: supremacy Answer: u
+"
+organise,r,"Input: organise Answer: r
+"
+shortstop,h,"Input: shortstop Answer: h
+"
+bath,a,"Input: bath Answer: a
+"
+citation,i,"Input: citation Answer: i
+"
+masculine,a,"Input: masculine Answer: a
+"
+builder,u,"Input: builder Answer: u
+"
+consultation,o,"Input: consultation Answer: o
+"
+treasury,r,"Input: treasury Answer: r
+"
+neighbourhood,e,"Input: neighbourhood Answer: e
+"
+blunt,l,"Input: blunt Answer: l
+"
+camping,a,"Input: camping Answer: a
+"
+conditioning,o,"Input: conditioning Answer: o
+"
+magistrate,a,"Input: magistrate Answer: a
+"
+bikini,i,"Input: bikini Answer: i
+"
+techno,e,"Input: techno Answer: e
+"
+conscription,o,"Input: conscription Answer: o
+"
+schooling,c,"Input: schooling Answer: c
+"
+kidnapping,i,"Input: kidnapping Answer: i
+"
+spray,p,"Input: spray Answer: p
+"
+feminism,e,"Input: feminism Answer: e
+"
+assertion,s,"Input: assertion Answer: s
+"
+tutor,u,"Input: tutor Answer: u
+"
+capsule,a,"Input: capsule Answer: a
+"
+recipe,e,"Input: recipe Answer: e
+"
+compliance,o,"Input: compliance Answer: o
+"
+pacing,a,"Input: pacing Answer: a
+"
+sect,e,"Input: sect Answer: e
+"
+brood,r,"Input: brood Answer: r
+"
+dopamine,o,"Input: dopamine Answer: o
+"
+grouping,r,"Input: grouping Answer: r
+"
+chip,h,"Input: chip Answer: h
+"
+tuition,u,"Input: tuition Answer: u
+"
+silicon,i,"Input: silicon Answer: i
+"
+famine,a,"Input: famine Answer: a
+"
+crashing,r,"Input: crashing Answer: r
+"
+reinforcement,e,"Input: reinforcement Answer: e
+"
+dissatisfaction,i,"Input: dissatisfaction Answer: i
+"
+denomination,e,"Input: denomination Answer: e
+"
+basket,a,"Input: basket Answer: a
+"
+manipulation,a,"Input: manipulation Answer: a
+"
+insignia,n,"Input: insignia Answer: n
+"
+delta,e,"Input: delta Answer: e
+"
+frontman,r,"Input: frontman Answer: r
+"
+varsity,a,"Input: varsity Answer: a
+"
+locality,o,"Input: locality Answer: o
+"
+stereotype,t,"Input: stereotype Answer: t
+"
+midfield,i,"Input: midfield Answer: i
+"
+litigation,i,"Input: litigation Answer: i
+"
+positioning,o,"Input: positioning Answer: o
+"
+juice,u,"Input: juice Answer: u
+"
+liability,i,"Input: liability Answer: i
+"
+regeneration,e,"Input: regeneration Answer: e
+"
+maid,a,"Input: maid Answer: a
+"
+certainty,e,"Input: certainty Answer: e
+"
+plotting,l,"Input: plotting Answer: l
+"
+semester,e,"Input: semester Answer: e
+"
+clutch,l,"Input: clutch Answer: l
+"
+gut,u,"Input: gut Answer: u
+"
+trim,r,"Input: trim Answer: r
+"
+hazard,a,"Input: hazard Answer: a
+"
+apple,p,"Input: apple Answer: p
+"
+grenade,r,"Input: grenade Answer: r
+"
+gag,a,"Input: gag Answer: a
+"
+jewelry,e,"Input: jewelry Answer: e
+"
+brightness,r,"Input: brightness Answer: r
+"
+imprint,m,"Input: imprint Answer: m
+"
+remark,e,"Input: remark Answer: e
+"
+leap,e,"Input: leap Answer: e
+"
+nonsense,o,"Input: nonsense Answer: o
+"
+prevalence,r,"Input: prevalence Answer: r
+"
+backlash,a,"Input: backlash Answer: a
+"
+toilet,o,"Input: toilet Answer: o
+"
+pile,i,"Input: pile Answer: i
+"
+pad,a,"Input: pad Answer: a
+"
+originality,r,"Input: originality Answer: r
+"
+registry,e,"Input: registry Answer: e
+"
+heal,e,"Input: heal Answer: e
+"
+militant,i,"Input: militant Answer: i
+"
+contradictory,o,"Input: contradictory Answer: o
+"
+attire,t,"Input: attire Answer: t
+"
+pastor,a,"Input: pastor Answer: a
+"
+quicker,u,"Input: quicker Answer: u
+"
+verb,e,"Input: verb Answer: e
+"
+judiciary,u,"Input: judiciary Answer: u
+"
+abdominal,b,"Input: abdominal Answer: b
+"
+dispersal,i,"Input: dispersal Answer: i
+"
+casualty,a,"Input: casualty Answer: a
+"
+unification,n,"Input: unification Answer: n
+"
+tuning,u,"Input: tuning Answer: u
+"
+electorate,l,"Input: electorate Answer: l
+"
+bolster,o,"Input: bolster Answer: o
+"
+taxonomy,a,"Input: taxonomy Answer: a
+"
+petroleum,e,"Input: petroleum Answer: e
+"
+turf,u,"Input: turf Answer: u
+"
+pony,o,"Input: pony Answer: o
+"
+acceleration,c,"Input: acceleration Answer: c
+"
+sighting,i,"Input: sighting Answer: i
+"
+drumming,r,"Input: drumming Answer: r
+"
+topography,o,"Input: topography Answer: o
+"
+dairy,a,"Input: dairy Answer: a
+"
+viewpoint,i,"Input: viewpoint Answer: i
+"
+mercy,e,"Input: mercy Answer: e
+"
+mapping,a,"Input: mapping Answer: a
+"
+hormone,o,"Input: hormone Answer: o
+"
+toe,o,"Input: toe Answer: o
+"
+setup,e,"Input: setup Answer: e
+"
+sabotage,a,"Input: sabotage Answer: a
+"
+smuggling,m,"Input: smuggling Answer: m
+"
+commence,o,"Input: commence Answer: o
+"
+ratification,a,"Input: ratification Answer: a
+"
+forum,o,"Input: forum Answer: o
+"
+telegram,e,"Input: telegram Answer: e
+"
+lizard,i,"Input: lizard Answer: i
+"
+butter,u,"Input: butter Answer: u
+"
+showrunner,h,"Input: showrunner Answer: h
+"
+doctorate,o,"Input: doctorate Answer: o
+"
+convenience,o,"Input: convenience Answer: o
+"
+exposition,x,"Input: exposition Answer: x
+"
+readiness,e,"Input: readiness Answer: e
+"
+computing,o,"Input: computing Answer: o
+"
+resupply,e,"Input: resupply Answer: e
+"
+ribbon,i,"Input: ribbon Answer: i
+"
+calculation,a,"Input: calculation Answer: a
+"
+interrogation,n,"Input: interrogation Answer: n
+"
+pornography,o,"Input: pornography Answer: o
+"
+postal,o,"Input: postal Answer: o
+"
+pulse,u,"Input: pulse Answer: u
+"
+fiber,i,"Input: fiber Answer: i
+"
+pepper,e,"Input: pepper Answer: e
+"
+injunction,n,"Input: injunction Answer: n
+"
+productivity,r,"Input: productivity Answer: r
+"
+discourse,i,"Input: discourse Answer: i
+"
+doorway,o,"Input: doorway Answer: o
+"
+rink,i,"Input: rink Answer: i
+"
+distortion,i,"Input: distortion Answer: i
+"
+grape,r,"Input: grape Answer: r
+"
+reversal,e,"Input: reversal Answer: e
+"
+whaling,h,"Input: whaling Answer: h
+"
+centimeter,e,"Input: centimeter Answer: e
+"
+sensory,e,"Input: sensory Answer: e
+"
+heel,e,"Input: heel Answer: e
+"
+secrecy,e,"Input: secrecy Answer: e
+"
+wavelength,a,"Input: wavelength Answer: a
+"
+arbitration,r,"Input: arbitration Answer: r
+"
+nectar,e,"Input: nectar Answer: e
+"
+prevention,r,"Input: prevention Answer: r
+"
+fringe,r,"Input: fringe Answer: r
+"
+lockout,o,"Input: lockout Answer: o
+"
+transcription,r,"Input: transcription Answer: r
+"
+peacetime,e,"Input: peacetime Answer: e
+"
+dietary,i,"Input: dietary Answer: i
+"
+whistle,h,"Input: whistle Answer: h
+"
+spear,p,"Input: spear Answer: p
+"
+commencement,o,"Input: commencement Answer: o
+"
+offseason,f,"Input: offseason Answer: f
+"
+hint,i,"Input: hint Answer: i
+"
+boot,o,"Input: boot Answer: o
+"
+nationality,a,"Input: nationality Answer: a
+"
+puck,u,"Input: puck Answer: u
+"
+simulate,i,"Input: simulate Answer: i
+"
+titanium,i,"Input: titanium Answer: i
+"
+rapping,a,"Input: rapping Answer: a
+"
+waist,a,"Input: waist Answer: a
+"
+classroom,l,"Input: classroom Answer: l
+"
+manoeuvre,a,"Input: manoeuvre Answer: a
+"
+algae,l,"Input: algae Answer: l
+"
+irony,r,"Input: irony Answer: r
+"
+rental,e,"Input: rental Answer: e
+"
+tap,a,"Input: tap Answer: a
+"
+drafting,r,"Input: drafting Answer: r
+"
+intro,n,"Input: intro Answer: n
+"
+consul,o,"Input: consul Answer: o
+"
+imitation,m,"Input: imitation Answer: m
+"
+weaving,e,"Input: weaving Answer: e
+"
+octagonal,c,"Input: octagonal Answer: c
+"
+acquaintance,c,"Input: acquaintance Answer: c
+"
+destiny,e,"Input: destiny Answer: e
+"
+incidence,n,"Input: incidence Answer: n
+"
+rigging,i,"Input: rigging Answer: i
+"
+bidding,i,"Input: bidding Answer: i
+"
+convict,o,"Input: convict Answer: o
+"
+upbringing,p,"Input: upbringing Answer: p
+"
+boiling,o,"Input: boiling Answer: o
+"
+venom,e,"Input: venom Answer: e
+"
+courtesy,o,"Input: courtesy Answer: o
+"
+interlude,n,"Input: interlude Answer: n
+"

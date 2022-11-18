@@ -1,0 +1,6001 @@
+input,output,text
+pig,big,"Input: pig Answer: big
+"
+sing,ring,"Input: sing Answer: ring
+"
+relaxation,explanation,"Input: relaxation Answer: explanation
+"
+sad,mad,"Input: sad Answer: mad
+"
+annoyed,avoid,"Input: annoyed Answer: avoid
+"
+brain,plain,"Input: brain Answer: plain
+"
+occupation,operation,"Input: occupation Answer: operation
+"
+station,preparation,"Input: station Answer: preparation
+"
+face,race,"Input: face Answer: race
+"
+there,pair,"Input: there Answer: pair
+"
+review,you,"Input: review Answer: you
+"
+unknown,postpone,"Input: unknown Answer: postpone
+"
+stand,land,"Input: stand Answer: land
+"
+thick,kick,"Input: thick Answer: kick
+"
+toe,grow,"Input: toe Answer: grow
+"
+die,pie,"Input: die Answer: pie
+"
+clear,fear,"Input: clear Answer: fear
+"
+explanation,organization,"Input: explanation Answer: organization
+"
+bright,light,"Input: bright Answer: light
+"
+her,stir,"Input: her Answer: stir
+"
+lend,end,"Input: lend Answer: end
+"
+book,cook,"Input: book Answer: cook
+"
+float,vote,"Input: float Answer: vote
+"
+bite,fight,"Input: bite Answer: fight
+"
+pea,tree,"Input: pea Answer: tree
+"
+buy,apply,"Input: buy Answer: apply
+"
+dress,success,"Input: dress Answer: success
+"
+snow,ago,"Input: snow Answer: ago
+"
+tight,flight,"Input: tight Answer: flight
+"
+buy,lie,"Input: buy Answer: lie
+"
+routine,mean,"Input: routine Answer: mean
+"
+pear,hair,"Input: pear Answer: hair
+"
+bright,flight,"Input: bright Answer: flight
+"
+tea,sea,"Input: tea Answer: sea
+"
+immigration,reservation,"Input: immigration Answer: reservation
+"
+cloud,proud,"Input: cloud Answer: proud
+"
+tie,pie,"Input: tie Answer: pie
+"
+unknown,alone,"Input: unknown Answer: alone
+"
+write,sight,"Input: write Answer: sight
+"
+bleed,feed,"Input: bleed Answer: feed
+"
+population,location,"Input: population Answer: location
+"
+review,shampoo,"Input: review Answer: shampoo
+"
+agree,tree,"Input: agree Answer: tree
+"
+anymore,explore,"Input: anymore Answer: explore
+"
+preparation,generation,"Input: preparation Answer: generation
+"
+link,drink,"Input: link Answer: drink
+"
+condition,musician,"Input: condition Answer: musician
+"
+agree,fee,"Input: agree Answer: fee
+"
+wrong,long,"Input: wrong Answer: long
+"
+identification,explanation,"Input: identification Answer: explanation
+"
+might,invite,"Input: might Answer: invite
+"
+relaxation,occupation,"Input: relaxation Answer: occupation
+"
+offense,sense,"Input: offense Answer: sense
+"
+election,correction,"Input: election Answer: correction
+"
+correct,collect,"Input: correct Answer: collect
+"
+prove,approve,"Input: prove Answer: approve
+"
+thin,violin,"Input: thin Answer: violin
+"
+degree,he,"Input: degree Answer: he
+"
+unpack,pack,"Input: unpack Answer: pack
+"
+unkind,find,"Input: unkind Answer: find
+"
+shape,grape,"Input: shape Answer: grape
+"
+rain,chain,"Input: rain Answer: chain
+"
+snow,know,"Input: snow Answer: know
+"
+organization,operation,"Input: organization Answer: operation
+"
+reach,peach,"Input: reach Answer: peach
+"
+exhibition,competition,"Input: exhibition Answer: competition
+"
+twin,thin,"Input: twin Answer: thin
+"
+intend,recommend,"Input: intend Answer: recommend
+"
+disagree,tea,"Input: disagree Answer: tea
+"
+connect,collect,"Input: connect Answer: collect
+"
+send,lend,"Input: send Answer: lend
+"
+exhibition,intermission,"Input: exhibition Answer: intermission
+"
+undress,less,"Input: undress Answer: less
+"
+height,invite,"Input: height Answer: invite
+"
+do,who,"Input: do Answer: who
+"
+exchange,range,"Input: exchange Answer: range
+"
+incorrect,connect,"Input: incorrect Answer: connect
+"
+sew,slow,"Input: sew Answer: slow
+"
+expedition,ambition,"Input: expedition Answer: ambition
+"
+you,who,"Input: you Answer: who
+"
+imagination,communication,"Input: imagination Answer: communication
+"
+information,explanation,"Input: information Answer: explanation
+"
+fry,lie,"Input: fry Answer: lie
+"
+behave,shave,"Input: behave Answer: shave
+"
+alarm,farm,"Input: alarm Answer: farm
+"
+anymore,shore,"Input: anymore Answer: shore
+"
+who,too,"Input: who Answer: too
+"
+bug,mug,"Input: bug Answer: mug
+"
+spy,shy,"Input: spy Answer: shy
+"
+unknown,own,"Input: unknown Answer: own
+"
+lie,apply,"Input: lie Answer: apply
+"
+fail,jail,"Input: fail Answer: jail
+"
+charge,large,"Input: charge Answer: large
+"
+add,dad,"Input: add Answer: dad
+"
+float,boat,"Input: float Answer: boat
+"
+size,prize,"Input: size Answer: prize
+"
+exhibition,permission,"Input: exhibition Answer: permission
+"
+case,race,"Input: case Answer: race
+"
+conversation,invitation,"Input: conversation Answer: invitation
+"
+support,court,"Input: support Answer: court
+"
+chair,pear,"Input: chair Answer: pear
+"
+immigration,celebration,"Input: immigration Answer: celebration
+"
+cry,pie,"Input: cry Answer: pie
+"
+annoy,boy,"Input: annoy Answer: boy
+"
+net,vet,"Input: net Answer: vet
+"
+politician,expedition,"Input: politician Answer: expedition
+"
+fight,right,"Input: fight Answer: right
+"
+each,speech,"Input: each Answer: speech
+"
+identification,examination,"Input: identification Answer: examination
+"
+might,night,"Input: might Answer: night
+"
+sense,tense,"Input: sense Answer: tense
+"
+well,spell,"Input: well Answer: spell
+"
+registration,station,"Input: registration Answer: station
+"
+role,bowl,"Input: role Answer: bowl
+"
+stream,team,"Input: stream Answer: team
+"
+view,do,"Input: view Answer: do
+"
+well,unwell,"Input: well Answer: unwell
+"
+die,spy,"Input: die Answer: spy
+"
+my,dry,"Input: my Answer: dry
+"
+wait,late,"Input: wait Answer: late
+"
+repair,rare,"Input: repair Answer: rare
+"
+fee,see,"Input: fee Answer: see
+"
+celebration,conversation,"Input: celebration Answer: conversation
+"
+nurse,worse,"Input: nurse Answer: worse
+"
+sea,disagree,"Input: sea Answer: disagree
+"
+bear,compare,"Input: bear Answer: compare
+"
+show,blow,"Input: show Answer: blow
+"
+fail,rail,"Input: fail Answer: rail
+"
+hi,buy,"Input: hi Answer: buy
+"
+soul,whole,"Input: soul Answer: whole
+"
+jet,net,"Input: jet Answer: net
+"
+location,conversation,"Input: location Answer: conversation
+"
+population,registration,"Input: population Answer: registration
+"
+storm,form,"Input: storm Answer: form
+"
+sun,son,"Input: sun Answer: son
+"
+freeze,these,"Input: freeze Answer: these
+"
+conversation,presentation,"Input: conversation Answer: presentation
+"
+eye,tie,"Input: eye Answer: tie
+"
+ache,take,"Input: ache Answer: take
+"
+deep,sheep,"Input: deep Answer: sheep
+"
+there,spare,"Input: there Answer: spare
+"
+lie,my,"Input: lie Answer: my
+"
+great,plate,"Input: great Answer: plate
+"
+their,rare,"Input: their Answer: rare
+"
+speak,technique,"Input: speak Answer: technique
+"
+few,flu,"Input: few Answer: flu
+"
+slow,so,"Input: slow Answer: so
+"
+care,rare,"Input: care Answer: rare
+"
+rise,prize,"Input: rise Answer: prize
+"
+boil,spoil,"Input: boil Answer: spoil
+"
+stain,contain,"Input: stain Answer: contain
+"
+prepare,their,"Input: prepare Answer: their
+"
+so,snow,"Input: so Answer: snow
+"
+destroy,toy,"Input: destroy Answer: toy
+"
+pour,war,"Input: pour Answer: war
+"
+mine,line,"Input: mine Answer: line
+"
+cheese,freeze,"Input: cheese Answer: freeze
+"
+fair,share,"Input: fair Answer: share
+"
+relaxation,presentation,"Input: relaxation Answer: presentation
+"
+clown,downtown,"Input: clown Answer: downtown
+"
+intermission,competition,"Input: intermission Answer: competition
+"
+explain,train,"Input: explain Answer: train
+"
+loan,zone,"Input: loan Answer: zone
+"
+site,flight,"Input: site Answer: flight
+"
+slow,go,"Input: slow Answer: go
+"
+technology,apology,"Input: technology Answer: apology
+"
+clean,bean,"Input: clean Answer: bean
+"
+friend,defend,"Input: friend Answer: defend
+"
+communication,station,"Input: communication Answer: station
+"
+right,tight,"Input: right Answer: tight
+"
+invite,flight,"Input: invite Answer: flight
+"
+fee,sea,"Input: fee Answer: sea
+"
+ahead,head,"Input: ahead Answer: head
+"
+tight,overnight,"Input: tight Answer: overnight
+"
+bright,fight,"Input: bright Answer: fight
+"
+grill,skill,"Input: grill Answer: skill
+"
+die,high,"Input: die Answer: high
+"
+how,allow,"Input: how Answer: allow
+"
+registration,animation,"Input: registration Answer: animation
+"
+height,quite,"Input: height Answer: quite
+"
+near,career,"Input: near Answer: career
+"
+expensive,inexpensive,"Input: expensive Answer: inexpensive
+"
+cake,mistake,"Input: cake Answer: mistake
+"
+downtown,noun,"Input: downtown Answer: noun
+"
+wild,child,"Input: wild Answer: child
+"
+hi,eye,"Input: hi Answer: eye
+"
+cut,hut,"Input: cut Answer: hut
+"
+goal,soul,"Input: goal Answer: soul
+"
+polite,night,"Input: polite Answer: night
+"
+pear,compare,"Input: pear Answer: compare
+"
+agree,degree,"Input: agree Answer: degree
+"
+park,mark,"Input: park Answer: mark
+"
+late,wait,"Input: late Answer: wait
+"
+hit,sit,"Input: hit Answer: sit
+"
+registration,information,"Input: registration Answer: information
+"
+prepare,care,"Input: prepare Answer: care
+"
+priest,east,"Input: priest Answer: east
+"
+active,attractive,"Input: active Answer: attractive
+"
+pot,spot,"Input: pot Answer: spot
+"
+operation,preparation,"Input: operation Answer: preparation
+"
+bill,grill,"Input: bill Answer: grill
+"
+wide,side,"Input: wide Answer: side
+"
+population,situation,"Input: population Answer: situation
+"
+sore,floor,"Input: sore Answer: floor
+"
+location,reservation,"Input: location Answer: reservation
+"
+mistake,shake,"Input: mistake Answer: shake
+"
+shirt,dessert,"Input: shirt Answer: dessert
+"
+quite,might,"Input: quite Answer: might
+"
+postpone,alone,"Input: postpone Answer: alone
+"
+sky,die,"Input: sky Answer: die
+"
+shape,escape,"Input: shape Answer: escape
+"
+invitation,relaxation,"Input: invitation Answer: relaxation
+"
+preparation,location,"Input: preparation Answer: location
+"
+store,door,"Input: store Answer: door
+"
+hate,gate,"Input: hate Answer: gate
+"
+all,baseball,"Input: all Answer: baseball
+"
+section,election,"Input: section Answer: election
+"
+owe,grow,"Input: owe Answer: grow
+"
+dry,spy,"Input: dry Answer: spy
+"
+enjoy,annoy,"Input: enjoy Answer: annoy
+"
+promote,note,"Input: promote Answer: note
+"
+information,punctuation,"Input: information Answer: punctuation
+"
+repair,questionnaire,"Input: repair Answer: questionnaire
+"
+animation,generation,"Input: animation Answer: generation
+"
+old,hold,"Input: old Answer: hold
+"
+dress,undress,"Input: dress Answer: undress
+"
+straight,great,"Input: straight Answer: great
+"
+ski,free,"Input: ski Answer: free
+"
+connection,election,"Input: connection Answer: election
+"
+do,flu,"Input: do Answer: flu
+"
+fare,fair,"Input: fare Answer: fair
+"
+brave,behave,"Input: brave Answer: behave
+"
+loose,juice,"Input: loose Answer: juice
+"
+tight,sight,"Input: tight Answer: sight
+"
+not,pot,"Input: not Answer: pot
+"
+punctuation,situation,"Input: punctuation Answer: situation
+"
+dear,fear,"Input: dear Answer: fear
+"
+eye,pie,"Input: eye Answer: pie
+"
+trend,attend,"Input: trend Answer: attend
+"
+date,create,"Input: date Answer: create
+"
+animation,presentation,"Input: animation Answer: presentation
+"
+from,thumb,"Input: from Answer: thumb
+"
+lake,cake,"Input: lake Answer: cake
+"
+brochure,pure,"Input: brochure Answer: pure
+"
+trend,send,"Input: trend Answer: send
+"
+fax,tax,"Input: fax Answer: tax
+"
+hate,weight,"Input: hate Answer: weight
+"
+outside,decide,"Input: outside Answer: decide
+"
+defend,attend,"Input: defend Answer: attend
+"
+stressful,successful,"Input: stressful Answer: successful
+"
+operation,presentation,"Input: operation Answer: presentation
+"
+less,guess,"Input: less Answer: guess
+"
+plain,gain,"Input: plain Answer: gain
+"
+face,space,"Input: face Answer: space
+"
+bury,ferry,"Input: bury Answer: ferry
+"
+immigration,location,"Input: immigration Answer: location
+"
+prepare,pear,"Input: prepare Answer: pear
+"
+sight,site,"Input: sight Answer: site
+"
+sew,no,"Input: sew Answer: no
+"
+baseball,mall,"Input: baseball Answer: mall
+"
+kangaroo,view,"Input: kangaroo Answer: view
+"
+point,disappoint,"Input: point Answer: disappoint
+"
+ceiling,feeling,"Input: ceiling Answer: feeling
+"
+spend,intend,"Input: spend Answer: intend
+"
+drink,think,"Input: drink Answer: think
+"
+tea,knee,"Input: tea Answer: knee
+"
+persuade,trade,"Input: persuade Answer: trade
+"
+roll,soul,"Input: roll Answer: soul
+"
+unwell,sell,"Input: unwell Answer: sell
+"
+twin,begin,"Input: twin Answer: begin
+"
+sink,pink,"Input: sink Answer: pink
+"
+lemonade,persuade,"Input: lemonade Answer: persuade
+"
+try,eye,"Input: try Answer: eye
+"
+tea,see,"Input: tea Answer: see
+"
+gain,rain,"Input: gain Answer: rain
+"
+role,control,"Input: role Answer: control
+"
+intend,defend,"Input: intend Answer: defend
+"
+fun,gun,"Input: fun Answer: gun
+"
+write,polite,"Input: write Answer: polite
+"
+yes,guess,"Input: yes Answer: guess
+"
+explanation,celebration,"Input: explanation Answer: celebration
+"
+plane,plain,"Input: plane Answer: plain
+"
+tip,ship,"Input: tip Answer: ship
+"
+ship,trip,"Input: ship Answer: trip
+"
+situation,conversation,"Input: situation Answer: conversation
+"
+animation,transportation,"Input: animation Answer: transportation
+"
+bake,break,"Input: bake Answer: break
+"
+awake,steak,"Input: awake Answer: steak
+"
+please,these,"Input: please Answer: these
+"
+explanation,conversation,"Input: explanation Answer: conversation
+"
+unpack,black,"Input: unpack Answer: black
+"
+imagination,preparation,"Input: imagination Answer: preparation
+"
+attack,track,"Input: attack Answer: track
+"
+their,spare,"Input: their Answer: spare
+"
+throw,snow,"Input: throw Answer: snow
+"
+expedition,permission,"Input: expedition Answer: permission
+"
+jam,exam,"Input: jam Answer: exam
+"
+preparation,immigration,"Input: preparation Answer: immigration
+"
+eye,high,"Input: eye Answer: high
+"
+loan,bone,"Input: loan Answer: bone
+"
+yet,net,"Input: yet Answer: net
+"
+best,suggest,"Input: best Answer: suggest
+"
+fair,declare,"Input: fair Answer: declare
+"
+relation,location,"Input: relation Answer: location
+"
+throw,so,"Input: throw Answer: so
+"
+communication,examination,"Input: communication Answer: examination
+"
+transportation,preparation,"Input: transportation Answer: preparation
+"
+kangaroo,crew,"Input: kangaroo Answer: crew
+"
+occupation,reservation,"Input: occupation Answer: reservation
+"
+fly,eye,"Input: fly Answer: eye
+"
+cent,tent,"Input: cent Answer: tent
+"
+phone,postpone,"Input: phone Answer: postpone
+"
+chess,guess,"Input: chess Answer: guess
+"
+reach,each,"Input: reach Answer: each
+"
+spill,kill,"Input: spill Answer: kill
+"
+spy,nearby,"Input: spy Answer: nearby
+"
+flat,at,"Input: flat Answer: at
+"
+conversation,punctuation,"Input: conversation Answer: punctuation
+"
+boat,goat,"Input: boat Answer: goat
+"
+right,invite,"Input: right Answer: invite
+"
+key,she,"Input: key Answer: she
+"
+date,skate,"Input: date Answer: skate
+"
+sea,see,"Input: sea Answer: see
+"
+understand,stand,"Input: understand Answer: stand
+"
+free,degree,"Input: free Answer: degree
+"
+share,bear,"Input: share Answer: bear
+"
+sand,hand,"Input: sand Answer: hand
+"
+waste,taste,"Input: waste Answer: taste
+"
+reservation,organization,"Input: reservation Answer: organization
+"
+so,show,"Input: so Answer: show
+"
+chain,plane,"Input: chain Answer: plane
+"
+too,you,"Input: too Answer: you
+"
+so,slow,"Input: so Answer: slow
+"
+die,bye,"Input: die Answer: bye
+"
+cent,rent,"Input: cent Answer: rent
+"
+population,reservation,"Input: population Answer: reservation
+"
+invitation,explanation,"Input: invitation Answer: explanation
+"
+let,cigarette,"Input: let Answer: cigarette
+"
+add,mad,"Input: add Answer: mad
+"
+beach,speech,"Input: beach Answer: speech
+"
+air,pair,"Input: air Answer: pair
+"
+plane,explain,"Input: plane Answer: explain
+"
+know,ago,"Input: know Answer: ago
+"
+goodbye,hi,"Input: goodbye Answer: hi
+"
+frame,name,"Input: frame Answer: name
+"
+composition,ambition,"Input: composition Answer: ambition
+"
+pick,stick,"Input: pick Answer: stick
+"
+mail,rail,"Input: mail Answer: rail
+"
+death,breath,"Input: death Answer: breath
+"
+explanation,identification,"Input: explanation Answer: identification
+"
+small,call,"Input: small Answer: call
+"
+rare,their,"Input: rare Answer: their
+"
+overnight,might,"Input: overnight Answer: might
+"
+dozen,cousin,"Input: dozen Answer: cousin
+"
+slow,snow,"Input: slow Answer: snow
+"
+mistake,lake,"Input: mistake Answer: lake
+"
+take,steak,"Input: take Answer: steak
+"
+write,kite,"Input: write Answer: kite
+"
+stone,loan,"Input: stone Answer: loan
+"
+bed,dead,"Input: bed Answer: dead
+"
+suggest,southwest,"Input: suggest Answer: southwest
+"
+gun,son,"Input: gun Answer: son
+"
+bright,sight,"Input: bright Answer: sight
+"
+bone,zone,"Input: bone Answer: zone
+"
+cat,flat,"Input: cat Answer: flat
+"
+ache,cake,"Input: ache Answer: cake
+"
+tight,kite,"Input: tight Answer: kite
+"
+show,so,"Input: show Answer: so
+"
+lip,trip,"Input: lip Answer: trip
+"
+know,row,"Input: know Answer: row
+"
+brake,ache,"Input: brake Answer: ache
+"
+apology,biology,"Input: apology Answer: biology
+"
+plate,hate,"Input: plate Answer: hate
+"
+registration,communication,"Input: registration Answer: communication
+"
+nearby,high,"Input: nearby Answer: high
+"
+cheek,antique,"Input: cheek Answer: antique
+"
+track,snack,"Input: track Answer: snack
+"
+tall,baseball,"Input: tall Answer: baseball
+"
+zone,stone,"Input: zone Answer: stone
+"
+northwest,guest,"Input: northwest Answer: guest
+"
+ferry,scary,"Input: ferry Answer: scary
+"
+view,too,"Input: view Answer: too
+"
+degree,she,"Input: degree Answer: she
+"
+boat,coat,"Input: boat Answer: coat
+"
+die,eye,"Input: die Answer: eye
+"
+plain,stain,"Input: plain Answer: stain
+"
+recover,cover,"Input: recover Answer: cover
+"
+take,snake,"Input: take Answer: snake
+"
+floor,pour,"Input: floor Answer: pour
+"
+free,ski,"Input: free Answer: ski
+"
+dressed,rest,"Input: dressed Answer: rest
+"
+stressed,arrest,"Input: stressed Answer: arrest
+"
+die,apply,"Input: die Answer: apply
+"
+presentation,information,"Input: presentation Answer: information
+"
+spare,square,"Input: spare Answer: square
+"
+instead,bed,"Input: instead Answer: bed
+"
+worse,purse,"Input: worse Answer: purse
+"
+hair,fair,"Input: hair Answer: fair
+"
+immigration,punctuation,"Input: immigration Answer: punctuation
+"
+blow,oh,"Input: blow Answer: oh
+"
+ache,steak,"Input: ache Answer: steak
+"
+tense,sense,"Input: tense Answer: sense
+"
+mood,rude,"Input: mood Answer: rude
+"
+chess,success,"Input: chess Answer: success
+"
+dislike,alike,"Input: dislike Answer: alike
+"
+ski,degree,"Input: ski Answer: degree
+"
+key,fee,"Input: key Answer: fee
+"
+shampoo,too,"Input: shampoo Answer: too
+"
+condition,composition,"Input: condition Answer: composition
+"
+bye,hi,"Input: bye Answer: hi
+"
+imagination,invitation,"Input: imagination Answer: invitation
+"
+deep,sleep,"Input: deep Answer: sleep
+"
+relation,communication,"Input: relation Answer: communication
+"
+kite,height,"Input: kite Answer: height
+"
+pool,school,"Input: pool Answer: school
+"
+break,cake,"Input: break Answer: cake
+"
+file,style,"Input: file Answer: style
+"
+same,frame,"Input: same Answer: frame
+"
+hat,cat,"Input: hat Answer: cat
+"
+yet,cigarette,"Input: yet Answer: cigarette
+"
+control,whole,"Input: control Answer: whole
+"
+position,exhibition,"Input: position Answer: exhibition
+"
+fit,sit,"Input: fit Answer: sit
+"
+chain,main,"Input: chain Answer: main
+"
+pure,tour,"Input: pure Answer: tour
+"
+honey,money,"Input: honey Answer: money
+"
+drawer,shore,"Input: drawer Answer: shore
+"
+sign,line,"Input: sign Answer: line
+"
+buy,fly,"Input: buy Answer: fly
+"
+short,sort,"Input: short Answer: sort
+"
+pick,click,"Input: pick Answer: click
+"
+repair,pair,"Input: repair Answer: pair
+"
+stamp,camp,"Input: stamp Answer: camp
+"
+wear,bear,"Input: wear Answer: bear
+"
+dressed,suggest,"Input: dressed Answer: suggest
+"
+red,dead,"Input: red Answer: dead
+"
+pill,spill,"Input: pill Answer: spill
+"
+bank,blank,"Input: bank Answer: blank
+"
+flight,invite,"Input: flight Answer: invite
+"
+oh,show,"Input: oh Answer: show
+"
+invite,height,"Input: invite Answer: height
+"
+cake,steak,"Input: cake Answer: steak
+"
+vacation,communication,"Input: vacation Answer: communication
+"
+game,aim,"Input: game Answer: aim
+"
+lose,whose,"Input: lose Answer: whose
+"
+bee,tea,"Input: bee Answer: tea
+"
+scary,very,"Input: scary Answer: very
+"
+lighter,writer,"Input: lighter Answer: writer
+"
+stain,gain,"Input: stain Answer: gain
+"
+answer,dancer,"Input: answer Answer: dancer
+"
+real,steal,"Input: real Answer: steal
+"
+boat,note,"Input: boat Answer: note
+"
+celebration,transportation,"Input: celebration Answer: transportation
+"
+mention,attention,"Input: mention Answer: attention
+"
+floor,explore,"Input: floor Answer: explore
+"
+shave,wave,"Input: shave Answer: wave
+"
+gain,main,"Input: gain Answer: main
+"
+care,pair,"Input: care Answer: pair
+"
+generation,application,"Input: generation Answer: application
+"
+souvenir,beer,"Input: souvenir Answer: beer
+"
+reservation,communication,"Input: reservation Answer: communication
+"
+northeast,priest,"Input: northeast Answer: priest
+"
+occupation,identification,"Input: occupation Answer: identification
+"
+apply,fly,"Input: apply Answer: fly
+"
+skill,fill,"Input: skill Answer: fill
+"
+switch,rich,"Input: switch Answer: rich
+"
+tree,sea,"Input: tree Answer: sea
+"
+bear,air,"Input: bear Answer: air
+"
+clap,map,"Input: clap Answer: map
+"
+call,tall,"Input: call Answer: tall
+"
+press,chess,"Input: press Answer: chess
+"
+plain,main,"Input: plain Answer: main
+"
+bill,kill,"Input: bill Answer: kill
+"
+plus,bus,"Input: plus Answer: bus
+"
+transportation,punctuation,"Input: transportation Answer: punctuation
+"
+imagination,vacation,"Input: imagination Answer: vacation
+"
+complain,contain,"Input: complain Answer: contain
+"
+information,occupation,"Input: information Answer: occupation
+"
+fur,stir,"Input: fur Answer: stir
+"
+set,wet,"Input: set Answer: wet
+"
+love,above,"Input: love Answer: above
+"
+shine,line,"Input: shine Answer: line
+"
+kangaroo,you,"Input: kangaroo Answer: you
+"
+sight,fight,"Input: sight Answer: fight
+"
+beer,year,"Input: beer Answer: year
+"
+still,skill,"Input: still Answer: skill
+"
+cigarette,pet,"Input: cigarette Answer: pet
+"
+more,floor,"Input: more Answer: floor
+"
+bat,fat,"Input: bat Answer: fat
+"
+chair,air,"Input: chair Answer: air
+"
+blue,shampoo,"Input: blue Answer: shampoo
+"
+information,generation,"Input: information Answer: generation
+"
+scooter,computer,"Input: scooter Answer: computer
+"
+sign,design,"Input: sign Answer: design
+"
+brain,plane,"Input: brain Answer: plane
+"
+bit,kit,"Input: bit Answer: kit
+"
+breeze,cheese,"Input: breeze Answer: cheese
+"
+more,score,"Input: more Answer: score
+"
+unknown,stone,"Input: unknown Answer: stone
+"
+position,condition,"Input: position Answer: condition
+"
+lip,slip,"Input: lip Answer: slip
+"
+very,bury,"Input: very Answer: bury
+"
+dress,mess,"Input: dress Answer: mess
+"
+sad,add,"Input: sad Answer: add
+"
+fail,male,"Input: fail Answer: male
+"
+ago,low,"Input: ago Answer: low
+"
+shoe,blue,"Input: shoe Answer: blue
+"
+bell,hotel,"Input: bell Answer: hotel
+"
+unimportant,important,"Input: unimportant Answer: important
+"
+sit,fit,"Input: sit Answer: fit
+"
+coat,vote,"Input: coat Answer: vote
+"
+southwest,depressed,"Input: southwest Answer: depressed
+"
+lie,tie,"Input: lie Answer: tie
+"
+how,cow,"Input: how Answer: cow
+"
+cake,shake,"Input: cake Answer: shake
+"
+own,stone,"Input: own Answer: stone
+"
+skate,state,"Input: skate Answer: state
+"
+each,beach,"Input: each Answer: beach
+"
+shy,dry,"Input: shy Answer: dry
+"
+try,nearby,"Input: try Answer: nearby
+"
+hope,soap,"Input: hope Answer: soap
+"
+chin,pin,"Input: chin Answer: pin
+"
+under,wonder,"Input: under Answer: wonder
+"
+high,guy,"Input: high Answer: guy
+"
+grill,spill,"Input: grill Answer: spill
+"
+blouse,house,"Input: blouse Answer: house
+"
+invite,despite,"Input: invite Answer: despite
+"
+rug,mug,"Input: rug Answer: mug
+"
+conversation,information,"Input: conversation Answer: information
+"
+compare,care,"Input: compare Answer: care
+"
+jet,pet,"Input: jet Answer: pet
+"
+composition,position,"Input: composition Answer: position
+"
+communication,situation,"Input: communication Answer: situation
+"
+late,state,"Input: late Answer: state
+"
+imagination,information,"Input: imagination Answer: information
+"
+stir,sir,"Input: stir Answer: sir
+"
+blow,so,"Input: blow Answer: so
+"
+brain,contain,"Input: brain Answer: contain
+"
+create,skate,"Input: create Answer: skate
+"
+spill,till,"Input: spill Answer: till
+"
+pair,there,"Input: pair Answer: there
+"
+rest,dressed,"Input: rest Answer: dressed
+"
+lend,send,"Input: lend Answer: send
+"
+expedition,exhibition,"Input: expedition Answer: exhibition
+"
+approve,improve,"Input: approve Answer: improve
+"
+win,skin,"Input: win Answer: skin
+"
+location,explanation,"Input: location Answer: explanation
+"
+zoo,do,"Input: zoo Answer: do
+"
+owe,snow,"Input: owe Answer: snow
+"
+cry,try,"Input: cry Answer: try
+"
+till,until,"Input: till Answer: until
+"
+begin,pin,"Input: begin Answer: pin
+"
+fly,high,"Input: fly Answer: high
+"
+buy,spy,"Input: buy Answer: spy
+"
+wear,compare,"Input: wear Answer: compare
+"
+shine,fine,"Input: shine Answer: fine
+"
+guest,breast,"Input: guest Answer: breast
+"
+communication,punctuation,"Input: communication Answer: punctuation
+"
+fine,shine,"Input: fine Answer: shine
+"
+throat,coat,"Input: throat Answer: coat
+"
+identification,application,"Input: identification Answer: application
+"
+grade,trade,"Input: grade Answer: trade
+"
+hair,fare,"Input: hair Answer: fare
+"
+examination,registration,"Input: examination Answer: registration
+"
+key,agree,"Input: key Answer: agree
+"
+fight,might,"Input: fight Answer: might
+"
+ink,think,"Input: ink Answer: think
+"
+presentation,application,"Input: presentation Answer: application
+"
+best,southwest,"Input: best Answer: southwest
+"
+guy,cry,"Input: guy Answer: cry
+"
+disagree,he,"Input: disagree Answer: he
+"
+knee,tea,"Input: knee Answer: tea
+"
+steak,brake,"Input: steak Answer: brake
+"
+improve,remove,"Input: improve Answer: remove
+"
+sheep,steep,"Input: sheep Answer: steep
+"
+transportation,relation,"Input: transportation Answer: relation
+"
+relation,registration,"Input: relation Answer: registration
+"
+jail,mail,"Input: jail Answer: mail
+"
+mess,yes,"Input: mess Answer: yes
+"
+shark,park,"Input: shark Answer: park
+"
+wow,allow,"Input: wow Answer: allow
+"
+install,mall,"Input: install Answer: mall
+"
+snake,steak,"Input: snake Answer: steak
+"
+bite,bright,"Input: bite Answer: bright
+"
+promote,throat,"Input: promote Answer: throat
+"
+build,grilled,"Input: build Answer: grilled
+"
+souvenir,year,"Input: souvenir Answer: year
+"
+celebration,organization,"Input: celebration Answer: organization
+"
+stress,dress,"Input: stress Answer: dress
+"
+press,stress,"Input: press Answer: stress
+"
+generation,celebration,"Input: generation Answer: celebration
+"
+path,math,"Input: path Answer: math
+"
+presentation,immigration,"Input: presentation Answer: immigration
+"
+west,southwest,"Input: west Answer: southwest
+"
+station,occupation,"Input: station Answer: occupation
+"
+might,despite,"Input: might Answer: despite
+"
+their,declare,"Input: their Answer: declare
+"
+northwest,rest,"Input: northwest Answer: rest
+"
+flu,kangaroo,"Input: flu Answer: kangaroo
+"
+guest,best,"Input: guest Answer: best
+"
+shoe,do,"Input: shoe Answer: do
+"
+score,explore,"Input: score Answer: explore
+"
+competition,intermission,"Input: competition Answer: intermission
+"
+communication,transportation,"Input: communication Answer: transportation
+"
+row,slow,"Input: row Answer: slow
+"
+occupation,immigration,"Input: occupation Answer: immigration
+"
+too,view,"Input: too Answer: view
+"
+late,hate,"Input: late Answer: hate
+"
+invitation,generation,"Input: invitation Answer: generation
+"
+awake,make,"Input: awake Answer: make
+"
+mall,install,"Input: mall Answer: install
+"
+no,go,"Input: no Answer: go
+"
+presentation,relaxation,"Input: presentation Answer: relaxation
+"
+forever,clever,"Input: forever Answer: clever
+"
+action,attraction,"Input: action Answer: attraction
+"
+fight,polite,"Input: fight Answer: polite
+"
+tight,write,"Input: tight Answer: write
+"
+store,explore,"Input: store Answer: explore
+"
+fight,kite,"Input: fight Answer: kite
+"
+see,knee,"Input: see Answer: knee
+"
+fare,prepare,"Input: fare Answer: prepare
+"
+install,wall,"Input: install Answer: wall
+"
+grill,until,"Input: grill Answer: until
+"
+trust,dust,"Input: trust Answer: dust
+"
+outside,guide,"Input: outside Answer: guide
+"
+still,spill,"Input: still Answer: spill
+"
+prepare,bear,"Input: prepare Answer: bear
+"
+some,thumb,"Input: some Answer: thumb
+"
+blue,crew,"Input: blue Answer: crew
+"
+he,she,"Input: he Answer: she
+"
+green,clean,"Input: green Answer: clean
+"
+state,create,"Input: state Answer: create
+"
+collect,correct,"Input: collect Answer: correct
+"
+die,goodbye,"Input: die Answer: goodbye
+"
+silk,milk,"Input: silk Answer: milk
+"
+gold,fold,"Input: gold Answer: fold
+"
+likely,unlikely,"Input: likely Answer: unlikely
+"
+role,goal,"Input: role Answer: goal
+"
+chat,at,"Input: chat Answer: at
+"
+ring,king,"Input: ring Answer: king
+"
+remove,approve,"Input: remove Answer: approve
+"
+how,wow,"Input: how Answer: wow
+"
+add,glad,"Input: add Answer: glad
+"
+mood,include,"Input: mood Answer: include
+"
+correct,expect,"Input: correct Answer: expect
+"
+compare,prepare,"Input: compare Answer: prepare
+"
+pet,jet,"Input: pet Answer: jet
+"
+relaxation,relation,"Input: relaxation Answer: relation
+"
+ago,snow,"Input: ago Answer: snow
+"
+application,invitation,"Input: application Answer: invitation
+"
+sew,oh,"Input: sew Answer: oh
+"
+low,sew,"Input: low Answer: sew
+"
+flu,zoo,"Input: flu Answer: zoo
+"
+think,pink,"Input: think Answer: pink
+"
+bake,shake,"Input: bake Answer: shake
+"
+life,wife,"Input: life Answer: wife
+"
+relaxation,organization,"Input: relaxation Answer: organization
+"
+plug,mug,"Input: plug Answer: mug
+"
+he,pea,"Input: he Answer: pea
+"
+slow,row,"Input: slow Answer: row
+"
+earn,turn,"Input: earn Answer: turn
+"
+flight,fight,"Input: flight Answer: fight
+"
+kite,site,"Input: kite Answer: site
+"
+promote,goat,"Input: promote Answer: goat
+"
+steep,deep,"Input: steep Answer: deep
+"
+design,line,"Input: design Answer: line
+"
+phone,zone,"Input: phone Answer: zone
+"
+night,height,"Input: night Answer: height
+"
+relaxation,animation,"Input: relaxation Answer: animation
+"
+sky,by,"Input: sky Answer: by
+"
+wonder,thunder,"Input: wonder Answer: thunder
+"
+hill,fill,"Input: hill Answer: fill
+"
+bowl,control,"Input: bowl Answer: control
+"
+best,rest,"Input: best Answer: rest
+"
+light,quite,"Input: light Answer: quite
+"
+occupation,animation,"Input: occupation Answer: animation
+"
+thumb,from,"Input: thumb Answer: from
+"
+choose,lose,"Input: choose Answer: lose
+"
+friend,lend,"Input: friend Answer: lend
+"
+preparation,relation,"Input: preparation Answer: relation
+"
+presentation,reservation,"Input: presentation Answer: reservation
+"
+bite,sight,"Input: bite Answer: sight
+"
+sun,fun,"Input: sun Answer: fun
+"
+you,kangaroo,"Input: you Answer: kangaroo
+"
+rare,share,"Input: rare Answer: share
+"
+zoo,flu,"Input: zoo Answer: flu
+"
+station,situation,"Input: station Answer: situation
+"
+slip,trip,"Input: slip Answer: trip
+"
+son,sun,"Input: son Answer: sun
+"
+occupation,celebration,"Input: occupation Answer: celebration
+"
+might,overnight,"Input: might Answer: overnight
+"
+guide,wide,"Input: guide Answer: wide
+"
+track,black,"Input: track Answer: black
+"
+rail,sail,"Input: rail Answer: sail
+"
+bright,might,"Input: bright Answer: might
+"
+date,wait,"Input: date Answer: wait
+"
+bear,fair,"Input: bear Answer: fair
+"
+there,repair,"Input: there Answer: repair
+"
+pack,unpack,"Input: pack Answer: unpack
+"
+blow,sew,"Input: blow Answer: sew
+"
+kite,right,"Input: kite Answer: right
+"
+square,compare,"Input: square Answer: compare
+"
+organization,population,"Input: organization Answer: population
+"
+bell,well,"Input: bell Answer: well
+"
+steak,make,"Input: steak Answer: make
+"
+southwest,breast,"Input: southwest Answer: breast
+"
+war,drawer,"Input: war Answer: drawer
+"
+post,toast,"Input: post Answer: toast
+"
+dear,near,"Input: dear Answer: near
+"
+low,blow,"Input: low Answer: blow
+"
+count,amount,"Input: count Answer: amount
+"
+chair,repair,"Input: chair Answer: repair
+"
+port,sport,"Input: port Answer: sport
+"
+declare,questionnaire,"Input: declare Answer: questionnaire
+"
+machine,queen,"Input: machine Answer: queen
+"
+sick,thick,"Input: sick Answer: thick
+"
+pick,kick,"Input: pick Answer: kick
+"
+complain,plain,"Input: complain Answer: plain
+"
+do,view,"Input: do Answer: view
+"
+care,fare,"Input: care Answer: fare
+"
+bake,brake,"Input: bake Answer: brake
+"
+discover,cover,"Input: discover Answer: cover
+"
+appear,year,"Input: appear Answer: year
+"
+drawer,door,"Input: drawer Answer: door
+"
+sore,store,"Input: sore Answer: store
+"
+snow,low,"Input: snow Answer: low
+"
+pour,explore,"Input: pour Answer: explore
+"
+explanation,generation,"Input: explanation Answer: generation
+"
+fruit,boot,"Input: fruit Answer: boot
+"
+reach,speech,"Input: reach Answer: speech
+"
+aloud,cloud,"Input: aloud Answer: cloud
+"
+station,operation,"Input: station Answer: operation
+"
+mile,smile,"Input: mile Answer: smile
+"
+dress,chess,"Input: dress Answer: chess
+"
+install,ball,"Input: install Answer: ball
+"
+well,hotel,"Input: well Answer: hotel
+"
+small,tall,"Input: small Answer: tall
+"
+mad,add,"Input: mad Answer: add
+"
+population,transportation,"Input: population Answer: transportation
+"
+chin,violin,"Input: chin Answer: violin
+"
+guess,undress,"Input: guess Answer: undress
+"
+trick,sick,"Input: trick Answer: sick
+"
+she,he,"Input: she Answer: he
+"
+situation,application,"Input: situation Answer: application
+"
+let,vet,"Input: let Answer: vet
+"
+tall,mall,"Input: tall Answer: mall
+"
+fry,sky,"Input: fry Answer: sky
+"
+flu,view,"Input: flu Answer: view
+"
+call,install,"Input: call Answer: install
+"
+rent,tent,"Input: rent Answer: tent
+"
+chat,flat,"Input: chat Answer: flat
+"
+cab,lab,"Input: cab Answer: lab
+"
+explore,pour,"Input: explore Answer: pour
+"
+share,fare,"Input: share Answer: fare
+"
+degree,free,"Input: degree Answer: free
+"
+thumb,drum,"Input: thumb Answer: drum
+"
+late,straight,"Input: late Answer: straight
+"
+tie,nearby,"Input: tie Answer: nearby
+"
+war,floor,"Input: war Answer: floor
+"
+long,strong,"Input: long Answer: strong
+"
+sign,shine,"Input: sign Answer: shine
+"
+west,suggest,"Input: west Answer: suggest
+"
+eye,sky,"Input: eye Answer: sky
+"
+tell,well,"Input: tell Answer: well
+"
+plain,explain,"Input: plain Answer: explain
+"
+height,flight,"Input: height Answer: flight
+"
+exam,ham,"Input: exam Answer: ham
+"
+shut,cut,"Input: shut Answer: cut
+"
+musician,politician,"Input: musician Answer: politician
+"
+dig,big,"Input: dig Answer: big
+"
+grow,blow,"Input: grow Answer: blow
+"
+hot,not,"Input: hot Answer: not
+"
+see,key,"Input: see Answer: key
+"
+roll,whole,"Input: roll Answer: whole
+"
+occupation,explanation,"Input: occupation Answer: explanation
+"
+cake,awake,"Input: cake Answer: awake
+"
+oh,know,"Input: oh Answer: know
+"
+key,tea,"Input: key Answer: tea
+"
+immigration,preparation,"Input: immigration Answer: preparation
+"
+toe,so,"Input: toe Answer: so
+"
+clown,town,"Input: clown Answer: town
+"
+information,transportation,"Input: information Answer: transportation
+"
+heel,real,"Input: heel Answer: real
+"
+low,toe,"Input: low Answer: toe
+"
+crowd,loud,"Input: crowd Answer: loud
+"
+post,coast,"Input: post Answer: coast
+"
+door,store,"Input: door Answer: store
+"
+ad,sad,"Input: ad Answer: sad
+"
+we,she,"Input: we Answer: she
+"
+technique,antique,"Input: technique Answer: antique
+"
+slip,tip,"Input: slip Answer: tip
+"
+attraction,action,"Input: attraction Answer: action
+"
+class,pass,"Input: class Answer: pass
+"
+rare,pear,"Input: rare Answer: pear
+"
+thriller,killer,"Input: thriller Answer: killer
+"
+achieve,leave,"Input: achieve Answer: leave
+"
+install,baseball,"Input: install Answer: baseball
+"
+shower,power,"Input: shower Answer: power
+"
+imagination,population,"Input: imagination Answer: population
+"
+rat,bat,"Input: rat Answer: bat
+"
+shoe,through,"Input: shoe Answer: through
+"
+few,blue,"Input: few Answer: blue
+"
+line,fine,"Input: line Answer: fine
+"
+examination,situation,"Input: examination Answer: situation
+"
+overnight,invite,"Input: overnight Answer: invite
+"
+score,anymore,"Input: score Answer: anymore
+"
+swim,gym,"Input: swim Answer: gym
+"
+bit,admit,"Input: bit Answer: admit
+"
+reservation,relaxation,"Input: reservation Answer: relaxation
+"
+blow,low,"Input: blow Answer: low
+"
+career,near,"Input: career Answer: near
+"
+situation,explanation,"Input: situation Answer: explanation
+"
+deliver,river,"Input: deliver Answer: river
+"
+registration,transportation,"Input: registration Answer: transportation
+"
+outside,wide,"Input: outside Answer: wide
+"
+undress,guess,"Input: undress Answer: guess
+"
+pleasant,unpleasant,"Input: pleasant Answer: unpleasant
+"
+arm,alarm,"Input: arm Answer: alarm
+"
+dance,chance,"Input: dance Answer: chance
+"
+see,she,"Input: see Answer: she
+"
+aim,name,"Input: aim Answer: name
+"
+punctuation,information,"Input: punctuation Answer: information
+"
+outside,divide,"Input: outside Answer: divide
+"
+quit,fit,"Input: quit Answer: fit
+"
+rest,arrest,"Input: rest Answer: arrest
+"
+slow,oh,"Input: slow Answer: oh
+"
+pick,trick,"Input: pick Answer: trick
+"
+sleep,steep,"Input: sleep Answer: steep
+"
+overnight,site,"Input: overnight Answer: site
+"
+too,zoo,"Input: too Answer: zoo
+"
+bring,sing,"Input: bring Answer: sing
+"
+relation,relaxation,"Input: relation Answer: relaxation
+"
+suggest,depressed,"Input: suggest Answer: depressed
+"
+celebration,information,"Input: celebration Answer: information
+"
+sky,guy,"Input: sky Answer: guy
+"
+bye,fly,"Input: bye Answer: fly
+"
+skirt,shirt,"Input: skirt Answer: shirt
+"
+arrange,range,"Input: arrange Answer: range
+"
+explore,shore,"Input: explore Answer: shore
+"
+wall,tall,"Input: wall Answer: tall
+"
+communication,imagination,"Input: communication Answer: imagination
+"
+behave,save,"Input: behave Answer: save
+"
+cheek,peak,"Input: cheek Answer: peak
+"
+best,stressed,"Input: best Answer: stressed
+"
+confusing,amusing,"Input: confusing Answer: amusing
+"
+sauce,across,"Input: sauce Answer: across
+"
+floor,shore,"Input: floor Answer: shore
+"
+zoo,through,"Input: zoo Answer: through
+"
+row,sew,"Input: row Answer: sew
+"
+gas,grass,"Input: gas Answer: grass
+"
+create,weight,"Input: create Answer: weight
+"
+cry,my,"Input: cry Answer: my
+"
+queen,scene,"Input: queen Answer: scene
+"
+low,know,"Input: low Answer: know
+"
+explanation,information,"Input: explanation Answer: information
+"
+name,game,"Input: name Answer: game
+"
+terrific,scientific,"Input: terrific Answer: scientific
+"
+low,ago,"Input: low Answer: ago
+"
+until,still,"Input: until Answer: still
+"
+pair,compare,"Input: pair Answer: compare
+"
+face,case,"Input: face Answer: case
+"
+recover,discover,"Input: recover Answer: discover
+"
+guy,spy,"Input: guy Answer: spy
+"
+wait,weight,"Input: wait Answer: weight
+"
+hi,fry,"Input: hi Answer: fry
+"
+location,generation,"Input: location Answer: generation
+"
+cigarette,yet,"Input: cigarette Answer: yet
+"
+grow,owe,"Input: grow Answer: owe
+"
+shy,my,"Input: shy Answer: my
+"
+hide,side,"Input: hide Answer: side
+"
+clap,wrap,"Input: clap Answer: wrap
+"
+port,support,"Input: port Answer: support
+"
+gym,slim,"Input: gym Answer: slim
+"
+explanation,station,"Input: explanation Answer: station
+"
+deck,check,"Input: deck Answer: check
+"
+arrest,suggest,"Input: arrest Answer: suggest
+"
+ad,add,"Input: ad Answer: add
+"
+examination,station,"Input: examination Answer: station
+"
+buy,fry,"Input: buy Answer: fry
+"
+exciting,writing,"Input: exciting Answer: writing
+"
+test,guest,"Input: test Answer: guest
+"
+through,view,"Input: through Answer: view
+"
+stressed,test,"Input: stressed Answer: test
+"
+career,appear,"Input: career Answer: appear
+"
+explain,champagne,"Input: explain Answer: champagne
+"
+tree,ski,"Input: tree Answer: ski
+"
+mess,less,"Input: mess Answer: less
+"
+ambition,intermission,"Input: ambition Answer: intermission
+"
+pear,declare,"Input: pear Answer: declare
+"
+cry,tie,"Input: cry Answer: tie
+"
+band,sand,"Input: band Answer: sand
+"
+shoe,review,"Input: shoe Answer: review
+"
+boy,destroy,"Input: boy Answer: destroy
+"
+bean,scene,"Input: bean Answer: scene
+"
+strong,song,"Input: strong Answer: song
+"
+mall,all,"Input: mall Answer: all
+"
+degree,we,"Input: degree Answer: we
+"
+occupation,situation,"Input: occupation Answer: situation
+"
+oh,grow,"Input: oh Answer: grow
+"
+make,awake,"Input: make Answer: awake
+"
+beach,teach,"Input: beach Answer: teach
+"
+greeting,meeting,"Input: greeting Answer: meeting
+"
+reservation,occupation,"Input: reservation Answer: occupation
+"
+hurt,dessert,"Input: hurt Answer: dessert
+"
+head,instead,"Input: head Answer: instead
+"
+we,pea,"Input: we Answer: pea
+"
+section,collection,"Input: section Answer: collection
+"
+hall,call,"Input: hall Answer: call
+"
+slim,swim,"Input: slim Answer: swim
+"
+relation,conversation,"Input: relation Answer: conversation
+"
+kill,pill,"Input: kill Answer: pill
+"
+organization,punctuation,"Input: organization Answer: punctuation
+"
+quit,admit,"Input: quit Answer: admit
+"
+repair,their,"Input: repair Answer: their
+"
+hi,my,"Input: hi Answer: my
+"
+low,row,"Input: low Answer: row
+"
+rat,cat,"Input: rat Answer: cat
+"
+guy,buy,"Input: guy Answer: buy
+"
+relaxation,vacation,"Input: relaxation Answer: vacation
+"
+trick,kick,"Input: trick Answer: kick
+"
+gun,none,"Input: gun Answer: none
+"
+goodbye,spy,"Input: goodbye Answer: spy
+"
+tea,bee,"Input: tea Answer: bee
+"
+animation,celebration,"Input: animation Answer: celebration
+"
+routine,scene,"Input: routine Answer: scene
+"
+northwest,southwest,"Input: northwest Answer: southwest
+"
+rarely,fairly,"Input: rarely Answer: fairly
+"
+suggest,west,"Input: suggest Answer: west
+"
+snake,mistake,"Input: snake Answer: mistake
+"
+guide,divide,"Input: guide Answer: divide
+"
+thumb,some,"Input: thumb Answer: some
+"
+northwest,best,"Input: northwest Answer: best
+"
+cut,but,"Input: cut Answer: but
+"
+another,mother,"Input: another Answer: mother
+"
+crew,view,"Input: crew Answer: view
+"
+kilo,pillow,"Input: kilo Answer: pillow
+"
+bear,share,"Input: bear Answer: share
+"
+my,pie,"Input: my Answer: pie
+"
+plane,complain,"Input: plane Answer: complain
+"
+wing,ring,"Input: wing Answer: ring
+"
+communication,information,"Input: communication Answer: information
+"
+explain,chain,"Input: explain Answer: chain
+"
+hard,card,"Input: hard Answer: card
+"
+brain,main,"Input: brain Answer: main
+"
+set,net,"Input: set Answer: net
+"
+sky,apply,"Input: sky Answer: apply
+"
+we,tree,"Input: we Answer: tree
+"
+nearby,lie,"Input: nearby Answer: lie
+"
+cave,behave,"Input: cave Answer: behave
+"
+through,crew,"Input: through Answer: crew
+"
+pain,gain,"Input: pain Answer: gain
+"
+week,weak,"Input: week Answer: weak
+"
+shy,hi,"Input: shy Answer: hi
+"
+high,hi,"Input: high Answer: hi
+"
+shower,flower,"Input: shower Answer: flower
+"
+occupation,preparation,"Input: occupation Answer: preparation
+"
+ball,tall,"Input: ball Answer: tall
+"
+fight,tight,"Input: fight Answer: tight
+"
+we,degree,"Input: we Answer: degree
+"
+suggest,test,"Input: suggest Answer: test
+"
+relation,transportation,"Input: relation Answer: transportation
+"
+pack,track,"Input: pack Answer: track
+"
+arrest,southwest,"Input: arrest Answer: southwest
+"
+no,slow,"Input: no Answer: slow
+"
+cancer,answer,"Input: cancer Answer: answer
+"
+goodbye,eye,"Input: goodbye Answer: eye
+"
+oh,owe,"Input: oh Answer: owe
+"
+too,through,"Input: too Answer: through
+"
+cake,break,"Input: cake Answer: break
+"
+champagne,plain,"Input: champagne Answer: plain
+"
+pick,sick,"Input: pick Answer: sick
+"
+shore,pour,"Input: shore Answer: pour
+"
+presentation,imagination,"Input: presentation Answer: imagination
+"
+chair,questionnaire,"Input: chair Answer: questionnaire
+"
+kill,bill,"Input: kill Answer: bill
+"
+bite,right,"Input: bite Answer: right
+"
+attract,act,"Input: attract Answer: act
+"
+stall,small,"Input: stall Answer: small
+"
+rare,pair,"Input: rare Answer: pair
+"
+peak,technique,"Input: peak Answer: technique
+"
+sheep,sleep,"Input: sheep Answer: sleep
+"
+height,site,"Input: height Answer: site
+"
+about,shout,"Input: about Answer: shout
+"
+pen,then,"Input: pen Answer: then
+"
+jam,gram,"Input: jam Answer: gram
+"
+earth,birth,"Input: earth Answer: birth
+"
+mail,male,"Input: mail Answer: male
+"
+write,flight,"Input: write Answer: flight
+"
+rude,include,"Input: rude Answer: include
+"
+slow,blow,"Input: slow Answer: blow
+"
+land,stand,"Input: land Answer: stand
+"
+intend,trend,"Input: intend Answer: trend
+"
+old,fold,"Input: old Answer: fold
+"
+install,small,"Input: install Answer: small
+"
+blind,kind,"Input: blind Answer: kind
+"
+population,presentation,"Input: population Answer: presentation
+"
+wall,baseball,"Input: wall Answer: baseball
+"
+preparation,celebration,"Input: preparation Answer: celebration
+"
+control,hole,"Input: control Answer: hole
+"
+flight,despite,"Input: flight Answer: despite
+"
+pain,champagne,"Input: pain Answer: champagne
+"
+invite,quite,"Input: invite Answer: quite
+"
+trip,lip,"Input: trip Answer: lip
+"
+hand,stand,"Input: hand Answer: stand
+"
+invitation,registration,"Input: invitation Answer: registration
+"
+depressed,breast,"Input: depressed Answer: breast
+"
+reservation,imagination,"Input: reservation Answer: imagination
+"
+dream,team,"Input: dream Answer: team
+"
+imagination,registration,"Input: imagination Answer: registration
+"
+bite,height,"Input: bite Answer: height
+"
+might,right,"Input: might Answer: right
+"
+test,depressed,"Input: test Answer: depressed
+"
+side,outside,"Input: side Answer: outside
+"
+teach,peach,"Input: teach Answer: peach
+"
+crew,blue,"Input: crew Answer: blue
+"
+town,downtown,"Input: town Answer: downtown
+"
+exhibition,musician,"Input: exhibition Answer: musician
+"
+shore,more,"Input: shore Answer: more
+"
+plain,chain,"Input: plain Answer: chain
+"
+bee,we,"Input: bee Answer: we
+"
+plane,brain,"Input: plane Answer: brain
+"
+trip,ship,"Input: trip Answer: ship
+"
+scream,cream,"Input: scream Answer: cream
+"
+shade,persuade,"Input: shade Answer: persuade
+"
+show,row,"Input: show Answer: row
+"
+grilled,rebuild,"Input: grilled Answer: rebuild
+"
+wear,care,"Input: wear Answer: care
+"
+bit,hit,"Input: bit Answer: hit
+"
+punctuation,vacation,"Input: punctuation Answer: vacation
+"
+pair,questionnaire,"Input: pair Answer: questionnaire
+"
+writer,lighter,"Input: writer Answer: lighter
+"
+break,ache,"Input: break Answer: ache
+"
+remind,blind,"Input: remind Answer: blind
+"
+name,blame,"Input: name Answer: blame
+"
+take,awake,"Input: take Answer: awake
+"
+steak,lake,"Input: steak Answer: lake
+"
+operation,organization,"Input: operation Answer: organization
+"
+presentation,communication,"Input: presentation Answer: communication
+"
+snack,attack,"Input: snack Answer: attack
+"
+find,remind,"Input: find Answer: remind
+"
+anymore,door,"Input: anymore Answer: door
+"
+information,examination,"Input: information Answer: examination
+"
+percent,invent,"Input: percent Answer: invent
+"
+flute,boot,"Input: flute Answer: boot
+"
+sew,snow,"Input: sew Answer: snow
+"
+knee,tree,"Input: knee Answer: tree
+"
+test,suggest,"Input: test Answer: suggest
+"
+wide,decide,"Input: wide Answer: decide
+"
+depressed,northwest,"Input: depressed Answer: northwest
+"
+communication,identification,"Input: communication Answer: identification
+"
+conversation,population,"Input: conversation Answer: population
+"
+their,compare,"Input: their Answer: compare
+"
+presentation,punctuation,"Input: presentation Answer: punctuation
+"
+sky,pie,"Input: sky Answer: pie
+"
+gate,create,"Input: gate Answer: create
+"
+worry,hurry,"Input: worry Answer: hurry
+"
+main,rain,"Input: main Answer: rain
+"
+contain,main,"Input: contain Answer: main
+"
+asleep,sheep,"Input: asleep Answer: sheep
+"
+animation,conversation,"Input: animation Answer: conversation
+"
+card,guard,"Input: card Answer: guard
+"
+lemonade,grade,"Input: lemonade Answer: grade
+"
+grape,shape,"Input: grape Answer: shape
+"
+operation,application,"Input: operation Answer: application
+"
+conversation,relaxation,"Input: conversation Answer: relaxation
+"
+now,how,"Input: now Answer: how
+"
+guest,arrest,"Input: guest Answer: arrest
+"
+sight,overnight,"Input: sight Answer: overnight
+"
+review,through,"Input: review Answer: through
+"
+baseball,install,"Input: baseball Answer: install
+"
+champagne,explain,"Input: champagne Answer: explain
+"
+there,share,"Input: there Answer: share
+"
+toe,low,"Input: toe Answer: low
+"
+shake,lake,"Input: shake Answer: lake
+"
+gas,pass,"Input: gas Answer: pass
+"
+power,shower,"Input: power Answer: shower
+"
+float,note,"Input: float Answer: note
+"
+baseball,hall,"Input: baseball Answer: hall
+"
+feel,heel,"Input: feel Answer: heel
+"
+disease,freeze,"Input: disease Answer: freeze
+"
+wide,hide,"Input: wide Answer: hide
+"
+light,invite,"Input: light Answer: invite
+"
+compare,wear,"Input: compare Answer: wear
+"
+promote,vote,"Input: promote Answer: vote
+"
+collection,connection,"Input: collection Answer: connection
+"
+boat,promote,"Input: boat Answer: promote
+"
+store,pour,"Input: store Answer: pour
+"
+west,arrest,"Input: west Answer: arrest
+"
+vacation,location,"Input: vacation Answer: location
+"
+declare,pear,"Input: declare Answer: pear
+"
+intermission,permission,"Input: intermission Answer: permission
+"
+queen,machine,"Input: queen Answer: machine
+"
+zoo,view,"Input: zoo Answer: view
+"
+presentation,examination,"Input: presentation Answer: examination
+"
+link,sink,"Input: link Answer: sink
+"
+chili,silly,"Input: chili Answer: silly
+"
+shout,about,"Input: shout Answer: about
+"
+bite,night,"Input: bite Answer: night
+"
+well,smell,"Input: well Answer: smell
+"
+pack,snack,"Input: pack Answer: snack
+"
+station,registration,"Input: station Answer: registration
+"
+grade,afraid,"Input: grade Answer: afraid
+"
+select,incorrect,"Input: select Answer: incorrect
+"
+shampoo,kangaroo,"Input: shampoo Answer: kangaroo
+"
+invitation,population,"Input: invitation Answer: population
+"
+preparation,operation,"Input: preparation Answer: operation
+"
+lamb,exam,"Input: lamb Answer: exam
+"
+by,fly,"Input: by Answer: fly
+"
+tight,bright,"Input: tight Answer: bright
+"
+row,no,"Input: row Answer: no
+"
+photography,biography,"Input: photography Answer: biography
+"
+juice,loose,"Input: juice Answer: loose
+"
+stand,understand,"Input: stand Answer: understand
+"
+brake,shake,"Input: brake Answer: shake
+"
+profession,session,"Input: profession Answer: session
+"
+town,down,"Input: town Answer: down
+"
+condition,intermission,"Input: condition Answer: intermission
+"
+relaxation,celebration,"Input: relaxation Answer: celebration
+"
+square,fare,"Input: square Answer: fare
+"
+include,rude,"Input: include Answer: rude
+"
+board,bored,"Input: board Answer: bored
+"
+store,sore,"Input: store Answer: sore
+"
+suggest,guest,"Input: suggest Answer: guest
+"
+dirt,dessert,"Input: dirt Answer: dessert
+"
+die,nearby,"Input: die Answer: nearby
+"
+pair,declare,"Input: pair Answer: declare
+"
+site,night,"Input: site Answer: night
+"
+least,priest,"Input: least Answer: priest
+"
+coat,promote,"Input: coat Answer: promote
+"
+situation,reservation,"Input: situation Answer: reservation
+"
+earn,burn,"Input: earn Answer: burn
+"
+beach,each,"Input: beach Answer: each
+"
+fill,skill,"Input: fill Answer: skill
+"
+too,crew,"Input: too Answer: crew
+"
+end,friend,"Input: end Answer: friend
+"
+ski,agree,"Input: ski Answer: agree
+"
+hat,fat,"Input: hat Answer: fat
+"
+hit,bit,"Input: hit Answer: bit
+"
+dessert,hurt,"Input: dessert Answer: hurt
+"
+defend,friend,"Input: defend Answer: friend
+"
+geography,photography,"Input: geography Answer: photography
+"
+high,bye,"Input: high Answer: bye
+"
+fight,height,"Input: fight Answer: height
+"
+meal,real,"Input: meal Answer: real
+"
+description,prescription,"Input: description Answer: prescription
+"
+pie,goodbye,"Input: pie Answer: goodbye
+"
+high,pie,"Input: high Answer: pie
+"
+kite,bright,"Input: kite Answer: bright
+"
+nearby,dry,"Input: nearby Answer: dry
+"
+fry,cry,"Input: fry Answer: cry
+"
+send,intend,"Input: send Answer: intend
+"
+funny,honey,"Input: funny Answer: honey
+"
+try,tie,"Input: try Answer: tie
+"
+attack,pack,"Input: attack Answer: pack
+"
+she,agree,"Input: she Answer: agree
+"
+bye,dry,"Input: bye Answer: dry
+"
+prepare,repair,"Input: prepare Answer: repair
+"
+night,invite,"Input: night Answer: invite
+"
+presentation,invitation,"Input: presentation Answer: invitation
+"
+food,mood,"Input: food Answer: mood
+"
+conversation,celebration,"Input: conversation Answer: celebration
+"
+arrest,rest,"Input: arrest Answer: rest
+"
+sheep,deep,"Input: sheep Answer: deep
+"
+awake,break,"Input: awake Answer: break
+"
+invent,cent,"Input: invent Answer: cent
+"
+bride,decide,"Input: bride Answer: decide
+"
+champagne,contain,"Input: champagne Answer: contain
+"
+shampoo,flu,"Input: shampoo Answer: flu
+"
+rare,square,"Input: rare Answer: square
+"
+lamb,tram,"Input: lamb Answer: tram
+"
+gold,old,"Input: gold Answer: old
+"
+exact,fact,"Input: exact Answer: fact
+"
+prepare,chair,"Input: prepare Answer: chair
+"
+wet,pet,"Input: wet Answer: pet
+"
+relaxation,operation,"Input: relaxation Answer: operation
+"
+decide,wide,"Input: decide Answer: wide
+"
+folder,shoulder,"Input: folder Answer: shoulder
+"
+own,phone,"Input: own Answer: phone
+"
+goat,throat,"Input: goat Answer: throat
+"
+grilled,build,"Input: grilled Answer: build
+"
+owe,throw,"Input: owe Answer: throw
+"
+no,oh,"Input: no Answer: oh
+"
+defense,tense,"Input: defense Answer: tense
+"
+conversation,animation,"Input: conversation Answer: animation
+"
+mistake,steak,"Input: mistake Answer: steak
+"
+tire,buyer,"Input: tire Answer: buyer
+"
+farm,arm,"Input: farm Answer: arm
+"
+location,occupation,"Input: location Answer: occupation
+"
+west,rest,"Input: west Answer: rest
+"
+she,tree,"Input: she Answer: tree
+"
+agree,see,"Input: agree Answer: see
+"
+organization,reservation,"Input: organization Answer: reservation
+"
+collect,incorrect,"Input: collect Answer: incorrect
+"
+application,imagination,"Input: application Answer: imagination
+"
+stressed,best,"Input: stressed Answer: best
+"
+stain,champagne,"Input: stain Answer: champagne
+"
+review,kangaroo,"Input: review Answer: kangaroo
+"
+fry,goodbye,"Input: fry Answer: goodbye
+"
+who,review,"Input: who Answer: review
+"
+bye,cry,"Input: bye Answer: cry
+"
+pink,link,"Input: pink Answer: link
+"
+imagination,reservation,"Input: imagination Answer: reservation
+"
+provide,wide,"Input: provide Answer: wide
+"
+tent,percent,"Input: tent Answer: percent
+"
+sew,know,"Input: sew Answer: know
+"
+try,apply,"Input: try Answer: apply
+"
+per,fur,"Input: per Answer: fur
+"
+registration,vacation,"Input: registration Answer: vacation
+"
+night,overnight,"Input: night Answer: overnight
+"
+plate,gate,"Input: plate Answer: gate
+"
+occupation,communication,"Input: occupation Answer: communication
+"
+lamb,damn,"Input: lamb Answer: damn
+"
+free,she,"Input: free Answer: she
+"
+vote,throat,"Input: vote Answer: throat
+"
+engineer,year,"Input: engineer Answer: year
+"
+weight,great,"Input: weight Answer: great
+"
+tea,degree,"Input: tea Answer: degree
+"
+out,doubt,"Input: out Answer: doubt
+"
+declare,pair,"Input: declare Answer: pair
+"
+pet,net,"Input: pet Answer: net
+"
+wing,thing,"Input: wing Answer: thing
+"
+account,count,"Input: account Answer: count
+"
+musician,composition,"Input: musician Answer: composition
+"
+lip,ship,"Input: lip Answer: ship
+"
+plant,ant,"Input: plant Answer: ant
+"
+cap,rap,"Input: cap Answer: rap
+"
+pig,dig,"Input: pig Answer: dig
+"
+sew,go,"Input: sew Answer: go
+"
+boat,throat,"Input: boat Answer: throat
+"
+contain,chain,"Input: contain Answer: chain
+"
+believe,sleeve,"Input: believe Answer: sleeve
+"
+ambition,position,"Input: ambition Answer: position
+"
+suit,fruit,"Input: suit Answer: fruit
+"
+clown,down,"Input: clown Answer: down
+"
+past,last,"Input: past Answer: last
+"
+lake,steak,"Input: lake Answer: steak
+"
+announce,bounce,"Input: announce Answer: bounce
+"
+suggest,stressed,"Input: suggest Answer: stressed
+"
+until,pill,"Input: until Answer: pill
+"
+make,shake,"Input: make Answer: shake
+"
+air,there,"Input: air Answer: there
+"
+chess,mess,"Input: chess Answer: mess
+"
+trade,shade,"Input: trade Answer: shade
+"
+kind,blind,"Input: kind Answer: blind
+"
+preparation,presentation,"Input: preparation Answer: presentation
+"
+show,ago,"Input: show Answer: ago
+"
+queen,mean,"Input: queen Answer: mean
+"
+fare,their,"Input: fare Answer: their
+"
+vacation,immigration,"Input: vacation Answer: immigration
+"
+animation,punctuation,"Input: animation Answer: punctuation
+"
+divorce,course,"Input: divorce Answer: course
+"
+divide,ride,"Input: divide Answer: ride
+"
+peak,antique,"Input: peak Answer: antique
+"
+buy,cry,"Input: buy Answer: cry
+"
+stressed,guest,"Input: stressed Answer: guest
+"
+situation,relaxation,"Input: situation Answer: relaxation
+"
+explanation,transportation,"Input: explanation Answer: transportation
+"
+succeed,feed,"Input: succeed Answer: feed
+"
+organization,generation,"Input: organization Answer: generation
+"
+sleep,sheep,"Input: sleep Answer: sheep
+"
+intend,send,"Input: intend Answer: send
+"
+pillow,kilo,"Input: pillow Answer: kilo
+"
+exchange,arrange,"Input: exchange Answer: arrange
+"
+crew,kangaroo,"Input: crew Answer: kangaroo
+"
+score,more,"Input: score Answer: more
+"
+hill,bill,"Input: hill Answer: bill
+"
+registration,punctuation,"Input: registration Answer: punctuation
+"
+square,rare,"Input: square Answer: rare
+"
+share,fair,"Input: share Answer: fair
+"
+hair,compare,"Input: hair Answer: compare
+"
+information,conversation,"Input: information Answer: conversation
+"
+weather,leather,"Input: weather Answer: leather
+"
+blame,same,"Input: blame Answer: same
+"
+door,floor,"Input: door Answer: floor
+"
+bone,phone,"Input: bone Answer: phone
+"
+support,short,"Input: support Answer: short
+"
+we,me,"Input: we Answer: me
+"
+chin,begin,"Input: chin Answer: begin
+"
+fear,year,"Input: fear Answer: year
+"
+math,path,"Input: math Answer: path
+"
+dark,mark,"Input: dark Answer: mark
+"
+kick,thick,"Input: kick Answer: thick
+"
+freeze,disease,"Input: freeze Answer: disease
+"
+pea,sea,"Input: pea Answer: sea
+"
+success,stress,"Input: success Answer: stress
+"
+crime,time,"Input: crime Answer: time
+"
+floor,more,"Input: floor Answer: more
+"
+sore,more,"Input: sore Answer: more
+"
+sight,invite,"Input: sight Answer: invite
+"
+hi,by,"Input: hi Answer: by
+"
+view,shoe,"Input: view Answer: shoe
+"
+care,square,"Input: care Answer: square
+"
+peach,speech,"Input: peach Answer: speech
+"
+agree,she,"Input: agree Answer: she
+"
+questionnaire,care,"Input: questionnaire Answer: care
+"
+ride,side,"Input: ride Answer: side
+"
+sky,shy,"Input: sky Answer: shy
+"
+examination,invitation,"Input: examination Answer: invitation
+"
+souvenir,near,"Input: souvenir Answer: near
+"
+square,pair,"Input: square Answer: pair
+"
+hide,guide,"Input: hide Answer: guide
+"
+rest,breast,"Input: rest Answer: breast
+"
+hate,great,"Input: hate Answer: great
+"
+find,behind,"Input: find Answer: behind
+"
+pill,skill,"Input: pill Answer: skill
+"
+he,ski,"Input: he Answer: ski
+"
+pair,prepare,"Input: pair Answer: prepare
+"
+wing,king,"Input: wing Answer: king
+"
+sit,kit,"Input: sit Answer: kit
+"
+high,cry,"Input: high Answer: cry
+"
+relation,information,"Input: relation Answer: information
+"
+lie,hi,"Input: lie Answer: hi
+"
+ambition,expedition,"Input: ambition Answer: expedition
+"
+bye,high,"Input: bye Answer: high
+"
+by,spy,"Input: by Answer: spy
+"
+pie,spy,"Input: pie Answer: spy
+"
+flu,blue,"Input: flu Answer: blue
+"
+we,free,"Input: we Answer: free
+"
+invention,attention,"Input: invention Answer: attention
+"
+state,late,"Input: state Answer: late
+"
+sing,bring,"Input: sing Answer: bring
+"
+great,straight,"Input: great Answer: straight
+"
+there,hair,"Input: there Answer: hair
+"
+application,punctuation,"Input: application Answer: punctuation
+"
+link,think,"Input: link Answer: think
+"
+yes,chess,"Input: yes Answer: chess
+"
+relation,invitation,"Input: relation Answer: invitation
+"
+down,clown,"Input: down Answer: clown
+"
+flower,tower,"Input: flower Answer: tower
+"
+explore,more,"Input: explore Answer: more
+"
+skill,until,"Input: skill Answer: until
+"
+must,trust,"Input: must Answer: trust
+"
+blue,shoe,"Input: blue Answer: shoe
+"
+vet,set,"Input: vet Answer: set
+"
+declare,compare,"Input: declare Answer: compare
+"
+shoe,too,"Input: shoe Answer: too
+"
+dessert,skirt,"Input: dessert Answer: skirt
+"
+feed,speed,"Input: feed Answer: speed
+"
+let,set,"Input: let Answer: set
+"
+grow,snow,"Input: grow Answer: snow
+"
+complain,main,"Input: complain Answer: main
+"
+show,toe,"Input: show Answer: toe
+"
+side,wide,"Input: side Answer: wide
+"
+hall,install,"Input: hall Answer: install
+"
+link,ink,"Input: link Answer: ink
+"
+registration,immigration,"Input: registration Answer: immigration
+"
+shake,brake,"Input: shake Answer: brake
+"
+tall,all,"Input: tall Answer: all
+"
+celebration,examination,"Input: celebration Answer: examination
+"
+fool,school,"Input: fool Answer: school
+"
+tie,apply,"Input: tie Answer: apply
+"
+grow,show,"Input: grow Answer: show
+"
+occupation,relation,"Input: occupation Answer: relation
+"
+sell,smell,"Input: sell Answer: smell
+"
+champagne,stain,"Input: champagne Answer: stain
+"
+twin,violin,"Input: twin Answer: violin
+"
+registration,operation,"Input: registration Answer: operation
+"
+try,dry,"Input: try Answer: dry
+"
+bright,site,"Input: bright Answer: site
+"
+hut,shut,"Input: hut Answer: shut
+"
+cry,buy,"Input: cry Answer: buy
+"
+cereal,material,"Input: cereal Answer: material
+"
+store,drawer,"Input: store Answer: drawer
+"
+situation,population,"Input: situation Answer: population
+"
+crew,zoo,"Input: crew Answer: zoo
+"
+oh,row,"Input: oh Answer: row
+"
+dirt,hurt,"Input: dirt Answer: hurt
+"
+chess,dress,"Input: chess Answer: dress
+"
+occupation,organization,"Input: occupation Answer: organization
+"
+information,station,"Input: information Answer: station
+"
+hi,tie,"Input: hi Answer: tie
+"
+mouse,blouse,"Input: mouse Answer: blouse
+"
+dessert,shirt,"Input: dessert Answer: shirt
+"
+bean,queen,"Input: bean Answer: queen
+"
+disagree,bee,"Input: disagree Answer: bee
+"
+recommend,send,"Input: recommend Answer: send
+"
+transportation,location,"Input: transportation Answer: location
+"
+select,protect,"Input: select Answer: protect
+"
+bone,own,"Input: bone Answer: own
+"
+lie,buy,"Input: lie Answer: buy
+"
+till,hill,"Input: till Answer: hill
+"
+pea,fee,"Input: pea Answer: fee
+"
+however,forever,"Input: however Answer: forever
+"
+we,sea,"Input: we Answer: sea
+"
+share,air,"Input: share Answer: air
+"
+by,die,"Input: by Answer: die
+"
+hotel,spell,"Input: hotel Answer: spell
+"
+straight,gate,"Input: straight Answer: gate
+"
+great,gate,"Input: great Answer: gate
+"
+main,gain,"Input: main Answer: gain
+"
+damn,tram,"Input: damn Answer: tram
+"
+sky,nearby,"Input: sky Answer: nearby
+"
+identification,immigration,"Input: identification Answer: immigration
+"
+wear,declare,"Input: wear Answer: declare
+"
+scream,dream,"Input: scream Answer: dream
+"
+still,till,"Input: still Answer: till
+"
+expedition,musician,"Input: expedition Answer: musician
+"
+same,name,"Input: same Answer: name
+"
+plane,gain,"Input: plane Answer: gain
+"
+contain,rain,"Input: contain Answer: rain
+"
+preparation,organization,"Input: preparation Answer: organization
+"
+ago,throw,"Input: ago Answer: throw
+"
+game,name,"Input: game Answer: name
+"
+bad,sad,"Input: bad Answer: sad
+"
+agree,knee,"Input: agree Answer: knee
+"
+cap,wrap,"Input: cap Answer: wrap
+"
+skin,violin,"Input: skin Answer: violin
+"
+degree,key,"Input: degree Answer: key
+"
+cheap,deep,"Input: cheap Answer: deep
+"
+amount,account,"Input: amount Answer: account
+"
+wear,share,"Input: wear Answer: share
+"
+tie,fry,"Input: tie Answer: fry
+"
+name,same,"Input: name Answer: same
+"
+animation,population,"Input: animation Answer: population
+"
+learn,turn,"Input: learn Answer: turn
+"
+examination,relaxation,"Input: examination Answer: relaxation
+"
+sew,grow,"Input: sew Answer: grow
+"
+come,from,"Input: come Answer: from
+"
+dancer,cancer,"Input: dancer Answer: cancer
+"
+despite,flight,"Input: despite Answer: flight
+"
+week,speak,"Input: week Answer: speak
+"
+dislike,bike,"Input: dislike Answer: bike
+"
+die,try,"Input: die Answer: try
+"
+know,go,"Input: know Answer: go
+"
+my,buy,"Input: my Answer: buy
+"
+wear,fair,"Input: wear Answer: fair
+"
+organization,imagination,"Input: organization Answer: imagination
+"
+crew,review,"Input: crew Answer: review
+"
+high,goodbye,"Input: high Answer: goodbye
+"
+form,warm,"Input: form Answer: warm
+"
+chess,less,"Input: chess Answer: less
+"
+dry,try,"Input: dry Answer: try
+"
+thunder,wonder,"Input: thunder Answer: wonder
+"
+need,speed,"Input: need Answer: speed
+"
+go,oh,"Input: go Answer: oh
+"
+late,plate,"Input: late Answer: plate
+"
+pure,brochure,"Input: pure Answer: brochure
+"
+prove,improve,"Input: prove Answer: improve
+"
+politely,lightly,"Input: politely Answer: lightly
+"
+range,exchange,"Input: range Answer: exchange
+"
+sit,admit,"Input: sit Answer: admit
+"
+connect,incorrect,"Input: connect Answer: incorrect
+"
+stir,fur,"Input: stir Answer: fur
+"
+row,toe,"Input: row Answer: toe
+"
+grow,no,"Input: grow Answer: no
+"
+toast,roast,"Input: toast Answer: roast
+"
+thing,wing,"Input: thing Answer: wing
+"
+quite,tight,"Input: quite Answer: tight
+"
+go,snow,"Input: go Answer: snow
+"
+invitation,station,"Input: invitation Answer: station
+"
+go,throw,"Input: go Answer: throw
+"
+brake,break,"Input: brake Answer: break
+"
+permission,intermission,"Input: permission Answer: intermission
+"
+hat,rat,"Input: hat Answer: rat
+"
+clever,never,"Input: clever Answer: never
+"
+shoe,few,"Input: shoe Answer: few
+"
+own,postpone,"Input: own Answer: postpone
+"
+match,catch,"Input: match Answer: catch
+"
+lie,pie,"Input: lie Answer: pie
+"
+straight,weight,"Input: straight Answer: weight
+"
+spy,sky,"Input: spy Answer: sky
+"
+goodbye,guy,"Input: goodbye Answer: guy
+"
+fair,hair,"Input: fair Answer: hair
+"
+attractive,active,"Input: attractive Answer: active
+"
+cross,across,"Input: cross Answer: across
+"
+dessert,dirt,"Input: dessert Answer: dirt
+"
+mind,remind,"Input: mind Answer: remind
+"
+population,preparation,"Input: population Answer: preparation
+"
+rap,map,"Input: rap Answer: map
+"
+great,state,"Input: great Answer: state
+"
+those,nose,"Input: those Answer: nose
+"
+pair,rare,"Input: pair Answer: rare
+"
+their,fare,"Input: their Answer: fare
+"
+night,light,"Input: night Answer: light
+"
+however,never,"Input: however Answer: never
+"
+fry,fly,"Input: fry Answer: fly
+"
+quick,thick,"Input: quick Answer: thick
+"
+relaxation,reservation,"Input: relaxation Answer: reservation
+"
+preparation,occupation,"Input: preparation Answer: occupation
+"
+blow,row,"Input: blow Answer: row
+"
+prepare,hair,"Input: prepare Answer: hair
+"
+nearby,apply,"Input: nearby Answer: apply
+"
+cigarette,net,"Input: cigarette Answer: net
+"
+ball,all,"Input: ball Answer: all
+"
+heel,feel,"Input: heel Answer: feel
+"
+tiny,shiny,"Input: tiny Answer: shiny
+"
+yard,card,"Input: yard Answer: card
+"
+save,brave,"Input: save Answer: brave
+"
+smell,bell,"Input: smell Answer: bell
+"
+decide,hide,"Input: decide Answer: hide
+"
+compare,repair,"Input: compare Answer: repair
+"
+sight,quite,"Input: sight Answer: quite
+"
+biology,apology,"Input: biology Answer: apology
+"
+expect,protect,"Input: expect Answer: protect
+"
+knit,quit,"Input: knit Answer: quit
+"
+strike,dislike,"Input: strike Answer: dislike
+"
+light,fight,"Input: light Answer: fight
+"
+guide,hide,"Input: guide Answer: hide
+"
+least,northeast,"Input: least Answer: northeast
+"
+sight,might,"Input: sight Answer: might
+"
+right,despite,"Input: right Answer: despite
+"
+wow,now,"Input: wow Answer: now
+"
+downstairs,theirs,"Input: downstairs Answer: theirs
+"
+explanation,examination,"Input: explanation Answer: examination
+"
+organization,immigration,"Input: organization Answer: immigration
+"
+should,could,"Input: should Answer: could
+"
+spare,pear,"Input: spare Answer: pear
+"
+share,rare,"Input: share Answer: rare
+"
+dry,die,"Input: dry Answer: die
+"
+danger,stranger,"Input: danger Answer: stranger
+"
+owe,show,"Input: owe Answer: show
+"
+stain,chain,"Input: stain Answer: chain
+"
+ad,dad,"Input: ad Answer: dad
+"
+arrange,exchange,"Input: arrange Answer: exchange
+"
+generation,population,"Input: generation Answer: population
+"
+share,their,"Input: share Answer: their
+"
+arrest,west,"Input: arrest Answer: west
+"
+loan,unknown,"Input: loan Answer: unknown
+"
+lake,bake,"Input: lake Answer: bake
+"
+bye,guy,"Input: bye Answer: guy
+"
+complain,train,"Input: complain Answer: train
+"
+wait,date,"Input: wait Answer: date
+"
+week,antique,"Input: week Answer: antique
+"
+steak,awake,"Input: steak Answer: awake
+"
+card,yard,"Input: card Answer: yard
+"
+questionnaire,fair,"Input: questionnaire Answer: fair
+"
+chair,compare,"Input: chair Answer: compare
+"
+champagne,rain,"Input: champagne Answer: rain
+"
+conversation,occupation,"Input: conversation Answer: occupation
+"
+tight,quite,"Input: tight Answer: quite
+"
+night,fight,"Input: night Answer: fight
+"
+reach,beach,"Input: reach Answer: beach
+"
+night,sight,"Input: night Answer: sight
+"
+too,shampoo,"Input: too Answer: shampoo
+"
+station,transportation,"Input: station Answer: transportation
+"
+grill,still,"Input: grill Answer: still
+"
+kangaroo,do,"Input: kangaroo Answer: do
+"
+information,preparation,"Input: information Answer: preparation
+"
+too,review,"Input: too Answer: review
+"
+clever,ever,"Input: clever Answer: ever
+"
+sir,stir,"Input: sir Answer: stir
+"
+late,skate,"Input: late Answer: skate
+"
+my,cry,"Input: my Answer: cry
+"
+fact,exact,"Input: fact Answer: exact
+"
+presentation,operation,"Input: presentation Answer: operation
+"
+punctuation,operation,"Input: punctuation Answer: operation
+"
+test,stressed,"Input: test Answer: stressed
+"
+but,shut,"Input: but Answer: shut
+"
+pea,free,"Input: pea Answer: free
+"
+disagree,agree,"Input: disagree Answer: agree
+"
+pile,mile,"Input: pile Answer: mile
+"
+me,key,"Input: me Answer: key
+"
+gun,sun,"Input: gun Answer: sun
+"
+glad,add,"Input: glad Answer: add
+"
+invitation,occupation,"Input: invitation Answer: occupation
+"
+camp,stamp,"Input: camp Answer: stamp
+"
+role,roll,"Input: role Answer: roll
+"
+table,label,"Input: table Answer: label
+"
+jet,wet,"Input: jet Answer: wet
+"
+ahead,bed,"Input: ahead Answer: bed
+"
+buy,shy,"Input: buy Answer: shy
+"
+tie,spy,"Input: tie Answer: spy
+"
+organization,station,"Input: organization Answer: station
+"
+please,disease,"Input: please Answer: disease
+"
+annoy,enjoy,"Input: annoy Answer: enjoy
+"
+gain,train,"Input: gain Answer: train
+"
+population,generation,"Input: population Answer: generation
+"
+southeast,least,"Input: southeast Answer: least
+"
+win,twin,"Input: win Answer: twin
+"
+ambition,politician,"Input: ambition Answer: politician
+"
+ball,install,"Input: ball Answer: install
+"
+meter,liter,"Input: meter Answer: liter
+"
+cut,shut,"Input: cut Answer: shut
+"
+zoo,too,"Input: zoo Answer: too
+"
+tie,cry,"Input: tie Answer: cry
+"
+attend,trend,"Input: attend Answer: trend
+"
+tight,might,"Input: tight Answer: might
+"
+grab,cab,"Input: grab Answer: cab
+"
+low,oh,"Input: low Answer: oh
+"
+right,bite,"Input: right Answer: bite
+"
+rain,complain,"Input: rain Answer: complain
+"
+row,go,"Input: row Answer: go
+"
+track,pack,"Input: track Answer: pack
+"
+me,tree,"Input: me Answer: tree
+"
+prepare,air,"Input: prepare Answer: air
+"
+slow,low,"Input: slow Answer: low
+"
+candy,sandy,"Input: candy Answer: sandy
+"
+breast,test,"Input: breast Answer: test
+"
+he,sea,"Input: he Answer: sea
+"
+shy,nearby,"Input: shy Answer: nearby
+"
+immigration,relaxation,"Input: immigration Answer: relaxation
+"
+chain,train,"Input: chain Answer: train
+"
+musician,position,"Input: musician Answer: position
+"
+near,souvenir,"Input: near Answer: souvenir
+"
+care,prepare,"Input: care Answer: prepare
+"
+disagree,key,"Input: disagree Answer: key
+"
+polite,bright,"Input: polite Answer: bright
+"
+defense,sense,"Input: defense Answer: sense
+"
+repair,care,"Input: repair Answer: care
+"
+bag,flag,"Input: bag Answer: flag
+"
+reservation,location,"Input: reservation Answer: location
+"
+relation,operation,"Input: relation Answer: operation
+"
+hide,ride,"Input: hide Answer: ride
+"
+late,gate,"Input: late Answer: gate
+"
+stain,explain,"Input: stain Answer: explain
+"
+run,fun,"Input: run Answer: fun
+"
+conversation,preparation,"Input: conversation Answer: preparation
+"
+information,location,"Input: information Answer: location
+"
+out,shout,"Input: out Answer: shout
+"
+pain,train,"Input: pain Answer: train
+"
+yard,hard,"Input: yard Answer: hard
+"
+invite,polite,"Input: invite Answer: polite
+"
+goodbye,bye,"Input: goodbye Answer: bye
+"
+we,disagree,"Input: we Answer: disagree
+"
+steak,shake,"Input: steak Answer: shake
+"
+station,imagination,"Input: station Answer: imagination
+"
+postpone,own,"Input: postpone Answer: own
+"
+sea,me,"Input: sea Answer: me
+"
+dream,scream,"Input: dream Answer: scream
+"
+quite,height,"Input: quite Answer: height
+"
+high,buy,"Input: high Answer: buy
+"
+asleep,deep,"Input: asleep Answer: deep
+"
+sing,wing,"Input: sing Answer: wing
+"
+pin,begin,"Input: pin Answer: begin
+"
+strange,change,"Input: strange Answer: change
+"
+brain,complain,"Input: brain Answer: complain
+"
+dirt,skirt,"Input: dirt Answer: skirt
+"
+role,whole,"Input: role Answer: whole
+"
+unpack,attack,"Input: unpack Answer: attack
+"
+vet,jet,"Input: vet Answer: jet
+"
+politician,permission,"Input: politician Answer: permission
+"
+bee,tree,"Input: bee Answer: tree
+"
+who,you,"Input: who Answer: you
+"
+relaxation,imagination,"Input: relaxation Answer: imagination
+"
+shade,afraid,"Input: shade Answer: afraid
+"
+stressed,depressed,"Input: stressed Answer: depressed
+"
+speech,each,"Input: speech Answer: each
+"
+along,wrong,"Input: along Answer: wrong
+"
+bye,sky,"Input: bye Answer: sky
+"
+back,attack,"Input: back Answer: attack
+"
+pain,complain,"Input: pain Answer: complain
+"
+stress,guess,"Input: stress Answer: guess
+"
+view,review,"Input: view Answer: review
+"
+sky,eye,"Input: sky Answer: eye
+"
+operation,location,"Input: operation Answer: location
+"
+row,throw,"Input: row Answer: throw
+"
+asleep,sleep,"Input: asleep Answer: sleep
+"
+view,flu,"Input: view Answer: flu
+"
+guest,northwest,"Input: guest Answer: northwest
+"
+postpone,zone,"Input: postpone Answer: zone
+"
+protect,incorrect,"Input: protect Answer: incorrect
+"
+spy,goodbye,"Input: spy Answer: goodbye
+"
+row,so,"Input: row Answer: so
+"
+session,profession,"Input: session Answer: profession
+"
+crazy,lazy,"Input: crazy Answer: lazy
+"
+flu,shampoo,"Input: flu Answer: shampoo
+"
+brochure,tour,"Input: brochure Answer: tour
+"
+information,relaxation,"Input: information Answer: relaxation
+"
+examination,punctuation,"Input: examination Answer: punctuation
+"
+dry,goodbye,"Input: dry Answer: goodbye
+"
+relaxation,location,"Input: relaxation Answer: location
+"
+store,shore,"Input: store Answer: shore
+"
+damn,gram,"Input: damn Answer: gram
+"
+guy,my,"Input: guy Answer: my
+"
+vacation,generation,"Input: vacation Answer: generation
+"
+review,too,"Input: review Answer: too
+"
+space,face,"Input: space Answer: face
+"
+population,examination,"Input: population Answer: examination
+"
+sky,high,"Input: sky Answer: high
+"
+shoe,you,"Input: shoe Answer: you
+"
+dry,nearby,"Input: dry Answer: nearby
+"
+breast,west,"Input: breast Answer: west
+"
+celebration,imagination,"Input: celebration Answer: imagination
+"
+wood,could,"Input: wood Answer: could
+"
+sort,short,"Input: sort Answer: short
+"
+suggest,arrest,"Input: suggest Answer: arrest
+"
+pain,contain,"Input: pain Answer: contain
+"
+fit,kit,"Input: fit Answer: kit
+"
+sight,bite,"Input: sight Answer: bite
+"
+pair,bear,"Input: pair Answer: bear
+"
+success,yes,"Input: success Answer: yes
+"
+routine,screen,"Input: routine Answer: screen
+"
+pea,key,"Input: pea Answer: key
+"
+rude,mood,"Input: rude Answer: mood
+"
+brain,stain,"Input: brain Answer: stain
+"
+vet,yet,"Input: vet Answer: yet
+"
+degree,me,"Input: degree Answer: me
+"
+explain,plane,"Input: explain Answer: plane
+"
+teach,reach,"Input: teach Answer: reach
+"
+information,application,"Input: information Answer: application
+"
+divide,wide,"Input: divide Answer: wide
+"
+begin,thin,"Input: begin Answer: thin
+"
+questionnaire,bear,"Input: questionnaire Answer: bear
+"
+review,blue,"Input: review Answer: blue
+"
+she,me,"Input: she Answer: me
+"
+see,sea,"Input: see Answer: sea
+"
+go,owe,"Input: go Answer: owe
+"
+try,die,"Input: try Answer: die
+"
+chess,stress,"Input: chess Answer: stress
+"
+transportation,vacation,"Input: transportation Answer: vacation
+"
+apply,high,"Input: apply Answer: high
+"
+square,air,"Input: square Answer: air
+"
+need,bleed,"Input: need Answer: bleed
+"
+immigration,vacation,"Input: immigration Answer: vacation
+"
+used,confused,"Input: used Answer: confused
+"
+from,some,"Input: from Answer: some
+"
+pair,fare,"Input: pair Answer: fare
+"
+ghost,coast,"Input: ghost Answer: coast
+"
+kill,fill,"Input: kill Answer: fill
+"
+punctuation,imagination,"Input: punctuation Answer: imagination
+"
+avoid,annoyed,"Input: avoid Answer: annoyed
+"
+station,reservation,"Input: station Answer: reservation
+"
+persuade,grade,"Input: persuade Answer: grade
+"
+cent,percent,"Input: cent Answer: percent
+"
+straight,wait,"Input: straight Answer: wait
+"
+view,shampoo,"Input: view Answer: shampoo
+"
+location,presentation,"Input: location Answer: presentation
+"
+bat,hat,"Input: bat Answer: hat
+"
+glass,gas,"Input: glass Answer: gas
+"
+admit,kit,"Input: admit Answer: kit
+"
+click,quick,"Input: click Answer: quick
+"
+shade,lemonade,"Input: shade Answer: lemonade
+"
+attend,defend,"Input: attend Answer: defend
+"
+generation,reservation,"Input: generation Answer: reservation
+"
+low,slow,"Input: low Answer: slow
+"
+punctuation,preparation,"Input: punctuation Answer: preparation
+"
+stall,mall,"Input: stall Answer: mall
+"
+these,breeze,"Input: these Answer: breeze
+"
+organization,animation,"Input: organization Answer: animation
+"
+pet,set,"Input: pet Answer: set
+"
+operation,punctuation,"Input: operation Answer: punctuation
+"
+kill,hill,"Input: kill Answer: hill
+"
+complain,chain,"Input: complain Answer: chain
+"
+show,know,"Input: show Answer: know
+"
+weight,late,"Input: weight Answer: late
+"
+pass,gas,"Input: pass Answer: gas
+"
+relaxation,examination,"Input: relaxation Answer: examination
+"
+dress,guess,"Input: dress Answer: guess
+"
+unknown,zone,"Input: unknown Answer: zone
+"
+despite,sight,"Input: despite Answer: sight
+"
+high,apply,"Input: high Answer: apply
+"
+right,polite,"Input: right Answer: polite
+"
+tea,tree,"Input: tea Answer: tree
+"
+die,sky,"Input: die Answer: sky
+"
+organization,communication,"Input: organization Answer: communication
+"
+presentation,population,"Input: presentation Answer: population
+"
+less,stress,"Input: less Answer: stress
+"
+lamp,camp,"Input: lamp Answer: camp
+"
+incorrect,correct,"Input: incorrect Answer: correct
+"
+key,free,"Input: key Answer: free
+"
+try,guy,"Input: try Answer: guy
+"
+imagination,operation,"Input: imagination Answer: operation
+"
+competition,musician,"Input: competition Answer: musician
+"
+mistake,awake,"Input: mistake Answer: awake
+"
+grill,kill,"Input: grill Answer: kill
+"
+provide,hide,"Input: provide Answer: hide
+"
+explanation,invitation,"Input: explanation Answer: invitation
+"
+musician,permission,"Input: musician Answer: permission
+"
+sleep,asleep,"Input: sleep Answer: asleep
+"
+care,bear,"Input: care Answer: bear
+"
+downtown,clown,"Input: downtown Answer: clown
+"
+nearby,bye,"Input: nearby Answer: bye
+"
+door,more,"Input: door Answer: more
+"
+gate,state,"Input: gate Answer: state
+"
+kill,till,"Input: kill Answer: till
+"
+drawer,more,"Input: drawer Answer: more
+"
+invitation,animation,"Input: invitation Answer: animation
+"
+test,northwest,"Input: test Answer: northwest
+"
+vet,cigarette,"Input: vet Answer: cigarette
+"
+snake,shake,"Input: snake Answer: shake
+"
+cake,bake,"Input: cake Answer: bake
+"
+keep,sleep,"Input: keep Answer: sleep
+"
+rose,nose,"Input: rose Answer: nose
+"
+thick,click,"Input: thick Answer: click
+"
+celebration,identification,"Input: celebration Answer: identification
+"
+create,late,"Input: create Answer: late
+"
+career,dear,"Input: career Answer: dear
+"
+clean,routine,"Input: clean Answer: routine
+"
+cheek,speak,"Input: cheek Answer: speak
+"
+ad,bad,"Input: ad Answer: bad
+"
+mistake,snake,"Input: mistake Answer: snake
+"
+information,animation,"Input: information Answer: animation
+"
+sight,write,"Input: sight Answer: write
+"
+slow,show,"Input: slow Answer: show
+"
+preparation,punctuation,"Input: preparation Answer: punctuation
+"
+up,cup,"Input: up Answer: cup
+"
+height,sight,"Input: height Answer: sight
+"
+wave,behave,"Input: wave Answer: behave
+"
+pot,not,"Input: pot Answer: not
+"
+intermission,position,"Input: intermission Answer: position
+"
+shower,tower,"Input: shower Answer: tower
+"
+brake,lake,"Input: brake Answer: lake
+"
+bride,outside,"Input: bride Answer: outside
+"
+organization,occupation,"Input: organization Answer: occupation
+"
+location,registration,"Input: location Answer: registration
+"
+ski,fee,"Input: ski Answer: fee
+"
+imagination,immigration,"Input: imagination Answer: immigration
+"
+explain,stain,"Input: explain Answer: stain
+"
+bear,care,"Input: bear Answer: care
+"
+exhibition,expedition,"Input: exhibition Answer: expedition
+"
+make,break,"Input: make Answer: break
+"
+oil,spoil,"Input: oil Answer: spoil
+"
+stand,hand,"Input: stand Answer: hand
+"
+red,ahead,"Input: red Answer: ahead
+"
+write,despite,"Input: write Answer: despite
+"
+undress,press,"Input: undress Answer: press
+"
+floor,door,"Input: floor Answer: door
+"
+whole,bowl,"Input: whole Answer: bowl
+"
+sore,anymore,"Input: sore Answer: anymore
+"
+arrest,guest,"Input: arrest Answer: guest
+"
+cool,pool,"Input: cool Answer: pool
+"
+examination,organization,"Input: examination Answer: organization
+"
+upstairs,downstairs,"Input: upstairs Answer: downstairs
+"
+few,who,"Input: few Answer: who
+"
+few,you,"Input: few Answer: you
+"
+dress,less,"Input: dress Answer: less
+"
+convince,since,"Input: convince Answer: since
+"
+see,bee,"Input: see Answer: bee
+"
+suit,shoot,"Input: suit Answer: shoot
+"
+incorrect,select,"Input: incorrect Answer: select
+"
+do,review,"Input: do Answer: review
+"
+kite,light,"Input: kite Answer: light
+"
+drama,comma,"Input: drama Answer: comma
+"
+hold,fold,"Input: hold Answer: fold
+"
+questionnaire,their,"Input: questionnaire Answer: their
+"
+wait,create,"Input: wait Answer: create
+"
+disease,these,"Input: disease Answer: these
+"
+bridge,fridge,"Input: bridge Answer: fridge
+"
+who,blue,"Input: who Answer: blue
+"
+stir,her,"Input: stir Answer: her
+"
+key,ski,"Input: key Answer: ski
+"
+brake,cake,"Input: brake Answer: cake
+"
+share,care,"Input: share Answer: care
+"
+nearby,fry,"Input: nearby Answer: fry
+"
+hair,care,"Input: hair Answer: care
+"
+communication,occupation,"Input: communication Answer: occupation
+"
+bone,postpone,"Input: bone Answer: postpone
+"
+imagination,presentation,"Input: imagination Answer: presentation
+"
+immigration,communication,"Input: immigration Answer: communication
+"
+note,float,"Input: note Answer: float
+"
+at,flat,"Input: at Answer: flat
+"
+pack,back,"Input: pack Answer: back
+"
+ahead,red,"Input: ahead Answer: red
+"
+ability,possibility,"Input: ability Answer: possibility
+"
+tip,trip,"Input: tip Answer: trip
+"
+fight,night,"Input: fight Answer: night
+"
+cow,wow,"Input: cow Answer: wow
+"
+fee,knee,"Input: fee Answer: knee
+"
+kit,sit,"Input: kit Answer: sit
+"
+registration,organization,"Input: registration Answer: organization
+"
+high,nearby,"Input: high Answer: nearby
+"
+information,registration,"Input: information Answer: registration
+"
+hall,tall,"Input: hall Answer: tall
+"
+demand,hand,"Input: demand Answer: hand
+"
+guy,dry,"Input: guy Answer: dry
+"
+fur,per,"Input: fur Answer: per
+"
+disagree,free,"Input: disagree Answer: free
+"
+immigration,application,"Input: immigration Answer: application
+"
+questionnaire,rare,"Input: questionnaire Answer: rare
+"
+king,wing,"Input: king Answer: wing
+"
+tea,fee,"Input: tea Answer: fee
+"
+me,bee,"Input: me Answer: bee
+"
+file,mile,"Input: file Answer: mile
+"
+like,bike,"Input: like Answer: bike
+"
+application,presentation,"Input: application Answer: presentation
+"
+immigration,operation,"Input: immigration Answer: operation
+"
+might,write,"Input: might Answer: write
+"
+protect,expect,"Input: protect Answer: expect
+"
+quite,overnight,"Input: quite Answer: overnight
+"
+whole,role,"Input: whole Answer: role
+"
+station,communication,"Input: station Answer: communication
+"
+beginner,dinner,"Input: beginner Answer: dinner
+"
+fill,spill,"Input: fill Answer: spill
+"
+aim,frame,"Input: aim Answer: frame
+"
+go,show,"Input: go Answer: show
+"
+operation,vacation,"Input: operation Answer: vacation
+"
+apply,shy,"Input: apply Answer: shy
+"
+inform,form,"Input: inform Answer: form
+"
+occupation,generation,"Input: occupation Answer: generation
+"
+mug,hug,"Input: mug Answer: hug
+"
+bear,rare,"Input: bear Answer: rare
+"
+violin,skin,"Input: violin Answer: skin
+"
+ago,owe,"Input: ago Answer: owe
+"
+do,zoo,"Input: do Answer: zoo
+"
+examination,relation,"Input: examination Answer: relation
+"
+kit,fit,"Input: kit Answer: fit
+"
+population,application,"Input: population Answer: application
+"
+queen,clean,"Input: queen Answer: clean
+"
+examination,information,"Input: examination Answer: information
+"
+expedition,composition,"Input: expedition Answer: composition
+"
+quit,sit,"Input: quit Answer: sit
+"
+bad,ad,"Input: bad Answer: ad
+"
+vote,float,"Input: vote Answer: float
+"
+preparation,conversation,"Input: preparation Answer: conversation
+"
+reservation,information,"Input: reservation Answer: information
+"
+machine,routine,"Input: machine Answer: routine
+"
+mild,wild,"Input: mild Answer: wild
+"
+disagree,sea,"Input: disagree Answer: sea
+"
+these,disease,"Input: these Answer: disease
+"
+throw,row,"Input: throw Answer: row
+"
+might,height,"Input: might Answer: height
+"
+dressed,guest,"Input: dressed Answer: guest
+"
+noun,clown,"Input: noun Answer: clown
+"
+hi,apply,"Input: hi Answer: apply
+"
+cry,die,"Input: cry Answer: die
+"
+collect,connect,"Input: collect Answer: connect
+"
+kill,skill,"Input: kill Answer: skill
+"
+degree,sea,"Input: degree Answer: sea
+"
+dot,spot,"Input: dot Answer: spot
+"
+vet,wet,"Input: vet Answer: wet
+"
+immigration,explanation,"Input: immigration Answer: explanation
+"
+percent,rent,"Input: percent Answer: rent
+"
+slow,know,"Input: slow Answer: know
+"
+conversation,imagination,"Input: conversation Answer: imagination
+"
+break,shake,"Input: break Answer: shake
+"
+competition,composition,"Input: competition Answer: composition
+"
+baseball,call,"Input: baseball Answer: call
+"
+mother,another,"Input: mother Answer: another
+"
+till,skill,"Input: till Answer: skill
+"
+power,flower,"Input: power Answer: flower
+"
+go,grow,"Input: go Answer: grow
+"
+champagne,main,"Input: champagne Answer: main
+"
+hill,till,"Input: hill Answer: till
+"
+know,blow,"Input: know Answer: blow
+"
+phone,alone,"Input: phone Answer: alone
+"
+apply,by,"Input: apply Answer: by
+"
+tight,light,"Input: tight Answer: light
+"
+pour,door,"Input: pour Answer: door
+"
+application,relaxation,"Input: application Answer: relaxation
+"
+exact,act,"Input: exact Answer: act
+"
+my,high,"Input: my Answer: high
+"
+black,unpack,"Input: black Answer: unpack
+"
+lab,cab,"Input: lab Answer: cab
+"
+place,race,"Input: place Answer: race
+"
+scary,bury,"Input: scary Answer: bury
+"
+clean,mean,"Input: clean Answer: mean
+"
+black,track,"Input: black Answer: track
+"
+through,blue,"Input: through Answer: blue
+"
+immigration,situation,"Input: immigration Answer: situation
+"
+go,toe,"Input: go Answer: toe
+"
+bored,board,"Input: bored Answer: board
+"
+until,bill,"Input: until Answer: bill
+"
+fair,their,"Input: fair Answer: their
+"
+appear,engineer,"Input: appear Answer: engineer
+"
+celebration,generation,"Input: celebration Answer: generation
+"
+conversation,communication,"Input: conversation Answer: communication
+"
+type,stripe,"Input: type Answer: stripe
+"
+cousin,dozen,"Input: cousin Answer: dozen
+"
+brave,wave,"Input: brave Answer: wave
+"
+night,bite,"Input: night Answer: bite
+"
+toe,ago,"Input: toe Answer: ago
+"
+writing,exciting,"Input: writing Answer: exciting
+"
+bean,green,"Input: bean Answer: green
+"
+pick,quick,"Input: pick Answer: quick
+"
+snow,blow,"Input: snow Answer: blow
+"
+dark,shark,"Input: dark Answer: shark
+"
+however,ever,"Input: however Answer: ever
+"
+tight,invite,"Input: tight Answer: invite
+"
+station,relation,"Input: station Answer: relation
+"
+sheep,keep,"Input: sheep Answer: keep
+"
+war,sore,"Input: war Answer: sore
+"
+eye,hi,"Input: eye Answer: hi
+"
+peak,cheek,"Input: peak Answer: cheek
+"
+quite,right,"Input: quite Answer: right
+"
+explain,gain,"Input: explain Answer: gain
+"
+pronounce,announce,"Input: pronounce Answer: announce
+"
+position,politician,"Input: position Answer: politician
+"
+examination,population,"Input: examination Answer: population
+"
+expedition,intermission,"Input: expedition Answer: intermission
+"
+decide,side,"Input: decide Answer: side
+"
+stain,complain,"Input: stain Answer: complain
+"
+steep,asleep,"Input: steep Answer: asleep
+"
+bee,she,"Input: bee Answer: she
+"
+size,rise,"Input: size Answer: rise
+"
+oh,ago,"Input: oh Answer: ago
+"
+move,prove,"Input: move Answer: prove
+"
+by,lie,"Input: by Answer: lie
+"
+blow,owe,"Input: blow Answer: owe
+"
+wide,outside,"Input: wide Answer: outside
+"
+screen,machine,"Input: screen Answer: machine
+"
+kite,quite,"Input: kite Answer: quite
+"
+soap,hope,"Input: soap Answer: hope
+"
+hair,share,"Input: hair Answer: share
+"
+think,drink,"Input: think Answer: drink
+"
+collect,select,"Input: collect Answer: select
+"
+wild,mild,"Input: wild Answer: mild
+"
+arrest,test,"Input: arrest Answer: test
+"
+phrase,raise,"Input: phrase Answer: raise
+"
+view,crew,"Input: view Answer: crew
+"
+loud,cloud,"Input: loud Answer: cloud
+"
+snow,owe,"Input: snow Answer: owe
+"
+apply,try,"Input: apply Answer: try
+"
+shore,score,"Input: shore Answer: score
+"
+fold,gold,"Input: fold Answer: gold
+"
+preparation,registration,"Input: preparation Answer: registration
+"
+hurt,skirt,"Input: hurt Answer: skirt
+"
+night,site,"Input: night Answer: site
+"
+spy,fry,"Input: spy Answer: fry
+"
+right,height,"Input: right Answer: height
+"
+antique,peak,"Input: antique Answer: peak
+"
+alone,unknown,"Input: alone Answer: unknown
+"
+vacation,situation,"Input: vacation Answer: situation
+"
+brother,another,"Input: brother Answer: another
+"
+cave,wave,"Input: cave Answer: wave
+"
+trip,slip,"Input: trip Answer: slip
+"
+wear,hair,"Input: wear Answer: hair
+"
+shout,doubt,"Input: shout Answer: doubt
+"
+tree,she,"Input: tree Answer: she
+"
+by,high,"Input: by Answer: high
+"
+agree,free,"Input: agree Answer: free
+"
+sky,fly,"Input: sky Answer: fly
+"
+thin,skin,"Input: thin Answer: skin
+"
+mind,behind,"Input: mind Answer: behind
+"
+who,crew,"Input: who Answer: crew
+"
+hit,fit,"Input: hit Answer: fit
+"
+shore,floor,"Input: shore Answer: floor
+"
+kit,hit,"Input: kit Answer: hit
+"
+roll,goal,"Input: roll Answer: goal
+"
+animation,information,"Input: animation Answer: information
+"
+long,along,"Input: long Answer: along
+"
+overnight,flight,"Input: overnight Answer: flight
+"
+situation,animation,"Input: situation Answer: animation
+"
+reservation,operation,"Input: reservation Answer: operation
+"
+pear,share,"Input: pear Answer: share
+"
+owe,blow,"Input: owe Answer: blow
+"
+grow,low,"Input: grow Answer: low
+"
+clever,however,"Input: clever Answer: however
+"
+organization,location,"Input: organization Answer: location
+"
+lie,shy,"Input: lie Answer: shy
+"
+lake,ache,"Input: lake Answer: ache
+"
+hotel,unwell,"Input: hotel Answer: unwell
+"
+vacation,punctuation,"Input: vacation Answer: punctuation
+"
+inform,warm,"Input: inform Answer: warm
+"
+catch,attach,"Input: catch Answer: attach
+"
+date,gate,"Input: date Answer: gate
+"
+population,punctuation,"Input: population Answer: punctuation
+"
+cheap,sheep,"Input: cheap Answer: sheep
+"
+pea,we,"Input: pea Answer: we
+"
+relation,generation,"Input: relation Answer: generation
+"
+afraid,persuade,"Input: afraid Answer: persuade
+"
+examination,animation,"Input: examination Answer: animation
+"
+father,bother,"Input: father Answer: bother
+"
+grass,gas,"Input: grass Answer: gas
+"
+written,kitten,"Input: written Answer: kitten
+"
+ski,tea,"Input: ski Answer: tea
+"
+yes,undress,"Input: yes Answer: undress
+"
+tree,agree,"Input: tree Answer: agree
+"
+court,support,"Input: court Answer: support
+"
+stressed,suggest,"Input: stressed Answer: suggest
+"
+roll,control,"Input: roll Answer: control
+"
+under,thunder,"Input: under Answer: thunder
+"
+here,hear,"Input: here Answer: hear
+"
+comma,drama,"Input: comma Answer: drama
+"
+ham,jam,"Input: ham Answer: jam
+"
+morning,warning,"Input: morning Answer: warning
+"
+ghost,roast,"Input: ghost Answer: roast
+"
+cry,bye,"Input: cry Answer: bye
+"
+divide,hide,"Input: divide Answer: hide
+"
+all,small,"Input: all Answer: small
+"
+shampoo,zoo,"Input: shampoo Answer: zoo
+"
+transportation,celebration,"Input: transportation Answer: celebration
+"
+steal,feel,"Input: steal Answer: feel
+"
+red,head,"Input: red Answer: head
+"
+hotel,bell,"Input: hotel Answer: bell
+"
+rest,northwest,"Input: rest Answer: northwest
+"
+freeze,breeze,"Input: freeze Answer: breeze
+"
+repair,bear,"Input: repair Answer: bear
+"
+sick,kick,"Input: sick Answer: kick
+"
+choose,whose,"Input: choose Answer: whose
+"
+take,cake,"Input: take Answer: cake
+"
+sandy,candy,"Input: sandy Answer: candy
+"
+mark,park,"Input: mark Answer: park
+"
+information,immigration,"Input: information Answer: immigration
+"
+cheek,technique,"Input: cheek Answer: technique
+"
+show,go,"Input: show Answer: go
+"
+mess,success,"Input: mess Answer: success
+"
+throw,no,"Input: throw Answer: no
+"
+share,there,"Input: share Answer: there
+"
+cry,lie,"Input: cry Answer: lie
+"
+communication,preparation,"Input: communication Answer: preparation
+"
+prize,rise,"Input: prize Answer: rise
+"
+cat,hat,"Input: cat Answer: hat
+"
+zone,bone,"Input: zone Answer: bone
+"
+war,pour,"Input: war Answer: pour
+"
+storm,warm,"Input: storm Answer: warm
+"
+send,end,"Input: send Answer: end
+"
+disagree,knee,"Input: disagree Answer: knee
+"
+wife,knife,"Input: wife Answer: knife
+"
+dressed,depressed,"Input: dressed Answer: depressed
+"
+dry,guy,"Input: dry Answer: guy
+"
+bride,hide,"Input: bride Answer: hide
+"
+horse,course,"Input: horse Answer: course
+"
+examination,occupation,"Input: examination Answer: occupation
+"
+loud,crowd,"Input: loud Answer: crowd
+"
+warm,form,"Input: warm Answer: form
+"
+buy,goodbye,"Input: buy Answer: goodbye
+"
+tip,lip,"Input: tip Answer: lip
+"
+allow,wow,"Input: allow Answer: wow
+"
+none,fun,"Input: none Answer: fun
+"
+test,arrest,"Input: test Answer: arrest
+"
+polite,kite,"Input: polite Answer: kite
+"
+chain,explain,"Input: chain Answer: explain
+"
+southwest,west,"Input: southwest Answer: west
+"
+he,disagree,"Input: he Answer: disagree
+"
+honey,sunny,"Input: honey Answer: sunny
+"
+blood,flood,"Input: blood Answer: flood
+"
+free,sea,"Input: free Answer: sea
+"
+thick,pick,"Input: thick Answer: pick
+"
+violin,win,"Input: violin Answer: win
+"
+owe,know,"Input: owe Answer: know
+"
+toe,snow,"Input: toe Answer: snow
+"
+space,race,"Input: space Answer: race
+"
+leather,together,"Input: leather Answer: together
+"
+free,agree,"Input: free Answer: agree
+"
+fry,shy,"Input: fry Answer: shy
+"
+rule,school,"Input: rule Answer: school
+"
+rebuild,build,"Input: rebuild Answer: build
+"
+upstairs,theirs,"Input: upstairs Answer: theirs
+"
+bus,discuss,"Input: bus Answer: discuss
+"
+reservation,application,"Input: reservation Answer: application
+"
+polite,flight,"Input: polite Answer: flight
+"
+degree,bee,"Input: degree Answer: bee
+"
+brown,noun,"Input: brown Answer: noun
+"
+trend,defend,"Input: trend Answer: defend
+"
+sky,tie,"Input: sky Answer: tie
+"
+till,still,"Input: till Answer: still
+"
+spare,prepare,"Input: spare Answer: prepare
+"
+fry,nearby,"Input: fry Answer: nearby
+"
+preparation,reservation,"Input: preparation Answer: reservation
+"
+celebration,immigration,"Input: celebration Answer: immigration
+"
+sight,flight,"Input: sight Answer: flight
+"
+scream,team,"Input: scream Answer: team
+"
+pick,thick,"Input: pick Answer: thick
+"
+stick,trick,"Input: stick Answer: trick
+"
+grade,lemonade,"Input: grade Answer: lemonade
+"
+pronounce,bounce,"Input: pronounce Answer: bounce
+"
+nearby,by,"Input: nearby Answer: by
+"
+repair,declare,"Input: repair Answer: declare
+"
+divide,bride,"Input: divide Answer: bride
+"
+control,role,"Input: control Answer: role
+"
+he,we,"Input: he Answer: we
+"
+leave,achieve,"Input: leave Answer: achieve
+"
+begin,skin,"Input: begin Answer: skin
+"
+floor,drawer,"Input: floor Answer: drawer
+"
+speak,antique,"Input: speak Answer: antique
+"
+feel,meal,"Input: feel Answer: meal
+"
+call,all,"Input: call Answer: all
+"
+height,right,"Input: height Answer: right
+"
+ache,make,"Input: ache Answer: make
+"
+wet,jet,"Input: wet Answer: jet
+"
+demand,land,"Input: demand Answer: land
+"
+fly,goodbye,"Input: fly Answer: goodbye
+"
+quite,sight,"Input: quite Answer: sight
+"
+brave,shave,"Input: brave Answer: shave
+"
+chain,pain,"Input: chain Answer: pain
+"
+spend,end,"Input: spend Answer: end
+"
+score,store,"Input: score Answer: store
+"
+pork,fork,"Input: pork Answer: fork
+"
+animation,explanation,"Input: animation Answer: explanation
+"
+situation,generation,"Input: situation Answer: generation
+"
+male,sail,"Input: male Answer: sail
+"
+bye,eye,"Input: bye Answer: eye
+"
+success,guess,"Input: success Answer: guess
+"
+rail,jail,"Input: rail Answer: jail
+"
+ball,wall,"Input: ball Answer: wall
+"
+set,yet,"Input: set Answer: yet
+"
+generation,preparation,"Input: generation Answer: preparation
+"
+peach,teach,"Input: peach Answer: teach
+"
+pet,let,"Input: pet Answer: let
+"
+chair,wear,"Input: chair Answer: wear
+"
+station,invitation,"Input: station Answer: invitation
+"
+score,pour,"Input: score Answer: pour
+"
+success,mess,"Input: success Answer: mess
+"
+square,bear,"Input: square Answer: bear
+"
+information,invitation,"Input: information Answer: invitation
+"
+owe,ago,"Input: owe Answer: ago
+"
+organization,invitation,"Input: organization Answer: invitation
+"
+money,honey,"Input: money Answer: honey
+"
+compare,share,"Input: compare Answer: share
+"
+band,understand,"Input: band Answer: understand
+"
+relation,station,"Input: relation Answer: station
+"
+shiny,tiny,"Input: shiny Answer: tiny
+"
+success,undress,"Input: success Answer: undress
+"
+know,no,"Input: know Answer: no
+"
+fair,there,"Input: fair Answer: there
+"
+generation,registration,"Input: generation Answer: registration
+"
+call,ball,"Input: call Answer: ball
+"
+gun,run,"Input: gun Answer: run
+"
+wall,install,"Input: wall Answer: install
+"
+loose,reduce,"Input: loose Answer: reduce
+"
+thick,quick,"Input: thick Answer: quick
+"
+eye,cry,"Input: eye Answer: cry
+"
+however,clever,"Input: however Answer: clever
+"
+steep,keep,"Input: steep Answer: keep
+"
+guide,ride,"Input: guide Answer: ride
+"
+location,information,"Input: location Answer: information
+"
+cruise,whose,"Input: cruise Answer: whose
+"
+wide,guide,"Input: wide Answer: guide
+"
+breast,suggest,"Input: breast Answer: suggest
+"
+loan,stone,"Input: loan Answer: stone
+"
+northwest,depressed,"Input: northwest Answer: depressed
+"
+try,goodbye,"Input: try Answer: goodbye
+"
+situation,organization,"Input: situation Answer: organization
+"
+fly,buy,"Input: fly Answer: buy
+"
+gain,brain,"Input: gain Answer: brain
+"
+youth,tooth,"Input: youth Answer: tooth
+"
+quite,bright,"Input: quite Answer: bright
+"
+call,wall,"Input: call Answer: wall
+"
+reservation,celebration,"Input: reservation Answer: celebration
+"
+transportation,presentation,"Input: transportation Answer: presentation
+"
+shy,try,"Input: shy Answer: try
+"
+pear,there,"Input: pear Answer: there
+"
+never,clever,"Input: never Answer: clever
+"
+hole,goal,"Input: hole Answer: goal
+"
+kangaroo,review,"Input: kangaroo Answer: review
+"
+possibility,ability,"Input: possibility Answer: ability
+"
+note,promote,"Input: note Answer: promote
+"
+gate,great,"Input: gate Answer: great
+"
+questionnaire,chair,"Input: questionnaire Answer: chair
+"
+range,change,"Input: range Answer: change
+"
+hand,band,"Input: hand Answer: band
+"
+peach,beach,"Input: peach Answer: beach
+"
+blow,snow,"Input: blow Answer: snow
+"
+try,spy,"Input: try Answer: spy
+"
+fry,eye,"Input: fry Answer: eye
+"
+you,view,"Input: you Answer: view
+"
+clap,rap,"Input: clap Answer: rap
+"
+musician,exhibition,"Input: musician Answer: exhibition
+"
+stand,sand,"Input: stand Answer: sand
+"
+do,shoe,"Input: do Answer: shoe
+"
+ago,so,"Input: ago Answer: so
+"
+band,demand,"Input: band Answer: demand
+"
+roast,coast,"Input: roast Answer: coast
+"
+shoe,kangaroo,"Input: shoe Answer: kangaroo
+"
+preparation,animation,"Input: preparation Answer: animation
+"
+know,sew,"Input: know Answer: sew
+"
+short,sport,"Input: short Answer: sport
+"
+souvenir,fear,"Input: souvenir Answer: fear
+"
+chair,bear,"Input: chair Answer: bear
+"
+gain,chain,"Input: gain Answer: chain
+"
+note,throat,"Input: note Answer: throat
+"
+try,fly,"Input: try Answer: fly
+"
+book,look,"Input: book Answer: look
+"
+permission,ambition,"Input: permission Answer: ambition
+"
+salary,gallery,"Input: salary Answer: gallery
+"
+rude,food,"Input: rude Answer: food
+"
+check,deck,"Input: check Answer: deck
+"
+flat,fat,"Input: flat Answer: fat
+"
+blue,flu,"Input: blue Answer: flu
+"
+toe,oh,"Input: toe Answer: oh
+"
+near,year,"Input: near Answer: year
+"
+together,weather,"Input: together Answer: weather
+"
+less,success,"Input: less Answer: success
+"
+hit,knit,"Input: hit Answer: knit
+"
+fare,questionnaire,"Input: fare Answer: questionnaire
+"
+lake,take,"Input: lake Answer: take
+"
+tie,goodbye,"Input: tie Answer: goodbye
+"
+bye,nearby,"Input: bye Answer: nearby
+"
+doubt,out,"Input: doubt Answer: out
+"
+lie,sky,"Input: lie Answer: sky
+"
+reservation,examination,"Input: reservation Answer: examination
+"
+ambition,exhibition,"Input: ambition Answer: exhibition
+"
+toy,destroy,"Input: toy Answer: destroy
+"
+chair,square,"Input: chair Answer: square
+"
+alone,bone,"Input: alone Answer: bone
+"
+perform,form,"Input: perform Answer: form
+"
+till,spill,"Input: till Answer: spill
+"
+anymore,more,"Input: anymore Answer: more
+"
+height,bite,"Input: height Answer: bite
+"
+light,height,"Input: light Answer: height
+"
+try,hi,"Input: try Answer: hi
+"
+plain,train,"Input: plain Answer: train
+"
+care,there,"Input: care Answer: there
+"
+meal,steal,"Input: meal Answer: steal
+"
+collection,election,"Input: collection Answer: election
+"
+apply,die,"Input: apply Answer: die
+"
+spill,still,"Input: spill Answer: still
+"
+identification,communication,"Input: identification Answer: communication
+"
+quite,polite,"Input: quite Answer: polite
+"
+fare,pair,"Input: fare Answer: pair
+"
+not,hot,"Input: not Answer: hot
+"
+small,mall,"Input: small Answer: mall
+"
+she,bee,"Input: she Answer: bee
+"
+fat,bat,"Input: fat Answer: bat
+"
+lie,spy,"Input: lie Answer: spy
+"
+bear,questionnaire,"Input: bear Answer: questionnaire
+"
+year,near,"Input: year Answer: near
+"
+end,attend,"Input: end Answer: attend
+"
+tall,install,"Input: tall Answer: install
+"
+height,write,"Input: height Answer: write
+"
+routine,green,"Input: routine Answer: green
+"
+flag,drag,"Input: flag Answer: drag
+"
+punctuation,relaxation,"Input: punctuation Answer: relaxation
+"
+animation,vacation,"Input: animation Answer: vacation
+"
+tall,wall,"Input: tall Answer: wall
+"
+care,chair,"Input: care Answer: chair
+"
+identification,vacation,"Input: identification Answer: vacation
+"
+location,vacation,"Input: location Answer: vacation
+"
+ball,mall,"Input: ball Answer: mall
+"
+clear,year,"Input: clear Answer: year
+"
+goodbye,fry,"Input: goodbye Answer: fry
+"
+shore,anymore,"Input: shore Answer: anymore
+"
+fork,pork,"Input: fork Answer: pork
+"
+group,soup,"Input: group Answer: soup
+"
+generation,imagination,"Input: generation Answer: imagination
+"
+condition,expedition,"Input: condition Answer: expedition
+"
+above,glove,"Input: above Answer: glove
+"
+go,ago,"Input: go Answer: ago
+"
+tight,site,"Input: tight Answer: site
+"
+until,hill,"Input: until Answer: hill
+"
+flu,do,"Input: flu Answer: do
+"
+exact,attract,"Input: exact Answer: attract
+"
+sew,throw,"Input: sew Answer: throw
+"
+imagination,examination,"Input: imagination Answer: examination
+"
+explanation,preparation,"Input: explanation Answer: preparation
+"
+application,population,"Input: application Answer: population
+"
+situation,celebration,"Input: situation Answer: celebration
+"
+transportation,immigration,"Input: transportation Answer: immigration
+"
+flight,sight,"Input: flight Answer: sight
+"
+condition,position,"Input: condition Answer: position
+"
+imagination,organization,"Input: imagination Answer: organization
+"
+fair,spare,"Input: fair Answer: spare
+"
+do,too,"Input: do Answer: too
+"
+fill,still,"Input: fill Answer: still
+"
+down,brown,"Input: down Answer: brown
+"
+last,fast,"Input: last Answer: fast
+"
+school,fool,"Input: school Answer: fool
+"
+letter,sweater,"Input: letter Answer: sweater
+"
+stain,main,"Input: stain Answer: main
+"
+skate,gate,"Input: skate Answer: gate
+"
+attend,lend,"Input: attend Answer: lend
+"
+break,take,"Input: break Answer: take
+"
+class,gas,"Input: class Answer: gas
+"
+kangaroo,shoe,"Input: kangaroo Answer: shoe
+"
+flat,bat,"Input: flat Answer: bat
+"
+create,date,"Input: create Answer: date
+"
+front,hunt,"Input: front Answer: hunt
+"
+hair,wear,"Input: hair Answer: wear
+"
+ham,lamb,"Input: ham Answer: lamb
+"
+site,height,"Input: site Answer: height
+"
+train,stain,"Input: train Answer: stain
+"
+win,begin,"Input: win Answer: begin
+"
+miss,kiss,"Input: miss Answer: kiss
+"
+war,more,"Input: war Answer: more
+"
+still,kill,"Input: still Answer: kill
+"
+feed,need,"Input: feed Answer: need
+"
+technique,speak,"Input: technique Answer: speak
+"
+bone,stone,"Input: bone Answer: stone
+"
+hi,sky,"Input: hi Answer: sky
+"
+admit,fit,"Input: admit Answer: fit
+"
+wear,their,"Input: wear Answer: their
+"
+instead,dead,"Input: instead Answer: dead
+"
+glass,class,"Input: glass Answer: class
+"
+bee,agree,"Input: bee Answer: agree
+"
+shake,break,"Input: shake Answer: break
+"
+ride,outside,"Input: ride Answer: outside
+"
+camp,lamp,"Input: camp Answer: lamp
+"
+who,view,"Input: who Answer: view
+"
+bake,awake,"Input: bake Answer: awake
+"
+bite,write,"Input: bite Answer: write
+"
+bad,add,"Input: bad Answer: add
+"
+flat,hat,"Input: flat Answer: hat
+"
+southwest,rest,"Input: southwest Answer: rest
+"
+jet,set,"Input: jet Answer: set
+"
+phone,own,"Input: phone Answer: own
+"
+note,goat,"Input: note Answer: goat
+"
+spare,chair,"Input: spare Answer: chair
+"
+east,least,"Input: east Answer: least
+"
+float,promote,"Input: float Answer: promote
+"
+nearby,shy,"Input: nearby Answer: shy
+"
+presentation,conversation,"Input: presentation Answer: conversation
+"
+lie,dry,"Input: lie Answer: dry
+"
+stall,all,"Input: stall Answer: all
+"
+share,chair,"Input: share Answer: chair
+"
+punctuation,registration,"Input: punctuation Answer: registration
+"
+duck,luck,"Input: duck Answer: luck
+"
+pile,file,"Input: pile Answer: file
+"
+sign,mine,"Input: sign Answer: mine
+"
+best,northwest,"Input: best Answer: northwest
+"
+annoyed,unemployed,"Input: annoyed Answer: unemployed
+"
+cry,fry,"Input: cry Answer: fry
+"
+fry,hi,"Input: fry Answer: hi
+"
+course,horse,"Input: course Answer: horse
+"
+gain,complain,"Input: gain Answer: complain
+"
+air,hair,"Input: air Answer: hair
+"
+complain,rain,"Input: complain Answer: rain
+"
+mine,design,"Input: mine Answer: design
+"
+queen,routine,"Input: queen Answer: routine
+"
+organization,conversation,"Input: organization Answer: conversation
+"
+buy,pie,"Input: buy Answer: pie
+"
+involve,solve,"Input: involve Answer: solve
+"
+rap,clap,"Input: rap Answer: clap
+"
+right,write,"Input: right Answer: write
+"
+communication,invitation,"Input: communication Answer: invitation
+"
+lover,discover,"Input: lover Answer: discover
+"
+shy,goodbye,"Input: shy Answer: goodbye
+"
+shake,mistake,"Input: shake Answer: mistake
+"
+punctuation,celebration,"Input: punctuation Answer: celebration
+"
+fee,agree,"Input: fee Answer: agree
+"
+begin,chin,"Input: begin Answer: chin
+"
+annoy,destroy,"Input: annoy Answer: destroy
+"
+transportation,animation,"Input: transportation Answer: animation
+"
+demand,understand,"Input: demand Answer: understand
+"
+me,degree,"Input: me Answer: degree
+"
+invitation,relation,"Input: invitation Answer: relation
+"
+weight,create,"Input: weight Answer: create
+"
+cover,lover,"Input: cover Answer: lover
+"
+information,operation,"Input: information Answer: operation
+"
+relaxation,application,"Input: relaxation Answer: application
+"
+bean,routine,"Input: bean Answer: routine
+"
+shy,apply,"Input: shy Answer: apply
+"
+send,trend,"Input: send Answer: trend
+"
+night,polite,"Input: night Answer: polite
+"
+sick,quick,"Input: sick Answer: quick
+"
+ring,sing,"Input: ring Answer: sing
+"
+dry,tie,"Input: dry Answer: tie
+"
+examination,location,"Input: examination Answer: location
+"
+rat,flat,"Input: rat Answer: flat
+"
+drawer,sore,"Input: drawer Answer: sore
+"
+teach,beach,"Input: teach Answer: beach
+"
+bit,fit,"Input: bit Answer: fit
+"
+lie,eye,"Input: lie Answer: eye
+"
+net,cigarette,"Input: net Answer: cigarette
+"
+fold,old,"Input: fold Answer: old
+"
+install,call,"Input: install Answer: call
+"
+search,church,"Input: search Answer: church
+"
+curly,early,"Input: curly Answer: early
+"
+pear,their,"Input: pear Answer: their
+"
+punctuation,transportation,"Input: punctuation Answer: transportation
+"
+agree,bee,"Input: agree Answer: bee
+"
+dress,press,"Input: dress Answer: press
+"
+fair,bear,"Input: fair Answer: bear
+"
+drawer,anymore,"Input: drawer Answer: anymore
+"
+site,polite,"Input: site Answer: polite
+"
+my,lie,"Input: my Answer: lie
+"
+sky,buy,"Input: sky Answer: buy
+"
+steak,snake,"Input: steak Answer: snake
+"
+sea,agree,"Input: sea Answer: agree
+"
+behind,find,"Input: behind Answer: find
+"
+state,date,"Input: state Answer: date
+"
+mail,sail,"Input: mail Answer: sail
+"
+steep,sleep,"Input: steep Answer: sleep
+"
+bug,rug,"Input: bug Answer: rug
+"
+war,anymore,"Input: war Answer: anymore
+"
+mean,machine,"Input: mean Answer: machine
+"
+zoo,crew,"Input: zoo Answer: crew
+"
+invite,sight,"Input: invite Answer: sight
+"
+bright,bite,"Input: bright Answer: bite
+"
+square,share,"Input: square Answer: share
+"
+conversation,immigration,"Input: conversation Answer: immigration
+"
+celebration,location,"Input: celebration Answer: location
+"
+sky,dry,"Input: sky Answer: dry
+"
+coast,toast,"Input: coast Answer: toast
+"
+out,about,"Input: out Answer: about
+"
+fee,degree,"Input: fee Answer: degree
+"
+site,write,"Input: site Answer: write
+"
+stairs,downstairs,"Input: stairs Answer: downstairs
+"
+suggest,best,"Input: suggest Answer: best
+"
+wife,life,"Input: wife Answer: life
+"
+map,cap,"Input: map Answer: cap
+"
+animation,imagination,"Input: animation Answer: imagination
+"
+conversation,reservation,"Input: conversation Answer: reservation
+"
+guys,prize,"Input: guys Answer: prize
+"
+disease,please,"Input: disease Answer: please
+"
+spicy,icy,"Input: spicy Answer: icy
+"
+net,jet,"Input: net Answer: jet
+"
+air,share,"Input: air Answer: share
+"
+let,jet,"Input: let Answer: jet
+"
+clown,noun,"Input: clown Answer: noun
+"
+shoe,crew,"Input: shoe Answer: crew
+"
+kind,remind,"Input: kind Answer: remind
+"
+down,noun,"Input: down Answer: noun
+"
+hide,wide,"Input: hide Answer: wide
+"
+rug,bug,"Input: rug Answer: bug
+"
+buy,try,"Input: buy Answer: try
+"
+bite,despite,"Input: bite Answer: despite
+"
+slip,lip,"Input: slip Answer: lip
+"
+spy,pie,"Input: spy Answer: pie
+"
+date,late,"Input: date Answer: late
+"
+real,meal,"Input: real Answer: meal
+"
+hair,square,"Input: hair Answer: square
+"
+location,animation,"Input: location Answer: animation
+"
+repair,wear,"Input: repair Answer: wear
+"
+condition,ambition,"Input: condition Answer: ambition
+"
+press,undress,"Input: press Answer: undress
+"
+weight,gate,"Input: weight Answer: gate
+"
+sit,hit,"Input: sit Answer: hit
+"
+explanation,punctuation,"Input: explanation Answer: punctuation
+"
+section,connection,"Input: section Answer: connection
+"
+these,cheese,"Input: these Answer: cheese
+"
+height,despite,"Input: height Answer: despite
+"
+shy,high,"Input: shy Answer: high
+"
+no,ago,"Input: no Answer: ago
+"
+stress,mess,"Input: stress Answer: mess
+"
+throat,promote,"Input: throat Answer: promote
+"
+indeed,feed,"Input: indeed Answer: feed
+"
+hug,rug,"Input: hug Answer: rug
+"
+tram,lamb,"Input: tram Answer: lamb
+"
+pure,sure,"Input: pure Answer: sure
+"
+complain,plane,"Input: complain Answer: plane
+"
+conversation,vacation,"Input: conversation Answer: vacation
+"
+scene,machine,"Input: scene Answer: machine
+"
+blue,zoo,"Input: blue Answer: zoo
+"
+celebration,occupation,"Input: celebration Answer: occupation
+"
+mistake,bake,"Input: mistake Answer: bake
+"
+doubt,shout,"Input: doubt Answer: shout
+"
+same,game,"Input: same Answer: game
+"
+rat,hat,"Input: rat Answer: hat
+"
+keep,deep,"Input: keep Answer: deep
+"
+mall,wall,"Input: mall Answer: wall
+"
+population,operation,"Input: population Answer: operation
+"
+immigration,animation,"Input: immigration Answer: animation
+"
+spend,attend,"Input: spend Answer: attend
+"
+fountain,mountain,"Input: fountain Answer: mountain
+"
+ride,hide,"Input: ride Answer: hide
+"
+climb,time,"Input: climb Answer: time
+"
+sauce,cross,"Input: sauce Answer: cross
+"
+stain,plane,"Input: stain Answer: plane
+"
+application,occupation,"Input: application Answer: occupation
+"
+so,go,"Input: so Answer: go
+"
+head,ahead,"Input: head Answer: ahead
+"
+worse,nurse,"Input: worse Answer: nurse
+"
+size,guys,"Input: size Answer: guys
+"
+date,great,"Input: date Answer: great
+"
+generation,explanation,"Input: generation Answer: explanation
+"
+agree,pea,"Input: agree Answer: pea
+"
+application,explanation,"Input: application Answer: explanation
+"
+bite,polite,"Input: bite Answer: polite
+"
+boil,oil,"Input: boil Answer: oil
+"
+skill,hill,"Input: skill Answer: hill
+"
+black,back,"Input: black Answer: back
+"
+declare,repair,"Input: declare Answer: repair
+"
+bed,ahead,"Input: bed Answer: ahead
+"
+ferry,bury,"Input: ferry Answer: bury
+"
+through,few,"Input: through Answer: few
+"
+compare,square,"Input: compare Answer: square
+"
+tree,bee,"Input: tree Answer: bee
+"
+stamp,lamp,"Input: stamp Answer: lamp
+"
+altogether,leather,"Input: altogether Answer: leather
+"
+view,who,"Input: view Answer: who
+"
+skill,bill,"Input: skill Answer: bill
+"
+sell,well,"Input: sell Answer: well
+"
+account,amount,"Input: account Answer: amount
+"
+mistake,brake,"Input: mistake Answer: brake
+"
+hate,skate,"Input: hate Answer: skate
+"
+toe,know,"Input: toe Answer: know
+"
+old,gold,"Input: old Answer: gold
+"
+fee,tea,"Input: fee Answer: tea
+"
+grass,pass,"Input: grass Answer: pass
+"
+sink,link,"Input: sink Answer: link
+"
+alike,bike,"Input: alike Answer: bike
+"
+guy,shy,"Input: guy Answer: shy
+"
+relaxation,preparation,"Input: relaxation Answer: preparation
+"
+blow,grow,"Input: blow Answer: grow
+"
+net,let,"Input: net Answer: let
+"
+burn,turn,"Input: burn Answer: turn
+"
+sand,stand,"Input: sand Answer: stand
+"
+brain,chain,"Input: brain Answer: chain
+"
+bone,loan,"Input: bone Answer: loan
+"
+break,brake,"Input: break Answer: brake
+"
+mall,hall,"Input: mall Answer: hall
+"
+blue,who,"Input: blue Answer: who
+"
+owe,no,"Input: owe Answer: no
+"
+promote,coat,"Input: promote Answer: coat
+"
+river,deliver,"Input: river Answer: deliver
+"
+who,shampoo,"Input: who Answer: shampoo
+"
+slow,sew,"Input: slow Answer: sew
+"
+you,shampoo,"Input: you Answer: shampoo
+"
+damn,lamb,"Input: damn Answer: lamb
+"
+fear,dear,"Input: fear Answer: dear
+"
+twin,pin,"Input: twin Answer: pin
+"
+until,spill,"Input: until Answer: spill
+"
+see,tree,"Input: see Answer: tree
+"
+presentation,organization,"Input: presentation Answer: organization
+"
+crime,climb,"Input: crime Answer: climb
+"
+pie,shy,"Input: pie Answer: shy
+"
+tour,brochure,"Input: tour Answer: brochure
+"
+population,communication,"Input: population Answer: communication
+"
+shore,store,"Input: shore Answer: store
+"
+dresser,professor,"Input: dresser Answer: professor
+"
+heel,steal,"Input: heel Answer: steal
+"
+press,guess,"Input: press Answer: guess
+"
+high,die,"Input: high Answer: die
+"
+toe,owe,"Input: toe Answer: owe
+"
+loan,phone,"Input: loan Answer: phone
+"
+cigarette,jet,"Input: cigarette Answer: jet
+"
+understand,sand,"Input: understand Answer: sand
+"
+feed,bleed,"Input: feed Answer: bleed
+"
+goal,control,"Input: goal Answer: control
+"
+wave,shave,"Input: wave Answer: shave
+"
+tent,cent,"Input: tent Answer: cent
+"
+fat,hat,"Input: fat Answer: hat
+"
+plane,rain,"Input: plane Answer: rain
+"
+glad,sad,"Input: glad Answer: sad
+"
+spell,unwell,"Input: spell Answer: unwell
+"
+transportation,organization,"Input: transportation Answer: organization
+"
+might,bite,"Input: might Answer: bite
+"
+fee,he,"Input: fee Answer: he
+"
+polite,right,"Input: polite Answer: right
+"
+mean,scene,"Input: mean Answer: scene
+"
+correct,incorrect,"Input: correct Answer: incorrect
+"
+song,along,"Input: song Answer: along
+"
+declare,wear,"Input: declare Answer: wear
+"
+brown,clown,"Input: brown Answer: clown
+"
+plate,skate,"Input: plate Answer: skate
+"
+hole,roll,"Input: hole Answer: roll
+"
+send,recommend,"Input: send Answer: recommend
+"
+shampoo,blue,"Input: shampoo Answer: blue
+"
+click,pick,"Input: click Answer: pick
+"
+her,per,"Input: her Answer: per
+"
+wide,bride,"Input: wide Answer: bride
+"
+spell,hotel,"Input: spell Answer: hotel
+"
+pain,rain,"Input: pain Answer: rain
+"
+burn,learn,"Input: burn Answer: learn
+"
+politician,composition,"Input: politician Answer: composition
+"
+condition,competition,"Input: condition Answer: competition
+"
+no,grow,"Input: no Answer: grow
+"
+steal,heel,"Input: steal Answer: heel
+"
+some,from,"Input: some Answer: from
+"
+sight,night,"Input: sight Answer: night
+"
+tie,buy,"Input: tie Answer: buy
+"
+enjoy,destroy,"Input: enjoy Answer: destroy
+"
+pear,spare,"Input: pear Answer: spare
+"
+lie,try,"Input: lie Answer: try
+"
+pear,wear,"Input: pear Answer: wear
+"
+see,free,"Input: see Answer: free
+"
+reservation,preparation,"Input: reservation Answer: preparation
+"
+shore,door,"Input: shore Answer: door
+"
+baseball,all,"Input: baseball Answer: all
+"
+hand,land,"Input: hand Answer: land
+"
+champagne,brain,"Input: champagne Answer: brain
+"
+stressed,breast,"Input: stressed Answer: breast
+"
+disagree,fee,"Input: disagree Answer: fee
+"
+perfume,room,"Input: perfume Answer: room
+"
+conversation,generation,"Input: conversation Answer: generation
+"
+catch,match,"Input: catch Answer: match
+"
+chair,share,"Input: chair Answer: share
+"
+crowd,cloud,"Input: crowd Answer: cloud
+"
+better,letter,"Input: better Answer: letter
+"
+note,vote,"Input: note Answer: vote
+"
+nearby,die,"Input: nearby Answer: die
+"
+examination,celebration,"Input: examination Answer: celebration
+"
+join,coin,"Input: join Answer: coin
+"
+bite,site,"Input: bite Answer: site
+"
+spare,there,"Input: spare Answer: there
+"
+registration,reservation,"Input: registration Answer: reservation
+"
+kangaroo,who,"Input: kangaroo Answer: who
+"
+her,fur,"Input: her Answer: fur
+"
+pain,plane,"Input: pain Answer: plane
+"
+ham,gram,"Input: ham Answer: gram
+"
+throw,slow,"Input: throw Answer: slow
+"
+shoe,who,"Input: shoe Answer: who
+"
+bell,smell,"Input: bell Answer: smell
+"
+chair,care,"Input: chair Answer: care
+"
+invitation,situation,"Input: invitation Answer: situation
+"
+intend,friend,"Input: intend Answer: friend
+"
+wrong,song,"Input: wrong Answer: song
+"
+war,explore,"Input: war Answer: explore
+"
+pair,hair,"Input: pair Answer: hair
+"
+light,kite,"Input: light Answer: kite
+"
+prepared,scared,"Input: prepared Answer: scared
+"
+fry,buy,"Input: fry Answer: buy
+"
+presentation,relation,"Input: presentation Answer: relation
+"
+shave,cave,"Input: shave Answer: cave
+"
+champagne,pain,"Input: champagne Answer: pain
+"
+my,sky,"Input: my Answer: sky
+"
+improve,move,"Input: improve Answer: move
+"
+knit,kit,"Input: knit Answer: kit
+"
+afraid,shade,"Input: afraid Answer: shade
+"
+population,organization,"Input: population Answer: organization
+"
+bee,key,"Input: bee Answer: key
+"
+name,aim,"Input: name Answer: aim
+"
+antique,speak,"Input: antique Answer: speak
+"
+prepare,share,"Input: prepare Answer: share
+"
+need,indeed,"Input: need Answer: indeed
+"
+path,bath,"Input: path Answer: bath
+"
+degree,see,"Input: degree Answer: see
+"
+sleep,cheap,"Input: sleep Answer: cheap
+"
+quite,despite,"Input: quite Answer: despite
+"
+appear,dear,"Input: appear Answer: dear
+"
+unwell,tell,"Input: unwell Answer: tell
+"
+lake,mistake,"Input: lake Answer: mistake
+"
+cake,take,"Input: cake Answer: take
+"
+break,bake,"Input: break Answer: bake
+"
+word,bird,"Input: word Answer: bird
+"
+bed,head,"Input: bed Answer: head
+"
+registration,population,"Input: registration Answer: population
+"
+clean,machine,"Input: clean Answer: machine
+"
+animation,registration,"Input: animation Answer: registration
+"
+supper,upper,"Input: supper Answer: upper
+"
+go,slow,"Input: go Answer: slow
+"
+he,agree,"Input: he Answer: agree
+"
+sad,dad,"Input: sad Answer: dad
+"
+perfume,groom,"Input: perfume Answer: groom
+"
+bye,apply,"Input: bye Answer: apply
+"
+knit,fit,"Input: knit Answer: fit
+"
+dry,apply,"Input: dry Answer: apply
+"
+my,shy,"Input: my Answer: shy
+"
+mean,screen,"Input: mean Answer: screen
+"
+gate,late,"Input: gate Answer: late
+"
+shark,dark,"Input: shark Answer: dark
+"
+application,celebration,"Input: application Answer: celebration
+"
+freeze,please,"Input: freeze Answer: please
+"
+skate,late,"Input: skate Answer: late
+"
+grow,sew,"Input: grow Answer: sew
+"
+so,toe,"Input: so Answer: toe
+"
+more,war,"Input: more Answer: war
+"
+thin,win,"Input: thin Answer: win
+"
+prince,convince,"Input: prince Answer: convince
+"
+despite,overnight,"Input: despite Answer: overnight
+"
+machine,screen,"Input: machine Answer: screen
+"
+goodbye,nearby,"Input: goodbye Answer: nearby
+"
+guy,die,"Input: guy Answer: die
+"
+spy,bye,"Input: spy Answer: bye
+"
+stone,unknown,"Input: stone Answer: unknown
+"
+mile,file,"Input: mile Answer: file
+"
+oh,toe,"Input: oh Answer: toe
+"
+wear,chair,"Input: wear Answer: chair
+"
+speak,cheek,"Input: speak Answer: cheek
+"
+long,song,"Input: long Answer: song
+"
+defend,intend,"Input: defend Answer: intend
+"
+situation,imagination,"Input: situation Answer: imagination
+"
+operation,celebration,"Input: operation Answer: celebration
+"
+overnight,light,"Input: overnight Answer: light
+"
+yes,press,"Input: yes Answer: press
+"
+ache,brake,"Input: ache Answer: brake
+"
+my,fry,"Input: my Answer: fry
+"
+like,strike,"Input: like Answer: strike
+"
+by,pie,"Input: by Answer: pie
+"
+proud,crowd,"Input: proud Answer: crowd
+"
+might,fight,"Input: might Answer: fight
+"
+so,blow,"Input: so Answer: blow
+"
+flat,cat,"Input: flat Answer: cat
+"
+behind,unkind,"Input: behind Answer: unkind
+"
+celebration,operation,"Input: celebration Answer: operation
+"
+hi,high,"Input: hi Answer: high
+"
+generation,station,"Input: generation Answer: station
+"
+boot,suit,"Input: boot Answer: suit
+"
+organization,examination,"Input: organization Answer: examination
+"
+ever,never,"Input: ever Answer: never
+"
+bit,sit,"Input: bit Answer: sit
+"
+mood,food,"Input: mood Answer: food
+"
+town,brown,"Input: town Answer: brown
+"
+spare,pair,"Input: spare Answer: pair
+"
+see,pea,"Input: see Answer: pea
+"
+dry,bye,"Input: dry Answer: bye
+"
+site,might,"Input: site Answer: might
+"
+invite,bright,"Input: invite Answer: bright
+"
+dry,lie,"Input: dry Answer: lie
+"
+form,perform,"Input: form Answer: perform
+"
+fit,admit,"Input: fit Answer: admit
+"
+organization,situation,"Input: organization Answer: situation
+"
+lie,fly,"Input: lie Answer: fly
+"
+operation,reservation,"Input: operation Answer: reservation
+"
+conversation,application,"Input: conversation Answer: application
+"
+permission,position,"Input: permission Answer: position
+"
+operation,occupation,"Input: operation Answer: occupation
+"
+recycle,cycle,"Input: recycle Answer: cycle
+"
+relation,vacation,"Input: relation Answer: vacation
+"
+identification,station,"Input: identification Answer: station
+"
+pet,cigarette,"Input: pet Answer: cigarette
+"
+sort,support,"Input: sort Answer: support
+"
+situation,examination,"Input: situation Answer: examination
+"
+loan,postpone,"Input: loan Answer: postpone
+"
+light,site,"Input: light Answer: site
+"
+asleep,steep,"Input: asleep Answer: steep
+"
+animation,reservation,"Input: animation Answer: reservation
+"
+send,attend,"Input: send Answer: attend
+"
+so,ago,"Input: so Answer: ago
+"
+depressed,stressed,"Input: depressed Answer: stressed
+"
+write,quite,"Input: write Answer: quite
+"
+goal,roll,"Input: goal Answer: roll
+"
+awake,lake,"Input: awake Answer: lake
+"
+duck,truck,"Input: duck Answer: truck
+"
+squash,wash,"Input: squash Answer: wash
+"
+square,chair,"Input: square Answer: chair
+"
+presentation,station,"Input: presentation Answer: station
+"
+arrange,change,"Input: arrange Answer: change
+"
+he,key,"Input: he Answer: key
+"
+bring,ring,"Input: bring Answer: ring
+"
+friend,trend,"Input: friend Answer: trend
+"
+examination,presentation,"Input: examination Answer: presentation
+"
+operation,registration,"Input: operation Answer: registration
+"
+road,explode,"Input: road Answer: explode
+"
+few,review,"Input: few Answer: review
+"
+bike,like,"Input: bike Answer: like
+"
+never,however,"Input: never Answer: however
+"
+cry,spy,"Input: cry Answer: spy
+"
+sight,polite,"Input: sight Answer: polite
+"
+rare,hair,"Input: rare Answer: hair
+"
+send,spend,"Input: send Answer: spend
+"
+bright,despite,"Input: bright Answer: despite
+"
+right,light,"Input: right Answer: light
+"
+we,he,"Input: we Answer: he
+"
+state,great,"Input: state Answer: great
+"
+information,organization,"Input: information Answer: organization
+"
+sum,some,"Input: sum Answer: some
+"
+preparation,identification,"Input: preparation Answer: identification
+"
+by,try,"Input: by Answer: try
+"
+remove,prove,"Input: remove Answer: prove
+"
+wall,all,"Input: wall Answer: all
+"
+high,by,"Input: high Answer: by
+"
+thing,king,"Input: thing Answer: king
+"
+their,bear,"Input: their Answer: bear
+"
+apology,technology,"Input: apology Answer: technology
+"
+sky,lie,"Input: sky Answer: lie
+"
+invite,fight,"Input: invite Answer: fight
+"
+sore,explore,"Input: sore Answer: explore
+"
+stone,zone,"Input: stone Answer: zone
+"
+repair,air,"Input: repair Answer: air
+"
+honey,funny,"Input: honey Answer: funny
+"
+plane,stain,"Input: plane Answer: stain
+"
+more,door,"Input: more Answer: door
+"
+shampoo,shoe,"Input: shampoo Answer: shoe
+"
+bee,he,"Input: bee Answer: he
+"
+screen,routine,"Input: screen Answer: routine
+"
+feeling,ceiling,"Input: feeling Answer: ceiling
+"
+wood,would,"Input: wood Answer: would
+"
+rain,main,"Input: rain Answer: main
+"
+situation,identification,"Input: situation Answer: identification
+"
+see,he,"Input: see Answer: he
+"
+tea,she,"Input: tea Answer: she
+"
+metal,kettle,"Input: metal Answer: kettle
+"
+sink,ink,"Input: sink Answer: ink
+"
+tight,height,"Input: tight Answer: height
+"
+red,bed,"Input: red Answer: bed
+"
+cheese,these,"Input: cheese Answer: these
+"
+place,case,"Input: place Answer: case
+"
+conversation,location,"Input: conversation Answer: location
+"
+sell,unwell,"Input: sell Answer: unwell
+"
+test,west,"Input: test Answer: west
+"
+wall,small,"Input: wall Answer: small
+"
+my,goodbye,"Input: my Answer: goodbye
+"
+identification,operation,"Input: identification Answer: operation
+"
+choose,cruise,"Input: choose Answer: cruise
+"
+overnight,fight,"Input: overnight Answer: fight
+"
+dream,cream,"Input: dream Answer: cream
+"
+drawer,war,"Input: drawer Answer: war
+"
+tie,sky,"Input: tie Answer: sky
+"
+eye,goodbye,"Input: eye Answer: goodbye
+"
+know,slow,"Input: know Answer: slow
+"
+quite,invite,"Input: quite Answer: invite
+"
+information,reservation,"Input: information Answer: reservation
+"
+hi,nearby,"Input: hi Answer: nearby
+"
+fee,we,"Input: fee Answer: we
+"
+snow,so,"Input: snow Answer: so
+"
+chin,thin,"Input: chin Answer: thin
+"
+flu,shoe,"Input: flu Answer: shoe
+"
+night,right,"Input: night Answer: right
+"
+communication,reservation,"Input: communication Answer: reservation
+"
+none,son,"Input: none Answer: son
+"
+year,appear,"Input: year Answer: appear
+"
+animation,application,"Input: animation Answer: application
+"
+invite,overnight,"Input: invite Answer: overnight
+"
+heel,meal,"Input: heel Answer: meal
+"
+bride,wide,"Input: bride Answer: wide
+"
+demand,band,"Input: demand Answer: band
+"
+come,some,"Input: come Answer: some
+"
+young,tongue,"Input: young Answer: tongue
+"
+eye,nearby,"Input: eye Answer: nearby
+"
+throw,know,"Input: throw Answer: know
+"
+throw,oh,"Input: throw Answer: oh
+"
+she,disagree,"Input: she Answer: disagree
+"
+smell,hotel,"Input: smell Answer: hotel
+"
+press,yes,"Input: press Answer: yes
+"
+fare,declare,"Input: fare Answer: declare
+"
+voice,choice,"Input: voice Answer: choice
+"
+across,cross,"Input: across Answer: cross
+"
+lake,brake,"Input: lake Answer: brake
+"
+there,declare,"Input: there Answer: declare
+"
+cool,fool,"Input: cool Answer: fool
+"
+imagination,conversation,"Input: imagination Answer: conversation
+"
+their,chair,"Input: their Answer: chair
+"
+mistake,cake,"Input: mistake Answer: cake
+"
+south,mouth,"Input: south Answer: mouth
+"
+registration,application,"Input: registration Answer: application
+"
+dot,hot,"Input: dot Answer: hot
+"
+free,tree,"Input: free Answer: tree
+"
+flight,polite,"Input: flight Answer: polite
+"
+stain,brain,"Input: stain Answer: brain
+"
+smile,pile,"Input: smile Answer: pile
+"
+operation,conversation,"Input: operation Answer: conversation
+"
+condition,permission,"Input: condition Answer: permission
+"
+relaxation,population,"Input: relaxation Answer: population
+"
+shoe,zoo,"Input: shoe Answer: zoo
+"
+whole,control,"Input: whole Answer: control
+"
+snake,awake,"Input: snake Answer: awake
+"
+drag,flag,"Input: drag Answer: flag
+"
+crowd,proud,"Input: crowd Answer: proud
+"
+warning,morning,"Input: warning Answer: morning
+"
+no,so,"Input: no Answer: so
+"
+stand,demand,"Input: stand Answer: demand
+"
+tea,free,"Input: tea Answer: free
+"
+fail,mail,"Input: fail Answer: mail
+"
+northwest,suggest,"Input: northwest Answer: suggest
+"
+fair,fare,"Input: fair Answer: fare
+"
+skin,chin,"Input: skin Answer: chin
+"
+pair,fair,"Input: pair Answer: fair
+"
+sew,low,"Input: sew Answer: low
+"
+bunch,lunch,"Input: bunch Answer: lunch
+"
+hi,die,"Input: hi Answer: die
+"
+ambition,composition,"Input: ambition Answer: composition
+"
+station,presentation,"Input: station Answer: presentation
+"
+pea,ski,"Input: pea Answer: ski
+"
+relaxation,situation,"Input: relaxation Answer: situation
+"
+pair,spare,"Input: pair Answer: spare
+"
+pain,brain,"Input: pain Answer: brain
+"
+wear,pair,"Input: wear Answer: pair
+"
+arrest,northwest,"Input: arrest Answer: northwest
+"
+take,make,"Input: take Answer: make
+"
+side,ride,"Input: side Answer: ride
+"
+offense,defense,"Input: offense Answer: defense
+"
+shut,hut,"Input: shut Answer: hut
+"
+situation,invitation,"Input: situation Answer: invitation
+"
+fare,bear,"Input: fare Answer: bear
+"
+no,know,"Input: no Answer: know
+"
+cheese,disease,"Input: cheese Answer: disease
+"
+bury,very,"Input: bury Answer: very
+"
+king,bring,"Input: king Answer: bring
+"
+skate,weight,"Input: skate Answer: weight
+"
+explore,door,"Input: explore Answer: door
+"
+cry,shy,"Input: cry Answer: shy
+"
+competition,politician,"Input: competition Answer: politician
+"
+pea,see,"Input: pea Answer: see
+"
+fight,bright,"Input: fight Answer: bright
+"
+high,sky,"Input: high Answer: sky
+"
+fill,until,"Input: fill Answer: until
+"
+registration,imagination,"Input: registration Answer: imagination
+"
+explanation,population,"Input: explanation Answer: population
+"
+rest,west,"Input: rest Answer: west
+"
+appear,fear,"Input: appear Answer: fear
+"
+weak,peak,"Input: weak Answer: peak
+"
+pair,wear,"Input: pair Answer: wear
+"
+deep,cheap,"Input: deep Answer: cheap
+"
+degree,disagree,"Input: degree Answer: disagree
+"
+floor,anymore,"Input: floor Answer: anymore
+"
+decide,guide,"Input: decide Answer: guide
+"
+relation,organization,"Input: relation Answer: organization
+"
+save,behave,"Input: save Answer: behave
+"
+zoo,blue,"Input: zoo Answer: blue
+"
+fry,die,"Input: fry Answer: die
+"
+quite,fight,"Input: quite Answer: fight
+"
+bear,repair,"Input: bear Answer: repair
+"
+career,fear,"Input: career Answer: fear
+"
+card,hard,"Input: card Answer: hard
+"
+fair,chair,"Input: fair Answer: chair
+"
+fry,high,"Input: fry Answer: high
+"
+at,chat,"Input: at Answer: chat
+"
+admit,bit,"Input: admit Answer: bit
+"
+strike,alike,"Input: strike Answer: alike
+"
+clear,near,"Input: clear Answer: near
+"
+hi,lie,"Input: hi Answer: lie
+"
+spare,fare,"Input: spare Answer: fare
+"
+you,through,"Input: you Answer: through
+"
+test,best,"Input: test Answer: best
+"
+competition,permission,"Input: competition Answer: permission
+"
+need,feed,"Input: need Answer: feed
+"
+green,machine,"Input: green Answer: machine
+"
+round,surround,"Input: round Answer: surround
+"
+strong,wrong,"Input: strong Answer: wrong
+"
+rare,prepare,"Input: rare Answer: prepare
+"
+ago,blow,"Input: ago Answer: blow
+"
+yes,less,"Input: yes Answer: less
+"
+questionnaire,repair,"Input: questionnaire Answer: repair
+"
+approve,remove,"Input: approve Answer: remove
+"
+operation,situation,"Input: operation Answer: situation
+"
+sweater,letter,"Input: sweater Answer: letter
+"
+might,flight,"Input: might Answer: flight
+"
+snake,lake,"Input: snake Answer: lake
+"
+dry,eye,"Input: dry Answer: eye
+"
+kit,knit,"Input: kit Answer: knit
+"
+explode,road,"Input: explode Answer: road
+"
+end,defend,"Input: end Answer: defend
+"
+select,connect,"Input: select Answer: connect
+"
+ferry,very,"Input: ferry Answer: very
+"
+buy,tie,"Input: buy Answer: tie
+"
+change,strange,"Input: change Answer: strange
+"
+height,fight,"Input: height Answer: fight
+"
+theirs,upstairs,"Input: theirs Answer: upstairs
+"
+deck,neck,"Input: deck Answer: neck
+"
+land,sand,"Input: land Answer: sand
+"
+frame,same,"Input: frame Answer: same
+"
+unhealthy,healthy,"Input: unhealthy Answer: healthy
+"
+pet,vet,"Input: pet Answer: vet
+"
+organization,celebration,"Input: organization Answer: celebration
+"
+create,hate,"Input: create Answer: hate
+"
+despite,bite,"Input: despite Answer: bite
+"
+bill,fill,"Input: bill Answer: fill
+"
+gate,wait,"Input: gate Answer: wait
+"
+queen,screen,"Input: queen Answer: screen
+"
+correction,connection,"Input: correction Answer: connection
+"
+ache,mistake,"Input: ache Answer: mistake
+"
+communication,immigration,"Input: communication Answer: immigration
+"
+run,gun,"Input: run Answer: gun
+"
+brain,rain,"Input: brain Answer: rain
+"
+fight,despite,"Input: fight Answer: despite
+"
+punctuation,relation,"Input: punctuation Answer: relation
+"
+degree,knee,"Input: degree Answer: knee
+"
+rare,wear,"Input: rare Answer: wear
+"
+identification,relaxation,"Input: identification Answer: relaxation
+"

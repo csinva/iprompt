@@ -7,6 +7,46 @@ from collections import defaultdict
 import re
 from tqdm import trange
 import torch.nn
+from iprompt.data_utils.one_num import TASKS_ONE_NUM
+from iprompt.data_utils.two_num import TASKS_TWO_NUMS
+from iprompt.data_utils.three_num import TASKS_THREE_NUMS
+
+def get_task_dataframe(task, task_name: str, max_digit: int, max_dset_size: int,
+template_num_task_phrasing: int, rng, rng2):
+    template = task['prompt_template_funcs'][template_num_task_phrasing]
+    if task_name in TASKS_ONE_NUM.keys():
+        num_inputs = 1
+    elif task_name in TASKS_TWO_NUMS.keys():
+        num_inputs = 2
+    elif task_name in TASKS_THREE_NUMS.keys():
+        num_inputs = 3
+
+    # dont make unnecessarily big if we're just repeating point
+    actual_max_dset_size = min(
+        pow(max_digit, num_inputs), max_dset_size)
+    d = defaultdict(list)
+    for i in range(actual_max_dset_size):
+        # when there are very few possibilities, stratify to use them all
+        if max_digit == 10 and num_inputs <= 2:
+            num1 = i // 10
+            num2 = i % 10
+        else:
+            num1 = rng.integers(low=0, high=max_digit)
+            num2 = rng.integers(low=0, high=max_digit)
+            num3 = rng2.integers(low=0, high=max_digit)
+
+        gen_func = task['gen_func']
+        if num_inputs == 1:
+            x, y = template(num2, gen_func)
+        elif num_inputs == 2:
+            x, y = template(num1, num2, gen_func)
+        elif num_inputs == 3:
+            x, y = template(num1, num2, num3, gen_func)
+
+        d['text'].append(x + y)
+        d['input'].append(x)
+        d['output'].append(y)
+    return pd.DataFrame.from_dict(d)
 
 def fib_n(n):
     a = 0

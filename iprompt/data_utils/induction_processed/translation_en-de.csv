@@ -1,0 +1,5617 @@
+input,output,text
+time,Zeit,"Input: time Answer: Zeit
+"
+game,Spiel,"Input: game Answer: Spiel
+"
+film,Film,"Input: film Answer: Film
+"
+season,Staffel,"Input: season Answer: Staffel
+"
+year,Jahr,"Input: year Answer: Jahr
+"
+second,Sekunde,"Input: second Answer: Sekunde
+"
+album,Album,"Input: album Answer: Album
+"
+song,Lied,"Input: song Answer: Lied
+"
+number,Anzahl,"Input: number Answer: Anzahl
+"
+part,Teil,"Input: part Answer: Teil
+"
+team,Mannschaft,"Input: team Answer: Mannschaft
+"
+episode,Episode,"Input: episode Answer: Episode
+"
+work,Arbeit,"Input: work Answer: Arbeit
+"
+day,Tag,"Input: day Answer: Tag
+"
+end,Tod,"Input: end Answer: Tod
+"
+music,Musik,"Input: music Answer: Musik
+"
+state,Zustand,"Input: state Answer: Zustand
+"
+century,Jahrhundert,"Input: century Answer: Jahrhundert
+"
+area,Areal,"Input: area Answer: Areal
+"
+life,Leben,"Input: life Answer: Leben
+"
+city,Stadt,"Input: city Answer: Stadt
+"
+show,Demonstration,"Input: show Answer: Demonstration
+"
+war,Krieg,"Input: war Answer: Krieg
+"
+group,Gruppe,"Input: group Answer: Gruppe
+"
+character,Charakter,"Input: character Answer: Charakter
+"
+system,System,"Input: system Answer: System
+"
+name,Name,"Input: name Answer: Name
+"
+government,Regierung,"Input: government Answer: Regierung
+"
+line,Zeile,"Input: line Answer: Zeile
+"
+home,Heimat,"Input: home Answer: Heimat
+"
+band,Band,"Input: band Answer: Band
+"
+record,Datensatz,"Input: record Answer: Datensatz
+"
+ship,Schiff,"Input: ship Answer: Schiff
+"
+world,Welt,"Input: world Answer: Welt
+"
+death,Tod,"Input: death Answer: Tod
+"
+release,Veröffentlichung,"Input: release Answer: Veröffentlichung
+"
+video,Video,"Input: video Answer: Video
+"
+role,Rolle,"Input: role Answer: Rolle
+"
+match,ebenbürtig,"Input: match Answer: ebenbürtig
+"
+way,Weise,"Input: way Answer: Weise
+"
+south,Süden,"Input: south Answer: Süden
+"
+side,Seite,"Input: side Answer: Seite
+"
+career,Karriere,"Input: career Answer: Karriere
+"
+school,Schule,"Input: school Answer: Schule
+"
+production,Produktion,"Input: production Answer: Produktion
+"
+story,Erzählung,"Input: story Answer: Erzählung
+"
+water,Wasser,"Input: water Answer: Wasser
+"
+power,Macht,"Input: power Answer: Macht
+"
+form,Formular,"Input: form Answer: Formular
+"
+storm,Sturm,"Input: storm Answer: Sturm
+"
+player,Spieler,"Input: player Answer: Spieler
+"
+history,Geschichte,"Input: history Answer: Geschichte
+"
+version,Version,"Input: version Answer: Version
+"
+support,Unterstützung,"Input: support Answer: Unterstützung
+"
+book,Buch ; Pennsylvania German: buch,"Input: book Answer: Buch ; Pennsylvania German: buch
+"
+period,Stunde,"Input: period Answer: Stunde
+"
+half,Hälfte,"Input: half Answer: Hälfte
+"
+company,Gesellschaft,"Input: company Answer: Gesellschaft
+"
+position,Position,"Input: position Answer: Position
+"
+order,Ordnung,"Input: order Answer: Ordnung
+"
+attack,Attacke,"Input: attack Answer: Attacke
+"
+building,Bau,"Input: building Answer: Bau
+"
+town,Stadt,"Input: town Answer: Stadt
+"
+performance,Leistung,"Input: performance Answer: Leistung
+"
+country,Land ; Staat ; Vaterland,"Input: country Answer: Land ; Staat ; Vaterland
+"
+west,West,"Input: west Answer: West
+"
+service,Service,"Input: service Answer: Service
+"
+father,Vater,"Input: father Answer: Vater
+"
+track,Spurweite,"Input: track Answer: Spurweite
+"
+club,Klub,"Input: club Answer: Klub
+"
+control,Kontrolle,"Input: control Answer: Kontrolle
+"
+development,Entwicklung,"Input: development Answer: Entwicklung
+"
+result,Ergebnis,"Input: result Answer: Ergebnis
+"
+run,Lauf,"Input: run Answer: Lauf
+"
+week,Woche,"Input: week Answer: Woche
+"
+class,Klasse,"Input: class Answer: Klasse
+"
+force,Kraft,"Input: force Answer: Kraft
+"
+land,Land,"Input: land Answer: Land
+"
+house,Haus,"Input: house Answer: Haus
+"
+fire,Feuer,"Input: fire Answer: Feuer
+"
+television,Fernsehen,"Input: television Answer: Fernsehen
+"
+return,Rückkehr,"Input: return Answer: Rückkehr
+"
+head,Kopf,"Input: head Answer: Kopf
+"
+style,Stil,"Input: style Answer: Stil
+"
+design,Entwurf,"Input: design Answer: Entwurf
+"
+level,Stufe,"Input: level Answer: Stufe
+"
+success,Erfolg,"Input: success Answer: Erfolg
+"
+route,Route,"Input: route Answer: Route
+"
+member,Glied,"Input: member Answer: Glied
+"
+battle,Schlacht,"Input: battle Answer: Schlacht
+"
+addition,Zufügung,"Input: addition Answer: Zufügung
+"
+air,Luft,"Input: air Answer: Luft
+"
+road,Straße,"Input: road Answer: Straße
+"
+range,Übungsplatz,"Input: range Answer: Übungsplatz
+"
+age,Alter,"Input: age Answer: Alter
+"
+race,Rasse,"Input: race Answer: Rasse
+"
+body,Körper,"Input: body Answer: Körper
+"
+present,Gegenwart,"Input: present Answer: Gegenwart
+"
+action,Action,"Input: action Answer: Action
+"
+population,Bevölkerung,"Input: population Answer: Bevölkerung
+"
+campaign,Kampagne,"Input: campaign Answer: Kampagne
+"
+stage,Bühne,"Input: stage Answer: Bühne
+"
+station,Bahnhof,"Input: station Answer: Bahnhof
+"
+site,Webseite,"Input: site Answer: Webseite
+"
+law,Gesetz,"Input: law Answer: Gesetz
+"
+night,Nacht,"Input: night Answer: Nacht
+"
+construction,Bau,"Input: construction Answer: Bau
+"
+damage,Schaden,"Input: damage Answer: Schaden
+"
+case,Fall,"Input: case Answer: Fall
+"
+event,Ereignis,"Input: event Answer: Ereignis
+"
+scene,Szene,"Input: scene Answer: Szene
+"
+front,Front,"Input: front Answer: Front
+"
+ground,Erde,"Input: ground Answer: Erde
+"
+field,Feld,"Input: field Answer: Feld
+"
+region,Gegend,"Input: region Answer: Gegend
+"
+office,Amt,"Input: office Answer: Amt
+"
+example,Beispiel,"Input: example Answer: Beispiel
+"
+wife,Ehefrau,"Input: wife Answer: Ehefrau
+"
+army,Heeresamt,"Input: army Answer: Heeresamt
+"
+mother,Mutter,"Input: mother Answer: Mutter
+"
+project,Projekt,"Input: project Answer: Projekt
+"
+rest,Ruhe,"Input: rest Answer: Ruhe
+"
+highway,Hauptstraße,"Input: highway Answer: Hauptstraße
+"
+training,Ausbildung,"Input: training Answer: Ausbildung
+"
+rock,Fels,"Input: rock Answer: Fels
+"
+shot,Wurf,"Input: shot Answer: Wurf
+"
+process,Prozess,"Input: process Answer: Prozess
+"
+command,Befehl,"Input: command Answer: Befehl
+"
+month,Monat,"Input: month Answer: Monat
+"
+crew,Haufen,"Input: crew Answer: Haufen
+"
+studio,Studio,"Input: studio Answer: Studio
+"
+director,Direktor,"Input: director Answer: Direktor
+"
+hurricane,Orkan,"Input: hurricane Answer: Orkan
+"
+change,Rückgeld,"Input: change Answer: Rückgeld
+"
+appearance,Aussehen,"Input: appearance Answer: Aussehen
+"
+goal,Tor,"Input: goal Answer: Tor
+"
+relationship,Beziehung,"Input: relationship Answer: Beziehung
+"
+court,Gericht,"Input: court Answer: Gericht
+"
+chart,Karte,"Input: chart Answer: Karte
+"
+church,Kirche,"Input: church Answer: Kirche
+"
+attempt,Anschlag,"Input: attempt Answer: Anschlag
+"
+recording,Aufnahme,"Input: recording Answer: Aufnahme
+"
+sound,Sonde,"Input: sound Answer: Sonde
+"
+cast,Cast,"Input: cast Answer: Cast
+"
+base,Basis,"Input: base Answer: Basis
+"
+interest,Interesse,"Input: interest Answer: Interesse
+"
+term,Klausel,"Input: term Answer: Klausel
+"
+post,Stelle,"Input: post Answer: Stelle
+"
+art,Kunstwerk,"Input: art Answer: Kunstwerk
+"
+future,Futur,"Input: future Answer: Futur
+"
+league,Liga,"Input: league Answer: Liga
+"
+review,Rezension,"Input: review Answer: Rezension
+"
+section,Abschnitt,"Input: section Answer: Abschnitt
+"
+evidence,Beweismittel,"Input: evidence Answer: Beweismittel
+"
+brother,Bruder,"Input: brother Answer: Bruder
+"
+football,Fußball,"Input: football Answer: Fußball
+"
+election,Wahl,"Input: election Answer: Wahl
+"
+novel,Roman,"Input: novel Answer: Roman
+"
+coast,Küste,"Input: coast Answer: Küste
+"
+person,Person,"Input: person Answer: Person
+"
+sea,Meer,"Input: sea Answer: Meer
+"
+gun,Geschütz,"Input: gun Answer: Geschütz
+"
+hand,Hand,"Input: hand Answer: Hand
+"
+study,Studie,"Input: study Answer: Studie
+"
+response,Antwort,"Input: response Answer: Antwort
+"
+star,Sternchen,"Input: star Answer: Sternchen
+"
+decision,Entscheidung,"Input: decision Answer: Entscheidung
+"
+magazine,Magazin,"Input: magazine Answer: Magazin
+"
+debut,Debüt,"Input: debut Answer: Debüt
+"
+program,Programm,"Input: program Answer: Programm
+"
+score,Partitur,"Input: score Answer: Partitur
+"
+money,Geld,"Input: money Answer: Geld
+"
+surface,Oberfläche,"Input: surface Answer: Oberfläche
+"
+turn,Drehung,"Input: turn Answer: Drehung
+"
+community,Gemeinschaft,"Input: community Answer: Gemeinschaft
+"
+length,Länge,"Input: length Answer: Länge
+"
+bridge,Brücke,"Input: bridge Answer: Brücke
+"
+plan,Plan,"Input: plan Answer: Plan
+"
+center,Zentrum,"Input: center Answer: Zentrum
+"
+business,Geschäft,"Input: business Answer: Geschäft
+"
+pressure,Druck,"Input: pressure Answer: Druck
+"
+percent,Prozent,"Input: percent Answer: Prozent
+"
+speed,Filmempfindlichkeit,"Input: speed Answer: Filmempfindlichkeit
+"
+president,Präsident,"Input: president Answer: Präsident
+"
+media,Medien,"Input: media Answer: Medien
+"
+summer,Sommer,"Input: summer Answer: Sommer
+"
+material,Material,"Input: material Answer: Material
+"
+cut,Schnitt,"Input: cut Answer: Schnitt
+"
+writer,Schriftsteller,"Input: writer Answer: Schriftsteller
+"
+date,Datum,"Input: date Answer: Datum
+"
+influence,Einfluss,"Input: influence Answer: Einfluss
+"
+fleet,Flotte,"Input: fleet Answer: Flotte
+"
+size,Größe,"Input: size Answer: Größe
+"
+structure,Struktur,"Input: structure Answer: Struktur
+"
+fact,Faktum,"Input: fact Answer: Faktum
+"
+past,Vergangenheit,"Input: past Answer: Vergangenheit
+"
+type,Typ,"Input: type Answer: Typ
+"
+daughter,Tochter,"Input: daughter Answer: Tochter
+"
+car,Auto,"Input: car Answer: Auto
+"
+food,Nahrung,"Input: food Answer: Nahrung
+"
+room,Raum,"Input: room Answer: Raum
+"
+movement,Bewegung,"Input: movement Answer: Bewegung
+"
+cost,Kosten,"Input: cost Answer: Kosten
+"
+river,Strom,"Input: river Answer: Strom
+"
+contract,Vertrag,"Input: contract Answer: Vertrag
+"
+view,Sicht,"Input: view Answer: Sicht
+"
+language,Sprache,"Input: language Answer: Sprache
+"
+self,Selbst,"Input: self Answer: Selbst
+"
+course,Kurs,"Input: course Answer: Kurs
+"
+experience,Erlebnis,"Input: experience Answer: Erlebnis
+"
+producer,Produzent,"Input: producer Answer: Produzent
+"
+research,Forschung,"Input: research Answer: Forschung
+"
+radio,Radio,"Input: radio Answer: Radio
+"
+space,Raum,"Input: space Answer: Raum
+"
+feature,Besonderheit,"Input: feature Answer: Besonderheit
+"
+division,Teilung,"Input: division Answer: Teilung
+"
+effect,Effekt,"Input: effect Answer: Effekt
+"
+leader,Leittier,"Input: leader Answer: Leittier
+"
+woman,Frau,"Input: woman Answer: Frau
+"
+voice,Stimme,"Input: voice Answer: Stimme
+"
+face,Gesicht,"Input: face Answer: Gesicht
+"
+gold,Goldmünze,"Input: gold Answer: Goldmünze
+"
+increase,Ansteigen,"Input: increase Answer: Ansteigen
+"
+friend,Freund,"Input: friend Answer: Freund
+"
+location,Lage,"Input: location Answer: Lage
+"
+status,Status,"Input: status Answer: Status
+"
+child,Kind,"Input: child Answer: Kind
+"
+report,Bericht,"Input: report Answer: Bericht
+"
+village,Dorf,"Input: village Answer: Dorf
+"
+manager,Direktor,"Input: manager Answer: Direktor
+"
+majority,Erwachsenenalter,"Input: majority Answer: Erwachsenenalter
+"
+cause,Sache,"Input: cause Answer: Sache
+"
+act,Akt,"Input: act Answer: Akt
+"
+minute,Minute,"Input: minute Answer: Minute
+"
+meeting,Versammlung,"Input: meeting Answer: Versammlung
+"
+park,Park,"Input: park Answer: Park
+"
+nature,Natur,"Input: nature Answer: Natur
+"
+flight,Flug,"Input: flight Answer: Flug
+"
+information,Information,"Input: information Answer: Information
+"
+fight,Kampf,"Input: fight Answer: Kampf
+"
+defeat,Niederlage,"Input: defeat Answer: Niederlage
+"
+singer,Sänger,"Input: singer Answer: Sänger
+"
+need,Notwendigkeit,"Input: need Answer: Notwendigkeit
+"
+industry,Branche,"Input: industry Answer: Branche
+"
+guitar,Gitarre,"Input: guitar Answer: Gitarre
+"
+interview,Vorstellungsgespräch,"Input: interview Answer: Vorstellungsgespräch
+"
+hour,Zeit,"Input: hour Answer: Zeit
+"
+audience,Publikum,"Input: audience Answer: Publikum
+"
+education,Bildung,"Input: education Answer: Bildung
+"
+attention,Aufmerksamkeit,"Input: attention Answer: Aufmerksamkeit
+"
+operation,Betrieb,"Input: operation Answer: Betrieb
+"
+officer,Offizier,"Input: officer Answer: Offizier
+"
+sister,Schwester,"Input: sister Answer: Schwester
+"
+ability,Fähigkeit,"Input: ability Answer: Fähigkeit
+"
+depression,Depression,"Input: depression Answer: Depression
+"
+deal,Pakt,"Input: deal Answer: Pakt
+"
+ball,Kugel,"Input: ball Answer: Kugel
+"
+subject,Untertan,"Input: subject Answer: Untertan
+"
+commander,Befehlshaber,"Input: commander Answer: Befehlshaber
+"
+rate,Rate,"Input: rate Answer: Rate
+"
+produce,Obst und Gemüse,"Input: produce Answer: Obst und Gemüse
+"
+competition,Konkurrenz,"Input: competition Answer: Konkurrenz
+"
+unit,Einheit,"Input: unit Answer: Einheit
+"
+artist,Künstler,"Input: artist Answer: Künstler
+"
+model,Modell,"Input: model Answer: Modell
+"
+theme,Thema,"Input: theme Answer: Thema
+"
+wind,Wind,"Input: wind Answer: Wind
+"
+pass,Pass,"Input: pass Answer: Pass
+"
+plot,Handlung,"Input: plot Answer: Handlung
+"
+access,Zugang,"Input: access Answer: Zugang
+"
+letter,Buchstabe,"Input: letter Answer: Buchstabe
+"
+practice,Praxis,"Input: practice Answer: Praxis
+"
+capital,Kapital,"Input: capital Answer: Kapital
+"
+word,Wort,"Input: word Answer: Wort
+"
+edition,Ausgabe,"Input: edition Answer: Ausgabe
+"
+script,Schrift,"Input: script Answer: Schrift
+"
+health,Gesundheit,"Input: health Answer: Gesundheit
+"
+movie,Film,"Input: movie Answer: Film
+"
+network,Netzwerk,"Input: network Answer: Netzwerk
+"
+board,Tafel,"Input: board Answer: Tafel
+"
+effort,Anstrengung,"Input: effort Answer: Anstrengung
+"
+press,Presse,"Input: press Answer: Presse
+"
+marriage,Ehe,"Input: marriage Answer: Ehe
+"
+college,Berufskolleg,"Input: college Answer: Berufskolleg
+"
+mass,Masse,"Input: mass Answer: Masse
+"
+culture,Kultur,"Input: culture Answer: Kultur
+"
+cyclone,Zyklon,"Input: cyclone Answer: Zyklon
+"
+variety,Vielfältigkeit,"Input: variety Answer: Vielfältigkeit
+"
+morning,Morgen,"Input: morning Answer: Morgen
+"
+metal,Metall,"Input: metal Answer: Metall
+"
+market,Markt,"Input: market Answer: Markt
+"
+coach,Reisebus,"Input: coach Answer: Reisebus
+"
+science,Wissenschaft,"Input: science Answer: Wissenschaft
+"
+quality,Qualität,"Input: quality Answer: Qualität
+"
+fall,Fall,"Input: fall Answer: Fall
+"
+presence,Anwesenheit,"Input: presence Answer: Anwesenheit
+"
+oil,Öl,"Input: oil Answer: Öl
+"
+direction,Richtung,"Input: direction Answer: Richtung
+"
+break,Break,"Input: break Answer: Break
+"
+rule,Regel,"Input: rule Answer: Regel
+"
+enemy,Feind,"Input: enemy Answer: Feind
+"
+yard,Hof,"Input: yard Answer: Hof
+"
+concert,Konzert,"Input: concert Answer: Konzert
+"
+engine,Motor,"Input: engine Answer: Motor
+"
+traffic,Verkehr,"Input: traffic Answer: Verkehr
+"
+advance,Vorschuss,"Input: advance Answer: Vorschuss
+"
+mission,Mission,"Input: mission Answer: Mission
+"
+portion,Teil,"Input: portion Answer: Teil
+"
+castle,Burg,"Input: castle Answer: Burg
+"
+property,Eigentum,"Input: property Answer: Eigentum
+"
+pair,Paar,"Input: pair Answer: Paar
+"
+award,Spruch,"Input: award Answer: Spruch
+"
+impact,Belastung,"Input: impact Answer: Belastung
+"
+collection,Sammlung,"Input: collection Answer: Sammlung
+"
+call,Ruf,"Input: call Answer: Ruf
+"
+port,Port,"Input: port Answer: Port
+"
+approach,Annäherung,"Input: approach Answer: Annäherung
+"
+situation,Lage,"Input: situation Answer: Lage
+"
+distance,Distanz,"Input: distance Answer: Distanz
+"
+amount,Menge,"Input: amount Answer: Menge
+"
+test,Examen,"Input: test Answer: Examen
+"
+inch,Zoll,"Input: inch Answer: Zoll
+"
+actor,Handelnde,"Input: actor Answer: Handelnde
+"
+dance,Tanz,"Input: dance Answer: Tanz
+"
+today,Heute,"Input: today Answer: Heute
+"
+train,Zug,"Input: train Answer: Zug
+"
+figure,Abbildung,"Input: figure Answer: Abbildung
+"
+trial,Verhör,"Input: trial Answer: Verhör
+"
+concept,Begriff,"Input: concept Answer: Begriff
+"
+scale,Skala,"Input: scale Answer: Skala
+"
+society,Gesellschaft,"Input: society Answer: Gesellschaft
+"
+job,Job,"Input: job Answer: Job
+"
+chief,Chef,"Input: chief Answer: Chef
+"
+foot,Fuß,"Input: foot Answer: Fuß
+"
+author,Autor,"Input: author Answer: Autor
+"
+activity,Aktivität,"Input: activity Answer: Aktivität
+"
+policy,Politik,"Input: policy Answer: Politik
+"
+cross,Kreuz,"Input: cross Answer: Kreuz
+"
+captain,Stabshauptmann,"Input: captain Answer: Stabshauptmann
+"
+theory,Theorie,"Input: theory Answer: Theorie
+"
+account,Konto,"Input: account Answer: Konto
+"
+invasion,Invasion,"Input: invasion Answer: Invasion
+"
+strength,Stärke,"Input: strength Answer: Stärke
+"
+charge,Entgelt,"Input: charge Answer: Entgelt
+"
+county,Landkreis,"Input: county Answer: Landkreis
+"
+screen,Schirm,"Input: screen Answer: Schirm
+"
+wall,Wand,"Input: wall Answer: Wand
+"
+sense,Sinn,"Input: sense Answer: Sinn
+"
+pilot,Pilot,"Input: pilot Answer: Pilot
+"
+reception,Rezeption,"Input: reception Answer: Rezeption
+"
+winter,Winter,"Input: winter Answer: Winter
+"
+wing,Flügel,"Input: wing Answer: Flügel
+"
+focus,Fokus,"Input: focus Answer: Fokus
+"
+blood,Blut,"Input: blood Answer: Blut
+"
+weather,Wetter,"Input: weather Answer: Wetter
+"
+defense,Verteidigung,"Input: defense Answer: Verteidigung
+"
+student,Student,"Input: student Answer: Student
+"
+artillery,Artillerie,"Input: artillery Answer: Artillerie
+"
+executive,Exekutive,"Input: executive Answer: Exekutive
+"
+district,Bezirk,"Input: district Answer: Bezirk
+"
+image,Bild,"Input: image Answer: Bild
+"
+share,Aktie,"Input: share Answer: Aktie
+"
+border,Rand,"Input: border Answer: Rand
+"
+capture,Fang,"Input: capture Answer: Fang
+"
+injury,Verletzung,"Input: injury Answer: Verletzung
+"
+equipment,Ausrüstung,"Input: equipment Answer: Ausrüstung
+"
+organization,Organisation,"Input: organization Answer: Organisation
+"
+stone,Stein,"Input: stone Answer: Stein
+"
+quarter,Vierteldollar,"Input: quarter Answer: Vierteldollar
+"
+growth,Wachstum,"Input: growth Answer: Wachstum
+"
+box,Boxhieb,"Input: box Answer: Boxhieb
+"
+husband,Ehemann,"Input: husband Answer: Ehemann
+"
+matter,Materie,"Input: matter Answer: Materie
+"
+content,Inhalt,"Input: content Answer: Inhalt
+"
+travel,Reise,"Input: travel Answer: Reise
+"
+heart,Herz,"Input: heart Answer: Herz
+"
+tournament,Turnier,"Input: tournament Answer: Turnier
+"
+conflict,Konflikt,"Input: conflict Answer: Konflikt
+"
+floor,Decke,"Input: floor Answer: Decke
+"
+reference,Referenz,"Input: reference Answer: Referenz
+"
+speech,Rede,"Input: speech Answer: Rede
+"
+territory,Territorium,"Input: territory Answer: Territorium
+"
+camp,Lager,"Input: camp Answer: Lager
+"
+value,Wert,"Input: value Answer: Wert
+"
+rainfall,Niederschlag,"Input: rainfall Answer: Niederschlag
+"
+championship,Meisterschaft,"Input: championship Answer: Meisterschaft
+"
+treatment,Behandlung,"Input: treatment Answer: Behandlung
+"
+university,Universität,"Input: university Answer: Universität
+"
+machine,Maschine,"Input: machine Answer: Maschine
+"
+guest,Gast,"Input: guest Answer: Gast
+"
+problem,Problem,"Input: problem Answer: Problem
+"
+reason,Grund,"Input: reason Answer: Grund
+"
+horse,Pferd,"Input: horse Answer: Pferd
+"
+governor,Regler,"Input: governor Answer: Regler
+"
+soundtrack,Tonspur,"Input: soundtrack Answer: Tonspur
+"
+offer,Angebot,"Input: offer Answer: Angebot
+"
+background,Hintergrund,"Input: background Answer: Hintergrund
+"
+degree,Grad,"Input: degree Answer: Grad
+"
+railway,Eisenbahnlinie,"Input: railway Answer: Eisenbahnlinie
+"
+authority,Autorität,"Input: authority Answer: Autorität
+"
+birth,Geburt,"Input: birth Answer: Geburt
+"
+vote,Stimme,"Input: vote Answer: Stimme
+"
+filming,Aufnahme,"Input: filming Answer: Aufnahme
+"
+escape,Flucht,"Input: escape Answer: Flucht
+"
+capacity,Kapazität,"Input: capacity Answer: Kapazität
+"
+basis,Basis,"Input: basis Answer: Basis
+"
+fiction,Fiktion,"Input: fiction Answer: Fiktion
+"
+sequence,Folge,"Input: sequence Answer: Folge
+"
+weight,Gewicht,"Input: weight Answer: Gewicht
+"
+opposition,Opposition,"Input: opposition Answer: Opposition
+"
+newspaper,Zeitungspapier,"Input: newspaper Answer: Zeitungspapier
+"
+risk,Risiko,"Input: risk Answer: Risiko
+"
+care,Pflege,"Input: care Answer: Pflege
+"
+agreement,Vereinbarung,"Input: agreement Answer: Vereinbarung
+"
+contrast,Kontrast,"Input: contrast Answer: Kontrast
+"
+failure,Versager,"Input: failure Answer: Versager
+"
+nation,Nation,"Input: nation Answer: Nation
+"
+eye,Auge,"Input: eye Answer: Auge
+"
+threat,Drohung,"Input: threat Answer: Drohung
+"
+claim,Anspruch,"Input: claim Answer: Anspruch
+"
+supply,Angebot,"Input: supply Answer: Angebot
+"
+disease,Krankheit,"Input: disease Answer: Krankheit
+"
+drive,Fahrt,"Input: drive Answer: Fahrt
+"
+draft,Musterung,"Input: draft Answer: Musterung
+"
+bill,Schnabel,"Input: bill Answer: Schnabel
+"
+tower,Turm,"Input: tower Answer: Turm
+"
+administration,Verwaltung,"Input: administration Answer: Verwaltung
+"
+personnel,Personal,"Input: personnel Answer: Personal
+"
+expansion,Expansion,"Input: expansion Answer: Expansion
+"
+hospital,Krankenhaus,"Input: hospital Answer: Krankenhaus
+"
+leadership,Führung,"Input: leadership Answer: Führung
+"
+ring,Ring,"Input: ring Answer: Ring
+"
+management,Verwaltung,"Input: management Answer: Verwaltung
+"
+landing,Treppenabsatz,"Input: landing Answer: Treppenabsatz
+"
+data,Daten,"Input: data Answer: Daten
+"
+choice,Wahl,"Input: choice Answer: Wahl
+"
+northwest,Nordwesten,"Input: northwest Answer: Nordwesten
+"
+silver,Silber,"Input: silver Answer: Silber
+"
+crossing,Kreuzung,"Input: crossing Answer: Kreuzung
+"
+fuel,Brennstoff,"Input: fuel Answer: Brennstoff
+"
+contact,Kontakt,"Input: contact Answer: Kontakt
+"
+gas,Benzin,"Input: gas Answer: Benzin
+"
+girl,Frau,"Input: girl Answer: Frau
+"
+split,Spagat ; to do the splits: Spagat machen,"Input: split Answer: Spagat ; to do the splits: Spagat machen
+"
+committee,Komitee,"Input: committee Answer: Komitee
+"
+drama,Drama,"Input: drama Answer: Drama
+"
+sex,Sex,"Input: sex Answer: Sex
+"
+spring,Sprungfeder,"Input: spring Answer: Sprungfeder
+"
+article,Artikel,"Input: article Answer: Artikel
+"
+animal,Tier,"Input: animal Answer: Tier
+"
+comedy,Komödie,"Input: comedy Answer: Komödie
+"
+paper,Papier,"Input: paper Answer: Papier
+"
+leg,Bein,"Input: leg Answer: Bein
+"
+genus,Gattung,"Input: genus Answer: Gattung
+"
+flag,Flag,"Input: flag Answer: Flag
+"
+purpose,Intention,"Input: purpose Answer: Intention
+"
+security,Sicherheit,"Input: security Answer: Sicherheit
+"
+infantry,Infanterie,"Input: infantry Answer: Infanterie
+"
+spread,Aufstrich,"Input: spread Answer: Aufstrich
+"
+search,Suche,"Input: search Answer: Suche
+"
+incident,Vorfall,"Input: incident Answer: Vorfall
+"
+mind,Verstand,"Input: mind Answer: Verstand
+"
+battalion,Bataillon,"Input: battalion Answer: Bataillon
+"
+text,Text,"Input: text Answer: Text
+"
+finish,Ende,"Input: finish Answer: Ende
+"
+critic,Kritiker,"Input: critic Answer: Kritiker
+"
+creation,Kreation,"Input: creation Answer: Kreation
+"
+mile,Meile,"Input: mile Answer: Meile
+"
+budget,Budget,"Input: budget Answer: Budget
+"
+tradition,Tradition,"Input: tradition Answer: Tradition
+"
+arrival,Ankunft,"Input: arrival Answer: Ankunft
+"
+ceremony,Zeremonie,"Input: ceremony Answer: Zeremonie
+"
+condition,Verfassung,"Input: condition Answer: Verfassung
+"
+thing,Ding,"Input: thing Answer: Ding
+"
+color,Farbe,"Input: color Answer: Farbe
+"
+intensity,Intensität,"Input: intensity Answer: Intensität
+"
+street,Straße,"Input: street Answer: Straße
+"
+session,Sitzung,"Input: session Answer: Sitzung
+"
+wave,Welle,"Input: wave Answer: Welle
+"
+piano,Klavier,"Input: piano Answer: Klavier
+"
+criticism,Kritik,"Input: criticism Answer: Kritik
+"
+planet,Planet,"Input: planet Answer: Planet
+"
+reign,Herrschaft,"Input: reign Answer: Herrschaft
+"
+murder,Mord,"Input: murder Answer: Mord
+"
+selection,Auslese,"Input: selection Answer: Auslese
+"
+computer,Computer,"Input: computer Answer: Computer
+"
+council,Rat,"Input: council Answer: Rat
+"
+comic,Comic,"Input: comic Answer: Comic
+"
+peace,Frieden,"Input: peace Answer: Frieden
+"
+opportunity,Gelegenheit,"Input: opportunity Answer: Gelegenheit
+"
+question,Frage,"Input: question Answer: Frage
+"
+analysis,Analyse,"Input: analysis Answer: Analyse
+"
+shooting,Schießen,"Input: shooting Answer: Schießen
+"
+display,Display,"Input: display Answer: Display
+"
+deck,Deck,"Input: deck Answer: Deck
+"
+advantage,Vorteil,"Input: advantage Answer: Vorteil
+"
+conference,Konferenz,"Input: conference Answer: Konferenz
+"
+fan,Fächer,"Input: fan Answer: Fächer
+"
+prison,Haft,"Input: prison Answer: Haft
+"
+host,Wirt,"Input: host Answer: Wirt
+"
+volume,Jahrgang,"Input: volume Answer: Jahrgang
+"
+protection,Schutz,"Input: protection Answer: Schutz
+"
+target,Zielscheibe,"Input: target Answer: Zielscheibe
+"
+expedition,Expedition,"Input: expedition Answer: Expedition
+"
+publication,Veröffentlichung,"Input: publication Answer: Veröffentlichung
+"
+temperature,Temperatur,"Input: temperature Answer: Temperatur
+"
+economy,Wirtschaft,"Input: economy Answer: Wirtschaft
+"
+edge,Kante,"Input: edge Answer: Kante
+"
+intersection,Schnittpunkt,"Input: intersection Answer: Schnittpunkt
+"
+motion,Bewegung,"Input: motion Answer: Bewegung
+"
+chance,Gelegenheit,"Input: chance Answer: Gelegenheit
+"
+label,Etikett,"Input: label Answer: Etikett
+"
+gain,Gewinn,"Input: gain Answer: Gewinn
+"
+element,Element,"Input: element Answer: Element
+"
+rear,Nachhut,"Input: rear Answer: Nachhut
+"
+literature,Literatur,"Input: literature Answer: Literatur
+"
+strike,Strike,"Input: strike Answer: Strike
+"
+technology,Technologie,"Input: technology Answer: Technologie
+"
+adult,Erwachsener,"Input: adult Answer: Erwachsener
+"
+resistance,Widerstand,"Input: resistance Answer: Widerstand
+"
+launch,Start,"Input: launch Answer: Start
+"
+shape,Form,"Input: shape Answer: Form
+"
+sign,Zeichen,"Input: sign Answer: Zeichen
+"
+tax,Steuer,"Input: tax Answer: Steuer
+"
+agent,Agens,"Input: agent Answer: Agens
+"
+popularity,Popularität,"Input: popularity Answer: Popularität
+"
+reaction,Reaktion,"Input: reaction Answer: Reaktion
+"
+editor,Redakteur,"Input: editor Answer: Redakteur
+"
+reputation,Ansehen,"Input: reputation Answer: Ansehen
+"
+estate,Gut,"Input: estate Answer: Gut
+"
+poem,Gedicht,"Input: poem Answer: Gedicht
+"
+southeast,Südosten,"Input: southeast Answer: Südosten
+"
+height,Höhe,"Input: height Answer: Höhe
+"
+alternative,Alternative,"Input: alternative Answer: Alternative
+"
+franchise,Franchise,"Input: franchise Answer: Franchise
+"
+opinion,Schlussanträge,"Input: opinion Answer: Schlussanträge
+"
+steel,Stahl,"Input: steel Answer: Stahl
+"
+cricket,Cricket,"Input: cricket Answer: Cricket
+"
+planning,Planung,"Input: planning Answer: Planung
+"
+lap,Schoß,"Input: lap Answer: Schoß
+"
+safety,Sicherheit,"Input: safety Answer: Sicherheit
+"
+existence,Existenz,"Input: existence Answer: Existenz
+"
+introduction,Einführung,"Input: introduction Answer: Einführung
+"
+promotion,Beförderung,"Input: promotion Answer: Beförderung
+"
+branch,Branche,"Input: branch Answer: Branche
+"
+product,Produkt,"Input: product Answer: Produkt
+"
+exchange,Austausch,"Input: exchange Answer: Austausch
+"
+defence,Verteidigung,"Input: defence Answer: Verteidigung
+"
+baseball,Baseball,"Input: baseball Answer: Baseball
+"
+platform,Plattform,"Input: platform Answer: Plattform
+"
+request,Bitte,"Input: request Answer: Bitte
+"
+moment,Moment,"Input: moment Answer: Moment
+"
+freeway,Autobahn,"Input: freeway Answer: Autobahn
+"
+crowd,Gedränge,"Input: crowd Answer: Gedränge
+"
+settlement,Ansiedlung,"Input: settlement Answer: Ansiedlung
+"
+note,Notiz,"Input: note Answer: Notiz
+"
+description,Beschreibung,"Input: description Answer: Beschreibung
+"
+method,Art und Weise,"Input: method Answer: Art und Weise
+"
+environment,Umgebung,"Input: environment Answer: Umgebung
+"
+genre,Genre,"Input: genre Answer: Genre
+"
+reserve,Reserve,"Input: reserve Answer: Reserve
+"
+knowledge,Wissen,"Input: knowledge Answer: Wissen
+"
+bank,Bank,"Input: bank Answer: Bank
+"
+statement,Behauptung,"Input: statement Answer: Behauptung
+"
+southwest,Südwesten,"Input: southwest Answer: Südwesten
+"
+rain,Regen,"Input: rain Answer: Regen
+"
+violence,Gewalt,"Input: violence Answer: Gewalt
+"
+function,Funktion,"Input: function Answer: Funktion
+"
+assault,Anschlag,"Input: assault Answer: Anschlag
+"
+battery,Körperverletzung,"Input: battery Answer: Körperverletzung
+"
+coal,Kohle,"Input: coal Answer: Kohle
+"
+candidate,Kandidat,"Input: candidate Answer: Kandidat
+"
+table,Tabelle,"Input: table Answer: Tabelle
+"
+distribution,Distribution,"Input: distribution Answer: Distribution
+"
+independence,Unabhängigkeit,"Input: independence Answer: Unabhängigkeit
+"
+entrance,Eingang,"Input: entrance Answer: Eingang
+"
+combination,Kombination,"Input: combination Answer: Kombination
+"
+camera,Videokamera,"Input: camera Answer: Videokamera
+"
+stadium,Stadion,"Input: stadium Answer: Stadion
+"
+appeal,Berufung,"Input: appeal Answer: Berufung
+"
+campus,Campus,"Input: campus Answer: Campus
+"
+landfall,Landung,"Input: landfall Answer: Landung
+"
+cell,Zelle,"Input: cell Answer: Zelle
+"
+decade,Dekade,"Input: decade Answer: Dekade
+"
+boy,Junge,"Input: boy Answer: Junge
+"
+winner,Gewinner,"Input: winner Answer: Gewinner
+"
+evening,Abend,"Input: evening Answer: Abend
+"
+investigation,Untersuchung,"Input: investigation Answer: Untersuchung
+"
+message,Nachricht,"Input: message Answer: Nachricht
+"
+proposal,Vorschlag,"Input: proposal Answer: Vorschlag
+"
+trip,Reise,"Input: trip Answer: Reise
+"
+bit,Bit,"Input: bit Answer: Bit
+"
+duty,Schicht,"Input: duty Answer: Schicht
+"
+bomb,Bombe,"Input: bomb Answer: Bombe
+"
+religion,Religion,"Input: religion Answer: Religion
+"
+hair,Haar,"Input: hair Answer: Haar
+"
+controversy,Kontroverse,"Input: controversy Answer: Kontroverse
+"
+hall,Studentenwohnheim,"Input: hall Answer: Studentenwohnheim
+"
+tail,Schwanz,"Input: tail Answer: Schwanz
+"
+importance,Wichtigkeit,"Input: importance Answer: Wichtigkeit
+"
+actress,Schauspielerin,"Input: actress Answer: Schauspielerin
+"
+owner,Besitzer,"Input: owner Answer: Besitzer
+"
+steam,Dampf,"Input: steam Answer: Dampf
+"
+opera,Oper,"Input: opera Answer: Oper
+"
+nomination,Nominierung,"Input: nomination Answer: Nominierung
+"
+entry,Eintrag,"Input: entry Answer: Eintrag
+"
+crime,Verbrechen,"Input: crime Answer: Verbrechen
+"
+composer,Komponist,"Input: composer Answer: Komponist
+"
+transfer,Übertragung,"Input: transfer Answer: Übertragung
+"
+price,Preis,"Input: price Answer: Preis
+"
+mountain,Berg,"Input: mountain Answer: Berg
+"
+firm,Firma,"Input: firm Answer: Firma
+"
+extension,Ausdehnung,"Input: extension Answer: Ausdehnung
+"
+roof,Dach,"Input: roof Answer: Dach
+"
+driving,Fahren,"Input: driving Answer: Fahren
+"
+identity,Identität,"Input: identity Answer: Identität
+"
+bottom,Boden,"Input: bottom Answer: Boden
+"
+zone,Zone,"Input: zone Answer: Zone
+"
+challenge,Herausforderung,"Input: challenge Answer: Herausforderung
+"
+lane,Spur,"Input: lane Answer: Spur
+"
+rail,Geländer,"Input: rail Answer: Geländer
+"
+principal,Schulvorsteher,"Input: principal Answer: Schulvorsteher
+"
+hotel,Hotel,"Input: hotel Answer: Hotel
+"
+relief,Relief,"Input: relief Answer: Relief
+"
+debate,Debatte,"Input: debate Answer: Debatte
+"
+depth,Tiefe,"Input: depth Answer: Tiefe
+"
+purchase,Kauf,"Input: purchase Answer: Kauf
+"
+departure,Abfahrt,"Input: departure Answer: Abfahrt
+"
+income,Einkommen,"Input: income Answer: Einkommen
+"
+decline,Sinken,"Input: decline Answer: Sinken
+"
+accident,Unfall,"Input: accident Answer: Unfall
+"
+recognition,Anerkennung,"Input: recognition Answer: Anerkennung
+"
+connection,Verbindung,"Input: connection Answer: Verbindung
+"
+mode,Modus,"Input: mode Answer: Modus
+"
+progress,Fortschritt,"Input: progress Answer: Fortschritt
+"
+sequel,Folge,"Input: sequel Answer: Folge
+"
+disc,Scheibe,"Input: disc Answer: Scheibe
+"
+museum,Museum,"Input: museum Answer: Museum
+"
+measure,Maß,"Input: measure Answer: Maß
+"
+department,Abteilung,"Input: department Answer: Abteilung
+"
+demand,Nachfrage,"Input: demand Answer: Nachfrage
+"
+spot,Fleck,"Input: spot Answer: Fleck
+"
+tank,Tank,"Input: tank Answer: Tank
+"
+circulation,Blutkreislauf,"Input: circulation Answer: Blutkreislauf
+"
+intelligence,Geheimdienst,"Input: intelligence Answer: Geheimdienst
+"
+possibility,Möglichkeit,"Input: possibility Answer: Möglichkeit
+"
+journey,Reise,"Input: journey Answer: Reise
+"
+freedom,Freiheit,"Input: freedom Answer: Freiheit
+"
+drug,Droge,"Input: drug Answer: Droge
+"
+generation,Generation,"Input: generation Answer: Generation
+"
+downtown,Stadtmitte,"Input: downtown Answer: Stadtmitte
+"
+assistance,Hilfe,"Input: assistance Answer: Hilfe
+"
+destruction,Zerstörung,"Input: destruction Answer: Zerstörung
+"
+youth,Jugend,"Input: youth Answer: Jugend
+"
+medal,Medaille,"Input: medal Answer: Medaille
+"
+atmosphere,Atmosphäre,"Input: atmosphere Answer: Atmosphäre
+"
+task,Aufgabe,"Input: task Answer: Aufgabe
+"
+block,Block,"Input: block Answer: Block
+"
+guard,Schutz,"Input: guard Answer: Schutz
+"
+regiment,Regiment,"Input: regiment Answer: Regiment
+"
+chorus,Chor,"Input: chorus Answer: Chor
+"
+hip,Hüfte,"Input: hip Answer: Hüfte
+"
+store,Lager,"Input: store Answer: Lager
+"
+completion,Vervollständigung,"Input: completion Answer: Vervollständigung
+"
+origin,Ursprung,"Input: origin Answer: Ursprung
+"
+responsibility,Verantwortung,"Input: responsibility Answer: Verantwortung
+"
+warning,Warnung,"Input: warning Answer: Warnung
+"
+skin,Design,"Input: skin Answer: Design
+"
+page,Seite,"Input: page Answer: Seite
+"
+province,Provinz,"Input: province Answer: Provinz
+"
+glass,Glas,"Input: glass Answer: Glas
+"
+path,Weg,"Input: path Answer: Weg
+"
+passage,Passage,"Input: passage Answer: Passage
+"
+counter,Zähler,"Input: counter Answer: Zähler
+"
+breed,Rasse,"Input: breed Answer: Rasse
+"
+association,Verein,"Input: association Answer: Verein
+"
+cruiser,Kreuzer,"Input: cruiser Answer: Kreuzer
+"
+climate,Klima,"Input: climate Answer: Klima
+"
+corner,Ecke,"Input: corner Answer: Ecke
+"
+classification,Klassifikation,"Input: classification Answer: Klassifikation
+"
+vehicle,Fahrzeug,"Input: vehicle Answer: Fahrzeug
+"
+reality,Wirklichkeit,"Input: reality Answer: Wirklichkeit
+"
+picture,Kino,"Input: picture Answer: Kino
+"
+memory,Gedächtnis,"Input: memory Answer: Gedächtnis
+"
+segment,Segment,"Input: segment Answer: Segment
+"
+bar,Bar,"Input: bar Answer: Bar
+"
+touchdown,Touchdown,"Input: touchdown Answer: Touchdown
+"
+difficulty,Schwierigkeit,"Input: difficulty Answer: Schwierigkeit
+"
+flow,Tätigkeitsrausch,"Input: flow Answer: Tätigkeitsrausch
+"
+basketball,Basketball,"Input: basketball Answer: Basketball
+"
+cavalry,Kavallerie,"Input: cavalry Answer: Kavallerie
+"
+inspiration,Einatmung,"Input: inspiration Answer: Einatmung
+"
+anniversary,Jahrestag,"Input: anniversary Answer: Jahrestag
+"
+funding,Finanzierung,"Input: funding Answer: Finanzierung
+"
+spoke,Speiche,"Input: spoke Answer: Speiche
+"
+praise,Lob,"Input: praise Answer: Lob
+"
+penalty,Strafe,"Input: penalty Answer: Strafe
+"
+pitch,Pech,"Input: pitch Answer: Pech
+"
+pattern,Muster,"Input: pattern Answer: Muster
+"
+heat,Hitze,"Input: heat Answer: Hitze
+"
+commission,Kommission,"Input: commission Answer: Kommission
+"
+strategy,Strategie,"Input: strategy Answer: Strategie
+"
+documentary,Dokumentation,"Input: documentary Answer: Dokumentation
+"
+cap,Mütze,"Input: cap Answer: Mütze
+"
+architecture,Architektur,"Input: architecture Answer: Architektur
+"
+category,Kategorie,"Input: category Answer: Kategorie
+"
+contest,Wettkampf,"Input: contest Answer: Wettkampf
+"
+plane,Ebene,"Input: plane Answer: Ebene
+"
+minister,Minister,"Input: minister Answer: Minister
+"
+adaptation,Anpassung,"Input: adaptation Answer: Anpassung
+"
+champion,Sieger,"Input: champion Answer: Sieger
+"
+scheme,Schema,"Input: scheme Answer: Schema
+"
+library,Bibliothek,"Input: library Answer: Bibliothek
+"
+fit,Anfall,"Input: fit Answer: Anfall
+"
+fighter,Kämpfer,"Input: fighter Answer: Kämpfer
+"
+throne,Thron,"Input: throne Answer: Thron
+"
+rival,Gegner,"Input: rival Answer: Gegner
+"
+passenger,Passagier,"Input: passenger Answer: Passagier
+"
+partner,Partner,"Input: partner Answer: Partner
+"
+reviewer,Rezensent,"Input: reviewer Answer: Rezensent
+"
+submarine,Unterseeboot,"Input: submarine Answer: Unterseeboot
+"
+absence,Abwesenheit,"Input: absence Answer: Abwesenheit
+"
+door,Tür,"Input: door Answer: Tür
+"
+engineer,Maschinist,"Input: engineer Answer: Maschinist
+"
+airport,Flughafen,"Input: airport Answer: Flughafen
+"
+interior,Interieur,"Input: interior Answer: Interieur
+"
+behavior,Verhalten,"Input: behavior Answer: Verhalten
+"
+respect,Achtung,"Input: respect Answer: Achtung
+"
+conclusion,Schlussfolgerung,"Input: conclusion Answer: Schlussfolgerung
+"
+acid,Säure,"Input: acid Answer: Säure
+"
+facility,Leichtigkeit,"Input: facility Answer: Leichtigkeit
+"
+retirement,Rente,"Input: retirement Answer: Rente
+"
+colony,Kolonie,"Input: colony Answer: Kolonie
+"
+fashion,Mode,"Input: fashion Answer: Mode
+"
+legislation,Gesetz,"Input: legislation Answer: Gesetz
+"
+favor,Gefallen,"Input: favor Answer: Gefallen
+"
+kingdom,Königreich,"Input: kingdom Answer: Königreich
+"
+credit,Kreditwürdigkeit,"Input: credit Answer: Kreditwürdigkeit
+"
+rescue,Rettung,"Input: rescue Answer: Rettung
+"
+farm,Bauernhof,"Input: farm Answer: Bauernhof
+"
+crash,Absturz,"Input: crash Answer: Absturz
+"
+battleship,Schiffe versenken,"Input: battleship Answer: Schiffe versenken
+"
+habitat,Habitat,"Input: habitat Answer: Habitat
+"
+hop,Hopfen,"Input: hop Answer: Hopfen
+"
+judge,Richter,"Input: judge Answer: Richter
+"
+chairman,Vorsitzender,"Input: chairman Answer: Vorsitzender
+"
+outbreak,Ausbruch,"Input: outbreak Answer: Ausbruch
+"
+arrangement,Anordnung,"Input: arrangement Answer: Anordnung
+"
+sport,Sport,"Input: sport Answer: Sport
+"
+dog,Rüde,"Input: dog Answer: Rüde
+"
+step,Schritt,"Input: step Answer: Schritt
+"
+fruit,Frucht,"Input: fruit Answer: Frucht
+"
+grade,Grad,"Input: grade Answer: Grad
+"
+emergency,Notfall,"Input: emergency Answer: Notfall
+"
+limit,Grenze,"Input: limit Answer: Grenze
+"
+cancer,Krebs,"Input: cancer Answer: Krebs
+"
+shark,Hai,"Input: shark Answer: Hai
+"
+festival,Festival,"Input: festival Answer: Festival
+"
+siege,Belagerung,"Input: siege Answer: Belagerung
+"
+successor,Nachfolger,"Input: successor Answer: Nachfolger
+"
+narrative,Darstellung,"Input: narrative Answer: Darstellung
+"
+cycle,Zyklus,"Input: cycle Answer: Zyklus
+"
+hill,Hügel,"Input: hill Answer: Hügel
+"
+belt,Gürtel,"Input: belt Answer: Gürtel
+"
+journalist,Journalist,"Input: journalist Answer: Journalist
+"
+concern,Betroffenheit,"Input: concern Answer: Betroffenheit
+"
+object,Objekt,"Input: object Answer: Objekt
+"
+childhood,Kindheit,"Input: childhood Answer: Kindheit
+"
+conduct,Leitung,"Input: conduct Answer: Leitung
+"
+hunting,Jagd,"Input: hunting Answer: Jagd
+"
+ride,Fahrt,"Input: ride Answer: Fahrt
+"
+talk,Gespräch,"Input: talk Answer: Gespräch
+"
+chapter,Verband,"Input: chapter Answer: Verband
+"
+footage,Filmmaterial,"Input: footage Answer: Filmmaterial
+"
+exception,Ausnahme,"Input: exception Answer: Ausnahme
+"
+difference,Unterschied,"Input: difference Answer: Unterschied
+"
+arm,Arm,"Input: arm Answer: Arm
+"
+device,Motto,"Input: device Answer: Motto
+"
+animation,Animation,"Input: animation Answer: Animation
+"
+poet,Poet,"Input: poet Answer: Poet
+"
+brain,Verstand,"Input: brain Answer: Verstand
+"
+stock,Vorrat,"Input: stock Answer: Vorrat
+"
+retreat,Rückzug,"Input: retreat Answer: Rückzug
+"
+poetry,Poesie,"Input: poetry Answer: Poesie
+"
+dialogue,Dialogfenster,"Input: dialogue Answer: Dialogfenster
+"
+format,Format,"Input: format Answer: Format
+"
+universe,Universum,"Input: universe Answer: Universum
+"
+instance,Instanz,"Input: instance Answer: Instanz
+"
+shell,Schale,"Input: shell Answer: Schale
+"
+union,Vereinigung,"Input: union Answer: Vereinigung
+"
+convoy,Konvoi,"Input: convoy Answer: Konvoi
+"
+afternoon,Nachmittag,"Input: afternoon Answer: Nachmittag
+"
+belief,Glauben,"Input: belief Answer: Glauben
+"
+valley,Senke,"Input: valley Answer: Senke
+"
+driver,Fahrer,"Input: driver Answer: Fahrer
+"
+suit,Farbe,"Input: suit Answer: Farbe
+"
+diameter,Durchmesser,"Input: diameter Answer: Durchmesser
+"
+convention,Abkommen,"Input: convention Answer: Abkommen
+"
+founder,Gründer,"Input: founder Answer: Gründer
+"
+hero,Held,"Input: hero Answer: Held
+"
+code,Gesetzbuch,"Input: code Answer: Gesetzbuch
+"
+crisis,Krise,"Input: crisis Answer: Krise
+"
+engineering,Ingenieurwissenschaft,"Input: engineering Answer: Ingenieurwissenschaft
+"
+designer,Designer,"Input: designer Answer: Designer
+"
+reform,Reform,"Input: reform Answer: Reform
+"
+fear,Angst,"Input: fear Answer: Angst
+"
+technique,Technik,"Input: technique Answer: Technik
+"
+weekend,Wochenende,"Input: weekend Answer: Wochenende
+"
+mix,Mischung,"Input: mix Answer: Mischung
+"
+tone,Ton,"Input: tone Answer: Ton
+"
+finale,Finale,"Input: finale Answer: Finale
+"
+permission,Erlaubnis,"Input: permission Answer: Erlaubnis
+"
+advice,Rat,"Input: advice Answer: Rat
+"
+maintenance,Instandhaltung,"Input: maintenance Answer: Instandhaltung
+"
+weapon,Waffe,"Input: weapon Answer: Waffe
+"
+factor,Faktor,"Input: factor Answer: Faktor
+"
+vice,Laster,"Input: vice Answer: Laster
+"
+address,verbaler Antrag,"Input: address Answer: verbaler Antrag
+"
+verse,Strophe,"Input: verse Answer: Strophe
+"
+bus,Bus,"Input: bus Answer: Bus
+"
+window,Fenster,"Input: window Answer: Fenster
+"
+personality,Persönlichkeit,"Input: personality Answer: Persönlichkeit
+"
+squad,Gruppe,"Input: squad Answer: Gruppe
+"
+mainstream,Hauptrichtung,"Input: mainstream Answer: Hauptrichtung
+"
+chemical,Chemikalie,"Input: chemical Answer: Chemikalie
+"
+spirit,Geist,"Input: spirit Answer: Geist
+"
+vision,Vision,"Input: vision Answer: Vision
+"
+hockey,Hockey,"Input: hockey Answer: Hockey
+"
+channel,Kanal,"Input: channel Answer: Kanal
+"
+carbon,Kohlenstoff,"Input: carbon Answer: Kohlenstoff
+"
+drawing,Auslosung,"Input: drawing Answer: Auslosung
+"
+dynasty,Dynastie,"Input: dynasty Answer: Dynastie
+"
+approval,Zustimmung,"Input: approval Answer: Zustimmung
+"
+card,Karte,"Input: card Answer: Karte
+"
+intention,Absicht,"Input: intention Answer: Absicht
+"
+creator,Schöpfer,"Input: creator Answer: Schöpfer
+"
+symbol,Symbol,"Input: symbol Answer: Symbol
+"
+tribute,Tribut,"Input: tribute Answer: Tribut
+"
+collapse,Kollaps,"Input: collapse Answer: Kollaps
+"
+protagonist,Protagonist,"Input: protagonist Answer: Protagonist
+"
+link,Link,"Input: link Answer: Link
+"
+folk,Volk,"Input: folk Answer: Volk
+"
+tie,Unentschieden,"Input: tie Answer: Unentschieden
+"
+radar,Radar,"Input: radar Answer: Radar
+"
+load,ein Haufen,"Input: load Answer: ein Haufen
+"
+appointment,Ernennung,"Input: appointment Answer: Ernennung
+"
+surprise,Überraschung,"Input: surprise Answer: Überraschung
+"
+occupation,Beschäftigung,"Input: occupation Answer: Beschäftigung
+"
+suicide,Suizid,"Input: suicide Answer: Suizid
+"
+dispute,Streit,"Input: dispute Answer: Streit
+"
+survey,Untersuchung,"Input: survey Answer: Untersuchung
+"
+canal,Kanal,"Input: canal Answer: Kanal
+"
+benefit,Vorteil,"Input: benefit Answer: Vorteil
+"
+struggle,Kampf,"Input: struggle Answer: Kampf
+"
+fishing,Fischen,"Input: fishing Answer: Fischen
+"
+soil,Erde,"Input: soil Answer: Erde
+"
+balance,Balance,"Input: balance Answer: Balance
+"
+schedule,Termin,"Input: schedule Answer: Termin
+"
+column,Spalte,"Input: column Answer: Spalte
+"
+teacher,Lehrer,"Input: teacher Answer: Lehrer
+"
+brand,Marke,"Input: brand Answer: Marke
+"
+evolution,Evolution,"Input: evolution Answer: Evolution
+"
+wedding,Hochzeit,"Input: wedding Answer: Hochzeit
+"
+cent,Cent,"Input: cent Answer: Cent
+"
+earth,Erde,"Input: earth Answer: Erde
+"
+alignment,Ausrichtung,"Input: alignment Answer: Ausrichtung
+"
+faith,Glaube,"Input: faith Answer: Glaube
+"
+concrete,Beton,"Input: concrete Answer: Beton
+"
+map,Stadtplan,"Input: map Answer: Stadtplan
+"
+opponent,Gegner,"Input: opponent Answer: Gegner
+"
+foundation,Gründung,"Input: foundation Answer: Gründung
+"
+copy,Kopie,"Input: copy Answer: Kopie
+"
+percentage,Prozentsatz,"Input: percentage Answer: Prozentsatz
+"
+argument,Argument,"Input: argument Answer: Argument
+"
+ammunition,Munition,"Input: ammunition Answer: Munition
+"
+arrest,Verhaftung,"Input: arrest Answer: Verhaftung
+"
+resolution,Auflösung,"Input: resolution Answer: Auflösung
+"
+disaster,Desaster,"Input: disaster Answer: Desaster
+"
+attendance,Anwesenheit,"Input: attendance Answer: Anwesenheit
+"
+household,Haushalt,"Input: household Answer: Haushalt
+"
+restaurant,Restaurant,"Input: restaurant Answer: Restaurant
+"
+honour,Ehre,"Input: honour Answer: Ehre
+"
+junction,Kreuzung,"Input: junction Answer: Kreuzung
+"
+funeral,Bestattung,"Input: funeral Answer: Bestattung
+"
+affair,Angelegenheit,"Input: affair Answer: Angelegenheit
+"
+compilation,Zusammenstellung,"Input: compilation Answer: Zusammenstellung
+"
+exit,Abtritt,"Input: exit Answer: Abtritt
+"
+statue,Statue,"Input: statue Answer: Statue
+"
+explosion,Explosion,"Input: explosion Answer: Explosion
+"
+professor,Professor,"Input: professor Answer: Professor
+"
+mention,Erwähnung,"Input: mention Answer: Erwähnung
+"
+oxygen,Sauerstoff,"Input: oxygen Answer: Sauerstoff
+"
+collaboration,Kollektivarbeit,"Input: collaboration Answer: Kollektivarbeit
+"
+tunnel,Tunnel,"Input: tunnel Answer: Tunnel
+"
+pain,Schmerz,"Input: pain Answer: Schmerz
+"
+entertainment,Unterhaltung,"Input: entertainment Answer: Unterhaltung
+"
+residence,Sitz,"Input: residence Answer: Sitz
+"
+preparation,Vorbereitung,"Input: preparation Answer: Vorbereitung
+"
+alliance,Allianz,"Input: alliance Answer: Allianz
+"
+orbit,Umlaufbahn,"Input: orbit Answer: Umlaufbahn
+"
+restoration,Restaurierung,"Input: restoration Answer: Restaurierung
+"
+detail,Detail,"Input: detail Answer: Detail
+"
+wear,Abnutzung,"Input: wear Answer: Abnutzung
+"
+partnership,Partnerschaft,"Input: partnership Answer: Partnerschaft
+"
+horror,Horror,"Input: horror Answer: Horror
+"
+option,Option,"Input: option Answer: Option
+"
+racing,Rennen,"Input: racing Answer: Rennen
+"
+communication,Kommunikation,"Input: communication Answer: Kommunikation
+"
+neck,Kragen,"Input: neck Answer: Kragen
+"
+transition,Übergang,"Input: transition Answer: Übergang
+"
+engagement,Verpflichtung,"Input: engagement Answer: Verpflichtung
+"
+walk,Weg,"Input: walk Answer: Weg
+"
+repair,Reparatur,"Input: repair Answer: Reparatur
+"
+ownership,Besitz,"Input: ownership Answer: Besitz
+"
+perspective,Perspektive,"Input: perspective Answer: Perspektive
+"
+cargo,Fracht,"Input: cargo Answer: Fracht
+"
+bear,Bär,"Input: bear Answer: Bär
+"
+solution,Lösung,"Input: solution Answer: Lösung
+"
+patrol,Patrouille,"Input: patrol Answer: Patrouille
+"
+boundary,Grenze,"Input: boundary Answer: Grenze
+"
+occasion,Gelegenheit,"Input: occasion Answer: Gelegenheit
+"
+militia,Miliz,"Input: militia Answer: Miliz
+"
+armament,Ausrüstung,"Input: armament Answer: Ausrüstung
+"
+bowling,Bowling,"Input: bowling Answer: Bowling
+"
+crown,Krone,"Input: crown Answer: Krone
+"
+comparison,Vergleich,"Input: comparison Answer: Vergleich
+"
+flagship,Flaggschiff,"Input: flagship Answer: Flaggschiff
+"
+jazz,Jazz,"Input: jazz Answer: Jazz
+"
+bed,Lager,"Input: bed Answer: Lager
+"
+application,Anwendung,"Input: application Answer: Anwendung
+"
+agency,Wille,"Input: agency Answer: Wille
+"
+satellite,Begleiter,"Input: satellite Answer: Begleiter
+"
+truth,Wahrheit,"Input: truth Answer: Wahrheit
+"
+palace,Palast ; Schloss,"Input: palace Answer: Palast ; Schloss
+"
+storage,Speicher,"Input: storage Answer: Speicher
+"
+frame,Frame,"Input: frame Answer: Frame
+"
+flank,Flanke,"Input: flank Answer: Flanke
+"
+exhibition,Ausstellung,"Input: exhibition Answer: Ausstellung
+"
+monument,Denkmal,"Input: monument Answer: Denkmal
+"
+predecessor,Vorgänger,"Input: predecessor Answer: Vorgänger
+"
+surgery,Chirurgie,"Input: surgery Answer: Chirurgie
+"
+poll,Umfrage,"Input: poll Answer: Umfrage
+"
+philosophy,Philosophie,"Input: philosophy Answer: Philosophie
+"
+adventure,Abenteuer,"Input: adventure Answer: Abenteuer
+"
+apartment,Wohnung,"Input: apartment Answer: Wohnung
+"
+dollar,Dollar,"Input: dollar Answer: Dollar
+"
+protest,Demonstration,"Input: protest Answer: Demonstration
+"
+layer,Schicht,"Input: layer Answer: Schicht
+"
+catch,Fang,"Input: catch Answer: Fang
+"
+gap,Spalt,"Input: gap Answer: Spalt
+"
+phone,Telefon,"Input: phone Answer: Telefon
+"
+context,Kontext,"Input: context Answer: Kontext
+"
+casting,Gießen,"Input: casting Answer: Gießen
+"
+protein,Protein,"Input: protein Answer: Protein
+"
+reconnaissance,Aufklärung,"Input: reconnaissance Answer: Aufklärung
+"
+spin,Spritztour,"Input: spin Answer: Spritztour
+"
+legacy,Erbe,"Input: legacy Answer: Erbe
+"
+drum,Trommel,"Input: drum Answer: Trommel
+"
+typhoon,Taifun,"Input: typhoon Answer: Taifun
+"
+justice,Gerechtigkeit,"Input: justice Answer: Gerechtigkeit
+"
+illness,Krankheit,"Input: illness Answer: Krankheit
+"
+shipping,Schifffahrt,"Input: shipping Answer: Schifffahrt
+"
+merchant,Kaufmann,"Input: merchant Answer: Kaufmann
+"
+revenue,Einkommen,"Input: revenue Answer: Einkommen
+"
+bombing,Bombardierung,"Input: bombing Answer: Bombardierung
+"
+fund,Kapital,"Input: fund Answer: Kapital
+"
+console,Konsole,"Input: console Answer: Konsole
+"
+bow,Bogen,"Input: bow Answer: Bogen
+"
+definition,Definition,"Input: definition Answer: Definition
+"
+meat,Fleisch,"Input: meat Answer: Fleisch
+"
+guitarist,Gitarrenspieler,"Input: guitarist Answer: Gitarrenspieler
+"
+marketing,Marketing,"Input: marketing Answer: Marketing
+"
+factory,Fabrik,"Input: factory Answer: Fabrik
+"
+mining,Bergbau,"Input: mining Answer: Bergbau
+"
+bonus,Bonus,"Input: bonus Answer: Bonus
+"
+theater,Theater,"Input: theater Answer: Theater
+"
+signal,Signal,"Input: signal Answer: Signal
+"
+clothing,Kleidung,"Input: clothing Answer: Kleidung
+"
+delivery,Lieferung,"Input: delivery Answer: Lieferung
+"
+coin,Chip,"Input: coin Answer: Chip
+"
+elevation,Erhebung,"Input: elevation Answer: Erhebung
+"
+flood,Flut,"Input: flood Answer: Flut
+"
+punk,Punk,"Input: punk Answer: Punk
+"
+organ,Organ,"Input: organ Answer: Organ
+"
+affect,Affekt,"Input: affect Answer: Affekt
+"
+architect,Architekt,"Input: architect Answer: Architekt
+"
+legislature,Legislative,"Input: legislature Answer: Legislative
+"
+musician,Musikant,"Input: musician Answer: Musikant
+"
+diet,Diät,"Input: diet Answer: Diät
+"
+conversion,Umwandlung,"Input: conversion Answer: Umwandlung
+"
+concentration,Konzentration,"Input: concentration Answer: Konzentration
+"
+aftermath,Nachernte,"Input: aftermath Answer: Nachernte
+"
+baby,mein Süßer,"Input: baby Answer: mein Süßer
+"
+danger,Gefahr,"Input: danger Answer: Gefahr
+"
+wrestling,Ringkampf,"Input: wrestling Answer: Ringkampf
+"
+string,Zeichenkette,"Input: string Answer: Zeichenkette
+"
+meter,Messgerät,"Input: meter Answer: Messgerät
+"
+sub,U-Boot,"Input: sub Answer: U-Boot
+"
+removal,Entlassung,"Input: removal Answer: Entlassung
+"
+interpretation,Interpretation,"Input: interpretation Answer: Interpretation
+"
+venue,Schauplatz,"Input: venue Answer: Schauplatz
+"
+cult,Sekte,"Input: cult Answer: Sekte
+"
+encounter,Begegnung,"Input: encounter Answer: Begegnung
+"
+publishing,Verlagswesen,"Input: publishing Answer: Verlagswesen
+"
+remix,Remix,"Input: remix Answer: Remix
+"
+quarterback,Quarterback,"Input: quarterback Answer: Quarterback
+"
+rebellion,Rebellion,"Input: rebellion Answer: Rebellion
+"
+panel,Diskussionsrunde,"Input: panel Answer: Diskussionsrunde
+"
+announcement,Ankündigung,"Input: announcement Answer: Ankündigung
+"
+soldier,Bausoldat,"Input: soldier Answer: Bausoldat
+"
+fantasy,Fantasie,"Input: fantasy Answer: Fantasie
+"
+discussion,Diskussion,"Input: discussion Answer: Diskussion
+"
+behaviour,Verhalten,"Input: behaviour Answer: Verhalten
+"
+loan,Anleihe,"Input: loan Answer: Anleihe
+"
+roll,das Rollen,"Input: roll Answer: das Rollen
+"
+aspect,Aspekt,"Input: aspect Answer: Aspekt
+"
+talent,Talent,"Input: talent Answer: Talent
+"
+landscape,Landschaft,"Input: landscape Answer: Landschaft
+"
+withdrawal,Entzug,"Input: withdrawal Answer: Entzug
+"
+angle,Winkel,"Input: angle Answer: Winkel
+"
+margin,Seitenrand,"Input: margin Answer: Seitenrand
+"
+circle,Kreis,"Input: circle Answer: Kreis
+"
+trouble,Schwierigkeit,"Input: trouble Answer: Schwierigkeit
+"
+exposure,Belichtung,"Input: exposure Answer: Belichtung
+"
+specimen,Exemplar,"Input: specimen Answer: Exemplar
+"
+density,Dichte,"Input: density Answer: Dichte
+"
+pool,Becken,"Input: pool Answer: Becken
+"
+constitution,Verfassung,"Input: constitution Answer: Verfassung
+"
+beam,Balken,"Input: beam Answer: Balken
+"
+shift,Verschiebung,"Input: shift Answer: Verschiebung
+"
+duo,Duo,"Input: duo Answer: Duo
+"
+membership,Mitgliedschaft,"Input: membership Answer: Mitgliedschaft
+"
+loop,Schleife,"Input: loop Answer: Schleife
+"
+plate,Gang,"Input: plate Answer: Gang
+"
+magic,Magie,"Input: magic Answer: Magie
+"
+expression,Ausdruck,"Input: expression Answer: Ausdruck
+"
+skull,Schädel,"Input: skull Answer: Schädel
+"
+emphasis,Betonung,"Input: emphasis Answer: Betonung
+"
+alcohol,Alkohol,"Input: alcohol Answer: Alkohol
+"
+exercise,Übung,"Input: exercise Answer: Übung
+"
+basin,Becken,"Input: basin Answer: Becken
+"
+assembly,Versammlung,"Input: assembly Answer: Versammlung
+"
+prize,Preis,"Input: prize Answer: Preis
+"
+sole,Sohle,"Input: sole Answer: Sohle
+"
+portrayal,Abbild,"Input: portrayal Answer: Abbild
+"
+bid,Gebot,"Input: bid Answer: Gebot
+"
+advertising,Werbung,"Input: advertising Answer: Werbung
+"
+regime,Regime,"Input: regime Answer: Regime
+"
+birthday,Geburtstag,"Input: birthday Answer: Geburtstag
+"
+employment,Gebrauch,"Input: employment Answer: Gebrauch
+"
+jury,Geschworene,"Input: jury Answer: Geschworene
+"
+attitude,Haltung,"Input: attitude Answer: Haltung
+"
+hydrogen,Wasserstoff,"Input: hydrogen Answer: Wasserstoff
+"
+software,Software,"Input: software Answer: Software
+"
+translation,Übersetzung,"Input: translation Answer: Übersetzung
+"
+cousin,entfernter Verwandter,"Input: cousin Answer: entfernter Verwandter
+"
+swimming,Schwimmen,"Input: swimming Answer: Schwimmen
+"
+commentary,Kommentar,"Input: commentary Answer: Kommentar
+"
+lawyer,Rechtsanwalt,"Input: lawyer Answer: Rechtsanwalt
+"
+execution,Ausführung,"Input: execution Answer: Ausführung
+"
+terrain,Terrain,"Input: terrain Answer: Terrain
+"
+duration,Dauer,"Input: duration Answer: Dauer
+"
+tenure,Amtszeit,"Input: tenure Answer: Amtszeit
+"
+friendship,Freundschaft,"Input: friendship Answer: Freundschaft
+"
+dream,Traum,"Input: dream Answer: Traum
+"
+succession,Thronfolge,"Input: succession Answer: Thronfolge
+"
+bone,Knochen,"Input: bone Answer: Knochen
+"
+rhythm,Rhythmus,"Input: rhythm Answer: Rhythmus
+"
+shop,Laden,"Input: shop Answer: Laden
+"
+publisher,Herausgeber,"Input: publisher Answer: Herausgeber
+"
+component,Komponente,"Input: component Answer: Komponente
+"
+uncle,Onkel,"Input: uncle Answer: Onkel
+"
+parliament,Parlament,"Input: parliament Answer: Parlament
+"
+sun,Sonne,"Input: sun Answer: Sonne
+"
+precipitation,Präzipitation,"Input: precipitation Answer: Präzipitation
+"
+slavery,Sklaverei,"Input: slavery Answer: Sklaverei
+"
+tube,Rohr,"Input: tube Answer: Rohr
+"
+radiation,Strahlung,"Input: radiation Answer: Strahlung
+"
+virus,Computervirus,"Input: virus Answer: Computervirus
+"
+contribution,Beitrag,"Input: contribution Answer: Beitrag
+"
+earthquake,Erdbeben,"Input: earthquake Answer: Erdbeben
+"
+scholar,Gelehrte,"Input: scholar Answer: Gelehrte
+"
+songwriter,Songwriter,"Input: songwriter Answer: Songwriter
+"
+debt,Schulden,"Input: debt Answer: Schulden
+"
+ticket,Ticket,"Input: ticket Answer: Ticket
+"
+frequency,Häufigkeit,"Input: frequency Answer: Häufigkeit
+"
+coat,Beschichtung,"Input: coat Answer: Beschichtung
+"
+destroyer,Zerstörer,"Input: destroyer Answer: Zerstörer
+"
+doctor,Doktor,"Input: doctor Answer: Doktor
+"
+profit,Gewinn,"Input: profit Answer: Gewinn
+"
+trust,Vertrauen,"Input: trust Answer: Vertrauen
+"
+touch,Berührung,"Input: touch Answer: Berührung
+"
+ballad,Ballade,"Input: ballad Answer: Ballade
+"
+bay,Golf,"Input: bay Answer: Golf
+"
+investment,Investition,"Input: investment Answer: Investition
+"
+cannon,Kanone,"Input: cannon Answer: Kanone
+"
+voting,Abstimmung,"Input: voting Answer: Abstimmung
+"
+trough,Trog,"Input: trough Answer: Trog
+"
+photography,Fotografie,"Input: photography Answer: Fotografie
+"
+parody,Parodie,"Input: parody Answer: Parodie
+"
+phrase,Redewendung,"Input: phrase Answer: Redewendung
+"
+trail,Spur,"Input: trail Answer: Spur
+"
+reduction,Reduktion,"Input: reduction Answer: Reduktion
+"
+ruler,Lineal,"Input: ruler Answer: Lineal
+"
+confidence,Zuversicht,"Input: confidence Answer: Zuversicht
+"
+shoulder,Schulter,"Input: shoulder Answer: Schulter
+"
+survival,Überleben,"Input: survival Answer: Überleben
+"
+signature,Unterschrift,"Input: signature Answer: Unterschrift
+"
+communist,Kommunist,"Input: communist Answer: Kommunist
+"
+uranium,Uran,"Input: uranium Answer: Uran
+"
+melody,Melodie,"Input: melody Answer: Melodie
+"
+copper,Kupfer,"Input: copper Answer: Kupfer
+"
+wish,Wunsch,"Input: wish Answer: Wunsch
+"
+minority,Minderheit,"Input: minority Answer: Minderheit
+"
+document,Unterlagen,"Input: document Answer: Unterlagen
+"
+instrument,Instrument,"Input: instrument Answer: Instrument
+"
+revolt,Revolte,"Input: revolt Answer: Revolte
+"
+tip,Spitze,"Input: tip Answer: Spitze
+"
+escort,Eskorte,"Input: escort Answer: Eskorte
+"
+programming,Programmierung,"Input: programming Answer: Programmierung
+"
+conservation,Schutz,"Input: conservation Answer: Schutz
+"
+sky,Luft,"Input: sky Answer: Luft
+"
+representation,Repräsentation,"Input: representation Answer: Repräsentation
+"
+hole,Loch,"Input: hole Answer: Loch
+"
+prisoner,Gefangener,"Input: prisoner Answer: Gefangener
+"
+autumn,Herbst,"Input: autumn Answer: Herbst
+"
+stream,Strom,"Input: stream Answer: Strom
+"
+abuse,Missbrauch,"Input: abuse Answer: Missbrauch
+"
+chair,Vorsitzender,"Input: chair Answer: Vorsitzender
+"
+sample,Probe,"Input: sample Answer: Probe
+"
+warfare,Kriegsführung,"Input: warfare Answer: Kriegsführung
+"
+rivalry,Rivalität,"Input: rivalry Answer: Rivalität
+"
+biographer,Biograf,"Input: biographer Answer: Biograf
+"
+waste,Verfall,"Input: waste Answer: Verfall
+"
+experiment,Experiment,"Input: experiment Answer: Experiment
+"
+guide,Reiseleiter,"Input: guide Answer: Reiseleiter
+"
+medicine,Medizin,"Input: medicine Answer: Medizin
+"
+participation,Partizipation,"Input: participation Answer: Partizipation
+"
+slave,Sklave,"Input: slave Answer: Sklave
+"
+transportation,Beförderung,"Input: transportation Answer: Beförderung
+"
+liquid,Flüssigkeit,"Input: liquid Answer: Flüssigkeit
+"
+institution,Institution,"Input: institution Answer: Institution
+"
+parent,Elternteil,"Input: parent Answer: Elternteil
+"
+salary,Gehalt,"Input: salary Answer: Gehalt
+"
+recovery,Wiedererlangung,"Input: recovery Answer: Wiedererlangung
+"
+count,Graf,"Input: count Answer: Graf
+"
+doubt,Zweifel,"Input: doubt Answer: Zweifel
+"
+revolution,Revolution,"Input: revolution Answer: Revolution
+"
+cinema,Kino,"Input: cinema Answer: Kino
+"
+cloud,Wolke,"Input: cloud Answer: Wolke
+"
+drummer,Schlagzeuger,"Input: drummer Answer: Schlagzeuger
+"
+cabinet,Kabinett,"Input: cabinet Answer: Kabinett
+"
+significance,Bedeutung,"Input: significance Answer: Bedeutung
+"
+neighborhood,Nachbarschaft,"Input: neighborhood Answer: Nachbarschaft
+"
+compound,Mischung,"Input: compound Answer: Mischung
+"
+legend,Legende,"Input: legend Answer: Legende
+"
+jump,Sprung,"Input: jump Answer: Sprung
+"
+inclusion,Einschluss,"Input: inclusion Answer: Einschluss
+"
+tale,Märchen,"Input: tale Answer: Märchen
+"
+wealth,Fülle,"Input: wealth Answer: Fülle
+"
+mate,Mate,"Input: mate Answer: Mate
+"
+journal,Tagebuch,"Input: journal Answer: Tagebuch
+"
+grandfather,Großvater,"Input: grandfather Answer: Großvater
+"
+summit,Gipfeltreffen,"Input: summit Answer: Gipfeltreffen
+"
+descent,Herkunft,"Input: descent Answer: Herkunft
+"
+gender,Geschlecht,"Input: gender Answer: Geschlecht
+"
+sentence,Urteil,"Input: sentence Answer: Urteil
+"
+beauty,Schönheit,"Input: beauty Answer: Schönheit
+"
+heritage,Geburtsrecht,"Input: heritage Answer: Geburtsrecht
+"
+altitude,Höhe,"Input: altitude Answer: Höhe
+"
+trend,Trend,"Input: trend Answer: Trend
+"
+presentation,Vortrag,"Input: presentation Answer: Vortrag
+"
+agriculture,Landwirtschaft,"Input: agriculture Answer: Landwirtschaft
+"
+resident,Assistentarzt,"Input: resident Answer: Assistentarzt
+"
+sailing,Segeln,"Input: sailing Answer: Segeln
+"
+intervention,Intervention,"Input: intervention Answer: Intervention
+"
+fame,Ruhm,"Input: fame Answer: Ruhm
+"
+tribe,Stamm,"Input: tribe Answer: Stamm
+"
+mythology,Mythologie,"Input: mythology Answer: Mythologie
+"
+wine,Wein,"Input: wine Answer: Wein
+"
+confusion,Verwirrung,"Input: confusion Answer: Verwirrung
+"
+error,Fehler,"Input: error Answer: Fehler
+"
+answer,Antwort,"Input: answer Answer: Antwort
+"
+worship,Verehrung,"Input: worship Answer: Verehrung
+"
+fate,Schicksal,"Input: fate Answer: Schicksal
+"
+sight,Sehvermögen,"Input: sight Answer: Sehvermögen
+"
+jurisdiction,Jurisdiktion,"Input: jurisdiction Answer: Jurisdiktion
+"
+knee,Knie,"Input: knee Answer: Knie
+"
+observation,Beobachtung,"Input: observation Answer: Beobachtung
+"
+interaction,Interaktion,"Input: interaction Answer: Interaktion
+"
+voyage,Reise,"Input: voyage Answer: Reise
+"
+sculpture,Bildhauerkunst,"Input: sculpture Answer: Bildhauerkunst
+"
+principle,Prinzip,"Input: principle Answer: Prinzip
+"
+demo,Demonstration,"Input: demo Answer: Demonstration
+"
+fossil,Fossil,"Input: fossil Answer: Fossil
+"
+streak,Schliere,"Input: streak Answer: Schliere
+"
+lifetime,Leben,"Input: lifetime Answer: Leben
+"
+infrastructure,Infrastruktur,"Input: infrastructure Answer: Infrastruktur
+"
+fee,Gebühr,"Input: fee Answer: Gebühr
+"
+disturbance,Störung,"Input: disturbance Answer: Störung
+"
+gift,Geschenk,"Input: gift Answer: Geschenk
+"
+variation,Variation,"Input: variation Answer: Variation
+"
+tag,Tag,"Input: tag Answer: Tag
+"
+holiday,Urlaub,"Input: holiday Answer: Urlaub
+"
+impression,Eindruck,"Input: impression Answer: Eindruck
+"
+pack,Pack,"Input: pack Answer: Pack
+"
+shock,Schock,"Input: shock Answer: Schock
+"
+tape,Klebeband,"Input: tape Answer: Klebeband
+"
+stretch,Strecken,"Input: stretch Answer: Strecken
+"
+divorce,Scheidung,"Input: divorce Answer: Scheidung
+"
+motor,Motor,"Input: motor Answer: Motor
+"
+pursuit,Verfolgung,"Input: pursuit Answer: Verfolgung
+"
+fortress,Festung,"Input: fortress Answer: Festung
+"
+manuscript,Handschrift,"Input: manuscript Answer: Handschrift
+"
+teammate,Teamkollege,"Input: teammate Answer: Teamkollege
+"
+gate,Tor,"Input: gate Answer: Tor
+"
+dinner,Futter,"Input: dinner Answer: Futter
+"
+bypass,Umgehung,"Input: bypass Answer: Umgehung
+"
+chemistry,Chemie,"Input: chemistry Answer: Chemie
+"
+handling,Hehlerei,"Input: handling Answer: Hehlerei
+"
+guy,Typen,"Input: guy Answer: Typen
+"
+mixture,Mischung,"Input: mixture Answer: Mischung
+"
+census,Zensus,"Input: census Answer: Zensus
+"
+velocity,Geschwindigkeit,"Input: velocity Answer: Geschwindigkeit
+"
+examination,Prüfung,"Input: examination Answer: Prüfung
+"
+lift,Auftrieb,"Input: lift Answer: Auftrieb
+"
+trailer,Anhänger,"Input: trailer Answer: Anhänger
+"
+pitcher,Krug,"Input: pitcher Answer: Krug
+"
+skill,Geschicklichkeit,"Input: skill Answer: Geschicklichkeit
+"
+sword,Schwertkämpfer,"Input: sword Answer: Schwertkämpfer
+"
+net,Netz,"Input: net Answer: Netz
+"
+cable,Kabel,"Input: cable Answer: Kabel
+"
+uniform,Uniform,"Input: uniform Answer: Uniform
+"
+bombardment,Bombardierung,"Input: bombardment Answer: Bombardierung
+"
+costume,Kostüm,"Input: costume Answer: Kostüm
+"
+tissue,Gewebe,"Input: tissue Answer: Gewebe
+"
+prototype,Prototyp,"Input: prototype Answer: Prototyp
+"
+celebration,Feier,"Input: celebration Answer: Feier
+"
+tornado,Tornado,"Input: tornado Answer: Tornado
+"
+promise,Versprechen,"Input: promise Answer: Versprechen
+"
+laboratory,Labor,"Input: laboratory Answer: Labor
+"
+craft,Handwerker,"Input: craft Answer: Handwerker
+"
+dozen,Dutzende,"Input: dozen Answer: Dutzende
+"
+separation,Trennung,"Input: separation Answer: Trennung
+"
+feud,Fehde,"Input: feud Answer: Fehde
+"
+chest,Kommode,"Input: chest Answer: Kommode
+"
+revival,Erweckung,"Input: revival Answer: Erweckung
+"
+nickname,Beiname,"Input: nickname Answer: Beiname
+"
+politician,Politiker,"Input: politician Answer: Politiker
+"
+consumption,Schwindsucht,"Input: consumption Answer: Schwindsucht
+"
+cup,Pokal,"Input: cup Answer: Pokal
+"
+handle,Griff,"Input: handle Answer: Griff
+"
+harbour,Hafen,"Input: harbour Answer: Hafen
+"
+biography,Biografie,"Input: biography Answer: Biografie
+"
+deputy,Deputierter,"Input: deputy Answer: Deputierter
+"
+lighter,Leichter,"Input: lighter Answer: Leichter
+"
+moon,Mond,"Input: moon Answer: Mond
+"
+usage,Brauch,"Input: usage Answer: Brauch
+"
+evacuation,Evakuierung,"Input: evacuation Answer: Evakuierung
+"
+clock,Taktsignal,"Input: clock Answer: Taktsignal
+"
+exile,Exilant,"Input: exile Answer: Exilant
+"
+seed,Samen,"Input: seed Answer: Samen
+"
+lawsuit,Gerichtsverfahren,"Input: lawsuit Answer: Gerichtsverfahren
+"
+cathedral,Kathedrale,"Input: cathedral Answer: Kathedrale
+"
+relation,Relation,"Input: relation Answer: Relation
+"
+speculation,Spekulation,"Input: speculation Answer: Spekulation
+"
+intent,Absicht,"Input: intent Answer: Absicht
+"
+debris,Trümmer,"Input: debris Answer: Trümmer
+"
+sleep,Schlaf,"Input: sleep Answer: Schlaf
+"
+decrease,Verringerung,"Input: decrease Answer: Verringerung
+"
+mechanism,Mechanismus,"Input: mechanism Answer: Mechanismus
+"
+nose,Nase,"Input: nose Answer: Nase
+"
+vicinity,Nachbarschaft,"Input: vicinity Answer: Nachbarschaft
+"
+killer,Töter,"Input: killer Answer: Töter
+"
+humanity,Humanität,"Input: humanity Answer: Humanität
+"
+exhibit,Beweisstück,"Input: exhibit Answer: Beweisstück
+"
+conversation,Konversation,"Input: conversation Answer: Konversation
+"
+disorder,Unordnung,"Input: disorder Answer: Unordnung
+"
+suspension,Aussetzung,"Input: suspension Answer: Aussetzung
+"
+boyfriend,Freund,"Input: boyfriend Answer: Freund
+"
+helicopter,Helikopter,"Input: helicopter Answer: Helikopter
+"
+metre,Meter,"Input: metre Answer: Meter
+"
+infection,Ansteckung,"Input: infection Answer: Ansteckung
+"
+metric,Metrik,"Input: metric Answer: Metrik
+"
+stress,Betonung,"Input: stress Answer: Betonung
+"
+taste,Geschmack,"Input: taste Answer: Geschmack
+"
+portrait,Portrait,"Input: portrait Answer: Portrait
+"
+jet,Strahl,"Input: jet Answer: Strahl
+"
+explanation,Erklärung,"Input: explanation Answer: Erklärung
+"
+acre,Morgen,"Input: acre Answer: Morgen
+"
+peninsula,Halbinsel,"Input: peninsula Answer: Halbinsel
+"
+diamond,Diamant,"Input: diamond Answer: Diamant
+"
+attorney,Rechtsanwalt,"Input: attorney Answer: Rechtsanwalt
+"
+heir,Thronerbe,"Input: heir Answer: Thronerbe
+"
+roadway,Fahrbahn,"Input: roadway Answer: Fahrbahn
+"
+truck,Lastauto,"Input: truck Answer: Lastauto
+"
+bowl,Schale,"Input: bowl Answer: Schale
+"
+user,Benutzer,"Input: user Answer: Benutzer
+"
+lover,Geliebter,"Input: lover Answer: Geliebter
+"
+closure,Closure,"Input: closure Answer: Closure
+"
+wheel,Rad,"Input: wheel Answer: Rad
+"
+suggestion,Suggestion,"Input: suggestion Answer: Suggestion
+"
+reporting,Berichterstattung,"Input: reporting Answer: Berichterstattung
+"
+proof,Beweis,"Input: proof Answer: Beweis
+"
+fungus,Pilz,"Input: fungus Answer: Pilz
+"
+conspiracy,Verschwörung,"Input: conspiracy Answer: Verschwörung
+"
+attraction,Attraktion,"Input: attraction Answer: Attraktion
+"
+faculty,Vermögen,"Input: faculty Answer: Vermögen
+"
+reporter,Reporter,"Input: reporter Answer: Reporter
+"
+romance,Romanze,"Input: romance Answer: Romanze
+"
+license,Lizenz,"Input: license Answer: Lizenz
+"
+grass,Gras,"Input: grass Answer: Gras
+"
+sheep,Schaf,"Input: sheep Answer: Schaf
+"
+publicity,Werbung,"Input: publicity Answer: Werbung
+"
+parking,Parken,"Input: parking Answer: Parken
+"
+surge,Überspannung,"Input: surge Answer: Überspannung
+"
+stability,Stabilität,"Input: stability Answer: Stabilität
+"
+noise,Rauschen,"Input: noise Answer: Rauschen
+"
+companion,Gefährte,"Input: companion Answer: Gefährte
+"
+drink,Getränk,"Input: drink Answer: Getränk
+"
+resignation,Rücktritt,"Input: resignation Answer: Rücktritt
+"
+check,Kontrolle,"Input: check Answer: Kontrolle
+"
+telephone,Telefon,"Input: telephone Answer: Telefon
+"
+cruise,Kreuzfahrt,"Input: cruise Answer: Kreuzfahrt
+"
+roster,Liste,"Input: roster Answer: Liste
+"
+comment,Kommentar,"Input: comment Answer: Kommentar
+"
+tune,Melodie,"Input: tune Answer: Melodie
+"
+paint,Farbe,"Input: paint Answer: Farbe
+"
+insurance,Versicherung,"Input: insurance Answer: Versicherung
+"
+photo,Foto,"Input: photo Answer: Foto
+"
+cash,Bargeld,"Input: cash Answer: Bargeld
+"
+creature,Geschöpf,"Input: creature Answer: Geschöpf
+"
+crop,Gerte,"Input: crop Answer: Gerte
+"
+rice,Reis,"Input: rice Answer: Reis
+"
+diversity,Vielfältigkeit,"Input: diversity Answer: Vielfältigkeit
+"
+pole,Pol,"Input: pole Answer: Pol
+"
+stuff,Material,"Input: stuff Answer: Material
+"
+scholarship,Gelehrsamkeit,"Input: scholarship Answer: Gelehrsamkeit
+"
+rotation,Umdrehung,"Input: rotation Answer: Umdrehung
+"
+pink,Nelke,"Input: pink Answer: Nelke
+"
+monastery,Kloster,"Input: monastery Answer: Kloster
+"
+reconstruction,Rekonstruktion,"Input: reconstruction Answer: Rekonstruktion
+"
+mill,Fabrik,"Input: mill Answer: Fabrik
+"
+spacecraft,Raumfahrzeug,"Input: spacecraft Answer: Raumfahrzeug
+"
+dual,Dual,"Input: dual Answer: Dual
+"
+egg,Ei,"Input: egg Answer: Ei
+"
+distinction,Auszeichnung,"Input: distinction Answer: Auszeichnung
+"
+commitment,Einweisung,"Input: commitment Answer: Einweisung
+"
+radius,Speiche,"Input: radius Answer: Speiche
+"
+labour,gebären,"Input: labour Answer: gebären
+"
+revenge,Rache,"Input: revenge Answer: Rache
+"
+exterior,Äußeres,"Input: exterior Answer: Äußeres
+"
+consequence,Konsequenz,"Input: consequence Answer: Konsequenz
+"
+expert,Experte,"Input: expert Answer: Experte
+"
+formula,Formel,"Input: formula Answer: Formel
+"
+runner,Läufer,"Input: runner Answer: Läufer
+"
+dust,Staub,"Input: dust Answer: Staub
+"
+proportion,Proportion,"Input: proportion Answer: Proportion
+"
+scandal,Skandal,"Input: scandal Answer: Skandal
+"
+shield,Schutz,"Input: shield Answer: Schutz
+"
+mansion,Herrenhaus,"Input: mansion Answer: Herrenhaus
+"
+electron,Elektron,"Input: electron Answer: Elektron
+"
+outcome,Ergebnis,"Input: outcome Answer: Ergebnis
+"
+logo,Logo,"Input: logo Answer: Logo
+"
+propaganda,Propaganda,"Input: propaganda Answer: Propaganda
+"
+transmission,Übertragung,"Input: transmission Answer: Übertragung
+"
+vegetation,Vegetation,"Input: vegetation Answer: Vegetation
+"
+rider,Reiter,"Input: rider Answer: Reiter
+"
+depiction,Darstellung,"Input: depiction Answer: Darstellung
+"
+monster,Monster,"Input: monster Answer: Monster
+"
+punishment,Bestrafung,"Input: punishment Answer: Bestrafung
+"
+custom,Zoll,"Input: custom Answer: Zoll
+"
+routine,Routine,"Input: routine Answer: Routine
+"
+worker,Arbeiterin,"Input: worker Answer: Arbeiterin
+"
+presidency,Präsidentschaft,"Input: presidency Answer: Präsidentschaft
+"
+doctrine,Doktrin,"Input: doctrine Answer: Doktrin
+"
+pound,Pfund,"Input: pound Answer: Pfund
+"
+assassination,Ermordung,"Input: assassination Answer: Ermordung
+"
+achievement,Errungenschaft,"Input: achievement Answer: Errungenschaft
+"
+payment,Zahlung,"Input: payment Answer: Zahlung
+"
+consciousness,Bewusstsein,"Input: consciousness Answer: Bewusstsein
+"
+priority,Priorität,"Input: priority Answer: Priorität
+"
+nephew,Neffe,"Input: nephew Answer: Neffe
+"
+switch,Schalter,"Input: switch Answer: Schalter
+"
+phenomenon,Phänomen,"Input: phenomenon Answer: Phänomen
+"
+width,Breite,"Input: width Answer: Breite
+"
+hypothesis,Hypothese,"Input: hypothesis Answer: Hypothese
+"
+mail,Post,"Input: mail Answer: Post
+"
+witness,Zeuge,"Input: witness Answer: Zeuge
+"
+poverty,Armut,"Input: poverty Answer: Armut
+"
+finance,Finanz,"Input: finance Answer: Finanz
+"
+awareness,Bewusstsein,"Input: awareness Answer: Bewusstsein
+"
+corruption,Korruption,"Input: corruption Answer: Korruption
+"
+curve,Kurve,"Input: curve Answer: Kurve
+"
+scientist,Wissenschaftler,"Input: scientist Answer: Wissenschaftler
+"
+flower,Blume,"Input: flower Answer: Blume
+"
+exploration,Erkundung,"Input: exploration Answer: Erkundung
+"
+bell,Klingel,"Input: bell Answer: Klingel
+"
+choir,Chor,"Input: choir Answer: Chor
+"
+shaft,Schaft,"Input: shaft Answer: Schaft
+"
+mystery,Rätsel,"Input: mystery Answer: Rätsel
+"
+villain,Bösewicht,"Input: villain Answer: Bösewicht
+"
+spite,Boshaftigkeit,"Input: spite Answer: Boshaftigkeit
+"
+cat,Säbelzahnkatze,"Input: cat Answer: Säbelzahnkatze
+"
+processing,Verarbeitung,"Input: processing Answer: Verarbeitung
+"
+requirement,Anforderung,"Input: requirement Answer: Anforderung
+"
+acceptance,Akzeptanz,"Input: acceptance Answer: Akzeptanz
+"
+horsepower,Pferdestärke,"Input: horsepower Answer: Pferdestärke
+"
+bond,Obligation,"Input: bond Answer: Obligation
+"
+navigation,Navigation,"Input: navigation Answer: Navigation
+"
+compromise,Kompromiss,"Input: compromise Answer: Kompromiss
+"
+web,Netz,"Input: web Answer: Netz
+"
+mood,schlechte Laune,"Input: mood Answer: schlechte Laune
+"
+faction,Fraktion,"Input: faction Answer: Fraktion
+"
+gauge,Meter,"Input: gauge Answer: Meter
+"
+eruption,Ausbruch,"Input: eruption Answer: Ausbruch
+"
+dive,Tauchen,"Input: dive Answer: Tauchen
+"
+goddess,Göttin,"Input: goddess Answer: Göttin
+"
+consensus,Konsens,"Input: consensus Answer: Konsens
+"
+tooth,Zahn,"Input: tooth Answer: Zahn
+"
+variant,Variante,"Input: variant Answer: Variante
+"
+monarch,Monarch,"Input: monarch Answer: Monarch
+"
+grid,Gitter,"Input: grid Answer: Gitter
+"
+loyalty,Treue,"Input: loyalty Answer: Treue
+"
+cotton,Baumwolle,"Input: cotton Answer: Baumwolle
+"
+battlefield,Schlachtfeld,"Input: battlefield Answer: Schlachtfeld
+"
+assessment,Bewertung,"Input: assessment Answer: Bewertung
+"
+seal,Siegel,"Input: seal Answer: Siegel
+"
+wire,Draht,"Input: wire Answer: Draht
+"
+highlight,Highlight,"Input: highlight Answer: Highlight
+"
+reader,Leser,"Input: reader Answer: Leser
+"
+flesh,Fleisch,"Input: flesh Answer: Fleisch
+"
+sheet,Blatt,"Input: sheet Answer: Blatt
+"
+referee,Rezensent,"Input: referee Answer: Rezensent
+"
+declaration,Erklärung,"Input: declaration Answer: Erklärung
+"
+missile,Flugkörper,"Input: missile Answer: Flugkörper
+"
+airfield,Flugplatz,"Input: airfield Answer: Flugplatz
+"
+discipline,Disziplin,"Input: discipline Answer: Disziplin
+"
+mistake,Fehler,"Input: mistake Answer: Fehler
+"
+sacrifice,Opfer,"Input: sacrifice Answer: Opfer
+"
+gallery,Galerie,"Input: gallery Answer: Galerie
+"
+interference,Störung,"Input: interference Answer: Störung
+"
+audition,Vorsingen,"Input: audition Answer: Vorsingen
+"
+harm,Schaden,"Input: harm Answer: Schaden
+"
+frigate,Fregatte,"Input: frigate Answer: Fregatte
+"
+expense,Verlust,"Input: expense Answer: Verlust
+"
+syndrome,Syndrom,"Input: syndrome Answer: Syndrom
+"
+troop,Truppen,"Input: troop Answer: Truppen
+"
+supporter,Schildhalter,"Input: supporter Answer: Schildhalter
+"
+machinery,Maschinerie,"Input: machinery Answer: Maschinerie
+"
+migration,Migration,"Input: migration Answer: Migration
+"
+locomotive,Lokomotive,"Input: locomotive Answer: Lokomotive
+"
+stroke,Schlag,"Input: stroke Answer: Schlag
+"
+custody,Sorgerecht,"Input: custody Answer: Sorgerecht
+"
+shopping,Einkaufen,"Input: shopping Answer: Einkaufen
+"
+hunt,Jagd,"Input: hunt Answer: Jagd
+"
+proximity,Nähe,"Input: proximity Answer: Nähe
+"
+joke,Witz,"Input: joke Answer: Witz
+"
+currency,Währung,"Input: currency Answer: Währung
+"
+bore,Bohrung,"Input: bore Answer: Bohrung
+"
+whale,Wal,"Input: whale Answer: Wal
+"
+beer,Bier,"Input: beer Answer: Bier
+"
+rocket,Rakete,"Input: rocket Answer: Rakete
+"
+aviation,Luftfahrt,"Input: aviation Answer: Luftfahrt
+"
+spell,kurze Periode,"Input: spell Answer: kurze Periode
+"
+gathering,Zusammenkunft,"Input: gathering Answer: Zusammenkunft
+"
+cylinder,Zylinder,"Input: cylinder Answer: Zylinder
+"
+cave,Höhle,"Input: cave Answer: Höhle
+"
+leaf,Blatt,"Input: leaf Answer: Blatt
+"
+stick,Stock,"Input: stick Answer: Stock
+"
+installation,Installation,"Input: installation Answer: Installation
+"
+massacre,Massaker,"Input: massacre Answer: Massaker
+"
+editing,Bearbeitung,"Input: editing Answer: Bearbeitung
+"
+tourism,Tourismus,"Input: tourism Answer: Tourismus
+"
+gravity,Bedenklichkeit,"Input: gravity Answer: Bedenklichkeit
+"
+therapy,Therapie,"Input: therapy Answer: Therapie
+"
+widow,Hurenkind,"Input: widow Answer: Hurenkind
+"
+hook,Haken,"Input: hook Answer: Haken
+"
+milk,Milch,"Input: milk Answer: Milch
+"
+transit,Theodolit,"Input: transit Answer: Theodolit
+"
+cooperation,Zusammenarbeit,"Input: cooperation Answer: Zusammenarbeit
+"
+captivity,Gefangenschaft,"Input: captivity Answer: Gefangenschaft
+"
+gear,Gang,"Input: gear Answer: Gang
+"
+corridor,Korridor,"Input: corridor Answer: Korridor
+"
+volcano,Vulkan,"Input: volcano Answer: Vulkan
+"
+shirt,Hemd,"Input: shirt Answer: Hemd
+"
+delegation,Delegation,"Input: delegation Answer: Delegation
+"
+rapper,Rapper,"Input: rapper Answer: Rapper
+"
+hybrid,Hybride,"Input: hybrid Answer: Hybride
+"
+developer,Entwickler,"Input: developer Answer: Entwickler
+"
+trick,Trick,"Input: trick Answer: Trick
+"
+jaw,Kiefer,"Input: jaw Answer: Kiefer
+"
+thickness,Dicke,"Input: thickness Answer: Dicke
+"
+photograph,Fotografie,"Input: photograph Answer: Fotografie
+"
+kiss,Kuss,"Input: kiss Answer: Kuss
+"
+operator,Operator,"Input: operator Answer: Operator
+"
+pregnancy,Schwangerschaft,"Input: pregnancy Answer: Schwangerschaft
+"
+trophy,Trophäe,"Input: trophy Answer: Trophäe
+"
+oak,Eiche,"Input: oak Answer: Eiche
+"
+file,Kartei,"Input: file Answer: Kartei
+"
+percussion,Perkussion,"Input: percussion Answer: Perkussion
+"
+acquisition,Erwerb,"Input: acquisition Answer: Erwerb
+"
+collision,Zusammenstoß,"Input: collision Answer: Zusammenstoß
+"
+kitchen,Küche,"Input: kitchen Answer: Küche
+"
+conjunction,Konjunktion,"Input: conjunction Answer: Konjunktion
+"
+scenario,Szenario,"Input: scenario Answer: Szenario
+"
+package,Paket,"Input: package Answer: Paket
+"
+substance,Substanz,"Input: substance Answer: Substanz
+"
+roller,Racke,"Input: roller Answer: Racke
+"
+tennis,Tennis,"Input: tennis Answer: Tennis
+"
+motorway,Autobahn,"Input: motorway Answer: Autobahn
+"
+petition,Petition,"Input: petition Answer: Petition
+"
+progression,Progression,"Input: progression Answer: Progression
+"
+topic,Thema,"Input: topic Answer: Thema
+"
+demonstration,Demonstration,"Input: demonstration Answer: Demonstration
+"
+erosion,Erosion,"Input: erosion Answer: Erosion
+"
+climbing,Kletterei,"Input: climbing Answer: Kletterei
+"
+suburb,Vorstadt,"Input: suburb Answer: Vorstadt
+"
+muzzle,Maulkorb,"Input: muzzle Answer: Maulkorb
+"
+plutonium,Plutonium,"Input: plutonium Answer: Plutonium
+"
+wound,Wunde,"Input: wound Answer: Wunde
+"
+monitor,Bildschirm,"Input: monitor Answer: Bildschirm
+"
+dawn,Dämmerung,"Input: dawn Answer: Dämmerung
+"
+attachment,Anlage,"Input: attachment Answer: Anlage
+"
+golf,Golf,"Input: golf Answer: Golf
+"
+grain,Körnchen,"Input: grain Answer: Körnchen
+"
+amendment,Zusatzartikel,"Input: amendment Answer: Zusatzartikel
+"
+pleasure,Vergnügen,"Input: pleasure Answer: Vergnügen
+"
+upgrade,Upgrade,"Input: upgrade Answer: Upgrade
+"
+hamlet,Hamletbarsche,"Input: hamlet Answer: Hamletbarsche
+"
+backup,Datensicherung,"Input: backup Answer: Datensicherung
+"
+stance,Einstellung,"Input: stance Answer: Einstellung
+"
+wreck,Wrack,"Input: wreck Answer: Wrack
+"
+muscle,Muskel,"Input: muscle Answer: Muskel
+"
+grandson,Enkelsohn,"Input: grandson Answer: Enkelsohn
+"
+citizen,Einwohner,"Input: citizen Answer: Einwohner
+"
+ensemble,Ensemble,"Input: ensemble Answer: Ensemble
+"
+speaker,Lautsprecher,"Input: speaker Answer: Lautsprecher
+"
+input,Eingabe,"Input: input Answer: Eingabe
+"
+item,Stück,"Input: item Answer: Stück
+"
+barrier,Grenze,"Input: barrier Answer: Grenze
+"
+rookie,Anfänger,"Input: rookie Answer: Anfänger
+"
+scrap,Altmaterial,"Input: scrap Answer: Altmaterial
+"
+layout,Einteilung,"Input: layout Answer: Einteilung
+"
+compensation,Kompensation,"Input: compensation Answer: Kompensation
+"
+darkness,Dunkelheit,"Input: darkness Answer: Dunkelheit
+"
+invitation,Einladung,"Input: invitation Answer: Einladung
+"
+notion,Neigung,"Input: notion Answer: Neigung
+"
+monarchy,Monarchie,"Input: monarchy Answer: Monarchie
+"
+midnight,Mitternacht,"Input: midnight Answer: Mitternacht
+"
+diary,Tagebuch,"Input: diary Answer: Tagebuch
+"
+consent,Zustimmung,"Input: consent Answer: Zustimmung
+"
+disappointment,Enttäuschung,"Input: disappointment Answer: Enttäuschung
+"
+employee,Arbeitnehmer,"Input: employee Answer: Arbeitnehmer
+"
+identification,Bezeichnung,"Input: identification Answer: Bezeichnung
+"
+anger,Ärger,"Input: anger Answer: Ärger
+"
+destination,Reiseziel,"Input: destination Answer: Reiseziel
+"
+inscription,Inschrift,"Input: inscription Answer: Inschrift
+"
+celebrity,berühmte Person,"Input: celebrity Answer: berühmte Person
+"
+soap,Seife,"Input: soap Answer: Seife
+"
+tide,Gezeiten,"Input: tide Answer: Gezeiten
+"
+fusion,Schmelzen,"Input: fusion Answer: Schmelzen
+"
+assignment,Aufgabe,"Input: assignment Answer: Aufgabe
+"
+mirror,Kopie,"Input: mirror Answer: Kopie
+"
+physician,Arzt,"Input: physician Answer: Arzt
+"
+testimony,Zeugnis,"Input: testimony Answer: Zeugnis
+"
+accuracy,Genauigkeit,"Input: accuracy Answer: Genauigkeit
+"
+cartoon,Zeichentrickfilm,"Input: cartoon Answer: Zeichentrickfilm
+"
+arcade,Spielhalle,"Input: arcade Answer: Spielhalle
+"
+drainage,Drainage,"Input: drainage Answer: Drainage
+"
+rifle,Gewehr,"Input: rifle Answer: Gewehr
+"
+momentum,Schwung,"Input: momentum Answer: Schwung
+"
+clergy,Geistlichkeit,"Input: clergy Answer: Geistlichkeit
+"
+swing,Schaukel,"Input: swing Answer: Schaukel
+"
+hardware,Eisenwaren,"Input: hardware Answer: Eisenwaren
+"
+colonel,Oberst,"Input: colonel Answer: Oberst
+"
+nobility,Adel,"Input: nobility Answer: Adel
+"
+liver,Leber,"Input: liver Answer: Leber
+"
+blast,Windstoß,"Input: blast Answer: Windstoß
+"
+bassist,Bassist,"Input: bassist Answer: Bassist
+"
+bench,Bank,"Input: bench Answer: Bank
+"
+myth,Mythos,"Input: myth Answer: Mythos
+"
+duet,Duett,"Input: duet Answer: Duett
+"
+freight,Fracht,"Input: freight Answer: Fracht
+"
+accordance,Übereinstimmung,"Input: accordance Answer: Übereinstimmung
+"
+congregation,Versammlung,"Input: congregation Answer: Versammlung
+"
+maturity,Reife,"Input: maturity Answer: Reife
+"
+commerce,Handel,"Input: commerce Answer: Handel
+"
+municipality,Gemeinde,"Input: municipality Answer: Gemeinde
+"
+imprisonment,Gefangenschaft,"Input: imprisonment Answer: Gefangenschaft
+"
+skeleton,Skeleton,"Input: skeleton Answer: Skeleton
+"
+extinction,Aussterben,"Input: extinction Answer: Aussterben
+"
+passion,Leidenschaft,"Input: passion Answer: Leidenschaft
+"
+prayer,Prediger,"Input: prayer Answer: Prediger
+"
+limestone,Kalkstein,"Input: limestone Answer: Kalkstein
+"
+specialist,Spezialist,"Input: specialist Answer: Spezialist
+"
+sketch,Skizze,"Input: sketch Answer: Skizze
+"
+scope,Umfang,"Input: scope Answer: Umfang
+"
+burn,Verbrennung,"Input: burn Answer: Verbrennung
+"
+nationalist,Nationalist,"Input: nationalist Answer: Nationalist
+"
+conviction,Überzeugung,"Input: conviction Answer: Überzeugung
+"
+subsidiary,Tochterunternehmen,"Input: subsidiary Answer: Tochterunternehmen
+"
+resort,Kurort,"Input: resort Answer: Kurort
+"
+efficiency,Effizienz,"Input: efficiency Answer: Effizienz
+"
+volunteer,Freiwilliger,"Input: volunteer Answer: Freiwilliger
+"
+runway,Start- und Landebahn,"Input: runway Answer: Start- und Landebahn
+"
+sphere,Kugel,"Input: sphere Answer: Kugel
+"
+summary,Zusammenfassung,"Input: summary Answer: Zusammenfassung
+"
+trademark,Marke,"Input: trademark Answer: Marke
+"
+instruction,Unterricht,"Input: instruction Answer: Unterricht
+"
+perception,Wahrnehmung,"Input: perception Answer: Wahrnehmung
+"
+garage,Garage,"Input: garage Answer: Garage
+"
+sexuality,Sexualität,"Input: sexuality Answer: Sexualität
+"
+lock,Schloss,"Input: lock Answer: Schloss
+"
+freshman,Neuling,"Input: freshman Answer: Neuling
+"
+tool,Werkzeug,"Input: tool Answer: Werkzeug
+"
+domain,Domäne,"Input: domain Answer: Domäne
+"
+rape,Vergewaltigung,"Input: rape Answer: Vergewaltigung
+"
+inquiry,Anfrage,"Input: inquiry Answer: Anfrage
+"
+tendency,"Tendenz neigen"" or tendieren)","Input: tendency Answer: Tendenz neigen"" or tendieren)
+"
+permit,Genehmigung,"Input: permit Answer: Genehmigung
+"
+athlete,Athlet/Athletin /,"Input: athlete Answer: Athlet/Athletin /
+"
+coffee,Kaffebohne,"Input: coffee Answer: Kaffebohne
+"
+scorer,Torschütze,"Input: scorer Answer: Torschütze
+"
+mask,Maske,"Input: mask Answer: Maske
+"
+effectiveness,Wirksamkeit,"Input: effectiveness Answer: Wirksamkeit
+"
+availability,Vorhandensein,"Input: availability Answer: Vorhandensein
+"
+synthesis,Synthese,"Input: synthesis Answer: Synthese
+"
+painter,Maler,"Input: painter Answer: Maler
+"
+referendum,Referendum,"Input: referendum Answer: Referendum
+"
+basement,Keller,"Input: basement Answer: Keller
+"
+judgment,Urteil,"Input: judgment Answer: Urteil
+"
+quest,Suche,"Input: quest Answer: Suche
+"
+trap,Falle,"Input: trap Answer: Falle
+"
+cream,Creme,"Input: cream Answer: Creme
+"
+ballot,Stimmzettel,"Input: ballot Answer: Stimmzettel
+"
+performer,Künstler,"Input: performer Answer: Künstler
+"
+adoption,Adoption,"Input: adoption Answer: Adoption
+"
+placement,Platzierung,"Input: placement Answer: Platzierung
+"
+homage,Hommage,"Input: homage Answer: Hommage
+"
+citizenship,Staatsbürgerschaft,"Input: citizenship Answer: Staatsbürgerschaft
+"
+skiing,Schifahren,"Input: skiing Answer: Schifahren
+"
+regulation,Regeln,"Input: regulation Answer: Regeln
+"
+mouse,Maus,"Input: mouse Answer: Maus
+"
+countryside,Land,"Input: countryside Answer: Land
+"
+export,Exportgut,"Input: export Answer: Exportgut
+"
+cabin,Kabine,"Input: cabin Answer: Kabine
+"
+colleague,Kollege,"Input: colleague Answer: Kollege
+"
+receiver,Empfangsgerät,"Input: receiver Answer: Empfangsgerät
+"
+stomach,Bauch,"Input: stomach Answer: Bauch
+"
+democracy,Demokratie,"Input: democracy Answer: Demokratie
+"
+dominance,Herrschaft,"Input: dominance Answer: Herrschaft
+"
+installment,Folge,"Input: installment Answer: Folge
+"
+throat,Kehle,"Input: throat Answer: Kehle
+"
+genius,Genialität,"Input: genius Answer: Genialität
+"
+keyboard,Tastatur,"Input: keyboard Answer: Tastatur
+"
+fortune,Glück,"Input: fortune Answer: Glück
+"
+correspondence,Korrespondenz,"Input: correspondence Answer: Korrespondenz
+"
+diagnosis,Diagnose,"Input: diagnosis Answer: Diagnose
+"
+mud,Schlamm,"Input: mud Answer: Schlamm
+"
+silence,Stille,"Input: silence Answer: Stille
+"
+activist,Aktivist,"Input: activist Answer: Aktivist
+"
+preservation,Erhaltung,"Input: preservation Answer: Erhaltung
+"
+businessman,Geschäftsmann,"Input: businessman Answer: Geschäftsmann
+"
+commit,Commit,"Input: commit Answer: Commit
+"
+editorial,Leitartikel,"Input: editorial Answer: Leitartikel
+"
+cluster,Gruppe,"Input: cluster Answer: Gruppe
+"
+configuration,Konfiguration,"Input: configuration Answer: Konfiguration
+"
+morale,Moral,"Input: morale Answer: Moral
+"
+conductor,Dirigent,"Input: conductor Answer: Dirigent
+"
+plastic,Plastik,"Input: plastic Answer: Plastik
+"
+boarding,Einschiffung,"Input: boarding Answer: Einschiffung
+"
+trilogy,Trilogie,"Input: trilogy Answer: Trilogie
+"
+fault,Fehler,"Input: fault Answer: Fehler
+"
+unity,Einheit,"Input: unity Answer: Einheit
+"
+immigration,Einwanderung,"Input: immigration Answer: Einwanderung
+"
+determination,Bestimmung,"Input: determination Answer: Bestimmung
+"
+infant,Säugling,"Input: infant Answer: Säugling
+"
+calm,Stille,"Input: calm Answer: Stille
+"
+steering,Lenkung,"Input: steering Answer: Lenkung
+"
+fever,Fieber,"Input: fever Answer: Fieber
+"
+reward,Belohnung,"Input: reward Answer: Belohnung
+"
+depot,Depot,"Input: depot Answer: Depot
+"
+prominence,Protuberanz,"Input: prominence Answer: Protuberanz
+"
+tier,Schicht,"Input: tier Answer: Schicht
+"
+inability,Unfähigkeit,"Input: inability Answer: Unfähigkeit
+"
+overtime,Verlängerung,"Input: overtime Answer: Verlängerung
+"
+fraud,Betrug,"Input: fraud Answer: Betrug
+"
+graduation,Abschlussfeier,"Input: graduation Answer: Abschlussfeier
+"
+transformation,Transformation,"Input: transformation Answer: Transformation
+"
+finger,Finger,"Input: finger Answer: Finger
+"
+filter,Filter,"Input: filter Answer: Filter
+"
+spectrum,Spektrum,"Input: spectrum Answer: Spektrum
+"
+sovereignty,Souveränität,"Input: sovereignty Answer: Souveränität
+"
+accommodation,Unterkunft,"Input: accommodation Answer: Unterkunft
+"
+shortage,Mangel,"Input: shortage Answer: Mangel
+"
+galaxy,Galaxie,"Input: galaxy Answer: Galaxie
+"
+quantity,Quantität,"Input: quantity Answer: Quantität
+"
+funk,Funk,"Input: funk Answer: Funk
+"
+blame,Schuld,"Input: blame Answer: Schuld
+"
+enthusiasm,Begeisterung,"Input: enthusiasm Answer: Begeisterung
+"
+boom,Dröhnen,"Input: boom Answer: Dröhnen
+"
+compact,Pakt,"Input: compact Answer: Pakt
+"
+relay,Staffellauf,"Input: relay Answer: Staffellauf
+"
+recommendation,Empfehlung,"Input: recommendation Answer: Empfehlung
+"
+strain,Stamm,"Input: strain Answer: Stamm
+"
+clearing,Klärung,"Input: clearing Answer: Klärung
+"
+array,Feld ;; Matrix,"Input: array Answer: Feld ;; Matrix
+"
+flash,Blitz,"Input: flash Answer: Blitz
+"
+propeller,Propeller,"Input: propeller Answer: Propeller
+"
+confrontation,Konfrontation,"Input: confrontation Answer: Konfrontation
+"
+narrator,Erzähler,"Input: narrator Answer: Erzähler
+"
+nucleus,Zellkern,"Input: nucleus Answer: Zellkern
+"
+pollution,Verunreinigung,"Input: pollution Answer: Verunreinigung
+"
+heating,Heizung,"Input: heating Answer: Heizung
+"
+displacement,Verstellung,"Input: displacement Answer: Verstellung
+"
+superstructure,Aufbauten,"Input: superstructure Answer: Aufbauten
+"
+pocket,Tasche,"Input: pocket Answer: Tasche
+"
+welfare,Sozialhilfe,"Input: welfare Answer: Sozialhilfe
+"
+spur,Ansporn,"Input: spur Answer: Ansporn
+"
+imagination,Vorstellung,"Input: imagination Answer: Vorstellung
+"
+anchor,Anker,"Input: anchor Answer: Anker
+"
+undergraduate,Student,"Input: undergraduate Answer: Student
+"
+captive,Gefangener,"Input: captive Answer: Gefangener
+"
+trout,Forelle,"Input: trout Answer: Forelle
+"
+silk,Seide,"Input: silk Answer: Seide
+"
+steal,Schnäppchen,"Input: steal Answer: Schnäppchen
+"
+weakness,Schwäche,"Input: weakness Answer: Schwäche
+"
+viewer,Zuschauer,"Input: viewer Answer: Zuschauer
+"
+disk,Scheibe,"Input: disk Answer: Scheibe
+"
+breakdown,Betriebsstörung,"Input: breakdown Answer: Betriebsstörung
+"
+parade,Folge,"Input: parade Answer: Folge
+"
+platoon,Zug,"Input: platoon Answer: Zug
+"
+photographer,Fotograf,"Input: photographer Answer: Fotograf
+"
+dedication,Widmung,"Input: dedication Answer: Widmung
+"
+manufacturer,Hersteller,"Input: manufacturer Answer: Hersteller
+"
+calendar,Kalender,"Input: calendar Answer: Kalender
+"
+monitoring,Überwachung,"Input: monitoring Answer: Überwachung
+"
+implementation,Implementierung,"Input: implementation Answer: Implementierung
+"
+deer,Hirsch,"Input: deer Answer: Hirsch
+"
+discrimination,Diskriminierung,"Input: discrimination Answer: Diskriminierung
+"
+breast,Brust,"Input: breast Answer: Brust
+"
+concentrate,Konzentrat,"Input: concentrate Answer: Konzentrat
+"
+emotion,Gefühl,"Input: emotion Answer: Gefühl
+"
+freestyle,Freistilschwimmen,"Input: freestyle Answer: Freistilschwimmen
+"
+grandmother,Großmutter,"Input: grandmother Answer: Großmutter
+"
+civilization,Zivilisiertwerden,"Input: civilization Answer: Zivilisiertwerden
+"
+guidance,Anleitung,"Input: guidance Answer: Anleitung
+"
+controller,Controller,"Input: controller Answer: Controller
+"
+hometown,Heimatstadt,"Input: hometown Answer: Heimatstadt
+"
+slot,Schlitz,"Input: slot Answer: Schlitz
+"
+mortality,Sterblichkeit,"Input: mortality Answer: Sterblichkeit
+"
+gospel,Evangelium,"Input: gospel Answer: Evangelium
+"
+coaster,Untersetzer,"Input: coaster Answer: Untersetzer
+"
+statute,Statut,"Input: statute Answer: Statut
+"
+accounting,Buchhaltung,"Input: accounting Answer: Buchhaltung
+"
+torture,Folter,"Input: torture Answer: Folter
+"
+demolition,Zerstörung,"Input: demolition Answer: Zerstörung
+"
+farmland,Ackerland,"Input: farmland Answer: Ackerland
+"
+copyright,Urheberrecht,"Input: copyright Answer: Urheberrecht
+"
+complexity,Komplexität,"Input: complexity Answer: Komplexität
+"
+recipient,Empfänger,"Input: recipient Answer: Empfänger
+"
+nurse,Schwester,"Input: nurse Answer: Schwester
+"
+interface,Schnittstelle,"Input: interface Answer: Schnittstelle
+"
+manufacture,Produktion,"Input: manufacture Answer: Produktion
+"
+qualification,Qualifikation,"Input: qualification Answer: Qualifikation
+"
+helium,Helium,"Input: helium Answer: Helium
+"
+violation,Verletzung,"Input: violation Answer: Verletzung
+"
+discharge,Entlassung,"Input: discharge Answer: Entlassung
+"
+bedroom,Schlafzimmer,"Input: bedroom Answer: Schlafzimmer
+"
+tackle,der Flaschenzug,"Input: tackle Answer: der Flaschenzug
+"
+ancestor,Vorfahr,"Input: ancestor Answer: Vorfahr
+"
+premise,Lokal,"Input: premise Answer: Lokal
+"
+trace,aufzeichnen,"Input: trace Answer: aufzeichnen
+"
+offspring,Hinterlassenschaft,"Input: offspring Answer: Hinterlassenschaft
+"
+perimeter,Umfang,"Input: perimeter Answer: Umfang
+"
+oxide,Oxid,"Input: oxide Answer: Oxid
+"
+nitrogen,Stickstoff,"Input: nitrogen Answer: Stickstoff
+"
+dioxide,Dioxid,"Input: dioxide Answer: Dioxid
+"
+rendition,Wiedergabe,"Input: rendition Answer: Wiedergabe
+"
+auction,Versteigerung,"Input: auction Answer: Versteigerung
+"
+defender,Verteidiger,"Input: defender Answer: Verteidiger
+"
+yield,Ertrag,"Input: yield Answer: Ertrag
+"
+kit,Ausrüstung,"Input: kit Answer: Ausrüstung
+"
+courage,Mut,"Input: courage Answer: Mut
+"
+livestock,Vieh,"Input: livestock Answer: Vieh
+"
+starter,Anlasser,"Input: starter Answer: Anlasser
+"
+opener,Öffner,"Input: opener Answer: Öffner
+"
+patent,Patent,"Input: patent Answer: Patent
+"
+mortar,Mörser,"Input: mortar Answer: Mörser
+"
+plumage,Gefieder,"Input: plumage Answer: Gefieder
+"
+isolation,Isolation,"Input: isolation Answer: Isolation
+"
+particle,Partikel,"Input: particle Answer: Partikel
+"
+aesthetic,Ästhetik,"Input: aesthetic Answer: Ästhetik
+"
+patch,Patch,"Input: patch Answer: Patch
+"
+feedback,Rückmeldung,"Input: feedback Answer: Rückmeldung
+"
+brass,Messing,"Input: brass Answer: Messing
+"
+hiatus,Hiatus,"Input: hiatus Answer: Hiatus
+"
+orientation,Orientierungsvermögen,"Input: orientation Answer: Orientierungsvermögen
+"
+cooking,Kochen,"Input: cooking Answer: Kochen
+"
+clause,Nebensatz,"Input: clause Answer: Nebensatz
+"
+corporation,Unternehmen,"Input: corporation Answer: Unternehmen
+"
+breach,Bruch,"Input: breach Answer: Bruch
+"
+slope,Steigung,"Input: slope Answer: Steigung
+"
+instructor,Ausbilder,"Input: instructor Answer: Ausbilder
+"
+uncertainty,Unsicherheit,"Input: uncertainty Answer: Unsicherheit
+"
+wrestler,Ringer,"Input: wrestler Answer: Ringer
+"
+wildlife,Tierwelt,"Input: wildlife Answer: Tierwelt
+"
+alert,Alarm,"Input: alert Answer: Alarm
+"
+triumph,Triumph,"Input: triumph Answer: Triumph
+"
+makeup,Schminke,"Input: makeup Answer: Schminke
+"
+ramp,Gangway,"Input: ramp Answer: Gangway
+"
+reflection,Reflexion,"Input: reflection Answer: Reflexion
+"
+kilometre,Kilometer,"Input: kilometre Answer: Kilometer
+"
+senator,Senator,"Input: senator Answer: Senator
+"
+nominee,Nominierte,"Input: nominee Answer: Nominierte
+"
+antagonist,Antagonist,"Input: antagonist Answer: Antagonist
+"
+triangle,Triangel,"Input: triangle Answer: Triangel
+"
+ghost,Schatten,"Input: ghost Answer: Schatten
+"
+shadow,Schatten,"Input: shadow Answer: Schatten
+"
+resemblance,Ähnlichkeit,"Input: resemblance Answer: Ähnlichkeit
+"
+servant,Diener,"Input: servant Answer: Diener
+"
+diesel,Diesel,"Input: diesel Answer: Diesel
+"
+filling,Füllung,"Input: filling Answer: Füllung
+"
+lunch,Mittagessen,"Input: lunch Answer: Mittagessen
+"
+comedian,Komiker,"Input: comedian Answer: Komiker
+"
+elimination,Elimination,"Input: elimination Answer: Elimination
+"
+outfit,Outfit,"Input: outfit Answer: Outfit
+"
+canon,Kanon,"Input: canon Answer: Kanon
+"
+caution,Vorsicht,"Input: caution Answer: Vorsicht
+"
+teenager,Jugendlicher,"Input: teenager Answer: Jugendlicher
+"
+similarity,Ähnlichkeit,"Input: similarity Answer: Ähnlichkeit
+"
+poster,Plakat,"Input: poster Answer: Plakat
+"
+log,Holzklotz,"Input: log Answer: Holzklotz
+"
+ancestry,Vorfahren,"Input: ancestry Answer: Vorfahren
+"
+realism,Realismus,"Input: realism Answer: Realismus
+"
+patronage,schirmherrschaft,"Input: patronage Answer: schirmherrschaft
+"
+shipyard,Werft,"Input: shipyard Answer: Werft
+"
+entity,Wesen Wesenheit Dasein,"Input: entity Answer: Wesen Wesenheit Dasein
+"
+deadline,Stichtag,"Input: deadline Answer: Stichtag
+"
+enzyme,Enzym,"Input: enzyme Answer: Enzym
+"
+powder,Puder,"Input: powder Answer: Puder
+"
+drunk,Trinker,"Input: drunk Answer: Trinker
+"
+insect,Insekt,"Input: insect Answer: Insekt
+"
+counterpart,Gegenstück,"Input: counterpart Answer: Gegenstück
+"
+cloth,Kleidungsstück,"Input: cloth Answer: Kleidungsstück
+"
+supervision,Aufsicht,"Input: supervision Answer: Aufsicht
+"
+climax,Höhepunkt,"Input: climax Answer: Höhepunkt
+"
+hosting,Hosting,"Input: hosting Answer: Hosting
+"
+sitcom,Sitcom,"Input: sitcom Answer: Sitcom
+"
+unrest,Unruhen,"Input: unrest Answer: Unruhen
+"
+abundance,Überfluss,"Input: abundance Answer: Überfluss
+"
+deity,Gott,"Input: deity Answer: Gott
+"
+horn,Horn,"Input: horn Answer: Horn
+"
+spore,Spore,"Input: spore Answer: Spore
+"
+complaint,Beschwerde,"Input: complaint Answer: Beschwerde
+"
+prose,Prosa,"Input: prose Answer: Prosa
+"
+gasoline,Benzin,"Input: gasoline Answer: Benzin
+"
+constituency,Wahlkreis,"Input: constituency Answer: Wahlkreis
+"
+humour,Humor,"Input: humour Answer: Humor
+"
+stake,Pfahl,"Input: stake Answer: Pfahl
+"
+deficit,Defizit,"Input: deficit Answer: Defizit
+"
+collector,Kollektor,"Input: collector Answer: Kollektor
+"
+integration,Integration,"Input: integration Answer: Integration
+"
+pride,Stolz,"Input: pride Answer: Stolz
+"
+boxing,Boxen,"Input: boxing Answer: Boxen
+"
+coronation,Krönung,"Input: coronation Answer: Krönung
+"
+comeback,Rückkehr,"Input: comeback Answer: Rückkehr
+"
+mob,Herde Kängurus,"Input: mob Answer: Herde Kängurus
+"
+registration,Registrierung,"Input: registration Answer: Registrierung
+"
+shooter,Knarre,"Input: shooter Answer: Knarre
+"
+renovation,Renovierung,"Input: renovation Answer: Renovierung
+"
+warrant,Nachweis,"Input: warrant Answer: Nachweis
+"
+terrorist,Terrorist,"Input: terrorist Answer: Terrorist
+"
+reactor,Reagenz,"Input: reactor Answer: Reagenz
+"
+lecture,Vorlesung,"Input: lecture Answer: Vorlesung
+"
+calcium,Kalzium,"Input: calcium Answer: Kalzium
+"
+hub,Hub,"Input: hub Answer: Hub
+"
+framework,Bezugssystem,"Input: framework Answer: Bezugssystem
+"
+tragedy,Tragödie,"Input: tragedy Answer: Tragödie
+"
+recall,Rückruf,"Input: recall Answer: Rückruf
+"
+client,Kunde,"Input: client Answer: Kunde
+"
+plaque,Zahnbelag,"Input: plaque Answer: Zahnbelag
+"
+knife,Messer,"Input: knife Answer: Messer
+"
+consultant,Berater,"Input: consultant Answer: Berater
+"
+pyramid,Pyramide,"Input: pyramid Answer: Pyramide
+"
+drag,Widerstand,"Input: drag Answer: Widerstand
+"
+continuation,Fortsetzung,"Input: continuation Answer: Fortsetzung
+"
+shed,Karre,"Input: shed Answer: Karre
+"
+corn,Korn,"Input: corn Answer: Korn
+"
+rope,Seil,"Input: rope Answer: Seil
+"
+monsoon,Monsun,"Input: monsoon Answer: Monsun
+"
+barrel,Lauf,"Input: barrel Answer: Lauf
+"
+gravel,Kies,"Input: gravel Answer: Kies
+"
+fuselage,Flugzeugrumpf,"Input: fuselage Answer: Flugzeugrumpf
+"
+membrane,Membran,"Input: membrane Answer: Membran
+"
+merchandise,Waren,"Input: merchandise Answer: Waren
+"
+cure,Heilung,"Input: cure Answer: Heilung
+"
+mentor,Mentor,"Input: mentor Answer: Mentor
+"
+dancer,Tänzerin,"Input: dancer Answer: Tänzerin
+"
+intercept,Achsenabschnitt,"Input: intercept Answer: Achsenabschnitt
+"
+spy,Spion,"Input: spy Answer: Spion
+"
+contingent,Anteil,"Input: contingent Answer: Anteil
+"
+motif,Motiv,"Input: motif Answer: Motiv
+"
+reservoir,Stausee,"Input: reservoir Answer: Stausee
+"
+bankruptcy,Bankrott,"Input: bankruptcy Answer: Bankrott
+"
+guilt,Schuldgefühl,"Input: guilt Answer: Schuldgefühl
+"
+tobacco,Tabakpflanze,"Input: tobacco Answer: Tabakpflanze
+"
+punt,Stocherkahn,"Input: punt Answer: Stocherkahn
+"
+fitness,Tauglichkeit,"Input: fitness Answer: Tauglichkeit
+"
+decoration,Dekorieren,"Input: decoration Answer: Dekorieren
+"
+consumer,Konsument,"Input: consumer Answer: Konsument
+"
+storey,Stock,"Input: storey Answer: Stock
+"
+gambling,Glücksspiel,"Input: gambling Answer: Glücksspiel
+"
+vinyl,Vinyl,"Input: vinyl Answer: Vinyl
+"
+profession,Beruf,"Input: profession Answer: Beruf
+"
+visibility,Sicht,"Input: visibility Answer: Sicht
+"
+mobility,Mobilität,"Input: mobility Answer: Mobilität
+"
+propulsion,Antrieb,"Input: propulsion Answer: Antrieb
+"
+inspection,Inspektion,"Input: inspection Answer: Inspektion
+"
+luxury,Luxus,"Input: luxury Answer: Luxus
+"
+sprint,Spurt,"Input: sprint Answer: Spurt
+"
+predator,Raubtier,"Input: predator Answer: Raubtier
+"
+superhero,Superheld,"Input: superhero Answer: Superheld
+"
+sink,Waschbecken,"Input: sink Answer: Waschbecken
+"
+shrine,Schrein,"Input: shrine Answer: Schrein
+"
+precursor,Edukt,"Input: precursor Answer: Edukt
+"
+ecology,Ökologie,"Input: ecology Answer: Ökologie
+"
+plug,Stecker,"Input: plug Answer: Stecker
+"
+liberty,Freiheit,"Input: liberty Answer: Freiheit
+"
+replica,Nachbildung,"Input: replica Answer: Nachbildung
+"
+gale,Sturm,"Input: gale Answer: Sturm
+"
+visitor,Besucher,"Input: visitor Answer: Besucher
+"
+ministry,Ministerium,"Input: ministry Answer: Ministerium
+"
+pipe,Rohr,"Input: pipe Answer: Rohr
+"
+counsel,Rat,"Input: counsel Answer: Rat
+"
+latitude,Breite,"Input: latitude Answer: Breite
+"
+reproduction,Fortpflanzung,"Input: reproduction Answer: Fortpflanzung
+"
+unemployment,Arbeitslosigkeit,"Input: unemployment Answer: Arbeitslosigkeit
+"
+duck,Ente,"Input: duck Answer: Ente
+"
+farmer,Landwirt,"Input: farmer Answer: Landwirt
+"
+recreation,Erholung,"Input: recreation Answer: Erholung
+"
+accent,Betonung,"Input: accent Answer: Betonung
+"
+cage,Käfig,"Input: cage Answer: Käfig
+"
+maneuver,Manöver,"Input: maneuver Answer: Manöver
+"
+utility,Nützlichkeit,"Input: utility Answer: Nützlichkeit
+"
+moisture,Feuchtigkeit,"Input: moisture Answer: Feuchtigkeit
+"
+bread,Brot,"Input: bread Answer: Brot
+"
+harmony,Harmonie,"Input: harmony Answer: Harmonie
+"
+carriage,Wagen,"Input: carriage Answer: Wagen
+"
+morality,Moral,"Input: morality Answer: Moral
+"
+academy,Akademie,"Input: academy Answer: Akademie
+"
+reunion,Treffen,"Input: reunion Answer: Treffen
+"
+appreciation,Beurteilung,"Input: appreciation Answer: Beurteilung
+"
+ideology,Ideologie,"Input: ideology Answer: Ideologie
+"
+censorship,Zensur,"Input: censorship Answer: Zensur
+"
+isotope,Isotop,"Input: isotope Answer: Isotop
+"
+outflow,Abfluss,"Input: outflow Answer: Abfluss
+"
+turnpike,Mautstraße,"Input: turnpike Answer: Mautstraße
+"
+prosperity,Prosperität,"Input: prosperity Answer: Prosperität
+"
+suite,Suite,"Input: suite Answer: Suite
+"
+courtyard,Hof,"Input: courtyard Answer: Hof
+"
+coinage,Münzprägung,"Input: coinage Answer: Münzprägung
+"
+dinosaur,Dinosaurier,"Input: dinosaur Answer: Dinosaurier
+"
+resource,Hilfsmittel,"Input: resource Answer: Hilfsmittel
+"
+equality,Gleichheit,"Input: equality Answer: Gleichheit
+"
+choreography,Choreographie,"Input: choreography Answer: Choreographie
+"
+abortion,Abtreibung,"Input: abortion Answer: Abtreibung
+"
+rejection,Ablehnung,"Input: rejection Answer: Ablehnung
+"
+constellation,Konstellation,"Input: constellation Answer: Konstellation
+"
+snake,Schlange,"Input: snake Answer: Schlange
+"
+supervisor,Aufseher,"Input: supervisor Answer: Aufseher
+"
+granite,Granit,"Input: granite Answer: Granit
+"
+superiority,Überlegenheit,"Input: superiority Answer: Überlegenheit
+"
+icon,Symbol,"Input: icon Answer: Symbol
+"
+menu,Menü,"Input: menu Answer: Menü
+"
+alpha,Alpha,"Input: alpha Answer: Alpha
+"
+persecution,Verfolgung,"Input: persecution Answer: Verfolgung
+"
+wolf,Wolf,"Input: wolf Answer: Wolf
+"
+occurrence,Vorfall,"Input: occurrence Answer: Vorfall
+"
+swim,Schwimmen,"Input: swim Answer: Schwimmen
+"
+slide,Rutsche,"Input: slide Answer: Rutsche
+"
+cockpit,Cockpit,"Input: cockpit Answer: Cockpit
+"
+elephant,Elefant,"Input: elephant Answer: Elefant
+"
+novelist,Novellist,"Input: novelist Answer: Novellist
+"
+accession,Beitritt,"Input: accession Answer: Beitritt
+"
+verdict,Gerichtsurteil,"Input: verdict Answer: Gerichtsurteil
+"
+wage,Lohn,"Input: wage Answer: Lohn
+"
+bottle,Flasche,"Input: bottle Answer: Flasche
+"
+dissolution,Auflösung,"Input: dissolution Answer: Auflösung
+"
+jacket,Jackett,"Input: jacket Answer: Jackett
+"
+pianist,Pianist,"Input: pianist Answer: Pianist
+"
+ambush,Hinterhalt,"Input: ambush Answer: Hinterhalt
+"
+blog,Blog,"Input: blog Answer: Blog
+"
+bag,Beutel,"Input: bag Answer: Beutel
+"
+puzzle,Rätsel,"Input: puzzle Answer: Rätsel
+"
+emergence,Emergenz,"Input: emergence Answer: Emergenz
+"
+foul,Foul,"Input: foul Answer: Foul
+"
+update,Aktualisierung,"Input: update Answer: Aktualisierung
+"
+potassium,Kalium,"Input: potassium Answer: Kalium
+"
+innovation,Innovation,"Input: innovation Answer: Innovation
+"
+fairy,Fee,"Input: fairy Answer: Fee
+"
+plasma,Plasma,"Input: plasma Answer: Plasma
+"
+coral,Korallenriff,"Input: coral Answer: Korallenriff
+"
+camouflage,Tarnung,"Input: camouflage Answer: Tarnung
+"
+cooling,Kühlung,"Input: cooling Answer: Kühlung
+"
+gunnery,Schießwesen,"Input: gunnery Answer: Schießwesen
+"
+spider,Spinne,"Input: spider Answer: Spinne
+"
+defendant,Angeklagter,"Input: defendant Answer: Angeklagter
+"
+autonomy,Autonomie,"Input: autonomy Answer: Autonomie
+"
+spiral,Spirale,"Input: spiral Answer: Spirale
+"
+disposal,Beseitigung,"Input: disposal Answer: Beseitigung
+"
+certification,Zertifizierung,"Input: certification Answer: Zertifizierung
+"
+funnel,Schlot,"Input: funnel Answer: Schlot
+"
+pose,Pose,"Input: pose Answer: Pose
+"
+commissioner,Kommissionsmitglied,"Input: commissioner Answer: Kommissionsmitglied
+"
+ditch,Graben,"Input: ditch Answer: Graben
+"
+texture,Textur,"Input: texture Answer: Textur
+"
+virtue,Tugend,"Input: virtue Answer: Tugend
+"
+treason,Verrat,"Input: treason Answer: Verrat
+"
+grace,Gnade,"Input: grace Answer: Gnade
+"
+inflation,Aufblasen,"Input: inflation Answer: Aufblasen
+"
+oxidation,Oxidation,"Input: oxidation Answer: Oxidation
+"
+pet,Haustier,"Input: pet Answer: Haustier
+"
+hunter,Jäger,"Input: hunter Answer: Jäger
+"
+drought,Dürre,"Input: drought Answer: Dürre
+"
+conscience,Gewissen,"Input: conscience Answer: Gewissen
+"
+theology,Theologie,"Input: theology Answer: Theologie
+"
+trunk,Rüssel,"Input: trunk Answer: Rüssel
+"
+sodium,Natrium,"Input: sodium Answer: Natrium
+"
+ambition,Ehrgeiz,"Input: ambition Answer: Ehrgeiz
+"
+customer,Kunde,"Input: customer Answer: Kunde
+"
+mercury,Quecksilber,"Input: mercury Answer: Quecksilber
+"
+aggression,Aggression,"Input: aggression Answer: Aggression
+"
+columnist,Kolumnist,"Input: columnist Answer: Kolumnist
+"
+advisor,Berater,"Input: advisor Answer: Berater
+"
+sponsor,Sponsor,"Input: sponsor Answer: Sponsor
+"
+conception,Empfängnis,"Input: conception Answer: Empfängnis
+"
+continuity,Kontinuität,"Input: continuity Answer: Kontinuität
+"
+plantation,Plantage,"Input: plantation Answer: Plantage
+"
+habit,Gewohnheit,"Input: habit Answer: Gewohnheit
+"
+tributary,Nebenfluss,"Input: tributary Answer: Nebenfluss
+"
+outline,Umriss,"Input: outline Answer: Umriss
+"
+numbering,Nummerierung,"Input: numbering Answer: Nummerierung
+"
+staging,Aufführung,"Input: staging Answer: Aufführung
+"
+surgeon,Chirurg,"Input: surgeon Answer: Chirurg
+"
+bite,Biss,"Input: bite Answer: Biss
+"
+agenda,Tagesordnung,"Input: agenda Answer: Tagesordnung
+"
+pin,Stift,"Input: pin Answer: Stift
+"
+ladder,Leiter,"Input: ladder Answer: Leiter
+"
+comfort,Trost,"Input: comfort Answer: Trost
+"
+modification,Änderung,"Input: modification Answer: Änderung
+"
+rehearsal,Probe,"Input: rehearsal Answer: Probe
+"
+archipelago,Archipel,"Input: archipelago Answer: Archipel
+"
+psychology,Psychologie,"Input: psychology Answer: Psychologie
+"
+supplement,Ergänzung,"Input: supplement Answer: Ergänzung
+"
+bicycle,Fahrrad,"Input: bicycle Answer: Fahrrad
+"
+homosexuality,Homosexualität,"Input: homosexuality Answer: Homosexualität
+"
+sympathy,Sympathie,"Input: sympathy Answer: Sympathie
+"
+disagreement,Streit,"Input: disagreement Answer: Streit
+"
+fixture,Fassung,"Input: fixture Answer: Fassung
+"
+corpse,Leiche,"Input: corpse Answer: Leiche
+"
+fare,Fahrpreis,"Input: fare Answer: Fahrpreis
+"
+bullet,Kugel,"Input: bullet Answer: Kugel
+"
+lighthouse,Leuchtturm,"Input: lighthouse Answer: Leuchtturm
+"
+joy,Freude,"Input: joy Answer: Freude
+"
+allegiance,Treue,"Input: allegiance Answer: Treue
+"
+wheat,Weizen,"Input: wheat Answer: Weizen
+"
+rehabilitation,Rehabilitation,"Input: rehabilitation Answer: Rehabilitation
+"
+phenomena,Phänomene,"Input: phenomena Answer: Phänomene
+"
+slip,Ausrutscher,"Input: slip Answer: Ausrutscher
+"
+decree,Erlass,"Input: decree Answer: Erlass
+"
+inheritance,Erbschaft,"Input: inheritance Answer: Erbschaft
+"
+employer,Arbeitgeber,"Input: employer Answer: Arbeitgeber
+"
+twist,Biegung,"Input: twist Answer: Biegung
+"
+repertoire,Repertoire,"Input: repertoire Answer: Repertoire
+"
+surveillance,Überwachung,"Input: surveillance Answer: Überwachung
+"
+folklore,Folklore,"Input: folklore Answer: Folklore
+"
+athletics,Athletik,"Input: athletics Answer: Athletik
+"
+equation,Gleichung,"Input: equation Answer: Gleichung
+"
+pen,Pferch,"Input: pen Answer: Pferch
+"
+thesis,These,"Input: thesis Answer: These
+"
+distress,Kummer,"Input: distress Answer: Kummer
+"
+exploit,Exploit,"Input: exploit Answer: Exploit
+"
+racism,Rassismus,"Input: racism Answer: Rassismus
+"
+dialect,Dialekt,"Input: dialect Answer: Dialekt
+"
+anxiety,Besorgnis,"Input: anxiety Answer: Besorgnis
+"
+sculptor,Skulpteur,"Input: sculptor Answer: Skulpteur
+"
+confirmation,Bestätigung,"Input: confirmation Answer: Bestätigung
+"
+masterpiece,Meisterstück,"Input: masterpiece Answer: Meisterstück
+"
+commentator,Kommentator,"Input: commentator Answer: Kommentator
+"
+congestion,Stau,"Input: congestion Answer: Stau
+"
+emission,Ausstoß,"Input: emission Answer: Ausstoß
+"
+disappearance,Verschwinden,"Input: disappearance Answer: Verschwinden
+"
+barrage,Sperrfeuer,"Input: barrage Answer: Sperrfeuer
+"
+contender,Gegner,"Input: contender Answer: Gegner
+"
+toss,Wurf,"Input: toss Answer: Wurf
+"
+warship,Kriegsschiff,"Input: warship Answer: Kriegsschiff
+"
+zoo,Zoo,"Input: zoo Answer: Zoo
+"
+laugh,Lachen,"Input: laugh Answer: Lachen
+"
+overhaul,Überholung,"Input: overhaul Answer: Überholung
+"
+fix,Dilemma,"Input: fix Answer: Dilemma
+"
+tenor,Tenor,"Input: tenor Answer: Tenor
+"
+warehouse,Lager,"Input: warehouse Answer: Lager
+"
+pope,Papst,"Input: pope Answer: Papst
+"
+plenty,Fülle,"Input: plenty Answer: Fülle
+"
+pipeline,Pipeline,"Input: pipeline Answer: Pipeline
+"
+butterfly,Schmetterling,"Input: butterfly Answer: Schmetterling
+"
+meal,Mehl,"Input: meal Answer: Mehl
+"
+globe,Globus,"Input: globe Answer: Globus
+"
+ethanol,Ethanol,"Input: ethanol Answer: Ethanol
+"
+cultivation,Bildung,"Input: cultivation Answer: Bildung
+"
+balloon,Ballon,"Input: balloon Answer: Ballon
+"
+dish,Gericht,"Input: dish Answer: Gericht
+"
+turbine,Turbine,"Input: turbine Answer: Turbine
+"
+chloride,Chlorid,"Input: chloride Answer: Chlorid
+"
+competitor,Wettbewerbsteilnehmer,"Input: competitor Answer: Wettbewerbsteilnehmer
+"
+detention,Haft,"Input: detention Answer: Haft
+"
+preview,Vorschau,"Input: preview Answer: Vorschau
+"
+cuisine,Küche,"Input: cuisine Answer: Küche
+"
+overthrow,Umsturz,"Input: overthrow Answer: Umsturz
+"
+malaria,Malaria,"Input: malaria Answer: Malaria
+"
+excitement,Aufregung,"Input: excitement Answer: Aufregung
+"
+reasoning,Argumentation,"Input: reasoning Answer: Argumentation
+"
+grammar,Grammatik,"Input: grammar Answer: Grammatik
+"
+kid,Kind,"Input: kid Answer: Kind
+"
+pub,Kneipe,"Input: pub Answer: Kneipe
+"
+revelation,Offenbarung,"Input: revelation Answer: Offenbarung
+"
+fence,Zaun ; Hag ; Fence ; Fenz,"Input: fence Answer: Zaun ; Hag ; Fence ; Fenz
+"
+asylum,psychiatrische Anstalt,"Input: asylum Answer: psychiatrische Anstalt
+"
+morphology,Morphologie,"Input: morphology Answer: Morphologie
+"
+logic,Logik,"Input: logic Answer: Logik
+"
+precedent,Präzedens,"Input: precedent Answer: Präzedens
+"
+sulfur,Schwefel,"Input: sulfur Answer: Schwefel
+"
+showcase,Vitrine,"Input: showcase Answer: Vitrine
+"
+pronunciation,Aussprache,"Input: pronunciation Answer: Aussprache
+"
+mantle,Mantel,"Input: mantle Answer: Mantel
+"
+database,Datenbank,"Input: database Answer: Datenbank
+"
+illustration,Illustration,"Input: illustration Answer: Illustration
+"
+administrator,Nachlassverwalter,"Input: administrator Answer: Nachlassverwalter
+"
+ion,Ion,"Input: ion Answer: Ion
+"
+catalogue,Katalog,"Input: catalogue Answer: Katalog
+"
+laser,Laser,"Input: laser Answer: Laser
+"
+surname,Nachname,"Input: surname Answer: Nachname
+"
+assumption,Himmelfahrt,"Input: assumption Answer: Himmelfahrt
+"
+essence,Wesen,"Input: essence Answer: Wesen
+"
+hostage,Geisel,"Input: hostage Answer: Geisel
+"
+curtain,Vorhang,"Input: curtain Answer: Vorhang
+"
+plateau,Hochebene,"Input: plateau Answer: Hochebene
+"
+theft,Diebstahl,"Input: theft Answer: Diebstahl
+"
+clearance,Ausverkauf,"Input: clearance Answer: Ausverkauf
+"
+kilogram,Kilogramm,"Input: kilogram Answer: Kilogramm
+"
+belly,Bauch,"Input: belly Answer: Bauch
+"
+robot,Roboter,"Input: robot Answer: Roboter
+"
+hymn,Hymne,"Input: hymn Answer: Hymne
+"
+cheese,Käse,"Input: cheese Answer: Käse
+"
+atom,Atom,"Input: atom Answer: Atom
+"
+midfielder,Mittelfeldspieler,"Input: midfielder Answer: Mittelfeldspieler
+"
+bike,Fahrrad,"Input: bike Answer: Fahrrad
+"
+diocese,Diözese,"Input: diocese Answer: Diözese
+"
+measurement,Messung,"Input: measurement Answer: Messung
+"
+sperm,Spermium,"Input: sperm Answer: Spermium
+"
+seizure,Anfall,"Input: seizure Answer: Anfall
+"
+tolerance,Toleranz,"Input: tolerance Answer: Toleranz
+"
+excavation,Grabung,"Input: excavation Answer: Grabung
+"
+liberation,Befreiung,"Input: liberation Answer: Befreiung
+"
+inception,Beginn,"Input: inception Answer: Beginn
+"
+frog,Frosch,"Input: frog Answer: Frosch
+"
+metaphor,Metapher,"Input: metaphor Answer: Metapher
+"
+candidacy,Kandidatur,"Input: candidacy Answer: Kandidatur
+"
+gunpowder,Schießpulver,"Input: gunpowder Answer: Schießpulver
+"
+equity,Gerechtigkeit,"Input: equity Answer: Gerechtigkeit
+"
+index,Index,"Input: index Answer: Index
+"
+drift,Drift,"Input: drift Answer: Drift
+"
+precision,Präzision,"Input: precision Answer: Präzision
+"
+epithet,Beiwort,"Input: epithet Answer: Beiwort
+"
+dirt,Schmutz,"Input: dirt Answer: Schmutz
+"
+vacuum,Vakuum,"Input: vacuum Answer: Vakuum
+"
+affection,Zuneigung,"Input: affection Answer: Zuneigung
+"
+suffrage,Stimmrecht,"Input: suffrage Answer: Stimmrecht
+"
+lineage,Geschlecht,"Input: lineage Answer: Geschlecht
+"
+probability,Wahrscheinlichkeit,"Input: probability Answer: Wahrscheinlichkeit
+"
+maker,Macher,"Input: maker Answer: Macher
+"
+fauna,Fauna,"Input: fauna Answer: Fauna
+"
+piercing,Piercing,"Input: piercing Answer: Piercing
+"
+smell,Geruch,"Input: smell Answer: Geruch
+"
+pig,Schwein,"Input: pig Answer: Schwein
+"
+instability,Instabilität,"Input: instability Answer: Instabilität
+"
+trauma,Trauma,"Input: trauma Answer: Trauma
+"
+trainer,Trainer,"Input: trainer Answer: Trainer
+"
+flashback,Flashback,"Input: flashback Answer: Flashback
+"
+luck,Glück,"Input: luck Answer: Glück
+"
+gesture,Geste,"Input: gesture Answer: Geste
+"
+duel,Duell,"Input: duel Answer: Duell
+"
+clash,Clash,"Input: clash Answer: Clash
+"
+necessity,Notwendigkeit,"Input: necessity Answer: Notwendigkeit
+"
+naturalist,Naturalist,"Input: naturalist Answer: Naturalist
+"
+quote,Zitat,"Input: quote Answer: Zitat
+"
+delegate,Delegierter,"Input: delegate Answer: Delegierter
+"
+innocence,Unschuld,"Input: innocence Answer: Unschuld
+"
+mascot,Glücksbringer,"Input: mascot Answer: Glücksbringer
+"
+motivation,Motivation,"Input: motivation Answer: Motivation
+"
+thunderstorm,Gewitter,"Input: thunderstorm Answer: Gewitter
+"
+exploitation,Ausbeutung,"Input: exploitation Answer: Ausbeutung
+"
+crust,Kruste,"Input: crust Answer: Kruste
+"
+dimension,Dimension,"Input: dimension Answer: Dimension
+"
+severity,Härte,"Input: severity Answer: Härte
+"
+apology,Entschuldigung,"Input: apology Answer: Entschuldigung
+"
+footballer,Fußballer,"Input: footballer Answer: Fußballer
+"
+parachute,Fallschirm,"Input: parachute Answer: Fallschirm
+"
+absorption,Absorption,"Input: absorption Answer: Absorption
+"
+motto,Motto,"Input: motto Answer: Motto
+"
+mutiny,Meuterei,"Input: mutiny Answer: Meuterei
+"
+trigger,Abzug,"Input: trigger Answer: Abzug
+"
+vacation,Ferien,"Input: vacation Answer: Ferien
+"
+contention,Streit,"Input: contention Answer: Streit
+"
+spelling,Orthografie,"Input: spelling Answer: Orthografie
+"
+skating,Schlittschuhlaufen,"Input: skating Answer: Schlittschuhlaufen
+"
+tract,Traktat,"Input: tract Answer: Traktat
+"
+organism,Organismus,"Input: organism Answer: Organismus
+"
+astronomy,Astronomie,"Input: astronomy Answer: Astronomie
+"
+soprano,Sopran,"Input: soprano Answer: Sopran
+"
+geometry,Geometrie,"Input: geometry Answer: Geometrie
+"
+glee,Rundgesang,"Input: glee Answer: Rundgesang
+"
+insistence,Beharrlichkeit,"Input: insistence Answer: Beharrlichkeit
+"
+collaborator,Kollaborateur,"Input: collaborator Answer: Kollaborateur
+"
+procession,Prozession,"Input: procession Answer: Prozession
+"
+motorcycle,Motorrad,"Input: motorcycle Answer: Motorrad
+"
+resonance,Mesomerie,"Input: resonance Answer: Mesomerie
+"
+astronomer,Astronom,"Input: astronomer Answer: Astronom
+"
+noon,Mittag,"Input: noon Answer: Mittag
+"
+draught,Zug,"Input: draught Answer: Zug
+"
+physicist,Physiker,"Input: physicist Answer: Physiker
+"
+filmmaker,Filmemacher,"Input: filmmaker Answer: Filmemacher
+"
+baptism,Taufe,"Input: baptism Answer: Taufe
+"
+crater,Krater,"Input: crater Answer: Krater
+"
+grief,Kummer,"Input: grief Answer: Kummer
+"
+admiration,Bewunderung,"Input: admiration Answer: Bewunderung
+"
+simplicity,Einfachheit,"Input: simplicity Answer: Einfachheit
+"
+retaliation,Vergeltung,"Input: retaliation Answer: Vergeltung
+"
+symphony,Sinfonie,"Input: symphony Answer: Sinfonie
+"
+hierarchy,Hierarchie,"Input: hierarchy Answer: Hierarchie
+"
+screenwriter,Drehbuchautor,"Input: screenwriter Answer: Drehbuchautor
+"
+flame,Flamme,"Input: flame Answer: Flamme
+"
+monkey,Affe,"Input: monkey Answer: Affe
+"
+dose,Dosis,"Input: dose Answer: Dosis
+"
+voltage,Spannung,"Input: voltage Answer: Spannung
+"
+cry,Schrei,"Input: cry Answer: Schrei
+"
+terror,Schrecken,"Input: terror Answer: Schrecken
+"
+institute,Institut,"Input: institute Answer: Institut
+"
+cottage,Cottage,"Input: cottage Answer: Cottage
+"
+equilibrium,Gleichgewicht,"Input: equilibrium Answer: Gleichgewicht
+"
+theorem,Theorem,"Input: theorem Answer: Theorem
+"
+sanctuary,Zuflucht,"Input: sanctuary Answer: Zuflucht
+"
+flotilla,Flottille,"Input: flotilla Answer: Flottille
+"
+sin,Sünde,"Input: sin Answer: Sünde
+"
+airplane,Flugzeug,"Input: airplane Answer: Flugzeug
+"
+sparrow,Sperling,"Input: sparrow Answer: Sperling
+"
+coordinator,Koordinator,"Input: coordinator Answer: Koordinator
+"
+expressway,Autobahn,"Input: expressway Answer: Autobahn
+"
+pupil,Schüler,"Input: pupil Answer: Schüler
+"
+wheelchair,Rollstuhl,"Input: wheelchair Answer: Rollstuhl
+"
+enterprise,Unternehmen,"Input: enterprise Answer: Unternehmen
+"
+memoir,Memoiren,"Input: memoir Answer: Memoiren
+"
+projection,Projektion,"Input: projection Answer: Projektion
+"
+blade,Klinge,"Input: blade Answer: Klinge
+"
+microphone,Mikrofon,"Input: microphone Answer: Mikrofon
+"
+recruitment,Rekrutierung,"Input: recruitment Answer: Rekrutierung
+"
+synthesizer,Synthesizer,"Input: synthesizer Answer: Synthesizer
+"
+stamp,Stempel,"Input: stamp Answer: Stempel
+"
+pseudonym,Pseudonym,"Input: pseudonym Answer: Pseudonym
+"
+cycling,radfahren,"Input: cycling Answer: radfahren
+"
+fundraising,Fundraising,"Input: fundraising Answer: Fundraising
+"
+probe,Sonde,"Input: probe Answer: Sonde
+"
+glory,Ruhm,"Input: glory Answer: Ruhm
+"
+fission,Zellteilung,"Input: fission Answer: Zellteilung
+"
+descendant,Abkömmling,"Input: descendant Answer: Abkömmling
+"
+leak,Leck,"Input: leak Answer: Leck
+"
+cavity,Hohlraum,"Input: cavity Answer: Hohlraum
+"
+catcher,Catcher,"Input: catcher Answer: Catcher
+"
+explorer,Entdecker,"Input: explorer Answer: Entdecker
+"
+leisure,Muße,"Input: leisure Answer: Muße
+"
+happiness,Glück,"Input: happiness Answer: Glück
+"
+deposit,Anzahlung,"Input: deposit Answer: Anzahlung
+"
+revision,Wiederholung,"Input: revision Answer: Wiederholung
+"
+salmon,lachsfarben,"Input: salmon Answer: lachsfarben
+"
+marijuana,Marihuana,"Input: marijuana Answer: Marihuana
+"
+deception,Täuschung,"Input: deception Answer: Täuschung
+"
+millennium,Jahrtausend,"Input: millennium Answer: Jahrtausend
+"
+collar,Ring,"Input: collar Answer: Ring
+"
+canopy,Baldachin,"Input: canopy Answer: Baldachin
+"
+willingness,Willigkeit,"Input: willingness Answer: Willigkeit
+"
+sleeve,Ärmel,"Input: sleeve Answer: Ärmel
+"
+dealer,Händler,"Input: dealer Answer: Händler
+"
+geology,Geologie,"Input: geology Answer: Geologie
+"
+anatomy,Anatomie,"Input: anatomy Answer: Anatomie
+"
+lip,Lippe,"Input: lip Answer: Lippe
+"
+emblem,Emblem,"Input: emblem Answer: Emblem
+"
+pneumonia,Lungenentzündung ; Pneumonie,"Input: pneumonia Answer: Lungenentzündung ; Pneumonie
+"
+predation,Raub,"Input: predation Answer: Raub
+"
+portal,Portal,"Input: portal Answer: Portal
+"
+immunity,Immunität,"Input: immunity Answer: Immunität
+"
+glider,Segelflugzeug,"Input: glider Answer: Segelflugzeug
+"
+tactic,Taktik,"Input: tactic Answer: Taktik
+"
+impedance,Impedanz,"Input: impedance Answer: Impedanz
+"
+prequel,Prequel,"Input: prequel Answer: Prequel
+"
+fabric,Bau,"Input: fabric Answer: Bau
+"
+disruption,Durcheinander,"Input: disruption Answer: Durcheinander
+"
+synagogue,Synagoge,"Input: synagogue Answer: Synagoge
+"
+import,Import,"Input: import Answer: Import
+"
+influenza,Grippe,"Input: influenza Answer: Grippe
+"
+pavilion,Pavillon,"Input: pavilion Answer: Pavillon
+"
+concession,Gewerbeerlaubnis,"Input: concession Answer: Gewerbeerlaubnis
+"
+smallpox,Pocken,"Input: smallpox Answer: Pocken
+"
+pottery,Töpferei,"Input: pottery Answer: Töpferei
+"
+trumpet,Trompete,"Input: trumpet Answer: Trompete
+"
+surf,Brandung,"Input: surf Answer: Brandung
+"
+mandate,Mandat,"Input: mandate Answer: Mandat
+"
+beef,Rindfleisch,"Input: beef Answer: Rindfleisch
+"
+mistress,Domina,"Input: mistress Answer: Domina
+"
+breakfast,Frühstück,"Input: breakfast Answer: Frühstück
+"
+taxation,Besteuerung,"Input: taxation Answer: Besteuerung
+"
+geography,Geografie,"Input: geography Answer: Geografie
+"
+spine,Rückgrat,"Input: spine Answer: Rückgrat
+"
+flu,Grippe,"Input: flu Answer: Grippe
+"
+inauguration,Inauguration,"Input: inauguration Answer: Inauguration
+"
+abolition,Abschaffung des Sklavenhandels,"Input: abolition Answer: Abschaffung des Sklavenhandels
+"
+hostility,Feindseligkeit,"Input: hostility Answer: Feindseligkeit
+"
+influx,Zufluss,"Input: influx Answer: Zufluss
+"
+packaging,Packen,"Input: packaging Answer: Packen
+"
+millimetre,Millimeter,"Input: millimetre Answer: Millimeter
+"
+hind,Hinde,"Input: hind Answer: Hinde
+"
+subway,U-Bahn,"Input: subway Answer: U-Bahn
+"
+endorsement,Beführwortung,"Input: endorsement Answer: Beführwortung
+"
+aristocracy,Aristokratie,"Input: aristocracy Answer: Aristokratie
+"
+disability,Behinderung,"Input: disability Answer: Behinderung
+"
+prohibition,Verbot,"Input: prohibition Answer: Verbot
+"
+feast,Festmahl,"Input: feast Answer: Festmahl
+"
+shower,Schauer,"Input: shower Answer: Schauer
+"
+symmetry,Symmetrie,"Input: symmetry Answer: Symmetrie
+"
+pirate,Pirat,"Input: pirate Answer: Pirat
+"
+confession,Beichte,"Input: confession Answer: Beichte
+"
+nationalism,Nationalismus,"Input: nationalism Answer: Nationalismus
+"
+module,Modul,"Input: module Answer: Modul
+"
+neutrality,Neutralität,"Input: neutrality Answer: Neutralität
+"
+wisdom,Weisheit,"Input: wisdom Answer: Weisheit
+"
+communism,Kommunismus,"Input: communism Answer: Kommunismus
+"
+mast,Mast,"Input: mast Answer: Mast
+"
+desk,Schreibtisch,"Input: desk Answer: Schreibtisch
+"
+homeland,Heimat,"Input: homeland Answer: Heimat
+"
+undertaking,Unternehmen,"Input: undertaking Answer: Unternehmen
+"
+robbery,Raub,"Input: robbery Answer: Raub
+"
+survivor,Überlebender,"Input: survivor Answer: Überlebender
+"
+takeover,Geschäftsübernahme,"Input: takeover Answer: Geschäftsübernahme
+"
+casino,Kasino,"Input: casino Answer: Kasino
+"
+pulp,Fruchtfleisch,"Input: pulp Answer: Fruchtfleisch
+"
+chronicle,Chronik,"Input: chronicle Answer: Chronik
+"
+researcher,Forscher,"Input: researcher Answer: Forscher
+"
+timeslot,Zeitschlitz,"Input: timeslot Answer: Zeitschlitz
+"
+niece,Nichte,"Input: niece Answer: Nichte
+"
+ecosystem,Ökosystem,"Input: ecosystem Answer: Ökosystem
+"
+incarnation,Inkarnation,"Input: incarnation Answer: Inkarnation
+"
+plague,Plage,"Input: plague Answer: Plage
+"
+hemisphere,Halbkugel,"Input: hemisphere Answer: Halbkugel
+"
+cadet,Kadett,"Input: cadet Answer: Kadett
+"
+inventory,Inventar,"Input: inventory Answer: Inventar
+"
+donation,Abgabe,"Input: donation Answer: Abgabe
+"
+calibre,Kaliber,"Input: calibre Answer: Kaliber
+"
+relocation,Umzug,"Input: relocation Answer: Umzug
+"
+journalism,Journalismus,"Input: journalism Answer: Journalismus
+"
+aluminium,Aluminium,"Input: aluminium Answer: Aluminium
+"
+curse,Fluch,"Input: curse Answer: Fluch
+"
+annexation,Annexion,"Input: annexation Answer: Annexion
+"
+canvas,Leinwand,"Input: canvas Answer: Leinwand
+"
+crush,Schwarm,"Input: crush Answer: Schwarm
+"
+offset,Adressabstand,"Input: offset Answer: Adressabstand
+"
+reliance,Vertrauende,"Input: reliance Answer: Vertrauende
+"
+interval,Intervall,"Input: interval Answer: Intervall
+"
+breath,Atmen,"Input: breath Answer: Atmen
+"
+cane,Rohr,"Input: cane Answer: Rohr
+"
+crack,Knall,"Input: crack Answer: Knall
+"
+sediment,Sediment,"Input: sediment Answer: Sediment
+"
+pension,Pension,"Input: pension Answer: Pension
+"
+textile,Textilie,"Input: textile Answer: Textilie
+"
+bathroom,Badezimmer,"Input: bathroom Answer: Badezimmer
+"
+drain,Abfluss,"Input: drain Answer: Abfluss
+"
+nightclub,Nachtklub,"Input: nightclub Answer: Nachtklub
+"
+rage,Wut,"Input: rage Answer: Wut
+"
+disguise,Verkleidung,"Input: disguise Answer: Verkleidung
+"
+stiff,Steifer,"Input: stiff Answer: Steifer
+"
+renewal,Erneuerung,"Input: renewal Answer: Erneuerung
+"
+distributor,Verteiler,"Input: distributor Answer: Verteiler
+"
+workshop,Workshop,"Input: workshop Answer: Workshop
+"
+vault,Gewölbe,"Input: vault Answer: Gewölbe
+"
+tuberculosis,Tuberkulose,"Input: tuberculosis Answer: Tuberkulose
+"
+timeline,Zeittafel,"Input: timeline Answer: Zeittafel
+"
+cow,Kuh,"Input: cow Answer: Kuh
+"
+breakup,Trennung,"Input: breakup Answer: Trennung
+"
+enclosure,Beilegen,"Input: enclosure Answer: Beilegen
+"
+milestone,Meilenstein,"Input: milestone Answer: Meilenstein
+"
+graph,Graph,"Input: graph Answer: Graph
+"
+scrutiny,genaue Untersuchung,"Input: scrutiny Answer: genaue Untersuchung
+"
+bust,Büste,"Input: bust Answer: Büste
+"
+shuttle,Pendelverkehr,"Input: shuttle Answer: Pendelverkehr
+"
+illusion,Illusion,"Input: illusion Answer: Illusion
+"
+privilege,Privileg,"Input: privilege Answer: Privileg
+"
+bend,Kurve,"Input: bend Answer: Kurve
+"
+circus,Zirkus,"Input: circus Answer: Zirkus
+"
+doll,Puppe,"Input: doll Answer: Puppe
+"
+beak,Schnabel,"Input: beak Answer: Schnabel
+"
+lumber,Bauholz,"Input: lumber Answer: Bauholz
+"
+monopoly,Monopol,"Input: monopoly Answer: Monopol
+"
+lacrosse,Lacrosse,"Input: lacrosse Answer: Lacrosse
+"
+snout,Schnauze,"Input: snout Answer: Schnauze
+"
+populace,gemeine Volk,"Input: populace Answer: gemeine Volk
+"
+trait,Eigenschaft,"Input: trait Answer: Eigenschaft
+"
+dislike,Unbehagen,"Input: dislike Answer: Unbehagen
+"
+porch,Vorbau,"Input: porch Answer: Vorbau
+"
+cement,Zement,"Input: cement Answer: Zement
+"
+terrorism,Terrorismus,"Input: terrorism Answer: Terrorismus
+"
+wilderness,Wildnis,"Input: wilderness Answer: Wildnis
+"
+playwright,Bühnenautor,"Input: playwright Answer: Bühnenautor
+"
+irrigation,Bewässerung,"Input: irrigation Answer: Bewässerung
+"
+turmoil,Aufruhr,"Input: turmoil Answer: Aufruhr
+"
+chocolate,chocolat,"Input: chocolate Answer: chocolat
+"
+equator,Äquator,"Input: equator Answer: Äquator
+"
+reconciliation,Abgleich,"Input: reconciliation Answer: Abgleich
+"
+plea,Plädoyer,"Input: plea Answer: Plädoyer
+"
+weaponry,Waffen,"Input: weaponry Answer: Waffen
+"
+friction,Reibung,"Input: friction Answer: Reibung
+"
+dignity,Würde,"Input: dignity Answer: Würde
+"
+advocacy,Fürsprache,"Input: advocacy Answer: Fürsprache
+"
+activism,Aktivismus,"Input: activism Answer: Aktivismus
+"
+diplomat,Diplomat,"Input: diplomat Answer: Diplomat
+"
+punch,Punsch,"Input: punch Answer: Punsch
+"
+fraction,Bruch,"Input: fraction Answer: Bruch
+"
+prediction,Voraussage,"Input: prediction Answer: Voraussage
+"
+dictator,Diktator,"Input: dictator Answer: Diktator
+"
+fragment,Satzfragment,"Input: fragment Answer: Satzfragment
+"
+boycott,Boykott,"Input: boycott Answer: Boykott
+"
+ambulance,Rettungswagen,"Input: ambulance Answer: Rettungswagen
+"
+encouragement,Ermutigung,"Input: encouragement Answer: Ermutigung
+"
+critique,Kritik,"Input: critique Answer: Kritik
+"
+peat,Torf,"Input: peat Answer: Torf
+"
+satisfaction,Befriedigung,"Input: satisfaction Answer: Befriedigung
+"
+lithium,Lithium,"Input: lithium Answer: Lithium
+"
+sensation,Gefühl,"Input: sensation Answer: Gefühl
+"
+scenery,Kulisse,"Input: scenery Answer: Kulisse
+"
+courthouse,Gerichtsgebäude,"Input: courthouse Answer: Gerichtsgebäude
+"
+bride,Braut,"Input: bride Answer: Braut
+"
+medication,Medikation,"Input: medication Answer: Medikation
+"
+archaeology,Archäologie,"Input: archaeology Answer: Archäologie
+"
+likelihood,Wahrscheinlichkeit,"Input: likelihood Answer: Wahrscheinlichkeit
+"
+vaccine,Impfstoff,"Input: vaccine Answer: Impfstoff
+"
+telegraph,Telegraf,"Input: telegraph Answer: Telegraf
+"
+contractor,Ausführer,"Input: contractor Answer: Ausführer
+"
+taxi,Taxi,"Input: taxi Answer: Taxi
+"
+connector,Verbinder,"Input: connector Answer: Verbinder
+"
+mess,Durcheinander,"Input: mess Answer: Durcheinander
+"
+grip,Griff,"Input: grip Answer: Griff
+"
+headline,Schlagzeile,"Input: headline Answer: Schlagzeile
+"
+participant,Teilnehmer,"Input: participant Answer: Teilnehmer
+"
+brake,Bremse,"Input: brake Answer: Bremse
+"
+murderer,Mörder,"Input: murderer Answer: Mörder
+"
+fluoride,Fluorid,"Input: fluoride Answer: Fluorid
+"
+expertise,Expertise,"Input: expertise Answer: Expertise
+"
+citadel,Zitadelle,"Input: citadel Answer: Zitadelle
+"
+cord,Schnur,"Input: cord Answer: Schnur
+"
+cinematography,Lichtbildkunst,"Input: cinematography Answer: Lichtbildkunst
+"
+autism,Autismus,"Input: autism Answer: Autismus
+"
+lesson,Lehre,"Input: lesson Answer: Lehre
+"
+genome,Genom,"Input: genome Answer: Genom
+"
+diffusion,Diffusion,"Input: diffusion Answer: Diffusion
+"
+privacy,Zurückgezogenheit,"Input: privacy Answer: Zurückgezogenheit
+"
+apparatus,Apparat,"Input: apparatus Answer: Apparat
+"
+libretto,Libretto,"Input: libretto Answer: Libretto
+"
+peasant,Bauer,"Input: peasant Answer: Bauer
+"
+capitalism,Kapitalismus,"Input: capitalism Answer: Kapitalismus
+"
+contempt,Verachtung,"Input: contempt Answer: Verachtung
+"
+booklet,Heft,"Input: booklet Answer: Heft
+"
+prosecutor,Staatsanwalt,"Input: prosecutor Answer: Staatsanwalt
+"
+chorale,Chor,"Input: chorale Answer: Chor
+"
+amusement,Amüsement,"Input: amusement Answer: Amüsement
+"
+royalty,Nutzungsgebühr,"Input: royalty Answer: Nutzungsgebühr
+"
+restriction,Beschränkung,"Input: restriction Answer: Beschränkung
+"
+gust,Bö,"Input: gust Answer: Bö
+"
+tent,Zelt,"Input: tent Answer: Zelt
+"
+expectation,Erwartung,"Input: expectation Answer: Erwartung
+"
+pilgrimage,Wallfahrt,"Input: pilgrimage Answer: Wallfahrt
+"
+legitimacy,Rechtmäßigkeit,"Input: legitimacy Answer: Rechtmäßigkeit
+"
+meditation,Meditation,"Input: meditation Answer: Meditation
+"
+analogy,Analogie,"Input: analogy Answer: Analogie
+"
+socialism,Sozialismus,"Input: socialism Answer: Sozialismus
+"
+commuter,Pendler,"Input: commuter Answer: Pendler
+"
+limb,Gliedmaße,"Input: limb Answer: Gliedmaße
+"
+cake,Stück,"Input: cake Answer: Stück
+"
+vitamin,Vitamin,"Input: vitamin Answer: Vitamin
+"
+podium,Podium,"Input: podium Answer: Podium
+"
+algorithm,Algorithmus,"Input: algorithm Answer: Algorithmus
+"
+segregation,Rassentrennung,"Input: segregation Answer: Rassentrennung
+"
+worry,Sorge,"Input: worry Answer: Sorge
+"
+molecule,Molekül,"Input: molecule Answer: Molekül
+"
+teaser,Teaser,"Input: teaser Answer: Teaser
+"
+nursery,Gärtnerei,"Input: nursery Answer: Gärtnerei
+"
+chancellor,Kanzler,"Input: chancellor Answer: Kanzler
+"
+daytime,heller Tag,"Input: daytime Answer: heller Tag
+"
+cook,Koch,"Input: cook Answer: Koch
+"
+lure,Köder,"Input: lure Answer: Köder
+"
+scratch,Kratzer,"Input: scratch Answer: Kratzer
+"
+vulnerability,Verwundbarkeit,"Input: vulnerability Answer: Verwundbarkeit
+"
+staple,Grundnahrungsmittel,"Input: staple Answer: Grundnahrungsmittel
+"
+guess,Vermutung,"Input: guess Answer: Vermutung
+"
+gamma,Gamma,"Input: gamma Answer: Gamma
+"
+bubble,Blase,"Input: bubble Answer: Blase
+"
+exclusion,Exklusion,"Input: exclusion Answer: Exklusion
+"
+relativity,Relativität,"Input: relativity Answer: Relativität
+"
+sociology,Soziologie,"Input: sociology Answer: Soziologie
+"
+stealth,Heimlichkeit,"Input: stealth Answer: Heimlichkeit
+"
+scouting,Pfadfinderbewegung,"Input: scouting Answer: Pfadfinderbewegung
+"
+affinity,Affinität,"Input: affinity Answer: Affinität
+"
+litter,Wurf,"Input: litter Answer: Wurf
+"
+outlet,Direktverkauf,"Input: outlet Answer: Direktverkauf
+"
+cheek,Backe,"Input: cheek Answer: Backe
+"
+forehead,Stirn,"Input: forehead Answer: Stirn
+"
+obligation,Verpflichtung,"Input: obligation Answer: Verpflichtung
+"
+valve,Ventil,"Input: valve Answer: Ventil
+"
+dependence,Abhängigkeit,"Input: dependence Answer: Abhängigkeit
+"
+flour,Mehl,"Input: flour Answer: Mehl
+"
+wrist,Handgelenk,"Input: wrist Answer: Handgelenk
+"
+literacy,Lese- und Schreibfähigkeit,"Input: literacy Answer: Lese- und Schreibfähigkeit
+"
+outlook,Aussicht,"Input: outlook Answer: Aussicht
+"
+mutation,Mutation,"Input: mutation Answer: Mutation
+"
+archaeologist,Archäologe,"Input: archaeologist Answer: Archäologe
+"
+activation,Aktivierung,"Input: activation Answer: Aktivierung
+"
+simulation,Simulation,"Input: simulation Answer: Simulation
+"
+subscription,Abonnement,"Input: subscription Answer: Abonnement
+"
+synonym,Synonym,"Input: synonym Answer: Synonym
+"
+recession,Rezession,"Input: recession Answer: Rezession
+"
+hunger,Hunger,"Input: hunger Answer: Hunger
+"
+yoga,Yoga,"Input: yoga Answer: Yoga
+"
+induction,Induktion,"Input: induction Answer: Induktion
+"
+thread,Thema,"Input: thread Answer: Thema
+"
+plaster,Gips,"Input: plaster Answer: Gips
+"
+cinematographer,Kameramann,"Input: cinematographer Answer: Kameramann
+"
+generator,Generator,"Input: generator Answer: Generator
+"
+narration,Erzählung,"Input: narration Answer: Erzählung
+"
+obstacle,Hindernis,"Input: obstacle Answer: Hindernis
+"
+subfamily,Unterfamilie,"Input: subfamily Answer: Unterfamilie
+"
+senate,Senat,"Input: senate Answer: Senat
+"
+reservation,Reservierung,"Input: reservation Answer: Reservierung
+"
+workforce,Belegschaft,"Input: workforce Answer: Belegschaft
+"
+pond,Teich,"Input: pond Answer: Teich
+"
+fatigue,Ermüdung,"Input: fatigue Answer: Ermüdung
+"
+flexibility,Flexibilität,"Input: flexibility Answer: Flexibilität
+"
+crane,Kranich,"Input: crane Answer: Kranich
+"
+cassette,Kassette,"Input: cassette Answer: Kassette
+"
+courtship,Brautwerbung,"Input: courtship Answer: Brautwerbung
+"
+adulthood,Erwachsenenalter,"Input: adulthood Answer: Erwachsenenalter
+"
+seller,Verkäufer,"Input: seller Answer: Verkäufer
+"
+grunge,Schmutz,"Input: grunge Answer: Schmutz
+"
+sergeant,Stabsunteroffizier,"Input: sergeant Answer: Stabsunteroffizier
+"
+ventilation,Lüftung,"Input: ventilation Answer: Lüftung
+"
+peer,Adeliger,"Input: peer Answer: Adeliger
+"
+humidity,Luftfeuchtigkeit,"Input: humidity Answer: Luftfeuchtigkeit
+"
+documentation,Dokumentation,"Input: documentation Answer: Dokumentation
+"
+obsession,Besessenheit,"Input: obsession Answer: Besessenheit
+"
+contamination,Verunreinigung ; Verseuchung,"Input: contamination Answer: Verunreinigung ; Verseuchung
+"
+sickness,Übelkeit,"Input: sickness Answer: Übelkeit
+"
+antiquity,Antike,"Input: antiquity Answer: Antike
+"
+prostitution,Prostitution,"Input: prostitution Answer: Prostitution
+"
+listener,Zuhörer,"Input: listener Answer: Zuhörer
+"
+cocaine,Kokain,"Input: cocaine Answer: Kokain
+"
+reel,Haspel,"Input: reel Answer: Haspel
+"
+vocabulary,Vokabular,"Input: vocabulary Answer: Vokabular
+"
+birthplace,Geburtsort,"Input: birthplace Answer: Geburtsort
+"
+spectacle,Spektakel,"Input: spectacle Answer: Spektakel
+"
+swamp,Sumpf,"Input: swamp Answer: Sumpf
+"
+crusade,Kreuzzug,"Input: crusade Answer: Kreuzzug
+"
+ink,Tinte,"Input: ink Answer: Tinte
+"
+penis,Penis,"Input: penis Answer: Penis
+"
+logging,aufzeichnen,"Input: logging Answer: aufzeichnen
+"
+pathway,Bahn,"Input: pathway Answer: Bahn
+"
+prejudice,Vorurteil,"Input: prejudice Answer: Vorurteil
+"
+analyst,Analytiker,"Input: analyst Answer: Analytiker
+"
+bravery,Tapferkeit,"Input: bravery Answer: Tapferkeit
+"
+clone,Klon,"Input: clone Answer: Klon
+"
+rudder,Steuerruder,"Input: rudder Answer: Steuerruder
+"
+shake,Schütteln,"Input: shake Answer: Schütteln
+"
+swift,Segler,"Input: swift Answer: Segler
+"
+wardrobe,Garderobe,"Input: wardrobe Answer: Garderobe
+"
+liquor,alkoholisches Getränk,"Input: liquor Answer: alkoholisches Getränk
+"
+reliability,Zuverlässigkeit,"Input: reliability Answer: Zuverlässigkeit
+"
+consistency,Konsistenz,"Input: consistency Answer: Konsistenz
+"
+degradation,Degradierung,"Input: degradation Answer: Degradierung
+"
+rendezvous,Rendezvous,"Input: rendezvous Answer: Rendezvous
+"
+stripe,Streifen,"Input: stripe Answer: Streifen
+"
+cloverleaf,Kleeblatt,"Input: cloverleaf Answer: Kleeblatt
+"
+antibody,Antikörper,"Input: antibody Answer: Antikörper
+"
+salvation,Erlösung,"Input: salvation Answer: Erlösung
+"
+alphabet,Alphabet,"Input: alphabet Answer: Alphabet
+"
+modernization,Modernisierung,"Input: modernization Answer: Modernisierung
+"
+creativity,Kreativität,"Input: creativity Answer: Kreativität
+"
+sampling,Abtastung,"Input: sampling Answer: Abtastung
+"
+botanist,Botaniker,"Input: botanist Answer: Botaniker
+"
+injection,Injektion,"Input: injection Answer: Injektion
+"
+diabetes,Diabetes,"Input: diabetes Answer: Diabetes
+"
+wreckage,Trümmer,"Input: wreckage Answer: Trümmer
+"
+obituary,Nachruf,"Input: obituary Answer: Nachruf
+"
+cone,Kegel,"Input: cone Answer: Kegel
+"
+messenger,Kurier,"Input: messenger Answer: Kurier
+"
+endurance,Ausdauer,"Input: endurance Answer: Ausdauer
+"
+abandonment,Überlassen,"Input: abandonment Answer: Überlassen
+"
+localization,Lokalisieren,"Input: localization Answer: Lokalisieren
+"
+rubble,Schutt,"Input: rubble Answer: Schutt
+"
+granddaughter,Enkelin,"Input: granddaughter Answer: Enkelin
+"
+advancement,Fortschritt,"Input: advancement Answer: Fortschritt
+"
+credibility,Glaubwürdigkeit,"Input: credibility Answer: Glaubwürdigkeit
+"
+excellence,Vortrefflichkeit,"Input: excellence Answer: Vortrefflichkeit
+"
+repetition,Wiederholung,"Input: repetition Answer: Wiederholung
+"
+neglect,Vernachlässigung,"Input: neglect Answer: Vernachlässigung
+"
+forage,fouragieren,"Input: forage Answer: fouragieren
+"
+voter,Wähler,"Input: voter Answer: Wähler
+"
+hiking,Bergwandern,"Input: hiking Answer: Bergwandern
+"
+witchcraft,Hexerei,"Input: witchcraft Answer: Hexerei
+"
+strand,Strand,"Input: strand Answer: Strand
+"
+ceasefire,Waffenstillstand,"Input: ceasefire Answer: Waffenstillstand
+"
+accompaniment,Begleitung,"Input: accompaniment Answer: Begleitung
+"
+periphery,Peripherie,"Input: periphery Answer: Peripherie
+"
+modeling,Modellierung,"Input: modeling Answer: Modellierung
+"
+vapor,Dampf,"Input: vapor Answer: Dampf
+"
+inventor,Erfinder,"Input: inventor Answer: Erfinder
+"
+asset,Aktiva,"Input: asset Answer: Aktiva
+"
+posture,Haltung,"Input: posture Answer: Haltung
+"
+container,Behälter,"Input: container Answer: Behälter
+"
+discontent,Unzufriedenheit,"Input: discontent Answer: Unzufriedenheit
+"
+resentment,Ressentiment,"Input: resentment Answer: Ressentiment
+"
+envelope,Hülle,"Input: envelope Answer: Hülle
+"
+cartoonist,Cartoonist,"Input: cartoonist Answer: Cartoonist
+"
+diversion,Umleitung,"Input: diversion Answer: Umleitung
+"
+tumor,Tumor,"Input: tumor Answer: Tumor
+"
+landslide,Erdrutsch,"Input: landslide Answer: Erdrutsch
+"
+shelf,Schelf,"Input: shelf Answer: Schelf
+"
+deterioration,Verschlimmerung,"Input: deterioration Answer: Verschlimmerung
+"
+metabolism,Stoffwechsel,"Input: metabolism Answer: Stoffwechsel
+"
+thorium,Thorium,"Input: thorium Answer: Thorium
+"
+echo,Echo,"Input: echo Answer: Echo
+"
+stud,Stuterei,"Input: stud Answer: Stuterei
+"
+sermon,Predigt,"Input: sermon Answer: Predigt
+"
+mathematician,Mathematiker,"Input: mathematician Answer: Mathematiker
+"
+troupe,Truppe,"Input: troupe Answer: Truppe
+"
+expulsion,Entfernung,"Input: expulsion Answer: Entfernung
+"
+pollen,Blütenstaub,"Input: pollen Answer: Blütenstaub
+"
+concussion,Erschütterung,"Input: concussion Answer: Erschütterung
+"
+purity,Reinheit,"Input: purity Answer: Reinheit
+"
+eclipse,Finsternis,"Input: eclipse Answer: Finsternis
+"
+compartment,Abteil,"Input: compartment Answer: Abteil
+"
+excuse,Ausrede,"Input: excuse Answer: Ausrede
+"
+gateway,Gateway,"Input: gateway Answer: Gateway
+"
+elbow,Ellbogen,"Input: elbow Answer: Ellbogen
+"
+pardon,Vergebung,"Input: pardon Answer: Vergebung
+"
+scent,Geruch,"Input: scent Answer: Geruch
+"
+rhetoric,Rhetorik,"Input: rhetoric Answer: Rhetorik
+"
+pot,Gras,"Input: pot Answer: Gras
+"
+restraint,Zurückhaltung,"Input: restraint Answer: Zurückhaltung
+"
+superintendent,Leiter,"Input: superintendent Answer: Leiter
+"
+exhaust,Abgas,"Input: exhaust Answer: Abgas
+"
+semifinal,Halbfinale,"Input: semifinal Answer: Halbfinale
+"
+terrace,Terrasse,"Input: terrace Answer: Terrasse
+"
+fertility,Fruchtbarkeit,"Input: fertility Answer: Fruchtbarkeit
+"
+chemist,Chemiker,"Input: chemist Answer: Chemiker
+"
+parrot,Papagei,"Input: parrot Answer: Papagei
+"
+vernacular,Volkssprache,"Input: vernacular Answer: Volkssprache
+"
+smile,Lächeln,"Input: smile Answer: Lächeln
+"
+luminosity,Leuchtkraft,"Input: luminosity Answer: Leuchtkraft
+"
+float,Floß,"Input: float Answer: Floß
+"
+stallion,Deckhengst,"Input: stallion Answer: Deckhengst
+"
+supremacy,Vorherrschaft,"Input: supremacy Answer: Vorherrschaft
+"
+bath,Bad,"Input: bath Answer: Bad
+"
+citation,ehrenvolle Erwähnung,"Input: citation Answer: ehrenvolle Erwähnung
+"
+masculine,Maskulinum,"Input: masculine Answer: Maskulinum
+"
+builder,Baumeister,"Input: builder Answer: Baumeister
+"
+consultation,Beratung,"Input: consultation Answer: Beratung
+"
+treasury,Schatzkammer,"Input: treasury Answer: Schatzkammer
+"
+neighbourhood,Nachbarschaft,"Input: neighbourhood Answer: Nachbarschaft
+"
+blunt,Blunt,"Input: blunt Answer: Blunt
+"
+camping,Camping,"Input: camping Answer: Camping
+"
+bikini,Bikini,"Input: bikini Answer: Bikini
+"
+techno,Techno,"Input: techno Answer: Techno
+"
+conscription,Wehrpflicht,"Input: conscription Answer: Wehrpflicht
+"
+kidnapping,Entführung,"Input: kidnapping Answer: Entführung
+"
+spray,Spray,"Input: spray Answer: Spray
+"
+feminism,Feminismus,"Input: feminism Answer: Feminismus
+"
+assertion,Versicherung,"Input: assertion Answer: Versicherung
+"
+capsule,Kapsel,"Input: capsule Answer: Kapsel
+"
+recipe,Rezept,"Input: recipe Answer: Rezept
+"
+compliance,Einwilligung,"Input: compliance Answer: Einwilligung
+"
+sect,Sekte,"Input: sect Answer: Sekte
+"
+brood,Brut,"Input: brood Answer: Brut
+"
+dopamine,Dopamin,"Input: dopamine Answer: Dopamin
+"
+chip,Chip,"Input: chip Answer: Chip
+"
+tuition,Studiengebühr,"Input: tuition Answer: Studiengebühr
+"
+silicon,Silizium,"Input: silicon Answer: Silizium
+"
+famine,Hungersnot,"Input: famine Answer: Hungersnot
+"
+reinforcement,Verstärkung,"Input: reinforcement Answer: Verstärkung
+"
+dissatisfaction,Unzufriedenheit,"Input: dissatisfaction Answer: Unzufriedenheit
+"
+denomination,Benennung,"Input: denomination Answer: Benennung
+"
+basket,Korb,"Input: basket Answer: Korb
+"
+manipulation,Manipulierung,"Input: manipulation Answer: Manipulierung
+"
+insignia,Insigne,"Input: insignia Answer: Insigne
+"
+delta,Delta,"Input: delta Answer: Delta
+"
+stereotype,Stereotyp,"Input: stereotype Answer: Stereotyp
+"
+litigation,Rechtsstreit,"Input: litigation Answer: Rechtsstreit
+"
+juice,Saft,"Input: juice Answer: Saft
+"
+liability,Verantwortung,"Input: liability Answer: Verantwortung
+"
+maid,Dienstmädchen,"Input: maid Answer: Dienstmädchen
+"
+certainty,Sicherheit,"Input: certainty Answer: Sicherheit
+"
+semester,Semester,"Input: semester Answer: Semester
+"
+clutch,Kupplung,"Input: clutch Answer: Kupplung
+"
+gut,Darm,"Input: gut Answer: Darm
+"
+trim,Trimm,"Input: trim Answer: Trimm
+"
+hazard,Gefahr,"Input: hazard Answer: Gefahr
+"
+apple,Apfel,"Input: apple Answer: Apfel
+"
+grenade,Granate,"Input: grenade Answer: Granate
+"
+gag,Knebel,"Input: gag Answer: Knebel
+"
+brightness,Helligkeit,"Input: brightness Answer: Helligkeit
+"
+imprint,Gepräge,"Input: imprint Answer: Gepräge
+"
+remark,Bemerkung,"Input: remark Answer: Bemerkung
+"
+leap,Sprung,"Input: leap Answer: Sprung
+"
+nonsense,Blödsinn,"Input: nonsense Answer: Blödsinn
+"
+backlash,Spiel,"Input: backlash Answer: Spiel
+"
+toilet,Klo,"Input: toilet Answer: Klo
+"
+pile,Haufen,"Input: pile Answer: Haufen
+"
+pad,Unterlage,"Input: pad Answer: Unterlage
+"
+originality,Originalität,"Input: originality Answer: Originalität
+"
+registry,Register,"Input: registry Answer: Register
+"
+attire,Anzug,"Input: attire Answer: Anzug
+"
+pastor,Pastor,"Input: pastor Answer: Pastor
+"
+verb,Verb,"Input: verb Answer: Verb
+"
+judiciary,Justiz,"Input: judiciary Answer: Justiz
+"
+unification,Vereinigung,"Input: unification Answer: Vereinigung
+"
+tuning,Anpassung,"Input: tuning Answer: Anpassung
+"
+electorate,Kurfürstentum,"Input: electorate Answer: Kurfürstentum
+"
+bolster,Polster,"Input: bolster Answer: Polster
+"
+taxonomy,Taxonomie,"Input: taxonomy Answer: Taxonomie
+"
+turf,Rasen,"Input: turf Answer: Rasen
+"
+pony,Pony,"Input: pony Answer: Pony
+"
+acceleration,Beschleunigung,"Input: acceleration Answer: Beschleunigung
+"
+sighting,Sichtung,"Input: sighting Answer: Sichtung
+"
+topography,Topografie,"Input: topography Answer: Topografie
+"
+dairy,Molkerei,"Input: dairy Answer: Molkerei
+"
+mercy,Gnade,"Input: mercy Answer: Gnade
+"
+hormone,Hormon,"Input: hormone Answer: Hormon
+"
+toe,Zeh,"Input: toe Answer: Zeh
+"
+sabotage,Sabotage,"Input: sabotage Answer: Sabotage
+"
+smuggling,Schmuggel,"Input: smuggling Answer: Schmuggel
+"
+ratification,Bestätigung,"Input: ratification Answer: Bestätigung
+"
+forum,Forum,"Input: forum Answer: Forum
+"
+telegram,Telegramm,"Input: telegram Answer: Telegramm
+"
+lizard,Eidechse,"Input: lizard Answer: Eidechse
+"
+butter,Butter,"Input: butter Answer: Butter
+"
+doctorate,Doktorgrad,"Input: doctorate Answer: Doktorgrad
+"
+convenience,Annehmlichkeit,"Input: convenience Answer: Annehmlichkeit
+"
+exposition,Ausstellung,"Input: exposition Answer: Ausstellung
+"
+readiness,Bereitschaft,"Input: readiness Answer: Bereitschaft
+"
+ribbon,Farbband,"Input: ribbon Answer: Farbband
+"
+interrogation,Befragung,"Input: interrogation Answer: Befragung
+"
+pornography,Pornografie,"Input: pornography Answer: Pornografie
+"
+pulse,Puls,"Input: pulse Answer: Puls
+"
+pepper,Pfeffer,"Input: pepper Answer: Pfeffer
+"
+injunction,Verfügung,"Input: injunction Answer: Verfügung
+"
+productivity,Produktivität,"Input: productivity Answer: Produktivität
+"
+discourse,Diskurs,"Input: discourse Answer: Diskurs
+"
+doorway,Türöffnung,"Input: doorway Answer: Türöffnung
+"
+distortion,Verzerrung,"Input: distortion Answer: Verzerrung
+"
+grape,Weintraube,"Input: grape Answer: Weintraube
+"
+whaling,Walfang,"Input: whaling Answer: Walfang
+"
+heel,Ferse,"Input: heel Answer: Ferse
+"
+secrecy,Geheimhaltung,"Input: secrecy Answer: Geheimhaltung
+"
+wavelength,Wellenlänge,"Input: wavelength Answer: Wellenlänge
+"
+arbitration,Schiedsspruch,"Input: arbitration Answer: Schiedsspruch
+"
+nectar,Nektar,"Input: nectar Answer: Nektar
+"
+prevention,Prävention,"Input: prevention Answer: Prävention
+"
+fringe,Randgruppe,"Input: fringe Answer: Randgruppe
+"
+lockout,Aussperrung,"Input: lockout Answer: Aussperrung
+"
+transcription,Transkription,"Input: transcription Answer: Transkription
+"
+peacetime,Friedenszeit,"Input: peacetime Answer: Friedenszeit
+"
+whistle,Pfeifen,"Input: whistle Answer: Pfeifen
+"
+spear,Speer,"Input: spear Answer: Speer
+"
+hint,Hinweis,"Input: hint Answer: Hinweis
+"
+boot,Stiefel,"Input: boot Answer: Stiefel
+"
+nationality,Nationalität,"Input: nationality Answer: Nationalität
+"
+puck,Eishockeyscheibe,"Input: puck Answer: Eishockeyscheibe
+"
+titanium,Titan,"Input: titanium Answer: Titan
+"
+waist,Taille,"Input: waist Answer: Taille
+"
+classroom,Klassenzimmer,"Input: classroom Answer: Klassenzimmer
+"
+algae,Algen,"Input: algae Answer: Algen
+"
+irony,Ironie,"Input: irony Answer: Ironie
+"
+tap,Gewindeschneider,"Input: tap Answer: Gewindeschneider
+"
+intro,intro,"Input: intro Answer: intro
+"
+consul,Konsul,"Input: consul Answer: Konsul
+"
+imitation,Imitation,"Input: imitation Answer: Imitation
+"
+acquaintance,Bekannter,"Input: acquaintance Answer: Bekannter
+"
+destiny,Schicksal,"Input: destiny Answer: Schicksal
+"
+rigging,Takelage,"Input: rigging Answer: Takelage
+"
+convict,Sträfling,"Input: convict Answer: Sträfling
+"
+venom,Gift,"Input: venom Answer: Gift
+"
+courtesy,Höflichkeit,"Input: courtesy Answer: Höflichkeit
+"
+interlude,Zwischenspiel,"Input: interlude Answer: Zwischenspiel
+"

@@ -1,0 +1,2335 @@
+input,output,text
+"unpretentious, charming, quirky, original",positive,"Input: unpretentious, charming, quirky, original Answer: positive
+"
+Very well-written and very well-acted.,positive,"Input: Very well-written and very well-acted. Answer: positive
+"
+Disney again ransacks its archives for a quick-buck sequel.,negative,"Input: Disney again ransacks its archives for a quick-buck sequel. Answer: negative
+"
+Elvira fans could hardly ask for more.,positive,"Input: Elvira fans could hardly ask for more. Answer: positive
+"
+An extremely unpleasant film.,negative,"Input: An extremely unpleasant film. Answer: negative
+"
+Amazingly lame.,negative,"Input: Amazingly lame. Answer: negative
+"
+This comic gem is as delightful as it is derivative.,positive,"Input: This comic gem is as delightful as it is derivative. Answer: positive
+"
+Tedious Norwegian offering which somehow snagged an Oscar nomination.,negative,"Input: Tedious Norwegian offering which somehow snagged an Oscar nomination. Answer: negative
+"
+Intelligent and moving.,positive,"Input: Intelligent and moving. Answer: positive
+"
+"Exhilarating, funny and fun.",positive,"Input: Exhilarating, funny and fun. Answer: positive
+"
+Feeble comedy.,negative,"Input: Feeble comedy. Answer: negative
+"
+Excruciatingly unfunny and pitifully unromantic.,negative,"Input: Excruciatingly unfunny and pitifully unromantic. Answer: negative
+"
+Another entertaining romp from Robert Rodriguez.,positive,"Input: Another entertaining romp from Robert Rodriguez. Answer: positive
+"
+A party-hearty teen flick that scalds like acid.,negative,"Input: A party-hearty teen flick that scalds like acid. Answer: negative
+"
+This may be Burns's strongest film since The Brothers McMullen.,positive,"Input: This may be Burns's strongest film since The Brothers McMullen. Answer: positive
+"
+Morton deserves an Oscar nomination.,positive,"Input: Morton deserves an Oscar nomination. Answer: positive
+"
+"A meditation on faith and madness, Frailty is blood-curdling stuff.",positive,"Input: A meditation on faith and madness, Frailty is blood-curdling stuff. Answer: positive
+"
+This thing is virtually unwatchable.,negative,"Input: This thing is virtually unwatchable. Answer: negative
+"
+K-19: The Widowmaker is a great yarn.,positive,"Input: K-19: The Widowmaker is a great yarn. Answer: positive
+"
+An enjoyable experience.,positive,"Input: An enjoyable experience. Answer: positive
+"
+The satire is just too easy to be genuinely satisfying.,negative,"Input: The satire is just too easy to be genuinely satisfying. Answer: negative
+"
+Heavy with flabby rolls of typical Toback machinations.,negative,"Input: Heavy with flabby rolls of typical Toback machinations. Answer: negative
+"
+Another Best of the Year selection.,positive,"Input: Another Best of the Year selection. Answer: positive
+"
+"Muddled, simplistic and more than a little pretentious.",negative,"Input: Muddled, simplistic and more than a little pretentious. Answer: negative
+"
+"Everything's serious, poetic, earnest and -- sadly -- dull.",negative,"Input: Everything's serious, poetic, earnest and -- sadly -- dull. Answer: negative
+"
+Comes across as a fairly weak retooling.,negative,"Input: Comes across as a fairly weak retooling. Answer: negative
+"
+Just isn't as weird as it ought to be.,negative,"Input: Just isn't as weird as it ought to be. Answer: negative
+"
+Humor in I Spy is so anemic.,negative,"Input: Humor in I Spy is so anemic. Answer: negative
+"
+"Violent, vulgar and forgettably entertaining.",negative,"Input: Violent, vulgar and forgettably entertaining. Answer: negative
+"
+"Plodding, peevish and gimmicky.",negative,"Input: Plodding, peevish and gimmicky. Answer: negative
+"
+A rote exercise in both animation and storytelling.,negative,"Input: A rote exercise in both animation and storytelling. Answer: negative
+"
+Little more than a well-mounted history lesson.,negative,"Input: Little more than a well-mounted history lesson. Answer: negative
+"
+Much of the cast is stiff or just plain bad.,negative,"Input: Much of the cast is stiff or just plain bad. Answer: negative
+"
+"It is a likable story, told with competence.",positive,"Input: It is a likable story, told with competence. Answer: positive
+"
+Originality is sorely lacking.,negative,"Input: Originality is sorely lacking. Answer: negative
+"
+"Satisfyingly scarifying, fresh and old-fashioned at the same time.",positive,"Input: Satisfyingly scarifying, fresh and old-fashioned at the same time. Answer: positive
+"
+A non-mystery mystery.,negative,"Input: A non-mystery mystery. Answer: negative
+"
+Arguably the best script that Besson has written in years.,positive,"Input: Arguably the best script that Besson has written in years. Answer: positive
+"
+Witless and utterly pointless.,negative,"Input: Witless and utterly pointless. Answer: negative
+"
+The cast delivers without sham the raw-nerved story.,positive,"Input: The cast delivers without sham the raw-nerved story. Answer: positive
+"
+"entertaining enough, but nothing new",negative,"Input: entertaining enough, but nothing new Answer: negative
+"
+We get the comedy we settle for.,negative,"Input: We get the comedy we settle for. Answer: negative
+"
+...silly humbuggery...,negative,"Input: ...silly humbuggery... Answer: negative
+"
+Too daft by half ... but supremely good natured.,positive,"Input: Too daft by half ... but supremely good natured. Answer: positive
+"
+Spiderman ROCKS,positive,"Input: Spiderman ROCKS Answer: positive
+"
+"The title, alone, should scare any sane person away.",negative,"Input: The title, alone, should scare any sane person away. Answer: negative
+"
+The verdict: Two bodies and hardly a laugh between them.,negative,"Input: The verdict: Two bodies and hardly a laugh between them. Answer: negative
+"
+"By its modest, straight-ahead standards, Undisputed scores a direct hit.",positive,"Input: By its modest, straight-ahead standards, Undisputed scores a direct hit. Answer: positive
+"
+Highly engaging.,positive,"Input: Highly engaging. Answer: positive
+"
+Video games are more involving than this mess.,negative,"Input: Video games are more involving than this mess. Answer: negative
+"
+A marvel of production design.,positive,"Input: A marvel of production design. Answer: positive
+"
+A poignant comedy that offers food for thought.,positive,"Input: A poignant comedy that offers food for thought. Answer: positive
+"
+...hokey art house pretension.,negative,"Input: ...hokey art house pretension. Answer: negative
+"
+Delivers roughly equal amounts of beautiful movement and inside information.,positive,"Input: Delivers roughly equal amounts of beautiful movement and inside information. Answer: positive
+"
+The movie's blatant derivativeness is one reason it's so lackluster.,negative,"Input: The movie's blatant derivativeness is one reason it's so lackluster. Answer: negative
+"
+"Thought-provoking and stylish, if also somewhat hermetic.",positive,"Input: Thought-provoking and stylish, if also somewhat hermetic. Answer: positive
+"
+Strange and beautiful film.,positive,"Input: Strange and beautiful film. Answer: positive
+"
+"I've never bought from telemarketers, but I bought this movie.",positive,"Input: I've never bought from telemarketers, but I bought this movie. Answer: positive
+"
+Painfully padded.,negative,"Input: Painfully padded. Answer: negative
+"
+Collapses under its own meager weight.,negative,"Input: Collapses under its own meager weight. Answer: negative
+"
+Has a solid emotional impact.,positive,"Input: Has a solid emotional impact. Answer: positive
+"
+A Movie to Forget,negative,"Input: A Movie to Forget Answer: negative
+"
+Bottom-rung New Jack City wannabe.,negative,"Input: Bottom-rung New Jack City wannabe. Answer: negative
+"
+Hoffman's performance is authentic to the core of his being.,positive,"Input: Hoffman's performance is authentic to the core of his being. Answer: positive
+"
+Horrible.,negative,"Input: Horrible. Answer: negative
+"
+"Best indie of the year, so far.",positive,"Input: Best indie of the year, so far. Answer: positive
+"
+Well-meant but unoriginal.,negative,"Input: Well-meant but unoriginal. Answer: negative
+"
+The cumulative effect of the movie is repulsive and depressing.,negative,"Input: The cumulative effect of the movie is repulsive and depressing. Answer: negative
+"
+Mordantly funny and intimately knowing ...,positive,"Input: Mordantly funny and intimately knowing ... Answer: positive
+"
+"Weighted down with slow, uninvolving storytelling and flat acting.",negative,"Input: Weighted down with slow, uninvolving storytelling and flat acting. Answer: negative
+"
+"A markedly inactive film, City is conversational bordering on confessional.",negative,"Input: A markedly inactive film, City is conversational bordering on confessional. Answer: negative
+"
+...begins on a high note and sustains it beautifully.,positive,"Input: ...begins on a high note and sustains it beautifully. Answer: positive
+"
+"director Hoffman, his writer and Kline's agent should serve detention",negative,"Input: director Hoffman, his writer and Kline's agent should serve detention Answer: negative
+"
+"Guy gets girl, guy loses girl, audience falls asleep.",negative,"Input: Guy gets girl, guy loses girl, audience falls asleep. Answer: negative
+"
+"the film never rises above a conventional, two dimension tale",negative,"Input: the film never rises above a conventional, two dimension tale Answer: negative
+"
+"Laughably, irredeemably awful.",negative,"Input: Laughably, irredeemably awful. Answer: negative
+"
+"Romantic, riveting and handsomely animated.",positive,"Input: Romantic, riveting and handsomely animated. Answer: positive
+"
+"A classy, sprightly spin on film.",positive,"Input: A classy, sprightly spin on film. Answer: positive
+"
+"Witty, vibrant, and intelligent.",positive,"Input: Witty, vibrant, and intelligent. Answer: positive
+"
+Never once predictable.,positive,"Input: Never once predictable. Answer: positive
+"
+Harmless fun.,positive,"Input: Harmless fun. Answer: positive
+"
+...bibbidy-bobbidi-bland.,negative,"Input: ...bibbidy-bobbidi-bland. Answer: negative
+"
+"A dull, inconsistent, dishonest female bonding picture.",negative,"Input: A dull, inconsistent, dishonest female bonding picture. Answer: negative
+"
+A compelling story of musical passion against governmental odds.,positive,"Input: A compelling story of musical passion against governmental odds. Answer: positive
+"
+Exciting documentary.,positive,"Input: Exciting documentary. Answer: positive
+"
+Throw Smoochy from the train!,negative,"Input: Throw Smoochy from the train! Answer: negative
+"
+A modestly surprising movie.,positive,"Input: A modestly surprising movie. Answer: positive
+"
+The premise of Jason X is silly but strangely believable.,positive,"Input: The premise of Jason X is silly but strangely believable. Answer: positive
+"
+"This is a dark, gritty, sometimes funny little gem.",positive,"Input: This is a dark, gritty, sometimes funny little gem. Answer: positive
+"
+A fairly harmless but ultimately lifeless feature-length afterschool special.,negative,"Input: A fairly harmless but ultimately lifeless feature-length afterschool special. Answer: negative
+"
+Staggeringly dreadful romance.,negative,"Input: Staggeringly dreadful romance. Answer: negative
+"
+Final verdict: You've seen it all before.,negative,"Input: Final verdict: You've seen it all before. Answer: negative
+"
+An enjoyable feel-good family comedy regardless of race.,positive,"Input: An enjoyable feel-good family comedy regardless of race. Answer: positive
+"
+Oscar caliber cast doesn't live up to material,negative,"Input: Oscar caliber cast doesn't live up to material Answer: negative
+"
+"It's funny, as the old saying goes, because it's true.",positive,"Input: It's funny, as the old saying goes, because it's true. Answer: positive
+"
+The trashy teen-sleaze equivalent of Showgirls.,negative,"Input: The trashy teen-sleaze equivalent of Showgirls. Answer: negative
+"
+Gooding offers a desperately ingratiating performance.,negative,"Input: Gooding offers a desperately ingratiating performance. Answer: negative
+"
+Neatly constructed thriller.,positive,"Input: Neatly constructed thriller. Answer: positive
+"
+A chilling movie without oppressive gore.,positive,"Input: A chilling movie without oppressive gore. Answer: positive
+"
+The story has little wit and no surprises.,negative,"Input: The story has little wit and no surprises. Answer: negative
+"
+Its rawness and vitality give it considerable punch.,positive,"Input: Its rawness and vitality give it considerable punch. Answer: positive
+"
+A dazzling dream of a documentary.,positive,"Input: A dazzling dream of a documentary. Answer: positive
+"
+Manages to delight without much of a story.,positive,"Input: Manages to delight without much of a story. Answer: positive
+"
+"Enormously enjoyable, high-adrenaline documentary.",positive,"Input: Enormously enjoyable, high-adrenaline documentary. Answer: positive
+"
+A thought-provoking picture.,positive,"Input: A thought-provoking picture. Answer: positive
+"
+Aggravating and tedious.,negative,"Input: Aggravating and tedious. Answer: negative
+"
+A lot smarter than your average Bond.,positive,"Input: A lot smarter than your average Bond. Answer: positive
+"
+"Too much power, not enough puff.",negative,"Input: Too much power, not enough puff. Answer: negative
+"
+"She may not be real, but the laughs are.",positive,"Input: She may not be real, but the laughs are. Answer: positive
+"
+"Entirely suspenseful, extremely well-paced and ultimately... dare I say, entertaining!",positive,"Input: Entirely suspenseful, extremely well-paced and ultimately... dare I say, entertaining! Answer: positive
+"
+"...a solid, well-formed satire.",positive,"Input: ...a solid, well-formed satire. Answer: positive
+"
+Low comedy doesn't come much lower.,negative,"Input: Low comedy doesn't come much lower. Answer: negative
+"
+A winning and wildly fascinating work.,positive,"Input: A winning and wildly fascinating work. Answer: positive
+"
+Rarely has a film's title served such dire warning.,negative,"Input: Rarely has a film's title served such dire warning. Answer: negative
+"
+Works as pretty contagious fun.,positive,"Input: Works as pretty contagious fun. Answer: positive
+"
+"It's as if Allen, at 66, has stopped challenging himself.",negative,"Input: It's as if Allen, at 66, has stopped challenging himself. Answer: negative
+"
+A small gem from Belgium.,positive,"Input: A small gem from Belgium. Answer: positive
+"
+A gift to anyone who loves both dance and cinema,positive,"Input: A gift to anyone who loves both dance and cinema Answer: positive
+"
+Constantly slips from the grasp of its maker.,negative,"Input: Constantly slips from the grasp of its maker. Answer: negative
+"
+Beautifully produced.,positive,"Input: Beautifully produced. Answer: positive
+"
+Feels strangely hollow at its emotional core.,negative,"Input: Feels strangely hollow at its emotional core. Answer: negative
+"
+Schrader examines Crane's decline with unblinking candor.,positive,"Input: Schrader examines Crane's decline with unblinking candor. Answer: positive
+"
+Cinematic poo.,negative,"Input: Cinematic poo. Answer: negative
+"
+"By turns pretentious, fascinating, ludicrous, provocative and vainglorious.",positive,"Input: By turns pretentious, fascinating, ludicrous, provocative and vainglorious. Answer: positive
+"
+An effortlessly accomplished and richly resonant work.,positive,"Input: An effortlessly accomplished and richly resonant work. Answer: positive
+"
+"This is a truly, truly bad movie.",negative,"Input: This is a truly, truly bad movie. Answer: negative
+"
+A little better than Sorcerer's Stone.,positive,"Input: A little better than Sorcerer's Stone. Answer: positive
+"
+Ian Holm conquers France as an earthy Napoleon,positive,"Input: Ian Holm conquers France as an earthy Napoleon Answer: positive
+"
+Manages to be wholesome and subversive at the same time.,positive,"Input: Manages to be wholesome and subversive at the same time. Answer: positive
+"
+A manically generous Christmas vaudeville.,positive,"Input: A manically generous Christmas vaudeville. Answer: positive
+"
+What a pity ... that the material is so second-rate.,negative,"Input: What a pity ... that the material is so second-rate. Answer: negative
+"
+Cusack's just brilliant in this.,positive,"Input: Cusack's just brilliant in this. Answer: positive
+"
+"Pretty much sucks, but has a funny moment or two.",negative,"Input: Pretty much sucks, but has a funny moment or two. Answer: negative
+"
+Meticulously uncovers a trail of outrageous force and craven concealment.,positive,"Input: Meticulously uncovers a trail of outrageous force and craven concealment. Answer: positive
+"
+No surprises.,negative,"Input: No surprises. Answer: negative
+"
+An unexpectedly sweet story of sisterhood.,positive,"Input: An unexpectedly sweet story of sisterhood. Answer: positive
+"
+Steers refreshingly clear of the usual cliches.,positive,"Input: Steers refreshingly clear of the usual cliches. Answer: positive
+"
+"Just another disjointed, fairly predictable psychological thriller.",negative,"Input: Just another disjointed, fairly predictable psychological thriller. Answer: negative
+"
+This is no ``Waterboy!'',negative,"Input: This is no ``Waterboy!'' Answer: negative
+"
+I liked this film a lot...,positive,"Input: I liked this film a lot... Answer: positive
+"
+"Complex, sinuously plotted and, somehow, off-puttingly cold.",negative,"Input: Complex, sinuously plotted and, somehow, off-puttingly cold. Answer: negative
+"
+A haunting tale of murder and mayhem.,positive,"Input: A haunting tale of murder and mayhem. Answer: positive
+"
+Ya-Yas everywhere will forgive the flaws and love the film.,positive,"Input: Ya-Yas everywhere will forgive the flaws and love the film. Answer: positive
+"
+...quite good at providing some good old fashioned spooks.,positive,"Input: ...quite good at providing some good old fashioned spooks. Answer: positive
+"
+This is a superior horror flick.,positive,"Input: This is a superior horror flick. Answer: positive
+"
+Skip the film and buy the Philip Glass soundtrack CD.,negative,"Input: Skip the film and buy the Philip Glass soundtrack CD. Answer: negative
+"
+A flick about our infantilized culture that isn't entirely infantile.,positive,"Input: A flick about our infantilized culture that isn't entirely infantile. Answer: positive
+"
+A very charming and funny movie.,positive,"Input: A very charming and funny movie. Answer: positive
+"
+"... there's a choppy, surface-effect feeling to the whole enterprise.",negative,"Input: ... there's a choppy, surface-effect feeling to the whole enterprise. Answer: negative
+"
+Michel Piccoli's moving performance is this films reason for being.,positive,"Input: Michel Piccoli's moving performance is this films reason for being. Answer: positive
+"
+As saccharine as it is disposable.,negative,"Input: As saccharine as it is disposable. Answer: negative
+"
+overburdened with complicated plotting and banal dialogue,negative,"Input: overburdened with complicated plotting and banal dialogue Answer: negative
+"
+Worth seeing just for Weaver and LaPaglia.,positive,"Input: Worth seeing just for Weaver and LaPaglia. Answer: positive
+"
+"An unsettling, memorable cinematic experience that does its predecessors proud.",positive,"Input: An unsettling, memorable cinematic experience that does its predecessors proud. Answer: positive
+"
+The most consistently funny of the Austin Powers films.,positive,"Input: The most consistently funny of the Austin Powers films. Answer: positive
+"
+Director David Fincher and writer David Koepp can't sustain it.,negative,"Input: Director David Fincher and writer David Koepp can't sustain it. Answer: negative
+"
+A fifty car pileup of cliches.,negative,"Input: A fifty car pileup of cliches. Answer: negative
+"
+"A penetrating, potent exploration of sanctimony, self-awareness, self-hatred and self-determination.",positive,"Input: A penetrating, potent exploration of sanctimony, self-awareness, self-hatred and self-determination. Answer: positive
+"
+An unsophisticated sci-fi drama that takes itself all too seriously.,negative,"Input: An unsophisticated sci-fi drama that takes itself all too seriously. Answer: negative
+"
+Allen's funniest and most likeable movie in years.,positive,"Input: Allen's funniest and most likeable movie in years. Answer: positive
+"
+Terrible.,negative,"Input: Terrible. Answer: negative
+"
+there is truth here,positive,"Input: there is truth here Answer: positive
+"
+It's technically sumptuous but also almost wildly alive.,positive,"Input: It's technically sumptuous but also almost wildly alive. Answer: positive
+"
+Meandering and confusing.,negative,"Input: Meandering and confusing. Answer: negative
+"
+Dramatically lackluster.,negative,"Input: Dramatically lackluster. Answer: negative
+"
+A modest masterpiece.,positive,"Input: A modest masterpiece. Answer: positive
+"
+Resembles a soft porn Brian De Palma pastiche.,negative,"Input: Resembles a soft porn Brian De Palma pastiche. Answer: negative
+"
+Compellingly watchable.,positive,"Input: Compellingly watchable. Answer: positive
+"
+A domestic melodrama with weak dialogue and biopic cliches.,negative,"Input: A domestic melodrama with weak dialogue and biopic cliches. Answer: negative
+"
+It is definitely worth seeing.,positive,"Input: It is definitely worth seeing. Answer: positive
+"
+An opportunity missed.,negative,"Input: An opportunity missed. Answer: negative
+"
+The film is full of charm.,positive,"Input: The film is full of charm. Answer: positive
+"
+Tends to plod.,negative,"Input: Tends to plod. Answer: negative
+"
+A terrifically entertaining specimen of Spielbergian sci-fi.,positive,"Input: A terrifically entertaining specimen of Spielbergian sci-fi. Answer: positive
+"
+Full of surprises.,positive,"Input: Full of surprises. Answer: positive
+"
+Gets better after Foster leaves that little room.,positive,"Input: Gets better after Foster leaves that little room. Answer: positive
+"
+"The problem, amazingly enough, is the screenplay.",negative,"Input: The problem, amazingly enough, is the screenplay. Answer: negative
+"
+"Flat, misguided comedy.",negative,"Input: Flat, misguided comedy. Answer: negative
+"
+"This Orange has some juice, but it's far from fresh-squeezed.",negative,"Input: This Orange has some juice, but it's far from fresh-squeezed. Answer: negative
+"
+"A quiet, disquieting triumph.",positive,"Input: A quiet, disquieting triumph. Answer: positive
+"
+Gently humorous and touching.,positive,"Input: Gently humorous and touching. Answer: positive
+"
+It's pretentious in a way that verges on the amateurish.,negative,"Input: It's pretentious in a way that verges on the amateurish. Answer: negative
+"
+"A banal, virulently unpleasant excuse for a romantic comedy.",negative,"Input: A banal, virulently unpleasant excuse for a romantic comedy. Answer: negative
+"
+An average kid-empowerment fantasy with slightly above-average brains.,positive,"Input: An average kid-empowerment fantasy with slightly above-average brains. Answer: positive
+"
+Almost peerlessly unsettling.,negative,"Input: Almost peerlessly unsettling. Answer: negative
+"
+As pedestrian as they come.,negative,"Input: As pedestrian as they come. Answer: negative
+"
+Surprisingly insightful,positive,"Input: Surprisingly insightful Answer: positive
+"
+Fluffy and disposible.,negative,"Input: Fluffy and disposible. Answer: negative
+"
+"In the end, there isn't much to it.",negative,"Input: In the end, there isn't much to it. Answer: negative
+"
+Grant isn't Cary and Bullock isn't Katherine.,negative,"Input: Grant isn't Cary and Bullock isn't Katherine. Answer: negative
+"
+"``Sorority Boys'' was funnier, and that movie was pretty bad.",negative,"Input: ``Sorority Boys'' was funnier, and that movie was pretty bad. Answer: negative
+"
+Well-made but mush-hearted.,positive,"Input: Well-made but mush-hearted. Answer: positive
+"
+The film is insightful about Kissinger's background and history.,positive,"Input: The film is insightful about Kissinger's background and history. Answer: positive
+"
+It's an 88-minute highlight reel that's 86 minutes too long.,negative,"Input: It's an 88-minute highlight reel that's 86 minutes too long. Answer: negative
+"
+It's a sharp movie about otherwise dull subjects.,positive,"Input: It's a sharp movie about otherwise dull subjects. Answer: positive
+"
+Abysmally pathetic,negative,"Input: Abysmally pathetic Answer: negative
+"
+Quietly engaging.,positive,"Input: Quietly engaging. Answer: positive
+"
+A reality-snubbing hodgepodge.,negative,"Input: A reality-snubbing hodgepodge. Answer: negative
+"
+Black-and-white and unrealistic.,negative,"Input: Black-and-white and unrealistic. Answer: negative
+"
+"Strange it is, but delightfully so.",positive,"Input: Strange it is, but delightfully so. Answer: positive
+"
+The IMAX screen enhances the personal touch of manual animation.,positive,"Input: The IMAX screen enhances the personal touch of manual animation. Answer: positive
+"
+This is one of the outstanding thrillers of recent years.,positive,"Input: This is one of the outstanding thrillers of recent years. Answer: positive
+"
+"I liked it because it was so endlessly, grotesquely, inventive.",positive,"Input: I liked it because it was so endlessly, grotesquely, inventive. Answer: positive
+"
+The chocolate factory without Charlie.,negative,"Input: The chocolate factory without Charlie. Answer: negative
+"
+"... a gleefully grungy, hilariously wicked black comedy ...",positive,"Input: ... a gleefully grungy, hilariously wicked black comedy ... Answer: positive
+"
+"A taut, sobering film.",positive,"Input: A taut, sobering film. Answer: positive
+"
+Goes on and on to the point of nausea.,negative,"Input: Goes on and on to the point of nausea. Answer: negative
+"
+Ararat feels like a book report,negative,"Input: Ararat feels like a book report Answer: negative
+"
+The film oozes craft.,positive,"Input: The film oozes craft. Answer: positive
+"
+A film that loses sight of its own story.,negative,"Input: A film that loses sight of its own story. Answer: negative
+"
+Seems like someone going through the motions.,negative,"Input: Seems like someone going through the motions. Answer: negative
+"
+...one resurrection too many.,negative,"Input: ...one resurrection too many. Answer: negative
+"
+... wise and elegiac ...,positive,"Input: ... wise and elegiac ... Answer: positive
+"
+Troubling and powerful.,positive,"Input: Troubling and powerful. Answer: positive
+"
+Not so much farcical as sour.,negative,"Input: Not so much farcical as sour. Answer: negative
+"
+Griffin & Co. manage to be spectacularly outrageous.,positive,"Input: Griffin & Co. manage to be spectacularly outrageous. Answer: positive
+"
+A surprisingly sweet and gentle comedy.,positive,"Input: A surprisingly sweet and gentle comedy. Answer: positive
+"
+Darkly funny and frequently insightful.,positive,"Input: Darkly funny and frequently insightful. Answer: positive
+"
+The fetid underbelly of fame has never looked uglier.,negative,"Input: The fetid underbelly of fame has never looked uglier. Answer: negative
+"
+The film proves unrelentingly grim -- and equally engrossing.,positive,"Input: The film proves unrelentingly grim -- and equally engrossing. Answer: positive
+"
+The film is a verbal duel between two gifted performers.,positive,"Input: The film is a verbal duel between two gifted performers. Answer: positive
+"
+A flawed but engrossing thriller.,positive,"Input: A flawed but engrossing thriller. Answer: positive
+"
+"...unlikable, uninteresting, unfunny, and completely, utterly inept.",negative,"Input: ...unlikable, uninteresting, unfunny, and completely, utterly inept. Answer: negative
+"
+The comedy is nonexistent.,negative,"Input: The comedy is nonexistent. Answer: negative
+"
+Otto-Sallies has a real filmmaker's eye.,positive,"Input: Otto-Sallies has a real filmmaker's eye. Answer: positive
+"
+I couldn't recommend this film more.,positive,"Input: I couldn't recommend this film more. Answer: positive
+"
+These are textbook lives of quiet desperation.,negative,"Input: These are textbook lives of quiet desperation. Answer: negative
+"
+Often hilarious.,positive,"Input: Often hilarious. Answer: positive
+"
+Probably the best case for Christianity since Chesterton and Lewis.,positive,"Input: Probably the best case for Christianity since Chesterton and Lewis. Answer: positive
+"
+The action quickly sinks into by-the-numbers territory.,negative,"Input: The action quickly sinks into by-the-numbers territory. Answer: negative
+"
+Fluffy neo-noir hiding behind cutesy film references.,negative,"Input: Fluffy neo-noir hiding behind cutesy film references. Answer: negative
+"
+"...an hour-and-a-half of inoffensive, unmemorable filler.",negative,"Input: ...an hour-and-a-half of inoffensive, unmemorable filler. Answer: negative
+"
+"A sham construct based on theory, sleight-of-hand, and ill-wrought hypothesis.",negative,"Input: A sham construct based on theory, sleight-of-hand, and ill-wrought hypothesis. Answer: negative
+"
+Your children will be occupied for 72 minutes.,positive,"Input: Your children will be occupied for 72 minutes. Answer: positive
+"
+Snipes is both a snore and utter tripe.,negative,"Input: Snipes is both a snore and utter tripe. Answer: negative
+"
+"Another week, another gross-out college comedy--ugh.",negative,"Input: Another week, another gross-out college comedy--ugh. Answer: negative
+"
+"Assured, glossy and shot through with brittle desperation.",positive,"Input: Assured, glossy and shot through with brittle desperation. Answer: positive
+"
+"Brilliantly written and well-acted, Yellow Asphalt is an uncompromising film.",positive,"Input: Brilliantly written and well-acted, Yellow Asphalt is an uncompromising film. Answer: positive
+"
+``Birthday Girl'' is an actor's movie first and foremost.,positive,"Input: ``Birthday Girl'' is an actor's movie first and foremost. Answer: positive
+"
+"Everything about The Quiet American is good, except its timing.",positive,"Input: Everything about The Quiet American is good, except its timing. Answer: positive
+"
+A gangster movie with the capacity to surprise.,positive,"Input: A gangster movie with the capacity to surprise. Answer: positive
+"
+A moving and not infrequently breathtaking film.,positive,"Input: A moving and not infrequently breathtaking film. Answer: positive
+"
+Adaptation is simply brilliant.,positive,"Input: Adaptation is simply brilliant. Answer: positive
+"
+"A delightful, if minor, pastry of a movie.",positive,"Input: A delightful, if minor, pastry of a movie. Answer: positive
+"
+This is one of the year's best films.,positive,"Input: This is one of the year's best films. Answer: positive
+"
+"A thoroughly enjoyable, heartfelt coming-of-age comedy.",positive,"Input: A thoroughly enjoyable, heartfelt coming-of-age comedy. Answer: positive
+"
+Everyone's to blame here.,negative,"Input: Everyone's to blame here. Answer: negative
+"
+A truly wonderful tale combined with stunning animation.,positive,"Input: A truly wonderful tale combined with stunning animation. Answer: positive
+"
+...although this idea is ``new'' the results are tired.,negative,"Input: ...although this idea is ``new'' the results are tired. Answer: negative
+"
+Great over-the-top moviemaking if you're in a slap-happy mood.,positive,"Input: Great over-the-top moviemaking if you're in a slap-happy mood. Answer: positive
+"
+A no-holds-barred cinematic treat.,positive,"Input: A no-holds-barred cinematic treat. Answer: positive
+"
+Wise and deadpan humorous.,positive,"Input: Wise and deadpan humorous. Answer: positive
+"
+The performances are uniformly good.,positive,"Input: The performances are uniformly good. Answer: positive
+"
+Interesting and thoroughly unfaithful version of Carmen,positive,"Input: Interesting and thoroughly unfaithful version of Carmen Answer: positive
+"
+Warm and exotic.,positive,"Input: Warm and exotic. Answer: positive
+"
+Crummy.,negative,"Input: Crummy. Answer: negative
+"
+At once disarmingly straightforward and strikingly devious.,positive,"Input: At once disarmingly straightforward and strikingly devious. Answer: positive
+"
+Provides a very moving and revelatory footnote to the Holocaust.,positive,"Input: Provides a very moving and revelatory footnote to the Holocaust. Answer: positive
+"
+"An enthralling, entertaining feature.",positive,"Input: An enthralling, entertaining feature. Answer: positive
+"
+Woefully pretentious.,negative,"Input: Woefully pretentious. Answer: negative
+"
+The movie is a mess from start to finish.,negative,"Input: The movie is a mess from start to finish. Answer: negative
+"
+Believability wasn't one of the film's virtues.,negative,"Input: Believability wasn't one of the film's virtues. Answer: negative
+"
+Drowning's too good for this sucker.,negative,"Input: Drowning's too good for this sucker. Answer: negative
+"
+"An even more predictable, cliche-ridden endeavor than its predecessor.",negative,"Input: An even more predictable, cliche-ridden endeavor than its predecessor. Answer: negative
+"
+The first Bond movie in ages that isn't fake fun.,positive,"Input: The first Bond movie in ages that isn't fake fun. Answer: positive
+"
+A technical triumph and an extraordinary bore.,negative,"Input: A technical triumph and an extraordinary bore. Answer: negative
+"
+Its director's most substantial feature for some time.,positive,"Input: Its director's most substantial feature for some time. Answer: positive
+"
+A film that suffers because of its many excesses.,negative,"Input: A film that suffers because of its many excesses. Answer: negative
+"
+"It challenges, this nervy oddity, like modern art should.",positive,"Input: It challenges, this nervy oddity, like modern art should. Answer: positive
+"
+A true-blue delight.,positive,"Input: A true-blue delight. Answer: positive
+"
+"An entertaining, if ultimately minor, thriller.",positive,"Input: An entertaining, if ultimately minor, thriller. Answer: positive
+"
+"insightfully written, delicately performed",positive,"Input: insightfully written, delicately performed Answer: positive
+"
+"It should be doing a lot of things, but doesn't.",negative,"Input: It should be doing a lot of things, but doesn't. Answer: negative
+"
+Ryan Gosling ... is at 22 a powerful young actor.,positive,"Input: Ryan Gosling ... is at 22 a powerful young actor. Answer: positive
+"
+Two hours of junk.,negative,"Input: Two hours of junk. Answer: negative
+"
+Very predictable but still entertaining,positive,"Input: Very predictable but still entertaining Answer: positive
+"
+An impeccable study in perversity.,positive,"Input: An impeccable study in perversity. Answer: positive
+"
+"The gags, and the script, are a mixed bag.",negative,"Input: The gags, and the script, are a mixed bag. Answer: negative
+"
+"A dull, dumb and derivative horror film.",negative,"Input: A dull, dumb and derivative horror film. Answer: negative
+"
+A small movie with a big heart.,positive,"Input: A small movie with a big heart. Answer: positive
+"
+An emotionally strong and politically potent piece of cinema.,positive,"Input: An emotionally strong and politically potent piece of cinema. Answer: positive
+"
+A peculiar misfire that even Tunney can't save.,negative,"Input: A peculiar misfire that even Tunney can't save. Answer: negative
+"
+Visually captivating.,positive,"Input: Visually captivating. Answer: positive
+"
+A bland animated sequel that hardly seems worth the effort.,negative,"Input: A bland animated sequel that hardly seems worth the effort. Answer: negative
+"
+The film can depress you about life itself.,negative,"Input: The film can depress you about life itself. Answer: negative
+"
+Remarkable for its intelligence and intensity.,positive,"Input: Remarkable for its intelligence and intensity. Answer: positive
+"
+It is quite a vision.,positive,"Input: It is quite a vision. Answer: positive
+"
+"A slick, engrossing melodrama.",positive,"Input: A slick, engrossing melodrama. Answer: positive
+"
+The worst film of the year.,negative,"Input: The worst film of the year. Answer: negative
+"
+The Pianist is Polanski's best film.,positive,"Input: The Pianist is Polanski's best film. Answer: positive
+"
+Alternately frustrating and rewarding.,positive,"Input: Alternately frustrating and rewarding. Answer: positive
+"
+Great character interaction.,positive,"Input: Great character interaction. Answer: positive
+"
+"It looks good, but it is essentially empty.",negative,"Input: It looks good, but it is essentially empty. Answer: negative
+"
+A stylistic romp that's always fun to watch.,positive,"Input: A stylistic romp that's always fun to watch. Answer: positive
+"
+Runs on the pure adrenalin of Pacino's performance.,positive,"Input: Runs on the pure adrenalin of Pacino's performance. Answer: positive
+"
+Funny and also heartwarming without stooping to gooeyness.,positive,"Input: Funny and also heartwarming without stooping to gooeyness. Answer: positive
+"
+Schneidermeister... Makin' a fool of himself... Losin' his fan base...,negative,"Input: Schneidermeister... Makin' a fool of himself... Losin' his fan base... Answer: negative
+"
+"Uplifting, funny and wise.",positive,"Input: Uplifting, funny and wise. Answer: positive
+"
+An awkward hybrid of genres that just doesn't work.,negative,"Input: An awkward hybrid of genres that just doesn't work. Answer: negative
+"
+"Despite its faults, Gangs excels in spectacle and pacing.",positive,"Input: Despite its faults, Gangs excels in spectacle and pacing. Answer: positive
+"
+"The movie is amateurish, but it's a minor treat.",positive,"Input: The movie is amateurish, but it's a minor treat. Answer: positive
+"
+Fantastic!,positive,"Input: Fantastic! Answer: positive
+"
+A devastating indictment of unbridled greed and materalism.,negative,"Input: A devastating indictment of unbridled greed and materalism. Answer: negative
+"
+"You watch for that sense of openness, the little surprises.",positive,"Input: You watch for that sense of openness, the little surprises. Answer: positive
+"
+``Red Dragon'' never cuts corners.,positive,"Input: ``Red Dragon'' never cuts corners. Answer: positive
+"
+Death might be a release.,negative,"Input: Death might be a release. Answer: negative
+"
+"a bilingual charmer, just like the woman who inspired it",positive,"Input: a bilingual charmer, just like the woman who inspired it Answer: positive
+"
+There is greatness here.,positive,"Input: There is greatness here. Answer: positive
+"
+"It looks closely, insightfully at fragile, complex relationships.",positive,"Input: It looks closely, insightfully at fragile, complex relationships. Answer: positive
+"
+Lacks dramatic punch and depth.,negative,"Input: Lacks dramatic punch and depth. Answer: negative
+"
+A captivating new film.,positive,"Input: A captivating new film. Answer: positive
+"
+Dreary tale of middle-class angst,negative,"Input: Dreary tale of middle-class angst Answer: negative
+"
+The performances are an absolute joy.,positive,"Input: The performances are an absolute joy. Answer: positive
+"
+Both damning and damned compelling.,positive,"Input: Both damning and damned compelling. Answer: positive
+"
+The gags are often a stitch.,positive,"Input: The gags are often a stitch. Answer: positive
+"
+It's refreshing to see a romance this smart.,positive,"Input: It's refreshing to see a romance this smart. Answer: positive
+"
+Two-bit potboiler.,negative,"Input: Two-bit potboiler. Answer: negative
+"
+"A cultural wildcard experience: wacky, different, unusual, even nutty.",positive,"Input: A cultural wildcard experience: wacky, different, unusual, even nutty. Answer: positive
+"
+It's a masterpiece.,positive,"Input: It's a masterpiece. Answer: positive
+"
+A well-crafted letdown.,negative,"Input: A well-crafted letdown. Answer: negative
+"
+Worth a look as a curiosity.,positive,"Input: Worth a look as a curiosity. Answer: positive
+"
+Smarter than its commercials make it seem.,positive,"Input: Smarter than its commercials make it seem. Answer: positive
+"
+"As a film director, LaBute continues to improve.",positive,"Input: As a film director, LaBute continues to improve. Answer: positive
+"
+"It's fun, splashy and entertainingly nasty.",positive,"Input: It's fun, splashy and entertainingly nasty. Answer: positive
+"
+The Sweetest Thing leaves a bitter taste.,negative,"Input: The Sweetest Thing leaves a bitter taste. Answer: negative
+"
+"Initially gripping, eventually cloying POW drama.",positive,"Input: Initially gripping, eventually cloying POW drama. Answer: positive
+"
+"An honest, sensitive story from a Vietnamese point of view.",positive,"Input: An honest, sensitive story from a Vietnamese point of view. Answer: positive
+"
+"An inconsequential, barely there bit of piffle.",negative,"Input: An inconsequential, barely there bit of piffle. Answer: negative
+"
+Competently directed but terminally cute drama.,positive,"Input: Competently directed but terminally cute drama. Answer: positive
+"
+Deserving of its critical backlash and more.,negative,"Input: Deserving of its critical backlash and more. Answer: negative
+"
+Strangely comes off as a kingdom more mild than wild.,positive,"Input: Strangely comes off as a kingdom more mild than wild. Answer: positive
+"
+Sweet and memorable film.,positive,"Input: Sweet and memorable film. Answer: positive
+"
+"It's a talking head documentary, but a great one.",positive,"Input: It's a talking head documentary, but a great one. Answer: positive
+"
+A high-minded snoozer.,negative,"Input: A high-minded snoozer. Answer: negative
+"
+Two badly interlocked stories drowned by all too clever complexity.,negative,"Input: Two badly interlocked stories drowned by all too clever complexity. Answer: negative
+"
+Steadfastly uncinematic but powerfully dramatic.,positive,"Input: Steadfastly uncinematic but powerfully dramatic. Answer: positive
+"
+"A hypnotic portrait of this sad, compulsive life.",positive,"Input: A hypnotic portrait of this sad, compulsive life. Answer: positive
+"
+It's just plain lurid when it isn't downright silly.,negative,"Input: It's just plain lurid when it isn't downright silly. Answer: negative
+"
+...too sappy for its own good.,negative,"Input: ...too sappy for its own good. Answer: negative
+"
+Represents the depths to which the girls-behaving-badly film has fallen.,negative,"Input: Represents the depths to which the girls-behaving-badly film has fallen. Answer: negative
+"
+A film that will enthrall the whole family.,positive,"Input: A film that will enthrall the whole family. Answer: positive
+"
+"A real winner -- smart, funny, subtle, and resonant.",positive,"Input: A real winner -- smart, funny, subtle, and resonant. Answer: positive
+"
+"Efficient, suitably anonymous chiller.",positive,"Input: Efficient, suitably anonymous chiller. Answer: positive
+"
+An engrossing and infectiously enthusiastic documentary.,positive,"Input: An engrossing and infectiously enthusiastic documentary. Answer: positive
+"
+...a pretentious mess...,negative,"Input: ...a pretentious mess... Answer: negative
+"
+Not once does it come close to being exciting.,negative,"Input: Not once does it come close to being exciting. Answer: negative
+"
+"Loud, silly, stupid and pointless.",negative,"Input: Loud, silly, stupid and pointless. Answer: negative
+"
+Very stupid and annoying.,negative,"Input: Very stupid and annoying. Answer: negative
+"
+Dismally dull sci-fi comedy.,negative,"Input: Dismally dull sci-fi comedy. Answer: negative
+"
+Drumline ably captures the complicated relationships in a marching band.,positive,"Input: Drumline ably captures the complicated relationships in a marching band. Answer: positive
+"
+It's tough to be startled when you're almost dozing.,negative,"Input: It's tough to be startled when you're almost dozing. Answer: negative
+"
+This thing is just garbage.,negative,"Input: This thing is just garbage. Answer: negative
+"
+"A smart, compelling drama.",positive,"Input: A smart, compelling drama. Answer: positive
+"
+Utter mush... conceited pap.,negative,"Input: Utter mush... conceited pap. Answer: negative
+"
+He's the scariest guy you'll see all summer.,positive,"Input: He's the scariest guy you'll see all summer. Answer: positive
+"
+Chai's structure and pacing are disconcertingly slack.,negative,"Input: Chai's structure and pacing are disconcertingly slack. Answer: negative
+"
+"The film has a kind of hard, cold effect.",negative,"Input: The film has a kind of hard, cold effect. Answer: negative
+"
+Animated drivel meant to enhance the self-image of drooling idiots.,negative,"Input: Animated drivel meant to enhance the self-image of drooling idiots. Answer: negative
+"
+A cutesy romantic tale with a twist.,positive,"Input: A cutesy romantic tale with a twist. Answer: positive
+"
+Inconsequential road-and-buddy pic.,negative,"Input: Inconsequential road-and-buddy pic. Answer: negative
+"
+A lovably old-school Hollywood confection.,positive,"Input: A lovably old-school Hollywood confection. Answer: positive
+"
+"An entertaining, if somewhat standardized, action movie.",positive,"Input: An entertaining, if somewhat standardized, action movie. Answer: positive
+"
+The writing is clever and the cast is appealing.,positive,"Input: The writing is clever and the cast is appealing. Answer: positive
+"
+What makes it worth watching is Quaid's performance.,positive,"Input: What makes it worth watching is Quaid's performance. Answer: positive
+"
+Thoroughly engrossing and ultimately tragic.,negative,"Input: Thoroughly engrossing and ultimately tragic. Answer: negative
+"
+"It's a smartly directed, grown-up film of ideas.",positive,"Input: It's a smartly directed, grown-up film of ideas. Answer: positive
+"
+Overall tomfoolery like this is a matter of taste.,negative,"Input: Overall tomfoolery like this is a matter of taste. Answer: negative
+"
+"Ill-considered, unholy hokum.",negative,"Input: Ill-considered, unholy hokum. Answer: negative
+"
+"Boisterous, heartfelt comedy.",positive,"Input: Boisterous, heartfelt comedy. Answer: positive
+"
+Laggard drama wending its way to an uninspired philosophical epiphany.,negative,"Input: Laggard drama wending its way to an uninspired philosophical epiphany. Answer: negative
+"
+Ferrara's best film in years.,positive,"Input: Ferrara's best film in years. Answer: positive
+"
+Terminally brain dead production.,negative,"Input: Terminally brain dead production. Answer: negative
+"
+"Polished, well-structured film.",positive,"Input: Polished, well-structured film. Answer: positive
+"
+Glazed with a tawdry B-movie scum.,negative,"Input: Glazed with a tawdry B-movie scum. Answer: negative
+"
+"A sharp, amusing study of the cult of celebrity.",positive,"Input: A sharp, amusing study of the cult of celebrity. Answer: positive
+"
+It'll keep you wide awake and ... very tense.,positive,"Input: It'll keep you wide awake and ... very tense. Answer: positive
+"
+Funny and touching.,positive,"Input: Funny and touching. Answer: positive
+"
+A less-than-thrilling thriller.,negative,"Input: A less-than-thrilling thriller. Answer: negative
+"
+"This is a finely written, superbly acted offbeat thriller.",positive,"Input: This is a finely written, superbly acted offbeat thriller. Answer: positive
+"
+"There are no special effects, and no Hollywood endings.",positive,"Input: There are no special effects, and no Hollywood endings. Answer: positive
+"
+A three-hour cinema master class.,positive,"Input: A three-hour cinema master class. Answer: positive
+"
+Truly terrible.,negative,"Input: Truly terrible. Answer: negative
+"
+Suffers from all the excesses of the genre.,negative,"Input: Suffers from all the excesses of the genre. Answer: negative
+"
+There's lots of cool stuff packed into ESPN's Ultimate X.,positive,"Input: There's lots of cool stuff packed into ESPN's Ultimate X. Answer: positive
+"
+Lurid and less than lucid work.,negative,"Input: Lurid and less than lucid work. Answer: negative
+"
+We've liked Klein's other work but Rollerball left us cold.,negative,"Input: We've liked Klein's other work but Rollerball left us cold. Answer: negative
+"
+"Witless, pointless, tasteless and idiotic.",negative,"Input: Witless, pointless, tasteless and idiotic. Answer: negative
+"
+Manages to be both hugely entertaining and uplifting.,positive,"Input: Manages to be both hugely entertaining and uplifting. Answer: positive
+"
+Old-fashioned but thoroughly satisfying entertainment.,positive,"Input: Old-fashioned but thoroughly satisfying entertainment. Answer: positive
+"
+Certainly the performances are worthwhile.,positive,"Input: Certainly the performances are worthwhile. Answer: positive
+"
+Too bland and fustily tasteful to be truly prurient.,negative,"Input: Too bland and fustily tasteful to be truly prurient. Answer: negative
+"
+Impostor is a step down for director Gary Fleder.,negative,"Input: Impostor is a step down for director Gary Fleder. Answer: negative
+"
+"Constantly touching, surprisingly funny, semi-surrealist exploration of the creative act.",positive,"Input: Constantly touching, surprisingly funny, semi-surrealist exploration of the creative act. Answer: positive
+"
+A riveting documentary.,positive,"Input: A riveting documentary. Answer: positive
+"
+"An uplifting, near-masterpiece.",positive,"Input: An uplifting, near-masterpiece. Answer: positive
+"
+"An odd, haphazard, and inconsequential romantic comedy.",negative,"Input: An odd, haphazard, and inconsequential romantic comedy. Answer: negative
+"
+I haven't seen such self-amused trash since Freddy Got Fingered.,negative,"Input: I haven't seen such self-amused trash since Freddy Got Fingered. Answer: negative
+"
+It never rises to its clever what-if concept.,negative,"Input: It never rises to its clever what-if concept. Answer: negative
+"
+Enriched by a strong and unforced supporting cast.,positive,"Input: Enriched by a strong and unforced supporting cast. Answer: positive
+"
+A rather tired exercise in nostalgia.,negative,"Input: A rather tired exercise in nostalgia. Answer: negative
+"
+Refreshing.,positive,"Input: Refreshing. Answer: positive
+"
+Nothing short of a masterpiece -- and a challenging one.,positive,"Input: Nothing short of a masterpiece -- and a challenging one. Answer: positive
+"
+"A loud, brash and mainly unfunny high school comedy.",negative,"Input: A loud, brash and mainly unfunny high school comedy. Answer: negative
+"
+The story ultimately takes hold and grips hard.,positive,"Input: The story ultimately takes hold and grips hard. Answer: positive
+"
+"At times, it actually hurts to watch.",negative,"Input: At times, it actually hurts to watch. Answer: negative
+"
+Aan opportunity wasted.,negative,"Input: Aan opportunity wasted. Answer: negative
+"
+An awkwardly contrived exercise in magic realism.,negative,"Input: An awkwardly contrived exercise in magic realism. Answer: negative
+"
+Perhaps the best sports movie I've ever seen.,positive,"Input: Perhaps the best sports movie I've ever seen. Answer: positive
+"
+I'd rather watch a rerun of The Powerpuff Girls,negative,"Input: I'd rather watch a rerun of The Powerpuff Girls Answer: negative
+"
+"A wild, endearing, masterful documentary.",positive,"Input: A wild, endearing, masterful documentary. Answer: positive
+"
+"A horrible, 99-minute stink bomb.",negative,"Input: A horrible, 99-minute stink bomb. Answer: negative
+"
+"...a movie that, quite simply, shouldn't have been made.",negative,"Input: ...a movie that, quite simply, shouldn't have been made. Answer: negative
+"
+One of the worst films of 2002.,negative,"Input: One of the worst films of 2002. Answer: negative
+"
+Long on twinkly-eyed close-ups and short on shame.,negative,"Input: Long on twinkly-eyed close-ups and short on shame. Answer: negative
+"
+Thoroughly awful.,negative,"Input: Thoroughly awful. Answer: negative
+"
+"An ugly, pointless, stupid movie.",negative,"Input: An ugly, pointless, stupid movie. Answer: negative
+"
+Norton is magnetic as Graham.,positive,"Input: Norton is magnetic as Graham. Answer: positive
+"
+A rehash of every gangster movie from the past decade.,negative,"Input: A rehash of every gangster movie from the past decade. Answer: negative
+"
+It's all surface psychodramatics.,negative,"Input: It's all surface psychodramatics. Answer: negative
+"
+"Despite all the closed-door hanky-panky, the film is essentially juiceless.",negative,"Input: Despite all the closed-door hanky-panky, the film is essentially juiceless. Answer: negative
+"
+A backstage must-see for true fans of comedy.,positive,"Input: A backstage must-see for true fans of comedy. Answer: positive
+"
+TV skit-com material fervently deposited on the big screen.,negative,"Input: TV skit-com material fervently deposited on the big screen. Answer: negative
+"
+Idiotic and ugly.,negative,"Input: Idiotic and ugly. Answer: negative
+"
+Ear-splitting exercise in formula crash-and-bash action.,negative,"Input: Ear-splitting exercise in formula crash-and-bash action. Answer: negative
+"
+"A pale Xerox of other, better crime movies.",negative,"Input: A pale Xerox of other, better crime movies. Answer: negative
+"
+The movie is as padded as Allen's jelly belly.,negative,"Input: The movie is as padded as Allen's jelly belly. Answer: negative
+"
+Doesn't really add up to much.,negative,"Input: Doesn't really add up to much. Answer: negative
+"
+"Wow, so who knew Charles Dickens could be so light-hearted?",positive,"Input: Wow, so who knew Charles Dickens could be so light-hearted? Answer: positive
+"
+"It's mildly amusing, but I certainly can't recommend it.",negative,"Input: It's mildly amusing, but I certainly can't recommend it. Answer: negative
+"
+"A witty, low-key romantic comedy.",positive,"Input: A witty, low-key romantic comedy. Answer: positive
+"
+Rubbo's humorously tendentious intervention into the who-wrote-Shakespeare controversy.,positive,"Input: Rubbo's humorously tendentious intervention into the who-wrote-Shakespeare controversy. Answer: positive
+"
+It's one long bore.,negative,"Input: It's one long bore. Answer: negative
+"
+A small movie with a big impact.,positive,"Input: A small movie with a big impact. Answer: positive
+"
+Incoherence reigns.,negative,"Input: Incoherence reigns. Answer: negative
+"
+"What I saw, I enjoyed.",positive,"Input: What I saw, I enjoyed. Answer: positive
+"
+"An amateurish, quasi-improvised acting exercise shot on ugly digital video.",negative,"Input: An amateurish, quasi-improvised acting exercise shot on ugly digital video. Answer: negative
+"
+A dreary movie.,negative,"Input: A dreary movie. Answer: negative
+"
+Too slick and manufactured to claim street credibility.,negative,"Input: Too slick and manufactured to claim street credibility. Answer: negative
+"
+Consummate actor Barry has done excellent work here.,positive,"Input: Consummate actor Barry has done excellent work here. Answer: positive
+"
+An elegant and sly deadpan comedy.,positive,"Input: An elegant and sly deadpan comedy. Answer: positive
+"
+An enjoyable above average summer diversion.,positive,"Input: An enjoyable above average summer diversion. Answer: positive
+"
+... manages to deliver a fair bit of vampire fun.,positive,"Input: ... manages to deliver a fair bit of vampire fun. Answer: positive
+"
+"A wry, affectionate delight.",positive,"Input: A wry, affectionate delight. Answer: positive
+"
+The problem with all of this: It's not really funny.,negative,"Input: The problem with all of this: It's not really funny. Answer: negative
+"
+The best film of the year 2002.,positive,"Input: The best film of the year 2002. Answer: positive
+"
+The bottom line is the piece works brilliantly.,positive,"Input: The bottom line is the piece works brilliantly. Answer: positive
+"
+"Charming and witty, it's also somewhat clumsy.",positive,"Input: Charming and witty, it's also somewhat clumsy. Answer: positive
+"
+Pleasant but not more than recycled jock piffle.,negative,"Input: Pleasant but not more than recycled jock piffle. Answer: negative
+"
+A triumph of pure craft and passionate heart.,positive,"Input: A triumph of pure craft and passionate heart. Answer: positive
+"
+"A bright, inventive, thoroughly winning flight of revisionist fancy.",positive,"Input: A bright, inventive, thoroughly winning flight of revisionist fancy. Answer: positive
+"
+Thoroughly enjoyable.,positive,"Input: Thoroughly enjoyable. Answer: positive
+"
+"This quiet, introspective and entertaining independent is worth seeking.",positive,"Input: This quiet, introspective and entertaining independent is worth seeking. Answer: positive
+"
+"The script is high on squaddie banter, low on shocks.",positive,"Input: The script is high on squaddie banter, low on shocks. Answer: positive
+"
+Wishy-washy.,negative,"Input: Wishy-washy. Answer: negative
+"
+"Simplistic, silly and tedious.",negative,"Input: Simplistic, silly and tedious. Answer: negative
+"
+If only Merchant paid more attention the story.,negative,"Input: If only Merchant paid more attention the story. Answer: negative
+"
+Feral and uncomfortable.,negative,"Input: Feral and uncomfortable. Answer: negative
+"
+Caviezel embodies the transformation of his character completely.,positive,"Input: Caviezel embodies the transformation of his character completely. Answer: positive
+"
+"Tense, terrific, sweaty-palmed fun.",positive,"Input: Tense, terrific, sweaty-palmed fun. Answer: positive
+"
+A fun ride.,positive,"Input: A fun ride. Answer: positive
+"
+Many insightful moments.,positive,"Input: Many insightful moments. Answer: positive
+"
+"... very funny, very enjoyable ...",positive,"Input: ... very funny, very enjoyable ... Answer: positive
+"
+By-the-numbers yarn.,negative,"Input: By-the-numbers yarn. Answer: negative
+"
+Everything is off.,negative,"Input: Everything is off. Answer: negative
+"
+A gripping drama.,positive,"Input: A gripping drama. Answer: positive
+"
+A prolonged extrusion of psychopathic pulp.,negative,"Input: A prolonged extrusion of psychopathic pulp. Answer: negative
+"
+"Sensual, funny and, in the end, very touching.",positive,"Input: Sensual, funny and, in the end, very touching. Answer: positive
+"
+It's not original enough.,negative,"Input: It's not original enough. Answer: negative
+"
+"What a dumb, fun, curiously adolescent movie this is.",positive,"Input: What a dumb, fun, curiously adolescent movie this is. Answer: positive
+"
+"Woody, what happened?",negative,"Input: Woody, what happened? Answer: negative
+"
+"A witty, whimsical feature debut.",positive,"Input: A witty, whimsical feature debut. Answer: positive
+"
+A bodice-ripper for intellectuals.,positive,"Input: A bodice-ripper for intellectuals. Answer: positive
+"
+A genuine mind-bender.,positive,"Input: A genuine mind-bender. Answer: positive
+"
+"Narratively, Trouble Every Day is a plodding mess.",negative,"Input: Narratively, Trouble Every Day is a plodding mess. Answer: negative
+"
+A captivating and intimate study about dying and loving...,positive,"Input: A captivating and intimate study about dying and loving... Answer: positive
+"
+There's no reason to miss Interview with the Assassin,positive,"Input: There's no reason to miss Interview with the Assassin Answer: positive
+"
+The whole talking-animal thing is grisly.,negative,"Input: The whole talking-animal thing is grisly. Answer: negative
+"
+"Twohy's a good yarn-spinner, and ultimately the story compels.",positive,"Input: Twohy's a good yarn-spinner, and ultimately the story compels. Answer: positive
+"
+The Hanukkah spirit seems fried in pork.,negative,"Input: The Hanukkah spirit seems fried in pork. Answer: negative
+"
+Sexy and romantic.,positive,"Input: Sexy and romantic. Answer: positive
+"
+"An exceptionally acted, quietly affecting cop drama.",positive,"Input: An exceptionally acted, quietly affecting cop drama. Answer: positive
+"
+"A smart, sassy and exceptionally charming romantic comedy.",positive,"Input: A smart, sassy and exceptionally charming romantic comedy. Answer: positive
+"
+A thought-provoking and often-funny drama about isolation.,positive,"Input: A thought-provoking and often-funny drama about isolation. Answer: positive
+"
+Pray has really done his subject justice.,positive,"Input: Pray has really done his subject justice. Answer: positive
+"
+A tasty appetizer that leaves you wanting more.,positive,"Input: A tasty appetizer that leaves you wanting more. Answer: positive
+"
+"It's weird, wonderful, and not necessarily for kids.",positive,"Input: It's weird, wonderful, and not necessarily for kids. Answer: positive
+"
+Highly watchable stuff.,positive,"Input: Highly watchable stuff. Answer: positive
+"
+Piccoli gives a superb performance full of deep feeling.,positive,"Input: Piccoli gives a superb performance full of deep feeling. Answer: positive
+"
+Predictably soulless techno-tripe.,negative,"Input: Predictably soulless techno-tripe. Answer: negative
+"
+Uneven but a lot of fun.,positive,"Input: Uneven but a lot of fun. Answer: positive
+"
+Another boorish movie from the I-heard-a-joke- at-a-frat-party school of screenwriting.,negative,"Input: Another boorish movie from the I-heard-a-joke- at-a-frat-party school of screenwriting. Answer: negative
+"
+classic cinema served up with heart and humor,positive,"Input: classic cinema served up with heart and humor Answer: positive
+"
+Deliciously slow.,positive,"Input: Deliciously slow. Answer: positive
+"
+"The film is small in scope, yet perfectly formed.",positive,"Input: The film is small in scope, yet perfectly formed. Answer: positive
+"
+Jackson is always watchable.,positive,"Input: Jackson is always watchable. Answer: positive
+"
+One of the most slyly exquisite anti-adult movies ever made.,positive,"Input: One of the most slyly exquisite anti-adult movies ever made. Answer: positive
+"
+"Bluto Blutarsky, we miss you.",positive,"Input: Bluto Blutarsky, we miss you. Answer: positive
+"
+The all-French cast is marveilleux.,positive,"Input: The all-French cast is marveilleux. Answer: positive
+"
+Degenerates into hogwash.,negative,"Input: Degenerates into hogwash. Answer: negative
+"
+A retread of material already thoroughly plumbed by Martin Scorsese.,negative,"Input: A retread of material already thoroughly plumbed by Martin Scorsese. Answer: negative
+"
+"A finely tuned mood piece, a model of menacing atmosphere.",positive,"Input: A finely tuned mood piece, a model of menacing atmosphere. Answer: positive
+"
+His work transcends the boy-meets-girl posturing of typical love stories.,positive,"Input: His work transcends the boy-meets-girl posturing of typical love stories. Answer: positive
+"
+Technically and artistically inept.,negative,"Input: Technically and artistically inept. Answer: negative
+"
+...the plot weaves us into a complex web.,positive,"Input: ...the plot weaves us into a complex web. Answer: positive
+"
+Marvelously entertaining and deliriously joyous documentary.,positive,"Input: Marvelously entertaining and deliriously joyous documentary. Answer: positive
+"
+Low rent from frame one.,negative,"Input: Low rent from frame one. Answer: negative
+"
+plays like some corny television production from a bygone era,negative,"Input: plays like some corny television production from a bygone era Answer: negative
+"
+A little weak -- and it isn't that funny.,negative,"Input: A little weak -- and it isn't that funny. Answer: negative
+"
+A noble failure.,negative,"Input: A noble failure. Answer: negative
+"
+There's not a comedic moment in this romantic comedy.,negative,"Input: There's not a comedic moment in this romantic comedy. Answer: negative
+"
+"A big, loud, bang-the-drum bore.",negative,"Input: A big, loud, bang-the-drum bore. Answer: negative
+"
+Good-naturedly cornball sequel.,positive,"Input: Good-naturedly cornball sequel. Answer: positive
+"
+The closest thing to the experience of space travel,positive,"Input: The closest thing to the experience of space travel Answer: positive
+"
+A tone poem of transgression.,positive,"Input: A tone poem of transgression. Answer: positive
+"
+Execrable.,negative,"Input: Execrable. Answer: negative
+"
+"an admirable, sometimes exceptional film",positive,"Input: an admirable, sometimes exceptional film Answer: positive
+"
+A derivative collection of horror and sci-fi cliches.,negative,"Input: A derivative collection of horror and sci-fi cliches. Answer: negative
+"
+"A particularly joyless, and exceedingly dull, period coming-of-age tale.",negative,"Input: A particularly joyless, and exceedingly dull, period coming-of-age tale. Answer: negative
+"
+One of the best movies of the year.,positive,"Input: One of the best movies of the year. Answer: positive
+"
+One of the best inside-show-biz yarns ever.,positive,"Input: One of the best inside-show-biz yarns ever. Answer: positive
+"
+"A timid, soggy near miss.",negative,"Input: A timid, soggy near miss. Answer: negative
+"
+The movie is so thoughtlessly assembled.,positive,"Input: The movie is so thoughtlessly assembled. Answer: positive
+"
+Lacks depth.,negative,"Input: Lacks depth. Answer: negative
+"
+"A sensitive, moving, brilliantly constructed work.",positive,"Input: A sensitive, moving, brilliantly constructed work. Answer: positive
+"
+...hypnotically dull.,negative,"Input: ...hypnotically dull. Answer: negative
+"
+Brisk hack job.,negative,"Input: Brisk hack job. Answer: negative
+"
+It trusts the story it sets out to tell.,positive,"Input: It trusts the story it sets out to tell. Answer: positive
+"
+...could easily be called the best Korean film of 2002.,positive,"Input: ...could easily be called the best Korean film of 2002. Answer: positive
+"
+A humorless journey into a philosophical void.,negative,"Input: A humorless journey into a philosophical void. Answer: negative
+"
+Family fare.,positive,"Input: Family fare. Answer: positive
+"
+A gem of a movie.,positive,"Input: A gem of a movie. Answer: positive
+"
+A complete waste of time.,negative,"Input: A complete waste of time. Answer: negative
+"
+Friday After Next is a lot more bluster than bite.,negative,"Input: Friday After Next is a lot more bluster than bite. Answer: negative
+"
+Lightweight but appealing.,positive,"Input: Lightweight but appealing. Answer: positive
+"
+These characters become wearisome.,negative,"Input: These characters become wearisome. Answer: negative
+"
+"Cold, pretentious, thoroughly dislikable study in sociopathy.",negative,"Input: Cold, pretentious, thoroughly dislikable study in sociopathy. Answer: negative
+"
+A characteristically engorged and sloppy coming-of-age movie.,negative,"Input: A characteristically engorged and sloppy coming-of-age movie. Answer: negative
+"
+A beautiful paean to a time long past.,positive,"Input: A beautiful paean to a time long past. Answer: positive
+"
+A beautifully observed character piece.,positive,"Input: A beautifully observed character piece. Answer: positive
+"
+A movie of riveting power and sadness.,positive,"Input: A movie of riveting power and sadness. Answer: positive
+"
+Gives everyone something to shout about.,positive,"Input: Gives everyone something to shout about. Answer: positive
+"
+A minor-league soccer remake of The Longest Yard.,negative,"Input: A minor-league soccer remake of The Longest Yard. Answer: negative
+"
+"As a science fiction movie, ``Minority Report'' astounds.",positive,"Input: As a science fiction movie, ``Minority Report'' astounds. Answer: positive
+"
+Really quite funny.,positive,"Input: Really quite funny. Answer: positive
+"
+Parents beware; this is downright movie penance.,negative,"Input: Parents beware; this is downright movie penance. Answer: negative
+"
+"An enjoyable, if occasionally flawed, experiment.",positive,"Input: An enjoyable, if occasionally flawed, experiment. Answer: positive
+"
+"Fierce, glaring and unforgettable.",positive,"Input: Fierce, glaring and unforgettable. Answer: positive
+"
+There's nothing interesting in Unfaithful whatsoever.,negative,"Input: There's nothing interesting in Unfaithful whatsoever. Answer: negative
+"
+"It is bad, but certainly not without merit as entertainment.",negative,"Input: It is bad, but certainly not without merit as entertainment. Answer: negative
+"
+An exhilarating experience.,positive,"Input: An exhilarating experience. Answer: positive
+"
+An average B-movie with no aspirations to be anything more.,negative,"Input: An average B-movie with no aspirations to be anything more. Answer: negative
+"
+The story is bogus and its characters tissue-thin.,negative,"Input: The story is bogus and its characters tissue-thin. Answer: negative
+"
+By turns numbingly dull-witted and disquietingly creepy.,negative,"Input: By turns numbingly dull-witted and disquietingly creepy. Answer: negative
+"
+The movie doesn't add anything fresh to the myth.,negative,"Input: The movie doesn't add anything fresh to the myth. Answer: negative
+"
+A lovely film for the holiday season.,positive,"Input: A lovely film for the holiday season. Answer: positive
+"
+Parris' performance is credible and remarkably mature.,positive,"Input: Parris' performance is credible and remarkably mature. Answer: positive
+"
+Rarely has sex on screen been so aggressively anti-erotic.,negative,"Input: Rarely has sex on screen been so aggressively anti-erotic. Answer: negative
+"
+Just too silly and sophomoric to ensnare its target audience.,negative,"Input: Just too silly and sophomoric to ensnare its target audience. Answer: negative
+"
+"Cold, nervy and memorable.",positive,"Input: Cold, nervy and memorable. Answer: positive
+"
+An unsuccessful attempt at a movie of ideas.,negative,"Input: An unsuccessful attempt at a movie of ideas. Answer: negative
+"
+"Boy, has this franchise ever run out of gas.",negative,"Input: Boy, has this franchise ever run out of gas. Answer: negative
+"
+Every note rings false.,negative,"Input: Every note rings false. Answer: negative
+"
+Generates an enormous feeling of empathy for its characters.,positive,"Input: Generates an enormous feeling of empathy for its characters. Answer: positive
+"
+Jones has delivered a solidly entertaining and moving family drama.,positive,"Input: Jones has delivered a solidly entertaining and moving family drama. Answer: positive
+"
+It's a road-trip drama with too many wrong turns.,negative,"Input: It's a road-trip drama with too many wrong turns. Answer: negative
+"
+Like the chilled breath of oral storytelling frozen onto film.,positive,"Input: Like the chilled breath of oral storytelling frozen onto film. Answer: positive
+"
+Spare but quietly effective retelling.,positive,"Input: Spare but quietly effective retelling. Answer: positive
+"
+It drowns in sap.,negative,"Input: It drowns in sap. Answer: negative
+"
+"Certainly not a good movie, but it wasn't horrible either.",negative,"Input: Certainly not a good movie, but it wasn't horrible either. Answer: negative
+"
+an original and highly cerebral examination of the psychopathic mind,positive,"Input: an original and highly cerebral examination of the psychopathic mind Answer: positive
+"
+It's quite diverting nonsense.,negative,"Input: It's quite diverting nonsense. Answer: negative
+"
+Pompous and garbled.,negative,"Input: Pompous and garbled. Answer: negative
+"
+An extraordinary dramatic experience.,positive,"Input: An extraordinary dramatic experience. Answer: positive
+"
+"Slap me, I saw this movie.",negative,"Input: Slap me, I saw this movie. Answer: negative
+"
+A moving and important film.,positive,"Input: A moving and important film. Answer: positive
+"
+A terrible movie that some people will nevertheless find moving.,negative,"Input: A terrible movie that some people will nevertheless find moving. Answer: negative
+"
+"Bill Morrison's Decasia is uncompromising, difficult and unbearably beautiful.",positive,"Input: Bill Morrison's Decasia is uncompromising, difficult and unbearably beautiful. Answer: positive
+"
+"A smart, arch and rather cold-blooded comedy.",positive,"Input: A smart, arch and rather cold-blooded comedy. Answer: positive
+"
+"As it turns out, you can go home again.",positive,"Input: As it turns out, you can go home again. Answer: positive
+"
+An edgy thriller that delivers a surprising punch.,positive,"Input: An edgy thriller that delivers a surprising punch. Answer: positive
+"
+It's unlikely we'll see a better thriller this year.,positive,"Input: It's unlikely we'll see a better thriller this year. Answer: positive
+"
+"The performances are immaculate, with Roussillon providing comic relief.",positive,"Input: The performances are immaculate, with Roussillon providing comic relief. Answer: positive
+"
+An impressive hybrid.,positive,"Input: An impressive hybrid. Answer: positive
+"
+"Like its bizarre heroine, it irrigates our souls.",positive,"Input: Like its bizarre heroine, it irrigates our souls. Answer: positive
+"
+"It's leaden and predictable, and laughs are lacking.",negative,"Input: It's leaden and predictable, and laughs are lacking. Answer: negative
+"
+An undistinguished attempt to make a classic theater piece cinematic.,negative,"Input: An undistinguished attempt to make a classic theater piece cinematic. Answer: negative
+"
+...a bland murder-on-campus yawner.,negative,"Input: ...a bland murder-on-campus yawner. Answer: negative
+"
+Smart and taut.,positive,"Input: Smart and taut. Answer: positive
+"
+Noyce has worked wonders with the material.,positive,"Input: Noyce has worked wonders with the material. Answer: positive
+"
+...really horrible drek.,negative,"Input: ...really horrible drek. Answer: negative
+"
+Fairly run-of-the-mill.,negative,"Input: Fairly run-of-the-mill. Answer: negative
+"
+"The movie is well done, but slow.",negative,"Input: The movie is well done, but slow. Answer: negative
+"
+"...no charm, no laughs, no fun, no reason to watch.",negative,"Input: ...no charm, no laughs, no fun, no reason to watch. Answer: negative
+"
+"By turns fanciful, grisly and engagingly quixotic.",positive,"Input: By turns fanciful, grisly and engagingly quixotic. Answer: positive
+"
+A great companion piece to other Napoleon films.,positive,"Input: A great companion piece to other Napoleon films. Answer: positive
+"
+Too infuriatingly quirky and taken with its own style.,negative,"Input: Too infuriatingly quirky and taken with its own style. Answer: negative
+"
+Nearly every attempt at humor here is DOA.,negative,"Input: Nearly every attempt at humor here is DOA. Answer: negative
+"
+``The best Disney movie since the Lion King'',positive,"Input: ``The best Disney movie since the Lion King'' Answer: positive
+"
+Chaiken ably balances real-time rhythms with propulsive incident.,positive,"Input: Chaiken ably balances real-time rhythms with propulsive incident. Answer: positive
+"
+"A terrific date movie, whatever your orientation.",positive,"Input: A terrific date movie, whatever your orientation. Answer: positive
+"
+As lively an account as Seinfeld is deadpan.,negative,"Input: As lively an account as Seinfeld is deadpan. Answer: negative
+"
+A wild ride of a movie that keeps throwing fastballs.,positive,"Input: A wild ride of a movie that keeps throwing fastballs. Answer: positive
+"
+By turns very dark and very funny.,positive,"Input: By turns very dark and very funny. Answer: positive
+"
+"It's tough to watch, but it's a fantastic movie.",positive,"Input: It's tough to watch, but it's a fantastic movie. Answer: positive
+"
+"You're not merely watching history, you're engulfed by it.",positive,"Input: You're not merely watching history, you're engulfed by it. Answer: positive
+"
+Peppered with witty dialogue and inventive moments.,positive,"Input: Peppered with witty dialogue and inventive moments. Answer: positive
+"
+The most ingenious film comedy since Being John Malkovich.,positive,"Input: The most ingenious film comedy since Being John Malkovich. Answer: positive
+"
+Kapur weighs down the tale with bogus profundities.,negative,"Input: Kapur weighs down the tale with bogus profundities. Answer: negative
+"
+None of Birthday Girl's calculated events take us by surprise...,negative,"Input: None of Birthday Girl's calculated events take us by surprise... Answer: negative
+"
+It's like an all-star salute to Disney's cheesy commercialism.,negative,"Input: It's like an all-star salute to Disney's cheesy commercialism. Answer: negative
+"
+Speaks eloquently about the symbiotic relationship between art and life.,positive,"Input: Speaks eloquently about the symbiotic relationship between art and life. Answer: positive
+"
+There's more repetition than creativity throughout the movie.,negative,"Input: There's more repetition than creativity throughout the movie. Answer: negative
+"
+A terrific insider look at the star-making machinery of tinseltown.,positive,"Input: A terrific insider look at the star-making machinery of tinseltown. Answer: positive
+"
+A funny film.,positive,"Input: A funny film. Answer: positive
+"
+A certain sexiness underlines even the dullest tangents.,positive,"Input: A certain sexiness underlines even the dullest tangents. Answer: positive
+"
+"A thoroughly engaging, surprisingly touching British comedy.",positive,"Input: A thoroughly engaging, surprisingly touching British comedy. Answer: positive
+"
+One-of-a-kind near-masterpiece.,positive,"Input: One-of-a-kind near-masterpiece. Answer: positive
+"
+Slight but enjoyable documentary.,positive,"Input: Slight but enjoyable documentary. Answer: positive
+"
+A film without surprise geared toward maximum comfort and familiarity.,negative,"Input: A film without surprise geared toward maximum comfort and familiarity. Answer: negative
+"
+Too clever by about nine-tenths.,positive,"Input: Too clever by about nine-tenths. Answer: positive
+"
+A French film with a more down-home flavor.,positive,"Input: A French film with a more down-home flavor. Answer: positive
+"
+"Poetic, heartbreaking.",positive,"Input: Poetic, heartbreaking. Answer: positive
+"
+Worthy of the gong.,negative,"Input: Worthy of the gong. Answer: negative
+"
+This 10th film in the series looks and feels tired.,negative,"Input: This 10th film in the series looks and feels tired. Answer: negative
+"
+Unwieldy contraption.,negative,"Input: Unwieldy contraption. Answer: negative
+"
+more precious than perspicacious,positive,"Input: more precious than perspicacious Answer: positive
+"
+"...bright, intelligent, and humanly funny film.",positive,"Input: ...bright, intelligent, and humanly funny film. Answer: positive
+"
+The feature-length stretch ... strains the show's concept.,negative,"Input: The feature-length stretch ... strains the show's concept. Answer: negative
+"
+"Quite simply, a joy to watch and--especially--to listen to.",positive,"Input: Quite simply, a joy to watch and--especially--to listen to. Answer: positive
+"
+"It's sweet, funny, charming, and completely delightful.",positive,"Input: It's sweet, funny, charming, and completely delightful. Answer: positive
+"
+One of the greatest films I've ever seen.,positive,"Input: One of the greatest films I've ever seen. Answer: positive
+"
+I loved the look of this film.,positive,"Input: I loved the look of this film. Answer: positive
+"
+"Blessed with two fine, nuanced lead performances.",positive,"Input: Blessed with two fine, nuanced lead performances. Answer: positive
+"
+A remarkable film by Bernard Rose.,positive,"Input: A remarkable film by Bernard Rose. Answer: positive
+"
+A feeble Tootsie knockoff.,negative,"Input: A feeble Tootsie knockoff. Answer: negative
+"
+The entire cast is extraordinarily good.,positive,"Input: The entire cast is extraordinarily good. Answer: positive
+"
+The formula is familiar but enjoyable.,positive,"Input: The formula is familiar but enjoyable. Answer: positive
+"
+...unbearably lame.,negative,"Input: ...unbearably lame. Answer: negative
+"
+"Been there, done that... a thousand times already, and better.",negative,"Input: Been there, done that... a thousand times already, and better. Answer: negative
+"
+"A quaint, romanticized rendering.",positive,"Input: A quaint, romanticized rendering. Answer: positive
+"
+A generic international version of a typical American horror film.,negative,"Input: A generic international version of a typical American horror film. Answer: negative
+"
+Handsome and sophisticated approach to the workplace romantic comedy.,positive,"Input: Handsome and sophisticated approach to the workplace romantic comedy. Answer: positive
+"
+...one of the most entertaining monster movies in ages...,positive,"Input: ...one of the most entertaining monster movies in ages... Answer: positive
+"
+An almost unbearably morbid love story.,negative,"Input: An almost unbearably morbid love story. Answer: negative
+"
+"All in all, a great party.",positive,"Input: All in all, a great party. Answer: positive
+"
+...stale and uninspired.,negative,"Input: ...stale and uninspired. Answer: negative
+"
+Significantly better than its 2002 children's-movie competition.,positive,"Input: Significantly better than its 2002 children's-movie competition. Answer: positive
+"
+under-rehearsed and lifeless,negative,"Input: under-rehearsed and lifeless Answer: negative
+"
+Even the digressions are funny.,positive,"Input: Even the digressions are funny. Answer: positive
+"
+"Stale, futile scenario.",negative,"Input: Stale, futile scenario. Answer: negative
+"
+Far more enjoyable than its predecessor.,positive,"Input: Far more enjoyable than its predecessor. Answer: positive
+"
+Visually striking and viscerally repellent.,positive,"Input: Visually striking and viscerally repellent. Answer: positive
+"
+A lame comedy.,negative,"Input: A lame comedy. Answer: negative
+"
+Its engaging simplicity is driven by appealing leads.,positive,"Input: Its engaging simplicity is driven by appealing leads. Answer: positive
+"
+"A pleasing, often-funny comedy.",positive,"Input: A pleasing, often-funny comedy. Answer: positive
+"
+Lame Sweet Home leaves no Southern stereotype unturned.,negative,"Input: Lame Sweet Home leaves no Southern stereotype unturned. Answer: negative
+"
+"Sweetly sexy, funny and touching.",positive,"Input: Sweetly sexy, funny and touching. Answer: positive
+"
+"Go, girls, right down the reality drain.",negative,"Input: Go, girls, right down the reality drain. Answer: negative
+"
+Just a Kiss is a just a waste.,negative,"Input: Just a Kiss is a just a waste. Answer: negative
+"
+An imponderably stilted and self-consciously arty movie.,negative,"Input: An imponderably stilted and self-consciously arty movie. Answer: negative
+"
+... better described as a ghost story gone badly awry.,negative,"Input: ... better described as a ghost story gone badly awry. Answer: negative
+"
+"A vibrant, colorful, semimusical rendition.",positive,"Input: A vibrant, colorful, semimusical rendition. Answer: positive
+"
+This is Christmas Future for a lot of baby boomers.,positive,"Input: This is Christmas Future for a lot of baby boomers. Answer: positive
+"
+"Deflated ending aside, there's much to recommend the film.",positive,"Input: Deflated ending aside, there's much to recommend the film. Answer: positive
+"
+A riveting story well told.,positive,"Input: A riveting story well told. Answer: positive
+"
+"Journalistically dubious, inept and often lethally dull.",negative,"Input: Journalistically dubious, inept and often lethally dull. Answer: negative
+"
+A solidly entertaining little film.,positive,"Input: A solidly entertaining little film. Answer: positive
+"
+To Blandly Go Where We Went 8 Movies Ago ...,negative,"Input: To Blandly Go Where We Went 8 Movies Ago ... Answer: negative
+"
+The plot's contrivances are uncomfortably strained.,negative,"Input: The plot's contrivances are uncomfortably strained. Answer: negative
+"
+Even better than the first one!,positive,"Input: Even better than the first one! Answer: positive
+"
+Eerily accurate depiction of depression.,negative,"Input: Eerily accurate depiction of depression. Answer: negative
+"
+"It's a wonderful, sobering, heart-felt drama.",positive,"Input: It's a wonderful, sobering, heart-felt drama. Answer: positive
+"
+"Gangster No. 1 is solid, satisfying fare for adults.",positive,"Input: Gangster No. 1 is solid, satisfying fare for adults. Answer: positive
+"
+A loquacious and dreary piece of business.,negative,"Input: A loquacious and dreary piece of business. Answer: negative
+"
+Doesn't add up to much.,negative,"Input: Doesn't add up to much. Answer: negative
+"
+Chalk it up as the worst kind of hubristic folly.,negative,"Input: Chalk it up as the worst kind of hubristic folly. Answer: negative
+"
+"Too much of Nemesis has a tired, talky feel.",negative,"Input: Too much of Nemesis has a tired, talky feel. Answer: negative
+"
+It's just rather leaden and dull.,negative,"Input: It's just rather leaden and dull. Answer: negative
+"
+Has the capability of effecting change and inspiring hope.,positive,"Input: Has the capability of effecting change and inspiring hope. Answer: positive
+"
+Top-notch action powers this romantic drama.,positive,"Input: Top-notch action powers this romantic drama. Answer: positive
+"
+A portrait of hell so shattering it's impossible to shake.,positive,"Input: A portrait of hell so shattering it's impossible to shake. Answer: positive
+"
+"Assayas' ambitious, sometimes beautiful adaptation of Jacques Chardonne's novel.",positive,"Input: Assayas' ambitious, sometimes beautiful adaptation of Jacques Chardonne's novel. Answer: positive
+"
+Shrewd but pointless.,negative,"Input: Shrewd but pointless. Answer: negative
+"
+A chiller resolutely without chills.,negative,"Input: A chiller resolutely without chills. Answer: negative
+"
+Exhilarating but blatantly biased.,positive,"Input: Exhilarating but blatantly biased. Answer: positive
+"
+Psychologically revealing.,positive,"Input: Psychologically revealing. Answer: positive
+"
+Tsai convincingly paints a specifically urban sense of disassociation here.,positive,"Input: Tsai convincingly paints a specifically urban sense of disassociation here. Answer: positive
+"
+We want the funk - and this movie's got it.,positive,"Input: We want the funk - and this movie's got it. Answer: positive
+"
+Allen's underestimated charm delivers more goodies than lumps of coal.,positive,"Input: Allen's underestimated charm delivers more goodies than lumps of coal. Answer: positive
+"
+It's depressing to see how far Herzog has fallen.,negative,"Input: It's depressing to see how far Herzog has fallen. Answer: negative
+"
+More a gunfest than a Rock concert.,negative,"Input: More a gunfest than a Rock concert. Answer: negative
+"
+Bland but harmless.,negative,"Input: Bland but harmless. Answer: negative
+"
+Phoned-in business as usual.,negative,"Input: Phoned-in business as usual. Answer: negative
+"
+A low-rent retread of the Alien pictures.,negative,"Input: A low-rent retread of the Alien pictures. Answer: negative
+"
+Maryam is more timely now than ever.,positive,"Input: Maryam is more timely now than ever. Answer: positive
+"
+"The script is smart, not cloying.",positive,"Input: The script is smart, not cloying. Answer: positive
+"
+It's never dull and always looks good.,positive,"Input: It's never dull and always looks good. Answer: positive
+"
+A gentle and engrossing character study.,positive,"Input: A gentle and engrossing character study. Answer: positive
+"
+A sentimental but entirely irresistible portrait of three aging sisters.,positive,"Input: A sentimental but entirely irresistible portrait of three aging sisters. Answer: positive
+"
+A yawn-provoking little farm melodrama.,negative,"Input: A yawn-provoking little farm melodrama. Answer: negative
+"
+Feels like a cold old man going through the motions.,negative,"Input: Feels like a cold old man going through the motions. Answer: negative
+"
+"I found it slow, predictable and not very amusing.",negative,"Input: I found it slow, predictable and not very amusing. Answer: negative
+"
+Kudos to the most enchanting film of the year.,positive,"Input: Kudos to the most enchanting film of the year. Answer: positive
+"
+You will likely prefer to keep on watching.,positive,"Input: You will likely prefer to keep on watching. Answer: positive
+"
+Overly long and worshipful bio-doc.,negative,"Input: Overly long and worshipful bio-doc. Answer: negative
+"
+Narc is all menace and atmosphere.,negative,"Input: Narc is all menace and atmosphere. Answer: negative
+"
+Insufferably naive.,negative,"Input: Insufferably naive. Answer: negative
+"
+Its initial excitement settles into a warmed over pastiche.,negative,"Input: Its initial excitement settles into a warmed over pastiche. Answer: negative
+"
+Hardly a film that comes along every day.,positive,"Input: Hardly a film that comes along every day. Answer: positive
+"
+"Third time's the charm...yeah, baby!",positive,"Input: Third time's the charm...yeah, baby! Answer: positive
+"
+Bad and baffling from the get-go.,negative,"Input: Bad and baffling from the get-go. Answer: negative
+"
+"It's funny, touching, dramatically forceful, and beautifully shot.",positive,"Input: It's funny, touching, dramatically forceful, and beautifully shot. Answer: positive
+"
+Leaks treacle from every pore.,negative,"Input: Leaks treacle from every pore. Answer: negative
+"
+The film has several strong performances.,positive,"Input: The film has several strong performances. Answer: positive
+"
+"Good, solid storytelling.",positive,"Input: Good, solid storytelling. Answer: positive
+"
+"If you've the patience, there are great rewards here.",positive,"Input: If you've the patience, there are great rewards here. Answer: positive
+"
+A major waste...generic.,negative,"Input: A major waste...generic. Answer: negative
+"
+A bad movie that happened to good actors.,negative,"Input: A bad movie that happened to good actors. Answer: negative
+"
+"Intensely romantic, thought-provoking and even an engaging mystery.",positive,"Input: Intensely romantic, thought-provoking and even an engaging mystery. Answer: positive
+"
+A half-assed film.,negative,"Input: A half-assed film. Answer: negative
+"
+"An authentically vague, but ultimately purposeless, study in total pandemonium.",negative,"Input: An authentically vague, but ultimately purposeless, study in total pandemonium. Answer: negative
+"
+Bielinsky is a filmmaker of impressive talent.,positive,"Input: Bielinsky is a filmmaker of impressive talent. Answer: positive
+"
+Takashi Miike keeps pushing the envelope: Ichi the Killer,positive,"Input: Takashi Miike keeps pushing the envelope: Ichi the Killer Answer: positive
+"
+"A brisk, reverent, and subtly different sequel.",positive,"Input: A brisk, reverent, and subtly different sequel. Answer: positive
+"
+Has all the scenic appeal of a cesspool.,negative,"Input: Has all the scenic appeal of a cesspool. Answer: negative
+"
+Sleek and arty.,positive,"Input: Sleek and arty. Answer: positive
+"
+"Meyjes's movie, like Max Rothman's future, does not work.",negative,"Input: Meyjes's movie, like Max Rothman's future, does not work. Answer: negative
+"
+It's a barely tolerable slog over well-trod ground.,negative,"Input: It's a barely tolerable slog over well-trod ground. Answer: negative
+"
+"Vaguely interesting, but it's just too too much.",negative,"Input: Vaguely interesting, but it's just too too much. Answer: negative
+"
+"Interminably bleak, to say nothing of boring.",negative,"Input: Interminably bleak, to say nothing of boring. Answer: negative
+"
+"Loud, chaotic and largely unfunny.",negative,"Input: Loud, chaotic and largely unfunny. Answer: negative
+"
+"Inventive, fun, intoxicatingly sexy, violent, self-indulgent and maddening.",positive,"Input: Inventive, fun, intoxicatingly sexy, violent, self-indulgent and maddening. Answer: positive
+"
+"Awesome work: ineffable, elusive, yet inexplicably powerful",positive,"Input: Awesome work: ineffable, elusive, yet inexplicably powerful Answer: positive
+"
+"Sly, sophisticated and surprising.",positive,"Input: Sly, sophisticated and surprising. Answer: positive
+"
+"Demonstrates the unusual power of thoughtful, subjective filmmaking.",positive,"Input: Demonstrates the unusual power of thoughtful, subjective filmmaking. Answer: positive
+"
+There is no denying the power of Polanski's film...,positive,"Input: There is no denying the power of Polanski's film... Answer: positive
+"
+Nettelbeck ... has a pleasing way with a metaphor.,positive,"Input: Nettelbeck ... has a pleasing way with a metaphor. Answer: positive
+"
+"Priggish, lethargically paced parable of renewal.",negative,"Input: Priggish, lethargically paced parable of renewal. Answer: negative
+"
+"It's got the brawn, but not the brains.",negative,"Input: It's got the brawn, but not the brains. Answer: negative
+"
+Pretty good little movie.,positive,"Input: Pretty good little movie. Answer: positive
+"
+Shyamalan should stop trying to please his mom.,negative,"Input: Shyamalan should stop trying to please his mom. Answer: negative
+"
+There is nothing redeeming about this movie.,negative,"Input: There is nothing redeeming about this movie. Answer: negative
+"
+"Forget the misleading title, what's with the unexplained baboon cameo?",negative,"Input: Forget the misleading title, what's with the unexplained baboon cameo? Answer: negative
+"
+A tasty masala.,positive,"Input: A tasty masala. Answer: positive
+"
+A sensitive and astute first feature by Anne-Sophie Birot.,positive,"Input: A sensitive and astute first feature by Anne-Sophie Birot. Answer: positive
+"
+Press the delete key.,negative,"Input: Press the delete key. Answer: negative
+"
+Neither revelatory nor truly edgy--merely crassly flamboyant and comedically labored.,negative,"Input: Neither revelatory nor truly edgy--merely crassly flamboyant and comedically labored. Answer: negative
+"
+It is refreshingly undogmatic about its characters.,positive,"Input: It is refreshingly undogmatic about its characters. Answer: positive
+"
+"The entire cast is first-rate, especially Sorvino.",positive,"Input: The entire cast is first-rate, especially Sorvino. Answer: positive
+"
+Get out your pooper-scoopers.,negative,"Input: Get out your pooper-scoopers. Answer: negative
+"
+You can practically hear George Orwell turning over.,negative,"Input: You can practically hear George Orwell turning over. Answer: negative
+"
+Make like the title and dodge this one.,negative,"Input: Make like the title and dodge this one. Answer: negative
+"
+"Kitschy, flashy, overlong soap opera.",negative,"Input: Kitschy, flashy, overlong soap opera. Answer: negative
+"
+A forceful drama of an alienated executive who re-invents himself.,positive,"Input: A forceful drama of an alienated executive who re-invents himself. Answer: positive
+"
+Fulford-Wierzbicki ... deftly captures the wise-beyond-her-years teen.,positive,"Input: Fulford-Wierzbicki ... deftly captures the wise-beyond-her-years teen. Answer: positive
+"
+Williams absolutely nails Sy's queasy infatuation and overall strangeness.,positive,"Input: Williams absolutely nails Sy's queasy infatuation and overall strangeness. Answer: positive
+"
+An absurdist spider web.,negative,"Input: An absurdist spider web. Answer: negative
+"
+A modestly made but profoundly moving documentary.,positive,"Input: A modestly made but profoundly moving documentary. Answer: positive
+"
+Discursive but oddly riveting documentary.,positive,"Input: Discursive but oddly riveting documentary. Answer: positive
+"
+Consistently clever and suspenseful.,positive,"Input: Consistently clever and suspenseful. Answer: positive
+"
+The Sweetest Thing leaves an awful sour taste.,negative,"Input: The Sweetest Thing leaves an awful sour taste. Answer: negative
+"
+Imagine Susan Sontag falling in love with Howard Stern.,negative,"Input: Imagine Susan Sontag falling in love with Howard Stern. Answer: negative
+"
+Quitting offers piercing domestic drama with spikes of sly humor.,positive,"Input: Quitting offers piercing domestic drama with spikes of sly humor. Answer: positive
+"
+A muted freak-out,negative,"Input: A muted freak-out Answer: negative
+"
+Catch it... if you can!,positive,"Input: Catch it... if you can! Answer: positive
+"
+"Witty, contemplative, and sublimely beautiful.",positive,"Input: Witty, contemplative, and sublimely beautiful. Answer: positive
+"
+Another useless recycling of a brutal mid-'70s American sports movie.,negative,"Input: Another useless recycling of a brutal mid-'70s American sports movie. Answer: negative
+"
+"A depraved, incoherent, instantly disposable piece of hackery.",negative,"Input: A depraved, incoherent, instantly disposable piece of hackery. Answer: negative
+"
+A really good premise is frittered away in middle-of-the-road blandness.,negative,"Input: A really good premise is frittered away in middle-of-the-road blandness. Answer: negative
+"
+Bouquet gives a performance that is masterly.,positive,"Input: Bouquet gives a performance that is masterly. Answer: positive
+"
+This thing works on no level whatsoever for me.,negative,"Input: This thing works on no level whatsoever for me. Answer: negative
+"
+An hour and a half of joyful solo performance.,positive,"Input: An hour and a half of joyful solo performance. Answer: positive
+"
+A listless and desultory affair.,negative,"Input: A listless and desultory affair. Answer: negative
+"
+"Ponderous, plodding soap opera disguised as a feature film.",negative,"Input: Ponderous, plodding soap opera disguised as a feature film. Answer: negative
+"
+A very depressing movie of many missed opportunities.,negative,"Input: A very depressing movie of many missed opportunities. Answer: negative
+"
+"Enjoyably fast-moving, hard-hitting documentary.",positive,"Input: Enjoyably fast-moving, hard-hitting documentary. Answer: positive
+"
+Worth catching for Griffiths' warm and winning central performance.,positive,"Input: Worth catching for Griffiths' warm and winning central performance. Answer: positive
+"
+Nothing about this movie works.,negative,"Input: Nothing about this movie works. Answer: negative
+"
+"Forgettable, if good-hearted, movie.",negative,"Input: Forgettable, if good-hearted, movie. Answer: negative
+"
+"An ugly, revolting movie.",negative,"Input: An ugly, revolting movie. Answer: negative
+"
+"A refreshingly realistic, affectation-free coming-of-age tale.",positive,"Input: A refreshingly realistic, affectation-free coming-of-age tale. Answer: positive
+"
+"A perceptive, good-natured movie.",positive,"Input: A perceptive, good-natured movie. Answer: positive
+"
+Banal and predictable.,negative,"Input: Banal and predictable. Answer: negative
+"
+Amazingly dopey.,positive,"Input: Amazingly dopey. Answer: positive
+"
+It's a satisfying summer blockbuster and worth a look.,positive,"Input: It's a satisfying summer blockbuster and worth a look. Answer: positive
+"
+"Overwrought, melodramatic bodice-ripper.",negative,"Input: Overwrought, melodramatic bodice-ripper. Answer: negative
+"
+Takes a simple premise and carries it to unexpected heights.,positive,"Input: Takes a simple premise and carries it to unexpected heights. Answer: positive
+"
+"In The New Guy, even the bull gets recycled.",negative,"Input: In The New Guy, even the bull gets recycled. Answer: negative
+"
+It's Splash without the jokes.,negative,"Input: It's Splash without the jokes. Answer: negative
+"
+Did we really need a remake of ``Charade?'',negative,"Input: Did we really need a remake of ``Charade?'' Answer: negative
+"
+"A solid, psychological action film from Hong Kong.",positive,"Input: A solid, psychological action film from Hong Kong. Answer: positive
+"
+"The satire is unfocused, while the story goes nowhere.",negative,"Input: The satire is unfocused, while the story goes nowhere. Answer: negative
+"
+Something must have been lost in the translation.,negative,"Input: Something must have been lost in the translation. Answer: negative
+"
+The film desperately sinks further and further into comedy futility.,negative,"Input: The film desperately sinks further and further into comedy futility. Answer: negative
+"
+Extremely bad.,negative,"Input: Extremely bad. Answer: negative
+"
+The rollerball sequences feel sanitised and stagey.,negative,"Input: The rollerball sequences feel sanitised and stagey. Answer: negative
+"
+"Invigorating, surreal, and resonant with a rainbow of emotion.",positive,"Input: Invigorating, surreal, and resonant with a rainbow of emotion. Answer: positive
+"
+"A tired, unimaginative and derivative variation of that already-shallow genre.",negative,"Input: A tired, unimaginative and derivative variation of that already-shallow genre. Answer: negative
+"
+"The cast is phenomenal, especially the women.",positive,"Input: The cast is phenomenal, especially the women. Answer: positive
+"
+"...a cheap, ludicrous attempt at serious horror.",negative,"Input: ...a cheap, ludicrous attempt at serious horror. Answer: negative
+"
+Tiresomely derivative and hammily acted.,negative,"Input: Tiresomely derivative and hammily acted. Answer: negative
+"
+"Fast-paced and wonderfully edited, the film is extremely thorough.",positive,"Input: Fast-paced and wonderfully edited, the film is extremely thorough. Answer: positive
+"
+It's definitely a step in the right direction.,positive,"Input: It's definitely a step in the right direction. Answer: positive
+"
+There's nothing remotely topical or sexy here.,negative,"Input: There's nothing remotely topical or sexy here. Answer: negative
+"
+"Unexpected, and often contradictory, truths emerge.",positive,"Input: Unexpected, and often contradictory, truths emerge. Answer: positive
+"
+The densest distillation of Roberts' movies ever made.,negative,"Input: The densest distillation of Roberts' movies ever made. Answer: negative
+"
+Murder by Numbers just doesn't add up.,negative,"Input: Murder by Numbers just doesn't add up. Answer: negative
+"
+"A so-so, made-for-TV something posing as a real movie.",negative,"Input: A so-so, made-for-TV something posing as a real movie. Answer: negative
+"
+This strenuously unfunny Showtime deserves the hook.,negative,"Input: This strenuously unfunny Showtime deserves the hook. Answer: negative
+"
+"Throughout, Mr. Audiard's direction is fluid and quick.",positive,"Input: Throughout, Mr. Audiard's direction is fluid and quick. Answer: positive
+"
+"Some episodes work, some don't.",negative,"Input: Some episodes work, some don't. Answer: negative
+"
+Where the film falters is in its tone.,negative,"Input: Where the film falters is in its tone. Answer: negative
+"
+"Downbeat, period-perfect biopic hammers home a heavy-handed moralistic message.",positive,"Input: Downbeat, period-perfect biopic hammers home a heavy-handed moralistic message. Answer: positive
+"
+As steamy as last week's pork dumplings.,negative,"Input: As steamy as last week's pork dumplings. Answer: negative
+"
+"Crammed with incident, and bristles with passion and energy.",positive,"Input: Crammed with incident, and bristles with passion and energy. Answer: positive
+"
+The best part about ``Gangs'' was Daniel Day-Lewis.,positive,"Input: The best part about ``Gangs'' was Daniel Day-Lewis. Answer: positive
+"
+"An ambitious, guilt-suffused melodrama crippled by poor casting.",negative,"Input: An ambitious, guilt-suffused melodrama crippled by poor casting. Answer: negative
+"
+Ferrara's strongest and most touching movie of recent years.,positive,"Input: Ferrara's strongest and most touching movie of recent years. Answer: positive
+"
+"If you like peace, you'll like Promises.",positive,"Input: If you like peace, you'll like Promises. Answer: positive
+"
+"Philosophically, intellectually and logistically a mess.",negative,"Input: Philosophically, intellectually and logistically a mess. Answer: negative
+"
+Intimate and panoramic.,positive,"Input: Intimate and panoramic. Answer: positive
+"
+"Feels shrill, simple and soapy.",negative,"Input: Feels shrill, simple and soapy. Answer: negative
+"
+A fleet-footed and pleasingly upbeat family diversion.,positive,"Input: A fleet-footed and pleasingly upbeat family diversion. Answer: positive
+"
+It's virtually impossible to like any of these despicable characters.,negative,"Input: It's virtually impossible to like any of these despicable characters. Answer: negative
+"
+Decent but dull.,negative,"Input: Decent but dull. Answer: negative
+"
+"Tells a fascinating, compelling story.",positive,"Input: Tells a fascinating, compelling story. Answer: positive
+"
+"Without Shakespeare's eloquent language, the update is dreary and sluggish.",negative,"Input: Without Shakespeare's eloquent language, the update is dreary and sluggish. Answer: negative
+"
+A processed comedy chop suey.,negative,"Input: A processed comedy chop suey. Answer: negative
+"
+It's a very valuable film...,positive,"Input: It's a very valuable film... Answer: positive
+"
+The beautifully choreographed kitchen ballet is simple but absorbing.,positive,"Input: The beautifully choreographed kitchen ballet is simple but absorbing. Answer: positive
+"
+A stirring road movie.,positive,"Input: A stirring road movie. Answer: positive
+"
+A big fat pain.,negative,"Input: A big fat pain. Answer: negative
+"
+A film of ideas and wry comic mayhem.,positive,"Input: A film of ideas and wry comic mayhem. Answer: positive
+"
+A surprisingly funny movie.,positive,"Input: A surprisingly funny movie. Answer: positive
+"
+"A moving essay about the specter of death, especially suicide.",positive,"Input: A moving essay about the specter of death, especially suicide. Answer: positive
+"
+Poignant and delicately complex.,positive,"Input: Poignant and delicately complex. Answer: positive
+"
+"A weird, arresting little ride.",positive,"Input: A weird, arresting little ride. Answer: positive
+"
+"Cold, Sterile And Lacking Any Color Or Warmth.",negative,"Input: Cold, Sterile And Lacking Any Color Or Warmth. Answer: negative
+"
+Eight Legged Freaks falls flat as a spoof.,negative,"Input: Eight Legged Freaks falls flat as a spoof. Answer: negative
+"
+Includes too much obvious padding.,negative,"Input: Includes too much obvious padding. Answer: negative
+"
+A straight-ahead thriller that never rises above superficiality.,negative,"Input: A straight-ahead thriller that never rises above superficiality. Answer: negative
+"
+"A funny, triumphant, and moving documentary.",positive,"Input: A funny, triumphant, and moving documentary. Answer: positive
+"
+Simply a re-hash of the other seven films.,negative,"Input: Simply a re-hash of the other seven films. Answer: negative
+"
+Hard to resist.,positive,"Input: Hard to resist. Answer: positive
+"
+Qualities that were once amusing are becoming irritating.,negative,"Input: Qualities that were once amusing are becoming irritating. Answer: negative
+"
+Do we really need another film that praises female self-sacrifice?,negative,"Input: Do we really need another film that praises female self-sacrifice? Answer: negative
+"
+Genuinely unnerving.,positive,"Input: Genuinely unnerving. Answer: positive
+"
+``Abandon'' will leave you wanting to abandon the theater.,negative,"Input: ``Abandon'' will leave you wanting to abandon the theater. Answer: negative
+"
+"A moving, if uneven, success.",positive,"Input: A moving, if uneven, success. Answer: positive
+"
+Earnest and heartfelt but undernourished and plodding.,positive,"Input: Earnest and heartfelt but undernourished and plodding. Answer: positive
+"
+Move over Bond; this girl deserves a sequel.,positive,"Input: Move over Bond; this girl deserves a sequel. Answer: positive
+"
+Jeffrey Tambor's performance as the intelligent jazz-playing exterminator is Oscar-worthy.,positive,"Input: Jeffrey Tambor's performance as the intelligent jazz-playing exterminator is Oscar-worthy. Answer: positive
+"
+Shallow.,negative,"Input: Shallow. Answer: negative
+"
+It's just not very smart.,negative,"Input: It's just not very smart. Answer: negative
+"
+An awful snooze.,negative,"Input: An awful snooze. Answer: negative
+"
+The film is strictly routine.,negative,"Input: The film is strictly routine. Answer: negative
+"
+Less than fresh.,negative,"Input: Less than fresh. Answer: negative
+"
+"Mostly honest, this somber picture reveals itself slowly, intelligently, artfully.",positive,"Input: Mostly honest, this somber picture reveals itself slowly, intelligently, artfully. Answer: positive
+"
+Hugely accomplished slice of Hitchcockian suspense.,positive,"Input: Hugely accomplished slice of Hitchcockian suspense. Answer: positive
+"
+"Smart, sassy interpretation of the Oscar Wilde play.",positive,"Input: Smart, sassy interpretation of the Oscar Wilde play. Answer: positive
+"
+A relative letdown.,negative,"Input: A relative letdown. Answer: negative
+"
+A moving story of determination and the human spirit.,positive,"Input: A moving story of determination and the human spirit. Answer: positive
+"
+"Its gentle, touching story creeps into your heart.",positive,"Input: Its gentle, touching story creeps into your heart. Answer: positive
+"
+A cleverly crafted but ultimately hollow mockumentary.,negative,"Input: A cleverly crafted but ultimately hollow mockumentary. Answer: negative
+"
+"Starts promisingly but disintegrates into a dreary, humorless soap opera.",negative,"Input: Starts promisingly but disintegrates into a dreary, humorless soap opera. Answer: negative
+"
+A smart little indie.,positive,"Input: A smart little indie. Answer: positive
+"
+Characterisation has been sacrificed for the sake of spectacle.,negative,"Input: Characterisation has been sacrificed for the sake of spectacle. Answer: negative
+"
+Morvern rocks.,positive,"Input: Morvern rocks. Answer: positive
+"
+And people make fun of me for liking Showgirls.,negative,"Input: And people make fun of me for liking Showgirls. Answer: negative
+"
+...irritating soul-searching garbage.,negative,"Input: ...irritating soul-searching garbage. Answer: negative
+"
+A singularly off-putting romantic comedy.,negative,"Input: A singularly off-putting romantic comedy. Answer: negative
+"
+delightfully rendered,positive,"Input: delightfully rendered Answer: positive
+"
+...spellbinding fun and deliciously exploitative.,positive,"Input: ...spellbinding fun and deliciously exploitative. Answer: positive
+"
+A compelling motion picture that illustrates an American tragedy.,positive,"Input: A compelling motion picture that illustrates an American tragedy. Answer: positive
+"
+A weird and wonderful comedy.,positive,"Input: A weird and wonderful comedy. Answer: positive
+"
+"Elegant, mannered and teasing.",positive,"Input: Elegant, mannered and teasing. Answer: positive
+"
+The drama discloses almost nothing.,negative,"Input: The drama discloses almost nothing. Answer: negative
+"
+You'll end up moved.,positive,"Input: You'll end up moved. Answer: positive
+"
+Ah-nuld's action hero days might be over.,negative,"Input: Ah-nuld's action hero days might be over. Answer: negative
+"
+A good thriller.,positive,"Input: A good thriller. Answer: positive
+"
+Almost as offensive as ``Freddy Got Fingered.'',negative,"Input: Almost as offensive as ``Freddy Got Fingered.'' Answer: negative
+"
+"A pretty decent kid-pleasing, tolerable-to-adults lark of a movie.",positive,"Input: A pretty decent kid-pleasing, tolerable-to-adults lark of a movie. Answer: positive
+"
+This ludicrous film is predictable at every turn.,negative,"Input: This ludicrous film is predictable at every turn. Answer: negative
+"
+The whole thing plays like a tired Tyco ad.,negative,"Input: The whole thing plays like a tired Tyco ad. Answer: negative
+"
+A charmer from Belgium.,positive,"Input: A charmer from Belgium. Answer: positive
+"
+...contains very few laughs and even less surprises.,negative,"Input: ...contains very few laughs and even less surprises. Answer: negative
+"
+a screenplay more ingeniously constructed than ``Memento'',positive,"Input: a screenplay more ingeniously constructed than ``Memento'' Answer: positive
+"
+One of the most incoherent features in recent memory.,negative,"Input: One of the most incoherent features in recent memory. Answer: negative
+"
+Beautiful to watch and holds a certain charm.,positive,"Input: Beautiful to watch and holds a certain charm. Answer: positive
+"
+"An empty, purposeless exercise.",negative,"Input: An empty, purposeless exercise. Answer: negative
+"
+...overly melodramatic...,negative,"Input: ...overly melodramatic... Answer: negative
+"
+Secretary is just too original to be ignored.,positive,"Input: Secretary is just too original to be ignored. Answer: positive
+"
+It's a diverting enough hour-and-a-half for the family audience.,positive,"Input: It's a diverting enough hour-and-a-half for the family audience. Answer: positive
+"
+All three women deliver remarkable performances.,positive,"Input: All three women deliver remarkable performances. Answer: positive
+"
+"A dark, quirky road movie that constantly defies expectation.",positive,"Input: A dark, quirky road movie that constantly defies expectation. Answer: positive
+"
+"...the story is far-flung, illogical, and plain stupid.",negative,"Input: ...the story is far-flung, illogical, and plain stupid. Answer: negative
+"
+One of the worst movies of the year.,negative,"Input: One of the worst movies of the year. Answer: negative
+"
+A brutally dry satire of Middle American numbness.,negative,"Input: A brutally dry satire of Middle American numbness. Answer: negative
+"
+I don't think this movie loves women at all.,negative,"Input: I don't think this movie loves women at all. Answer: negative
+"
+Its sheer dynamism is infectious.,positive,"Input: Its sheer dynamism is infectious. Answer: positive
+"
+Gives an intriguing twist to the French coming-of-age genre.,positive,"Input: Gives an intriguing twist to the French coming-of-age genre. Answer: positive
+"
+This u-boat doesn't have a captain.,negative,"Input: This u-boat doesn't have a captain. Answer: negative
+"
+Obvious.,negative,"Input: Obvious. Answer: negative
+"
+This beautifully animated epic is never dull.,positive,"Input: This beautifully animated epic is never dull. Answer: positive
+"
+Poignant Japanese epic about adolescent anomie and heartbreak.,positive,"Input: Poignant Japanese epic about adolescent anomie and heartbreak. Answer: positive
+"
+About as big a crowdpleaser as they possibly come.,positive,"Input: About as big a crowdpleaser as they possibly come. Answer: positive
+"
+"An inexperienced director, Mehta has much to learn.",negative,"Input: An inexperienced director, Mehta has much to learn. Answer: negative
+"
+"Has an unmistakable, easy joie de vivre.",positive,"Input: Has an unmistakable, easy joie de vivre. Answer: positive
+"
+Hip-hop prison thriller of stupefying absurdity.,negative,"Input: Hip-hop prison thriller of stupefying absurdity. Answer: negative
+"
+Never inspires more than an interested detachment.,negative,"Input: Never inspires more than an interested detachment. Answer: negative
+"
+Familiar but utterly delightful.,positive,"Input: Familiar but utterly delightful. Answer: positive
+"
+It's a rare window on an artistic collaboration.,positive,"Input: It's a rare window on an artistic collaboration. Answer: positive
+"
+"The jokes are flat, and the action looks fake.",negative,"Input: The jokes are flat, and the action looks fake. Answer: negative
+"
+...quite endearing.,positive,"Input: ...quite endearing. Answer: positive
+"
+"A superlative B movie -- funny, sexy, and rousing.",positive,"Input: A superlative B movie -- funny, sexy, and rousing. Answer: positive
+"
+A thriller without a lot of thrills.,negative,"Input: A thriller without a lot of thrills. Answer: negative
+"
+Odd and weird.,negative,"Input: Odd and weird. Answer: negative
+"
+Too silly to take seriously.,negative,"Input: Too silly to take seriously. Answer: negative
+"
+"A compelling yarn, but not quite a ripping one.",positive,"Input: A compelling yarn, but not quite a ripping one. Answer: positive
+"
+The leanest and meanest of Solondz's misanthropic comedies.,positive,"Input: The leanest and meanest of Solondz's misanthropic comedies. Answer: positive
+"
+"Exactly what its title implies: lusty, boisterous and utterly charming.",positive,"Input: Exactly what its title implies: lusty, boisterous and utterly charming. Answer: positive
+"
+A stylish thriller.,positive,"Input: A stylish thriller. Answer: positive
+"
+The movie is a trove of delights.,positive,"Input: The movie is a trove of delights. Answer: positive
+"
+Intriguing and stylish.,positive,"Input: Intriguing and stylish. Answer: positive
+"
+"Reassuring, retro uplifter.",positive,"Input: Reassuring, retro uplifter. Answer: positive
+"
+"A wonderful, ghastly film.",positive,"Input: A wonderful, ghastly film. Answer: positive
+"
+"There's back-stabbing, inter-racial desire and, most importantly, singing and dancing.",positive,"Input: There's back-stabbing, inter-racial desire and, most importantly, singing and dancing. Answer: positive
+"
+Surprisingly powerful and universal.,positive,"Input: Surprisingly powerful and universal. Answer: positive
+"
+An uneven mix of dark satire and childhood awakening.,negative,"Input: An uneven mix of dark satire and childhood awakening. Answer: negative
+"
+A lovely and beautifully photographed romance.,positive,"Input: A lovely and beautifully photographed romance. Answer: positive
+"
+... a confusing drudgery.,negative,"Input: ... a confusing drudgery. Answer: negative
+"
+A well-executed spy-thriller.,positive,"Input: A well-executed spy-thriller. Answer: positive
+"
+An impenetrable and insufferable ball of pseudo-philosophic twaddle.,negative,"Input: An impenetrable and insufferable ball of pseudo-philosophic twaddle. Answer: negative
+"
+Comes off like a bad imitation of the Bard.,negative,"Input: Comes off like a bad imitation of the Bard. Answer: negative
+"
+Essentially a collection of bits -- and they're all naughty.,positive,"Input: Essentially a collection of bits -- and they're all naughty. Answer: positive
+"
+The film offers an intriguing what-if premise.,positive,"Input: The film offers an intriguing what-if premise. Answer: positive
+"
+"A well-done film of a self-reflexive, philosophical nature.",positive,"Input: A well-done film of a self-reflexive, philosophical nature. Answer: positive
+"
+A slight but sweet film.,positive,"Input: A slight but sweet film. Answer: positive
+"
+A waste of fearless purity in the acting craft.,negative,"Input: A waste of fearless purity in the acting craft. Answer: negative
+"
+Bring on the sequel.,positive,"Input: Bring on the sequel. Answer: positive
+"
+"This is a movie full of grace and, ultimately, hope.",positive,"Input: This is a movie full of grace and, ultimately, hope. Answer: positive
+"
+"Funny in a sick, twisted sort of way.",positive,"Input: Funny in a sick, twisted sort of way. Answer: positive
+"
+It's always fascinating to watch Marker the essayist at work.,positive,"Input: It's always fascinating to watch Marker the essayist at work. Answer: positive
+"
+...a guiltless film for nice evening out.,positive,"Input: ...a guiltless film for nice evening out. Answer: positive
+"
+Needed a little less bling-bling and a lot more romance.,negative,"Input: Needed a little less bling-bling and a lot more romance. Answer: negative
+"
+Fun and nimble.,positive,"Input: Fun and nimble. Answer: positive
+"
+An alternately fascinating and frustrating documentary.,positive,"Input: An alternately fascinating and frustrating documentary. Answer: positive
+"
+"Its premise is smart, but the execution is pretty weary.",negative,"Input: Its premise is smart, but the execution is pretty weary. Answer: negative
+"
+Sex is one of those films that aims to confuse.,negative,"Input: Sex is one of those films that aims to confuse. Answer: negative
+"
+What an embarrassment.,negative,"Input: What an embarrassment. Answer: negative
+"
+"It's not a bad premise, just a bad movie.",negative,"Input: It's not a bad premise, just a bad movie. Answer: negative
+"
+Feels familiar and tired.,negative,"Input: Feels familiar and tired. Answer: negative
+"
+One of the funnier movies in town.,positive,"Input: One of the funnier movies in town. Answer: positive
+"
+Brave and sweetly rendered love story.,positive,"Input: Brave and sweetly rendered love story. Answer: positive
+"
+A compelling film.,positive,"Input: A compelling film. Answer: positive
+"
+One funny popcorn flick.,positive,"Input: One funny popcorn flick. Answer: positive
+"
+Never comes together as a coherent whole.,negative,"Input: Never comes together as a coherent whole. Answer: negative
+"
+A genuinely moving and wisely unsentimental drama.,positive,"Input: A genuinely moving and wisely unsentimental drama. Answer: positive
+"
+"Hollywood Ending is not show-stoppingly hilarious, but scathingly witty nonetheless.",positive,"Input: Hollywood Ending is not show-stoppingly hilarious, but scathingly witty nonetheless. Answer: positive
+"
+As plain and pedestrian as catsup--,negative,"Input: As plain and pedestrian as catsup-- Answer: negative
+"
+Has its moments -- and almost as many subplots.,positive,"Input: Has its moments -- and almost as many subplots. Answer: positive
+"
+Mediocre fable from Burkina Faso.,negative,"Input: Mediocre fable from Burkina Faso. Answer: negative
+"
+There's a lot to recommend Read My Lips.,positive,"Input: There's a lot to recommend Read My Lips. Answer: positive
+"
+"Sunk by way too much indulgence of scene-chewing, teeth-gnashing actorliness.",negative,"Input: Sunk by way too much indulgence of scene-chewing, teeth-gnashing actorliness. Answer: negative
+"
+A moving picture that does not move.,negative,"Input: A moving picture that does not move. Answer: negative
+"
+Delirious fun.,positive,"Input: Delirious fun. Answer: positive
+"
+The Scorpion King is more fun than Conan the Barbarian.,positive,"Input: The Scorpion King is more fun than Conan the Barbarian. Answer: positive
+"
+Nicole Kidman makes it a party worth attending.,positive,"Input: Nicole Kidman makes it a party worth attending. Answer: positive
+"
+More trifle than triumph.,negative,"Input: More trifle than triumph. Answer: negative
+"
+A ragbag of cliches.,negative,"Input: A ragbag of cliches. Answer: negative
+"
+Russian Ark is a new treasure of the Hermitage.,positive,"Input: Russian Ark is a new treasure of the Hermitage. Answer: positive
+"
+Nice piece of work.,positive,"Input: Nice piece of work. Answer: positive
+"
+It's bedeviled by labored writing and slack direction.,negative,"Input: It's bedeviled by labored writing and slack direction. Answer: negative
+"
+I simply can't recommend it enough.,positive,"Input: I simply can't recommend it enough. Answer: positive
+"
+"This cloying, voices-from-the-other-side story is hell.",negative,"Input: This cloying, voices-from-the-other-side story is hell. Answer: negative
+"
+There's a reason why halftime is only fifteen minutes long.,negative,"Input: There's a reason why halftime is only fifteen minutes long. Answer: negative
+"
+...a triumph of emotionally and narratively complex filmmaking.,positive,"Input: ...a triumph of emotionally and narratively complex filmmaking. Answer: positive
+"
+a joyous occasion,positive,"Input: a joyous occasion Answer: positive
+"
+How this one escaped the Lifetime network I'll never know.,negative,"Input: How this one escaped the Lifetime network I'll never know. Answer: negative
+"
+A heartening tale of small victories and enduring hope.,positive,"Input: A heartening tale of small victories and enduring hope. Answer: positive
+"
+"It's never laugh-out-loud funny, but it is frequently amusing.",positive,"Input: It's never laugh-out-loud funny, but it is frequently amusing. Answer: positive
+"
+Too bad Maggio couldn't come up with a better script.,negative,"Input: Too bad Maggio couldn't come up with a better script. Answer: negative
+"
+...``Bowling for Columbine'' remains a disquieting and thought-provoking film...,positive,"Input: ...``Bowling for Columbine'' remains a disquieting and thought-provoking film... Answer: positive
+"
+...another example of how Sandler is losing his touch.,negative,"Input: ...another example of how Sandler is losing his touch. Answer: negative
+"
+A film that's flawed and brilliant in equal measure.,positive,"Input: A film that's flawed and brilliant in equal measure. Answer: positive
+"
+The Pool drowned me in boredom.,negative,"Input: The Pool drowned me in boredom. Answer: negative
+"
+A perfectly pleasant if slightly pokey comedy.,positive,"Input: A perfectly pleasant if slightly pokey comedy. Answer: positive
+"
+The Komediant is a tale worth catching.,positive,"Input: The Komediant is a tale worth catching. Answer: positive
+"
+Plays like the old disease-of-the-week small-screen melodramas.,negative,"Input: Plays like the old disease-of-the-week small-screen melodramas. Answer: negative
+"
+A tour de force of modern cinema.,positive,"Input: A tour de force of modern cinema. Answer: positive
+"
+Daring and beautifully made.,positive,"Input: Daring and beautifully made. Answer: positive
+"
+The mushy finale turns John Q into a movie-of-the-week tearjerker.,positive,"Input: The mushy finale turns John Q into a movie-of-the-week tearjerker. Answer: positive
+"
+The performances are remarkable.,positive,"Input: The performances are remarkable. Answer: positive
+"
+More intellectually scary than dramatically involving.,negative,"Input: More intellectually scary than dramatically involving. Answer: negative
+"
+Rife with nutty cliches and far too much dialogue.,negative,"Input: Rife with nutty cliches and far too much dialogue. Answer: negative
+"
+A charming but slight comedy.,positive,"Input: A charming but slight comedy. Answer: positive
+"
+A sharp satire of desperation and cinematic deception.,positive,"Input: A sharp satire of desperation and cinematic deception. Answer: positive
+"
+"An awfully good, achingly human picture.",positive,"Input: An awfully good, achingly human picture. Answer: positive
+"
+"Obvious, obnoxious and didactic burlesque.",negative,"Input: Obvious, obnoxious and didactic burlesque. Answer: negative
+"
+...an interesting slice of history.,positive,"Input: ...an interesting slice of history. Answer: positive
+"
+Been there done that.,negative,"Input: Been there done that. Answer: negative
+"
+"A deftly entertaining film, smartly played and smartly directed.",positive,"Input: A deftly entertaining film, smartly played and smartly directed. Answer: positive
+"
+Stiff and schmaltzy and clumsily directed.,negative,"Input: Stiff and schmaltzy and clumsily directed. Answer: negative
+"
+Smith finds amusing juxtapositions that justify his exercise.,positive,"Input: Smith finds amusing juxtapositions that justify his exercise. Answer: positive
+"
+Undoubtedly the scariest movie ever made about tattoos.,positive,"Input: Undoubtedly the scariest movie ever made about tattoos. Answer: positive
+"
+Below is well below expectations.,negative,"Input: Below is well below expectations. Answer: negative
+"
+What begins brightly gets bogged down over 140 minutes.,negative,"Input: What begins brightly gets bogged down over 140 minutes. Answer: negative
+"
+Audacious-impossible yet compelling...,positive,"Input: Audacious-impossible yet compelling... Answer: positive
+"
+A sub-formulaic slap in the face to seasonal cheer.,negative,"Input: A sub-formulaic slap in the face to seasonal cheer. Answer: negative
+"
+"A breezy blend of art, history, esoteric musings and philosophy.",positive,"Input: A breezy blend of art, history, esoteric musings and philosophy. Answer: positive
+"
+A sentimental mess that never rings true.,negative,"Input: A sentimental mess that never rings true. Answer: negative
+"
+Its one-sidedness ... flirts with propaganda.,negative,"Input: Its one-sidedness ... flirts with propaganda. Answer: negative
+"
+A wildly entertaining scan of Evans' career.,positive,"Input: A wildly entertaining scan of Evans' career. Answer: positive
+"
+A conventional but heartwarming tale.,positive,"Input: A conventional but heartwarming tale. Answer: positive
+"
+The code talkers deserved better than a hollow tribute.,negative,"Input: The code talkers deserved better than a hollow tribute. Answer: negative
+"
+Diaz wears out her welcome in her most charmless performance,negative,"Input: Diaz wears out her welcome in her most charmless performance Answer: negative
+"
+The film is flat.,negative,"Input: The film is flat. Answer: negative
+"
+"eventually arrives at its heart, as simple self-reflection meditation.",positive,"Input: eventually arrives at its heart, as simple self-reflection meditation. Answer: positive
+"
+"Seriously, rent the Disney version.",negative,"Input: Seriously, rent the Disney version. Answer: negative
+"
+An Asian neo-realist treasure.,positive,"Input: An Asian neo-realist treasure. Answer: positive
+"
+The entire movie establishes a wonderfully creepy mood.,positive,"Input: The entire movie establishes a wonderfully creepy mood. Answer: positive
+"
+Definitely worth 95 minutes of your time.,positive,"Input: Definitely worth 95 minutes of your time. Answer: positive
+"
+An escapist confection that's pure entertainment.,positive,"Input: An escapist confection that's pure entertainment. Answer: positive
+"
+An amused indictment of Jaglom's own profession.,positive,"Input: An amused indictment of Jaglom's own profession. Answer: positive
+"
+One lousy movie.,negative,"Input: One lousy movie. Answer: negative
+"
+More tiring than anything.,negative,"Input: More tiring than anything. Answer: negative
+"
+An intimate contemplation of two marvelously messy lives.,positive,"Input: An intimate contemplation of two marvelously messy lives. Answer: positive
+"
+Offers absolutely nothing I hadn't already seen.,negative,"Input: Offers absolutely nothing I hadn't already seen. Answer: negative
+"
+A must see for all sides of the political spectrum,positive,"Input: A must see for all sides of the political spectrum Answer: positive
+"
+Intriguing and downright intoxicating.,positive,"Input: Intriguing and downright intoxicating. Answer: positive
+"
+My own minority report is that it stinks.,negative,"Input: My own minority report is that it stinks. Answer: negative
+"
+...a rather bland affair.,negative,"Input: ...a rather bland affair. Answer: negative
+"
+Steven Spielberg brings us another masterpiece,positive,"Input: Steven Spielberg brings us another masterpiece Answer: positive
+"
+An infinitely wittier version of the Home Alone formula.,positive,"Input: An infinitely wittier version of the Home Alone formula. Answer: positive
+"
+"Despite some comic sparks, Welcome to Collinwood never catches fire.",negative,"Input: Despite some comic sparks, Welcome to Collinwood never catches fire. Answer: negative
+"
+...a true delight.,positive,"Input: ...a true delight. Answer: positive
+"
+"A movie you observe, rather than one you enter into.",negative,"Input: A movie you observe, rather than one you enter into. Answer: negative
+"
+A tremendous piece of work.,positive,"Input: A tremendous piece of work. Answer: positive
+"
+"The slapstick is labored, and the bigger setpieces flat.",negative,"Input: The slapstick is labored, and the bigger setpieces flat. Answer: negative
+"
+"About Schmidt is Nicholson's goofy, heartfelt, mesmerizing King Lear.",positive,"Input: About Schmidt is Nicholson's goofy, heartfelt, mesmerizing King Lear. Answer: positive
+"
+"...a bland, pretentious mess.",negative,"Input: ...a bland, pretentious mess. Answer: negative
+"
+Storytelling feels slight.,negative,"Input: Storytelling feels slight. Answer: negative
+"
+"Uneven, self-conscious but often hilarious spoof.",positive,"Input: Uneven, self-conscious but often hilarious spoof. Answer: positive
+"
+"Anemic, pretentious.",negative,"Input: Anemic, pretentious. Answer: negative
+"
+"It makes compelling, provocative and prescient viewing.",positive,"Input: It makes compelling, provocative and prescient viewing. Answer: positive
+"
+Predictably melodramatic.,negative,"Input: Predictably melodramatic. Answer: negative
+"
+Beautifully directed and convincingly acted.,positive,"Input: Beautifully directed and convincingly acted. Answer: positive
+"
+Don't even bother to rent this on video.,negative,"Input: Don't even bother to rent this on video. Answer: negative
+"
+Cho's timing is priceless.,positive,"Input: Cho's timing is priceless. Answer: positive
+"
+"Hopelessly inane, humorless and under-inspired.",negative,"Input: Hopelessly inane, humorless and under-inspired. Answer: negative
+"
+"Maryam is a small film, but it offers large rewards.",positive,"Input: Maryam is a small film, but it offers large rewards. Answer: positive
+"
+"Shallow, noisy and pretentious.",negative,"Input: Shallow, noisy and pretentious. Answer: negative
+"
+Rarely does such high-profile talent serve such literate material.,positive,"Input: Rarely does such high-profile talent serve such literate material. Answer: positive
+"
+The soundtrack alone is worth the price of admission.,positive,"Input: The soundtrack alone is worth the price of admission. Answer: positive
+"
+Told just proficiently enough to trounce its overly comfortable trappings.,positive,"Input: Told just proficiently enough to trounce its overly comfortable trappings. Answer: positive
+"
+Plays like a glossy melodrama that occasionally verges on camp.,negative,"Input: Plays like a glossy melodrama that occasionally verges on camp. Answer: negative
+"
+"Formulaic to the 51st power, more like.",negative,"Input: Formulaic to the 51st power, more like. Answer: negative
+"
+Rifkin's references are ... impeccable throughout.,positive,"Input: Rifkin's references are ... impeccable throughout. Answer: positive
+"
+"Illiterate, often inert sci-fi action thriller.",negative,"Input: Illiterate, often inert sci-fi action thriller. Answer: negative
+"
+"It is messy, uncouth, incomprehensible, vicious and absurd.",negative,"Input: It is messy, uncouth, incomprehensible, vicious and absurd. Answer: negative
+"
+Duvall is strong as always.,positive,"Input: Duvall is strong as always. Answer: positive
+"
+A bit too eager to please.,negative,"Input: A bit too eager to please. Answer: negative
+"
+"Sluggish, tonally uneven.",negative,"Input: Sluggish, tonally uneven. Answer: negative
+"
+I liked a lot of the smaller scenes.,positive,"Input: I liked a lot of the smaller scenes. Answer: positive
+"
+"Strange, funny, twisted, brilliant and macabre.",positive,"Input: Strange, funny, twisted, brilliant and macabre. Answer: positive
+"
+A selection of scenes in search of a movie.,negative,"Input: A selection of scenes in search of a movie. Answer: negative
+"
+"Deadly dull, pointless meditation on losers in a gone-to-seed hotel.",negative,"Input: Deadly dull, pointless meditation on losers in a gone-to-seed hotel. Answer: negative
+"
+"Steve Oedekerk is, alas, no Woody Allen.",negative,"Input: Steve Oedekerk is, alas, no Woody Allen. Answer: negative
+"
+"Like Brosnan's performance, Evelyn comes from the heart.",positive,"Input: Like Brosnan's performance, Evelyn comes from the heart. Answer: positive
+"
+An encouraging effort from McCrudden,positive,"Input: An encouraging effort from McCrudden Answer: positive
+"
+Debut effort by ``Project Greenlight'' winner is sappy and amateurish.,negative,"Input: Debut effort by ``Project Greenlight'' winner is sappy and amateurish. Answer: negative
+"
+One can't deny its seriousness and quality.,positive,"Input: One can't deny its seriousness and quality. Answer: positive
+"
+A pleasant piece of escapist entertainment.,positive,"Input: A pleasant piece of escapist entertainment. Answer: positive
+"
+A well-put-together piece of urban satire.,positive,"Input: A well-put-together piece of urban satire. Answer: positive
+"
+A very capable nailbiter.,positive,"Input: A very capable nailbiter. Answer: positive
+"
+There's plenty to impress about E.T.,positive,"Input: There's plenty to impress about E.T. Answer: positive
+"
+"As the dominant Christine, Sylvie Testud is icily brilliant.",positive,"Input: As the dominant Christine, Sylvie Testud is icily brilliant. Answer: positive
+"
+"If only it were, well, funnier.",negative,"Input: If only it were, well, funnier. Answer: negative
+"
+A true pleasure.,positive,"Input: A true pleasure. Answer: positive
+"
+"A grating, emaciated flick.",negative,"Input: A grating, emaciated flick. Answer: negative
+"
+"...a solid, unassuming drama.",positive,"Input: ...a solid, unassuming drama. Answer: positive
+"
+In terms of execution this movie is careless and unfocused.,negative,"Input: In terms of execution this movie is careless and unfocused. Answer: negative
+"
+A negligible British comedy.,negative,"Input: A negligible British comedy. Answer: negative
+"
+"A comedy that is warm, inviting, and surprising.",positive,"Input: A comedy that is warm, inviting, and surprising. Answer: positive
+"
+"Dense, exhilarating documentary.",positive,"Input: Dense, exhilarating documentary. Answer: positive
+"
+Boomers and their kids will have a Barrie good time.,positive,"Input: Boomers and their kids will have a Barrie good time. Answer: positive
+"
+For dance completists only.,negative,"Input: For dance completists only. Answer: negative
+"
+Enticing and often funny documentary.,positive,"Input: Enticing and often funny documentary. Answer: positive
+"
+Sex With Strangers is fascinating ...,positive,"Input: Sex With Strangers is fascinating ... Answer: positive
+"
+An intoxicating experience.,positive,"Input: An intoxicating experience. Answer: positive
+"
+Oddly compelling.,positive,"Input: Oddly compelling. Answer: positive
+"
+A cockeyed shot all the way.,negative,"Input: A cockeyed shot all the way. Answer: negative
+"
+Grating and tedious.,negative,"Input: Grating and tedious. Answer: negative
+"
+The story itself is actually quite vapid.,negative,"Input: The story itself is actually quite vapid. Answer: negative
+"
+It's stylishly directed with verve...,positive,"Input: It's stylishly directed with verve... Answer: positive
+"
+Deliciously mean-spirited and wryly observant.,positive,"Input: Deliciously mean-spirited and wryly observant. Answer: positive
+"
+Rashomon-for-dipsticks tale.,negative,"Input: Rashomon-for-dipsticks tale. Answer: negative
+"
+Watching these eccentrics is both inspiring and pure joy.,positive,"Input: Watching these eccentrics is both inspiring and pure joy. Answer: positive
+"
+"It's an exhilarating place to visit, this laboratory of laughter.",positive,"Input: It's an exhilarating place to visit, this laboratory of laughter. Answer: positive
+"
+Knows how to make our imagination wonder.,positive,"Input: Knows how to make our imagination wonder. Answer: positive
+"
+Exciting and well-paced.,positive,"Input: Exciting and well-paced. Answer: positive
+"
+Terrific casting and solid execution give all three stories life.,positive,"Input: Terrific casting and solid execution give all three stories life. Answer: positive
+"
+Serious and thoughtful.,positive,"Input: Serious and thoughtful. Answer: positive
+"
+A visual spectacle full of stunning images and effects.,positive,"Input: A visual spectacle full of stunning images and effects. Answer: positive
+"
+"Devolves into the derivative, leaning on badly-rendered CGI effects.",negative,"Input: Devolves into the derivative, leaning on badly-rendered CGI effects. Answer: negative
+"
+Kinnear's performance is a career-defining revelation.,positive,"Input: Kinnear's performance is a career-defining revelation. Answer: positive
+"
+Reggio and Glass put on an intoxicating show.,positive,"Input: Reggio and Glass put on an intoxicating show. Answer: positive
+"
+Huppert and Girardot give performances of exceptional honesty.,positive,"Input: Huppert and Girardot give performances of exceptional honesty. Answer: positive
+"
+Moving and vibrant.,positive,"Input: Moving and vibrant. Answer: positive
+"
+Control-Alt-Delete Simone as quickly as possible,negative,"Input: Control-Alt-Delete Simone as quickly as possible Answer: negative
+"
+"Funny, sexy, devastating and incurably romantic.",positive,"Input: Funny, sexy, devastating and incurably romantic. Answer: positive
+"
+"It's endlessly inventive, consistently intelligent and sickeningly savage.",positive,"Input: It's endlessly inventive, consistently intelligent and sickeningly savage. Answer: positive
+"
+Marshall puts a suspenseful spin on standard horror flick formula.,positive,"Input: Marshall puts a suspenseful spin on standard horror flick formula. Answer: positive
+"
+Hollywood Ending just isn't very funny.,negative,"Input: Hollywood Ending just isn't very funny. Answer: negative
+"
+"A preposterous, prurient whodunit.",negative,"Input: A preposterous, prurient whodunit. Answer: negative
+"
+Psychologically savvy.,positive,"Input: Psychologically savvy. Answer: positive
+"
+Poignant and funny.,positive,"Input: Poignant and funny. Answer: positive
+"
+An absorbing and unsettling psychological drama.,positive,"Input: An absorbing and unsettling psychological drama. Answer: positive
+"
+The film is one of the year's best.,positive,"Input: The film is one of the year's best. Answer: positive
+"
+A harrowing account of a psychological breakdown.,positive,"Input: A harrowing account of a psychological breakdown. Answer: positive
+"
+"Appropriately cynical social commentary aside, #9 never quite ignites.",negative,"Input: Appropriately cynical social commentary aside, #9 never quite ignites. Answer: negative
+"
+Exceptionally well acted by Diane Lane and Richard Gere.,positive,"Input: Exceptionally well acted by Diane Lane and Richard Gere. Answer: positive
+"
+...the whole thing succeeded only in making me groggy.,negative,"Input: ...the whole thing succeeded only in making me groggy. Answer: negative
+"
+May puzzle his most ardent fans.,negative,"Input: May puzzle his most ardent fans. Answer: negative
+"
+Lawrence plumbs personal tragedy and also the human comedy.,positive,"Input: Lawrence plumbs personal tragedy and also the human comedy. Answer: positive
+"
+"Twenty years later, E.T. is still a cinematic touchstone.",positive,"Input: Twenty years later, E.T. is still a cinematic touchstone. Answer: positive
+"
+A film of quiet power.,positive,"Input: A film of quiet power. Answer: positive
+"
+"finely crafted, finely written, exquisitely performed",positive,"Input: finely crafted, finely written, exquisitely performed Answer: positive
+"
+Suffers from a flat script and a low budget.,negative,"Input: Suffers from a flat script and a low budget. Answer: negative
+"
+"Compulsively watchable, no matter how degraded things get.",positive,"Input: Compulsively watchable, no matter how degraded things get. Answer: positive
+"
+Majidi's direction has never been smoother or more confident.,positive,"Input: Majidi's direction has never been smoother or more confident. Answer: positive
+"
+"Despite the film's shortcomings, the stories are quietly moving.",positive,"Input: Despite the film's shortcomings, the stories are quietly moving. Answer: positive
+"
+Disjointed parody.,negative,"Input: Disjointed parody. Answer: negative
+"
+"``Freaky Friday,'' it's not.",negative,"Input: ``Freaky Friday,'' it's not. Answer: negative
+"
+Sparse but oddly compelling.,positive,"Input: Sparse but oddly compelling. Answer: positive
+"
+"This is a stunning film, a one-of-a-kind tour de force.",positive,"Input: This is a stunning film, a one-of-a-kind tour de force. Answer: positive
+"
+Succeeds as a well-made evocation of a subculture.,positive,"Input: Succeeds as a well-made evocation of a subculture. Answer: positive
+"
+A full-frontal attack on audience patience.,negative,"Input: A full-frontal attack on audience patience. Answer: negative
+"
+Delivers more than its fair share of saucy hilarity.,positive,"Input: Delivers more than its fair share of saucy hilarity. Answer: positive
+"
+The laughs are as rare as snake foo yung.,negative,"Input: The laughs are as rare as snake foo yung. Answer: negative
+"
+Makes 98 minutes feel like three hours.,negative,"Input: Makes 98 minutes feel like three hours. Answer: negative
+"
+"Well-acted, well-directed and, for all its moodiness, not too pretentious.",positive,"Input: Well-acted, well-directed and, for all its moodiness, not too pretentious. Answer: positive
+"
+What a stiflingly unfunny and unoriginal mess this is!,negative,"Input: What a stiflingly unfunny and unoriginal mess this is! Answer: negative
+"
+"The production design, score and choreography are simply intoxicating.",positive,"Input: The production design, score and choreography are simply intoxicating. Answer: positive
+"
+What a bewilderingly brilliant and entertaining movie this is.,positive,"Input: What a bewilderingly brilliant and entertaining movie this is. Answer: positive
+"
+All mood and no movie.,negative,"Input: All mood and no movie. Answer: negative
+"
+Even the hastily and amateurishly drawn animation cannot engage.,negative,"Input: Even the hastily and amateurishly drawn animation cannot engage. Answer: negative
+"
+"It's super- violent, super-serious and super-stupid.",negative,"Input: It's super- violent, super-serious and super-stupid. Answer: negative
+"
+"Jeong-Hyang Lee's film is deceptively simple, deeply satisfying.",positive,"Input: Jeong-Hyang Lee's film is deceptively simple, deeply satisfying. Answer: positive
+"
+As refreshing as a drink from a woodland stream.,positive,"Input: As refreshing as a drink from a woodland stream. Answer: positive
+"
+This isn't a movie; it's a symptom.,negative,"Input: This isn't a movie; it's a symptom. Answer: negative
+"
+What makes the movie special is its utter sincerity.,positive,"Input: What makes the movie special is its utter sincerity. Answer: positive
+"
+"Please, someone, stop Eric Schaeffer before he makes another film.",negative,"Input: Please, someone, stop Eric Schaeffer before he makes another film. Answer: negative
+"
+"Definitely a crowd-pleaser, but then, so was the Roman Colosseum.",positive,"Input: Definitely a crowd-pleaser, but then, so was the Roman Colosseum. Answer: positive
+"
+The picture emerges as a surprisingly anemic disappointment.,negative,"Input: The picture emerges as a surprisingly anemic disappointment. Answer: negative
+"
+Boring and meandering.,negative,"Input: Boring and meandering. Answer: negative
+"
+It's the funniest American comedy since Graffiti Bridge.,positive,"Input: It's the funniest American comedy since Graffiti Bridge. Answer: positive
+"
+...standard guns versus martial arts cliche with little new added.,positive,"Input: ...standard guns versus martial arts cliche with little new added. Answer: positive
+"
+A real snooze.,negative,"Input: A real snooze. Answer: negative
+"
+"Nothing happens, and it happens to flat characters.",negative,"Input: Nothing happens, and it happens to flat characters. Answer: negative
+"
+There are moments of hilarity to be had.,positive,"Input: There are moments of hilarity to be had. Answer: positive
+"
+This is rote drivel aimed at Mom and Dad's wallet.,negative,"Input: This is rote drivel aimed at Mom and Dad's wallet. Answer: negative
+"
+Richly entertaining and suggestive of any number of metaphorical readings.,positive,"Input: Richly entertaining and suggestive of any number of metaphorical readings. Answer: positive
+"
+A delightful entree in the tradition of food movies.,positive,"Input: A delightful entree in the tradition of food movies. Answer: positive
+"
+Offers a guilt-free trip into feel-good territory.,positive,"Input: Offers a guilt-free trip into feel-good territory. Answer: positive
+"
+The entire movie is in need of a scented bath.,negative,"Input: The entire movie is in need of a scented bath. Answer: negative
+"
+"Formuliac, but fun.",positive,"Input: Formuliac, but fun. Answer: positive
+"

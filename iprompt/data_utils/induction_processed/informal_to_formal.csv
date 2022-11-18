@@ -1,0 +1,31 @@
+input,output,text
+I think that this is interesting.,It is my opinion that this is interesting.,"Input: I think that this is interesting. Answer: It is my opinion that this is interesting.
+"
+Please call once you get there.,Please call upon your arrival.,"Input: Please call once you get there. Answer: Please call upon your arrival.
+"
+The lawyer I met yesterday was helpful. ,The lawyer whom I met yesterday was helpful.,"Input: The lawyer I met yesterday was helpful.  Answer: The lawyer whom I met yesterday was helpful.
+"
+I considered many approaches.,Various approaches were considered.,"Input: I considered many approaches. Answer: Various approaches were considered.
+"
+I can't stand his temper.,I cannot tolerate his temper.,"Input: I can't stand his temper. Answer: I cannot tolerate his temper.
+"
+She looks like her sister.,She resembles her sister.,"Input: She looks like her sister. Answer: She resembles her sister.
+"
+Can you do all these tasks?,Would you be able to accomplish all these tasks?,"Input: Can you do all these tasks? Answer: Would you be able to accomplish all these tasks?
+"
+This song is fire.,This song is incredibly good.,"Input: This song is fire. Answer: This song is incredibly good.
+"
+Do you want me to go with you?,Shall I accompany you?,"Input: Do you want me to go with you? Answer: Shall I accompany you?
+"
+I can't tell the difference between these two.,I find it hard to distinguish between them.,"Input: I can't tell the difference between these two. Answer: I find it hard to distinguish between them.
+"
+I got what you said.,I understood you.,"Input: I got what you said. Answer: I understood you.
+"
+Thanks for your help.,Your assistance is much appreciated.,"Input: Thanks for your help. Answer: Your assistance is much appreciated.
+"
+We don't think it's a good idea to do anything right now.,It is suggested that no action should be taken at this stage.,"Input: We don't think it's a good idea to do anything right now. Answer: It is suggested that no action should be taken at this stage.
+"
+The whole story was made up.,The entire story was fabricated.,"Input: The whole story was made up. Answer: The entire story was fabricated.
+"
+See you tonight.,I look forward to meeting you tonight.,"Input: See you tonight. Answer: I look forward to meeting you tonight.
+"

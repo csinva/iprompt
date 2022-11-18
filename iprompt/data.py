@@ -11,33 +11,51 @@ from iprompt.data_utils.two_num import TASKS_TWO_NUMS
 from iprompt.data_utils.three_num import TASKS_THREE_NUMS
 from iprompt.data_utils.anli import TASKS_ANLI
 from iprompt.data_utils.classification import TASKS_CLASSIFICATION
+from iprompt.data_utils.induction import TASKS_INDUCTION
+from iprompt.data_utils.d3 import TASKS_D3
 
-TASKS = {**TASKS_THREE_NUMS, **TASKS_TWO_NUMS, **
-         TASKS_ONE_NUM, **TASKS_ANLI, **TASKS_CLASSIFICATION}
+TASKS = {
+    **TASKS_THREE_NUMS, **TASKS_TWO_NUMS,
+    **TASKS_ONE_NUM, **TASKS_ANLI, **TASKS_CLASSIFICATION,
+    **TASKS_INDUCTION, **TASKS_D3
+}
 
 
 def get_data(task_name: str = 'add_two',
-             n_shots: int = 1, train_split_frac: float = None,
-             max_dset_size: int=10000,
-             template_num_task_phrasing: int=0,
+             n_shots: int = 1,
+             train_split_frac: float = None,
+             max_dset_size: int = 10000,
+             template_num_task_phrasing: int = 0,
              max_digit: int = 10,
-    ):
+             ):
     """
 
     Params
     ------
-    dset: huggingface dataset
-    check_answer_func: func
-        returns boolean when a string semantically matches the description of a task
-    description: str
-        string brief description of the task
-    train_split: float
+    dset: str
+        huggingface dataset name or custom dataset name
+    n_shots: int
+        number of examples to put in the context (1 for no examples)
+    train_split_frac: float
         fraction of data to use for training
         Note: if specified, returns tuple of (dset_train, dset_test) instead of single dset_train
     max_dset_size: int
-        Data (even for NLI datasets) will be truncated to have at most this many rows
+        maximum number of examples to use (truncate if larger than this)
+    template_num_task_phrasing: int
+        which template to use for task phrasing
+    max_digit: int
+        maximum digit to use in the task (if performing synthetic math)
+
+    Returns
+    -------
+    dsets: HuggingFace Dataset or tuple of HuggingFace Datasets
+        if train_split_frac is None, returns single dset_train
+        else returns tuple of (dset_train, dset_test)
+    check_answer_func: func
+        function to check if a string accurately describes this dataset
+    descr: str
+        string describing the dataset
     """
-    d = defaultdict(list)
     rng = np.random.default_rng(12345)
     # 2nd rng to not break compatibility with earlier data
     rng2 = np.random.default_rng(13)
@@ -51,39 +69,8 @@ def get_data(task_name: str = 'add_two',
     if task_name in TASKS_ONE_NUM.keys() \
             or task_name in TASKS_TWO_NUMS.keys() \
             or task_name in TASKS_THREE_NUMS.keys():
-        template = task['prompt_template_funcs'][template_num_task_phrasing]
-        if task_name in TASKS_ONE_NUM.keys():
-            num_inputs = 1
-        elif task_name in TASKS_TWO_NUMS.keys():
-            num_inputs = 2
-        elif task_name in TASKS_THREE_NUMS.keys():
-            num_inputs = 3
-
-        # dont make unnecessarily big if we're just repeating point
-        actual_max_dset_size = min(
-            pow(max_digit, num_inputs), max_dset_size)
-        for i in range(actual_max_dset_size):
-            # when there are very few possibilities, stratify to use them all
-            if max_digit == 10 and num_inputs <= 2:
-                num1 = i // 10
-                num2 = i % 10
-            else:
-                num1 = rng.integers(low=0, high=max_digit)
-                num2 = rng.integers(low=0, high=max_digit)
-                num3 = rng2.integers(low=0, high=max_digit)
-
-            gen_func = task['gen_func']
-            if num_inputs == 1:
-                x, y = template(num2, gen_func)
-            elif num_inputs == 2:
-                x, y = template(num1, num2, gen_func)
-            elif num_inputs == 3:
-                x, y = template(num1, num2, num3, gen_func)
-
-            d['text'].append(x + y)
-            d['input'].append(x)
-            d['output'].append(y)
-        df = pd.DataFrame.from_dict(d)
+        df = data_funcs.get_task_dataframe(task, task_name, max_digit, max_dset_size,
+                                           template_num_task_phrasing, rng, rng2)
 
     # NLI task, or classification
     else:
@@ -149,7 +136,7 @@ def get_data(task_name: str = 'add_two',
         return dset, check_answer_func, descr
 
 
-def get_init_suffix(task_name: str, use_generic_query: bool=False, template_num_init_string: int=0) -> List:
+def get_init_suffix(task_name: str, use_generic_query: bool = False, template_num_init_string: int = 0) -> List:
     # Note: don't change the order of these (higher ones should be better)
     """Note: questions should end with 2 newlines, so can directly start suffix.
     """

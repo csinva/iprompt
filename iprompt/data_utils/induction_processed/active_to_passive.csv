@@ -1,0 +1,1801 @@
+input,output,text
+The tourist supported the authors.,The authors were supported by the tourist.,"Input: The tourist supported the authors. Answer: The authors were supported by the tourist.
+"
+The athlete contacted the tourists.,The tourists were contacted by the athlete.,"Input: The athlete contacted the tourists. Answer: The tourists were contacted by the athlete.
+"
+The judges believed the bankers.,The bankers were believed by the judges.,"Input: The judges believed the bankers. Answer: The bankers were believed by the judges.
+"
+The president encouraged the actor.,The actor was encouraged by the president.,"Input: The president encouraged the actor. Answer: The actor was encouraged by the president.
+"
+The lawyers believed the authors.,The authors were believed by the lawyers.,"Input: The lawyers believed the authors. Answer: The authors were believed by the lawyers.
+"
+The senator advised the doctors.,The doctors were advised by the senator.,"Input: The senator advised the doctors. Answer: The doctors were advised by the senator.
+"
+The authors advised the student.,The student was advised by the authors.,"Input: The authors advised the student. Answer: The student was advised by the authors.
+"
+The secretaries believed the tourists.,The tourists were believed by the secretaries.,"Input: The secretaries believed the tourists. Answer: The tourists were believed by the secretaries.
+"
+The tourists recommended the bankers.,The bankers were recommended by the tourists.,"Input: The tourists recommended the bankers. Answer: The bankers were recommended by the tourists.
+"
+The student believed the professors.,The professors were believed by the student.,"Input: The student believed the professors. Answer: The professors were believed by the student.
+"
+The tourist admired the managers.,The managers were admired by the tourist.,"Input: The tourist admired the managers. Answer: The managers were admired by the tourist.
+"
+The tourist contacted the bankers.,The bankers were contacted by the tourist.,"Input: The tourist contacted the bankers. Answer: The bankers were contacted by the tourist.
+"
+The president introduced the senators.,The senators were introduced by the president.,"Input: The president introduced the senators. Answer: The senators were introduced by the president.
+"
+The senators advised the presidents.,The presidents were advised by the senators.,"Input: The senators advised the presidents. Answer: The presidents were advised by the senators.
+"
+The banker contacted the professor.,The professor was contacted by the banker.,"Input: The banker contacted the professor. Answer: The professor was contacted by the banker.
+"
+The lawyer thanked the presidents.,The presidents were thanked by the lawyer.,"Input: The lawyer thanked the presidents. Answer: The presidents were thanked by the lawyer.
+"
+The students supported the lawyers.,The lawyers were supported by the students.,"Input: The students supported the lawyers. Answer: The lawyers were supported by the students.
+"
+The managers recognized the author.,The author was recognized by the managers.,"Input: The managers recognized the author. Answer: The author was recognized by the managers.
+"
+The athletes helped the managers.,The managers were helped by the athletes.,"Input: The athletes helped the managers. Answer: The managers were helped by the athletes.
+"
+The judges stopped the lawyers.,The lawyers were stopped by the judges.,"Input: The judges stopped the lawyers. Answer: The lawyers were stopped by the judges.
+"
+The president advised the artists.,The artists were advised by the president.,"Input: The president advised the artists. Answer: The artists were advised by the president.
+"
+The doctor believed the scientists.,The scientists were believed by the doctor.,"Input: The doctor believed the scientists. Answer: The scientists were believed by the doctor.
+"
+The secretary encouraged the lawyers.,The lawyers were encouraged by the secretary.,"Input: The secretary encouraged the lawyers. Answer: The lawyers were encouraged by the secretary.
+"
+The senator avoided the bankers.,The bankers were avoided by the senator.,"Input: The senator avoided the bankers. Answer: The bankers were avoided by the senator.
+"
+The tourist believed the doctor.,The doctor was believed by the tourist.,"Input: The tourist believed the doctor. Answer: The doctor was believed by the tourist.
+"
+The students helped the authors.,The authors were helped by the students.,"Input: The students helped the authors. Answer: The authors were helped by the students.
+"
+The artist thanked the lawyers.,The lawyers were thanked by the artist.,"Input: The artist thanked the lawyers. Answer: The lawyers were thanked by the artist.
+"
+The presidents recommended the student.,The student was recommended by the presidents.,"Input: The presidents recommended the student. Answer: The student was recommended by the presidents.
+"
+The athlete helped the artist.,The artist was helped by the athlete.,"Input: The athlete helped the artist. Answer: The artist was helped by the athlete.
+"
+The judge stopped the lawyer.,The lawyer was stopped by the judge.,"Input: The judge stopped the lawyer. Answer: The lawyer was stopped by the judge.
+"
+The senators advised the professors.,The professors were advised by the senators.,"Input: The senators advised the professors. Answer: The professors were advised by the senators.
+"
+The artist introduced the scientist.,The scientist was introduced by the artist.,"Input: The artist introduced the scientist. Answer: The scientist was introduced by the artist.
+"
+The scientist mentioned the judge.,The judge was mentioned by the scientist.,"Input: The scientist mentioned the judge. Answer: The judge was mentioned by the scientist.
+"
+The senator avoided the tourists.,The tourists were avoided by the senator.,"Input: The senator avoided the tourists. Answer: The tourists were avoided by the senator.
+"
+The senator supported the managers.,The managers were supported by the senator.,"Input: The senator supported the managers. Answer: The managers were supported by the senator.
+"
+The lawyer recognized the senators.,The senators were recognized by the lawyer.,"Input: The lawyer recognized the senators. Answer: The senators were recognized by the lawyer.
+"
+The professors helped the managers.,The managers were helped by the professors.,"Input: The professors helped the managers. Answer: The managers were helped by the professors.
+"
+The lawyer supported the tourists.,The tourists were supported by the lawyer.,"Input: The lawyer supported the tourists. Answer: The tourists were supported by the lawyer.
+"
+The artist advised the scientists.,The scientists were advised by the artist.,"Input: The artist advised the scientists. Answer: The scientists were advised by the artist.
+"
+The secretary avoided the senator.,The senator was avoided by the secretary.,"Input: The secretary avoided the senator. Answer: The senator was avoided by the secretary.
+"
+The tourists recognized the lawyer.,The lawyer was recognized by the tourists.,"Input: The tourists recognized the lawyer. Answer: The lawyer was recognized by the tourists.
+"
+The professors advised the athlete.,The athlete was advised by the professors.,"Input: The professors advised the athlete. Answer: The athlete was advised by the professors.
+"
+The tourists recommended the lawyer.,The lawyer was recommended by the tourists.,"Input: The tourists recommended the lawyer. Answer: The lawyer was recommended by the tourists.
+"
+The athlete mentioned the scientist.,The scientist was mentioned by the athlete.,"Input: The athlete mentioned the scientist. Answer: The scientist was mentioned by the athlete.
+"
+The judges supported the lawyer.,The lawyer was supported by the judges.,"Input: The judges supported the lawyer. Answer: The lawyer was supported by the judges.
+"
+The scientist encouraged the authors.,The authors were encouraged by the scientist.,"Input: The scientist encouraged the authors. Answer: The authors were encouraged by the scientist.
+"
+The author advised the judge.,The judge was advised by the author.,"Input: The author advised the judge. Answer: The judge was advised by the author.
+"
+The secretaries supported the scientists.,The scientists were supported by the secretaries.,"Input: The secretaries supported the scientists. Answer: The scientists were supported by the secretaries.
+"
+The student supported the professors.,The professors were supported by the student.,"Input: The student supported the professors. Answer: The professors were supported by the student.
+"
+The banker introduced the athletes.,The athletes were introduced by the banker.,"Input: The banker introduced the athletes. Answer: The athletes were introduced by the banker.
+"
+The doctors helped the professor.,The professor was helped by the doctors.,"Input: The doctors helped the professor. Answer: The professor was helped by the doctors.
+"
+The student recommended the judges.,The judges were recommended by the student.,"Input: The student recommended the judges. Answer: The judges were recommended by the student.
+"
+The artist advised the professor.,The professor was advised by the artist.,"Input: The artist advised the professor. Answer: The professor was advised by the artist.
+"
+The secretaries advised the banker.,The banker was advised by the secretaries.,"Input: The secretaries advised the banker. Answer: The banker was advised by the secretaries.
+"
+The banker advised the judge.,The judge was advised by the banker.,"Input: The banker advised the judge. Answer: The judge was advised by the banker.
+"
+The managers introduced the scientist.,The scientist was introduced by the managers.,"Input: The managers introduced the scientist. Answer: The scientist was introduced by the managers.
+"
+The authors contacted the secretaries.,The secretaries were contacted by the authors.,"Input: The authors contacted the secretaries. Answer: The secretaries were contacted by the authors.
+"
+The actor stopped the bankers.,The bankers were stopped by the actor.,"Input: The actor stopped the bankers. Answer: The bankers were stopped by the actor.
+"
+The doctor encouraged the scientist.,The scientist was encouraged by the doctor.,"Input: The doctor encouraged the scientist. Answer: The scientist was encouraged by the doctor.
+"
+The senators introduced the banker.,The banker was introduced by the senators.,"Input: The senators introduced the banker. Answer: The banker was introduced by the senators.
+"
+The authors stopped the lawyers.,The lawyers were stopped by the authors.,"Input: The authors stopped the lawyers. Answer: The lawyers were stopped by the authors.
+"
+The managers introduced the bankers.,The bankers were introduced by the managers.,"Input: The managers introduced the bankers. Answer: The bankers were introduced by the managers.
+"
+The scientist encouraged the doctors.,The doctors were encouraged by the scientist.,"Input: The scientist encouraged the doctors. Answer: The doctors were encouraged by the scientist.
+"
+The lawyer contacted the students.,The students were contacted by the lawyer.,"Input: The lawyer contacted the students. Answer: The students were contacted by the lawyer.
+"
+The professor mentioned the scientists.,The scientists were mentioned by the professor.,"Input: The professor mentioned the scientists. Answer: The scientists were mentioned by the professor.
+"
+The judge recommended the lawyer.,The lawyer was recommended by the judge.,"Input: The judge recommended the lawyer. Answer: The lawyer was recommended by the judge.
+"
+The professors believed the manager.,The manager was believed by the professors.,"Input: The professors believed the manager. Answer: The manager was believed by the professors.
+"
+The bankers advised the scientist.,The scientist was advised by the bankers.,"Input: The bankers advised the scientist. Answer: The scientist was advised by the bankers.
+"
+The author thanked the artist.,The artist was thanked by the author.,"Input: The author thanked the artist. Answer: The artist was thanked by the author.
+"
+The artist helped the senators.,The senators were helped by the artist.,"Input: The artist helped the senators. Answer: The senators were helped by the artist.
+"
+The lawyer avoided the secretaries.,The secretaries were avoided by the lawyer.,"Input: The lawyer avoided the secretaries. Answer: The secretaries were avoided by the lawyer.
+"
+The doctor recognized the actors.,The actors were recognized by the doctor.,"Input: The doctor recognized the actors. Answer: The actors were recognized by the doctor.
+"
+The presidents recognized the scientist.,The scientist was recognized by the presidents.,"Input: The presidents recognized the scientist. Answer: The scientist was recognized by the presidents.
+"
+The athlete introduced the president.,The president was introduced by the athlete.,"Input: The athlete introduced the president. Answer: The president was introduced by the athlete.
+"
+The tourists helped the doctors.,The doctors were helped by the tourists.,"Input: The tourists helped the doctors. Answer: The doctors were helped by the tourists.
+"
+The manager introduced the president.,The president was introduced by the manager.,"Input: The manager introduced the president. Answer: The president was introduced by the manager.
+"
+The manager recommended the authors.,The authors were recommended by the manager.,"Input: The manager recommended the authors. Answer: The authors were recommended by the manager.
+"
+The scientists recognized the managers.,The managers were recognized by the scientists.,"Input: The scientists recognized the managers. Answer: The managers were recognized by the scientists.
+"
+The scientist encouraged the banker.,The banker was encouraged by the scientist.,"Input: The scientist encouraged the banker. Answer: The banker was encouraged by the scientist.
+"
+The doctors introduced the actor.,The actor was introduced by the doctors.,"Input: The doctors introduced the actor. Answer: The actor was introduced by the doctors.
+"
+The doctors stopped the scientists.,The scientists were stopped by the doctors.,"Input: The doctors stopped the scientists. Answer: The scientists were stopped by the doctors.
+"
+The secretary thanked the judges.,The judges were thanked by the secretary.,"Input: The secretary thanked the judges. Answer: The judges were thanked by the secretary.
+"
+The athletes thanked the scientist.,The scientist was thanked by the athletes.,"Input: The athletes thanked the scientist. Answer: The scientist was thanked by the athletes.
+"
+The bankers helped the lawyer.,The lawyer was helped by the bankers.,"Input: The bankers helped the lawyer. Answer: The lawyer was helped by the bankers.
+"
+The athlete avoided the actor.,The actor was avoided by the athlete.,"Input: The athlete avoided the actor. Answer: The actor was avoided by the athlete.
+"
+The judges encouraged the students.,The students were encouraged by the judges.,"Input: The judges encouraged the students. Answer: The students were encouraged by the judges.
+"
+The scientist stopped the banker.,The banker was stopped by the scientist.,"Input: The scientist stopped the banker. Answer: The banker was stopped by the scientist.
+"
+The senator mentioned the secretaries.,The secretaries were mentioned by the senator.,"Input: The senator mentioned the secretaries. Answer: The secretaries were mentioned by the senator.
+"
+The managers mentioned the student.,The student was mentioned by the managers.,"Input: The managers mentioned the student. Answer: The student was mentioned by the managers.
+"
+The presidents supported the senator.,The senator was supported by the presidents.,"Input: The presidents supported the senator. Answer: The senator was supported by the presidents.
+"
+The scientists advised the professor.,The professor was advised by the scientists.,"Input: The scientists advised the professor. Answer: The professor was advised by the scientists.
+"
+The actor encouraged the scientists.,The scientists were encouraged by the actor.,"Input: The actor encouraged the scientists. Answer: The scientists were encouraged by the actor.
+"
+The actors stopped the manager.,The manager was stopped by the actors.,"Input: The actors stopped the manager. Answer: The manager was stopped by the actors.
+"
+The tourists contacted the actors.,The actors were contacted by the tourists.,"Input: The tourists contacted the actors. Answer: The actors were contacted by the tourists.
+"
+The actor recommended the professor.,The professor was recommended by the actor.,"Input: The actor recommended the professor. Answer: The professor was recommended by the actor.
+"
+The manager mentioned the senators.,The senators were mentioned by the manager.,"Input: The manager mentioned the senators. Answer: The senators were mentioned by the manager.
+"
+The bankers recommended the senators.,The senators were recommended by the bankers.,"Input: The bankers recommended the senators. Answer: The senators were recommended by the bankers.
+"
+The manager helped the professors.,The professors were helped by the manager.,"Input: The manager helped the professors. Answer: The professors were helped by the manager.
+"
+The president encouraged the professor.,The professor was encouraged by the president.,"Input: The president encouraged the professor. Answer: The professor was encouraged by the president.
+"
+The scientist recommended the president.,The president was recommended by the scientist.,"Input: The scientist recommended the president. Answer: The president was recommended by the scientist.
+"
+The secretary stopped the presidents.,The presidents were stopped by the secretary.,"Input: The secretary stopped the presidents. Answer: The presidents were stopped by the secretary.
+"
+The author stopped the professor.,The professor was stopped by the author.,"Input: The author stopped the professor. Answer: The professor was stopped by the author.
+"
+The judges admired the student.,The student was admired by the judges.,"Input: The judges admired the student. Answer: The student was admired by the judges.
+"
+The doctors thanked the senator.,The senator was thanked by the doctors.,"Input: The doctors thanked the senator. Answer: The senator was thanked by the doctors.
+"
+The manager recognized the doctors.,The doctors were recognized by the manager.,"Input: The manager recognized the doctors. Answer: The doctors were recognized by the manager.
+"
+The athlete believed the managers.,The managers were believed by the athlete.,"Input: The athlete believed the managers. Answer: The managers were believed by the athlete.
+"
+The president believed the professors.,The professors were believed by the president.,"Input: The president believed the professors. Answer: The professors were believed by the president.
+"
+The student encouraged the professor.,The professor was encouraged by the student.,"Input: The student encouraged the professor. Answer: The professor was encouraged by the student.
+"
+The president admired the lawyers.,The lawyers were admired by the president.,"Input: The president admired the lawyers. Answer: The lawyers were admired by the president.
+"
+The athletes admired the students.,The students were admired by the athletes.,"Input: The athletes admired the students. Answer: The students were admired by the athletes.
+"
+The secretaries introduced the doctor.,The doctor was introduced by the secretaries.,"Input: The secretaries introduced the doctor. Answer: The doctor was introduced by the secretaries.
+"
+The scientists supported the athletes.,The athletes were supported by the scientists.,"Input: The scientists supported the athletes. Answer: The athletes were supported by the scientists.
+"
+The actors encouraged the lawyers.,The lawyers were encouraged by the actors.,"Input: The actors encouraged the lawyers. Answer: The lawyers were encouraged by the actors.
+"
+The secretaries encouraged the authors.,The authors were encouraged by the secretaries.,"Input: The secretaries encouraged the authors. Answer: The authors were encouraged by the secretaries.
+"
+The judges introduced the banker.,The banker was introduced by the judges.,"Input: The judges introduced the banker. Answer: The banker was introduced by the judges.
+"
+The secretary helped the tourist.,The tourist was helped by the secretary.,"Input: The secretary helped the tourist. Answer: The tourist was helped by the secretary.
+"
+The manager recognized the secretaries.,The secretaries were recognized by the manager.,"Input: The manager recognized the secretaries. Answer: The secretaries were recognized by the manager.
+"
+The tourist encouraged the banker.,The banker was encouraged by the tourist.,"Input: The tourist encouraged the banker. Answer: The banker was encouraged by the tourist.
+"
+The artists thanked the athlete.,The athlete was thanked by the artists.,"Input: The artists thanked the athlete. Answer: The athlete was thanked by the artists.
+"
+The banker avoided the secretaries.,The secretaries were avoided by the banker.,"Input: The banker avoided the secretaries. Answer: The secretaries were avoided by the banker.
+"
+The artist stopped the athlete.,The athlete was stopped by the artist.,"Input: The artist stopped the athlete. Answer: The athlete was stopped by the artist.
+"
+The judge recommended the scientists.,The scientists were recommended by the judge.,"Input: The judge recommended the scientists. Answer: The scientists were recommended by the judge.
+"
+The author thanked the secretary.,The secretary was thanked by the author.,"Input: The author thanked the secretary. Answer: The secretary was thanked by the author.
+"
+The doctor believed the artists.,The artists were believed by the doctor.,"Input: The doctor believed the artists. Answer: The artists were believed by the doctor.
+"
+The lawyers mentioned the author.,The author was mentioned by the lawyers.,"Input: The lawyers mentioned the author. Answer: The author was mentioned by the lawyers.
+"
+The students recognized the tourist.,The tourist was recognized by the students.,"Input: The students recognized the tourist. Answer: The tourist was recognized by the students.
+"
+The doctor advised the athletes.,The athletes were advised by the doctor.,"Input: The doctor advised the athletes. Answer: The athletes were advised by the doctor.
+"
+The athletes thanked the lawyer.,The lawyer was thanked by the athletes.,"Input: The athletes thanked the lawyer. Answer: The lawyer was thanked by the athletes.
+"
+The lawyers supported the judge.,The judge was supported by the lawyers.,"Input: The lawyers supported the judge. Answer: The judge was supported by the lawyers.
+"
+The scientist helped the presidents.,The presidents were helped by the scientist.,"Input: The scientist helped the presidents. Answer: The presidents were helped by the scientist.
+"
+The doctor encouraged the judges.,The judges were encouraged by the doctor.,"Input: The doctor encouraged the judges. Answer: The judges were encouraged by the doctor.
+"
+The doctor encouraged the lawyers.,The lawyers were encouraged by the doctor.,"Input: The doctor encouraged the lawyers. Answer: The lawyers were encouraged by the doctor.
+"
+The senator contacted the actor.,The actor was contacted by the senator.,"Input: The senator contacted the actor. Answer: The actor was contacted by the senator.
+"
+The secretary contacted the tourist.,The tourist was contacted by the secretary.,"Input: The secretary contacted the tourist. Answer: The tourist was contacted by the secretary.
+"
+The judges helped the artists.,The artists were helped by the judges.,"Input: The judges helped the artists. Answer: The artists were helped by the judges.
+"
+The professor thanked the tourists.,The tourists were thanked by the professor.,"Input: The professor thanked the tourists. Answer: The tourists were thanked by the professor.
+"
+The manager thanked the president.,The president was thanked by the manager.,"Input: The manager thanked the president. Answer: The president was thanked by the manager.
+"
+The banker avoided the doctors.,The doctors were avoided by the banker.,"Input: The banker avoided the doctors. Answer: The doctors were avoided by the banker.
+"
+The judge recognized the senator.,The senator was recognized by the judge.,"Input: The judge recognized the senator. Answer: The senator was recognized by the judge.
+"
+The doctor avoided the student.,The student was avoided by the doctor.,"Input: The doctor avoided the student. Answer: The student was avoided by the doctor.
+"
+The artists thanked the scientist.,The scientist was thanked by the artists.,"Input: The artists thanked the scientist. Answer: The scientist was thanked by the artists.
+"
+The doctors believed the banker.,The banker was believed by the doctors.,"Input: The doctors believed the banker. Answer: The banker was believed by the doctors.
+"
+The managers contacted the scientist.,The scientist was contacted by the managers.,"Input: The managers contacted the scientist. Answer: The scientist was contacted by the managers.
+"
+The actor advised the senator.,The senator was advised by the actor.,"Input: The actor advised the senator. Answer: The senator was advised by the actor.
+"
+The professor advised the artists.,The artists were advised by the professor.,"Input: The professor advised the artists. Answer: The artists were advised by the professor.
+"
+The lawyer thanked the athlete.,The athlete was thanked by the lawyer.,"Input: The lawyer thanked the athlete. Answer: The athlete was thanked by the lawyer.
+"
+The judges avoided the secretaries.,The secretaries were avoided by the judges.,"Input: The judges avoided the secretaries. Answer: The secretaries were avoided by the judges.
+"
+The students stopped the managers.,The managers were stopped by the students.,"Input: The students stopped the managers. Answer: The managers were stopped by the students.
+"
+The bankers supported the author.,The author was supported by the bankers.,"Input: The bankers supported the author. Answer: The author was supported by the bankers.
+"
+The doctors mentioned the artists.,The artists were mentioned by the doctors.,"Input: The doctors mentioned the artists. Answer: The artists were mentioned by the doctors.
+"
+The secretaries introduced the doctors.,The doctors were introduced by the secretaries.,"Input: The secretaries introduced the doctors. Answer: The doctors were introduced by the secretaries.
+"
+The actors stopped the athletes.,The athletes were stopped by the actors.,"Input: The actors stopped the athletes. Answer: The athletes were stopped by the actors.
+"
+The author helped the manager.,The manager was helped by the author.,"Input: The author helped the manager. Answer: The manager was helped by the author.
+"
+The managers stopped the doctor.,The doctor was stopped by the managers.,"Input: The managers stopped the doctor. Answer: The doctor was stopped by the managers.
+"
+The doctors stopped the actor.,The actor was stopped by the doctors.,"Input: The doctors stopped the actor. Answer: The actor was stopped by the doctors.
+"
+The professors contacted the actor.,The actor was contacted by the professors.,"Input: The professors contacted the actor. Answer: The actor was contacted by the professors.
+"
+The manager recognized the lawyer.,The lawyer was recognized by the manager.,"Input: The manager recognized the lawyer. Answer: The lawyer was recognized by the manager.
+"
+The scientist believed the author.,The author was believed by the scientist.,"Input: The scientist believed the author. Answer: The author was believed by the scientist.
+"
+The artist recommended the student.,The student was recommended by the artist.,"Input: The artist recommended the student. Answer: The student was recommended by the artist.
+"
+The professors encouraged the students.,The students were encouraged by the professors.,"Input: The professors encouraged the students. Answer: The students were encouraged by the professors.
+"
+The doctors advised the actor.,The actor was advised by the doctors.,"Input: The doctors advised the actor. Answer: The actor was advised by the doctors.
+"
+The president recognized the students.,The students were recognized by the president.,"Input: The president recognized the students. Answer: The students were recognized by the president.
+"
+The judges mentioned the bankers.,The bankers were mentioned by the judges.,"Input: The judges mentioned the bankers. Answer: The bankers were mentioned by the judges.
+"
+The tourist helped the actor.,The actor was helped by the tourist.,"Input: The tourist helped the actor. Answer: The actor was helped by the tourist.
+"
+The managers stopped the actors.,The actors were stopped by the managers.,"Input: The managers stopped the actors. Answer: The actors were stopped by the managers.
+"
+The athletes mentioned the tourist.,The tourist was mentioned by the athletes.,"Input: The athletes mentioned the tourist. Answer: The tourist was mentioned by the athletes.
+"
+The lawyer supported the banker.,The banker was supported by the lawyer.,"Input: The lawyer supported the banker. Answer: The banker was supported by the lawyer.
+"
+The tourist believed the athlete.,The athlete was believed by the tourist.,"Input: The tourist believed the athlete. Answer: The athlete was believed by the tourist.
+"
+The senators mentioned the artists.,The artists were mentioned by the senators.,"Input: The senators mentioned the artists. Answer: The artists were mentioned by the senators.
+"
+The judges admired the actors.,The actors were admired by the judges.,"Input: The judges admired the actors. Answer: The actors were admired by the judges.
+"
+The authors recognized the banker.,The banker was recognized by the authors.,"Input: The authors recognized the banker. Answer: The banker was recognized by the authors.
+"
+The lawyer supported the athletes.,The athletes were supported by the lawyer.,"Input: The lawyer supported the athletes. Answer: The athletes were supported by the lawyer.
+"
+The professor admired the athlete.,The athlete was admired by the professor.,"Input: The professor admired the athlete. Answer: The athlete was admired by the professor.
+"
+The actors recommended the secretaries.,The secretaries were recommended by the actors.,"Input: The actors recommended the secretaries. Answer: The secretaries were recommended by the actors.
+"
+The bankers introduced the professors.,The professors were introduced by the bankers.,"Input: The bankers introduced the professors. Answer: The professors were introduced by the bankers.
+"
+The lawyers contacted the scientists.,The scientists were contacted by the lawyers.,"Input: The lawyers contacted the scientists. Answer: The scientists were contacted by the lawyers.
+"
+The actors introduced the professor.,The professor was introduced by the actors.,"Input: The actors introduced the professor. Answer: The professor was introduced by the actors.
+"
+The secretary helped the manager.,The manager was helped by the secretary.,"Input: The secretary helped the manager. Answer: The manager was helped by the secretary.
+"
+The manager stopped the actors.,The actors were stopped by the manager.,"Input: The manager stopped the actors. Answer: The actors were stopped by the manager.
+"
+The judge supported the athletes.,The athletes were supported by the judge.,"Input: The judge supported the athletes. Answer: The athletes were supported by the judge.
+"
+The actor supported the president.,The president was supported by the actor.,"Input: The actor supported the president. Answer: The president was supported by the actor.
+"
+The senators helped the tourist.,The tourist was helped by the senators.,"Input: The senators helped the tourist. Answer: The tourist was helped by the senators.
+"
+The tourists recommended the student.,The student was recommended by the tourists.,"Input: The tourists recommended the student. Answer: The student was recommended by the tourists.
+"
+The banker helped the secretaries.,The secretaries were helped by the banker.,"Input: The banker helped the secretaries. Answer: The secretaries were helped by the banker.
+"
+The tourist supported the athlete.,The athlete was supported by the tourist.,"Input: The tourist supported the athlete. Answer: The athlete was supported by the tourist.
+"
+The athletes introduced the doctors.,The doctors were introduced by the athletes.,"Input: The athletes introduced the doctors. Answer: The doctors were introduced by the athletes.
+"
+The author believed the tourist.,The tourist was believed by the author.,"Input: The author believed the tourist. Answer: The tourist was believed by the author.
+"
+The senator admired the authors.,The authors were admired by the senator.,"Input: The senator admired the authors. Answer: The authors were admired by the senator.
+"
+The secretary avoided the artists.,The artists were avoided by the secretary.,"Input: The secretary avoided the artists. Answer: The artists were avoided by the secretary.
+"
+The authors recognized the scientist.,The scientist was recognized by the authors.,"Input: The authors recognized the scientist. Answer: The scientist was recognized by the authors.
+"
+The actor stopped the judge.,The judge was stopped by the actor.,"Input: The actor stopped the judge. Answer: The judge was stopped by the actor.
+"
+The secretaries believed the senator.,The senator was believed by the secretaries.,"Input: The secretaries believed the senator. Answer: The senator was believed by the secretaries.
+"
+The doctors avoided the athletes.,The athletes were avoided by the doctors.,"Input: The doctors avoided the athletes. Answer: The athletes were avoided by the doctors.
+"
+The secretary recognized the tourists.,The tourists were recognized by the secretary.,"Input: The secretary recognized the tourists. Answer: The tourists were recognized by the secretary.
+"
+The doctors advised the professors.,The professors were advised by the doctors.,"Input: The doctors advised the professors. Answer: The professors were advised by the doctors.
+"
+The manager believed the artist.,The artist was believed by the manager.,"Input: The manager believed the artist. Answer: The artist was believed by the manager.
+"
+The senator recognized the managers.,The managers were recognized by the senator.,"Input: The senator recognized the managers. Answer: The managers were recognized by the senator.
+"
+The actors supported the professors.,The professors were supported by the actors.,"Input: The actors supported the professors. Answer: The professors were supported by the actors.
+"
+The senators recognized the scientists.,The scientists were recognized by the senators.,"Input: The senators recognized the scientists. Answer: The scientists were recognized by the senators.
+"
+The managers avoided the senator.,The senator was avoided by the managers.,"Input: The managers avoided the senator. Answer: The senator was avoided by the managers.
+"
+The judge mentioned the tourist.,The tourist was mentioned by the judge.,"Input: The judge mentioned the tourist. Answer: The tourist was mentioned by the judge.
+"
+The doctors thanked the secretaries.,The secretaries were thanked by the doctors.,"Input: The doctors thanked the secretaries. Answer: The secretaries were thanked by the doctors.
+"
+The senators stopped the manager.,The manager was stopped by the senators.,"Input: The senators stopped the manager. Answer: The manager was stopped by the senators.
+"
+The actor supported the professor.,The professor was supported by the actor.,"Input: The actor supported the professor. Answer: The professor was supported by the actor.
+"
+The authors encouraged the athlete.,The athlete was encouraged by the authors.,"Input: The authors encouraged the athlete. Answer: The athlete was encouraged by the authors.
+"
+The tourist helped the authors.,The authors were helped by the tourist.,"Input: The tourist helped the authors. Answer: The authors were helped by the tourist.
+"
+The presidents helped the artist.,The artist was helped by the presidents.,"Input: The presidents helped the artist. Answer: The artist was helped by the presidents.
+"
+The authors encouraged the students.,The students were encouraged by the authors.,"Input: The authors encouraged the students. Answer: The students were encouraged by the authors.
+"
+The doctor introduced the tourist.,The tourist was introduced by the doctor.,"Input: The doctor introduced the tourist. Answer: The tourist was introduced by the doctor.
+"
+The professor avoided the doctors.,The doctors were avoided by the professor.,"Input: The professor avoided the doctors. Answer: The doctors were avoided by the professor.
+"
+The author admired the presidents.,The presidents were admired by the author.,"Input: The author admired the presidents. Answer: The presidents were admired by the author.
+"
+The bankers thanked the professors.,The professors were thanked by the bankers.,"Input: The bankers thanked the professors. Answer: The professors were thanked by the bankers.
+"
+The judges helped the students.,The students were helped by the judges.,"Input: The judges helped the students. Answer: The students were helped by the judges.
+"
+The athlete thanked the student.,The student was thanked by the athlete.,"Input: The athlete thanked the student. Answer: The student was thanked by the athlete.
+"
+The judge supported the senator.,The senator was supported by the judge.,"Input: The judge supported the senator. Answer: The senator was supported by the judge.
+"
+The banker contacted the tourist.,The tourist was contacted by the banker.,"Input: The banker contacted the tourist. Answer: The tourist was contacted by the banker.
+"
+The student contacted the professor.,The professor was contacted by the student.,"Input: The student contacted the professor. Answer: The professor was contacted by the student.
+"
+The artist thanked the doctor.,The doctor was thanked by the artist.,"Input: The artist thanked the doctor. Answer: The doctor was thanked by the artist.
+"
+The students helped the senator.,The senator was helped by the students.,"Input: The students helped the senator. Answer: The senator was helped by the students.
+"
+The secretary believed the banker.,The banker was believed by the secretary.,"Input: The secretary believed the banker. Answer: The banker was believed by the secretary.
+"
+The professor recognized the scientist.,The scientist was recognized by the professor.,"Input: The professor recognized the scientist. Answer: The scientist was recognized by the professor.
+"
+The actors thanked the doctor.,The doctor was thanked by the actors.,"Input: The actors thanked the doctor. Answer: The doctor was thanked by the actors.
+"
+The actors stopped the artists.,The artists were stopped by the actors.,"Input: The actors stopped the artists. Answer: The artists were stopped by the actors.
+"
+The bankers stopped the lawyer.,The lawyer was stopped by the bankers.,"Input: The bankers stopped the lawyer. Answer: The lawyer was stopped by the bankers.
+"
+The judges mentioned the tourists.,The tourists were mentioned by the judges.,"Input: The judges mentioned the tourists. Answer: The tourists were mentioned by the judges.
+"
+The manager stopped the doctors.,The doctors were stopped by the manager.,"Input: The manager stopped the doctors. Answer: The doctors were stopped by the manager.
+"
+The manager contacted the actor.,The actor was contacted by the manager.,"Input: The manager contacted the actor. Answer: The actor was contacted by the manager.
+"
+The tourist believed the judge.,The judge was believed by the tourist.,"Input: The tourist believed the judge. Answer: The judge was believed by the tourist.
+"
+The professor supported the student.,The student was supported by the professor.,"Input: The professor supported the student. Answer: The student was supported by the professor.
+"
+The author believed the actor.,The actor was believed by the author.,"Input: The author believed the actor. Answer: The actor was believed by the author.
+"
+The professor believed the scientist.,The scientist was believed by the professor.,"Input: The professor believed the scientist. Answer: The scientist was believed by the professor.
+"
+The secretary recommended the professor.,The professor was recommended by the secretary.,"Input: The secretary recommended the professor. Answer: The professor was recommended by the secretary.
+"
+The athlete encouraged the banker.,The banker was encouraged by the athlete.,"Input: The athlete encouraged the banker. Answer: The banker was encouraged by the athlete.
+"
+The presidents mentioned the scientists.,The scientists were mentioned by the presidents.,"Input: The presidents mentioned the scientists. Answer: The scientists were mentioned by the presidents.
+"
+The senators advised the actor.,The actor was advised by the senators.,"Input: The senators advised the actor. Answer: The actor was advised by the senators.
+"
+The secretary admired the bankers.,The bankers were admired by the secretary.,"Input: The secretary admired the bankers. Answer: The bankers were admired by the secretary.
+"
+The author introduced the actor.,The actor was introduced by the author.,"Input: The author introduced the actor. Answer: The actor was introduced by the author.
+"
+The students helped the author.,The author was helped by the students.,"Input: The students helped the author. Answer: The author was helped by the students.
+"
+The secretary admired the judge.,The judge was admired by the secretary.,"Input: The secretary admired the judge. Answer: The judge was admired by the secretary.
+"
+The students encouraged the athlete.,The athlete was encouraged by the students.,"Input: The students encouraged the athlete. Answer: The athlete was encouraged by the students.
+"
+The artists admired the professor.,The professor was admired by the artists.,"Input: The artists admired the professor. Answer: The professor was admired by the artists.
+"
+The banker admired the lawyer.,The lawyer was admired by the banker.,"Input: The banker admired the lawyer. Answer: The lawyer was admired by the banker.
+"
+The manager stopped the lawyers.,The lawyers were stopped by the manager.,"Input: The manager stopped the lawyers. Answer: The lawyers were stopped by the manager.
+"
+The athletes avoided the lawyers.,The lawyers were avoided by the athletes.,"Input: The athletes avoided the lawyers. Answer: The lawyers were avoided by the athletes.
+"
+The tourists contacted the scientist.,The scientist was contacted by the tourists.,"Input: The tourists contacted the scientist. Answer: The scientist was contacted by the tourists.
+"
+The student helped the doctors.,The doctors were helped by the student.,"Input: The student helped the doctors. Answer: The doctors were helped by the student.
+"
+The managers mentioned the artist.,The artist was mentioned by the managers.,"Input: The managers mentioned the artist. Answer: The artist was mentioned by the managers.
+"
+The managers thanked the professor.,The professor was thanked by the managers.,"Input: The managers thanked the professor. Answer: The professor was thanked by the managers.
+"
+The athlete avoided the managers.,The managers were avoided by the athlete.,"Input: The athlete avoided the managers. Answer: The managers were avoided by the athlete.
+"
+The tourists helped the secretaries.,The secretaries were helped by the tourists.,"Input: The tourists helped the secretaries. Answer: The secretaries were helped by the tourists.
+"
+The judge introduced the professor.,The professor was introduced by the judge.,"Input: The judge introduced the professor. Answer: The professor was introduced by the judge.
+"
+The secretary believed the author.,The author was believed by the secretary.,"Input: The secretary believed the author. Answer: The author was believed by the secretary.
+"
+The artist recognized the secretaries.,The secretaries were recognized by the artist.,"Input: The artist recognized the secretaries. Answer: The secretaries were recognized by the artist.
+"
+The presidents recommended the artist.,The artist was recommended by the presidents.,"Input: The presidents recommended the artist. Answer: The artist was recommended by the presidents.
+"
+The manager encouraged the secretaries.,The secretaries were encouraged by the manager.,"Input: The manager encouraged the secretaries. Answer: The secretaries were encouraged by the manager.
+"
+The doctor supported the professors.,The professors were supported by the doctor.,"Input: The doctor supported the professors. Answer: The professors were supported by the doctor.
+"
+The president helped the bankers.,The bankers were helped by the president.,"Input: The president helped the bankers. Answer: The bankers were helped by the president.
+"
+The doctors admired the presidents.,The presidents were admired by the doctors.,"Input: The doctors admired the presidents. Answer: The presidents were admired by the doctors.
+"
+The authors thanked the senators.,The senators were thanked by the authors.,"Input: The authors thanked the senators. Answer: The senators were thanked by the authors.
+"
+The actors helped the scientists.,The scientists were helped by the actors.,"Input: The actors helped the scientists. Answer: The scientists were helped by the actors.
+"
+The banker recommended the secretary.,The secretary was recommended by the banker.,"Input: The banker recommended the secretary. Answer: The secretary was recommended by the banker.
+"
+The lawyers avoided the author.,The author was avoided by the lawyers.,"Input: The lawyers avoided the author. Answer: The author was avoided by the lawyers.
+"
+The scientist recognized the student.,The student was recognized by the scientist.,"Input: The scientist recognized the student. Answer: The student was recognized by the scientist.
+"
+The judge encouraged the tourists.,The tourists were encouraged by the judge.,"Input: The judge encouraged the tourists. Answer: The tourists were encouraged by the judge.
+"
+The lawyers introduced the senator.,The senator was introduced by the lawyers.,"Input: The lawyers introduced the senator. Answer: The senator was introduced by the lawyers.
+"
+The professors believed the senator.,The senator was believed by the professors.,"Input: The professors believed the senator. Answer: The senator was believed by the professors.
+"
+The lawyer helped the banker.,The banker was helped by the lawyer.,"Input: The lawyer helped the banker. Answer: The banker was helped by the lawyer.
+"
+The judges admired the author.,The author was admired by the judges.,"Input: The judges admired the author. Answer: The author was admired by the judges.
+"
+The doctors contacted the authors.,The authors were contacted by the doctors.,"Input: The doctors contacted the authors. Answer: The authors were contacted by the doctors.
+"
+The artists recognized the banker.,The banker was recognized by the artists.,"Input: The artists recognized the banker. Answer: The banker was recognized by the artists.
+"
+The doctor avoided the artist.,The artist was avoided by the doctor.,"Input: The doctor avoided the artist. Answer: The artist was avoided by the doctor.
+"
+The scientist introduced the authors.,The authors were introduced by the scientist.,"Input: The scientist introduced the authors. Answer: The authors were introduced by the scientist.
+"
+The doctor advised the actors.,The actors were advised by the doctor.,"Input: The doctor advised the actors. Answer: The actors were advised by the doctor.
+"
+The actor advised the bankers.,The bankers were advised by the actor.,"Input: The actor advised the bankers. Answer: The bankers were advised by the actor.
+"
+The secretaries stopped the presidents.,The presidents were stopped by the secretaries.,"Input: The secretaries stopped the presidents. Answer: The presidents were stopped by the secretaries.
+"
+The lawyers helped the actor.,The actor was helped by the lawyers.,"Input: The lawyers helped the actor. Answer: The actor was helped by the lawyers.
+"
+The actor stopped the professor.,The professor was stopped by the actor.,"Input: The actor stopped the professor. Answer: The professor was stopped by the actor.
+"
+The managers helped the professors.,The professors were helped by the managers.,"Input: The managers helped the professors. Answer: The professors were helped by the managers.
+"
+The lawyers helped the tourist.,The tourist was helped by the lawyers.,"Input: The lawyers helped the tourist. Answer: The tourist was helped by the lawyers.
+"
+The doctor advised the bankers.,The bankers were advised by the doctor.,"Input: The doctor advised the bankers. Answer: The bankers were advised by the doctor.
+"
+The professor recommended the bankers.,The bankers were recommended by the professor.,"Input: The professor recommended the bankers. Answer: The bankers were recommended by the professor.
+"
+The bankers recognized the tourists.,The tourists were recognized by the bankers.,"Input: The bankers recognized the tourists. Answer: The tourists were recognized by the bankers.
+"
+The president advised the judges.,The judges were advised by the president.,"Input: The president advised the judges. Answer: The judges were advised by the president.
+"
+The tourists mentioned the manager.,The manager was mentioned by the tourists.,"Input: The tourists mentioned the manager. Answer: The manager was mentioned by the tourists.
+"
+The judge recommended the senators.,The senators were recommended by the judge.,"Input: The judge recommended the senators. Answer: The senators were recommended by the judge.
+"
+The senator contacted the lawyer.,The lawyer was contacted by the senator.,"Input: The senator contacted the lawyer. Answer: The lawyer was contacted by the senator.
+"
+The athlete supported the secretaries.,The secretaries were supported by the athlete.,"Input: The athlete supported the secretaries. Answer: The secretaries were supported by the athlete.
+"
+The judges advised the lawyer.,The lawyer was advised by the judges.,"Input: The judges advised the lawyer. Answer: The lawyer was advised by the judges.
+"
+The secretary recommended the scientists.,The scientists were recommended by the secretary.,"Input: The secretary recommended the scientists. Answer: The scientists were recommended by the secretary.
+"
+The author introduced the banker.,The banker was introduced by the author.,"Input: The author introduced the banker. Answer: The banker was introduced by the author.
+"
+The actors stopped the scientist.,The scientist was stopped by the actors.,"Input: The actors stopped the scientist. Answer: The scientist was stopped by the actors.
+"
+The judges mentioned the doctors.,The doctors were mentioned by the judges.,"Input: The judges mentioned the doctors. Answer: The doctors were mentioned by the judges.
+"
+The judge admired the banker.,The banker was admired by the judge.,"Input: The judge admired the banker. Answer: The banker was admired by the judge.
+"
+The actors mentioned the artists.,The artists were mentioned by the actors.,"Input: The actors mentioned the artists. Answer: The artists were mentioned by the actors.
+"
+The bankers helped the manager.,The manager was helped by the bankers.,"Input: The bankers helped the manager. Answer: The manager was helped by the bankers.
+"
+The tourist mentioned the secretary.,The secretary was mentioned by the tourist.,"Input: The tourist mentioned the secretary. Answer: The secretary was mentioned by the tourist.
+"
+The secretary mentioned the manager.,The manager was mentioned by the secretary.,"Input: The secretary mentioned the manager. Answer: The manager was mentioned by the secretary.
+"
+The manager believed the lawyer.,The lawyer was believed by the manager.,"Input: The manager believed the lawyer. Answer: The lawyer was believed by the manager.
+"
+The actor introduced the bankers.,The bankers were introduced by the actor.,"Input: The actor introduced the bankers. Answer: The bankers were introduced by the actor.
+"
+The student contacted the secretaries.,The secretaries were contacted by the student.,"Input: The student contacted the secretaries. Answer: The secretaries were contacted by the student.
+"
+The banker encouraged the lawyer.,The lawyer was encouraged by the banker.,"Input: The banker encouraged the lawyer. Answer: The lawyer was encouraged by the banker.
+"
+The judge avoided the artist.,The artist was avoided by the judge.,"Input: The judge avoided the artist. Answer: The artist was avoided by the judge.
+"
+The scientists believed the lawyer.,The lawyer was believed by the scientists.,"Input: The scientists believed the lawyer. Answer: The lawyer was believed by the scientists.
+"
+The bankers stopped the tourist.,The tourist was stopped by the bankers.,"Input: The bankers stopped the tourist. Answer: The tourist was stopped by the bankers.
+"
+The judge introduced the bankers.,The bankers were introduced by the judge.,"Input: The judge introduced the bankers. Answer: The bankers were introduced by the judge.
+"
+The doctor recommended the students.,The students were recommended by the doctor.,"Input: The doctor recommended the students. Answer: The students were recommended by the doctor.
+"
+The authors avoided the banker.,The banker was avoided by the authors.,"Input: The authors avoided the banker. Answer: The banker was avoided by the authors.
+"
+The senators encouraged the lawyers.,The lawyers were encouraged by the senators.,"Input: The senators encouraged the lawyers. Answer: The lawyers were encouraged by the senators.
+"
+The judge contacted the banker.,The banker was contacted by the judge.,"Input: The judge contacted the banker. Answer: The banker was contacted by the judge.
+"
+The scientists contacted the student.,The student was contacted by the scientists.,"Input: The scientists contacted the student. Answer: The student was contacted by the scientists.
+"
+The artists believed the tourists.,The tourists were believed by the artists.,"Input: The artists believed the tourists. Answer: The tourists were believed by the artists.
+"
+The tourists advised the judges.,The judges were advised by the tourists.,"Input: The tourists advised the judges. Answer: The judges were advised by the tourists.
+"
+The secretaries thanked the presidents.,The presidents were thanked by the secretaries.,"Input: The secretaries thanked the presidents. Answer: The presidents were thanked by the secretaries.
+"
+The banker admired the managers.,The managers were admired by the banker.,"Input: The banker admired the managers. Answer: The managers were admired by the banker.
+"
+The senator introduced the lawyer.,The lawyer was introduced by the senator.,"Input: The senator introduced the lawyer. Answer: The lawyer was introduced by the senator.
+"
+The secretary recommended the artist.,The artist was recommended by the secretary.,"Input: The secretary recommended the artist. Answer: The artist was recommended by the secretary.
+"
+The secretaries admired the artist.,The artist was admired by the secretaries.,"Input: The secretaries admired the artist. Answer: The artist was admired by the secretaries.
+"
+The managers believed the lawyers.,The lawyers were believed by the managers.,"Input: The managers believed the lawyers. Answer: The lawyers were believed by the managers.
+"
+The tourist recognized the athletes.,The athletes were recognized by the tourist.,"Input: The tourist recognized the athletes. Answer: The athletes were recognized by the tourist.
+"
+The tourists supported the president.,The president was supported by the tourists.,"Input: The tourists supported the president. Answer: The president was supported by the tourists.
+"
+The scientists stopped the doctor.,The doctor was stopped by the scientists.,"Input: The scientists stopped the doctor. Answer: The doctor was stopped by the scientists.
+"
+The managers supported the president.,The president was supported by the managers.,"Input: The managers supported the president. Answer: The president was supported by the managers.
+"
+The banker mentioned the secretaries.,The secretaries were mentioned by the banker.,"Input: The banker mentioned the secretaries. Answer: The secretaries were mentioned by the banker.
+"
+The artist contacted the professors.,The professors were contacted by the artist.,"Input: The artist contacted the professors. Answer: The professors were contacted by the artist.
+"
+The judge admired the managers.,The managers were admired by the judge.,"Input: The judge admired the managers. Answer: The managers were admired by the judge.
+"
+The judge stopped the artists.,The artists were stopped by the judge.,"Input: The judge stopped the artists. Answer: The artists were stopped by the judge.
+"
+The tourists avoided the secretaries.,The secretaries were avoided by the tourists.,"Input: The tourists avoided the secretaries. Answer: The secretaries were avoided by the tourists.
+"
+The actors advised the lawyer.,The lawyer was advised by the actors.,"Input: The actors advised the lawyer. Answer: The lawyer was advised by the actors.
+"
+The secretary introduced the senator.,The senator was introduced by the secretary.,"Input: The secretary introduced the senator. Answer: The senator was introduced by the secretary.
+"
+The managers mentioned the scientists.,The scientists were mentioned by the managers.,"Input: The managers mentioned the scientists. Answer: The scientists were mentioned by the managers.
+"
+The secretaries helped the judge.,The judge was helped by the secretaries.,"Input: The secretaries helped the judge. Answer: The judge was helped by the secretaries.
+"
+The judge encouraged the actors.,The actors were encouraged by the judge.,"Input: The judge encouraged the actors. Answer: The actors were encouraged by the judge.
+"
+The manager thanked the secretaries.,The secretaries were thanked by the manager.,"Input: The manager thanked the secretaries. Answer: The secretaries were thanked by the manager.
+"
+The presidents introduced the athletes.,The athletes were introduced by the presidents.,"Input: The presidents introduced the athletes. Answer: The athletes were introduced by the presidents.
+"
+The lawyer encouraged the senators.,The senators were encouraged by the lawyer.,"Input: The lawyer encouraged the senators. Answer: The senators were encouraged by the lawyer.
+"
+The lawyers recommended the athlete.,The athlete was recommended by the lawyers.,"Input: The lawyers recommended the athlete. Answer: The athlete was recommended by the lawyers.
+"
+The president encouraged the judges.,The judges were encouraged by the president.,"Input: The president encouraged the judges. Answer: The judges were encouraged by the president.
+"
+The doctors advised the author.,The author was advised by the doctors.,"Input: The doctors advised the author. Answer: The author was advised by the doctors.
+"
+The manager stopped the senator.,The senator was stopped by the manager.,"Input: The manager stopped the senator. Answer: The senator was stopped by the manager.
+"
+The professor believed the artist.,The artist was believed by the professor.,"Input: The professor believed the artist. Answer: The artist was believed by the professor.
+"
+The tourist avoided the judges.,The judges were avoided by the tourist.,"Input: The tourist avoided the judges. Answer: The judges were avoided by the tourist.
+"
+The student recognized the manager.,The manager was recognized by the student.,"Input: The student recognized the manager. Answer: The manager was recognized by the student.
+"
+The senator thanked the secretary.,The secretary was thanked by the senator.,"Input: The senator thanked the secretary. Answer: The secretary was thanked by the senator.
+"
+The professors supported the banker.,The banker was supported by the professors.,"Input: The professors supported the banker. Answer: The banker was supported by the professors.
+"
+The judge advised the author.,The author was advised by the judge.,"Input: The judge advised the author. Answer: The author was advised by the judge.
+"
+The presidents contacted the professor.,The professor was contacted by the presidents.,"Input: The presidents contacted the professor. Answer: The professor was contacted by the presidents.
+"
+The author believed the secretary.,The secretary was believed by the author.,"Input: The author believed the secretary. Answer: The secretary was believed by the author.
+"
+The banker mentioned the judge.,The judge was mentioned by the banker.,"Input: The banker mentioned the judge. Answer: The judge was mentioned by the banker.
+"
+The tourist avoided the bankers.,The bankers were avoided by the tourist.,"Input: The tourist avoided the bankers. Answer: The bankers were avoided by the tourist.
+"
+The author recommended the tourists.,The tourists were recommended by the author.,"Input: The author recommended the tourists. Answer: The tourists were recommended by the author.
+"
+The manager advised the scientist.,The scientist was advised by the manager.,"Input: The manager advised the scientist. Answer: The scientist was advised by the manager.
+"
+The actor thanked the senators.,The senators were thanked by the actor.,"Input: The actor thanked the senators. Answer: The senators were thanked by the actor.
+"
+The actors admired the tourists.,The tourists were admired by the actors.,"Input: The actors admired the tourists. Answer: The tourists were admired by the actors.
+"
+The banker believed the author.,The author was believed by the banker.,"Input: The banker believed the author. Answer: The author was believed by the banker.
+"
+The doctor believed the senator.,The senator was believed by the doctor.,"Input: The doctor believed the senator. Answer: The senator was believed by the doctor.
+"
+The judge avoided the managers.,The managers were avoided by the judge.,"Input: The judge avoided the managers. Answer: The managers were avoided by the judge.
+"
+The athlete recommended the tourists.,The tourists were recommended by the athlete.,"Input: The athlete recommended the tourists. Answer: The tourists were recommended by the athlete.
+"
+The manager contacted the president.,The president was contacted by the manager.,"Input: The manager contacted the president. Answer: The president was contacted by the manager.
+"
+The student avoided the managers.,The managers were avoided by the student.,"Input: The student avoided the managers. Answer: The managers were avoided by the student.
+"
+The tourist advised the doctors.,The doctors were advised by the tourist.,"Input: The tourist advised the doctors. Answer: The doctors were advised by the tourist.
+"
+The professors mentioned the presidents.,The presidents were mentioned by the professors.,"Input: The professors mentioned the presidents. Answer: The presidents were mentioned by the professors.
+"
+The artists believed the actor.,The actor was believed by the artists.,"Input: The artists believed the actor. Answer: The actor was believed by the artists.
+"
+The managers introduced the student.,The student was introduced by the managers.,"Input: The managers introduced the student. Answer: The student was introduced by the managers.
+"
+The senator helped the judges.,The judges were helped by the senator.,"Input: The senator helped the judges. Answer: The judges were helped by the senator.
+"
+The artists contacted the doctors.,The doctors were contacted by the artists.,"Input: The artists contacted the doctors. Answer: The doctors were contacted by the artists.
+"
+The actors contacted the senator.,The senator was contacted by the actors.,"Input: The actors contacted the senator. Answer: The senator was contacted by the actors.
+"
+The lawyers mentioned the tourists.,The tourists were mentioned by the lawyers.,"Input: The lawyers mentioned the tourists. Answer: The tourists were mentioned by the lawyers.
+"
+The doctors admired the judges.,The judges were admired by the doctors.,"Input: The doctors admired the judges. Answer: The judges were admired by the doctors.
+"
+The athletes supported the senators.,The senators were supported by the athletes.,"Input: The athletes supported the senators. Answer: The senators were supported by the athletes.
+"
+The author contacted the actors.,The actors were contacted by the author.,"Input: The author contacted the actors. Answer: The actors were contacted by the author.
+"
+The professors advised the tourist.,The tourist was advised by the professors.,"Input: The professors advised the tourist. Answer: The tourist was advised by the professors.
+"
+The author contacted the managers.,The managers were contacted by the author.,"Input: The author contacted the managers. Answer: The managers were contacted by the author.
+"
+The senators recognized the actor.,The actor was recognized by the senators.,"Input: The senators recognized the actor. Answer: The actor was recognized by the senators.
+"
+The author introduced the bankers.,The bankers were introduced by the author.,"Input: The author introduced the bankers. Answer: The bankers were introduced by the author.
+"
+The author supported the secretary.,The secretary was supported by the author.,"Input: The author supported the secretary. Answer: The secretary was supported by the author.
+"
+The professors contacted the banker.,The banker was contacted by the professors.,"Input: The professors contacted the banker. Answer: The banker was contacted by the professors.
+"
+The scientist avoided the tourist.,The tourist was avoided by the scientist.,"Input: The scientist avoided the tourist. Answer: The tourist was avoided by the scientist.
+"
+The banker supported the students.,The students were supported by the banker.,"Input: The banker supported the students. Answer: The students were supported by the banker.
+"
+The senators thanked the professor.,The professor was thanked by the senators.,"Input: The senators thanked the professor. Answer: The professor was thanked by the senators.
+"
+The scientists advised the professors.,The professors were advised by the scientists.,"Input: The scientists advised the professors. Answer: The professors were advised by the scientists.
+"
+The presidents contacted the actor.,The actor was contacted by the presidents.,"Input: The presidents contacted the actor. Answer: The actor was contacted by the presidents.
+"
+The senators admired the athlete.,The athlete was admired by the senators.,"Input: The senators admired the athlete. Answer: The athlete was admired by the senators.
+"
+The bankers recommended the judges.,The judges were recommended by the bankers.,"Input: The bankers recommended the judges. Answer: The judges were recommended by the bankers.
+"
+The actors mentioned the student.,The student was mentioned by the actors.,"Input: The actors mentioned the student. Answer: The student was mentioned by the actors.
+"
+The tourist thanked the actors.,The actors were thanked by the tourist.,"Input: The tourist thanked the actors. Answer: The actors were thanked by the tourist.
+"
+The senators mentioned the actor.,The actor was mentioned by the senators.,"Input: The senators mentioned the actor. Answer: The actor was mentioned by the senators.
+"
+The athlete admired the judge.,The judge was admired by the athlete.,"Input: The athlete admired the judge. Answer: The judge was admired by the athlete.
+"
+The athlete helped the lawyer.,The lawyer was helped by the athlete.,"Input: The athlete helped the lawyer. Answer: The lawyer was helped by the athlete.
+"
+The scientists introduced the judges.,The judges were introduced by the scientists.,"Input: The scientists introduced the judges. Answer: The judges were introduced by the scientists.
+"
+The authors encouraged the president.,The president was encouraged by the authors.,"Input: The authors encouraged the president. Answer: The president was encouraged by the authors.
+"
+The professor recommended the banker.,The banker was recommended by the professor.,"Input: The professor recommended the banker. Answer: The banker was recommended by the professor.
+"
+The secretary encouraged the judge.,The judge was encouraged by the secretary.,"Input: The secretary encouraged the judge. Answer: The judge was encouraged by the secretary.
+"
+The artist introduced the lawyer.,The lawyer was introduced by the artist.,"Input: The artist introduced the lawyer. Answer: The lawyer was introduced by the artist.
+"
+The presidents encouraged the secretary.,The secretary was encouraged by the presidents.,"Input: The presidents encouraged the secretary. Answer: The secretary was encouraged by the presidents.
+"
+The artists avoided the secretary.,The secretary was avoided by the artists.,"Input: The artists avoided the secretary. Answer: The secretary was avoided by the artists.
+"
+The scientists avoided the lawyer.,The lawyer was avoided by the scientists.,"Input: The scientists avoided the lawyer. Answer: The lawyer was avoided by the scientists.
+"
+The secretaries encouraged the judges.,The judges were encouraged by the secretaries.,"Input: The secretaries encouraged the judges. Answer: The judges were encouraged by the secretaries.
+"
+The senators supported the artists.,The artists were supported by the senators.,"Input: The senators supported the artists. Answer: The artists were supported by the senators.
+"
+The judge mentioned the manager.,The manager was mentioned by the judge.,"Input: The judge mentioned the manager. Answer: The manager was mentioned by the judge.
+"
+The author believed the scientists.,The scientists were believed by the author.,"Input: The author believed the scientists. Answer: The scientists were believed by the author.
+"
+The secretaries recommended the actors.,The actors were recommended by the secretaries.,"Input: The secretaries recommended the actors. Answer: The actors were recommended by the secretaries.
+"
+The athlete avoided the judge.,The judge was avoided by the athlete.,"Input: The athlete avoided the judge. Answer: The judge was avoided by the athlete.
+"
+The banker mentioned the judges.,The judges were mentioned by the banker.,"Input: The banker mentioned the judges. Answer: The judges were mentioned by the banker.
+"
+The tourists admired the manager.,The manager was admired by the tourists.,"Input: The tourists admired the manager. Answer: The manager was admired by the tourists.
+"
+The athletes recognized the doctors.,The doctors were recognized by the athletes.,"Input: The athletes recognized the doctors. Answer: The doctors were recognized by the athletes.
+"
+The student recognized the professors.,The professors were recognized by the student.,"Input: The student recognized the professors. Answer: The professors were recognized by the student.
+"
+The author stopped the judge.,The judge was stopped by the author.,"Input: The author stopped the judge. Answer: The judge was stopped by the author.
+"
+The professor thanked the artist.,The artist was thanked by the professor.,"Input: The professor thanked the artist. Answer: The artist was thanked by the professor.
+"
+The banker encouraged the tourist.,The tourist was encouraged by the banker.,"Input: The banker encouraged the tourist. Answer: The tourist was encouraged by the banker.
+"
+The secretary avoided the doctors.,The doctors were avoided by the secretary.,"Input: The secretary avoided the doctors. Answer: The doctors were avoided by the secretary.
+"
+The banker mentioned the artists.,The artists were mentioned by the banker.,"Input: The banker mentioned the artists. Answer: The artists were mentioned by the banker.
+"
+The judges helped the presidents.,The presidents were helped by the judges.,"Input: The judges helped the presidents. Answer: The presidents were helped by the judges.
+"
+The scientist advised the athletes.,The athletes were advised by the scientist.,"Input: The scientist advised the athletes. Answer: The athletes were advised by the scientist.
+"
+The athlete recognized the secretary.,The secretary was recognized by the athlete.,"Input: The athlete recognized the secretary. Answer: The secretary was recognized by the athlete.
+"
+The artist recognized the students.,The students were recognized by the artist.,"Input: The artist recognized the students. Answer: The students were recognized by the artist.
+"
+The students supported the authors.,The authors were supported by the students.,"Input: The students supported the authors. Answer: The authors were supported by the students.
+"
+The student introduced the judge.,The judge was introduced by the student.,"Input: The student introduced the judge. Answer: The judge was introduced by the student.
+"
+The actors contacted the judges.,The judges were contacted by the actors.,"Input: The actors contacted the judges. Answer: The judges were contacted by the actors.
+"
+The athlete stopped the presidents.,The presidents were stopped by the athlete.,"Input: The athlete stopped the presidents. Answer: The presidents were stopped by the athlete.
+"
+The students introduced the presidents.,The presidents were introduced by the students.,"Input: The students introduced the presidents. Answer: The presidents were introduced by the students.
+"
+The athletes avoided the senator.,The senator was avoided by the athletes.,"Input: The athletes avoided the senator. Answer: The senator was avoided by the athletes.
+"
+The secretaries supported the president.,The president was supported by the secretaries.,"Input: The secretaries supported the president. Answer: The president was supported by the secretaries.
+"
+The managers believed the actors.,The actors were believed by the managers.,"Input: The managers believed the actors. Answer: The actors were believed by the managers.
+"
+The artist mentioned the author.,The author was mentioned by the artist.,"Input: The artist mentioned the author. Answer: The author was mentioned by the artist.
+"
+The professor supported the managers.,The managers were supported by the professor.,"Input: The professor supported the managers. Answer: The managers were supported by the professor.
+"
+The doctors encouraged the professors.,The professors were encouraged by the doctors.,"Input: The doctors encouraged the professors. Answer: The professors were encouraged by the doctors.
+"
+The scientists admired the secretaries.,The secretaries were admired by the scientists.,"Input: The scientists admired the secretaries. Answer: The secretaries were admired by the scientists.
+"
+The lawyer admired the author.,The author was admired by the lawyer.,"Input: The lawyer admired the author. Answer: The author was admired by the lawyer.
+"
+The bankers recognized the doctor.,The doctor was recognized by the bankers.,"Input: The bankers recognized the doctor. Answer: The doctor was recognized by the bankers.
+"
+The artists believed the athlete.,The athlete was believed by the artists.,"Input: The artists believed the athlete. Answer: The athlete was believed by the artists.
+"
+The manager admired the bankers.,The bankers were admired by the manager.,"Input: The manager admired the bankers. Answer: The bankers were admired by the manager.
+"
+The student admired the athlete.,The athlete was admired by the student.,"Input: The student admired the athlete. Answer: The athlete was admired by the student.
+"
+The judge encouraged the artist.,The artist was encouraged by the judge.,"Input: The judge encouraged the artist. Answer: The artist was encouraged by the judge.
+"
+The actor supported the lawyer.,The lawyer was supported by the actor.,"Input: The actor supported the lawyer. Answer: The lawyer was supported by the actor.
+"
+The athletes recommended the professor.,The professor was recommended by the athletes.,"Input: The athletes recommended the professor. Answer: The professor was recommended by the athletes.
+"
+The students helped the scientist.,The scientist was helped by the students.,"Input: The students helped the scientist. Answer: The scientist was helped by the students.
+"
+The students admired the tourists.,The tourists were admired by the students.,"Input: The students admired the tourists. Answer: The tourists were admired by the students.
+"
+The author avoided the senators.,The senators were avoided by the author.,"Input: The author avoided the senators. Answer: The senators were avoided by the author.
+"
+The professor advised the scientists.,The scientists were advised by the professor.,"Input: The professor advised the scientists. Answer: The scientists were advised by the professor.
+"
+The banker contacted the lawyers.,The lawyers were contacted by the banker.,"Input: The banker contacted the lawyers. Answer: The lawyers were contacted by the banker.
+"
+The scientists encouraged the author.,The author was encouraged by the scientists.,"Input: The scientists encouraged the author. Answer: The author was encouraged by the scientists.
+"
+The secretary admired the scientist.,The scientist was admired by the secretary.,"Input: The secretary admired the scientist. Answer: The scientist was admired by the secretary.
+"
+The senators recommended the tourists.,The tourists were recommended by the senators.,"Input: The senators recommended the tourists. Answer: The tourists were recommended by the senators.
+"
+The students supported the athletes.,The athletes were supported by the students.,"Input: The students supported the athletes. Answer: The athletes were supported by the students.
+"
+The secretary admired the author.,The author was admired by the secretary.,"Input: The secretary admired the author. Answer: The author was admired by the secretary.
+"
+The doctors recommended the manager.,The manager was recommended by the doctors.,"Input: The doctors recommended the manager. Answer: The manager was recommended by the doctors.
+"
+The managers helped the secretaries.,The secretaries were helped by the managers.,"Input: The managers helped the secretaries. Answer: The secretaries were helped by the managers.
+"
+The scientist supported the actor.,The actor was supported by the scientist.,"Input: The scientist supported the actor. Answer: The actor was supported by the scientist.
+"
+The artist mentioned the actors.,The actors were mentioned by the artist.,"Input: The artist mentioned the actors. Answer: The actors were mentioned by the artist.
+"
+The students believed the presidents.,The presidents were believed by the students.,"Input: The students believed the presidents. Answer: The presidents were believed by the students.
+"
+The scientist recommended the senators.,The senators were recommended by the scientist.,"Input: The scientist recommended the senators. Answer: The senators were recommended by the scientist.
+"
+The banker thanked the athlete.,The athlete was thanked by the banker.,"Input: The banker thanked the athlete. Answer: The athlete was thanked by the banker.
+"
+The athlete mentioned the secretaries.,The secretaries were mentioned by the athlete.,"Input: The athlete mentioned the secretaries. Answer: The secretaries were mentioned by the athlete.
+"
+The doctor recognized the students.,The students were recognized by the doctor.,"Input: The doctor recognized the students. Answer: The students were recognized by the doctor.
+"
+The manager introduced the professors.,The professors were introduced by the manager.,"Input: The manager introduced the professors. Answer: The professors were introduced by the manager.
+"
+The presidents contacted the managers.,The managers were contacted by the presidents.,"Input: The presidents contacted the managers. Answer: The managers were contacted by the presidents.
+"
+The bankers believed the presidents.,The presidents were believed by the bankers.,"Input: The bankers believed the presidents. Answer: The presidents were believed by the bankers.
+"
+The lawyer supported the athlete.,The athlete was supported by the lawyer.,"Input: The lawyer supported the athlete. Answer: The athlete was supported by the lawyer.
+"
+The tourist advised the artists.,The artists were advised by the tourist.,"Input: The tourist advised the artists. Answer: The artists were advised by the tourist.
+"
+The athletes thanked the scientists.,The scientists were thanked by the athletes.,"Input: The athletes thanked the scientists. Answer: The scientists were thanked by the athletes.
+"
+The senators believed the professor.,The professor was believed by the senators.,"Input: The senators believed the professor. Answer: The professor was believed by the senators.
+"
+The scientist introduced the doctor.,The doctor was introduced by the scientist.,"Input: The scientist introduced the doctor. Answer: The doctor was introduced by the scientist.
+"
+The managers introduced the authors.,The authors were introduced by the managers.,"Input: The managers introduced the authors. Answer: The authors were introduced by the managers.
+"
+The actors encouraged the senators.,The senators were encouraged by the actors.,"Input: The actors encouraged the senators. Answer: The senators were encouraged by the actors.
+"
+The actor avoided the banker.,The banker was avoided by the actor.,"Input: The actor avoided the banker. Answer: The banker was avoided by the actor.
+"
+The athletes stopped the artists.,The artists were stopped by the athletes.,"Input: The athletes stopped the artists. Answer: The artists were stopped by the athletes.
+"
+The authors avoided the doctor.,The doctor was avoided by the authors.,"Input: The authors avoided the doctor. Answer: The doctor was avoided by the authors.
+"
+The professor admired the author.,The author was admired by the professor.,"Input: The professor admired the author. Answer: The author was admired by the professor.
+"
+The actor encouraged the judge.,The judge was encouraged by the actor.,"Input: The actor encouraged the judge. Answer: The judge was encouraged by the actor.
+"
+The doctor advised the president.,The president was advised by the doctor.,"Input: The doctor advised the president. Answer: The president was advised by the doctor.
+"
+The manager encouraged the senators.,The senators were encouraged by the manager.,"Input: The manager encouraged the senators. Answer: The senators were encouraged by the manager.
+"
+The presidents avoided the tourists.,The tourists were avoided by the presidents.,"Input: The presidents avoided the tourists. Answer: The tourists were avoided by the presidents.
+"
+The artists avoided the judge.,The judge was avoided by the artists.,"Input: The artists avoided the judge. Answer: The judge was avoided by the artists.
+"
+The students mentioned the tourists.,The tourists were mentioned by the students.,"Input: The students mentioned the tourists. Answer: The tourists were mentioned by the students.
+"
+The student believed the author.,The author was believed by the student.,"Input: The student believed the author. Answer: The author was believed by the student.
+"
+The tourist admired the athletes.,The athletes were admired by the tourist.,"Input: The tourist admired the athletes. Answer: The athletes were admired by the tourist.
+"
+The author recommended the artists.,The artists were recommended by the author.,"Input: The author recommended the artists. Answer: The artists were recommended by the author.
+"
+The secretaries thanked the athlete.,The athlete was thanked by the secretaries.,"Input: The secretaries thanked the athlete. Answer: The athlete was thanked by the secretaries.
+"
+The lawyers avoided the scientists.,The scientists were avoided by the lawyers.,"Input: The lawyers avoided the scientists. Answer: The scientists were avoided by the lawyers.
+"
+The doctors admired the artist.,The artist was admired by the doctors.,"Input: The doctors admired the artist. Answer: The artist was admired by the doctors.
+"
+The senator admired the lawyers.,The lawyers were admired by the senator.,"Input: The senator admired the lawyers. Answer: The lawyers were admired by the senator.
+"
+The tourist contacted the doctors.,The doctors were contacted by the tourist.,"Input: The tourist contacted the doctors. Answer: The doctors were contacted by the tourist.
+"
+The athletes stopped the scientists.,The scientists were stopped by the athletes.,"Input: The athletes stopped the scientists. Answer: The scientists were stopped by the athletes.
+"
+The judge thanked the professor.,The professor was thanked by the judge.,"Input: The judge thanked the professor. Answer: The professor was thanked by the judge.
+"
+The artists believed the professor.,The professor was believed by the artists.,"Input: The artists believed the professor. Answer: The professor was believed by the artists.
+"
+The senators avoided the doctor.,The doctor was avoided by the senators.,"Input: The senators avoided the doctor. Answer: The doctor was avoided by the senators.
+"
+The secretary believed the senators.,The senators were believed by the secretary.,"Input: The secretary believed the senators. Answer: The senators were believed by the secretary.
+"
+The judges thanked the tourists.,The tourists were thanked by the judges.,"Input: The judges thanked the tourists. Answer: The tourists were thanked by the judges.
+"
+The president thanked the actor.,The actor was thanked by the president.,"Input: The president thanked the actor. Answer: The actor was thanked by the president.
+"
+The banker encouraged the lawyers.,The lawyers were encouraged by the banker.,"Input: The banker encouraged the lawyers. Answer: The lawyers were encouraged by the banker.
+"
+The professors supported the scientist.,The scientist was supported by the professors.,"Input: The professors supported the scientist. Answer: The scientist was supported by the professors.
+"
+The banker helped the senator.,The senator was helped by the banker.,"Input: The banker helped the senator. Answer: The senator was helped by the banker.
+"
+The actor supported the managers.,The managers were supported by the actor.,"Input: The actor supported the managers. Answer: The managers were supported by the actor.
+"
+The tourists admired the presidents.,The presidents were admired by the tourists.,"Input: The tourists admired the presidents. Answer: The presidents were admired by the tourists.
+"
+The manager encouraged the professors.,The professors were encouraged by the manager.,"Input: The manager encouraged the professors. Answer: The professors were encouraged by the manager.
+"
+The secretary recommended the students.,The students were recommended by the secretary.,"Input: The secretary recommended the students. Answer: The students were recommended by the secretary.
+"
+The students recognized the banker.,The banker was recognized by the students.,"Input: The students recognized the banker. Answer: The banker was recognized by the students.
+"
+The secretaries recognized the manager.,The manager was recognized by the secretaries.,"Input: The secretaries recognized the manager. Answer: The manager was recognized by the secretaries.
+"
+The doctors believed the tourist.,The tourist was believed by the doctors.,"Input: The doctors believed the tourist. Answer: The tourist was believed by the doctors.
+"
+The student stopped the senator.,The senator was stopped by the student.,"Input: The student stopped the senator. Answer: The senator was stopped by the student.
+"
+The senator helped the scientists.,The scientists were helped by the senator.,"Input: The senator helped the scientists. Answer: The scientists were helped by the senator.
+"
+The scientists helped the athletes.,The athletes were helped by the scientists.,"Input: The scientists helped the athletes. Answer: The athletes were helped by the scientists.
+"
+The judges avoided the scientists.,The scientists were avoided by the judges.,"Input: The judges avoided the scientists. Answer: The scientists were avoided by the judges.
+"
+The athlete recommended the secretary.,The secretary was recommended by the athlete.,"Input: The athlete recommended the secretary. Answer: The secretary was recommended by the athlete.
+"
+The actors helped the judge.,The judge was helped by the actors.,"Input: The actors helped the judge. Answer: The judge was helped by the actors.
+"
+The lawyer admired the authors.,The authors were admired by the lawyer.,"Input: The lawyer admired the authors. Answer: The authors were admired by the lawyer.
+"
+The actors recognized the scientists.,The scientists were recognized by the actors.,"Input: The actors recognized the scientists. Answer: The scientists were recognized by the actors.
+"
+The actor admired the professor.,The professor was admired by the actor.,"Input: The actor admired the professor. Answer: The professor was admired by the actor.
+"
+The manager recognized the senator.,The senator was recognized by the manager.,"Input: The manager recognized the senator. Answer: The senator was recognized by the manager.
+"
+The students supported the professor.,The professor was supported by the students.,"Input: The students supported the professor. Answer: The professor was supported by the students.
+"
+The students advised the professor.,The professor was advised by the students.,"Input: The students advised the professor. Answer: The professor was advised by the students.
+"
+The secretaries advised the artist.,The artist was advised by the secretaries.,"Input: The secretaries advised the artist. Answer: The artist was advised by the secretaries.
+"
+The actor contacted the secretary.,The secretary was contacted by the actor.,"Input: The actor contacted the secretary. Answer: The secretary was contacted by the actor.
+"
+The professors recognized the athlete.,The athlete was recognized by the professors.,"Input: The professors recognized the athlete. Answer: The athlete was recognized by the professors.
+"
+The athletes encouraged the doctors.,The doctors were encouraged by the athletes.,"Input: The athletes encouraged the doctors. Answer: The doctors were encouraged by the athletes.
+"
+The bankers encouraged the athlete.,The athlete was encouraged by the bankers.,"Input: The bankers encouraged the athlete. Answer: The athlete was encouraged by the bankers.
+"
+The artist advised the doctor.,The doctor was advised by the artist.,"Input: The artist advised the doctor. Answer: The doctor was advised by the artist.
+"
+The senators avoided the tourists.,The tourists were avoided by the senators.,"Input: The senators avoided the tourists. Answer: The tourists were avoided by the senators.
+"
+The secretaries stopped the bankers.,The bankers were stopped by the secretaries.,"Input: The secretaries stopped the bankers. Answer: The bankers were stopped by the secretaries.
+"
+The bankers admired the author.,The author was admired by the bankers.,"Input: The bankers admired the author. Answer: The author was admired by the bankers.
+"
+The manager advised the professor.,The professor was advised by the manager.,"Input: The manager advised the professor. Answer: The professor was advised by the manager.
+"
+The tourists supported the senators.,The senators were supported by the tourists.,"Input: The tourists supported the senators. Answer: The senators were supported by the tourists.
+"
+The artists supported the doctors.,The doctors were supported by the artists.,"Input: The artists supported the doctors. Answer: The doctors were supported by the artists.
+"
+The artist introduced the tourist.,The tourist was introduced by the artist.,"Input: The artist introduced the tourist. Answer: The tourist was introduced by the artist.
+"
+The lawyers advised the senator.,The senator was advised by the lawyers.,"Input: The lawyers advised the senator. Answer: The senator was advised by the lawyers.
+"
+The judges thanked the lawyers.,The lawyers were thanked by the judges.,"Input: The judges thanked the lawyers. Answer: The lawyers were thanked by the judges.
+"
+The senator believed the banker.,The banker was believed by the senator.,"Input: The senator believed the banker. Answer: The banker was believed by the senator.
+"
+The student admired the banker.,The banker was admired by the student.,"Input: The student admired the banker. Answer: The banker was admired by the student.
+"
+The artist advised the author.,The author was advised by the artist.,"Input: The artist advised the author. Answer: The author was advised by the artist.
+"
+The judge contacted the lawyer.,The lawyer was contacted by the judge.,"Input: The judge contacted the lawyer. Answer: The lawyer was contacted by the judge.
+"
+The lawyers believed the scientists.,The scientists were believed by the lawyers.,"Input: The lawyers believed the scientists. Answer: The scientists were believed by the lawyers.
+"
+The actor thanked the professor.,The professor was thanked by the actor.,"Input: The actor thanked the professor. Answer: The professor was thanked by the actor.
+"
+The manager thanked the scientists.,The scientists were thanked by the manager.,"Input: The manager thanked the scientists. Answer: The scientists were thanked by the manager.
+"
+The scientists helped the student.,The student was helped by the scientists.,"Input: The scientists helped the student. Answer: The student was helped by the scientists.
+"
+The artist admired the professors.,The professors were admired by the artist.,"Input: The artist admired the professors. Answer: The professors were admired by the artist.
+"
+The secretary encouraged the manager.,The manager was encouraged by the secretary.,"Input: The secretary encouraged the manager. Answer: The manager was encouraged by the secretary.
+"
+The senator mentioned the author.,The author was mentioned by the senator.,"Input: The senator mentioned the author. Answer: The author was mentioned by the senator.
+"
+The tourists avoided the scientists.,The scientists were avoided by the tourists.,"Input: The tourists avoided the scientists. Answer: The scientists were avoided by the tourists.
+"
+The judge recommended the doctors.,The doctors were recommended by the judge.,"Input: The judge recommended the doctors. Answer: The doctors were recommended by the judge.
+"
+The manager helped the secretary.,The secretary was helped by the manager.,"Input: The manager helped the secretary. Answer: The secretary was helped by the manager.
+"
+The author admired the manager.,The manager was admired by the author.,"Input: The author admired the manager. Answer: The manager was admired by the author.
+"
+The professor helped the actors.,The actors were helped by the professor.,"Input: The professor helped the actors. Answer: The actors were helped by the professor.
+"
+The judge recognized the doctors.,The doctors were recognized by the judge.,"Input: The judge recognized the doctors. Answer: The doctors were recognized by the judge.
+"
+The professor avoided the author.,The author was avoided by the professor.,"Input: The professor avoided the author. Answer: The author was avoided by the professor.
+"
+The actor helped the manager.,The manager was helped by the actor.,"Input: The actor helped the manager. Answer: The manager was helped by the actor.
+"
+The judge encouraged the banker.,The banker was encouraged by the judge.,"Input: The judge encouraged the banker. Answer: The banker was encouraged by the judge.
+"
+The doctor avoided the president.,The president was avoided by the doctor.,"Input: The doctor avoided the president. Answer: The president was avoided by the doctor.
+"
+The manager thanked the senators.,The senators were thanked by the manager.,"Input: The manager thanked the senators. Answer: The senators were thanked by the manager.
+"
+The doctor admired the authors.,The authors were admired by the doctor.,"Input: The doctor admired the authors. Answer: The authors were admired by the doctor.
+"
+The students introduced the tourists.,The tourists were introduced by the students.,"Input: The students introduced the tourists. Answer: The tourists were introduced by the students.
+"
+The senator supported the artists.,The artists were supported by the senator.,"Input: The senator supported the artists. Answer: The artists were supported by the senator.
+"
+The students recognized the judge.,The judge was recognized by the students.,"Input: The students recognized the judge. Answer: The judge was recognized by the students.
+"
+The secretaries thanked the athletes.,The athletes were thanked by the secretaries.,"Input: The secretaries thanked the athletes. Answer: The athletes were thanked by the secretaries.
+"
+The actor thanked the authors.,The authors were thanked by the actor.,"Input: The actor thanked the authors. Answer: The authors were thanked by the actor.
+"
+The students stopped the doctor.,The doctor was stopped by the students.,"Input: The students stopped the doctor. Answer: The doctor was stopped by the students.
+"
+The banker introduced the presidents.,The presidents were introduced by the banker.,"Input: The banker introduced the presidents. Answer: The presidents were introduced by the banker.
+"
+The actor contacted the tourists.,The tourists were contacted by the actor.,"Input: The actor contacted the tourists. Answer: The tourists were contacted by the actor.
+"
+The president supported the lawyer.,The lawyer was supported by the president.,"Input: The president supported the lawyer. Answer: The lawyer was supported by the president.
+"
+The managers introduced the senators.,The senators were introduced by the managers.,"Input: The managers introduced the senators. Answer: The senators were introduced by the managers.
+"
+The actor avoided the professors.,The professors were avoided by the actor.,"Input: The actor avoided the professors. Answer: The professors were avoided by the actor.
+"
+The author recommended the manager.,The manager was recommended by the author.,"Input: The author recommended the manager. Answer: The manager was recommended by the author.
+"
+The actor recommended the scientists.,The scientists were recommended by the actor.,"Input: The actor recommended the scientists. Answer: The scientists were recommended by the actor.
+"
+The senator mentioned the tourist.,The tourist was mentioned by the senator.,"Input: The senator mentioned the tourist. Answer: The tourist was mentioned by the senator.
+"
+The banker encouraged the athlete.,The athlete was encouraged by the banker.,"Input: The banker encouraged the athlete. Answer: The athlete was encouraged by the banker.
+"
+The lawyer mentioned the actors.,The actors were mentioned by the lawyer.,"Input: The lawyer mentioned the actors. Answer: The actors were mentioned by the lawyer.
+"
+The athlete believed the artist.,The artist was believed by the athlete.,"Input: The athlete believed the artist. Answer: The artist was believed by the athlete.
+"
+The presidents contacted the senator.,The senator was contacted by the presidents.,"Input: The presidents contacted the senator. Answer: The senator was contacted by the presidents.
+"
+The artists believed the bankers.,The bankers were believed by the artists.,"Input: The artists believed the bankers. Answer: The bankers were believed by the artists.
+"
+The tourists mentioned the artist.,The artist was mentioned by the tourists.,"Input: The tourists mentioned the artist. Answer: The artist was mentioned by the tourists.
+"
+The secretary mentioned the artist.,The artist was mentioned by the secretary.,"Input: The secretary mentioned the artist. Answer: The artist was mentioned by the secretary.
+"
+The secretaries avoided the student.,The student was avoided by the secretaries.,"Input: The secretaries avoided the student. Answer: The student was avoided by the secretaries.
+"
+The artist stopped the president.,The president was stopped by the artist.,"Input: The artist stopped the president. Answer: The president was stopped by the artist.
+"
+The artists introduced the managers.,The managers were introduced by the artists.,"Input: The artists introduced the managers. Answer: The managers were introduced by the artists.
+"
+The doctors supported the athlete.,The athlete was supported by the doctors.,"Input: The doctors supported the athlete. Answer: The athlete was supported by the doctors.
+"
+The athletes stopped the manager.,The manager was stopped by the athletes.,"Input: The athletes stopped the manager. Answer: The manager was stopped by the athletes.
+"
+The actor avoided the tourist.,The tourist was avoided by the actor.,"Input: The actor avoided the tourist. Answer: The tourist was avoided by the actor.
+"
+The lawyers encouraged the professors.,The professors were encouraged by the lawyers.,"Input: The lawyers encouraged the professors. Answer: The professors were encouraged by the lawyers.
+"
+The scientists recommended the tourist.,The tourist was recommended by the scientists.,"Input: The scientists recommended the tourist. Answer: The tourist was recommended by the scientists.
+"
+The secretaries advised the lawyer.,The lawyer was advised by the secretaries.,"Input: The secretaries advised the lawyer. Answer: The lawyer was advised by the secretaries.
+"
+The artist believed the scientists.,The scientists were believed by the artist.,"Input: The artist believed the scientists. Answer: The scientists were believed by the artist.
+"
+The doctor helped the secretaries.,The secretaries were helped by the doctor.,"Input: The doctor helped the secretaries. Answer: The secretaries were helped by the doctor.
+"
+The banker advised the author.,The author was advised by the banker.,"Input: The banker advised the author. Answer: The author was advised by the banker.
+"
+The scientists thanked the lawyer.,The lawyer was thanked by the scientists.,"Input: The scientists thanked the lawyer. Answer: The lawyer was thanked by the scientists.
+"
+The tourists admired the artists.,The artists were admired by the tourists.,"Input: The tourists admired the artists. Answer: The artists were admired by the tourists.
+"
+The bankers advised the presidents.,The presidents were advised by the bankers.,"Input: The bankers advised the presidents. Answer: The presidents were advised by the bankers.
+"
+The president introduced the secretary.,The secretary was introduced by the president.,"Input: The president introduced the secretary. Answer: The secretary was introduced by the president.
+"
+The judge recommended the athletes.,The athletes were recommended by the judge.,"Input: The judge recommended the athletes. Answer: The athletes were recommended by the judge.
+"
+The senator advised the athletes.,The athletes were advised by the senator.,"Input: The senator advised the athletes. Answer: The athletes were advised by the senator.
+"
+The artists recommended the secretary.,The secretary was recommended by the artists.,"Input: The artists recommended the secretary. Answer: The secretary was recommended by the artists.
+"
+The lawyers mentioned the president.,The president was mentioned by the lawyers.,"Input: The lawyers mentioned the president. Answer: The president was mentioned by the lawyers.
+"
+The professors encouraged the presidents.,The presidents were encouraged by the professors.,"Input: The professors encouraged the presidents. Answer: The presidents were encouraged by the professors.
+"
+The banker contacted the author.,The author was contacted by the banker.,"Input: The banker contacted the author. Answer: The author was contacted by the banker.
+"
+The tourist recommended the senators.,The senators were recommended by the tourist.,"Input: The tourist recommended the senators. Answer: The senators were recommended by the tourist.
+"
+The athletes advised the secretary.,The secretary was advised by the athletes.,"Input: The athletes advised the secretary. Answer: The secretary was advised by the athletes.
+"
+The managers avoided the actors.,The actors were avoided by the managers.,"Input: The managers avoided the actors. Answer: The actors were avoided by the managers.
+"
+The actors admired the doctors.,The doctors were admired by the actors.,"Input: The actors admired the doctors. Answer: The doctors were admired by the actors.
+"
+The judge recognized the lawyers.,The lawyers were recognized by the judge.,"Input: The judge recognized the lawyers. Answer: The lawyers were recognized by the judge.
+"
+The athletes recommended the scientists.,The scientists were recommended by the athletes.,"Input: The athletes recommended the scientists. Answer: The scientists were recommended by the athletes.
+"
+The tourist encouraged the professors.,The professors were encouraged by the tourist.,"Input: The tourist encouraged the professors. Answer: The professors were encouraged by the tourist.
+"
+The scientist recognized the author.,The author was recognized by the scientist.,"Input: The scientist recognized the author. Answer: The author was recognized by the scientist.
+"
+The student thanked the tourists.,The tourists were thanked by the student.,"Input: The student thanked the tourists. Answer: The tourists were thanked by the student.
+"
+The manager thanked the student.,The student was thanked by the manager.,"Input: The manager thanked the student. Answer: The student was thanked by the manager.
+"
+The scientist mentioned the student.,The student was mentioned by the scientist.,"Input: The scientist mentioned the student. Answer: The student was mentioned by the scientist.
+"
+The artist recognized the judges.,The judges were recognized by the artist.,"Input: The artist recognized the judges. Answer: The judges were recognized by the artist.
+"
+The judges advised the doctors.,The doctors were advised by the judges.,"Input: The judges advised the doctors. Answer: The doctors were advised by the judges.
+"
+The banker introduced the tourist.,The tourist was introduced by the banker.,"Input: The banker introduced the tourist. Answer: The tourist was introduced by the banker.
+"
+The student mentioned the banker.,The banker was mentioned by the student.,"Input: The student mentioned the banker. Answer: The banker was mentioned by the student.
+"
+The athletes recommended the actor.,The actor was recommended by the athletes.,"Input: The athletes recommended the actor. Answer: The actor was recommended by the athletes.
+"
+The tourist helped the scientist.,The scientist was helped by the tourist.,"Input: The tourist helped the scientist. Answer: The scientist was helped by the tourist.
+"
+The managers supported the bankers.,The bankers were supported by the managers.,"Input: The managers supported the bankers. Answer: The bankers were supported by the managers.
+"
+The secretaries recognized the tourist.,The tourist was recognized by the secretaries.,"Input: The secretaries recognized the tourist. Answer: The tourist was recognized by the secretaries.
+"
+The actors avoided the secretary.,The secretary was avoided by the actors.,"Input: The actors avoided the secretary. Answer: The secretary was avoided by the actors.
+"
+The doctors recommended the judge.,The judge was recommended by the doctors.,"Input: The doctors recommended the judge. Answer: The judge was recommended by the doctors.
+"
+The scientists recognized the presidents.,The presidents were recognized by the scientists.,"Input: The scientists recognized the presidents. Answer: The presidents were recognized by the scientists.
+"
+The secretaries helped the professors.,The professors were helped by the secretaries.,"Input: The secretaries helped the professors. Answer: The professors were helped by the secretaries.
+"
+The managers advised the professors.,The professors were advised by the managers.,"Input: The managers advised the professors. Answer: The professors were advised by the managers.
+"
+The manager helped the students.,The students were helped by the manager.,"Input: The manager helped the students. Answer: The students were helped by the manager.
+"
+The professor advised the senators.,The senators were advised by the professor.,"Input: The professor advised the senators. Answer: The senators were advised by the professor.
+"
+The artists recommended the bankers.,The bankers were recommended by the artists.,"Input: The artists recommended the bankers. Answer: The bankers were recommended by the artists.
+"
+The artist avoided the lawyers.,The lawyers were avoided by the artist.,"Input: The artist avoided the lawyers. Answer: The lawyers were avoided by the artist.
+"
+The athletes admired the senator.,The senator was admired by the athletes.,"Input: The athletes admired the senator. Answer: The senator was admired by the athletes.
+"
+The scientists recommended the president.,The president was recommended by the scientists.,"Input: The scientists recommended the president. Answer: The president was recommended by the scientists.
+"
+The lawyer avoided the managers.,The managers were avoided by the lawyer.,"Input: The lawyer avoided the managers. Answer: The managers were avoided by the lawyer.
+"
+The athletes mentioned the bankers.,The bankers were mentioned by the athletes.,"Input: The athletes mentioned the bankers. Answer: The bankers were mentioned by the athletes.
+"
+The actors admired the artist.,The artist was admired by the actors.,"Input: The actors admired the artist. Answer: The artist was admired by the actors.
+"
+The athlete believed the actors.,The actors were believed by the athlete.,"Input: The athlete believed the actors. Answer: The actors were believed by the athlete.
+"
+The tourist contacted the doctor.,The doctor was contacted by the tourist.,"Input: The tourist contacted the doctor. Answer: The doctor was contacted by the tourist.
+"
+The lawyers stopped the professor.,The professor was stopped by the lawyers.,"Input: The lawyers stopped the professor. Answer: The professor was stopped by the lawyers.
+"
+The senators recommended the doctors.,The doctors were recommended by the senators.,"Input: The senators recommended the doctors. Answer: The doctors were recommended by the senators.
+"
+The artists recognized the scientist.,The scientist was recognized by the artists.,"Input: The artists recognized the scientist. Answer: The scientist was recognized by the artists.
+"
+The secretary stopped the lawyer.,The lawyer was stopped by the secretary.,"Input: The secretary stopped the lawyer. Answer: The lawyer was stopped by the secretary.
+"
+The artist avoided the senator.,The senator was avoided by the artist.,"Input: The artist avoided the senator. Answer: The senator was avoided by the artist.
+"
+The judge contacted the athletes.,The athletes were contacted by the judge.,"Input: The judge contacted the athletes. Answer: The athletes were contacted by the judge.
+"
+The actors thanked the senators.,The senators were thanked by the actors.,"Input: The actors thanked the senators. Answer: The senators were thanked by the actors.
+"
+The secretaries admired the author.,The author was admired by the secretaries.,"Input: The secretaries admired the author. Answer: The author was admired by the secretaries.
+"
+The managers supported the artists.,The artists were supported by the managers.,"Input: The managers supported the artists. Answer: The artists were supported by the managers.
+"
+The secretary encouraged the authors.,The authors were encouraged by the secretary.,"Input: The secretary encouraged the authors. Answer: The authors were encouraged by the secretary.
+"
+The doctors believed the judges.,The judges were believed by the doctors.,"Input: The doctors believed the judges. Answer: The judges were believed by the doctors.
+"
+The judges recommended the athlete.,The athlete was recommended by the judges.,"Input: The judges recommended the athlete. Answer: The athlete was recommended by the judges.
+"
+The professors contacted the senator.,The senator was contacted by the professors.,"Input: The professors contacted the senator. Answer: The senator was contacted by the professors.
+"
+The senators believed the scientist.,The scientist was believed by the senators.,"Input: The senators believed the scientist. Answer: The scientist was believed by the senators.
+"
+The artists encouraged the professor.,The professor was encouraged by the artists.,"Input: The artists encouraged the professor. Answer: The professor was encouraged by the artists.
+"
+The athletes introduced the professor.,The professor was introduced by the athletes.,"Input: The athletes introduced the professor. Answer: The professor was introduced by the athletes.
+"
+The presidents stopped the actors.,The actors were stopped by the presidents.,"Input: The presidents stopped the actors. Answer: The actors were stopped by the presidents.
+"
+The students helped the artists.,The artists were helped by the students.,"Input: The students helped the artists. Answer: The artists were helped by the students.
+"
+The scientist contacted the actors.,The actors were contacted by the scientist.,"Input: The scientist contacted the actors. Answer: The actors were contacted by the scientist.
+"
+The athlete recommended the lawyer.,The lawyer was recommended by the athlete.,"Input: The athlete recommended the lawyer. Answer: The lawyer was recommended by the athlete.
+"
+The banker advised the doctor.,The doctor was advised by the banker.,"Input: The banker advised the doctor. Answer: The doctor was advised by the banker.
+"
+The judge supported the athlete.,The athlete was supported by the judge.,"Input: The judge supported the athlete. Answer: The athlete was supported by the judge.
+"
+The president mentioned the professor.,The professor was mentioned by the president.,"Input: The president mentioned the professor. Answer: The professor was mentioned by the president.
+"
+The actors avoided the authors.,The authors were avoided by the actors.,"Input: The actors avoided the authors. Answer: The authors were avoided by the actors.
+"
+The senator admired the manager.,The manager was admired by the senator.,"Input: The senator admired the manager. Answer: The manager was admired by the senator.
+"
+The tourist encouraged the scientists.,The scientists were encouraged by the tourist.,"Input: The tourist encouraged the scientists. Answer: The scientists were encouraged by the tourist.
+"
+The judge recommended the secretary.,The secretary was recommended by the judge.,"Input: The judge recommended the secretary. Answer: The secretary was recommended by the judge.
+"
+The student advised the manager.,The manager was advised by the student.,"Input: The student advised the manager. Answer: The manager was advised by the student.
+"
+The secretaries mentioned the artist.,The artist was mentioned by the secretaries.,"Input: The secretaries mentioned the artist. Answer: The artist was mentioned by the secretaries.
+"
+The actors believed the manager.,The manager was believed by the actors.,"Input: The actors believed the manager. Answer: The manager was believed by the actors.
+"
+The senator mentioned the professor.,The professor was mentioned by the senator.,"Input: The senator mentioned the professor. Answer: The professor was mentioned by the senator.
+"
+The managers admired the artist.,The artist was admired by the managers.,"Input: The managers admired the artist. Answer: The artist was admired by the managers.
+"
+The professor avoided the student.,The student was avoided by the professor.,"Input: The professor avoided the student. Answer: The student was avoided by the professor.
+"
+The authors contacted the judges.,The judges were contacted by the authors.,"Input: The authors contacted the judges. Answer: The judges were contacted by the authors.
+"
+The tourist thanked the lawyers.,The lawyers were thanked by the tourist.,"Input: The tourist thanked the lawyers. Answer: The lawyers were thanked by the tourist.
+"
+The bankers contacted the doctor.,The doctor was contacted by the bankers.,"Input: The bankers contacted the doctor. Answer: The doctor was contacted by the bankers.
+"
+The authors introduced the judge.,The judge was introduced by the authors.,"Input: The authors introduced the judge. Answer: The judge was introduced by the authors.
+"
+The artists contacted the scientists.,The scientists were contacted by the artists.,"Input: The artists contacted the scientists. Answer: The scientists were contacted by the artists.
+"
+The judge admired the bankers.,The bankers were admired by the judge.,"Input: The judge admired the bankers. Answer: The bankers were admired by the judge.
+"
+The managers introduced the tourist.,The tourist was introduced by the managers.,"Input: The managers introduced the tourist. Answer: The tourist was introduced by the managers.
+"
+The artists recommended the athlete.,The athlete was recommended by the artists.,"Input: The artists recommended the athlete. Answer: The athlete was recommended by the artists.
+"
+The manager admired the artist.,The artist was admired by the manager.,"Input: The manager admired the artist. Answer: The artist was admired by the manager.
+"
+The presidents thanked the actors.,The actors were thanked by the presidents.,"Input: The presidents thanked the actors. Answer: The actors were thanked by the presidents.
+"
+The lawyers advised the professor.,The professor was advised by the lawyers.,"Input: The lawyers advised the professor. Answer: The professor was advised by the lawyers.
+"
+The actor contacted the athlete.,The athlete was contacted by the actor.,"Input: The actor contacted the athlete. Answer: The athlete was contacted by the actor.
+"
+The presidents introduced the athlete.,The athlete was introduced by the presidents.,"Input: The presidents introduced the athlete. Answer: The athlete was introduced by the presidents.
+"
+The students supported the doctors.,The doctors were supported by the students.,"Input: The students supported the doctors. Answer: The doctors were supported by the students.
+"
+The artist thanked the actors.,The actors were thanked by the artist.,"Input: The artist thanked the actors. Answer: The actors were thanked by the artist.
+"
+The manager contacted the author.,The author was contacted by the manager.,"Input: The manager contacted the author. Answer: The author was contacted by the manager.
+"
+The artists admired the athlete.,The athlete was admired by the artists.,"Input: The artists admired the athlete. Answer: The athlete was admired by the artists.
+"
+The secretary supported the actor.,The actor was supported by the secretary.,"Input: The secretary supported the actor. Answer: The actor was supported by the secretary.
+"
+The student believed the senators.,The senators were believed by the student.,"Input: The student believed the senators. Answer: The senators were believed by the student.
+"
+The professors helped the secretary.,The secretary was helped by the professors.,"Input: The professors helped the secretary. Answer: The secretary was helped by the professors.
+"
+The doctor avoided the lawyers.,The lawyers were avoided by the doctor.,"Input: The doctor avoided the lawyers. Answer: The lawyers were avoided by the doctor.
+"
+The lawyer recognized the students.,The students were recognized by the lawyer.,"Input: The lawyer recognized the students. Answer: The students were recognized by the lawyer.
+"
+The professor avoided the judges.,The judges were avoided by the professor.,"Input: The professor avoided the judges. Answer: The judges were avoided by the professor.
+"
+The students supported the managers.,The managers were supported by the students.,"Input: The students supported the managers. Answer: The managers were supported by the students.
+"
+The doctors thanked the author.,The author was thanked by the doctors.,"Input: The doctors thanked the author. Answer: The author was thanked by the doctors.
+"
+The doctors avoided the student.,The student was avoided by the doctors.,"Input: The doctors avoided the student. Answer: The student was avoided by the doctors.
+"
+The actors introduced the doctor.,The doctor was introduced by the actors.,"Input: The actors introduced the doctor. Answer: The doctor was introduced by the actors.
+"
+The students encouraged the tourists.,The tourists were encouraged by the students.,"Input: The students encouraged the tourists. Answer: The tourists were encouraged by the students.
+"
+The scientists avoided the doctors.,The doctors were avoided by the scientists.,"Input: The scientists avoided the doctors. Answer: The doctors were avoided by the scientists.
+"
+The tourist recommended the secretary.,The secretary was recommended by the tourist.,"Input: The tourist recommended the secretary. Answer: The secretary was recommended by the tourist.
+"
+The senator thanked the student.,The student was thanked by the senator.,"Input: The senator thanked the student. Answer: The student was thanked by the senator.
+"
+The tourist helped the artists.,The artists were helped by the tourist.,"Input: The tourist helped the artists. Answer: The artists were helped by the tourist.
+"
+The artists recognized the senator.,The senator was recognized by the artists.,"Input: The artists recognized the senator. Answer: The senator was recognized by the artists.
+"
+The presidents avoided the secretaries.,The secretaries were avoided by the presidents.,"Input: The presidents avoided the secretaries. Answer: The secretaries were avoided by the presidents.
+"
+The presidents helped the doctors.,The doctors were helped by the presidents.,"Input: The presidents helped the doctors. Answer: The doctors were helped by the presidents.
+"
+The judge advised the scientists.,The scientists were advised by the judge.,"Input: The judge advised the scientists. Answer: The scientists were advised by the judge.
+"
+The senator supported the judge.,The judge was supported by the senator.,"Input: The senator supported the judge. Answer: The judge was supported by the senator.
+"
+The tourist thanked the senators.,The senators were thanked by the tourist.,"Input: The tourist thanked the senators. Answer: The senators were thanked by the tourist.
+"
+The professors introduced the senators.,The senators were introduced by the professors.,"Input: The professors introduced the senators. Answer: The senators were introduced by the professors.
+"
+The student helped the manager.,The manager was helped by the student.,"Input: The student helped the manager. Answer: The manager was helped by the student.
+"
+The lawyers recommended the author.,The author was recommended by the lawyers.,"Input: The lawyers recommended the author. Answer: The author was recommended by the lawyers.
+"
+The bankers thanked the scientist.,The scientist was thanked by the bankers.,"Input: The bankers thanked the scientist. Answer: The scientist was thanked by the bankers.
+"
+The athlete contacted the doctor.,The doctor was contacted by the athlete.,"Input: The athlete contacted the doctor. Answer: The doctor was contacted by the athlete.
+"
+The doctors encouraged the judges.,The judges were encouraged by the doctors.,"Input: The doctors encouraged the judges. Answer: The judges were encouraged by the doctors.
+"
+The president encouraged the athletes.,The athletes were encouraged by the president.,"Input: The president encouraged the athletes. Answer: The athletes were encouraged by the president.
+"
+The actor encouraged the athletes.,The athletes were encouraged by the actor.,"Input: The actor encouraged the athletes. Answer: The athletes were encouraged by the actor.
+"
+The tourists contacted the bankers.,The bankers were contacted by the tourists.,"Input: The tourists contacted the bankers. Answer: The bankers were contacted by the tourists.
+"
+The presidents encouraged the tourists.,The tourists were encouraged by the presidents.,"Input: The presidents encouraged the tourists. Answer: The tourists were encouraged by the presidents.
+"
+The presidents thanked the senators.,The senators were thanked by the presidents.,"Input: The presidents thanked the senators. Answer: The senators were thanked by the presidents.
+"
+The scientist contacted the president.,The president was contacted by the scientist.,"Input: The scientist contacted the president. Answer: The president was contacted by the scientist.
+"
+The professor helped the actor.,The actor was helped by the professor.,"Input: The professor helped the actor. Answer: The actor was helped by the professor.
+"
+The professor believed the senator.,The senator was believed by the professor.,"Input: The professor believed the senator. Answer: The senator was believed by the professor.
+"
+The professor recognized the tourist.,The tourist was recognized by the professor.,"Input: The professor recognized the tourist. Answer: The tourist was recognized by the professor.
+"
+The authors thanked the actors.,The actors were thanked by the authors.,"Input: The authors thanked the actors. Answer: The actors were thanked by the authors.
+"
+The president recommended the manager.,The manager was recommended by the president.,"Input: The president recommended the manager. Answer: The manager was recommended by the president.
+"
+The professor advised the judges.,The judges were advised by the professor.,"Input: The professor advised the judges. Answer: The judges were advised by the professor.
+"
+The actor encouraged the professors.,The professors were encouraged by the actor.,"Input: The actor encouraged the professors. Answer: The professors were encouraged by the actor.
+"
+The athletes stopped the secretary.,The secretary was stopped by the athletes.,"Input: The athletes stopped the secretary. Answer: The secretary was stopped by the athletes.
+"
+The judge supported the professor.,The professor was supported by the judge.,"Input: The judge supported the professor. Answer: The professor was supported by the judge.
+"
+The lawyers encouraged the manager.,The manager was encouraged by the lawyers.,"Input: The lawyers encouraged the manager. Answer: The manager was encouraged by the lawyers.
+"
+The judge thanked the author.,The author was thanked by the judge.,"Input: The judge thanked the author. Answer: The author was thanked by the judge.
+"
+The judge supported the lawyers.,The lawyers were supported by the judge.,"Input: The judge supported the lawyers. Answer: The lawyers were supported by the judge.
+"
+The athletes recognized the judge.,The judge was recognized by the athletes.,"Input: The athletes recognized the judge. Answer: The judge was recognized by the athletes.
+"
+The judge introduced the president.,The president was introduced by the judge.,"Input: The judge introduced the president. Answer: The president was introduced by the judge.
+"
+The professor admired the lawyers.,The lawyers were admired by the professor.,"Input: The professor admired the lawyers. Answer: The lawyers were admired by the professor.
+"
+The doctors contacted the scientist.,The scientist was contacted by the doctors.,"Input: The doctors contacted the scientist. Answer: The scientist was contacted by the doctors.
+"
+The judge introduced the student.,The student was introduced by the judge.,"Input: The judge introduced the student. Answer: The student was introduced by the judge.
+"
+The president encouraged the bankers.,The bankers were encouraged by the president.,"Input: The president encouraged the bankers. Answer: The bankers were encouraged by the president.
+"
+The president supported the actor.,The actor was supported by the president.,"Input: The president supported the actor. Answer: The actor was supported by the president.
+"
+The bankers admired the manager.,The manager was admired by the bankers.,"Input: The bankers admired the manager. Answer: The manager was admired by the bankers.
+"
+The author avoided the doctors.,The doctors were avoided by the author.,"Input: The author avoided the doctors. Answer: The doctors were avoided by the author.
+"
+The professor stopped the senators.,The senators were stopped by the professor.,"Input: The professor stopped the senators. Answer: The senators were stopped by the professor.
+"
+The actors recognized the author.,The author was recognized by the actors.,"Input: The actors recognized the author. Answer: The author was recognized by the actors.
+"
+The judges helped the lawyer.,The lawyer was helped by the judges.,"Input: The judges helped the lawyer. Answer: The lawyer was helped by the judges.
+"
+The president introduced the judge.,The judge was introduced by the president.,"Input: The president introduced the judge. Answer: The judge was introduced by the president.
+"
+The secretaries advised the judge.,The judge was advised by the secretaries.,"Input: The secretaries advised the judge. Answer: The judge was advised by the secretaries.
+"
+The president thanked the artists.,The artists were thanked by the president.,"Input: The president thanked the artists. Answer: The artists were thanked by the president.
+"
+The judges recognized the senator.,The senator was recognized by the judges.,"Input: The judges recognized the senator. Answer: The senator was recognized by the judges.
+"
+The senators admired the managers.,The managers were admired by the senators.,"Input: The senators admired the managers. Answer: The managers were admired by the senators.
+"
+The president introduced the lawyer.,The lawyer was introduced by the president.,"Input: The president introduced the lawyer. Answer: The lawyer was introduced by the president.
+"
+The lawyer admired the actor.,The actor was admired by the lawyer.,"Input: The lawyer admired the actor. Answer: The actor was admired by the lawyer.
+"
+The professors avoided the students.,The students were avoided by the professors.,"Input: The professors avoided the students. Answer: The students were avoided by the professors.
+"
+The professors supported the doctor.,The doctor was supported by the professors.,"Input: The professors supported the doctor. Answer: The doctor was supported by the professors.
+"
+The judges admired the actor.,The actor was admired by the judges.,"Input: The judges admired the actor. Answer: The actor was admired by the judges.
+"
+The lawyer encouraged the scientists.,The scientists were encouraged by the lawyer.,"Input: The lawyer encouraged the scientists. Answer: The scientists were encouraged by the lawyer.
+"
+The athlete contacted the presidents.,The presidents were contacted by the athlete.,"Input: The athlete contacted the presidents. Answer: The presidents were contacted by the athlete.
+"
+The tourist contacted the managers.,The managers were contacted by the tourist.,"Input: The tourist contacted the managers. Answer: The managers were contacted by the tourist.
+"
+The authors stopped the presidents.,The presidents were stopped by the authors.,"Input: The authors stopped the presidents. Answer: The presidents were stopped by the authors.
+"
+The senators helped the judges.,The judges were helped by the senators.,"Input: The senators helped the judges. Answer: The judges were helped by the senators.
+"
+The secretary believed the president.,The president was believed by the secretary.,"Input: The secretary believed the president. Answer: The president was believed by the secretary.
+"
+The managers stopped the president.,The president was stopped by the managers.,"Input: The managers stopped the president. Answer: The president was stopped by the managers.
+"
+The actor introduced the authors.,The authors were introduced by the actor.,"Input: The actor introduced the authors. Answer: The authors were introduced by the actor.
+"
+The students recommended the actor.,The actor was recommended by the students.,"Input: The students recommended the actor. Answer: The actor was recommended by the students.
+"
+The tourists introduced the artists.,The artists were introduced by the tourists.,"Input: The tourists introduced the artists. Answer: The artists were introduced by the tourists.
+"
+The doctor recognized the actor.,The actor was recognized by the doctor.,"Input: The doctor recognized the actor. Answer: The actor was recognized by the doctor.
+"
+The student recognized the doctors.,The doctors were recognized by the student.,"Input: The student recognized the doctors. Answer: The doctors were recognized by the student.
+"
+The professors helped the doctor.,The doctor was helped by the professors.,"Input: The professors helped the doctor. Answer: The doctor was helped by the professors.
+"
+The scientist recognized the president.,The president was recognized by the scientist.,"Input: The scientist recognized the president. Answer: The president was recognized by the scientist.
+"
+The secretaries recognized the senator.,The senator was recognized by the secretaries.,"Input: The secretaries recognized the senator. Answer: The senator was recognized by the secretaries.
+"
+The tourists advised the professors.,The professors were advised by the tourists.,"Input: The tourists advised the professors. Answer: The professors were advised by the tourists.
+"
+The judges admired the secretary.,The secretary was admired by the judges.,"Input: The judges admired the secretary. Answer: The secretary was admired by the judges.
+"
+The students contacted the doctors.,The doctors were contacted by the students.,"Input: The students contacted the doctors. Answer: The doctors were contacted by the students.
+"
+The professor helped the athletes.,The athletes were helped by the professor.,"Input: The professor helped the athletes. Answer: The athletes were helped by the professor.
+"
+The authors introduced the student.,The student was introduced by the authors.,"Input: The authors introduced the student. Answer: The student was introduced by the authors.
+"
+The doctors supported the banker.,The banker was supported by the doctors.,"Input: The doctors supported the banker. Answer: The banker was supported by the doctors.
+"
+The actor helped the senators.,The senators were helped by the actor.,"Input: The actor helped the senators. Answer: The senators were helped by the actor.
+"
+The banker thanked the authors.,The authors were thanked by the banker.,"Input: The banker thanked the authors. Answer: The authors were thanked by the banker.
+"
+The secretary recommended the doctor.,The doctor was recommended by the secretary.,"Input: The secretary recommended the doctor. Answer: The doctor was recommended by the secretary.
+"
+The doctors helped the secretaries.,The secretaries were helped by the doctors.,"Input: The doctors helped the secretaries. Answer: The secretaries were helped by the doctors.
+"
+The senators avoided the presidents.,The presidents were avoided by the senators.,"Input: The senators avoided the presidents. Answer: The presidents were avoided by the senators.
+"
+The scientists thanked the tourists.,The tourists were thanked by the scientists.,"Input: The scientists thanked the tourists. Answer: The tourists were thanked by the scientists.
+"
+The professor encouraged the doctor.,The doctor was encouraged by the professor.,"Input: The professor encouraged the doctor. Answer: The doctor was encouraged by the professor.
+"
+The actor believed the secretaries.,The secretaries were believed by the actor.,"Input: The actor believed the secretaries. Answer: The secretaries were believed by the actor.
+"
+The actor mentioned the senators.,The senators were mentioned by the actor.,"Input: The actor mentioned the senators. Answer: The senators were mentioned by the actor.
+"
+The scientists admired the bankers.,The bankers were admired by the scientists.,"Input: The scientists admired the bankers. Answer: The bankers were admired by the scientists.
+"
+The athlete encouraged the student.,The student was encouraged by the athlete.,"Input: The athlete encouraged the student. Answer: The student was encouraged by the athlete.
+"
+The artist stopped the secretary.,The secretary was stopped by the artist.,"Input: The artist stopped the secretary. Answer: The secretary was stopped by the artist.
+"
+The actors avoided the tourists.,The tourists were avoided by the actors.,"Input: The actors avoided the tourists. Answer: The tourists were avoided by the actors.
+"
+The president thanked the actors.,The actors were thanked by the president.,"Input: The president thanked the actors. Answer: The actors were thanked by the president.
+"
+The students introduced the professors.,The professors were introduced by the students.,"Input: The students introduced the professors. Answer: The professors were introduced by the students.
+"
+The scientists thanked the athletes.,The athletes were thanked by the scientists.,"Input: The scientists thanked the athletes. Answer: The athletes were thanked by the scientists.
+"
+The tourist helped the president.,The president was helped by the tourist.,"Input: The tourist helped the president. Answer: The president was helped by the tourist.
+"
+The author encouraged the professor.,The professor was encouraged by the author.,"Input: The author encouraged the professor. Answer: The professor was encouraged by the author.
+"
+The artist avoided the judge.,The judge was avoided by the artist.,"Input: The artist avoided the judge. Answer: The judge was avoided by the artist.
+"
+The doctors believed the authors.,The authors were believed by the doctors.,"Input: The doctors believed the authors. Answer: The authors were believed by the doctors.
+"
+The athlete advised the secretary.,The secretary was advised by the athlete.,"Input: The athlete advised the secretary. Answer: The secretary was advised by the athlete.
+"
+The actors recognized the scientist.,The scientist was recognized by the actors.,"Input: The actors recognized the scientist. Answer: The scientist was recognized by the actors.
+"
+The artist encouraged the student.,The student was encouraged by the artist.,"Input: The artist encouraged the student. Answer: The student was encouraged by the artist.
+"
+The actor admired the students.,The students were admired by the actor.,"Input: The actor admired the students. Answer: The students were admired by the actor.
+"
+The secretaries advised the scientists.,The scientists were advised by the secretaries.,"Input: The secretaries advised the scientists. Answer: The scientists were advised by the secretaries.
+"
+The professor contacted the lawyer.,The lawyer was contacted by the professor.,"Input: The professor contacted the lawyer. Answer: The lawyer was contacted by the professor.
+"
+The actor encouraged the banker.,The banker was encouraged by the actor.,"Input: The actor encouraged the banker. Answer: The banker was encouraged by the actor.
+"
+The actors believed the judges.,The judges were believed by the actors.,"Input: The actors believed the judges. Answer: The judges were believed by the actors.
+"
+The athletes encouraged the tourist.,The tourist was encouraged by the athletes.,"Input: The athletes encouraged the tourist. Answer: The tourist was encouraged by the athletes.
+"
+The authors supported the artist.,The artist was supported by the authors.,"Input: The authors supported the artist. Answer: The artist was supported by the authors.
+"
+The bankers introduced the actors.,The actors were introduced by the bankers.,"Input: The bankers introduced the actors. Answer: The actors were introduced by the bankers.
+"
+The artists mentioned the actors.,The actors were mentioned by the artists.,"Input: The artists mentioned the actors. Answer: The actors were mentioned by the artists.
+"
+The tourists encouraged the artists.,The artists were encouraged by the tourists.,"Input: The tourists encouraged the artists. Answer: The artists were encouraged by the tourists.
+"
+The senators introduced the student.,The student was introduced by the senators.,"Input: The senators introduced the student. Answer: The student was introduced by the senators.
+"
+The lawyers thanked the authors.,The authors were thanked by the lawyers.,"Input: The lawyers thanked the authors. Answer: The authors were thanked by the lawyers.
+"
+The president helped the secretaries.,The secretaries were helped by the president.,"Input: The president helped the secretaries. Answer: The secretaries were helped by the president.
+"
+The manager stopped the doctor.,The doctor was stopped by the manager.,"Input: The manager stopped the doctor. Answer: The doctor was stopped by the manager.
+"
+The artists recognized the managers.,The managers were recognized by the artists.,"Input: The artists recognized the managers. Answer: The managers were recognized by the artists.
+"
+The banker recommended the tourists.,The tourists were recommended by the banker.,"Input: The banker recommended the tourists. Answer: The tourists were recommended by the banker.
+"
+The judge recognized the students.,The students were recognized by the judge.,"Input: The judge recognized the students. Answer: The students were recognized by the judge.
+"
+The managers believed the actor.,The actor was believed by the managers.,"Input: The managers believed the actor. Answer: The actor was believed by the managers.
+"
+The scientists mentioned the tourists.,The tourists were mentioned by the scientists.,"Input: The scientists mentioned the tourists. Answer: The tourists were mentioned by the scientists.
+"
+The senators avoided the lawyer.,The lawyer was avoided by the senators.,"Input: The senators avoided the lawyer. Answer: The lawyer was avoided by the senators.
+"
+The student supported the senators.,The senators were supported by the student.,"Input: The student supported the senators. Answer: The senators were supported by the student.
+"
+The lawyers stopped the student.,The student was stopped by the lawyers.,"Input: The lawyers stopped the student. Answer: The student was stopped by the lawyers.
+"
+The scientists contacted the tourists.,The tourists were contacted by the scientists.,"Input: The scientists contacted the tourists. Answer: The tourists were contacted by the scientists.
+"
+The doctor advised the managers.,The managers were advised by the doctor.,"Input: The doctor advised the managers. Answer: The managers were advised by the doctor.
+"
+The tourists avoided the lawyer.,The lawyer was avoided by the tourists.,"Input: The tourists avoided the lawyer. Answer: The lawyer was avoided by the tourists.
+"
+The manager recommended the author.,The author was recommended by the manager.,"Input: The manager recommended the author. Answer: The author was recommended by the manager.
+"
+The athletes advised the scientists.,The scientists were advised by the athletes.,"Input: The athletes advised the scientists. Answer: The scientists were advised by the athletes.
+"
+The actors mentioned the managers.,The managers were mentioned by the actors.,"Input: The actors mentioned the managers. Answer: The managers were mentioned by the actors.
+"
+The authors helped the doctor.,The doctor was helped by the authors.,"Input: The authors helped the doctor. Answer: The doctor was helped by the authors.
+"
+The scientists helped the bankers.,The bankers were helped by the scientists.,"Input: The scientists helped the bankers. Answer: The bankers were helped by the scientists.
+"
+The senator believed the judges.,The judges were believed by the senator.,"Input: The senator believed the judges. Answer: The judges were believed by the senator.
+"
+The manager recognized the president.,The president was recognized by the manager.,"Input: The manager recognized the president. Answer: The president was recognized by the manager.
+"
+The scientists helped the senator.,The senator was helped by the scientists.,"Input: The scientists helped the senator. Answer: The senator was helped by the scientists.
+"
+The athlete introduced the author.,The author was introduced by the athlete.,"Input: The athlete introduced the author. Answer: The author was introduced by the athlete.
+"
+The author encouraged the secretary.,The secretary was encouraged by the author.,"Input: The author encouraged the secretary. Answer: The secretary was encouraged by the author.
+"
+The professors mentioned the tourist.,The tourist was mentioned by the professors.,"Input: The professors mentioned the tourist. Answer: The tourist was mentioned by the professors.
+"
+The actor admired the secretaries.,The secretaries were admired by the actor.,"Input: The actor admired the secretaries. Answer: The secretaries were admired by the actor.
+"
+The senator supported the actors.,The actors were supported by the senator.,"Input: The senator supported the actors. Answer: The actors were supported by the senator.
+"
+The artists advised the secretaries.,The secretaries were advised by the artists.,"Input: The artists advised the secretaries. Answer: The secretaries were advised by the artists.
+"
+The judges supported the scientists.,The scientists were supported by the judges.,"Input: The judges supported the scientists. Answer: The scientists were supported by the judges.
+"
+The actor recognized the secretaries.,The secretaries were recognized by the actor.,"Input: The actor recognized the secretaries. Answer: The secretaries were recognized by the actor.
+"
+The judge believed the senators.,The senators were believed by the judge.,"Input: The judge believed the senators. Answer: The senators were believed by the judge.
+"
+The athlete recommended the president.,The president was recommended by the athlete.,"Input: The athlete recommended the president. Answer: The president was recommended by the athlete.
+"
+The lawyer avoided the president.,The president was avoided by the lawyer.,"Input: The lawyer avoided the president. Answer: The president was avoided by the lawyer.
+"
+The actor advised the managers.,The managers were advised by the actor.,"Input: The actor advised the managers. Answer: The managers were advised by the actor.
+"
+The doctors stopped the senator.,The senator was stopped by the doctors.,"Input: The doctors stopped the senator. Answer: The senator was stopped by the doctors.
+"
+The artist supported the senators.,The senators were supported by the artist.,"Input: The artist supported the senators. Answer: The senators were supported by the artist.
+"
+The lawyer avoided the professor.,The professor was avoided by the lawyer.,"Input: The lawyer avoided the professor. Answer: The professor was avoided by the lawyer.
+"
+The doctors thanked the lawyers.,The lawyers were thanked by the doctors.,"Input: The doctors thanked the lawyers. Answer: The lawyers were thanked by the doctors.
+"
+The presidents recommended the author.,The author was recommended by the presidents.,"Input: The presidents recommended the author. Answer: The author was recommended by the presidents.
+"
+The lawyers supported the secretary.,The secretary was supported by the lawyers.,"Input: The lawyers supported the secretary. Answer: The secretary was supported by the lawyers.
+"
+The artists recommended the tourists.,The tourists were recommended by the artists.,"Input: The artists recommended the tourists. Answer: The tourists were recommended by the artists.
+"
+The tourist encouraged the presidents.,The presidents were encouraged by the tourist.,"Input: The tourist encouraged the presidents. Answer: The presidents were encouraged by the tourist.
+"
+The secretary stopped the manager.,The manager was stopped by the secretary.,"Input: The secretary stopped the manager. Answer: The manager was stopped by the secretary.
+"
+The secretaries mentioned the presidents.,The presidents were mentioned by the secretaries.,"Input: The secretaries mentioned the presidents. Answer: The presidents were mentioned by the secretaries.
+"
+The scientists avoided the students.,The students were avoided by the scientists.,"Input: The scientists avoided the students. Answer: The students were avoided by the scientists.
+"
+The student advised the scientists.,The scientists were advised by the student.,"Input: The student advised the scientists. Answer: The scientists were advised by the student.
+"
+The lawyer encouraged the judges.,The judges were encouraged by the lawyer.,"Input: The lawyer encouraged the judges. Answer: The judges were encouraged by the lawyer.
+"
+The presidents advised the lawyer.,The lawyer was advised by the presidents.,"Input: The presidents advised the lawyer. Answer: The lawyer was advised by the presidents.
+"
+The authors advised the president.,The president was advised by the authors.,"Input: The authors advised the president. Answer: The president was advised by the authors.
+"
+The student encouraged the tourists.,The tourists were encouraged by the student.,"Input: The student encouraged the tourists. Answer: The tourists were encouraged by the student.
+"
+The actor stopped the tourists.,The tourists were stopped by the actor.,"Input: The actor stopped the tourists. Answer: The tourists were stopped by the actor.
+"
+The tourists recommended the athletes.,The athletes were recommended by the tourists.,"Input: The tourists recommended the athletes. Answer: The athletes were recommended by the tourists.
+"
+The professors helped the president.,The president was helped by the professors.,"Input: The professors helped the president. Answer: The president was helped by the professors.
+"
+The presidents mentioned the students.,The students were mentioned by the presidents.,"Input: The presidents mentioned the students. Answer: The students were mentioned by the presidents.
+"
+The student stopped the presidents.,The presidents were stopped by the student.,"Input: The student stopped the presidents. Answer: The presidents were stopped by the student.
+"
+The actors recommended the presidents.,The presidents were recommended by the actors.,"Input: The actors recommended the presidents. Answer: The presidents were recommended by the actors.
+"
+The lawyer recommended the athletes.,The athletes were recommended by the lawyer.,"Input: The lawyer recommended the athletes. Answer: The athletes were recommended by the lawyer.
+"
+The judges thanked the doctors.,The doctors were thanked by the judges.,"Input: The judges thanked the doctors. Answer: The doctors were thanked by the judges.
+"
+The managers recommended the student.,The student was recommended by the managers.,"Input: The managers recommended the student. Answer: The student was recommended by the managers.
+"
+The professors introduced the manager.,The manager was introduced by the professors.,"Input: The professors introduced the manager. Answer: The manager was introduced by the professors.
+"
+The actor admired the banker.,The banker was admired by the actor.,"Input: The actor admired the banker. Answer: The banker was admired by the actor.
+"
+The students helped the managers.,The managers were helped by the students.,"Input: The students helped the managers. Answer: The managers were helped by the students.
+"
+The manager advised the banker.,The banker was advised by the manager.,"Input: The manager advised the banker. Answer: The banker was advised by the manager.
+"
+The artists recognized the manager.,The manager was recognized by the artists.,"Input: The artists recognized the manager. Answer: The manager was recognized by the artists.
+"
+The professor recommended the judges.,The judges were recommended by the professor.,"Input: The professor recommended the judges. Answer: The judges were recommended by the professor.
+"
+The actors supported the tourist.,The tourist was supported by the actors.,"Input: The actors supported the tourist. Answer: The tourist was supported by the actors.
+"
+The athlete believed the judge.,The judge was believed by the athlete.,"Input: The athlete believed the judge. Answer: The judge was believed by the athlete.
+"
+The judges thanked the athlete.,The athlete was thanked by the judges.,"Input: The judges thanked the athlete. Answer: The athlete was thanked by the judges.
+"
+The author helped the scientist.,The scientist was helped by the author.,"Input: The author helped the scientist. Answer: The scientist was helped by the author.
+"
+The doctor supported the secretary.,The secretary was supported by the doctor.,"Input: The doctor supported the secretary. Answer: The secretary was supported by the doctor.
+"
+The author stopped the scientist.,The scientist was stopped by the author.,"Input: The author stopped the scientist. Answer: The scientist was stopped by the author.
+"
+The bankers advised the lawyer.,The lawyer was advised by the bankers.,"Input: The bankers advised the lawyer. Answer: The lawyer was advised by the bankers.
+"
+The actor encouraged the tourists.,The tourists were encouraged by the actor.,"Input: The actor encouraged the tourists. Answer: The tourists were encouraged by the actor.
+"
+The lawyers believed the student.,The student was believed by the lawyers.,"Input: The lawyers believed the student. Answer: The student was believed by the lawyers.
+"
+The secretary avoided the author.,The author was avoided by the secretary.,"Input: The secretary avoided the author. Answer: The author was avoided by the secretary.
+"
+The tourists advised the actor.,The actor was advised by the tourists.,"Input: The tourists advised the actor. Answer: The actor was advised by the tourists.
+"
+The actor thanked the president.,The president was thanked by the actor.,"Input: The actor thanked the president. Answer: The president was thanked by the actor.
+"
+The scientist helped the students.,The students were helped by the scientist.,"Input: The scientist helped the students. Answer: The students were helped by the scientist.
+"
+The bankers believed the athlete.,The athlete was believed by the bankers.,"Input: The bankers believed the athlete. Answer: The athlete was believed by the bankers.
+"
+The athletes admired the actor.,The actor was admired by the athletes.,"Input: The athletes admired the actor. Answer: The actor was admired by the athletes.
+"
+The doctors advised the senators.,The senators were advised by the doctors.,"Input: The doctors advised the senators. Answer: The senators were advised by the doctors.
+"
+The actor helped the judges.,The judges were helped by the actor.,"Input: The actor helped the judges. Answer: The judges were helped by the actor.
+"
+The scientists supported the presidents.,The presidents were supported by the scientists.,"Input: The scientists supported the presidents. Answer: The presidents were supported by the scientists.
+"
+The tourist contacted the authors.,The authors were contacted by the tourist.,"Input: The tourist contacted the authors. Answer: The authors were contacted by the tourist.
+"
+The lawyers believed the manager.,The manager was believed by the lawyers.,"Input: The lawyers believed the manager. Answer: The manager was believed by the lawyers.
+"
+The artists encouraged the judge.,The judge was encouraged by the artists.,"Input: The artists encouraged the judge. Answer: The judge was encouraged by the artists.
+"
+The judge helped the doctor.,The doctor was helped by the judge.,"Input: The judge helped the doctor. Answer: The doctor was helped by the judge.
+"
+The presidents thanked the bankers.,The bankers were thanked by the presidents.,"Input: The presidents thanked the bankers. Answer: The bankers were thanked by the presidents.
+"
+The judge supported the artists.,The artists were supported by the judge.,"Input: The judge supported the artists. Answer: The artists were supported by the judge.
+"
+The judges contacted the scientists.,The scientists were contacted by the judges.,"Input: The judges contacted the scientists. Answer: The scientists were contacted by the judges.
+"
+The lawyers recommended the tourist.,The tourist was recommended by the lawyers.,"Input: The lawyers recommended the tourist. Answer: The tourist was recommended by the lawyers.
+"
+The senators believed the presidents.,The presidents were believed by the senators.,"Input: The senators believed the presidents. Answer: The presidents were believed by the senators.
+"
+The athletes avoided the banker.,The banker was avoided by the athletes.,"Input: The athletes avoided the banker. Answer: The banker was avoided by the athletes.
+"
+The banker encouraged the author.,The author was encouraged by the banker.,"Input: The banker encouraged the author. Answer: The author was encouraged by the banker.
+"
+The bankers mentioned the doctors.,The doctors were mentioned by the bankers.,"Input: The bankers mentioned the doctors. Answer: The doctors were mentioned by the bankers.
+"
+The bankers supported the professor.,The professor was supported by the bankers.,"Input: The bankers supported the professor. Answer: The professor was supported by the bankers.
+"
+The judge advised the student.,The student was advised by the judge.,"Input: The judge advised the student. Answer: The student was advised by the judge.
+"
+The athletes mentioned the judges.,The judges were mentioned by the athletes.,"Input: The athletes mentioned the judges. Answer: The judges were mentioned by the athletes.
+"
+The student helped the tourists.,The tourists were helped by the student.,"Input: The student helped the tourists. Answer: The tourists were helped by the student.
+"
+The bankers believed the manager.,The manager was believed by the bankers.,"Input: The bankers believed the manager. Answer: The manager was believed by the bankers.
+"
+The scientist encouraged the judges.,The judges were encouraged by the scientist.,"Input: The scientist encouraged the judges. Answer: The judges were encouraged by the scientist.
+"

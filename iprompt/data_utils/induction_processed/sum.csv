@@ -1,0 +1,9901 @@
+input,output,text
+0 0,0,"Input: 0 0 Answer: 0
+"
+0 1,1,"Input: 0 1 Answer: 1
+"
+0 2,2,"Input: 0 2 Answer: 2
+"
+0 3,3,"Input: 0 3 Answer: 3
+"
+0 4,4,"Input: 0 4 Answer: 4
+"
+0 5,5,"Input: 0 5 Answer: 5
+"
+0 6,6,"Input: 0 6 Answer: 6
+"
+0 7,7,"Input: 0 7 Answer: 7
+"
+0 8,8,"Input: 0 8 Answer: 8
+"
+0 9,9,"Input: 0 9 Answer: 9
+"
+0 10,10,"Input: 0 10 Answer: 10
+"
+0 11,11,"Input: 0 11 Answer: 11
+"
+0 12,12,"Input: 0 12 Answer: 12
+"
+0 13,13,"Input: 0 13 Answer: 13
+"
+0 14,14,"Input: 0 14 Answer: 14
+"
+0 15,15,"Input: 0 15 Answer: 15
+"
+0 16,16,"Input: 0 16 Answer: 16
+"
+0 17,17,"Input: 0 17 Answer: 17
+"
+0 18,18,"Input: 0 18 Answer: 18
+"
+0 19,19,"Input: 0 19 Answer: 19
+"
+0 20,20,"Input: 0 20 Answer: 20
+"
+0 21,21,"Input: 0 21 Answer: 21
+"
+0 22,22,"Input: 0 22 Answer: 22
+"
+0 23,23,"Input: 0 23 Answer: 23
+"
+0 24,24,"Input: 0 24 Answer: 24
+"
+0 25,25,"Input: 0 25 Answer: 25
+"
+0 26,26,"Input: 0 26 Answer: 26
+"
+0 27,27,"Input: 0 27 Answer: 27
+"
+0 28,28,"Input: 0 28 Answer: 28
+"
+0 29,29,"Input: 0 29 Answer: 29
+"
+0 30,30,"Input: 0 30 Answer: 30
+"
+0 31,31,"Input: 0 31 Answer: 31
+"
+0 32,32,"Input: 0 32 Answer: 32
+"
+0 33,33,"Input: 0 33 Answer: 33
+"
+0 34,34,"Input: 0 34 Answer: 34
+"
+0 35,35,"Input: 0 35 Answer: 35
+"
+0 36,36,"Input: 0 36 Answer: 36
+"
+0 37,37,"Input: 0 37 Answer: 37
+"
+0 38,38,"Input: 0 38 Answer: 38
+"
+0 39,39,"Input: 0 39 Answer: 39
+"
+0 40,40,"Input: 0 40 Answer: 40
+"
+0 41,41,"Input: 0 41 Answer: 41
+"
+0 42,42,"Input: 0 42 Answer: 42
+"
+0 43,43,"Input: 0 43 Answer: 43
+"
+0 44,44,"Input: 0 44 Answer: 44
+"
+0 45,45,"Input: 0 45 Answer: 45
+"
+0 46,46,"Input: 0 46 Answer: 46
+"
+0 48,48,"Input: 0 48 Answer: 48
+"
+0 49,49,"Input: 0 49 Answer: 49
+"
+0 50,50,"Input: 0 50 Answer: 50
+"
+0 51,51,"Input: 0 51 Answer: 51
+"
+0 52,52,"Input: 0 52 Answer: 52
+"
+0 53,53,"Input: 0 53 Answer: 53
+"
+0 54,54,"Input: 0 54 Answer: 54
+"
+0 55,55,"Input: 0 55 Answer: 55
+"
+0 56,56,"Input: 0 56 Answer: 56
+"
+0 57,57,"Input: 0 57 Answer: 57
+"
+0 58,58,"Input: 0 58 Answer: 58
+"
+0 59,59,"Input: 0 59 Answer: 59
+"
+0 60,60,"Input: 0 60 Answer: 60
+"
+0 62,62,"Input: 0 62 Answer: 62
+"
+0 63,63,"Input: 0 63 Answer: 63
+"
+0 64,64,"Input: 0 64 Answer: 64
+"
+0 65,65,"Input: 0 65 Answer: 65
+"
+0 66,66,"Input: 0 66 Answer: 66
+"
+0 67,67,"Input: 0 67 Answer: 67
+"
+0 68,68,"Input: 0 68 Answer: 68
+"
+0 69,69,"Input: 0 69 Answer: 69
+"
+0 70,70,"Input: 0 70 Answer: 70
+"
+0 71,71,"Input: 0 71 Answer: 71
+"
+0 72,72,"Input: 0 72 Answer: 72
+"
+0 73,73,"Input: 0 73 Answer: 73
+"
+0 74,74,"Input: 0 74 Answer: 74
+"
+0 75,75,"Input: 0 75 Answer: 75
+"
+0 76,76,"Input: 0 76 Answer: 76
+"
+0 77,77,"Input: 0 77 Answer: 77
+"
+0 78,78,"Input: 0 78 Answer: 78
+"
+0 79,79,"Input: 0 79 Answer: 79
+"
+0 80,80,"Input: 0 80 Answer: 80
+"
+0 81,81,"Input: 0 81 Answer: 81
+"
+0 82,82,"Input: 0 82 Answer: 82
+"
+0 83,83,"Input: 0 83 Answer: 83
+"
+0 84,84,"Input: 0 84 Answer: 84
+"
+0 85,85,"Input: 0 85 Answer: 85
+"
+0 86,86,"Input: 0 86 Answer: 86
+"
+0 87,87,"Input: 0 87 Answer: 87
+"
+0 88,88,"Input: 0 88 Answer: 88
+"
+0 89,89,"Input: 0 89 Answer: 89
+"
+0 90,90,"Input: 0 90 Answer: 90
+"
+0 91,91,"Input: 0 91 Answer: 91
+"
+0 92,92,"Input: 0 92 Answer: 92
+"
+0 93,93,"Input: 0 93 Answer: 93
+"
+0 94,94,"Input: 0 94 Answer: 94
+"
+0 95,95,"Input: 0 95 Answer: 95
+"
+0 96,96,"Input: 0 96 Answer: 96
+"
+0 97,97,"Input: 0 97 Answer: 97
+"
+0 98,98,"Input: 0 98 Answer: 98
+"
+0 99,99,"Input: 0 99 Answer: 99
+"
+1 1,2,"Input: 1 1 Answer: 2
+"
+1 2,3,"Input: 1 2 Answer: 3
+"
+1 3,4,"Input: 1 3 Answer: 4
+"
+1 4,5,"Input: 1 4 Answer: 5
+"
+1 5,6,"Input: 1 5 Answer: 6
+"
+1 6,7,"Input: 1 6 Answer: 7
+"
+1 7,8,"Input: 1 7 Answer: 8
+"
+1 8,9,"Input: 1 8 Answer: 9
+"
+1 9,10,"Input: 1 9 Answer: 10
+"
+1 10,11,"Input: 1 10 Answer: 11
+"
+1 11,12,"Input: 1 11 Answer: 12
+"
+1 12,13,"Input: 1 12 Answer: 13
+"
+1 13,14,"Input: 1 13 Answer: 14
+"
+1 14,15,"Input: 1 14 Answer: 15
+"
+1 15,16,"Input: 1 15 Answer: 16
+"
+1 16,17,"Input: 1 16 Answer: 17
+"
+1 17,18,"Input: 1 17 Answer: 18
+"
+1 18,19,"Input: 1 18 Answer: 19
+"
+1 19,20,"Input: 1 19 Answer: 20
+"
+1 21,22,"Input: 1 21 Answer: 22
+"
+1 22,23,"Input: 1 22 Answer: 23
+"
+1 23,24,"Input: 1 23 Answer: 24
+"
+1 24,25,"Input: 1 24 Answer: 25
+"
+1 25,26,"Input: 1 25 Answer: 26
+"
+1 26,27,"Input: 1 26 Answer: 27
+"
+1 27,28,"Input: 1 27 Answer: 28
+"
+1 28,29,"Input: 1 28 Answer: 29
+"
+1 29,30,"Input: 1 29 Answer: 30
+"
+1 31,32,"Input: 1 31 Answer: 32
+"
+1 32,33,"Input: 1 32 Answer: 33
+"
+1 33,34,"Input: 1 33 Answer: 34
+"
+1 34,35,"Input: 1 34 Answer: 35
+"
+1 35,36,"Input: 1 35 Answer: 36
+"
+1 36,37,"Input: 1 36 Answer: 37
+"
+1 37,38,"Input: 1 37 Answer: 38
+"
+1 38,39,"Input: 1 38 Answer: 39
+"
+1 39,40,"Input: 1 39 Answer: 40
+"
+1 40,41,"Input: 1 40 Answer: 41
+"
+1 41,42,"Input: 1 41 Answer: 42
+"
+1 42,43,"Input: 1 42 Answer: 43
+"
+1 44,45,"Input: 1 44 Answer: 45
+"
+1 45,46,"Input: 1 45 Answer: 46
+"
+1 46,47,"Input: 1 46 Answer: 47
+"
+1 47,48,"Input: 1 47 Answer: 48
+"
+1 48,49,"Input: 1 48 Answer: 49
+"
+1 49,50,"Input: 1 49 Answer: 50
+"
+1 50,51,"Input: 1 50 Answer: 51
+"
+1 51,52,"Input: 1 51 Answer: 52
+"
+1 52,53,"Input: 1 52 Answer: 53
+"
+1 53,54,"Input: 1 53 Answer: 54
+"
+1 54,55,"Input: 1 54 Answer: 55
+"
+1 55,56,"Input: 1 55 Answer: 56
+"
+1 56,57,"Input: 1 56 Answer: 57
+"
+1 57,58,"Input: 1 57 Answer: 58
+"
+1 58,59,"Input: 1 58 Answer: 59
+"
+1 60,61,"Input: 1 60 Answer: 61
+"
+1 61,62,"Input: 1 61 Answer: 62
+"
+1 62,63,"Input: 1 62 Answer: 63
+"
+1 63,64,"Input: 1 63 Answer: 64
+"
+1 64,65,"Input: 1 64 Answer: 65
+"
+1 65,66,"Input: 1 65 Answer: 66
+"
+1 66,67,"Input: 1 66 Answer: 67
+"
+1 67,68,"Input: 1 67 Answer: 68
+"
+1 68,69,"Input: 1 68 Answer: 69
+"
+1 69,70,"Input: 1 69 Answer: 70
+"
+1 70,71,"Input: 1 70 Answer: 71
+"
+1 71,72,"Input: 1 71 Answer: 72
+"
+1 72,73,"Input: 1 72 Answer: 73
+"
+1 73,74,"Input: 1 73 Answer: 74
+"
+1 74,75,"Input: 1 74 Answer: 75
+"
+1 75,76,"Input: 1 75 Answer: 76
+"
+1 76,77,"Input: 1 76 Answer: 77
+"
+1 77,78,"Input: 1 77 Answer: 78
+"
+1 78,79,"Input: 1 78 Answer: 79
+"
+1 79,80,"Input: 1 79 Answer: 80
+"
+1 80,81,"Input: 1 80 Answer: 81
+"
+1 81,82,"Input: 1 81 Answer: 82
+"
+1 82,83,"Input: 1 82 Answer: 83
+"
+1 83,84,"Input: 1 83 Answer: 84
+"
+1 84,85,"Input: 1 84 Answer: 85
+"
+1 85,86,"Input: 1 85 Answer: 86
+"
+1 86,87,"Input: 1 86 Answer: 87
+"
+1 87,88,"Input: 1 87 Answer: 88
+"
+1 88,89,"Input: 1 88 Answer: 89
+"
+1 89,90,"Input: 1 89 Answer: 90
+"
+1 90,91,"Input: 1 90 Answer: 91
+"
+1 91,92,"Input: 1 91 Answer: 92
+"
+1 92,93,"Input: 1 92 Answer: 93
+"
+1 93,94,"Input: 1 93 Answer: 94
+"
+1 94,95,"Input: 1 94 Answer: 95
+"
+1 95,96,"Input: 1 95 Answer: 96
+"
+1 96,97,"Input: 1 96 Answer: 97
+"
+1 97,98,"Input: 1 97 Answer: 98
+"
+1 98,99,"Input: 1 98 Answer: 99
+"
+1 99,100,"Input: 1 99 Answer: 100
+"
+2 2,4,"Input: 2 2 Answer: 4
+"
+2 3,5,"Input: 2 3 Answer: 5
+"
+2 4,6,"Input: 2 4 Answer: 6
+"
+2 5,7,"Input: 2 5 Answer: 7
+"
+2 6,8,"Input: 2 6 Answer: 8
+"
+2 7,9,"Input: 2 7 Answer: 9
+"
+2 8,10,"Input: 2 8 Answer: 10
+"
+2 9,11,"Input: 2 9 Answer: 11
+"
+2 10,12,"Input: 2 10 Answer: 12
+"
+2 11,13,"Input: 2 11 Answer: 13
+"
+2 12,14,"Input: 2 12 Answer: 14
+"
+2 13,15,"Input: 2 13 Answer: 15
+"
+2 14,16,"Input: 2 14 Answer: 16
+"
+2 15,17,"Input: 2 15 Answer: 17
+"
+2 16,18,"Input: 2 16 Answer: 18
+"
+2 17,19,"Input: 2 17 Answer: 19
+"
+2 18,20,"Input: 2 18 Answer: 20
+"
+2 19,21,"Input: 2 19 Answer: 21
+"
+2 20,22,"Input: 2 20 Answer: 22
+"
+2 21,23,"Input: 2 21 Answer: 23
+"
+2 22,24,"Input: 2 22 Answer: 24
+"
+2 23,25,"Input: 2 23 Answer: 25
+"
+2 24,26,"Input: 2 24 Answer: 26
+"
+2 26,28,"Input: 2 26 Answer: 28
+"
+2 27,29,"Input: 2 27 Answer: 29
+"
+2 28,30,"Input: 2 28 Answer: 30
+"
+2 29,31,"Input: 2 29 Answer: 31
+"
+2 30,32,"Input: 2 30 Answer: 32
+"
+2 31,33,"Input: 2 31 Answer: 33
+"
+2 32,34,"Input: 2 32 Answer: 34
+"
+2 33,35,"Input: 2 33 Answer: 35
+"
+2 34,36,"Input: 2 34 Answer: 36
+"
+2 35,37,"Input: 2 35 Answer: 37
+"
+2 36,38,"Input: 2 36 Answer: 38
+"
+2 37,39,"Input: 2 37 Answer: 39
+"
+2 38,40,"Input: 2 38 Answer: 40
+"
+2 39,41,"Input: 2 39 Answer: 41
+"
+2 40,42,"Input: 2 40 Answer: 42
+"
+2 41,43,"Input: 2 41 Answer: 43
+"
+2 42,44,"Input: 2 42 Answer: 44
+"
+2 43,45,"Input: 2 43 Answer: 45
+"
+2 44,46,"Input: 2 44 Answer: 46
+"
+2 45,47,"Input: 2 45 Answer: 47
+"
+2 46,48,"Input: 2 46 Answer: 48
+"
+2 47,49,"Input: 2 47 Answer: 49
+"
+2 48,50,"Input: 2 48 Answer: 50
+"
+2 49,51,"Input: 2 49 Answer: 51
+"
+2 50,52,"Input: 2 50 Answer: 52
+"
+2 51,53,"Input: 2 51 Answer: 53
+"
+2 52,54,"Input: 2 52 Answer: 54
+"
+2 53,55,"Input: 2 53 Answer: 55
+"
+2 54,56,"Input: 2 54 Answer: 56
+"
+2 56,58,"Input: 2 56 Answer: 58
+"
+2 57,59,"Input: 2 57 Answer: 59
+"
+2 58,60,"Input: 2 58 Answer: 60
+"
+2 59,61,"Input: 2 59 Answer: 61
+"
+2 60,62,"Input: 2 60 Answer: 62
+"
+2 61,63,"Input: 2 61 Answer: 63
+"
+2 62,64,"Input: 2 62 Answer: 64
+"
+2 63,65,"Input: 2 63 Answer: 65
+"
+2 64,66,"Input: 2 64 Answer: 66
+"
+2 65,67,"Input: 2 65 Answer: 67
+"
+2 66,68,"Input: 2 66 Answer: 68
+"
+2 67,69,"Input: 2 67 Answer: 69
+"
+2 68,70,"Input: 2 68 Answer: 70
+"
+2 69,71,"Input: 2 69 Answer: 71
+"
+2 70,72,"Input: 2 70 Answer: 72
+"
+2 71,73,"Input: 2 71 Answer: 73
+"
+2 72,74,"Input: 2 72 Answer: 74
+"
+2 73,75,"Input: 2 73 Answer: 75
+"
+2 74,76,"Input: 2 74 Answer: 76
+"
+2 75,77,"Input: 2 75 Answer: 77
+"
+2 76,78,"Input: 2 76 Answer: 78
+"
+2 77,79,"Input: 2 77 Answer: 79
+"
+2 78,80,"Input: 2 78 Answer: 80
+"
+2 79,81,"Input: 2 79 Answer: 81
+"
+2 80,82,"Input: 2 80 Answer: 82
+"
+2 81,83,"Input: 2 81 Answer: 83
+"
+2 82,84,"Input: 2 82 Answer: 84
+"
+2 83,85,"Input: 2 83 Answer: 85
+"
+2 84,86,"Input: 2 84 Answer: 86
+"
+2 85,87,"Input: 2 85 Answer: 87
+"
+2 86,88,"Input: 2 86 Answer: 88
+"
+2 87,89,"Input: 2 87 Answer: 89
+"
+2 88,90,"Input: 2 88 Answer: 90
+"
+2 90,92,"Input: 2 90 Answer: 92
+"
+2 91,93,"Input: 2 91 Answer: 93
+"
+2 92,94,"Input: 2 92 Answer: 94
+"
+2 93,95,"Input: 2 93 Answer: 95
+"
+2 94,96,"Input: 2 94 Answer: 96
+"
+2 95,97,"Input: 2 95 Answer: 97
+"
+2 96,98,"Input: 2 96 Answer: 98
+"
+2 97,99,"Input: 2 97 Answer: 99
+"
+2 98,100,"Input: 2 98 Answer: 100
+"
+2 99,101,"Input: 2 99 Answer: 101
+"
+3 3,6,"Input: 3 3 Answer: 6
+"
+3 4,7,"Input: 3 4 Answer: 7
+"
+3 5,8,"Input: 3 5 Answer: 8
+"
+3 6,9,"Input: 3 6 Answer: 9
+"
+3 7,10,"Input: 3 7 Answer: 10
+"
+3 8,11,"Input: 3 8 Answer: 11
+"
+3 9,12,"Input: 3 9 Answer: 12
+"
+3 10,13,"Input: 3 10 Answer: 13
+"
+3 11,14,"Input: 3 11 Answer: 14
+"
+3 12,15,"Input: 3 12 Answer: 15
+"
+3 13,16,"Input: 3 13 Answer: 16
+"
+3 14,17,"Input: 3 14 Answer: 17
+"
+3 15,18,"Input: 3 15 Answer: 18
+"
+3 16,19,"Input: 3 16 Answer: 19
+"
+3 17,20,"Input: 3 17 Answer: 20
+"
+3 18,21,"Input: 3 18 Answer: 21
+"
+3 19,22,"Input: 3 19 Answer: 22
+"
+3 20,23,"Input: 3 20 Answer: 23
+"
+3 21,24,"Input: 3 21 Answer: 24
+"
+3 22,25,"Input: 3 22 Answer: 25
+"
+3 23,26,"Input: 3 23 Answer: 26
+"
+3 24,27,"Input: 3 24 Answer: 27
+"
+3 25,28,"Input: 3 25 Answer: 28
+"
+3 26,29,"Input: 3 26 Answer: 29
+"
+3 27,30,"Input: 3 27 Answer: 30
+"
+3 28,31,"Input: 3 28 Answer: 31
+"
+3 29,32,"Input: 3 29 Answer: 32
+"
+3 31,34,"Input: 3 31 Answer: 34
+"
+3 32,35,"Input: 3 32 Answer: 35
+"
+3 33,36,"Input: 3 33 Answer: 36
+"
+3 34,37,"Input: 3 34 Answer: 37
+"
+3 36,39,"Input: 3 36 Answer: 39
+"
+3 37,40,"Input: 3 37 Answer: 40
+"
+3 38,41,"Input: 3 38 Answer: 41
+"
+3 39,42,"Input: 3 39 Answer: 42
+"
+3 40,43,"Input: 3 40 Answer: 43
+"
+3 41,44,"Input: 3 41 Answer: 44
+"
+3 43,46,"Input: 3 43 Answer: 46
+"
+3 44,47,"Input: 3 44 Answer: 47
+"
+3 45,48,"Input: 3 45 Answer: 48
+"
+3 46,49,"Input: 3 46 Answer: 49
+"
+3 47,50,"Input: 3 47 Answer: 50
+"
+3 48,51,"Input: 3 48 Answer: 51
+"
+3 49,52,"Input: 3 49 Answer: 52
+"
+3 50,53,"Input: 3 50 Answer: 53
+"
+3 51,54,"Input: 3 51 Answer: 54
+"
+3 52,55,"Input: 3 52 Answer: 55
+"
+3 53,56,"Input: 3 53 Answer: 56
+"
+3 54,57,"Input: 3 54 Answer: 57
+"
+3 55,58,"Input: 3 55 Answer: 58
+"
+3 56,59,"Input: 3 56 Answer: 59
+"
+3 57,60,"Input: 3 57 Answer: 60
+"
+3 58,61,"Input: 3 58 Answer: 61
+"
+3 59,62,"Input: 3 59 Answer: 62
+"
+3 60,63,"Input: 3 60 Answer: 63
+"
+3 61,64,"Input: 3 61 Answer: 64
+"
+3 62,65,"Input: 3 62 Answer: 65
+"
+3 63,66,"Input: 3 63 Answer: 66
+"
+3 64,67,"Input: 3 64 Answer: 67
+"
+3 65,68,"Input: 3 65 Answer: 68
+"
+3 66,69,"Input: 3 66 Answer: 69
+"
+3 67,70,"Input: 3 67 Answer: 70
+"
+3 68,71,"Input: 3 68 Answer: 71
+"
+3 69,72,"Input: 3 69 Answer: 72
+"
+3 70,73,"Input: 3 70 Answer: 73
+"
+3 71,74,"Input: 3 71 Answer: 74
+"
+3 72,75,"Input: 3 72 Answer: 75
+"
+3 73,76,"Input: 3 73 Answer: 76
+"
+3 74,77,"Input: 3 74 Answer: 77
+"
+3 75,78,"Input: 3 75 Answer: 78
+"
+3 76,79,"Input: 3 76 Answer: 79
+"
+3 78,81,"Input: 3 78 Answer: 81
+"
+3 79,82,"Input: 3 79 Answer: 82
+"
+3 80,83,"Input: 3 80 Answer: 83
+"
+3 81,84,"Input: 3 81 Answer: 84
+"
+3 83,86,"Input: 3 83 Answer: 86
+"
+3 84,87,"Input: 3 84 Answer: 87
+"
+3 85,88,"Input: 3 85 Answer: 88
+"
+3 86,89,"Input: 3 86 Answer: 89
+"
+3 87,90,"Input: 3 87 Answer: 90
+"
+3 88,91,"Input: 3 88 Answer: 91
+"
+3 89,92,"Input: 3 89 Answer: 92
+"
+3 90,93,"Input: 3 90 Answer: 93
+"
+3 91,94,"Input: 3 91 Answer: 94
+"
+3 92,95,"Input: 3 92 Answer: 95
+"
+3 93,96,"Input: 3 93 Answer: 96
+"
+3 94,97,"Input: 3 94 Answer: 97
+"
+3 95,98,"Input: 3 95 Answer: 98
+"
+3 96,99,"Input: 3 96 Answer: 99
+"
+3 97,100,"Input: 3 97 Answer: 100
+"
+3 98,101,"Input: 3 98 Answer: 101
+"
+3 99,102,"Input: 3 99 Answer: 102
+"
+4 4,8,"Input: 4 4 Answer: 8
+"
+4 5,9,"Input: 4 5 Answer: 9
+"
+4 6,10,"Input: 4 6 Answer: 10
+"
+4 7,11,"Input: 4 7 Answer: 11
+"
+4 8,12,"Input: 4 8 Answer: 12
+"
+4 9,13,"Input: 4 9 Answer: 13
+"
+4 10,14,"Input: 4 10 Answer: 14
+"
+4 11,15,"Input: 4 11 Answer: 15
+"
+4 12,16,"Input: 4 12 Answer: 16
+"
+4 13,17,"Input: 4 13 Answer: 17
+"
+4 14,18,"Input: 4 14 Answer: 18
+"
+4 15,19,"Input: 4 15 Answer: 19
+"
+4 16,20,"Input: 4 16 Answer: 20
+"
+4 17,21,"Input: 4 17 Answer: 21
+"
+4 18,22,"Input: 4 18 Answer: 22
+"
+4 19,23,"Input: 4 19 Answer: 23
+"
+4 20,24,"Input: 4 20 Answer: 24
+"
+4 21,25,"Input: 4 21 Answer: 25
+"
+4 22,26,"Input: 4 22 Answer: 26
+"
+4 23,27,"Input: 4 23 Answer: 27
+"
+4 24,28,"Input: 4 24 Answer: 28
+"
+4 25,29,"Input: 4 25 Answer: 29
+"
+4 26,30,"Input: 4 26 Answer: 30
+"
+4 27,31,"Input: 4 27 Answer: 31
+"
+4 28,32,"Input: 4 28 Answer: 32
+"
+4 29,33,"Input: 4 29 Answer: 33
+"
+4 30,34,"Input: 4 30 Answer: 34
+"
+4 31,35,"Input: 4 31 Answer: 35
+"
+4 32,36,"Input: 4 32 Answer: 36
+"
+4 33,37,"Input: 4 33 Answer: 37
+"
+4 34,38,"Input: 4 34 Answer: 38
+"
+4 35,39,"Input: 4 35 Answer: 39
+"
+4 36,40,"Input: 4 36 Answer: 40
+"
+4 37,41,"Input: 4 37 Answer: 41
+"
+4 38,42,"Input: 4 38 Answer: 42
+"
+4 39,43,"Input: 4 39 Answer: 43
+"
+4 40,44,"Input: 4 40 Answer: 44
+"
+4 41,45,"Input: 4 41 Answer: 45
+"
+4 42,46,"Input: 4 42 Answer: 46
+"
+4 43,47,"Input: 4 43 Answer: 47
+"
+4 44,48,"Input: 4 44 Answer: 48
+"
+4 45,49,"Input: 4 45 Answer: 49
+"
+4 46,50,"Input: 4 46 Answer: 50
+"
+4 47,51,"Input: 4 47 Answer: 51
+"
+4 48,52,"Input: 4 48 Answer: 52
+"
+4 49,53,"Input: 4 49 Answer: 53
+"
+4 50,54,"Input: 4 50 Answer: 54
+"
+4 51,55,"Input: 4 51 Answer: 55
+"
+4 52,56,"Input: 4 52 Answer: 56
+"
+4 54,58,"Input: 4 54 Answer: 58
+"
+4 55,59,"Input: 4 55 Answer: 59
+"
+4 56,60,"Input: 4 56 Answer: 60
+"
+4 57,61,"Input: 4 57 Answer: 61
+"
+4 58,62,"Input: 4 58 Answer: 62
+"
+4 59,63,"Input: 4 59 Answer: 63
+"
+4 60,64,"Input: 4 60 Answer: 64
+"
+4 61,65,"Input: 4 61 Answer: 65
+"
+4 62,66,"Input: 4 62 Answer: 66
+"
+4 63,67,"Input: 4 63 Answer: 67
+"
+4 64,68,"Input: 4 64 Answer: 68
+"
+4 65,69,"Input: 4 65 Answer: 69
+"
+4 66,70,"Input: 4 66 Answer: 70
+"
+4 67,71,"Input: 4 67 Answer: 71
+"
+4 68,72,"Input: 4 68 Answer: 72
+"
+4 69,73,"Input: 4 69 Answer: 73
+"
+4 70,74,"Input: 4 70 Answer: 74
+"
+4 71,75,"Input: 4 71 Answer: 75
+"
+4 72,76,"Input: 4 72 Answer: 76
+"
+4 73,77,"Input: 4 73 Answer: 77
+"
+4 74,78,"Input: 4 74 Answer: 78
+"
+4 75,79,"Input: 4 75 Answer: 79
+"
+4 76,80,"Input: 4 76 Answer: 80
+"
+4 77,81,"Input: 4 77 Answer: 81
+"
+4 78,82,"Input: 4 78 Answer: 82
+"
+4 79,83,"Input: 4 79 Answer: 83
+"
+4 80,84,"Input: 4 80 Answer: 84
+"
+4 81,85,"Input: 4 81 Answer: 85
+"
+4 82,86,"Input: 4 82 Answer: 86
+"
+4 83,87,"Input: 4 83 Answer: 87
+"
+4 84,88,"Input: 4 84 Answer: 88
+"
+4 85,89,"Input: 4 85 Answer: 89
+"
+4 86,90,"Input: 4 86 Answer: 90
+"
+4 87,91,"Input: 4 87 Answer: 91
+"
+4 88,92,"Input: 4 88 Answer: 92
+"
+4 89,93,"Input: 4 89 Answer: 93
+"
+4 90,94,"Input: 4 90 Answer: 94
+"
+4 91,95,"Input: 4 91 Answer: 95
+"
+4 92,96,"Input: 4 92 Answer: 96
+"
+4 93,97,"Input: 4 93 Answer: 97
+"
+4 94,98,"Input: 4 94 Answer: 98
+"
+4 95,99,"Input: 4 95 Answer: 99
+"
+4 96,100,"Input: 4 96 Answer: 100
+"
+4 97,101,"Input: 4 97 Answer: 101
+"
+4 98,102,"Input: 4 98 Answer: 102
+"
+4 99,103,"Input: 4 99 Answer: 103
+"
+5 5,10,"Input: 5 5 Answer: 10
+"
+5 6,11,"Input: 5 6 Answer: 11
+"
+5 7,12,"Input: 5 7 Answer: 12
+"
+5 8,13,"Input: 5 8 Answer: 13
+"
+5 9,14,"Input: 5 9 Answer: 14
+"
+5 10,15,"Input: 5 10 Answer: 15
+"
+5 11,16,"Input: 5 11 Answer: 16
+"
+5 12,17,"Input: 5 12 Answer: 17
+"
+5 13,18,"Input: 5 13 Answer: 18
+"
+5 14,19,"Input: 5 14 Answer: 19
+"
+5 15,20,"Input: 5 15 Answer: 20
+"
+5 16,21,"Input: 5 16 Answer: 21
+"
+5 17,22,"Input: 5 17 Answer: 22
+"
+5 18,23,"Input: 5 18 Answer: 23
+"
+5 19,24,"Input: 5 19 Answer: 24
+"
+5 20,25,"Input: 5 20 Answer: 25
+"
+5 21,26,"Input: 5 21 Answer: 26
+"
+5 22,27,"Input: 5 22 Answer: 27
+"
+5 23,28,"Input: 5 23 Answer: 28
+"
+5 24,29,"Input: 5 24 Answer: 29
+"
+5 25,30,"Input: 5 25 Answer: 30
+"
+5 26,31,"Input: 5 26 Answer: 31
+"
+5 27,32,"Input: 5 27 Answer: 32
+"
+5 28,33,"Input: 5 28 Answer: 33
+"
+5 29,34,"Input: 5 29 Answer: 34
+"
+5 30,35,"Input: 5 30 Answer: 35
+"
+5 32,37,"Input: 5 32 Answer: 37
+"
+5 33,38,"Input: 5 33 Answer: 38
+"
+5 34,39,"Input: 5 34 Answer: 39
+"
+5 35,40,"Input: 5 35 Answer: 40
+"
+5 36,41,"Input: 5 36 Answer: 41
+"
+5 37,42,"Input: 5 37 Answer: 42
+"
+5 38,43,"Input: 5 38 Answer: 43
+"
+5 39,44,"Input: 5 39 Answer: 44
+"
+5 40,45,"Input: 5 40 Answer: 45
+"
+5 41,46,"Input: 5 41 Answer: 46
+"
+5 42,47,"Input: 5 42 Answer: 47
+"
+5 44,49,"Input: 5 44 Answer: 49
+"
+5 45,50,"Input: 5 45 Answer: 50
+"
+5 46,51,"Input: 5 46 Answer: 51
+"
+5 47,52,"Input: 5 47 Answer: 52
+"
+5 48,53,"Input: 5 48 Answer: 53
+"
+5 49,54,"Input: 5 49 Answer: 54
+"
+5 50,55,"Input: 5 50 Answer: 55
+"
+5 51,56,"Input: 5 51 Answer: 56
+"
+5 52,57,"Input: 5 52 Answer: 57
+"
+5 53,58,"Input: 5 53 Answer: 58
+"
+5 54,59,"Input: 5 54 Answer: 59
+"
+5 55,60,"Input: 5 55 Answer: 60
+"
+5 56,61,"Input: 5 56 Answer: 61
+"
+5 57,62,"Input: 5 57 Answer: 62
+"
+5 58,63,"Input: 5 58 Answer: 63
+"
+5 59,64,"Input: 5 59 Answer: 64
+"
+5 60,65,"Input: 5 60 Answer: 65
+"
+5 61,66,"Input: 5 61 Answer: 66
+"
+5 62,67,"Input: 5 62 Answer: 67
+"
+5 63,68,"Input: 5 63 Answer: 68
+"
+5 64,69,"Input: 5 64 Answer: 69
+"
+5 65,70,"Input: 5 65 Answer: 70
+"
+5 66,71,"Input: 5 66 Answer: 71
+"
+5 67,72,"Input: 5 67 Answer: 72
+"
+5 68,73,"Input: 5 68 Answer: 73
+"
+5 69,74,"Input: 5 69 Answer: 74
+"
+5 70,75,"Input: 5 70 Answer: 75
+"
+5 71,76,"Input: 5 71 Answer: 76
+"
+5 72,77,"Input: 5 72 Answer: 77
+"
+5 73,78,"Input: 5 73 Answer: 78
+"
+5 74,79,"Input: 5 74 Answer: 79
+"
+5 75,80,"Input: 5 75 Answer: 80
+"
+5 77,82,"Input: 5 77 Answer: 82
+"
+5 78,83,"Input: 5 78 Answer: 83
+"
+5 79,84,"Input: 5 79 Answer: 84
+"
+5 80,85,"Input: 5 80 Answer: 85
+"
+5 81,86,"Input: 5 81 Answer: 86
+"
+5 82,87,"Input: 5 82 Answer: 87
+"
+5 83,88,"Input: 5 83 Answer: 88
+"
+5 84,89,"Input: 5 84 Answer: 89
+"
+5 85,90,"Input: 5 85 Answer: 90
+"
+5 86,91,"Input: 5 86 Answer: 91
+"
+5 87,92,"Input: 5 87 Answer: 92
+"
+5 88,93,"Input: 5 88 Answer: 93
+"
+5 89,94,"Input: 5 89 Answer: 94
+"
+5 90,95,"Input: 5 90 Answer: 95
+"
+5 91,96,"Input: 5 91 Answer: 96
+"
+5 92,97,"Input: 5 92 Answer: 97
+"
+5 94,99,"Input: 5 94 Answer: 99
+"
+5 95,100,"Input: 5 95 Answer: 100
+"
+5 96,101,"Input: 5 96 Answer: 101
+"
+5 97,102,"Input: 5 97 Answer: 102
+"
+5 98,103,"Input: 5 98 Answer: 103
+"
+5 99,104,"Input: 5 99 Answer: 104
+"
+6 6,12,"Input: 6 6 Answer: 12
+"
+6 7,13,"Input: 6 7 Answer: 13
+"
+6 8,14,"Input: 6 8 Answer: 14
+"
+6 9,15,"Input: 6 9 Answer: 15
+"
+6 10,16,"Input: 6 10 Answer: 16
+"
+6 11,17,"Input: 6 11 Answer: 17
+"
+6 12,18,"Input: 6 12 Answer: 18
+"
+6 13,19,"Input: 6 13 Answer: 19
+"
+6 14,20,"Input: 6 14 Answer: 20
+"
+6 15,21,"Input: 6 15 Answer: 21
+"
+6 16,22,"Input: 6 16 Answer: 22
+"
+6 17,23,"Input: 6 17 Answer: 23
+"
+6 18,24,"Input: 6 18 Answer: 24
+"
+6 19,25,"Input: 6 19 Answer: 25
+"
+6 20,26,"Input: 6 20 Answer: 26
+"
+6 21,27,"Input: 6 21 Answer: 27
+"
+6 22,28,"Input: 6 22 Answer: 28
+"
+6 23,29,"Input: 6 23 Answer: 29
+"
+6 24,30,"Input: 6 24 Answer: 30
+"
+6 25,31,"Input: 6 25 Answer: 31
+"
+6 26,32,"Input: 6 26 Answer: 32
+"
+6 27,33,"Input: 6 27 Answer: 33
+"
+6 28,34,"Input: 6 28 Answer: 34
+"
+6 29,35,"Input: 6 29 Answer: 35
+"
+6 30,36,"Input: 6 30 Answer: 36
+"
+6 31,37,"Input: 6 31 Answer: 37
+"
+6 32,38,"Input: 6 32 Answer: 38
+"
+6 33,39,"Input: 6 33 Answer: 39
+"
+6 34,40,"Input: 6 34 Answer: 40
+"
+6 35,41,"Input: 6 35 Answer: 41
+"
+6 36,42,"Input: 6 36 Answer: 42
+"
+6 37,43,"Input: 6 37 Answer: 43
+"
+6 39,45,"Input: 6 39 Answer: 45
+"
+6 40,46,"Input: 6 40 Answer: 46
+"
+6 41,47,"Input: 6 41 Answer: 47
+"
+6 42,48,"Input: 6 42 Answer: 48
+"
+6 43,49,"Input: 6 43 Answer: 49
+"
+6 44,50,"Input: 6 44 Answer: 50
+"
+6 46,52,"Input: 6 46 Answer: 52
+"
+6 47,53,"Input: 6 47 Answer: 53
+"
+6 48,54,"Input: 6 48 Answer: 54
+"
+6 49,55,"Input: 6 49 Answer: 55
+"
+6 50,56,"Input: 6 50 Answer: 56
+"
+6 51,57,"Input: 6 51 Answer: 57
+"
+6 52,58,"Input: 6 52 Answer: 58
+"
+6 53,59,"Input: 6 53 Answer: 59
+"
+6 54,60,"Input: 6 54 Answer: 60
+"
+6 55,61,"Input: 6 55 Answer: 61
+"
+6 56,62,"Input: 6 56 Answer: 62
+"
+6 57,63,"Input: 6 57 Answer: 63
+"
+6 58,64,"Input: 6 58 Answer: 64
+"
+6 59,65,"Input: 6 59 Answer: 65
+"
+6 60,66,"Input: 6 60 Answer: 66
+"
+6 61,67,"Input: 6 61 Answer: 67
+"
+6 62,68,"Input: 6 62 Answer: 68
+"
+6 63,69,"Input: 6 63 Answer: 69
+"
+6 64,70,"Input: 6 64 Answer: 70
+"
+6 65,71,"Input: 6 65 Answer: 71
+"
+6 66,72,"Input: 6 66 Answer: 72
+"
+6 67,73,"Input: 6 67 Answer: 73
+"
+6 68,74,"Input: 6 68 Answer: 74
+"
+6 69,75,"Input: 6 69 Answer: 75
+"
+6 70,76,"Input: 6 70 Answer: 76
+"
+6 71,77,"Input: 6 71 Answer: 77
+"
+6 72,78,"Input: 6 72 Answer: 78
+"
+6 73,79,"Input: 6 73 Answer: 79
+"
+6 74,80,"Input: 6 74 Answer: 80
+"
+6 75,81,"Input: 6 75 Answer: 81
+"
+6 76,82,"Input: 6 76 Answer: 82
+"
+6 77,83,"Input: 6 77 Answer: 83
+"
+6 78,84,"Input: 6 78 Answer: 84
+"
+6 79,85,"Input: 6 79 Answer: 85
+"
+6 80,86,"Input: 6 80 Answer: 86
+"
+6 81,87,"Input: 6 81 Answer: 87
+"
+6 82,88,"Input: 6 82 Answer: 88
+"
+6 83,89,"Input: 6 83 Answer: 89
+"
+6 84,90,"Input: 6 84 Answer: 90
+"
+6 85,91,"Input: 6 85 Answer: 91
+"
+6 86,92,"Input: 6 86 Answer: 92
+"
+6 87,93,"Input: 6 87 Answer: 93
+"
+6 88,94,"Input: 6 88 Answer: 94
+"
+6 89,95,"Input: 6 89 Answer: 95
+"
+6 90,96,"Input: 6 90 Answer: 96
+"
+6 91,97,"Input: 6 91 Answer: 97
+"
+6 92,98,"Input: 6 92 Answer: 98
+"
+6 93,99,"Input: 6 93 Answer: 99
+"
+6 94,100,"Input: 6 94 Answer: 100
+"
+6 95,101,"Input: 6 95 Answer: 101
+"
+6 96,102,"Input: 6 96 Answer: 102
+"
+6 97,103,"Input: 6 97 Answer: 103
+"
+6 98,104,"Input: 6 98 Answer: 104
+"
+6 99,105,"Input: 6 99 Answer: 105
+"
+7 7,14,"Input: 7 7 Answer: 14
+"
+7 8,15,"Input: 7 8 Answer: 15
+"
+7 9,16,"Input: 7 9 Answer: 16
+"
+7 10,17,"Input: 7 10 Answer: 17
+"
+7 11,18,"Input: 7 11 Answer: 18
+"
+7 12,19,"Input: 7 12 Answer: 19
+"
+7 13,20,"Input: 7 13 Answer: 20
+"
+7 14,21,"Input: 7 14 Answer: 21
+"
+7 16,23,"Input: 7 16 Answer: 23
+"
+7 17,24,"Input: 7 17 Answer: 24
+"
+7 18,25,"Input: 7 18 Answer: 25
+"
+7 19,26,"Input: 7 19 Answer: 26
+"
+7 20,27,"Input: 7 20 Answer: 27
+"
+7 21,28,"Input: 7 21 Answer: 28
+"
+7 22,29,"Input: 7 22 Answer: 29
+"
+7 23,30,"Input: 7 23 Answer: 30
+"
+7 24,31,"Input: 7 24 Answer: 31
+"
+7 25,32,"Input: 7 25 Answer: 32
+"
+7 26,33,"Input: 7 26 Answer: 33
+"
+7 27,34,"Input: 7 27 Answer: 34
+"
+7 28,35,"Input: 7 28 Answer: 35
+"
+7 29,36,"Input: 7 29 Answer: 36
+"
+7 30,37,"Input: 7 30 Answer: 37
+"
+7 31,38,"Input: 7 31 Answer: 38
+"
+7 32,39,"Input: 7 32 Answer: 39
+"
+7 33,40,"Input: 7 33 Answer: 40
+"
+7 34,41,"Input: 7 34 Answer: 41
+"
+7 35,42,"Input: 7 35 Answer: 42
+"
+7 36,43,"Input: 7 36 Answer: 43
+"
+7 37,44,"Input: 7 37 Answer: 44
+"
+7 38,45,"Input: 7 38 Answer: 45
+"
+7 39,46,"Input: 7 39 Answer: 46
+"
+7 40,47,"Input: 7 40 Answer: 47
+"
+7 41,48,"Input: 7 41 Answer: 48
+"
+7 42,49,"Input: 7 42 Answer: 49
+"
+7 43,50,"Input: 7 43 Answer: 50
+"
+7 44,51,"Input: 7 44 Answer: 51
+"
+7 45,52,"Input: 7 45 Answer: 52
+"
+7 46,53,"Input: 7 46 Answer: 53
+"
+7 47,54,"Input: 7 47 Answer: 54
+"
+7 48,55,"Input: 7 48 Answer: 55
+"
+7 49,56,"Input: 7 49 Answer: 56
+"
+7 50,57,"Input: 7 50 Answer: 57
+"
+7 51,58,"Input: 7 51 Answer: 58
+"
+7 52,59,"Input: 7 52 Answer: 59
+"
+7 53,60,"Input: 7 53 Answer: 60
+"
+7 54,61,"Input: 7 54 Answer: 61
+"
+7 55,62,"Input: 7 55 Answer: 62
+"
+7 57,64,"Input: 7 57 Answer: 64
+"
+7 58,65,"Input: 7 58 Answer: 65
+"
+7 59,66,"Input: 7 59 Answer: 66
+"
+7 60,67,"Input: 7 60 Answer: 67
+"
+7 61,68,"Input: 7 61 Answer: 68
+"
+7 62,69,"Input: 7 62 Answer: 69
+"
+7 63,70,"Input: 7 63 Answer: 70
+"
+7 64,71,"Input: 7 64 Answer: 71
+"
+7 65,72,"Input: 7 65 Answer: 72
+"
+7 66,73,"Input: 7 66 Answer: 73
+"
+7 67,74,"Input: 7 67 Answer: 74
+"
+7 68,75,"Input: 7 68 Answer: 75
+"
+7 69,76,"Input: 7 69 Answer: 76
+"
+7 71,78,"Input: 7 71 Answer: 78
+"
+7 72,79,"Input: 7 72 Answer: 79
+"
+7 73,80,"Input: 7 73 Answer: 80
+"
+7 74,81,"Input: 7 74 Answer: 81
+"
+7 76,83,"Input: 7 76 Answer: 83
+"
+7 77,84,"Input: 7 77 Answer: 84
+"
+7 78,85,"Input: 7 78 Answer: 85
+"
+7 79,86,"Input: 7 79 Answer: 86
+"
+7 80,87,"Input: 7 80 Answer: 87
+"
+7 81,88,"Input: 7 81 Answer: 88
+"
+7 82,89,"Input: 7 82 Answer: 89
+"
+7 83,90,"Input: 7 83 Answer: 90
+"
+7 84,91,"Input: 7 84 Answer: 91
+"
+7 85,92,"Input: 7 85 Answer: 92
+"
+7 86,93,"Input: 7 86 Answer: 93
+"
+7 87,94,"Input: 7 87 Answer: 94
+"
+7 88,95,"Input: 7 88 Answer: 95
+"
+7 89,96,"Input: 7 89 Answer: 96
+"
+7 90,97,"Input: 7 90 Answer: 97
+"
+7 91,98,"Input: 7 91 Answer: 98
+"
+7 92,99,"Input: 7 92 Answer: 99
+"
+7 93,100,"Input: 7 93 Answer: 100
+"
+7 94,101,"Input: 7 94 Answer: 101
+"
+7 95,102,"Input: 7 95 Answer: 102
+"
+7 96,103,"Input: 7 96 Answer: 103
+"
+7 97,104,"Input: 7 97 Answer: 104
+"
+7 98,105,"Input: 7 98 Answer: 105
+"
+7 99,106,"Input: 7 99 Answer: 106
+"
+8 8,16,"Input: 8 8 Answer: 16
+"
+8 9,17,"Input: 8 9 Answer: 17
+"
+8 10,18,"Input: 8 10 Answer: 18
+"
+8 11,19,"Input: 8 11 Answer: 19
+"
+8 12,20,"Input: 8 12 Answer: 20
+"
+8 13,21,"Input: 8 13 Answer: 21
+"
+8 14,22,"Input: 8 14 Answer: 22
+"
+8 15,23,"Input: 8 15 Answer: 23
+"
+8 16,24,"Input: 8 16 Answer: 24
+"
+8 17,25,"Input: 8 17 Answer: 25
+"
+8 18,26,"Input: 8 18 Answer: 26
+"
+8 19,27,"Input: 8 19 Answer: 27
+"
+8 20,28,"Input: 8 20 Answer: 28
+"
+8 21,29,"Input: 8 21 Answer: 29
+"
+8 22,30,"Input: 8 22 Answer: 30
+"
+8 23,31,"Input: 8 23 Answer: 31
+"
+8 24,32,"Input: 8 24 Answer: 32
+"
+8 25,33,"Input: 8 25 Answer: 33
+"
+8 26,34,"Input: 8 26 Answer: 34
+"
+8 27,35,"Input: 8 27 Answer: 35
+"
+8 28,36,"Input: 8 28 Answer: 36
+"
+8 29,37,"Input: 8 29 Answer: 37
+"
+8 30,38,"Input: 8 30 Answer: 38
+"
+8 31,39,"Input: 8 31 Answer: 39
+"
+8 32,40,"Input: 8 32 Answer: 40
+"
+8 33,41,"Input: 8 33 Answer: 41
+"
+8 34,42,"Input: 8 34 Answer: 42
+"
+8 35,43,"Input: 8 35 Answer: 43
+"
+8 36,44,"Input: 8 36 Answer: 44
+"
+8 37,45,"Input: 8 37 Answer: 45
+"
+8 38,46,"Input: 8 38 Answer: 46
+"
+8 39,47,"Input: 8 39 Answer: 47
+"
+8 40,48,"Input: 8 40 Answer: 48
+"
+8 41,49,"Input: 8 41 Answer: 49
+"
+8 43,51,"Input: 8 43 Answer: 51
+"
+8 44,52,"Input: 8 44 Answer: 52
+"
+8 45,53,"Input: 8 45 Answer: 53
+"
+8 46,54,"Input: 8 46 Answer: 54
+"
+8 47,55,"Input: 8 47 Answer: 55
+"
+8 48,56,"Input: 8 48 Answer: 56
+"
+8 49,57,"Input: 8 49 Answer: 57
+"
+8 50,58,"Input: 8 50 Answer: 58
+"
+8 51,59,"Input: 8 51 Answer: 59
+"
+8 52,60,"Input: 8 52 Answer: 60
+"
+8 53,61,"Input: 8 53 Answer: 61
+"
+8 54,62,"Input: 8 54 Answer: 62
+"
+8 55,63,"Input: 8 55 Answer: 63
+"
+8 56,64,"Input: 8 56 Answer: 64
+"
+8 57,65,"Input: 8 57 Answer: 65
+"
+8 58,66,"Input: 8 58 Answer: 66
+"
+8 59,67,"Input: 8 59 Answer: 67
+"
+8 60,68,"Input: 8 60 Answer: 68
+"
+8 61,69,"Input: 8 61 Answer: 69
+"
+8 62,70,"Input: 8 62 Answer: 70
+"
+8 63,71,"Input: 8 63 Answer: 71
+"
+8 64,72,"Input: 8 64 Answer: 72
+"
+8 65,73,"Input: 8 65 Answer: 73
+"
+8 66,74,"Input: 8 66 Answer: 74
+"
+8 67,75,"Input: 8 67 Answer: 75
+"
+8 68,76,"Input: 8 68 Answer: 76
+"
+8 69,77,"Input: 8 69 Answer: 77
+"
+8 70,78,"Input: 8 70 Answer: 78
+"
+8 71,79,"Input: 8 71 Answer: 79
+"
+8 72,80,"Input: 8 72 Answer: 80
+"
+8 73,81,"Input: 8 73 Answer: 81
+"
+8 74,82,"Input: 8 74 Answer: 82
+"
+8 75,83,"Input: 8 75 Answer: 83
+"
+8 76,84,"Input: 8 76 Answer: 84
+"
+8 77,85,"Input: 8 77 Answer: 85
+"
+8 78,86,"Input: 8 78 Answer: 86
+"
+8 79,87,"Input: 8 79 Answer: 87
+"
+8 80,88,"Input: 8 80 Answer: 88
+"
+8 81,89,"Input: 8 81 Answer: 89
+"
+8 82,90,"Input: 8 82 Answer: 90
+"
+8 83,91,"Input: 8 83 Answer: 91
+"
+8 84,92,"Input: 8 84 Answer: 92
+"
+8 85,93,"Input: 8 85 Answer: 93
+"
+8 86,94,"Input: 8 86 Answer: 94
+"
+8 87,95,"Input: 8 87 Answer: 95
+"
+8 88,96,"Input: 8 88 Answer: 96
+"
+8 89,97,"Input: 8 89 Answer: 97
+"
+8 90,98,"Input: 8 90 Answer: 98
+"
+8 91,99,"Input: 8 91 Answer: 99
+"
+8 92,100,"Input: 8 92 Answer: 100
+"
+8 93,101,"Input: 8 93 Answer: 101
+"
+8 94,102,"Input: 8 94 Answer: 102
+"
+8 95,103,"Input: 8 95 Answer: 103
+"
+8 96,104,"Input: 8 96 Answer: 104
+"
+8 97,105,"Input: 8 97 Answer: 105
+"
+8 98,106,"Input: 8 98 Answer: 106
+"
+8 99,107,"Input: 8 99 Answer: 107
+"
+9 9,18,"Input: 9 9 Answer: 18
+"
+9 10,19,"Input: 9 10 Answer: 19
+"
+9 11,20,"Input: 9 11 Answer: 20
+"
+9 12,21,"Input: 9 12 Answer: 21
+"
+9 13,22,"Input: 9 13 Answer: 22
+"
+9 14,23,"Input: 9 14 Answer: 23
+"
+9 15,24,"Input: 9 15 Answer: 24
+"
+9 16,25,"Input: 9 16 Answer: 25
+"
+9 17,26,"Input: 9 17 Answer: 26
+"
+9 18,27,"Input: 9 18 Answer: 27
+"
+9 19,28,"Input: 9 19 Answer: 28
+"
+9 20,29,"Input: 9 20 Answer: 29
+"
+9 21,30,"Input: 9 21 Answer: 30
+"
+9 22,31,"Input: 9 22 Answer: 31
+"
+9 23,32,"Input: 9 23 Answer: 32
+"
+9 24,33,"Input: 9 24 Answer: 33
+"
+9 25,34,"Input: 9 25 Answer: 34
+"
+9 26,35,"Input: 9 26 Answer: 35
+"
+9 27,36,"Input: 9 27 Answer: 36
+"
+9 28,37,"Input: 9 28 Answer: 37
+"
+9 29,38,"Input: 9 29 Answer: 38
+"
+9 30,39,"Input: 9 30 Answer: 39
+"
+9 31,40,"Input: 9 31 Answer: 40
+"
+9 32,41,"Input: 9 32 Answer: 41
+"
+9 33,42,"Input: 9 33 Answer: 42
+"
+9 34,43,"Input: 9 34 Answer: 43
+"
+9 35,44,"Input: 9 35 Answer: 44
+"
+9 36,45,"Input: 9 36 Answer: 45
+"
+9 37,46,"Input: 9 37 Answer: 46
+"
+9 38,47,"Input: 9 38 Answer: 47
+"
+9 39,48,"Input: 9 39 Answer: 48
+"
+9 40,49,"Input: 9 40 Answer: 49
+"
+9 41,50,"Input: 9 41 Answer: 50
+"
+9 42,51,"Input: 9 42 Answer: 51
+"
+9 43,52,"Input: 9 43 Answer: 52
+"
+9 44,53,"Input: 9 44 Answer: 53
+"
+9 45,54,"Input: 9 45 Answer: 54
+"
+9 46,55,"Input: 9 46 Answer: 55
+"
+9 47,56,"Input: 9 47 Answer: 56
+"
+9 48,57,"Input: 9 48 Answer: 57
+"
+9 49,58,"Input: 9 49 Answer: 58
+"
+9 50,59,"Input: 9 50 Answer: 59
+"
+9 51,60,"Input: 9 51 Answer: 60
+"
+9 52,61,"Input: 9 52 Answer: 61
+"
+9 54,63,"Input: 9 54 Answer: 63
+"
+9 55,64,"Input: 9 55 Answer: 64
+"
+9 56,65,"Input: 9 56 Answer: 65
+"
+9 57,66,"Input: 9 57 Answer: 66
+"
+9 58,67,"Input: 9 58 Answer: 67
+"
+9 59,68,"Input: 9 59 Answer: 68
+"
+9 60,69,"Input: 9 60 Answer: 69
+"
+9 61,70,"Input: 9 61 Answer: 70
+"
+9 62,71,"Input: 9 62 Answer: 71
+"
+9 63,72,"Input: 9 63 Answer: 72
+"
+9 64,73,"Input: 9 64 Answer: 73
+"
+9 65,74,"Input: 9 65 Answer: 74
+"
+9 66,75,"Input: 9 66 Answer: 75
+"
+9 67,76,"Input: 9 67 Answer: 76
+"
+9 68,77,"Input: 9 68 Answer: 77
+"
+9 69,78,"Input: 9 69 Answer: 78
+"
+9 70,79,"Input: 9 70 Answer: 79
+"
+9 71,80,"Input: 9 71 Answer: 80
+"
+9 72,81,"Input: 9 72 Answer: 81
+"
+9 73,82,"Input: 9 73 Answer: 82
+"
+9 74,83,"Input: 9 74 Answer: 83
+"
+9 75,84,"Input: 9 75 Answer: 84
+"
+9 76,85,"Input: 9 76 Answer: 85
+"
+9 77,86,"Input: 9 77 Answer: 86
+"
+9 78,87,"Input: 9 78 Answer: 87
+"
+9 79,88,"Input: 9 79 Answer: 88
+"
+9 80,89,"Input: 9 80 Answer: 89
+"
+9 81,90,"Input: 9 81 Answer: 90
+"
+9 83,92,"Input: 9 83 Answer: 92
+"
+9 84,93,"Input: 9 84 Answer: 93
+"
+9 85,94,"Input: 9 85 Answer: 94
+"
+9 86,95,"Input: 9 86 Answer: 95
+"
+9 87,96,"Input: 9 87 Answer: 96
+"
+9 88,97,"Input: 9 88 Answer: 97
+"
+9 89,98,"Input: 9 89 Answer: 98
+"
+9 90,99,"Input: 9 90 Answer: 99
+"
+9 91,100,"Input: 9 91 Answer: 100
+"
+9 92,101,"Input: 9 92 Answer: 101
+"
+9 93,102,"Input: 9 93 Answer: 102
+"
+9 94,103,"Input: 9 94 Answer: 103
+"
+9 95,104,"Input: 9 95 Answer: 104
+"
+9 96,105,"Input: 9 96 Answer: 105
+"
+9 97,106,"Input: 9 97 Answer: 106
+"
+9 98,107,"Input: 9 98 Answer: 107
+"
+9 99,108,"Input: 9 99 Answer: 108
+"
+10 10,20,"Input: 10 10 Answer: 20
+"
+10 11,21,"Input: 10 11 Answer: 21
+"
+10 13,23,"Input: 10 13 Answer: 23
+"
+10 14,24,"Input: 10 14 Answer: 24
+"
+10 15,25,"Input: 10 15 Answer: 25
+"
+10 16,26,"Input: 10 16 Answer: 26
+"
+10 17,27,"Input: 10 17 Answer: 27
+"
+10 18,28,"Input: 10 18 Answer: 28
+"
+10 19,29,"Input: 10 19 Answer: 29
+"
+10 20,30,"Input: 10 20 Answer: 30
+"
+10 21,31,"Input: 10 21 Answer: 31
+"
+10 22,32,"Input: 10 22 Answer: 32
+"
+10 23,33,"Input: 10 23 Answer: 33
+"
+10 24,34,"Input: 10 24 Answer: 34
+"
+10 25,35,"Input: 10 25 Answer: 35
+"
+10 26,36,"Input: 10 26 Answer: 36
+"
+10 27,37,"Input: 10 27 Answer: 37
+"
+10 28,38,"Input: 10 28 Answer: 38
+"
+10 29,39,"Input: 10 29 Answer: 39
+"
+10 30,40,"Input: 10 30 Answer: 40
+"
+10 31,41,"Input: 10 31 Answer: 41
+"
+10 32,42,"Input: 10 32 Answer: 42
+"
+10 33,43,"Input: 10 33 Answer: 43
+"
+10 34,44,"Input: 10 34 Answer: 44
+"
+10 35,45,"Input: 10 35 Answer: 45
+"
+10 36,46,"Input: 10 36 Answer: 46
+"
+10 37,47,"Input: 10 37 Answer: 47
+"
+10 38,48,"Input: 10 38 Answer: 48
+"
+10 39,49,"Input: 10 39 Answer: 49
+"
+10 40,50,"Input: 10 40 Answer: 50
+"
+10 41,51,"Input: 10 41 Answer: 51
+"
+10 42,52,"Input: 10 42 Answer: 52
+"
+10 43,53,"Input: 10 43 Answer: 53
+"
+10 44,54,"Input: 10 44 Answer: 54
+"
+10 45,55,"Input: 10 45 Answer: 55
+"
+10 46,56,"Input: 10 46 Answer: 56
+"
+10 47,57,"Input: 10 47 Answer: 57
+"
+10 48,58,"Input: 10 48 Answer: 58
+"
+10 49,59,"Input: 10 49 Answer: 59
+"
+10 50,60,"Input: 10 50 Answer: 60
+"
+10 51,61,"Input: 10 51 Answer: 61
+"
+10 52,62,"Input: 10 52 Answer: 62
+"
+10 53,63,"Input: 10 53 Answer: 63
+"
+10 54,64,"Input: 10 54 Answer: 64
+"
+10 55,65,"Input: 10 55 Answer: 65
+"
+10 56,66,"Input: 10 56 Answer: 66
+"
+10 57,67,"Input: 10 57 Answer: 67
+"
+10 58,68,"Input: 10 58 Answer: 68
+"
+10 59,69,"Input: 10 59 Answer: 69
+"
+10 60,70,"Input: 10 60 Answer: 70
+"
+10 61,71,"Input: 10 61 Answer: 71
+"
+10 62,72,"Input: 10 62 Answer: 72
+"
+10 63,73,"Input: 10 63 Answer: 73
+"
+10 64,74,"Input: 10 64 Answer: 74
+"
+10 65,75,"Input: 10 65 Answer: 75
+"
+10 66,76,"Input: 10 66 Answer: 76
+"
+10 67,77,"Input: 10 67 Answer: 77
+"
+10 68,78,"Input: 10 68 Answer: 78
+"
+10 70,80,"Input: 10 70 Answer: 80
+"
+10 71,81,"Input: 10 71 Answer: 81
+"
+10 72,82,"Input: 10 72 Answer: 82
+"
+10 73,83,"Input: 10 73 Answer: 83
+"
+10 74,84,"Input: 10 74 Answer: 84
+"
+10 75,85,"Input: 10 75 Answer: 85
+"
+10 76,86,"Input: 10 76 Answer: 86
+"
+10 77,87,"Input: 10 77 Answer: 87
+"
+10 78,88,"Input: 10 78 Answer: 88
+"
+10 79,89,"Input: 10 79 Answer: 89
+"
+10 80,90,"Input: 10 80 Answer: 90
+"
+10 81,91,"Input: 10 81 Answer: 91
+"
+10 82,92,"Input: 10 82 Answer: 92
+"
+10 83,93,"Input: 10 83 Answer: 93
+"
+10 84,94,"Input: 10 84 Answer: 94
+"
+10 85,95,"Input: 10 85 Answer: 95
+"
+10 86,96,"Input: 10 86 Answer: 96
+"
+10 87,97,"Input: 10 87 Answer: 97
+"
+10 88,98,"Input: 10 88 Answer: 98
+"
+10 89,99,"Input: 10 89 Answer: 99
+"
+10 90,100,"Input: 10 90 Answer: 100
+"
+10 91,101,"Input: 10 91 Answer: 101
+"
+10 92,102,"Input: 10 92 Answer: 102
+"
+10 93,103,"Input: 10 93 Answer: 103
+"
+10 94,104,"Input: 10 94 Answer: 104
+"
+10 95,105,"Input: 10 95 Answer: 105
+"
+10 96,106,"Input: 10 96 Answer: 106
+"
+10 97,107,"Input: 10 97 Answer: 107
+"
+10 98,108,"Input: 10 98 Answer: 108
+"
+10 99,109,"Input: 10 99 Answer: 109
+"
+11 11,22,"Input: 11 11 Answer: 22
+"
+11 12,23,"Input: 11 12 Answer: 23
+"
+11 13,24,"Input: 11 13 Answer: 24
+"
+11 14,25,"Input: 11 14 Answer: 25
+"
+11 15,26,"Input: 11 15 Answer: 26
+"
+11 16,27,"Input: 11 16 Answer: 27
+"
+11 17,28,"Input: 11 17 Answer: 28
+"
+11 18,29,"Input: 11 18 Answer: 29
+"
+11 19,30,"Input: 11 19 Answer: 30
+"
+11 20,31,"Input: 11 20 Answer: 31
+"
+11 21,32,"Input: 11 21 Answer: 32
+"
+11 22,33,"Input: 11 22 Answer: 33
+"
+11 23,34,"Input: 11 23 Answer: 34
+"
+11 24,35,"Input: 11 24 Answer: 35
+"
+11 25,36,"Input: 11 25 Answer: 36
+"
+11 26,37,"Input: 11 26 Answer: 37
+"
+11 27,38,"Input: 11 27 Answer: 38
+"
+11 28,39,"Input: 11 28 Answer: 39
+"
+11 29,40,"Input: 11 29 Answer: 40
+"
+11 30,41,"Input: 11 30 Answer: 41
+"
+11 31,42,"Input: 11 31 Answer: 42
+"
+11 32,43,"Input: 11 32 Answer: 43
+"
+11 33,44,"Input: 11 33 Answer: 44
+"
+11 34,45,"Input: 11 34 Answer: 45
+"
+11 35,46,"Input: 11 35 Answer: 46
+"
+11 36,47,"Input: 11 36 Answer: 47
+"
+11 37,48,"Input: 11 37 Answer: 48
+"
+11 38,49,"Input: 11 38 Answer: 49
+"
+11 39,50,"Input: 11 39 Answer: 50
+"
+11 40,51,"Input: 11 40 Answer: 51
+"
+11 41,52,"Input: 11 41 Answer: 52
+"
+11 42,53,"Input: 11 42 Answer: 53
+"
+11 43,54,"Input: 11 43 Answer: 54
+"
+11 44,55,"Input: 11 44 Answer: 55
+"
+11 45,56,"Input: 11 45 Answer: 56
+"
+11 46,57,"Input: 11 46 Answer: 57
+"
+11 47,58,"Input: 11 47 Answer: 58
+"
+11 48,59,"Input: 11 48 Answer: 59
+"
+11 49,60,"Input: 11 49 Answer: 60
+"
+11 50,61,"Input: 11 50 Answer: 61
+"
+11 51,62,"Input: 11 51 Answer: 62
+"
+11 52,63,"Input: 11 52 Answer: 63
+"
+11 53,64,"Input: 11 53 Answer: 64
+"
+11 54,65,"Input: 11 54 Answer: 65
+"
+11 55,66,"Input: 11 55 Answer: 66
+"
+11 56,67,"Input: 11 56 Answer: 67
+"
+11 57,68,"Input: 11 57 Answer: 68
+"
+11 58,69,"Input: 11 58 Answer: 69
+"
+11 59,70,"Input: 11 59 Answer: 70
+"
+11 60,71,"Input: 11 60 Answer: 71
+"
+11 61,72,"Input: 11 61 Answer: 72
+"
+11 62,73,"Input: 11 62 Answer: 73
+"
+11 63,74,"Input: 11 63 Answer: 74
+"
+11 64,75,"Input: 11 64 Answer: 75
+"
+11 65,76,"Input: 11 65 Answer: 76
+"
+11 66,77,"Input: 11 66 Answer: 77
+"
+11 67,78,"Input: 11 67 Answer: 78
+"
+11 68,79,"Input: 11 68 Answer: 79
+"
+11 69,80,"Input: 11 69 Answer: 80
+"
+11 70,81,"Input: 11 70 Answer: 81
+"
+11 71,82,"Input: 11 71 Answer: 82
+"
+11 72,83,"Input: 11 72 Answer: 83
+"
+11 73,84,"Input: 11 73 Answer: 84
+"
+11 74,85,"Input: 11 74 Answer: 85
+"
+11 75,86,"Input: 11 75 Answer: 86
+"
+11 76,87,"Input: 11 76 Answer: 87
+"
+11 77,88,"Input: 11 77 Answer: 88
+"
+11 78,89,"Input: 11 78 Answer: 89
+"
+11 79,90,"Input: 11 79 Answer: 90
+"
+11 80,91,"Input: 11 80 Answer: 91
+"
+11 81,92,"Input: 11 81 Answer: 92
+"
+11 82,93,"Input: 11 82 Answer: 93
+"
+11 83,94,"Input: 11 83 Answer: 94
+"
+11 84,95,"Input: 11 84 Answer: 95
+"
+11 85,96,"Input: 11 85 Answer: 96
+"
+11 86,97,"Input: 11 86 Answer: 97
+"
+11 87,98,"Input: 11 87 Answer: 98
+"
+11 88,99,"Input: 11 88 Answer: 99
+"
+11 89,100,"Input: 11 89 Answer: 100
+"
+11 90,101,"Input: 11 90 Answer: 101
+"
+11 91,102,"Input: 11 91 Answer: 102
+"
+11 92,103,"Input: 11 92 Answer: 103
+"
+11 93,104,"Input: 11 93 Answer: 104
+"
+11 94,105,"Input: 11 94 Answer: 105
+"
+11 95,106,"Input: 11 95 Answer: 106
+"
+11 96,107,"Input: 11 96 Answer: 107
+"
+11 97,108,"Input: 11 97 Answer: 108
+"
+11 98,109,"Input: 11 98 Answer: 109
+"
+11 99,110,"Input: 11 99 Answer: 110
+"
+12 12,24,"Input: 12 12 Answer: 24
+"
+12 13,25,"Input: 12 13 Answer: 25
+"
+12 14,26,"Input: 12 14 Answer: 26
+"
+12 15,27,"Input: 12 15 Answer: 27
+"
+12 16,28,"Input: 12 16 Answer: 28
+"
+12 17,29,"Input: 12 17 Answer: 29
+"
+12 18,30,"Input: 12 18 Answer: 30
+"
+12 19,31,"Input: 12 19 Answer: 31
+"
+12 20,32,"Input: 12 20 Answer: 32
+"
+12 21,33,"Input: 12 21 Answer: 33
+"
+12 22,34,"Input: 12 22 Answer: 34
+"
+12 23,35,"Input: 12 23 Answer: 35
+"
+12 24,36,"Input: 12 24 Answer: 36
+"
+12 25,37,"Input: 12 25 Answer: 37
+"
+12 26,38,"Input: 12 26 Answer: 38
+"
+12 27,39,"Input: 12 27 Answer: 39
+"
+12 28,40,"Input: 12 28 Answer: 40
+"
+12 29,41,"Input: 12 29 Answer: 41
+"
+12 30,42,"Input: 12 30 Answer: 42
+"
+12 31,43,"Input: 12 31 Answer: 43
+"
+12 32,44,"Input: 12 32 Answer: 44
+"
+12 33,45,"Input: 12 33 Answer: 45
+"
+12 35,47,"Input: 12 35 Answer: 47
+"
+12 36,48,"Input: 12 36 Answer: 48
+"
+12 37,49,"Input: 12 37 Answer: 49
+"
+12 38,50,"Input: 12 38 Answer: 50
+"
+12 39,51,"Input: 12 39 Answer: 51
+"
+12 40,52,"Input: 12 40 Answer: 52
+"
+12 41,53,"Input: 12 41 Answer: 53
+"
+12 42,54,"Input: 12 42 Answer: 54
+"
+12 43,55,"Input: 12 43 Answer: 55
+"
+12 44,56,"Input: 12 44 Answer: 56
+"
+12 45,57,"Input: 12 45 Answer: 57
+"
+12 46,58,"Input: 12 46 Answer: 58
+"
+12 47,59,"Input: 12 47 Answer: 59
+"
+12 48,60,"Input: 12 48 Answer: 60
+"
+12 49,61,"Input: 12 49 Answer: 61
+"
+12 50,62,"Input: 12 50 Answer: 62
+"
+12 51,63,"Input: 12 51 Answer: 63
+"
+12 52,64,"Input: 12 52 Answer: 64
+"
+12 53,65,"Input: 12 53 Answer: 65
+"
+12 54,66,"Input: 12 54 Answer: 66
+"
+12 56,68,"Input: 12 56 Answer: 68
+"
+12 57,69,"Input: 12 57 Answer: 69
+"
+12 58,70,"Input: 12 58 Answer: 70
+"
+12 60,72,"Input: 12 60 Answer: 72
+"
+12 61,73,"Input: 12 61 Answer: 73
+"
+12 62,74,"Input: 12 62 Answer: 74
+"
+12 63,75,"Input: 12 63 Answer: 75
+"
+12 64,76,"Input: 12 64 Answer: 76
+"
+12 65,77,"Input: 12 65 Answer: 77
+"
+12 66,78,"Input: 12 66 Answer: 78
+"
+12 67,79,"Input: 12 67 Answer: 79
+"
+12 68,80,"Input: 12 68 Answer: 80
+"
+12 69,81,"Input: 12 69 Answer: 81
+"
+12 70,82,"Input: 12 70 Answer: 82
+"
+12 71,83,"Input: 12 71 Answer: 83
+"
+12 72,84,"Input: 12 72 Answer: 84
+"
+12 73,85,"Input: 12 73 Answer: 85
+"
+12 74,86,"Input: 12 74 Answer: 86
+"
+12 75,87,"Input: 12 75 Answer: 87
+"
+12 76,88,"Input: 12 76 Answer: 88
+"
+12 77,89,"Input: 12 77 Answer: 89
+"
+12 78,90,"Input: 12 78 Answer: 90
+"
+12 79,91,"Input: 12 79 Answer: 91
+"
+12 80,92,"Input: 12 80 Answer: 92
+"
+12 81,93,"Input: 12 81 Answer: 93
+"
+12 82,94,"Input: 12 82 Answer: 94
+"
+12 83,95,"Input: 12 83 Answer: 95
+"
+12 84,96,"Input: 12 84 Answer: 96
+"
+12 85,97,"Input: 12 85 Answer: 97
+"
+12 86,98,"Input: 12 86 Answer: 98
+"
+12 87,99,"Input: 12 87 Answer: 99
+"
+12 88,100,"Input: 12 88 Answer: 100
+"
+12 89,101,"Input: 12 89 Answer: 101
+"
+12 90,102,"Input: 12 90 Answer: 102
+"
+12 91,103,"Input: 12 91 Answer: 103
+"
+12 92,104,"Input: 12 92 Answer: 104
+"
+12 93,105,"Input: 12 93 Answer: 105
+"
+12 95,107,"Input: 12 95 Answer: 107
+"
+12 96,108,"Input: 12 96 Answer: 108
+"
+12 97,109,"Input: 12 97 Answer: 109
+"
+12 98,110,"Input: 12 98 Answer: 110
+"
+12 99,111,"Input: 12 99 Answer: 111
+"
+13 13,26,"Input: 13 13 Answer: 26
+"
+13 14,27,"Input: 13 14 Answer: 27
+"
+13 15,28,"Input: 13 15 Answer: 28
+"
+13 16,29,"Input: 13 16 Answer: 29
+"
+13 17,30,"Input: 13 17 Answer: 30
+"
+13 18,31,"Input: 13 18 Answer: 31
+"
+13 19,32,"Input: 13 19 Answer: 32
+"
+13 20,33,"Input: 13 20 Answer: 33
+"
+13 21,34,"Input: 13 21 Answer: 34
+"
+13 22,35,"Input: 13 22 Answer: 35
+"
+13 23,36,"Input: 13 23 Answer: 36
+"
+13 24,37,"Input: 13 24 Answer: 37
+"
+13 25,38,"Input: 13 25 Answer: 38
+"
+13 26,39,"Input: 13 26 Answer: 39
+"
+13 27,40,"Input: 13 27 Answer: 40
+"
+13 28,41,"Input: 13 28 Answer: 41
+"
+13 29,42,"Input: 13 29 Answer: 42
+"
+13 30,43,"Input: 13 30 Answer: 43
+"
+13 31,44,"Input: 13 31 Answer: 44
+"
+13 32,45,"Input: 13 32 Answer: 45
+"
+13 33,46,"Input: 13 33 Answer: 46
+"
+13 34,47,"Input: 13 34 Answer: 47
+"
+13 35,48,"Input: 13 35 Answer: 48
+"
+13 36,49,"Input: 13 36 Answer: 49
+"
+13 37,50,"Input: 13 37 Answer: 50
+"
+13 38,51,"Input: 13 38 Answer: 51
+"
+13 39,52,"Input: 13 39 Answer: 52
+"
+13 40,53,"Input: 13 40 Answer: 53
+"
+13 41,54,"Input: 13 41 Answer: 54
+"
+13 42,55,"Input: 13 42 Answer: 55
+"
+13 43,56,"Input: 13 43 Answer: 56
+"
+13 44,57,"Input: 13 44 Answer: 57
+"
+13 45,58,"Input: 13 45 Answer: 58
+"
+13 46,59,"Input: 13 46 Answer: 59
+"
+13 47,60,"Input: 13 47 Answer: 60
+"
+13 48,61,"Input: 13 48 Answer: 61
+"
+13 49,62,"Input: 13 49 Answer: 62
+"
+13 50,63,"Input: 13 50 Answer: 63
+"
+13 51,64,"Input: 13 51 Answer: 64
+"
+13 52,65,"Input: 13 52 Answer: 65
+"
+13 53,66,"Input: 13 53 Answer: 66
+"
+13 54,67,"Input: 13 54 Answer: 67
+"
+13 55,68,"Input: 13 55 Answer: 68
+"
+13 56,69,"Input: 13 56 Answer: 69
+"
+13 58,71,"Input: 13 58 Answer: 71
+"
+13 59,72,"Input: 13 59 Answer: 72
+"
+13 60,73,"Input: 13 60 Answer: 73
+"
+13 61,74,"Input: 13 61 Answer: 74
+"
+13 62,75,"Input: 13 62 Answer: 75
+"
+13 63,76,"Input: 13 63 Answer: 76
+"
+13 64,77,"Input: 13 64 Answer: 77
+"
+13 65,78,"Input: 13 65 Answer: 78
+"
+13 66,79,"Input: 13 66 Answer: 79
+"
+13 67,80,"Input: 13 67 Answer: 80
+"
+13 68,81,"Input: 13 68 Answer: 81
+"
+13 69,82,"Input: 13 69 Answer: 82
+"
+13 70,83,"Input: 13 70 Answer: 83
+"
+13 71,84,"Input: 13 71 Answer: 84
+"
+13 72,85,"Input: 13 72 Answer: 85
+"
+13 73,86,"Input: 13 73 Answer: 86
+"
+13 74,87,"Input: 13 74 Answer: 87
+"
+13 75,88,"Input: 13 75 Answer: 88
+"
+13 76,89,"Input: 13 76 Answer: 89
+"
+13 77,90,"Input: 13 77 Answer: 90
+"
+13 78,91,"Input: 13 78 Answer: 91
+"
+13 79,92,"Input: 13 79 Answer: 92
+"
+13 80,93,"Input: 13 80 Answer: 93
+"
+13 81,94,"Input: 13 81 Answer: 94
+"
+13 82,95,"Input: 13 82 Answer: 95
+"
+13 83,96,"Input: 13 83 Answer: 96
+"
+13 84,97,"Input: 13 84 Answer: 97
+"
+13 85,98,"Input: 13 85 Answer: 98
+"
+13 86,99,"Input: 13 86 Answer: 99
+"
+13 87,100,"Input: 13 87 Answer: 100
+"
+13 88,101,"Input: 13 88 Answer: 101
+"
+13 89,102,"Input: 13 89 Answer: 102
+"
+13 90,103,"Input: 13 90 Answer: 103
+"
+13 91,104,"Input: 13 91 Answer: 104
+"
+13 92,105,"Input: 13 92 Answer: 105
+"
+13 93,106,"Input: 13 93 Answer: 106
+"
+13 94,107,"Input: 13 94 Answer: 107
+"
+13 95,108,"Input: 13 95 Answer: 108
+"
+13 96,109,"Input: 13 96 Answer: 109
+"
+13 97,110,"Input: 13 97 Answer: 110
+"
+13 98,111,"Input: 13 98 Answer: 111
+"
+13 99,112,"Input: 13 99 Answer: 112
+"
+14 14,28,"Input: 14 14 Answer: 28
+"
+14 15,29,"Input: 14 15 Answer: 29
+"
+14 16,30,"Input: 14 16 Answer: 30
+"
+14 17,31,"Input: 14 17 Answer: 31
+"
+14 18,32,"Input: 14 18 Answer: 32
+"
+14 19,33,"Input: 14 19 Answer: 33
+"
+14 20,34,"Input: 14 20 Answer: 34
+"
+14 21,35,"Input: 14 21 Answer: 35
+"
+14 22,36,"Input: 14 22 Answer: 36
+"
+14 23,37,"Input: 14 23 Answer: 37
+"
+14 24,38,"Input: 14 24 Answer: 38
+"
+14 25,39,"Input: 14 25 Answer: 39
+"
+14 26,40,"Input: 14 26 Answer: 40
+"
+14 27,41,"Input: 14 27 Answer: 41
+"
+14 28,42,"Input: 14 28 Answer: 42
+"
+14 29,43,"Input: 14 29 Answer: 43
+"
+14 30,44,"Input: 14 30 Answer: 44
+"
+14 31,45,"Input: 14 31 Answer: 45
+"
+14 32,46,"Input: 14 32 Answer: 46
+"
+14 33,47,"Input: 14 33 Answer: 47
+"
+14 34,48,"Input: 14 34 Answer: 48
+"
+14 35,49,"Input: 14 35 Answer: 49
+"
+14 36,50,"Input: 14 36 Answer: 50
+"
+14 37,51,"Input: 14 37 Answer: 51
+"
+14 38,52,"Input: 14 38 Answer: 52
+"
+14 39,53,"Input: 14 39 Answer: 53
+"
+14 40,54,"Input: 14 40 Answer: 54
+"
+14 41,55,"Input: 14 41 Answer: 55
+"
+14 42,56,"Input: 14 42 Answer: 56
+"
+14 43,57,"Input: 14 43 Answer: 57
+"
+14 44,58,"Input: 14 44 Answer: 58
+"
+14 45,59,"Input: 14 45 Answer: 59
+"
+14 46,60,"Input: 14 46 Answer: 60
+"
+14 47,61,"Input: 14 47 Answer: 61
+"
+14 49,63,"Input: 14 49 Answer: 63
+"
+14 50,64,"Input: 14 50 Answer: 64
+"
+14 51,65,"Input: 14 51 Answer: 65
+"
+14 52,66,"Input: 14 52 Answer: 66
+"
+14 53,67,"Input: 14 53 Answer: 67
+"
+14 54,68,"Input: 14 54 Answer: 68
+"
+14 55,69,"Input: 14 55 Answer: 69
+"
+14 56,70,"Input: 14 56 Answer: 70
+"
+14 57,71,"Input: 14 57 Answer: 71
+"
+14 58,72,"Input: 14 58 Answer: 72
+"
+14 59,73,"Input: 14 59 Answer: 73
+"
+14 60,74,"Input: 14 60 Answer: 74
+"
+14 61,75,"Input: 14 61 Answer: 75
+"
+14 62,76,"Input: 14 62 Answer: 76
+"
+14 63,77,"Input: 14 63 Answer: 77
+"
+14 64,78,"Input: 14 64 Answer: 78
+"
+14 65,79,"Input: 14 65 Answer: 79
+"
+14 66,80,"Input: 14 66 Answer: 80
+"
+14 67,81,"Input: 14 67 Answer: 81
+"
+14 68,82,"Input: 14 68 Answer: 82
+"
+14 69,83,"Input: 14 69 Answer: 83
+"
+14 70,84,"Input: 14 70 Answer: 84
+"
+14 71,85,"Input: 14 71 Answer: 85
+"
+14 72,86,"Input: 14 72 Answer: 86
+"
+14 74,88,"Input: 14 74 Answer: 88
+"
+14 75,89,"Input: 14 75 Answer: 89
+"
+14 76,90,"Input: 14 76 Answer: 90
+"
+14 77,91,"Input: 14 77 Answer: 91
+"
+14 78,92,"Input: 14 78 Answer: 92
+"
+14 79,93,"Input: 14 79 Answer: 93
+"
+14 80,94,"Input: 14 80 Answer: 94
+"
+14 81,95,"Input: 14 81 Answer: 95
+"
+14 82,96,"Input: 14 82 Answer: 96
+"
+14 83,97,"Input: 14 83 Answer: 97
+"
+14 84,98,"Input: 14 84 Answer: 98
+"
+14 85,99,"Input: 14 85 Answer: 99
+"
+14 86,100,"Input: 14 86 Answer: 100
+"
+14 87,101,"Input: 14 87 Answer: 101
+"
+14 88,102,"Input: 14 88 Answer: 102
+"
+14 89,103,"Input: 14 89 Answer: 103
+"
+14 90,104,"Input: 14 90 Answer: 104
+"
+14 91,105,"Input: 14 91 Answer: 105
+"
+14 92,106,"Input: 14 92 Answer: 106
+"
+14 93,107,"Input: 14 93 Answer: 107
+"
+14 94,108,"Input: 14 94 Answer: 108
+"
+14 95,109,"Input: 14 95 Answer: 109
+"
+14 96,110,"Input: 14 96 Answer: 110
+"
+14 98,112,"Input: 14 98 Answer: 112
+"
+14 99,113,"Input: 14 99 Answer: 113
+"
+15 15,30,"Input: 15 15 Answer: 30
+"
+15 16,31,"Input: 15 16 Answer: 31
+"
+15 17,32,"Input: 15 17 Answer: 32
+"
+15 18,33,"Input: 15 18 Answer: 33
+"
+15 19,34,"Input: 15 19 Answer: 34
+"
+15 20,35,"Input: 15 20 Answer: 35
+"
+15 21,36,"Input: 15 21 Answer: 36
+"
+15 22,37,"Input: 15 22 Answer: 37
+"
+15 23,38,"Input: 15 23 Answer: 38
+"
+15 24,39,"Input: 15 24 Answer: 39
+"
+15 25,40,"Input: 15 25 Answer: 40
+"
+15 26,41,"Input: 15 26 Answer: 41
+"
+15 27,42,"Input: 15 27 Answer: 42
+"
+15 28,43,"Input: 15 28 Answer: 43
+"
+15 29,44,"Input: 15 29 Answer: 44
+"
+15 30,45,"Input: 15 30 Answer: 45
+"
+15 31,46,"Input: 15 31 Answer: 46
+"
+15 32,47,"Input: 15 32 Answer: 47
+"
+15 33,48,"Input: 15 33 Answer: 48
+"
+15 34,49,"Input: 15 34 Answer: 49
+"
+15 35,50,"Input: 15 35 Answer: 50
+"
+15 36,51,"Input: 15 36 Answer: 51
+"
+15 37,52,"Input: 15 37 Answer: 52
+"
+15 38,53,"Input: 15 38 Answer: 53
+"
+15 39,54,"Input: 15 39 Answer: 54
+"
+15 40,55,"Input: 15 40 Answer: 55
+"
+15 41,56,"Input: 15 41 Answer: 56
+"
+15 42,57,"Input: 15 42 Answer: 57
+"
+15 43,58,"Input: 15 43 Answer: 58
+"
+15 44,59,"Input: 15 44 Answer: 59
+"
+15 45,60,"Input: 15 45 Answer: 60
+"
+15 46,61,"Input: 15 46 Answer: 61
+"
+15 47,62,"Input: 15 47 Answer: 62
+"
+15 48,63,"Input: 15 48 Answer: 63
+"
+15 49,64,"Input: 15 49 Answer: 64
+"
+15 50,65,"Input: 15 50 Answer: 65
+"
+15 51,66,"Input: 15 51 Answer: 66
+"
+15 52,67,"Input: 15 52 Answer: 67
+"
+15 53,68,"Input: 15 53 Answer: 68
+"
+15 54,69,"Input: 15 54 Answer: 69
+"
+15 55,70,"Input: 15 55 Answer: 70
+"
+15 56,71,"Input: 15 56 Answer: 71
+"
+15 57,72,"Input: 15 57 Answer: 72
+"
+15 58,73,"Input: 15 58 Answer: 73
+"
+15 59,74,"Input: 15 59 Answer: 74
+"
+15 60,75,"Input: 15 60 Answer: 75
+"
+15 61,76,"Input: 15 61 Answer: 76
+"
+15 62,77,"Input: 15 62 Answer: 77
+"
+15 63,78,"Input: 15 63 Answer: 78
+"
+15 64,79,"Input: 15 64 Answer: 79
+"
+15 65,80,"Input: 15 65 Answer: 80
+"
+15 66,81,"Input: 15 66 Answer: 81
+"
+15 67,82,"Input: 15 67 Answer: 82
+"
+15 68,83,"Input: 15 68 Answer: 83
+"
+15 69,84,"Input: 15 69 Answer: 84
+"
+15 70,85,"Input: 15 70 Answer: 85
+"
+15 71,86,"Input: 15 71 Answer: 86
+"
+15 73,88,"Input: 15 73 Answer: 88
+"
+15 74,89,"Input: 15 74 Answer: 89
+"
+15 75,90,"Input: 15 75 Answer: 90
+"
+15 76,91,"Input: 15 76 Answer: 91
+"
+15 77,92,"Input: 15 77 Answer: 92
+"
+15 78,93,"Input: 15 78 Answer: 93
+"
+15 79,94,"Input: 15 79 Answer: 94
+"
+15 80,95,"Input: 15 80 Answer: 95
+"
+15 81,96,"Input: 15 81 Answer: 96
+"
+15 82,97,"Input: 15 82 Answer: 97
+"
+15 83,98,"Input: 15 83 Answer: 98
+"
+15 84,99,"Input: 15 84 Answer: 99
+"
+15 85,100,"Input: 15 85 Answer: 100
+"
+15 86,101,"Input: 15 86 Answer: 101
+"
+15 87,102,"Input: 15 87 Answer: 102
+"
+15 88,103,"Input: 15 88 Answer: 103
+"
+15 89,104,"Input: 15 89 Answer: 104
+"
+15 90,105,"Input: 15 90 Answer: 105
+"
+15 91,106,"Input: 15 91 Answer: 106
+"
+15 92,107,"Input: 15 92 Answer: 107
+"
+15 93,108,"Input: 15 93 Answer: 108
+"
+15 94,109,"Input: 15 94 Answer: 109
+"
+15 95,110,"Input: 15 95 Answer: 110
+"
+15 96,111,"Input: 15 96 Answer: 111
+"
+15 97,112,"Input: 15 97 Answer: 112
+"
+15 98,113,"Input: 15 98 Answer: 113
+"
+15 99,114,"Input: 15 99 Answer: 114
+"
+16 16,32,"Input: 16 16 Answer: 32
+"
+16 17,33,"Input: 16 17 Answer: 33
+"
+16 18,34,"Input: 16 18 Answer: 34
+"
+16 19,35,"Input: 16 19 Answer: 35
+"
+16 20,36,"Input: 16 20 Answer: 36
+"
+16 21,37,"Input: 16 21 Answer: 37
+"
+16 22,38,"Input: 16 22 Answer: 38
+"
+16 23,39,"Input: 16 23 Answer: 39
+"
+16 24,40,"Input: 16 24 Answer: 40
+"
+16 25,41,"Input: 16 25 Answer: 41
+"
+16 26,42,"Input: 16 26 Answer: 42
+"
+16 27,43,"Input: 16 27 Answer: 43
+"
+16 28,44,"Input: 16 28 Answer: 44
+"
+16 29,45,"Input: 16 29 Answer: 45
+"
+16 30,46,"Input: 16 30 Answer: 46
+"
+16 31,47,"Input: 16 31 Answer: 47
+"
+16 32,48,"Input: 16 32 Answer: 48
+"
+16 33,49,"Input: 16 33 Answer: 49
+"
+16 34,50,"Input: 16 34 Answer: 50
+"
+16 36,52,"Input: 16 36 Answer: 52
+"
+16 37,53,"Input: 16 37 Answer: 53
+"
+16 38,54,"Input: 16 38 Answer: 54
+"
+16 39,55,"Input: 16 39 Answer: 55
+"
+16 40,56,"Input: 16 40 Answer: 56
+"
+16 41,57,"Input: 16 41 Answer: 57
+"
+16 42,58,"Input: 16 42 Answer: 58
+"
+16 43,59,"Input: 16 43 Answer: 59
+"
+16 44,60,"Input: 16 44 Answer: 60
+"
+16 45,61,"Input: 16 45 Answer: 61
+"
+16 46,62,"Input: 16 46 Answer: 62
+"
+16 47,63,"Input: 16 47 Answer: 63
+"
+16 48,64,"Input: 16 48 Answer: 64
+"
+16 49,65,"Input: 16 49 Answer: 65
+"
+16 50,66,"Input: 16 50 Answer: 66
+"
+16 51,67,"Input: 16 51 Answer: 67
+"
+16 52,68,"Input: 16 52 Answer: 68
+"
+16 53,69,"Input: 16 53 Answer: 69
+"
+16 54,70,"Input: 16 54 Answer: 70
+"
+16 55,71,"Input: 16 55 Answer: 71
+"
+16 57,73,"Input: 16 57 Answer: 73
+"
+16 58,74,"Input: 16 58 Answer: 74
+"
+16 59,75,"Input: 16 59 Answer: 75
+"
+16 60,76,"Input: 16 60 Answer: 76
+"
+16 61,77,"Input: 16 61 Answer: 77
+"
+16 62,78,"Input: 16 62 Answer: 78
+"
+16 63,79,"Input: 16 63 Answer: 79
+"
+16 64,80,"Input: 16 64 Answer: 80
+"
+16 65,81,"Input: 16 65 Answer: 81
+"
+16 66,82,"Input: 16 66 Answer: 82
+"
+16 67,83,"Input: 16 67 Answer: 83
+"
+16 68,84,"Input: 16 68 Answer: 84
+"
+16 69,85,"Input: 16 69 Answer: 85
+"
+16 70,86,"Input: 16 70 Answer: 86
+"
+16 71,87,"Input: 16 71 Answer: 87
+"
+16 72,88,"Input: 16 72 Answer: 88
+"
+16 73,89,"Input: 16 73 Answer: 89
+"
+16 74,90,"Input: 16 74 Answer: 90
+"
+16 75,91,"Input: 16 75 Answer: 91
+"
+16 76,92,"Input: 16 76 Answer: 92
+"
+16 77,93,"Input: 16 77 Answer: 93
+"
+16 78,94,"Input: 16 78 Answer: 94
+"
+16 79,95,"Input: 16 79 Answer: 95
+"
+16 80,96,"Input: 16 80 Answer: 96
+"
+16 81,97,"Input: 16 81 Answer: 97
+"
+16 82,98,"Input: 16 82 Answer: 98
+"
+16 83,99,"Input: 16 83 Answer: 99
+"
+16 84,100,"Input: 16 84 Answer: 100
+"
+16 85,101,"Input: 16 85 Answer: 101
+"
+16 86,102,"Input: 16 86 Answer: 102
+"
+16 87,103,"Input: 16 87 Answer: 103
+"
+16 88,104,"Input: 16 88 Answer: 104
+"
+16 89,105,"Input: 16 89 Answer: 105
+"
+16 90,106,"Input: 16 90 Answer: 106
+"
+16 91,107,"Input: 16 91 Answer: 107
+"
+16 92,108,"Input: 16 92 Answer: 108
+"
+16 93,109,"Input: 16 93 Answer: 109
+"
+16 94,110,"Input: 16 94 Answer: 110
+"
+16 95,111,"Input: 16 95 Answer: 111
+"
+16 96,112,"Input: 16 96 Answer: 112
+"
+16 97,113,"Input: 16 97 Answer: 113
+"
+16 98,114,"Input: 16 98 Answer: 114
+"
+16 99,115,"Input: 16 99 Answer: 115
+"
+17 17,34,"Input: 17 17 Answer: 34
+"
+17 18,35,"Input: 17 18 Answer: 35
+"
+17 19,36,"Input: 17 19 Answer: 36
+"
+17 20,37,"Input: 17 20 Answer: 37
+"
+17 21,38,"Input: 17 21 Answer: 38
+"
+17 22,39,"Input: 17 22 Answer: 39
+"
+17 23,40,"Input: 17 23 Answer: 40
+"
+17 24,41,"Input: 17 24 Answer: 41
+"
+17 25,42,"Input: 17 25 Answer: 42
+"
+17 26,43,"Input: 17 26 Answer: 43
+"
+17 27,44,"Input: 17 27 Answer: 44
+"
+17 28,45,"Input: 17 28 Answer: 45
+"
+17 29,46,"Input: 17 29 Answer: 46
+"
+17 30,47,"Input: 17 30 Answer: 47
+"
+17 31,48,"Input: 17 31 Answer: 48
+"
+17 32,49,"Input: 17 32 Answer: 49
+"
+17 33,50,"Input: 17 33 Answer: 50
+"
+17 34,51,"Input: 17 34 Answer: 51
+"
+17 35,52,"Input: 17 35 Answer: 52
+"
+17 36,53,"Input: 17 36 Answer: 53
+"
+17 37,54,"Input: 17 37 Answer: 54
+"
+17 38,55,"Input: 17 38 Answer: 55
+"
+17 39,56,"Input: 17 39 Answer: 56
+"
+17 40,57,"Input: 17 40 Answer: 57
+"
+17 41,58,"Input: 17 41 Answer: 58
+"
+17 42,59,"Input: 17 42 Answer: 59
+"
+17 43,60,"Input: 17 43 Answer: 60
+"
+17 44,61,"Input: 17 44 Answer: 61
+"
+17 45,62,"Input: 17 45 Answer: 62
+"
+17 46,63,"Input: 17 46 Answer: 63
+"
+17 47,64,"Input: 17 47 Answer: 64
+"
+17 48,65,"Input: 17 48 Answer: 65
+"
+17 49,66,"Input: 17 49 Answer: 66
+"
+17 50,67,"Input: 17 50 Answer: 67
+"
+17 51,68,"Input: 17 51 Answer: 68
+"
+17 52,69,"Input: 17 52 Answer: 69
+"
+17 53,70,"Input: 17 53 Answer: 70
+"
+17 54,71,"Input: 17 54 Answer: 71
+"
+17 55,72,"Input: 17 55 Answer: 72
+"
+17 56,73,"Input: 17 56 Answer: 73
+"
+17 57,74,"Input: 17 57 Answer: 74
+"
+17 58,75,"Input: 17 58 Answer: 75
+"
+17 59,76,"Input: 17 59 Answer: 76
+"
+17 60,77,"Input: 17 60 Answer: 77
+"
+17 61,78,"Input: 17 61 Answer: 78
+"
+17 62,79,"Input: 17 62 Answer: 79
+"
+17 63,80,"Input: 17 63 Answer: 80
+"
+17 64,81,"Input: 17 64 Answer: 81
+"
+17 65,82,"Input: 17 65 Answer: 82
+"
+17 66,83,"Input: 17 66 Answer: 83
+"
+17 67,84,"Input: 17 67 Answer: 84
+"
+17 68,85,"Input: 17 68 Answer: 85
+"
+17 69,86,"Input: 17 69 Answer: 86
+"
+17 70,87,"Input: 17 70 Answer: 87
+"
+17 71,88,"Input: 17 71 Answer: 88
+"
+17 72,89,"Input: 17 72 Answer: 89
+"
+17 73,90,"Input: 17 73 Answer: 90
+"
+17 74,91,"Input: 17 74 Answer: 91
+"
+17 75,92,"Input: 17 75 Answer: 92
+"
+17 76,93,"Input: 17 76 Answer: 93
+"
+17 77,94,"Input: 17 77 Answer: 94
+"
+17 78,95,"Input: 17 78 Answer: 95
+"
+17 79,96,"Input: 17 79 Answer: 96
+"
+17 80,97,"Input: 17 80 Answer: 97
+"
+17 81,98,"Input: 17 81 Answer: 98
+"
+17 82,99,"Input: 17 82 Answer: 99
+"
+17 83,100,"Input: 17 83 Answer: 100
+"
+17 84,101,"Input: 17 84 Answer: 101
+"
+17 85,102,"Input: 17 85 Answer: 102
+"
+17 86,103,"Input: 17 86 Answer: 103
+"
+17 87,104,"Input: 17 87 Answer: 104
+"
+17 88,105,"Input: 17 88 Answer: 105
+"
+17 89,106,"Input: 17 89 Answer: 106
+"
+17 90,107,"Input: 17 90 Answer: 107
+"
+17 92,109,"Input: 17 92 Answer: 109
+"
+17 93,110,"Input: 17 93 Answer: 110
+"
+17 94,111,"Input: 17 94 Answer: 111
+"
+17 95,112,"Input: 17 95 Answer: 112
+"
+17 96,113,"Input: 17 96 Answer: 113
+"
+17 97,114,"Input: 17 97 Answer: 114
+"
+17 98,115,"Input: 17 98 Answer: 115
+"
+17 99,116,"Input: 17 99 Answer: 116
+"
+18 18,36,"Input: 18 18 Answer: 36
+"
+18 19,37,"Input: 18 19 Answer: 37
+"
+18 20,38,"Input: 18 20 Answer: 38
+"
+18 21,39,"Input: 18 21 Answer: 39
+"
+18 22,40,"Input: 18 22 Answer: 40
+"
+18 23,41,"Input: 18 23 Answer: 41
+"
+18 24,42,"Input: 18 24 Answer: 42
+"
+18 25,43,"Input: 18 25 Answer: 43
+"
+18 26,44,"Input: 18 26 Answer: 44
+"
+18 27,45,"Input: 18 27 Answer: 45
+"
+18 28,46,"Input: 18 28 Answer: 46
+"
+18 29,47,"Input: 18 29 Answer: 47
+"
+18 30,48,"Input: 18 30 Answer: 48
+"
+18 31,49,"Input: 18 31 Answer: 49
+"
+18 32,50,"Input: 18 32 Answer: 50
+"
+18 33,51,"Input: 18 33 Answer: 51
+"
+18 34,52,"Input: 18 34 Answer: 52
+"
+18 35,53,"Input: 18 35 Answer: 53
+"
+18 36,54,"Input: 18 36 Answer: 54
+"
+18 37,55,"Input: 18 37 Answer: 55
+"
+18 38,56,"Input: 18 38 Answer: 56
+"
+18 39,57,"Input: 18 39 Answer: 57
+"
+18 40,58,"Input: 18 40 Answer: 58
+"
+18 41,59,"Input: 18 41 Answer: 59
+"
+18 42,60,"Input: 18 42 Answer: 60
+"
+18 43,61,"Input: 18 43 Answer: 61
+"
+18 44,62,"Input: 18 44 Answer: 62
+"
+18 45,63,"Input: 18 45 Answer: 63
+"
+18 46,64,"Input: 18 46 Answer: 64
+"
+18 47,65,"Input: 18 47 Answer: 65
+"
+18 48,66,"Input: 18 48 Answer: 66
+"
+18 49,67,"Input: 18 49 Answer: 67
+"
+18 50,68,"Input: 18 50 Answer: 68
+"
+18 51,69,"Input: 18 51 Answer: 69
+"
+18 52,70,"Input: 18 52 Answer: 70
+"
+18 53,71,"Input: 18 53 Answer: 71
+"
+18 54,72,"Input: 18 54 Answer: 72
+"
+18 55,73,"Input: 18 55 Answer: 73
+"
+18 56,74,"Input: 18 56 Answer: 74
+"
+18 57,75,"Input: 18 57 Answer: 75
+"
+18 58,76,"Input: 18 58 Answer: 76
+"
+18 59,77,"Input: 18 59 Answer: 77
+"
+18 60,78,"Input: 18 60 Answer: 78
+"
+18 61,79,"Input: 18 61 Answer: 79
+"
+18 62,80,"Input: 18 62 Answer: 80
+"
+18 63,81,"Input: 18 63 Answer: 81
+"
+18 64,82,"Input: 18 64 Answer: 82
+"
+18 65,83,"Input: 18 65 Answer: 83
+"
+18 66,84,"Input: 18 66 Answer: 84
+"
+18 67,85,"Input: 18 67 Answer: 85
+"
+18 68,86,"Input: 18 68 Answer: 86
+"
+18 69,87,"Input: 18 69 Answer: 87
+"
+18 70,88,"Input: 18 70 Answer: 88
+"
+18 71,89,"Input: 18 71 Answer: 89
+"
+18 72,90,"Input: 18 72 Answer: 90
+"
+18 73,91,"Input: 18 73 Answer: 91
+"
+18 74,92,"Input: 18 74 Answer: 92
+"
+18 75,93,"Input: 18 75 Answer: 93
+"
+18 76,94,"Input: 18 76 Answer: 94
+"
+18 77,95,"Input: 18 77 Answer: 95
+"
+18 78,96,"Input: 18 78 Answer: 96
+"
+18 79,97,"Input: 18 79 Answer: 97
+"
+18 80,98,"Input: 18 80 Answer: 98
+"
+18 81,99,"Input: 18 81 Answer: 99
+"
+18 82,100,"Input: 18 82 Answer: 100
+"
+18 83,101,"Input: 18 83 Answer: 101
+"
+18 84,102,"Input: 18 84 Answer: 102
+"
+18 85,103,"Input: 18 85 Answer: 103
+"
+18 86,104,"Input: 18 86 Answer: 104
+"
+18 87,105,"Input: 18 87 Answer: 105
+"
+18 88,106,"Input: 18 88 Answer: 106
+"
+18 89,107,"Input: 18 89 Answer: 107
+"
+18 90,108,"Input: 18 90 Answer: 108
+"
+18 91,109,"Input: 18 91 Answer: 109
+"
+18 92,110,"Input: 18 92 Answer: 110
+"
+18 93,111,"Input: 18 93 Answer: 111
+"
+18 94,112,"Input: 18 94 Answer: 112
+"
+18 95,113,"Input: 18 95 Answer: 113
+"
+18 96,114,"Input: 18 96 Answer: 114
+"
+18 97,115,"Input: 18 97 Answer: 115
+"
+18 98,116,"Input: 18 98 Answer: 116
+"
+18 99,117,"Input: 18 99 Answer: 117
+"
+19 19,38,"Input: 19 19 Answer: 38
+"
+19 20,39,"Input: 19 20 Answer: 39
+"
+19 21,40,"Input: 19 21 Answer: 40
+"
+19 22,41,"Input: 19 22 Answer: 41
+"
+19 23,42,"Input: 19 23 Answer: 42
+"
+19 24,43,"Input: 19 24 Answer: 43
+"
+19 25,44,"Input: 19 25 Answer: 44
+"
+19 26,45,"Input: 19 26 Answer: 45
+"
+19 27,46,"Input: 19 27 Answer: 46
+"
+19 28,47,"Input: 19 28 Answer: 47
+"
+19 29,48,"Input: 19 29 Answer: 48
+"
+19 30,49,"Input: 19 30 Answer: 49
+"
+19 31,50,"Input: 19 31 Answer: 50
+"
+19 32,51,"Input: 19 32 Answer: 51
+"
+19 33,52,"Input: 19 33 Answer: 52
+"
+19 34,53,"Input: 19 34 Answer: 53
+"
+19 35,54,"Input: 19 35 Answer: 54
+"
+19 36,55,"Input: 19 36 Answer: 55
+"
+19 37,56,"Input: 19 37 Answer: 56
+"
+19 38,57,"Input: 19 38 Answer: 57
+"
+19 39,58,"Input: 19 39 Answer: 58
+"
+19 40,59,"Input: 19 40 Answer: 59
+"
+19 41,60,"Input: 19 41 Answer: 60
+"
+19 42,61,"Input: 19 42 Answer: 61
+"
+19 43,62,"Input: 19 43 Answer: 62
+"
+19 44,63,"Input: 19 44 Answer: 63
+"
+19 45,64,"Input: 19 45 Answer: 64
+"
+19 46,65,"Input: 19 46 Answer: 65
+"
+19 47,66,"Input: 19 47 Answer: 66
+"
+19 48,67,"Input: 19 48 Answer: 67
+"
+19 49,68,"Input: 19 49 Answer: 68
+"
+19 50,69,"Input: 19 50 Answer: 69
+"
+19 51,70,"Input: 19 51 Answer: 70
+"
+19 53,72,"Input: 19 53 Answer: 72
+"
+19 54,73,"Input: 19 54 Answer: 73
+"
+19 55,74,"Input: 19 55 Answer: 74
+"
+19 56,75,"Input: 19 56 Answer: 75
+"
+19 57,76,"Input: 19 57 Answer: 76
+"
+19 58,77,"Input: 19 58 Answer: 77
+"
+19 59,78,"Input: 19 59 Answer: 78
+"
+19 60,79,"Input: 19 60 Answer: 79
+"
+19 61,80,"Input: 19 61 Answer: 80
+"
+19 62,81,"Input: 19 62 Answer: 81
+"
+19 63,82,"Input: 19 63 Answer: 82
+"
+19 64,83,"Input: 19 64 Answer: 83
+"
+19 65,84,"Input: 19 65 Answer: 84
+"
+19 66,85,"Input: 19 66 Answer: 85
+"
+19 67,86,"Input: 19 67 Answer: 86
+"
+19 68,87,"Input: 19 68 Answer: 87
+"
+19 69,88,"Input: 19 69 Answer: 88
+"
+19 70,89,"Input: 19 70 Answer: 89
+"
+19 71,90,"Input: 19 71 Answer: 90
+"
+19 72,91,"Input: 19 72 Answer: 91
+"
+19 73,92,"Input: 19 73 Answer: 92
+"
+19 74,93,"Input: 19 74 Answer: 93
+"
+19 75,94,"Input: 19 75 Answer: 94
+"
+19 76,95,"Input: 19 76 Answer: 95
+"
+19 77,96,"Input: 19 77 Answer: 96
+"
+19 78,97,"Input: 19 78 Answer: 97
+"
+19 79,98,"Input: 19 79 Answer: 98
+"
+19 80,99,"Input: 19 80 Answer: 99
+"
+19 81,100,"Input: 19 81 Answer: 100
+"
+19 82,101,"Input: 19 82 Answer: 101
+"
+19 83,102,"Input: 19 83 Answer: 102
+"
+19 84,103,"Input: 19 84 Answer: 103
+"
+19 85,104,"Input: 19 85 Answer: 104
+"
+19 86,105,"Input: 19 86 Answer: 105
+"
+19 87,106,"Input: 19 87 Answer: 106
+"
+19 88,107,"Input: 19 88 Answer: 107
+"
+19 89,108,"Input: 19 89 Answer: 108
+"
+19 90,109,"Input: 19 90 Answer: 109
+"
+19 91,110,"Input: 19 91 Answer: 110
+"
+19 92,111,"Input: 19 92 Answer: 111
+"
+19 93,112,"Input: 19 93 Answer: 112
+"
+19 94,113,"Input: 19 94 Answer: 113
+"
+19 95,114,"Input: 19 95 Answer: 114
+"
+19 96,115,"Input: 19 96 Answer: 115
+"
+19 97,116,"Input: 19 97 Answer: 116
+"
+19 98,117,"Input: 19 98 Answer: 117
+"
+19 99,118,"Input: 19 99 Answer: 118
+"
+20 20,40,"Input: 20 20 Answer: 40
+"
+20 21,41,"Input: 20 21 Answer: 41
+"
+20 22,42,"Input: 20 22 Answer: 42
+"
+20 23,43,"Input: 20 23 Answer: 43
+"
+20 24,44,"Input: 20 24 Answer: 44
+"
+20 25,45,"Input: 20 25 Answer: 45
+"
+20 26,46,"Input: 20 26 Answer: 46
+"
+20 27,47,"Input: 20 27 Answer: 47
+"
+20 28,48,"Input: 20 28 Answer: 48
+"
+20 29,49,"Input: 20 29 Answer: 49
+"
+20 30,50,"Input: 20 30 Answer: 50
+"
+20 31,51,"Input: 20 31 Answer: 51
+"
+20 32,52,"Input: 20 32 Answer: 52
+"
+20 33,53,"Input: 20 33 Answer: 53
+"
+20 34,54,"Input: 20 34 Answer: 54
+"
+20 35,55,"Input: 20 35 Answer: 55
+"
+20 36,56,"Input: 20 36 Answer: 56
+"
+20 37,57,"Input: 20 37 Answer: 57
+"
+20 38,58,"Input: 20 38 Answer: 58
+"
+20 39,59,"Input: 20 39 Answer: 59
+"
+20 40,60,"Input: 20 40 Answer: 60
+"
+20 41,61,"Input: 20 41 Answer: 61
+"
+20 42,62,"Input: 20 42 Answer: 62
+"
+20 43,63,"Input: 20 43 Answer: 63
+"
+20 44,64,"Input: 20 44 Answer: 64
+"
+20 45,65,"Input: 20 45 Answer: 65
+"
+20 46,66,"Input: 20 46 Answer: 66
+"
+20 47,67,"Input: 20 47 Answer: 67
+"
+20 48,68,"Input: 20 48 Answer: 68
+"
+20 49,69,"Input: 20 49 Answer: 69
+"
+20 50,70,"Input: 20 50 Answer: 70
+"
+20 51,71,"Input: 20 51 Answer: 71
+"
+20 52,72,"Input: 20 52 Answer: 72
+"
+20 53,73,"Input: 20 53 Answer: 73
+"
+20 54,74,"Input: 20 54 Answer: 74
+"
+20 55,75,"Input: 20 55 Answer: 75
+"
+20 56,76,"Input: 20 56 Answer: 76
+"
+20 57,77,"Input: 20 57 Answer: 77
+"
+20 58,78,"Input: 20 58 Answer: 78
+"
+20 59,79,"Input: 20 59 Answer: 79
+"
+20 60,80,"Input: 20 60 Answer: 80
+"
+20 61,81,"Input: 20 61 Answer: 81
+"
+20 62,82,"Input: 20 62 Answer: 82
+"
+20 63,83,"Input: 20 63 Answer: 83
+"
+20 64,84,"Input: 20 64 Answer: 84
+"
+20 65,85,"Input: 20 65 Answer: 85
+"
+20 66,86,"Input: 20 66 Answer: 86
+"
+20 67,87,"Input: 20 67 Answer: 87
+"
+20 68,88,"Input: 20 68 Answer: 88
+"
+20 69,89,"Input: 20 69 Answer: 89
+"
+20 70,90,"Input: 20 70 Answer: 90
+"
+20 71,91,"Input: 20 71 Answer: 91
+"
+20 72,92,"Input: 20 72 Answer: 92
+"
+20 73,93,"Input: 20 73 Answer: 93
+"
+20 74,94,"Input: 20 74 Answer: 94
+"
+20 75,95,"Input: 20 75 Answer: 95
+"
+20 76,96,"Input: 20 76 Answer: 96
+"
+20 77,97,"Input: 20 77 Answer: 97
+"
+20 78,98,"Input: 20 78 Answer: 98
+"
+20 79,99,"Input: 20 79 Answer: 99
+"
+20 80,100,"Input: 20 80 Answer: 100
+"
+20 81,101,"Input: 20 81 Answer: 101
+"
+20 82,102,"Input: 20 82 Answer: 102
+"
+20 83,103,"Input: 20 83 Answer: 103
+"
+20 84,104,"Input: 20 84 Answer: 104
+"
+20 85,105,"Input: 20 85 Answer: 105
+"
+20 86,106,"Input: 20 86 Answer: 106
+"
+20 87,107,"Input: 20 87 Answer: 107
+"
+20 88,108,"Input: 20 88 Answer: 108
+"
+20 89,109,"Input: 20 89 Answer: 109
+"
+20 90,110,"Input: 20 90 Answer: 110
+"
+20 91,111,"Input: 20 91 Answer: 111
+"
+20 92,112,"Input: 20 92 Answer: 112
+"
+20 93,113,"Input: 20 93 Answer: 113
+"
+20 94,114,"Input: 20 94 Answer: 114
+"
+20 95,115,"Input: 20 95 Answer: 115
+"
+20 96,116,"Input: 20 96 Answer: 116
+"
+20 97,117,"Input: 20 97 Answer: 117
+"
+20 98,118,"Input: 20 98 Answer: 118
+"
+20 99,119,"Input: 20 99 Answer: 119
+"
+21 21,42,"Input: 21 21 Answer: 42
+"
+21 22,43,"Input: 21 22 Answer: 43
+"
+21 23,44,"Input: 21 23 Answer: 44
+"
+21 24,45,"Input: 21 24 Answer: 45
+"
+21 25,46,"Input: 21 25 Answer: 46
+"
+21 26,47,"Input: 21 26 Answer: 47
+"
+21 27,48,"Input: 21 27 Answer: 48
+"
+21 28,49,"Input: 21 28 Answer: 49
+"
+21 29,50,"Input: 21 29 Answer: 50
+"
+21 30,51,"Input: 21 30 Answer: 51
+"
+21 31,52,"Input: 21 31 Answer: 52
+"
+21 32,53,"Input: 21 32 Answer: 53
+"
+21 33,54,"Input: 21 33 Answer: 54
+"
+21 34,55,"Input: 21 34 Answer: 55
+"
+21 35,56,"Input: 21 35 Answer: 56
+"
+21 36,57,"Input: 21 36 Answer: 57
+"
+21 37,58,"Input: 21 37 Answer: 58
+"
+21 38,59,"Input: 21 38 Answer: 59
+"
+21 39,60,"Input: 21 39 Answer: 60
+"
+21 40,61,"Input: 21 40 Answer: 61
+"
+21 41,62,"Input: 21 41 Answer: 62
+"
+21 42,63,"Input: 21 42 Answer: 63
+"
+21 43,64,"Input: 21 43 Answer: 64
+"
+21 44,65,"Input: 21 44 Answer: 65
+"
+21 45,66,"Input: 21 45 Answer: 66
+"
+21 46,67,"Input: 21 46 Answer: 67
+"
+21 47,68,"Input: 21 47 Answer: 68
+"
+21 48,69,"Input: 21 48 Answer: 69
+"
+21 49,70,"Input: 21 49 Answer: 70
+"
+21 50,71,"Input: 21 50 Answer: 71
+"
+21 51,72,"Input: 21 51 Answer: 72
+"
+21 52,73,"Input: 21 52 Answer: 73
+"
+21 53,74,"Input: 21 53 Answer: 74
+"
+21 54,75,"Input: 21 54 Answer: 75
+"
+21 55,76,"Input: 21 55 Answer: 76
+"
+21 56,77,"Input: 21 56 Answer: 77
+"
+21 57,78,"Input: 21 57 Answer: 78
+"
+21 58,79,"Input: 21 58 Answer: 79
+"
+21 59,80,"Input: 21 59 Answer: 80
+"
+21 60,81,"Input: 21 60 Answer: 81
+"
+21 61,82,"Input: 21 61 Answer: 82
+"
+21 62,83,"Input: 21 62 Answer: 83
+"
+21 63,84,"Input: 21 63 Answer: 84
+"
+21 64,85,"Input: 21 64 Answer: 85
+"
+21 65,86,"Input: 21 65 Answer: 86
+"
+21 66,87,"Input: 21 66 Answer: 87
+"
+21 67,88,"Input: 21 67 Answer: 88
+"
+21 68,89,"Input: 21 68 Answer: 89
+"
+21 69,90,"Input: 21 69 Answer: 90
+"
+21 71,92,"Input: 21 71 Answer: 92
+"
+21 72,93,"Input: 21 72 Answer: 93
+"
+21 73,94,"Input: 21 73 Answer: 94
+"
+21 74,95,"Input: 21 74 Answer: 95
+"
+21 75,96,"Input: 21 75 Answer: 96
+"
+21 76,97,"Input: 21 76 Answer: 97
+"
+21 77,98,"Input: 21 77 Answer: 98
+"
+21 78,99,"Input: 21 78 Answer: 99
+"
+21 79,100,"Input: 21 79 Answer: 100
+"
+21 80,101,"Input: 21 80 Answer: 101
+"
+21 81,102,"Input: 21 81 Answer: 102
+"
+21 82,103,"Input: 21 82 Answer: 103
+"
+21 83,104,"Input: 21 83 Answer: 104
+"
+21 84,105,"Input: 21 84 Answer: 105
+"
+21 85,106,"Input: 21 85 Answer: 106
+"
+21 86,107,"Input: 21 86 Answer: 107
+"
+21 87,108,"Input: 21 87 Answer: 108
+"
+21 88,109,"Input: 21 88 Answer: 109
+"
+21 89,110,"Input: 21 89 Answer: 110
+"
+21 90,111,"Input: 21 90 Answer: 111
+"
+21 91,112,"Input: 21 91 Answer: 112
+"
+21 92,113,"Input: 21 92 Answer: 113
+"
+21 93,114,"Input: 21 93 Answer: 114
+"
+21 94,115,"Input: 21 94 Answer: 115
+"
+21 95,116,"Input: 21 95 Answer: 116
+"
+21 96,117,"Input: 21 96 Answer: 117
+"
+21 97,118,"Input: 21 97 Answer: 118
+"
+21 98,119,"Input: 21 98 Answer: 119
+"
+21 99,120,"Input: 21 99 Answer: 120
+"
+22 22,44,"Input: 22 22 Answer: 44
+"
+22 23,45,"Input: 22 23 Answer: 45
+"
+22 24,46,"Input: 22 24 Answer: 46
+"
+22 25,47,"Input: 22 25 Answer: 47
+"
+22 26,48,"Input: 22 26 Answer: 48
+"
+22 27,49,"Input: 22 27 Answer: 49
+"
+22 28,50,"Input: 22 28 Answer: 50
+"
+22 29,51,"Input: 22 29 Answer: 51
+"
+22 30,52,"Input: 22 30 Answer: 52
+"
+22 31,53,"Input: 22 31 Answer: 53
+"
+22 32,54,"Input: 22 32 Answer: 54
+"
+22 33,55,"Input: 22 33 Answer: 55
+"
+22 34,56,"Input: 22 34 Answer: 56
+"
+22 35,57,"Input: 22 35 Answer: 57
+"
+22 36,58,"Input: 22 36 Answer: 58
+"
+22 37,59,"Input: 22 37 Answer: 59
+"
+22 38,60,"Input: 22 38 Answer: 60
+"
+22 39,61,"Input: 22 39 Answer: 61
+"
+22 40,62,"Input: 22 40 Answer: 62
+"
+22 41,63,"Input: 22 41 Answer: 63
+"
+22 42,64,"Input: 22 42 Answer: 64
+"
+22 43,65,"Input: 22 43 Answer: 65
+"
+22 44,66,"Input: 22 44 Answer: 66
+"
+22 45,67,"Input: 22 45 Answer: 67
+"
+22 46,68,"Input: 22 46 Answer: 68
+"
+22 47,69,"Input: 22 47 Answer: 69
+"
+22 48,70,"Input: 22 48 Answer: 70
+"
+22 49,71,"Input: 22 49 Answer: 71
+"
+22 50,72,"Input: 22 50 Answer: 72
+"
+22 51,73,"Input: 22 51 Answer: 73
+"
+22 52,74,"Input: 22 52 Answer: 74
+"
+22 53,75,"Input: 22 53 Answer: 75
+"
+22 54,76,"Input: 22 54 Answer: 76
+"
+22 55,77,"Input: 22 55 Answer: 77
+"
+22 56,78,"Input: 22 56 Answer: 78
+"
+22 57,79,"Input: 22 57 Answer: 79
+"
+22 58,80,"Input: 22 58 Answer: 80
+"
+22 59,81,"Input: 22 59 Answer: 81
+"
+22 60,82,"Input: 22 60 Answer: 82
+"
+22 61,83,"Input: 22 61 Answer: 83
+"
+22 62,84,"Input: 22 62 Answer: 84
+"
+22 63,85,"Input: 22 63 Answer: 85
+"
+22 64,86,"Input: 22 64 Answer: 86
+"
+22 65,87,"Input: 22 65 Answer: 87
+"
+22 66,88,"Input: 22 66 Answer: 88
+"
+22 67,89,"Input: 22 67 Answer: 89
+"
+22 68,90,"Input: 22 68 Answer: 90
+"
+22 69,91,"Input: 22 69 Answer: 91
+"
+22 70,92,"Input: 22 70 Answer: 92
+"
+22 71,93,"Input: 22 71 Answer: 93
+"
+22 72,94,"Input: 22 72 Answer: 94
+"
+22 73,95,"Input: 22 73 Answer: 95
+"
+22 74,96,"Input: 22 74 Answer: 96
+"
+22 75,97,"Input: 22 75 Answer: 97
+"
+22 76,98,"Input: 22 76 Answer: 98
+"
+22 77,99,"Input: 22 77 Answer: 99
+"
+22 78,100,"Input: 22 78 Answer: 100
+"
+22 79,101,"Input: 22 79 Answer: 101
+"
+22 80,102,"Input: 22 80 Answer: 102
+"
+22 81,103,"Input: 22 81 Answer: 103
+"
+22 82,104,"Input: 22 82 Answer: 104
+"
+22 83,105,"Input: 22 83 Answer: 105
+"
+22 84,106,"Input: 22 84 Answer: 106
+"
+22 85,107,"Input: 22 85 Answer: 107
+"
+22 86,108,"Input: 22 86 Answer: 108
+"
+22 87,109,"Input: 22 87 Answer: 109
+"
+22 88,110,"Input: 22 88 Answer: 110
+"
+22 89,111,"Input: 22 89 Answer: 111
+"
+22 90,112,"Input: 22 90 Answer: 112
+"
+22 91,113,"Input: 22 91 Answer: 113
+"
+22 92,114,"Input: 22 92 Answer: 114
+"
+22 93,115,"Input: 22 93 Answer: 115
+"
+22 95,117,"Input: 22 95 Answer: 117
+"
+22 96,118,"Input: 22 96 Answer: 118
+"
+22 97,119,"Input: 22 97 Answer: 119
+"
+22 98,120,"Input: 22 98 Answer: 120
+"
+23 23,46,"Input: 23 23 Answer: 46
+"
+23 24,47,"Input: 23 24 Answer: 47
+"
+23 25,48,"Input: 23 25 Answer: 48
+"
+23 26,49,"Input: 23 26 Answer: 49
+"
+23 27,50,"Input: 23 27 Answer: 50
+"
+23 28,51,"Input: 23 28 Answer: 51
+"
+23 29,52,"Input: 23 29 Answer: 52
+"
+23 30,53,"Input: 23 30 Answer: 53
+"
+23 31,54,"Input: 23 31 Answer: 54
+"
+23 32,55,"Input: 23 32 Answer: 55
+"
+23 33,56,"Input: 23 33 Answer: 56
+"
+23 34,57,"Input: 23 34 Answer: 57
+"
+23 35,58,"Input: 23 35 Answer: 58
+"
+23 36,59,"Input: 23 36 Answer: 59
+"
+23 37,60,"Input: 23 37 Answer: 60
+"
+23 38,61,"Input: 23 38 Answer: 61
+"
+23 39,62,"Input: 23 39 Answer: 62
+"
+23 40,63,"Input: 23 40 Answer: 63
+"
+23 41,64,"Input: 23 41 Answer: 64
+"
+23 42,65,"Input: 23 42 Answer: 65
+"
+23 43,66,"Input: 23 43 Answer: 66
+"
+23 44,67,"Input: 23 44 Answer: 67
+"
+23 45,68,"Input: 23 45 Answer: 68
+"
+23 46,69,"Input: 23 46 Answer: 69
+"
+23 47,70,"Input: 23 47 Answer: 70
+"
+23 48,71,"Input: 23 48 Answer: 71
+"
+23 49,72,"Input: 23 49 Answer: 72
+"
+23 50,73,"Input: 23 50 Answer: 73
+"
+23 51,74,"Input: 23 51 Answer: 74
+"
+23 52,75,"Input: 23 52 Answer: 75
+"
+23 53,76,"Input: 23 53 Answer: 76
+"
+23 54,77,"Input: 23 54 Answer: 77
+"
+23 55,78,"Input: 23 55 Answer: 78
+"
+23 56,79,"Input: 23 56 Answer: 79
+"
+23 57,80,"Input: 23 57 Answer: 80
+"
+23 58,81,"Input: 23 58 Answer: 81
+"
+23 59,82,"Input: 23 59 Answer: 82
+"
+23 60,83,"Input: 23 60 Answer: 83
+"
+23 61,84,"Input: 23 61 Answer: 84
+"
+23 62,85,"Input: 23 62 Answer: 85
+"
+23 63,86,"Input: 23 63 Answer: 86
+"
+23 64,87,"Input: 23 64 Answer: 87
+"
+23 65,88,"Input: 23 65 Answer: 88
+"
+23 66,89,"Input: 23 66 Answer: 89
+"
+23 67,90,"Input: 23 67 Answer: 90
+"
+23 68,91,"Input: 23 68 Answer: 91
+"
+23 69,92,"Input: 23 69 Answer: 92
+"
+23 70,93,"Input: 23 70 Answer: 93
+"
+23 71,94,"Input: 23 71 Answer: 94
+"
+23 72,95,"Input: 23 72 Answer: 95
+"
+23 73,96,"Input: 23 73 Answer: 96
+"
+23 74,97,"Input: 23 74 Answer: 97
+"
+23 75,98,"Input: 23 75 Answer: 98
+"
+23 76,99,"Input: 23 76 Answer: 99
+"
+23 77,100,"Input: 23 77 Answer: 100
+"
+23 78,101,"Input: 23 78 Answer: 101
+"
+23 79,102,"Input: 23 79 Answer: 102
+"
+23 80,103,"Input: 23 80 Answer: 103
+"
+23 81,104,"Input: 23 81 Answer: 104
+"
+23 82,105,"Input: 23 82 Answer: 105
+"
+23 83,106,"Input: 23 83 Answer: 106
+"
+23 84,107,"Input: 23 84 Answer: 107
+"
+23 85,108,"Input: 23 85 Answer: 108
+"
+23 86,109,"Input: 23 86 Answer: 109
+"
+23 87,110,"Input: 23 87 Answer: 110
+"
+23 88,111,"Input: 23 88 Answer: 111
+"
+23 89,112,"Input: 23 89 Answer: 112
+"
+23 90,113,"Input: 23 90 Answer: 113
+"
+23 91,114,"Input: 23 91 Answer: 114
+"
+23 92,115,"Input: 23 92 Answer: 115
+"
+23 93,116,"Input: 23 93 Answer: 116
+"
+23 94,117,"Input: 23 94 Answer: 117
+"
+23 95,118,"Input: 23 95 Answer: 118
+"
+23 96,119,"Input: 23 96 Answer: 119
+"
+23 97,120,"Input: 23 97 Answer: 120
+"
+23 98,121,"Input: 23 98 Answer: 121
+"
+23 99,122,"Input: 23 99 Answer: 122
+"
+24 24,48,"Input: 24 24 Answer: 48
+"
+24 25,49,"Input: 24 25 Answer: 49
+"
+24 26,50,"Input: 24 26 Answer: 50
+"
+24 27,51,"Input: 24 27 Answer: 51
+"
+24 28,52,"Input: 24 28 Answer: 52
+"
+24 29,53,"Input: 24 29 Answer: 53
+"
+24 30,54,"Input: 24 30 Answer: 54
+"
+24 31,55,"Input: 24 31 Answer: 55
+"
+24 32,56,"Input: 24 32 Answer: 56
+"
+24 33,57,"Input: 24 33 Answer: 57
+"
+24 34,58,"Input: 24 34 Answer: 58
+"
+24 35,59,"Input: 24 35 Answer: 59
+"
+24 36,60,"Input: 24 36 Answer: 60
+"
+24 37,61,"Input: 24 37 Answer: 61
+"
+24 38,62,"Input: 24 38 Answer: 62
+"
+24 39,63,"Input: 24 39 Answer: 63
+"
+24 40,64,"Input: 24 40 Answer: 64
+"
+24 41,65,"Input: 24 41 Answer: 65
+"
+24 42,66,"Input: 24 42 Answer: 66
+"
+24 43,67,"Input: 24 43 Answer: 67
+"
+24 44,68,"Input: 24 44 Answer: 68
+"
+24 45,69,"Input: 24 45 Answer: 69
+"
+24 46,70,"Input: 24 46 Answer: 70
+"
+24 47,71,"Input: 24 47 Answer: 71
+"
+24 48,72,"Input: 24 48 Answer: 72
+"
+24 49,73,"Input: 24 49 Answer: 73
+"
+24 50,74,"Input: 24 50 Answer: 74
+"
+24 51,75,"Input: 24 51 Answer: 75
+"
+24 52,76,"Input: 24 52 Answer: 76
+"
+24 53,77,"Input: 24 53 Answer: 77
+"
+24 54,78,"Input: 24 54 Answer: 78
+"
+24 55,79,"Input: 24 55 Answer: 79
+"
+24 56,80,"Input: 24 56 Answer: 80
+"
+24 57,81,"Input: 24 57 Answer: 81
+"
+24 58,82,"Input: 24 58 Answer: 82
+"
+24 59,83,"Input: 24 59 Answer: 83
+"
+24 60,84,"Input: 24 60 Answer: 84
+"
+24 61,85,"Input: 24 61 Answer: 85
+"
+24 62,86,"Input: 24 62 Answer: 86
+"
+24 63,87,"Input: 24 63 Answer: 87
+"
+24 64,88,"Input: 24 64 Answer: 88
+"
+24 65,89,"Input: 24 65 Answer: 89
+"
+24 66,90,"Input: 24 66 Answer: 90
+"
+24 67,91,"Input: 24 67 Answer: 91
+"
+24 68,92,"Input: 24 68 Answer: 92
+"
+24 69,93,"Input: 24 69 Answer: 93
+"
+24 70,94,"Input: 24 70 Answer: 94
+"
+24 71,95,"Input: 24 71 Answer: 95
+"
+24 72,96,"Input: 24 72 Answer: 96
+"
+24 73,97,"Input: 24 73 Answer: 97
+"
+24 74,98,"Input: 24 74 Answer: 98
+"
+24 75,99,"Input: 24 75 Answer: 99
+"
+24 76,100,"Input: 24 76 Answer: 100
+"
+24 77,101,"Input: 24 77 Answer: 101
+"
+24 78,102,"Input: 24 78 Answer: 102
+"
+24 79,103,"Input: 24 79 Answer: 103
+"
+24 80,104,"Input: 24 80 Answer: 104
+"
+24 81,105,"Input: 24 81 Answer: 105
+"
+24 83,107,"Input: 24 83 Answer: 107
+"
+24 84,108,"Input: 24 84 Answer: 108
+"
+24 85,109,"Input: 24 85 Answer: 109
+"
+24 86,110,"Input: 24 86 Answer: 110
+"
+24 87,111,"Input: 24 87 Answer: 111
+"
+24 88,112,"Input: 24 88 Answer: 112
+"
+24 89,113,"Input: 24 89 Answer: 113
+"
+24 90,114,"Input: 24 90 Answer: 114
+"
+24 91,115,"Input: 24 91 Answer: 115
+"
+24 92,116,"Input: 24 92 Answer: 116
+"
+24 93,117,"Input: 24 93 Answer: 117
+"
+24 94,118,"Input: 24 94 Answer: 118
+"
+24 95,119,"Input: 24 95 Answer: 119
+"
+24 96,120,"Input: 24 96 Answer: 120
+"
+24 97,121,"Input: 24 97 Answer: 121
+"
+24 98,122,"Input: 24 98 Answer: 122
+"
+24 99,123,"Input: 24 99 Answer: 123
+"
+25 25,50,"Input: 25 25 Answer: 50
+"
+25 26,51,"Input: 25 26 Answer: 51
+"
+25 27,52,"Input: 25 27 Answer: 52
+"
+25 28,53,"Input: 25 28 Answer: 53
+"
+25 29,54,"Input: 25 29 Answer: 54
+"
+25 30,55,"Input: 25 30 Answer: 55
+"
+25 31,56,"Input: 25 31 Answer: 56
+"
+25 32,57,"Input: 25 32 Answer: 57
+"
+25 34,59,"Input: 25 34 Answer: 59
+"
+25 35,60,"Input: 25 35 Answer: 60
+"
+25 36,61,"Input: 25 36 Answer: 61
+"
+25 37,62,"Input: 25 37 Answer: 62
+"
+25 38,63,"Input: 25 38 Answer: 63
+"
+25 39,64,"Input: 25 39 Answer: 64
+"
+25 40,65,"Input: 25 40 Answer: 65
+"
+25 41,66,"Input: 25 41 Answer: 66
+"
+25 42,67,"Input: 25 42 Answer: 67
+"
+25 43,68,"Input: 25 43 Answer: 68
+"
+25 44,69,"Input: 25 44 Answer: 69
+"
+25 45,70,"Input: 25 45 Answer: 70
+"
+25 46,71,"Input: 25 46 Answer: 71
+"
+25 47,72,"Input: 25 47 Answer: 72
+"
+25 48,73,"Input: 25 48 Answer: 73
+"
+25 49,74,"Input: 25 49 Answer: 74
+"
+25 51,76,"Input: 25 51 Answer: 76
+"
+25 52,77,"Input: 25 52 Answer: 77
+"
+25 53,78,"Input: 25 53 Answer: 78
+"
+25 54,79,"Input: 25 54 Answer: 79
+"
+25 55,80,"Input: 25 55 Answer: 80
+"
+25 56,81,"Input: 25 56 Answer: 81
+"
+25 57,82,"Input: 25 57 Answer: 82
+"
+25 58,83,"Input: 25 58 Answer: 83
+"
+25 59,84,"Input: 25 59 Answer: 84
+"
+25 60,85,"Input: 25 60 Answer: 85
+"
+25 61,86,"Input: 25 61 Answer: 86
+"
+25 62,87,"Input: 25 62 Answer: 87
+"
+25 63,88,"Input: 25 63 Answer: 88
+"
+25 64,89,"Input: 25 64 Answer: 89
+"
+25 65,90,"Input: 25 65 Answer: 90
+"
+25 66,91,"Input: 25 66 Answer: 91
+"
+25 67,92,"Input: 25 67 Answer: 92
+"
+25 68,93,"Input: 25 68 Answer: 93
+"
+25 69,94,"Input: 25 69 Answer: 94
+"
+25 70,95,"Input: 25 70 Answer: 95
+"
+25 71,96,"Input: 25 71 Answer: 96
+"
+25 72,97,"Input: 25 72 Answer: 97
+"
+25 73,98,"Input: 25 73 Answer: 98
+"
+25 74,99,"Input: 25 74 Answer: 99
+"
+25 75,100,"Input: 25 75 Answer: 100
+"
+25 76,101,"Input: 25 76 Answer: 101
+"
+25 77,102,"Input: 25 77 Answer: 102
+"
+25 79,104,"Input: 25 79 Answer: 104
+"
+25 80,105,"Input: 25 80 Answer: 105
+"
+25 81,106,"Input: 25 81 Answer: 106
+"
+25 82,107,"Input: 25 82 Answer: 107
+"
+25 83,108,"Input: 25 83 Answer: 108
+"
+25 84,109,"Input: 25 84 Answer: 109
+"
+25 85,110,"Input: 25 85 Answer: 110
+"
+25 86,111,"Input: 25 86 Answer: 111
+"
+25 87,112,"Input: 25 87 Answer: 112
+"
+25 88,113,"Input: 25 88 Answer: 113
+"
+25 89,114,"Input: 25 89 Answer: 114
+"
+25 90,115,"Input: 25 90 Answer: 115
+"
+25 91,116,"Input: 25 91 Answer: 116
+"
+25 93,118,"Input: 25 93 Answer: 118
+"
+25 94,119,"Input: 25 94 Answer: 119
+"
+25 95,120,"Input: 25 95 Answer: 120
+"
+25 96,121,"Input: 25 96 Answer: 121
+"
+25 97,122,"Input: 25 97 Answer: 122
+"
+25 98,123,"Input: 25 98 Answer: 123
+"
+25 99,124,"Input: 25 99 Answer: 124
+"
+26 26,52,"Input: 26 26 Answer: 52
+"
+26 27,53,"Input: 26 27 Answer: 53
+"
+26 28,54,"Input: 26 28 Answer: 54
+"
+26 29,55,"Input: 26 29 Answer: 55
+"
+26 30,56,"Input: 26 30 Answer: 56
+"
+26 31,57,"Input: 26 31 Answer: 57
+"
+26 32,58,"Input: 26 32 Answer: 58
+"
+26 33,59,"Input: 26 33 Answer: 59
+"
+26 34,60,"Input: 26 34 Answer: 60
+"
+26 35,61,"Input: 26 35 Answer: 61
+"
+26 36,62,"Input: 26 36 Answer: 62
+"
+26 37,63,"Input: 26 37 Answer: 63
+"
+26 38,64,"Input: 26 38 Answer: 64
+"
+26 39,65,"Input: 26 39 Answer: 65
+"
+26 40,66,"Input: 26 40 Answer: 66
+"
+26 41,67,"Input: 26 41 Answer: 67
+"
+26 42,68,"Input: 26 42 Answer: 68
+"
+26 43,69,"Input: 26 43 Answer: 69
+"
+26 44,70,"Input: 26 44 Answer: 70
+"
+26 45,71,"Input: 26 45 Answer: 71
+"
+26 46,72,"Input: 26 46 Answer: 72
+"
+26 47,73,"Input: 26 47 Answer: 73
+"
+26 48,74,"Input: 26 48 Answer: 74
+"
+26 49,75,"Input: 26 49 Answer: 75
+"
+26 50,76,"Input: 26 50 Answer: 76
+"
+26 51,77,"Input: 26 51 Answer: 77
+"
+26 52,78,"Input: 26 52 Answer: 78
+"
+26 53,79,"Input: 26 53 Answer: 79
+"
+26 54,80,"Input: 26 54 Answer: 80
+"
+26 55,81,"Input: 26 55 Answer: 81
+"
+26 56,82,"Input: 26 56 Answer: 82
+"
+26 57,83,"Input: 26 57 Answer: 83
+"
+26 58,84,"Input: 26 58 Answer: 84
+"
+26 59,85,"Input: 26 59 Answer: 85
+"
+26 60,86,"Input: 26 60 Answer: 86
+"
+26 61,87,"Input: 26 61 Answer: 87
+"
+26 62,88,"Input: 26 62 Answer: 88
+"
+26 63,89,"Input: 26 63 Answer: 89
+"
+26 64,90,"Input: 26 64 Answer: 90
+"
+26 65,91,"Input: 26 65 Answer: 91
+"
+26 66,92,"Input: 26 66 Answer: 92
+"
+26 67,93,"Input: 26 67 Answer: 93
+"
+26 68,94,"Input: 26 68 Answer: 94
+"
+26 69,95,"Input: 26 69 Answer: 95
+"
+26 70,96,"Input: 26 70 Answer: 96
+"
+26 71,97,"Input: 26 71 Answer: 97
+"
+26 72,98,"Input: 26 72 Answer: 98
+"
+26 73,99,"Input: 26 73 Answer: 99
+"
+26 74,100,"Input: 26 74 Answer: 100
+"
+26 75,101,"Input: 26 75 Answer: 101
+"
+26 76,102,"Input: 26 76 Answer: 102
+"
+26 77,103,"Input: 26 77 Answer: 103
+"
+26 78,104,"Input: 26 78 Answer: 104
+"
+26 79,105,"Input: 26 79 Answer: 105
+"
+26 80,106,"Input: 26 80 Answer: 106
+"
+26 81,107,"Input: 26 81 Answer: 107
+"
+26 82,108,"Input: 26 82 Answer: 108
+"
+26 83,109,"Input: 26 83 Answer: 109
+"
+26 84,110,"Input: 26 84 Answer: 110
+"
+26 85,111,"Input: 26 85 Answer: 111
+"
+26 86,112,"Input: 26 86 Answer: 112
+"
+26 87,113,"Input: 26 87 Answer: 113
+"
+26 88,114,"Input: 26 88 Answer: 114
+"
+26 89,115,"Input: 26 89 Answer: 115
+"
+26 90,116,"Input: 26 90 Answer: 116
+"
+26 91,117,"Input: 26 91 Answer: 117
+"
+26 92,118,"Input: 26 92 Answer: 118
+"
+26 93,119,"Input: 26 93 Answer: 119
+"
+26 94,120,"Input: 26 94 Answer: 120
+"
+26 95,121,"Input: 26 95 Answer: 121
+"
+26 96,122,"Input: 26 96 Answer: 122
+"
+26 97,123,"Input: 26 97 Answer: 123
+"
+26 98,124,"Input: 26 98 Answer: 124
+"
+26 99,125,"Input: 26 99 Answer: 125
+"
+27 27,54,"Input: 27 27 Answer: 54
+"
+27 28,55,"Input: 27 28 Answer: 55
+"
+27 29,56,"Input: 27 29 Answer: 56
+"
+27 30,57,"Input: 27 30 Answer: 57
+"
+27 31,58,"Input: 27 31 Answer: 58
+"
+27 32,59,"Input: 27 32 Answer: 59
+"
+27 33,60,"Input: 27 33 Answer: 60
+"
+27 34,61,"Input: 27 34 Answer: 61
+"
+27 35,62,"Input: 27 35 Answer: 62
+"
+27 36,63,"Input: 27 36 Answer: 63
+"
+27 37,64,"Input: 27 37 Answer: 64
+"
+27 38,65,"Input: 27 38 Answer: 65
+"
+27 39,66,"Input: 27 39 Answer: 66
+"
+27 40,67,"Input: 27 40 Answer: 67
+"
+27 41,68,"Input: 27 41 Answer: 68
+"
+27 42,69,"Input: 27 42 Answer: 69
+"
+27 43,70,"Input: 27 43 Answer: 70
+"
+27 44,71,"Input: 27 44 Answer: 71
+"
+27 45,72,"Input: 27 45 Answer: 72
+"
+27 46,73,"Input: 27 46 Answer: 73
+"
+27 47,74,"Input: 27 47 Answer: 74
+"
+27 48,75,"Input: 27 48 Answer: 75
+"
+27 49,76,"Input: 27 49 Answer: 76
+"
+27 50,77,"Input: 27 50 Answer: 77
+"
+27 51,78,"Input: 27 51 Answer: 78
+"
+27 52,79,"Input: 27 52 Answer: 79
+"
+27 53,80,"Input: 27 53 Answer: 80
+"
+27 54,81,"Input: 27 54 Answer: 81
+"
+27 55,82,"Input: 27 55 Answer: 82
+"
+27 56,83,"Input: 27 56 Answer: 83
+"
+27 57,84,"Input: 27 57 Answer: 84
+"
+27 58,85,"Input: 27 58 Answer: 85
+"
+27 59,86,"Input: 27 59 Answer: 86
+"
+27 60,87,"Input: 27 60 Answer: 87
+"
+27 61,88,"Input: 27 61 Answer: 88
+"
+27 62,89,"Input: 27 62 Answer: 89
+"
+27 63,90,"Input: 27 63 Answer: 90
+"
+27 64,91,"Input: 27 64 Answer: 91
+"
+27 65,92,"Input: 27 65 Answer: 92
+"
+27 66,93,"Input: 27 66 Answer: 93
+"
+27 67,94,"Input: 27 67 Answer: 94
+"
+27 68,95,"Input: 27 68 Answer: 95
+"
+27 69,96,"Input: 27 69 Answer: 96
+"
+27 70,97,"Input: 27 70 Answer: 97
+"
+27 71,98,"Input: 27 71 Answer: 98
+"
+27 72,99,"Input: 27 72 Answer: 99
+"
+27 73,100,"Input: 27 73 Answer: 100
+"
+27 74,101,"Input: 27 74 Answer: 101
+"
+27 75,102,"Input: 27 75 Answer: 102
+"
+27 76,103,"Input: 27 76 Answer: 103
+"
+27 77,104,"Input: 27 77 Answer: 104
+"
+27 78,105,"Input: 27 78 Answer: 105
+"
+27 79,106,"Input: 27 79 Answer: 106
+"
+27 80,107,"Input: 27 80 Answer: 107
+"
+27 81,108,"Input: 27 81 Answer: 108
+"
+27 82,109,"Input: 27 82 Answer: 109
+"
+27 83,110,"Input: 27 83 Answer: 110
+"
+27 84,111,"Input: 27 84 Answer: 111
+"
+27 85,112,"Input: 27 85 Answer: 112
+"
+27 86,113,"Input: 27 86 Answer: 113
+"
+27 87,114,"Input: 27 87 Answer: 114
+"
+27 88,115,"Input: 27 88 Answer: 115
+"
+27 89,116,"Input: 27 89 Answer: 116
+"
+27 90,117,"Input: 27 90 Answer: 117
+"
+27 91,118,"Input: 27 91 Answer: 118
+"
+27 92,119,"Input: 27 92 Answer: 119
+"
+27 93,120,"Input: 27 93 Answer: 120
+"
+27 94,121,"Input: 27 94 Answer: 121
+"
+27 95,122,"Input: 27 95 Answer: 122
+"
+27 96,123,"Input: 27 96 Answer: 123
+"
+27 97,124,"Input: 27 97 Answer: 124
+"
+27 98,125,"Input: 27 98 Answer: 125
+"
+27 99,126,"Input: 27 99 Answer: 126
+"
+28 29,57,"Input: 28 29 Answer: 57
+"
+28 30,58,"Input: 28 30 Answer: 58
+"
+28 31,59,"Input: 28 31 Answer: 59
+"
+28 32,60,"Input: 28 32 Answer: 60
+"
+28 33,61,"Input: 28 33 Answer: 61
+"
+28 34,62,"Input: 28 34 Answer: 62
+"
+28 35,63,"Input: 28 35 Answer: 63
+"
+28 36,64,"Input: 28 36 Answer: 64
+"
+28 37,65,"Input: 28 37 Answer: 65
+"
+28 38,66,"Input: 28 38 Answer: 66
+"
+28 39,67,"Input: 28 39 Answer: 67
+"
+28 40,68,"Input: 28 40 Answer: 68
+"
+28 41,69,"Input: 28 41 Answer: 69
+"
+28 42,70,"Input: 28 42 Answer: 70
+"
+28 43,71,"Input: 28 43 Answer: 71
+"
+28 44,72,"Input: 28 44 Answer: 72
+"
+28 45,73,"Input: 28 45 Answer: 73
+"
+28 46,74,"Input: 28 46 Answer: 74
+"
+28 47,75,"Input: 28 47 Answer: 75
+"
+28 48,76,"Input: 28 48 Answer: 76
+"
+28 49,77,"Input: 28 49 Answer: 77
+"
+28 50,78,"Input: 28 50 Answer: 78
+"
+28 51,79,"Input: 28 51 Answer: 79
+"
+28 52,80,"Input: 28 52 Answer: 80
+"
+28 53,81,"Input: 28 53 Answer: 81
+"
+28 54,82,"Input: 28 54 Answer: 82
+"
+28 55,83,"Input: 28 55 Answer: 83
+"
+28 56,84,"Input: 28 56 Answer: 84
+"
+28 57,85,"Input: 28 57 Answer: 85
+"
+28 58,86,"Input: 28 58 Answer: 86
+"
+28 59,87,"Input: 28 59 Answer: 87
+"
+28 60,88,"Input: 28 60 Answer: 88
+"
+28 61,89,"Input: 28 61 Answer: 89
+"
+28 62,90,"Input: 28 62 Answer: 90
+"
+28 63,91,"Input: 28 63 Answer: 91
+"
+28 64,92,"Input: 28 64 Answer: 92
+"
+28 66,94,"Input: 28 66 Answer: 94
+"
+28 67,95,"Input: 28 67 Answer: 95
+"
+28 68,96,"Input: 28 68 Answer: 96
+"
+28 69,97,"Input: 28 69 Answer: 97
+"
+28 70,98,"Input: 28 70 Answer: 98
+"
+28 71,99,"Input: 28 71 Answer: 99
+"
+28 72,100,"Input: 28 72 Answer: 100
+"
+28 73,101,"Input: 28 73 Answer: 101
+"
+28 74,102,"Input: 28 74 Answer: 102
+"
+28 75,103,"Input: 28 75 Answer: 103
+"
+28 76,104,"Input: 28 76 Answer: 104
+"
+28 77,105,"Input: 28 77 Answer: 105
+"
+28 78,106,"Input: 28 78 Answer: 106
+"
+28 79,107,"Input: 28 79 Answer: 107
+"
+28 80,108,"Input: 28 80 Answer: 108
+"
+28 81,109,"Input: 28 81 Answer: 109
+"
+28 82,110,"Input: 28 82 Answer: 110
+"
+28 84,112,"Input: 28 84 Answer: 112
+"
+28 85,113,"Input: 28 85 Answer: 113
+"
+28 86,114,"Input: 28 86 Answer: 114
+"
+28 87,115,"Input: 28 87 Answer: 115
+"
+28 88,116,"Input: 28 88 Answer: 116
+"
+28 89,117,"Input: 28 89 Answer: 117
+"
+28 90,118,"Input: 28 90 Answer: 118
+"
+28 91,119,"Input: 28 91 Answer: 119
+"
+28 92,120,"Input: 28 92 Answer: 120
+"
+28 93,121,"Input: 28 93 Answer: 121
+"
+28 94,122,"Input: 28 94 Answer: 122
+"
+28 95,123,"Input: 28 95 Answer: 123
+"
+28 96,124,"Input: 28 96 Answer: 124
+"
+28 97,125,"Input: 28 97 Answer: 125
+"
+28 98,126,"Input: 28 98 Answer: 126
+"
+28 99,127,"Input: 28 99 Answer: 127
+"
+29 29,58,"Input: 29 29 Answer: 58
+"
+29 30,59,"Input: 29 30 Answer: 59
+"
+29 31,60,"Input: 29 31 Answer: 60
+"
+29 32,61,"Input: 29 32 Answer: 61
+"
+29 33,62,"Input: 29 33 Answer: 62
+"
+29 34,63,"Input: 29 34 Answer: 63
+"
+29 35,64,"Input: 29 35 Answer: 64
+"
+29 37,66,"Input: 29 37 Answer: 66
+"
+29 38,67,"Input: 29 38 Answer: 67
+"
+29 39,68,"Input: 29 39 Answer: 68
+"
+29 40,69,"Input: 29 40 Answer: 69
+"
+29 41,70,"Input: 29 41 Answer: 70
+"
+29 42,71,"Input: 29 42 Answer: 71
+"
+29 43,72,"Input: 29 43 Answer: 72
+"
+29 44,73,"Input: 29 44 Answer: 73
+"
+29 45,74,"Input: 29 45 Answer: 74
+"
+29 46,75,"Input: 29 46 Answer: 75
+"
+29 47,76,"Input: 29 47 Answer: 76
+"
+29 48,77,"Input: 29 48 Answer: 77
+"
+29 49,78,"Input: 29 49 Answer: 78
+"
+29 50,79,"Input: 29 50 Answer: 79
+"
+29 51,80,"Input: 29 51 Answer: 80
+"
+29 52,81,"Input: 29 52 Answer: 81
+"
+29 53,82,"Input: 29 53 Answer: 82
+"
+29 54,83,"Input: 29 54 Answer: 83
+"
+29 55,84,"Input: 29 55 Answer: 84
+"
+29 56,85,"Input: 29 56 Answer: 85
+"
+29 57,86,"Input: 29 57 Answer: 86
+"
+29 58,87,"Input: 29 58 Answer: 87
+"
+29 59,88,"Input: 29 59 Answer: 88
+"
+29 60,89,"Input: 29 60 Answer: 89
+"
+29 61,90,"Input: 29 61 Answer: 90
+"
+29 62,91,"Input: 29 62 Answer: 91
+"
+29 63,92,"Input: 29 63 Answer: 92
+"
+29 64,93,"Input: 29 64 Answer: 93
+"
+29 65,94,"Input: 29 65 Answer: 94
+"
+29 66,95,"Input: 29 66 Answer: 95
+"
+29 67,96,"Input: 29 67 Answer: 96
+"
+29 68,97,"Input: 29 68 Answer: 97
+"
+29 69,98,"Input: 29 69 Answer: 98
+"
+29 70,99,"Input: 29 70 Answer: 99
+"
+29 71,100,"Input: 29 71 Answer: 100
+"
+29 72,101,"Input: 29 72 Answer: 101
+"
+29 73,102,"Input: 29 73 Answer: 102
+"
+29 74,103,"Input: 29 74 Answer: 103
+"
+29 75,104,"Input: 29 75 Answer: 104
+"
+29 76,105,"Input: 29 76 Answer: 105
+"
+29 77,106,"Input: 29 77 Answer: 106
+"
+29 78,107,"Input: 29 78 Answer: 107
+"
+29 79,108,"Input: 29 79 Answer: 108
+"
+29 80,109,"Input: 29 80 Answer: 109
+"
+29 81,110,"Input: 29 81 Answer: 110
+"
+29 82,111,"Input: 29 82 Answer: 111
+"
+29 83,112,"Input: 29 83 Answer: 112
+"
+29 84,113,"Input: 29 84 Answer: 113
+"
+29 85,114,"Input: 29 85 Answer: 114
+"
+29 86,115,"Input: 29 86 Answer: 115
+"
+29 87,116,"Input: 29 87 Answer: 116
+"
+29 88,117,"Input: 29 88 Answer: 117
+"
+29 89,118,"Input: 29 89 Answer: 118
+"
+29 90,119,"Input: 29 90 Answer: 119
+"
+29 91,120,"Input: 29 91 Answer: 120
+"
+29 92,121,"Input: 29 92 Answer: 121
+"
+29 93,122,"Input: 29 93 Answer: 122
+"
+29 94,123,"Input: 29 94 Answer: 123
+"
+29 95,124,"Input: 29 95 Answer: 124
+"
+29 96,125,"Input: 29 96 Answer: 125
+"
+29 97,126,"Input: 29 97 Answer: 126
+"
+29 98,127,"Input: 29 98 Answer: 127
+"
+29 99,128,"Input: 29 99 Answer: 128
+"
+30 30,60,"Input: 30 30 Answer: 60
+"
+30 31,61,"Input: 30 31 Answer: 61
+"
+30 32,62,"Input: 30 32 Answer: 62
+"
+30 33,63,"Input: 30 33 Answer: 63
+"
+30 34,64,"Input: 30 34 Answer: 64
+"
+30 35,65,"Input: 30 35 Answer: 65
+"
+30 36,66,"Input: 30 36 Answer: 66
+"
+30 37,67,"Input: 30 37 Answer: 67
+"
+30 38,68,"Input: 30 38 Answer: 68
+"
+30 39,69,"Input: 30 39 Answer: 69
+"
+30 40,70,"Input: 30 40 Answer: 70
+"
+30 41,71,"Input: 30 41 Answer: 71
+"
+30 42,72,"Input: 30 42 Answer: 72
+"
+30 43,73,"Input: 30 43 Answer: 73
+"
+30 44,74,"Input: 30 44 Answer: 74
+"
+30 45,75,"Input: 30 45 Answer: 75
+"
+30 46,76,"Input: 30 46 Answer: 76
+"
+30 47,77,"Input: 30 47 Answer: 77
+"
+30 48,78,"Input: 30 48 Answer: 78
+"
+30 49,79,"Input: 30 49 Answer: 79
+"
+30 50,80,"Input: 30 50 Answer: 80
+"
+30 51,81,"Input: 30 51 Answer: 81
+"
+30 52,82,"Input: 30 52 Answer: 82
+"
+30 53,83,"Input: 30 53 Answer: 83
+"
+30 54,84,"Input: 30 54 Answer: 84
+"
+30 55,85,"Input: 30 55 Answer: 85
+"
+30 56,86,"Input: 30 56 Answer: 86
+"
+30 57,87,"Input: 30 57 Answer: 87
+"
+30 58,88,"Input: 30 58 Answer: 88
+"
+30 59,89,"Input: 30 59 Answer: 89
+"
+30 60,90,"Input: 30 60 Answer: 90
+"
+30 61,91,"Input: 30 61 Answer: 91
+"
+30 62,92,"Input: 30 62 Answer: 92
+"
+30 63,93,"Input: 30 63 Answer: 93
+"
+30 64,94,"Input: 30 64 Answer: 94
+"
+30 65,95,"Input: 30 65 Answer: 95
+"
+30 66,96,"Input: 30 66 Answer: 96
+"
+30 67,97,"Input: 30 67 Answer: 97
+"
+30 68,98,"Input: 30 68 Answer: 98
+"
+30 69,99,"Input: 30 69 Answer: 99
+"
+30 70,100,"Input: 30 70 Answer: 100
+"
+30 71,101,"Input: 30 71 Answer: 101
+"
+30 72,102,"Input: 30 72 Answer: 102
+"
+30 73,103,"Input: 30 73 Answer: 103
+"
+30 74,104,"Input: 30 74 Answer: 104
+"
+30 75,105,"Input: 30 75 Answer: 105
+"
+30 76,106,"Input: 30 76 Answer: 106
+"
+30 77,107,"Input: 30 77 Answer: 107
+"
+30 78,108,"Input: 30 78 Answer: 108
+"
+30 79,109,"Input: 30 79 Answer: 109
+"
+30 80,110,"Input: 30 80 Answer: 110
+"
+30 81,111,"Input: 30 81 Answer: 111
+"
+30 82,112,"Input: 30 82 Answer: 112
+"
+30 83,113,"Input: 30 83 Answer: 113
+"
+30 84,114,"Input: 30 84 Answer: 114
+"
+30 85,115,"Input: 30 85 Answer: 115
+"
+30 86,116,"Input: 30 86 Answer: 116
+"
+30 87,117,"Input: 30 87 Answer: 117
+"
+30 88,118,"Input: 30 88 Answer: 118
+"
+30 89,119,"Input: 30 89 Answer: 119
+"
+30 90,120,"Input: 30 90 Answer: 120
+"
+30 91,121,"Input: 30 91 Answer: 121
+"
+30 92,122,"Input: 30 92 Answer: 122
+"
+30 93,123,"Input: 30 93 Answer: 123
+"
+30 94,124,"Input: 30 94 Answer: 124
+"
+30 95,125,"Input: 30 95 Answer: 125
+"
+30 96,126,"Input: 30 96 Answer: 126
+"
+30 97,127,"Input: 30 97 Answer: 127
+"
+30 98,128,"Input: 30 98 Answer: 128
+"
+30 99,129,"Input: 30 99 Answer: 129
+"
+31 31,62,"Input: 31 31 Answer: 62
+"
+31 32,63,"Input: 31 32 Answer: 63
+"
+31 33,64,"Input: 31 33 Answer: 64
+"
+31 34,65,"Input: 31 34 Answer: 65
+"
+31 35,66,"Input: 31 35 Answer: 66
+"
+31 36,67,"Input: 31 36 Answer: 67
+"
+31 37,68,"Input: 31 37 Answer: 68
+"
+31 38,69,"Input: 31 38 Answer: 69
+"
+31 39,70,"Input: 31 39 Answer: 70
+"
+31 40,71,"Input: 31 40 Answer: 71
+"
+31 41,72,"Input: 31 41 Answer: 72
+"
+31 42,73,"Input: 31 42 Answer: 73
+"
+31 43,74,"Input: 31 43 Answer: 74
+"
+31 44,75,"Input: 31 44 Answer: 75
+"
+31 45,76,"Input: 31 45 Answer: 76
+"
+31 46,77,"Input: 31 46 Answer: 77
+"
+31 47,78,"Input: 31 47 Answer: 78
+"
+31 48,79,"Input: 31 48 Answer: 79
+"
+31 49,80,"Input: 31 49 Answer: 80
+"
+31 50,81,"Input: 31 50 Answer: 81
+"
+31 51,82,"Input: 31 51 Answer: 82
+"
+31 52,83,"Input: 31 52 Answer: 83
+"
+31 53,84,"Input: 31 53 Answer: 84
+"
+31 54,85,"Input: 31 54 Answer: 85
+"
+31 55,86,"Input: 31 55 Answer: 86
+"
+31 56,87,"Input: 31 56 Answer: 87
+"
+31 57,88,"Input: 31 57 Answer: 88
+"
+31 58,89,"Input: 31 58 Answer: 89
+"
+31 59,90,"Input: 31 59 Answer: 90
+"
+31 60,91,"Input: 31 60 Answer: 91
+"
+31 61,92,"Input: 31 61 Answer: 92
+"
+31 62,93,"Input: 31 62 Answer: 93
+"
+31 63,94,"Input: 31 63 Answer: 94
+"
+31 64,95,"Input: 31 64 Answer: 95
+"
+31 65,96,"Input: 31 65 Answer: 96
+"
+31 66,97,"Input: 31 66 Answer: 97
+"
+31 67,98,"Input: 31 67 Answer: 98
+"
+31 68,99,"Input: 31 68 Answer: 99
+"
+31 69,100,"Input: 31 69 Answer: 100
+"
+31 70,101,"Input: 31 70 Answer: 101
+"
+31 71,102,"Input: 31 71 Answer: 102
+"
+31 72,103,"Input: 31 72 Answer: 103
+"
+31 73,104,"Input: 31 73 Answer: 104
+"
+31 74,105,"Input: 31 74 Answer: 105
+"
+31 75,106,"Input: 31 75 Answer: 106
+"
+31 76,107,"Input: 31 76 Answer: 107
+"
+31 77,108,"Input: 31 77 Answer: 108
+"
+31 78,109,"Input: 31 78 Answer: 109
+"
+31 79,110,"Input: 31 79 Answer: 110
+"
+31 80,111,"Input: 31 80 Answer: 111
+"
+31 81,112,"Input: 31 81 Answer: 112
+"
+31 82,113,"Input: 31 82 Answer: 113
+"
+31 83,114,"Input: 31 83 Answer: 114
+"
+31 84,115,"Input: 31 84 Answer: 115
+"
+31 85,116,"Input: 31 85 Answer: 116
+"
+31 86,117,"Input: 31 86 Answer: 117
+"
+31 87,118,"Input: 31 87 Answer: 118
+"
+31 88,119,"Input: 31 88 Answer: 119
+"
+31 89,120,"Input: 31 89 Answer: 120
+"
+31 90,121,"Input: 31 90 Answer: 121
+"
+31 91,122,"Input: 31 91 Answer: 122
+"
+31 92,123,"Input: 31 92 Answer: 123
+"
+31 93,124,"Input: 31 93 Answer: 124
+"
+31 94,125,"Input: 31 94 Answer: 125
+"
+31 95,126,"Input: 31 95 Answer: 126
+"
+31 96,127,"Input: 31 96 Answer: 127
+"
+31 97,128,"Input: 31 97 Answer: 128
+"
+31 98,129,"Input: 31 98 Answer: 129
+"
+31 99,130,"Input: 31 99 Answer: 130
+"
+32 32,64,"Input: 32 32 Answer: 64
+"
+32 33,65,"Input: 32 33 Answer: 65
+"
+32 34,66,"Input: 32 34 Answer: 66
+"
+32 35,67,"Input: 32 35 Answer: 67
+"
+32 36,68,"Input: 32 36 Answer: 68
+"
+32 37,69,"Input: 32 37 Answer: 69
+"
+32 38,70,"Input: 32 38 Answer: 70
+"
+32 39,71,"Input: 32 39 Answer: 71
+"
+32 40,72,"Input: 32 40 Answer: 72
+"
+32 41,73,"Input: 32 41 Answer: 73
+"
+32 42,74,"Input: 32 42 Answer: 74
+"
+32 43,75,"Input: 32 43 Answer: 75
+"
+32 44,76,"Input: 32 44 Answer: 76
+"
+32 45,77,"Input: 32 45 Answer: 77
+"
+32 46,78,"Input: 32 46 Answer: 78
+"
+32 47,79,"Input: 32 47 Answer: 79
+"
+32 48,80,"Input: 32 48 Answer: 80
+"
+32 49,81,"Input: 32 49 Answer: 81
+"
+32 50,82,"Input: 32 50 Answer: 82
+"
+32 51,83,"Input: 32 51 Answer: 83
+"
+32 52,84,"Input: 32 52 Answer: 84
+"
+32 53,85,"Input: 32 53 Answer: 85
+"
+32 54,86,"Input: 32 54 Answer: 86
+"
+32 55,87,"Input: 32 55 Answer: 87
+"
+32 56,88,"Input: 32 56 Answer: 88
+"
+32 57,89,"Input: 32 57 Answer: 89
+"
+32 58,90,"Input: 32 58 Answer: 90
+"
+32 59,91,"Input: 32 59 Answer: 91
+"
+32 61,93,"Input: 32 61 Answer: 93
+"
+32 62,94,"Input: 32 62 Answer: 94
+"
+32 63,95,"Input: 32 63 Answer: 95
+"
+32 64,96,"Input: 32 64 Answer: 96
+"
+32 65,97,"Input: 32 65 Answer: 97
+"
+32 66,98,"Input: 32 66 Answer: 98
+"
+32 67,99,"Input: 32 67 Answer: 99
+"
+32 68,100,"Input: 32 68 Answer: 100
+"
+32 69,101,"Input: 32 69 Answer: 101
+"
+32 70,102,"Input: 32 70 Answer: 102
+"
+32 71,103,"Input: 32 71 Answer: 103
+"
+32 72,104,"Input: 32 72 Answer: 104
+"
+32 73,105,"Input: 32 73 Answer: 105
+"
+32 74,106,"Input: 32 74 Answer: 106
+"
+32 75,107,"Input: 32 75 Answer: 107
+"
+32 76,108,"Input: 32 76 Answer: 108
+"
+32 77,109,"Input: 32 77 Answer: 109
+"
+32 78,110,"Input: 32 78 Answer: 110
+"
+32 79,111,"Input: 32 79 Answer: 111
+"
+32 80,112,"Input: 32 80 Answer: 112
+"
+32 81,113,"Input: 32 81 Answer: 113
+"
+32 82,114,"Input: 32 82 Answer: 114
+"
+32 83,115,"Input: 32 83 Answer: 115
+"
+32 84,116,"Input: 32 84 Answer: 116
+"
+32 85,117,"Input: 32 85 Answer: 117
+"
+32 86,118,"Input: 32 86 Answer: 118
+"
+32 87,119,"Input: 32 87 Answer: 119
+"
+32 88,120,"Input: 32 88 Answer: 120
+"
+32 89,121,"Input: 32 89 Answer: 121
+"
+32 90,122,"Input: 32 90 Answer: 122
+"
+32 91,123,"Input: 32 91 Answer: 123
+"
+32 92,124,"Input: 32 92 Answer: 124
+"
+32 93,125,"Input: 32 93 Answer: 125
+"
+32 94,126,"Input: 32 94 Answer: 126
+"
+32 95,127,"Input: 32 95 Answer: 127
+"
+32 96,128,"Input: 32 96 Answer: 128
+"
+32 97,129,"Input: 32 97 Answer: 129
+"
+32 98,130,"Input: 32 98 Answer: 130
+"
+32 99,131,"Input: 32 99 Answer: 131
+"
+33 33,66,"Input: 33 33 Answer: 66
+"
+33 34,67,"Input: 33 34 Answer: 67
+"
+33 35,68,"Input: 33 35 Answer: 68
+"
+33 36,69,"Input: 33 36 Answer: 69
+"
+33 37,70,"Input: 33 37 Answer: 70
+"
+33 38,71,"Input: 33 38 Answer: 71
+"
+33 39,72,"Input: 33 39 Answer: 72
+"
+33 40,73,"Input: 33 40 Answer: 73
+"
+33 41,74,"Input: 33 41 Answer: 74
+"
+33 42,75,"Input: 33 42 Answer: 75
+"
+33 43,76,"Input: 33 43 Answer: 76
+"
+33 44,77,"Input: 33 44 Answer: 77
+"
+33 45,78,"Input: 33 45 Answer: 78
+"
+33 46,79,"Input: 33 46 Answer: 79
+"
+33 47,80,"Input: 33 47 Answer: 80
+"
+33 48,81,"Input: 33 48 Answer: 81
+"
+33 49,82,"Input: 33 49 Answer: 82
+"
+33 50,83,"Input: 33 50 Answer: 83
+"
+33 51,84,"Input: 33 51 Answer: 84
+"
+33 52,85,"Input: 33 52 Answer: 85
+"
+33 53,86,"Input: 33 53 Answer: 86
+"
+33 54,87,"Input: 33 54 Answer: 87
+"
+33 55,88,"Input: 33 55 Answer: 88
+"
+33 56,89,"Input: 33 56 Answer: 89
+"
+33 57,90,"Input: 33 57 Answer: 90
+"
+33 58,91,"Input: 33 58 Answer: 91
+"
+33 59,92,"Input: 33 59 Answer: 92
+"
+33 61,94,"Input: 33 61 Answer: 94
+"
+33 62,95,"Input: 33 62 Answer: 95
+"
+33 63,96,"Input: 33 63 Answer: 96
+"
+33 64,97,"Input: 33 64 Answer: 97
+"
+33 65,98,"Input: 33 65 Answer: 98
+"
+33 66,99,"Input: 33 66 Answer: 99
+"
+33 67,100,"Input: 33 67 Answer: 100
+"
+33 68,101,"Input: 33 68 Answer: 101
+"
+33 69,102,"Input: 33 69 Answer: 102
+"
+33 70,103,"Input: 33 70 Answer: 103
+"
+33 71,104,"Input: 33 71 Answer: 104
+"
+33 72,105,"Input: 33 72 Answer: 105
+"
+33 73,106,"Input: 33 73 Answer: 106
+"
+33 74,107,"Input: 33 74 Answer: 107
+"
+33 75,108,"Input: 33 75 Answer: 108
+"
+33 76,109,"Input: 33 76 Answer: 109
+"
+33 77,110,"Input: 33 77 Answer: 110
+"
+33 78,111,"Input: 33 78 Answer: 111
+"
+33 79,112,"Input: 33 79 Answer: 112
+"
+33 80,113,"Input: 33 80 Answer: 113
+"
+33 81,114,"Input: 33 81 Answer: 114
+"
+33 82,115,"Input: 33 82 Answer: 115
+"
+33 83,116,"Input: 33 83 Answer: 116
+"
+33 84,117,"Input: 33 84 Answer: 117
+"
+33 85,118,"Input: 33 85 Answer: 118
+"
+33 86,119,"Input: 33 86 Answer: 119
+"
+33 87,120,"Input: 33 87 Answer: 120
+"
+33 88,121,"Input: 33 88 Answer: 121
+"
+33 89,122,"Input: 33 89 Answer: 122
+"
+33 90,123,"Input: 33 90 Answer: 123
+"
+33 91,124,"Input: 33 91 Answer: 124
+"
+33 92,125,"Input: 33 92 Answer: 125
+"
+33 93,126,"Input: 33 93 Answer: 126
+"
+33 94,127,"Input: 33 94 Answer: 127
+"
+33 95,128,"Input: 33 95 Answer: 128
+"
+33 98,131,"Input: 33 98 Answer: 131
+"
+33 99,132,"Input: 33 99 Answer: 132
+"
+34 34,68,"Input: 34 34 Answer: 68
+"
+34 35,69,"Input: 34 35 Answer: 69
+"
+34 36,70,"Input: 34 36 Answer: 70
+"
+34 37,71,"Input: 34 37 Answer: 71
+"
+34 38,72,"Input: 34 38 Answer: 72
+"
+34 39,73,"Input: 34 39 Answer: 73
+"
+34 40,74,"Input: 34 40 Answer: 74
+"
+34 41,75,"Input: 34 41 Answer: 75
+"
+34 42,76,"Input: 34 42 Answer: 76
+"
+34 43,77,"Input: 34 43 Answer: 77
+"
+34 44,78,"Input: 34 44 Answer: 78
+"
+34 45,79,"Input: 34 45 Answer: 79
+"
+34 46,80,"Input: 34 46 Answer: 80
+"
+34 47,81,"Input: 34 47 Answer: 81
+"
+34 48,82,"Input: 34 48 Answer: 82
+"
+34 49,83,"Input: 34 49 Answer: 83
+"
+34 50,84,"Input: 34 50 Answer: 84
+"
+34 51,85,"Input: 34 51 Answer: 85
+"
+34 52,86,"Input: 34 52 Answer: 86
+"
+34 53,87,"Input: 34 53 Answer: 87
+"
+34 54,88,"Input: 34 54 Answer: 88
+"
+34 55,89,"Input: 34 55 Answer: 89
+"
+34 56,90,"Input: 34 56 Answer: 90
+"
+34 57,91,"Input: 34 57 Answer: 91
+"
+34 59,93,"Input: 34 59 Answer: 93
+"
+34 60,94,"Input: 34 60 Answer: 94
+"
+34 61,95,"Input: 34 61 Answer: 95
+"
+34 62,96,"Input: 34 62 Answer: 96
+"
+34 63,97,"Input: 34 63 Answer: 97
+"
+34 64,98,"Input: 34 64 Answer: 98
+"
+34 65,99,"Input: 34 65 Answer: 99
+"
+34 66,100,"Input: 34 66 Answer: 100
+"
+34 67,101,"Input: 34 67 Answer: 101
+"
+34 68,102,"Input: 34 68 Answer: 102
+"
+34 69,103,"Input: 34 69 Answer: 103
+"
+34 70,104,"Input: 34 70 Answer: 104
+"
+34 71,105,"Input: 34 71 Answer: 105
+"
+34 72,106,"Input: 34 72 Answer: 106
+"
+34 73,107,"Input: 34 73 Answer: 107
+"
+34 74,108,"Input: 34 74 Answer: 108
+"
+34 75,109,"Input: 34 75 Answer: 109
+"
+34 76,110,"Input: 34 76 Answer: 110
+"
+34 77,111,"Input: 34 77 Answer: 111
+"
+34 78,112,"Input: 34 78 Answer: 112
+"
+34 79,113,"Input: 34 79 Answer: 113
+"
+34 80,114,"Input: 34 80 Answer: 114
+"
+34 81,115,"Input: 34 81 Answer: 115
+"
+34 82,116,"Input: 34 82 Answer: 116
+"
+34 83,117,"Input: 34 83 Answer: 117
+"
+34 84,118,"Input: 34 84 Answer: 118
+"
+34 85,119,"Input: 34 85 Answer: 119
+"
+34 86,120,"Input: 34 86 Answer: 120
+"
+34 87,121,"Input: 34 87 Answer: 121
+"
+34 88,122,"Input: 34 88 Answer: 122
+"
+34 89,123,"Input: 34 89 Answer: 123
+"
+34 90,124,"Input: 34 90 Answer: 124
+"
+34 91,125,"Input: 34 91 Answer: 125
+"
+34 92,126,"Input: 34 92 Answer: 126
+"
+34 93,127,"Input: 34 93 Answer: 127
+"
+34 94,128,"Input: 34 94 Answer: 128
+"
+34 95,129,"Input: 34 95 Answer: 129
+"
+34 96,130,"Input: 34 96 Answer: 130
+"
+34 97,131,"Input: 34 97 Answer: 131
+"
+34 98,132,"Input: 34 98 Answer: 132
+"
+34 99,133,"Input: 34 99 Answer: 133
+"
+35 36,71,"Input: 35 36 Answer: 71
+"
+35 37,72,"Input: 35 37 Answer: 72
+"
+35 38,73,"Input: 35 38 Answer: 73
+"
+35 39,74,"Input: 35 39 Answer: 74
+"
+35 41,76,"Input: 35 41 Answer: 76
+"
+35 42,77,"Input: 35 42 Answer: 77
+"
+35 43,78,"Input: 35 43 Answer: 78
+"
+35 44,79,"Input: 35 44 Answer: 79
+"
+35 45,80,"Input: 35 45 Answer: 80
+"
+35 46,81,"Input: 35 46 Answer: 81
+"
+35 47,82,"Input: 35 47 Answer: 82
+"
+35 48,83,"Input: 35 48 Answer: 83
+"
+35 49,84,"Input: 35 49 Answer: 84
+"
+35 50,85,"Input: 35 50 Answer: 85
+"
+35 51,86,"Input: 35 51 Answer: 86
+"
+35 52,87,"Input: 35 52 Answer: 87
+"
+35 53,88,"Input: 35 53 Answer: 88
+"
+35 54,89,"Input: 35 54 Answer: 89
+"
+35 55,90,"Input: 35 55 Answer: 90
+"
+35 56,91,"Input: 35 56 Answer: 91
+"
+35 57,92,"Input: 35 57 Answer: 92
+"
+35 58,93,"Input: 35 58 Answer: 93
+"
+35 59,94,"Input: 35 59 Answer: 94
+"
+35 60,95,"Input: 35 60 Answer: 95
+"
+35 61,96,"Input: 35 61 Answer: 96
+"
+35 62,97,"Input: 35 62 Answer: 97
+"
+35 63,98,"Input: 35 63 Answer: 98
+"
+35 64,99,"Input: 35 64 Answer: 99
+"
+35 65,100,"Input: 35 65 Answer: 100
+"
+35 66,101,"Input: 35 66 Answer: 101
+"
+35 67,102,"Input: 35 67 Answer: 102
+"
+35 68,103,"Input: 35 68 Answer: 103
+"
+35 69,104,"Input: 35 69 Answer: 104
+"
+35 70,105,"Input: 35 70 Answer: 105
+"
+35 71,106,"Input: 35 71 Answer: 106
+"
+35 72,107,"Input: 35 72 Answer: 107
+"
+35 73,108,"Input: 35 73 Answer: 108
+"
+35 74,109,"Input: 35 74 Answer: 109
+"
+35 75,110,"Input: 35 75 Answer: 110
+"
+35 76,111,"Input: 35 76 Answer: 111
+"
+35 77,112,"Input: 35 77 Answer: 112
+"
+35 78,113,"Input: 35 78 Answer: 113
+"
+35 79,114,"Input: 35 79 Answer: 114
+"
+35 80,115,"Input: 35 80 Answer: 115
+"
+35 81,116,"Input: 35 81 Answer: 116
+"
+35 82,117,"Input: 35 82 Answer: 117
+"
+35 83,118,"Input: 35 83 Answer: 118
+"
+35 84,119,"Input: 35 84 Answer: 119
+"
+35 85,120,"Input: 35 85 Answer: 120
+"
+35 86,121,"Input: 35 86 Answer: 121
+"
+35 87,122,"Input: 35 87 Answer: 122
+"
+35 88,123,"Input: 35 88 Answer: 123
+"
+35 89,124,"Input: 35 89 Answer: 124
+"
+35 90,125,"Input: 35 90 Answer: 125
+"
+35 91,126,"Input: 35 91 Answer: 126
+"
+35 92,127,"Input: 35 92 Answer: 127
+"
+35 93,128,"Input: 35 93 Answer: 128
+"
+35 94,129,"Input: 35 94 Answer: 129
+"
+35 95,130,"Input: 35 95 Answer: 130
+"
+35 96,131,"Input: 35 96 Answer: 131
+"
+35 97,132,"Input: 35 97 Answer: 132
+"
+35 98,133,"Input: 35 98 Answer: 133
+"
+35 99,134,"Input: 35 99 Answer: 134
+"
+36 36,72,"Input: 36 36 Answer: 72
+"
+36 37,73,"Input: 36 37 Answer: 73
+"
+36 38,74,"Input: 36 38 Answer: 74
+"
+36 39,75,"Input: 36 39 Answer: 75
+"
+36 40,76,"Input: 36 40 Answer: 76
+"
+36 41,77,"Input: 36 41 Answer: 77
+"
+36 42,78,"Input: 36 42 Answer: 78
+"
+36 43,79,"Input: 36 43 Answer: 79
+"
+36 44,80,"Input: 36 44 Answer: 80
+"
+36 45,81,"Input: 36 45 Answer: 81
+"
+36 46,82,"Input: 36 46 Answer: 82
+"
+36 47,83,"Input: 36 47 Answer: 83
+"
+36 48,84,"Input: 36 48 Answer: 84
+"
+36 49,85,"Input: 36 49 Answer: 85
+"
+36 50,86,"Input: 36 50 Answer: 86
+"
+36 51,87,"Input: 36 51 Answer: 87
+"
+36 52,88,"Input: 36 52 Answer: 88
+"
+36 53,89,"Input: 36 53 Answer: 89
+"
+36 54,90,"Input: 36 54 Answer: 90
+"
+36 55,91,"Input: 36 55 Answer: 91
+"
+36 56,92,"Input: 36 56 Answer: 92
+"
+36 57,93,"Input: 36 57 Answer: 93
+"
+36 58,94,"Input: 36 58 Answer: 94
+"
+36 59,95,"Input: 36 59 Answer: 95
+"
+36 60,96,"Input: 36 60 Answer: 96
+"
+36 61,97,"Input: 36 61 Answer: 97
+"
+36 62,98,"Input: 36 62 Answer: 98
+"
+36 63,99,"Input: 36 63 Answer: 99
+"
+36 64,100,"Input: 36 64 Answer: 100
+"
+36 65,101,"Input: 36 65 Answer: 101
+"
+36 66,102,"Input: 36 66 Answer: 102
+"
+36 67,103,"Input: 36 67 Answer: 103
+"
+36 68,104,"Input: 36 68 Answer: 104
+"
+36 69,105,"Input: 36 69 Answer: 105
+"
+36 70,106,"Input: 36 70 Answer: 106
+"
+36 71,107,"Input: 36 71 Answer: 107
+"
+36 72,108,"Input: 36 72 Answer: 108
+"
+36 73,109,"Input: 36 73 Answer: 109
+"
+36 74,110,"Input: 36 74 Answer: 110
+"
+36 75,111,"Input: 36 75 Answer: 111
+"
+36 76,112,"Input: 36 76 Answer: 112
+"
+36 77,113,"Input: 36 77 Answer: 113
+"
+36 78,114,"Input: 36 78 Answer: 114
+"
+36 79,115,"Input: 36 79 Answer: 115
+"
+36 80,116,"Input: 36 80 Answer: 116
+"
+36 81,117,"Input: 36 81 Answer: 117
+"
+36 82,118,"Input: 36 82 Answer: 118
+"
+36 83,119,"Input: 36 83 Answer: 119
+"
+36 84,120,"Input: 36 84 Answer: 120
+"
+36 85,121,"Input: 36 85 Answer: 121
+"
+36 86,122,"Input: 36 86 Answer: 122
+"
+36 87,123,"Input: 36 87 Answer: 123
+"
+36 88,124,"Input: 36 88 Answer: 124
+"
+36 89,125,"Input: 36 89 Answer: 125
+"
+36 90,126,"Input: 36 90 Answer: 126
+"
+36 91,127,"Input: 36 91 Answer: 127
+"
+36 92,128,"Input: 36 92 Answer: 128
+"
+36 93,129,"Input: 36 93 Answer: 129
+"
+36 94,130,"Input: 36 94 Answer: 130
+"
+36 95,131,"Input: 36 95 Answer: 131
+"
+36 96,132,"Input: 36 96 Answer: 132
+"
+36 97,133,"Input: 36 97 Answer: 133
+"
+36 98,134,"Input: 36 98 Answer: 134
+"
+36 99,135,"Input: 36 99 Answer: 135
+"
+37 37,74,"Input: 37 37 Answer: 74
+"
+37 38,75,"Input: 37 38 Answer: 75
+"
+37 39,76,"Input: 37 39 Answer: 76
+"
+37 40,77,"Input: 37 40 Answer: 77
+"
+37 41,78,"Input: 37 41 Answer: 78
+"
+37 42,79,"Input: 37 42 Answer: 79
+"
+37 43,80,"Input: 37 43 Answer: 80
+"
+37 44,81,"Input: 37 44 Answer: 81
+"
+37 45,82,"Input: 37 45 Answer: 82
+"
+37 46,83,"Input: 37 46 Answer: 83
+"
+37 47,84,"Input: 37 47 Answer: 84
+"
+37 48,85,"Input: 37 48 Answer: 85
+"
+37 49,86,"Input: 37 49 Answer: 86
+"
+37 50,87,"Input: 37 50 Answer: 87
+"
+37 51,88,"Input: 37 51 Answer: 88
+"
+37 52,89,"Input: 37 52 Answer: 89
+"
+37 53,90,"Input: 37 53 Answer: 90
+"
+37 54,91,"Input: 37 54 Answer: 91
+"
+37 55,92,"Input: 37 55 Answer: 92
+"
+37 56,93,"Input: 37 56 Answer: 93
+"
+37 57,94,"Input: 37 57 Answer: 94
+"
+37 58,95,"Input: 37 58 Answer: 95
+"
+37 59,96,"Input: 37 59 Answer: 96
+"
+37 60,97,"Input: 37 60 Answer: 97
+"
+37 61,98,"Input: 37 61 Answer: 98
+"
+37 62,99,"Input: 37 62 Answer: 99
+"
+37 63,100,"Input: 37 63 Answer: 100
+"
+37 64,101,"Input: 37 64 Answer: 101
+"
+37 65,102,"Input: 37 65 Answer: 102
+"
+37 66,103,"Input: 37 66 Answer: 103
+"
+37 67,104,"Input: 37 67 Answer: 104
+"
+37 68,105,"Input: 37 68 Answer: 105
+"
+37 69,106,"Input: 37 69 Answer: 106
+"
+37 70,107,"Input: 37 70 Answer: 107
+"
+37 71,108,"Input: 37 71 Answer: 108
+"
+37 72,109,"Input: 37 72 Answer: 109
+"
+37 73,110,"Input: 37 73 Answer: 110
+"
+37 74,111,"Input: 37 74 Answer: 111
+"
+37 75,112,"Input: 37 75 Answer: 112
+"
+37 76,113,"Input: 37 76 Answer: 113
+"
+37 77,114,"Input: 37 77 Answer: 114
+"
+37 78,115,"Input: 37 78 Answer: 115
+"
+37 79,116,"Input: 37 79 Answer: 116
+"
+37 80,117,"Input: 37 80 Answer: 117
+"
+37 81,118,"Input: 37 81 Answer: 118
+"
+37 82,119,"Input: 37 82 Answer: 119
+"
+37 83,120,"Input: 37 83 Answer: 120
+"
+37 84,121,"Input: 37 84 Answer: 121
+"
+37 85,122,"Input: 37 85 Answer: 122
+"
+37 86,123,"Input: 37 86 Answer: 123
+"
+37 87,124,"Input: 37 87 Answer: 124
+"
+37 88,125,"Input: 37 88 Answer: 125
+"
+37 89,126,"Input: 37 89 Answer: 126
+"
+37 90,127,"Input: 37 90 Answer: 127
+"
+37 91,128,"Input: 37 91 Answer: 128
+"
+37 92,129,"Input: 37 92 Answer: 129
+"
+37 93,130,"Input: 37 93 Answer: 130
+"
+37 95,132,"Input: 37 95 Answer: 132
+"
+37 96,133,"Input: 37 96 Answer: 133
+"
+37 97,134,"Input: 37 97 Answer: 134
+"
+37 98,135,"Input: 37 98 Answer: 135
+"
+37 99,136,"Input: 37 99 Answer: 136
+"
+38 38,76,"Input: 38 38 Answer: 76
+"
+38 39,77,"Input: 38 39 Answer: 77
+"
+38 40,78,"Input: 38 40 Answer: 78
+"
+38 41,79,"Input: 38 41 Answer: 79
+"
+38 42,80,"Input: 38 42 Answer: 80
+"
+38 43,81,"Input: 38 43 Answer: 81
+"
+38 44,82,"Input: 38 44 Answer: 82
+"
+38 45,83,"Input: 38 45 Answer: 83
+"
+38 46,84,"Input: 38 46 Answer: 84
+"
+38 47,85,"Input: 38 47 Answer: 85
+"
+38 48,86,"Input: 38 48 Answer: 86
+"
+38 49,87,"Input: 38 49 Answer: 87
+"
+38 50,88,"Input: 38 50 Answer: 88
+"
+38 51,89,"Input: 38 51 Answer: 89
+"
+38 52,90,"Input: 38 52 Answer: 90
+"
+38 53,91,"Input: 38 53 Answer: 91
+"
+38 54,92,"Input: 38 54 Answer: 92
+"
+38 55,93,"Input: 38 55 Answer: 93
+"
+38 56,94,"Input: 38 56 Answer: 94
+"
+38 57,95,"Input: 38 57 Answer: 95
+"
+38 58,96,"Input: 38 58 Answer: 96
+"
+38 59,97,"Input: 38 59 Answer: 97
+"
+38 60,98,"Input: 38 60 Answer: 98
+"
+38 61,99,"Input: 38 61 Answer: 99
+"
+38 62,100,"Input: 38 62 Answer: 100
+"
+38 63,101,"Input: 38 63 Answer: 101
+"
+38 64,102,"Input: 38 64 Answer: 102
+"
+38 65,103,"Input: 38 65 Answer: 103
+"
+38 66,104,"Input: 38 66 Answer: 104
+"
+38 67,105,"Input: 38 67 Answer: 105
+"
+38 68,106,"Input: 38 68 Answer: 106
+"
+38 69,107,"Input: 38 69 Answer: 107
+"
+38 70,108,"Input: 38 70 Answer: 108
+"
+38 71,109,"Input: 38 71 Answer: 109
+"
+38 72,110,"Input: 38 72 Answer: 110
+"
+38 73,111,"Input: 38 73 Answer: 111
+"
+38 74,112,"Input: 38 74 Answer: 112
+"
+38 75,113,"Input: 38 75 Answer: 113
+"
+38 76,114,"Input: 38 76 Answer: 114
+"
+38 77,115,"Input: 38 77 Answer: 115
+"
+38 78,116,"Input: 38 78 Answer: 116
+"
+38 79,117,"Input: 38 79 Answer: 117
+"
+38 80,118,"Input: 38 80 Answer: 118
+"
+38 81,119,"Input: 38 81 Answer: 119
+"
+38 82,120,"Input: 38 82 Answer: 120
+"
+38 83,121,"Input: 38 83 Answer: 121
+"
+38 84,122,"Input: 38 84 Answer: 122
+"
+38 85,123,"Input: 38 85 Answer: 123
+"
+38 86,124,"Input: 38 86 Answer: 124
+"
+38 87,125,"Input: 38 87 Answer: 125
+"
+38 88,126,"Input: 38 88 Answer: 126
+"
+38 89,127,"Input: 38 89 Answer: 127
+"
+38 90,128,"Input: 38 90 Answer: 128
+"
+38 91,129,"Input: 38 91 Answer: 129
+"
+38 92,130,"Input: 38 92 Answer: 130
+"
+38 93,131,"Input: 38 93 Answer: 131
+"
+38 94,132,"Input: 38 94 Answer: 132
+"
+38 95,133,"Input: 38 95 Answer: 133
+"
+38 96,134,"Input: 38 96 Answer: 134
+"
+38 97,135,"Input: 38 97 Answer: 135
+"
+38 98,136,"Input: 38 98 Answer: 136
+"
+38 99,137,"Input: 38 99 Answer: 137
+"
+39 39,78,"Input: 39 39 Answer: 78
+"
+39 40,79,"Input: 39 40 Answer: 79
+"
+39 41,80,"Input: 39 41 Answer: 80
+"
+39 42,81,"Input: 39 42 Answer: 81
+"
+39 44,83,"Input: 39 44 Answer: 83
+"
+39 45,84,"Input: 39 45 Answer: 84
+"
+39 46,85,"Input: 39 46 Answer: 85
+"
+39 47,86,"Input: 39 47 Answer: 86
+"
+39 48,87,"Input: 39 48 Answer: 87
+"
+39 49,88,"Input: 39 49 Answer: 88
+"
+39 50,89,"Input: 39 50 Answer: 89
+"
+39 51,90,"Input: 39 51 Answer: 90
+"
+39 52,91,"Input: 39 52 Answer: 91
+"
+39 53,92,"Input: 39 53 Answer: 92
+"
+39 54,93,"Input: 39 54 Answer: 93
+"
+39 55,94,"Input: 39 55 Answer: 94
+"
+39 56,95,"Input: 39 56 Answer: 95
+"
+39 57,96,"Input: 39 57 Answer: 96
+"
+39 58,97,"Input: 39 58 Answer: 97
+"
+39 59,98,"Input: 39 59 Answer: 98
+"
+39 60,99,"Input: 39 60 Answer: 99
+"
+39 61,100,"Input: 39 61 Answer: 100
+"
+39 62,101,"Input: 39 62 Answer: 101
+"
+39 63,102,"Input: 39 63 Answer: 102
+"
+39 64,103,"Input: 39 64 Answer: 103
+"
+39 65,104,"Input: 39 65 Answer: 104
+"
+39 66,105,"Input: 39 66 Answer: 105
+"
+39 67,106,"Input: 39 67 Answer: 106
+"
+39 68,107,"Input: 39 68 Answer: 107
+"
+39 69,108,"Input: 39 69 Answer: 108
+"
+39 70,109,"Input: 39 70 Answer: 109
+"
+39 71,110,"Input: 39 71 Answer: 110
+"
+39 72,111,"Input: 39 72 Answer: 111
+"
+39 73,112,"Input: 39 73 Answer: 112
+"
+39 74,113,"Input: 39 74 Answer: 113
+"
+39 75,114,"Input: 39 75 Answer: 114
+"
+39 76,115,"Input: 39 76 Answer: 115
+"
+39 77,116,"Input: 39 77 Answer: 116
+"
+39 78,117,"Input: 39 78 Answer: 117
+"
+39 79,118,"Input: 39 79 Answer: 118
+"
+39 80,119,"Input: 39 80 Answer: 119
+"
+39 81,120,"Input: 39 81 Answer: 120
+"
+39 82,121,"Input: 39 82 Answer: 121
+"
+39 83,122,"Input: 39 83 Answer: 122
+"
+39 84,123,"Input: 39 84 Answer: 123
+"
+39 85,124,"Input: 39 85 Answer: 124
+"
+39 86,125,"Input: 39 86 Answer: 125
+"
+39 87,126,"Input: 39 87 Answer: 126
+"
+39 88,127,"Input: 39 88 Answer: 127
+"
+39 89,128,"Input: 39 89 Answer: 128
+"
+39 90,129,"Input: 39 90 Answer: 129
+"
+39 91,130,"Input: 39 91 Answer: 130
+"
+39 92,131,"Input: 39 92 Answer: 131
+"
+39 93,132,"Input: 39 93 Answer: 132
+"
+39 94,133,"Input: 39 94 Answer: 133
+"
+39 95,134,"Input: 39 95 Answer: 134
+"
+39 96,135,"Input: 39 96 Answer: 135
+"
+39 97,136,"Input: 39 97 Answer: 136
+"
+39 98,137,"Input: 39 98 Answer: 137
+"
+39 99,138,"Input: 39 99 Answer: 138
+"
+40 40,80,"Input: 40 40 Answer: 80
+"
+40 41,81,"Input: 40 41 Answer: 81
+"
+40 42,82,"Input: 40 42 Answer: 82
+"
+40 43,83,"Input: 40 43 Answer: 83
+"
+40 44,84,"Input: 40 44 Answer: 84
+"
+40 45,85,"Input: 40 45 Answer: 85
+"
+40 46,86,"Input: 40 46 Answer: 86
+"
+40 47,87,"Input: 40 47 Answer: 87
+"
+40 48,88,"Input: 40 48 Answer: 88
+"
+40 49,89,"Input: 40 49 Answer: 89
+"
+40 50,90,"Input: 40 50 Answer: 90
+"
+40 51,91,"Input: 40 51 Answer: 91
+"
+40 52,92,"Input: 40 52 Answer: 92
+"
+40 53,93,"Input: 40 53 Answer: 93
+"
+40 54,94,"Input: 40 54 Answer: 94
+"
+40 55,95,"Input: 40 55 Answer: 95
+"
+40 56,96,"Input: 40 56 Answer: 96
+"
+40 57,97,"Input: 40 57 Answer: 97
+"
+40 58,98,"Input: 40 58 Answer: 98
+"
+40 59,99,"Input: 40 59 Answer: 99
+"
+40 60,100,"Input: 40 60 Answer: 100
+"
+40 61,101,"Input: 40 61 Answer: 101
+"
+40 62,102,"Input: 40 62 Answer: 102
+"
+40 63,103,"Input: 40 63 Answer: 103
+"
+40 64,104,"Input: 40 64 Answer: 104
+"
+40 65,105,"Input: 40 65 Answer: 105
+"
+40 66,106,"Input: 40 66 Answer: 106
+"
+40 67,107,"Input: 40 67 Answer: 107
+"
+40 68,108,"Input: 40 68 Answer: 108
+"
+40 69,109,"Input: 40 69 Answer: 109
+"
+40 70,110,"Input: 40 70 Answer: 110
+"
+40 71,111,"Input: 40 71 Answer: 111
+"
+40 72,112,"Input: 40 72 Answer: 112
+"
+40 73,113,"Input: 40 73 Answer: 113
+"
+40 74,114,"Input: 40 74 Answer: 114
+"
+40 75,115,"Input: 40 75 Answer: 115
+"
+40 76,116,"Input: 40 76 Answer: 116
+"
+40 77,117,"Input: 40 77 Answer: 117
+"
+40 78,118,"Input: 40 78 Answer: 118
+"
+40 79,119,"Input: 40 79 Answer: 119
+"
+40 80,120,"Input: 40 80 Answer: 120
+"
+40 81,121,"Input: 40 81 Answer: 121
+"
+40 82,122,"Input: 40 82 Answer: 122
+"
+40 83,123,"Input: 40 83 Answer: 123
+"
+40 84,124,"Input: 40 84 Answer: 124
+"
+40 85,125,"Input: 40 85 Answer: 125
+"
+40 86,126,"Input: 40 86 Answer: 126
+"
+40 87,127,"Input: 40 87 Answer: 127
+"
+40 88,128,"Input: 40 88 Answer: 128
+"
+40 89,129,"Input: 40 89 Answer: 129
+"
+40 90,130,"Input: 40 90 Answer: 130
+"
+40 91,131,"Input: 40 91 Answer: 131
+"
+40 92,132,"Input: 40 92 Answer: 132
+"
+40 93,133,"Input: 40 93 Answer: 133
+"
+40 94,134,"Input: 40 94 Answer: 134
+"
+40 95,135,"Input: 40 95 Answer: 135
+"
+40 96,136,"Input: 40 96 Answer: 136
+"
+40 97,137,"Input: 40 97 Answer: 137
+"
+40 98,138,"Input: 40 98 Answer: 138
+"
+40 99,139,"Input: 40 99 Answer: 139
+"
+41 41,82,"Input: 41 41 Answer: 82
+"
+41 42,83,"Input: 41 42 Answer: 83
+"
+41 43,84,"Input: 41 43 Answer: 84
+"
+41 44,85,"Input: 41 44 Answer: 85
+"
+41 45,86,"Input: 41 45 Answer: 86
+"
+41 46,87,"Input: 41 46 Answer: 87
+"
+41 47,88,"Input: 41 47 Answer: 88
+"
+41 48,89,"Input: 41 48 Answer: 89
+"
+41 49,90,"Input: 41 49 Answer: 90
+"
+41 50,91,"Input: 41 50 Answer: 91
+"
+41 51,92,"Input: 41 51 Answer: 92
+"
+41 52,93,"Input: 41 52 Answer: 93
+"
+41 53,94,"Input: 41 53 Answer: 94
+"
+41 54,95,"Input: 41 54 Answer: 95
+"
+41 55,96,"Input: 41 55 Answer: 96
+"
+41 56,97,"Input: 41 56 Answer: 97
+"
+41 57,98,"Input: 41 57 Answer: 98
+"
+41 58,99,"Input: 41 58 Answer: 99
+"
+41 59,100,"Input: 41 59 Answer: 100
+"
+41 60,101,"Input: 41 60 Answer: 101
+"
+41 61,102,"Input: 41 61 Answer: 102
+"
+41 62,103,"Input: 41 62 Answer: 103
+"
+41 63,104,"Input: 41 63 Answer: 104
+"
+41 64,105,"Input: 41 64 Answer: 105
+"
+41 65,106,"Input: 41 65 Answer: 106
+"
+41 66,107,"Input: 41 66 Answer: 107
+"
+41 67,108,"Input: 41 67 Answer: 108
+"
+41 68,109,"Input: 41 68 Answer: 109
+"
+41 69,110,"Input: 41 69 Answer: 110
+"
+41 70,111,"Input: 41 70 Answer: 111
+"
+41 71,112,"Input: 41 71 Answer: 112
+"
+41 72,113,"Input: 41 72 Answer: 113
+"
+41 73,114,"Input: 41 73 Answer: 114
+"
+41 74,115,"Input: 41 74 Answer: 115
+"
+41 75,116,"Input: 41 75 Answer: 116
+"
+41 76,117,"Input: 41 76 Answer: 117
+"
+41 77,118,"Input: 41 77 Answer: 118
+"
+41 78,119,"Input: 41 78 Answer: 119
+"
+41 79,120,"Input: 41 79 Answer: 120
+"
+41 80,121,"Input: 41 80 Answer: 121
+"
+41 81,122,"Input: 41 81 Answer: 122
+"
+41 82,123,"Input: 41 82 Answer: 123
+"
+41 83,124,"Input: 41 83 Answer: 124
+"
+41 84,125,"Input: 41 84 Answer: 125
+"
+41 85,126,"Input: 41 85 Answer: 126
+"
+41 86,127,"Input: 41 86 Answer: 127
+"
+41 87,128,"Input: 41 87 Answer: 128
+"
+41 88,129,"Input: 41 88 Answer: 129
+"
+41 89,130,"Input: 41 89 Answer: 130
+"
+41 90,131,"Input: 41 90 Answer: 131
+"
+41 91,132,"Input: 41 91 Answer: 132
+"
+41 92,133,"Input: 41 92 Answer: 133
+"
+41 93,134,"Input: 41 93 Answer: 134
+"
+41 94,135,"Input: 41 94 Answer: 135
+"
+41 95,136,"Input: 41 95 Answer: 136
+"
+41 96,137,"Input: 41 96 Answer: 137
+"
+41 97,138,"Input: 41 97 Answer: 138
+"
+41 98,139,"Input: 41 98 Answer: 139
+"
+41 99,140,"Input: 41 99 Answer: 140
+"
+42 42,84,"Input: 42 42 Answer: 84
+"
+42 43,85,"Input: 42 43 Answer: 85
+"
+42 44,86,"Input: 42 44 Answer: 86
+"
+42 45,87,"Input: 42 45 Answer: 87
+"
+42 46,88,"Input: 42 46 Answer: 88
+"
+42 47,89,"Input: 42 47 Answer: 89
+"
+42 48,90,"Input: 42 48 Answer: 90
+"
+42 49,91,"Input: 42 49 Answer: 91
+"
+42 50,92,"Input: 42 50 Answer: 92
+"
+42 51,93,"Input: 42 51 Answer: 93
+"
+42 52,94,"Input: 42 52 Answer: 94
+"
+42 53,95,"Input: 42 53 Answer: 95
+"
+42 54,96,"Input: 42 54 Answer: 96
+"
+42 55,97,"Input: 42 55 Answer: 97
+"
+42 56,98,"Input: 42 56 Answer: 98
+"
+42 57,99,"Input: 42 57 Answer: 99
+"
+42 58,100,"Input: 42 58 Answer: 100
+"
+42 59,101,"Input: 42 59 Answer: 101
+"
+42 60,102,"Input: 42 60 Answer: 102
+"
+42 61,103,"Input: 42 61 Answer: 103
+"
+42 62,104,"Input: 42 62 Answer: 104
+"
+42 63,105,"Input: 42 63 Answer: 105
+"
+42 64,106,"Input: 42 64 Answer: 106
+"
+42 65,107,"Input: 42 65 Answer: 107
+"
+42 66,108,"Input: 42 66 Answer: 108
+"
+42 67,109,"Input: 42 67 Answer: 109
+"
+42 68,110,"Input: 42 68 Answer: 110
+"
+42 69,111,"Input: 42 69 Answer: 111
+"
+42 70,112,"Input: 42 70 Answer: 112
+"
+42 71,113,"Input: 42 71 Answer: 113
+"
+42 72,114,"Input: 42 72 Answer: 114
+"
+42 73,115,"Input: 42 73 Answer: 115
+"
+42 74,116,"Input: 42 74 Answer: 116
+"
+42 75,117,"Input: 42 75 Answer: 117
+"
+42 76,118,"Input: 42 76 Answer: 118
+"
+42 77,119,"Input: 42 77 Answer: 119
+"
+42 78,120,"Input: 42 78 Answer: 120
+"
+42 79,121,"Input: 42 79 Answer: 121
+"
+42 80,122,"Input: 42 80 Answer: 122
+"
+42 81,123,"Input: 42 81 Answer: 123
+"
+42 82,124,"Input: 42 82 Answer: 124
+"
+42 83,125,"Input: 42 83 Answer: 125
+"
+42 84,126,"Input: 42 84 Answer: 126
+"
+42 85,127,"Input: 42 85 Answer: 127
+"
+42 86,128,"Input: 42 86 Answer: 128
+"
+42 87,129,"Input: 42 87 Answer: 129
+"
+42 88,130,"Input: 42 88 Answer: 130
+"
+42 89,131,"Input: 42 89 Answer: 131
+"
+42 90,132,"Input: 42 90 Answer: 132
+"
+42 91,133,"Input: 42 91 Answer: 133
+"
+42 92,134,"Input: 42 92 Answer: 134
+"
+42 93,135,"Input: 42 93 Answer: 135
+"
+42 94,136,"Input: 42 94 Answer: 136
+"
+42 95,137,"Input: 42 95 Answer: 137
+"
+42 96,138,"Input: 42 96 Answer: 138
+"
+42 97,139,"Input: 42 97 Answer: 139
+"
+42 98,140,"Input: 42 98 Answer: 140
+"
+42 99,141,"Input: 42 99 Answer: 141
+"
+43 43,86,"Input: 43 43 Answer: 86
+"
+43 44,87,"Input: 43 44 Answer: 87
+"
+43 45,88,"Input: 43 45 Answer: 88
+"
+43 46,89,"Input: 43 46 Answer: 89
+"
+43 47,90,"Input: 43 47 Answer: 90
+"
+43 48,91,"Input: 43 48 Answer: 91
+"
+43 49,92,"Input: 43 49 Answer: 92
+"
+43 50,93,"Input: 43 50 Answer: 93
+"
+43 51,94,"Input: 43 51 Answer: 94
+"
+43 52,95,"Input: 43 52 Answer: 95
+"
+43 53,96,"Input: 43 53 Answer: 96
+"
+43 54,97,"Input: 43 54 Answer: 97
+"
+43 57,100,"Input: 43 57 Answer: 100
+"
+43 58,101,"Input: 43 58 Answer: 101
+"
+43 59,102,"Input: 43 59 Answer: 102
+"
+43 60,103,"Input: 43 60 Answer: 103
+"
+43 61,104,"Input: 43 61 Answer: 104
+"
+43 62,105,"Input: 43 62 Answer: 105
+"
+43 63,106,"Input: 43 63 Answer: 106
+"
+43 64,107,"Input: 43 64 Answer: 107
+"
+43 65,108,"Input: 43 65 Answer: 108
+"
+43 66,109,"Input: 43 66 Answer: 109
+"
+43 67,110,"Input: 43 67 Answer: 110
+"
+43 68,111,"Input: 43 68 Answer: 111
+"
+43 69,112,"Input: 43 69 Answer: 112
+"
+43 70,113,"Input: 43 70 Answer: 113
+"
+43 71,114,"Input: 43 71 Answer: 114
+"
+43 72,115,"Input: 43 72 Answer: 115
+"
+43 73,116,"Input: 43 73 Answer: 116
+"
+43 74,117,"Input: 43 74 Answer: 117
+"
+43 75,118,"Input: 43 75 Answer: 118
+"
+43 76,119,"Input: 43 76 Answer: 119
+"
+43 77,120,"Input: 43 77 Answer: 120
+"
+43 78,121,"Input: 43 78 Answer: 121
+"
+43 79,122,"Input: 43 79 Answer: 122
+"
+43 80,123,"Input: 43 80 Answer: 123
+"
+43 81,124,"Input: 43 81 Answer: 124
+"
+43 82,125,"Input: 43 82 Answer: 125
+"
+43 83,126,"Input: 43 83 Answer: 126
+"
+43 84,127,"Input: 43 84 Answer: 127
+"
+43 85,128,"Input: 43 85 Answer: 128
+"
+43 86,129,"Input: 43 86 Answer: 129
+"
+43 87,130,"Input: 43 87 Answer: 130
+"
+43 88,131,"Input: 43 88 Answer: 131
+"
+43 89,132,"Input: 43 89 Answer: 132
+"
+43 90,133,"Input: 43 90 Answer: 133
+"
+43 91,134,"Input: 43 91 Answer: 134
+"
+43 92,135,"Input: 43 92 Answer: 135
+"
+43 93,136,"Input: 43 93 Answer: 136
+"
+43 94,137,"Input: 43 94 Answer: 137
+"
+43 95,138,"Input: 43 95 Answer: 138
+"
+43 96,139,"Input: 43 96 Answer: 139
+"
+43 97,140,"Input: 43 97 Answer: 140
+"
+43 98,141,"Input: 43 98 Answer: 141
+"
+43 99,142,"Input: 43 99 Answer: 142
+"
+44 44,88,"Input: 44 44 Answer: 88
+"
+44 45,89,"Input: 44 45 Answer: 89
+"
+44 46,90,"Input: 44 46 Answer: 90
+"
+44 47,91,"Input: 44 47 Answer: 91
+"
+44 48,92,"Input: 44 48 Answer: 92
+"
+44 49,93,"Input: 44 49 Answer: 93
+"
+44 50,94,"Input: 44 50 Answer: 94
+"
+44 51,95,"Input: 44 51 Answer: 95
+"
+44 52,96,"Input: 44 52 Answer: 96
+"
+44 53,97,"Input: 44 53 Answer: 97
+"
+44 54,98,"Input: 44 54 Answer: 98
+"
+44 55,99,"Input: 44 55 Answer: 99
+"
+44 56,100,"Input: 44 56 Answer: 100
+"
+44 57,101,"Input: 44 57 Answer: 101
+"
+44 58,102,"Input: 44 58 Answer: 102
+"
+44 59,103,"Input: 44 59 Answer: 103
+"
+44 60,104,"Input: 44 60 Answer: 104
+"
+44 61,105,"Input: 44 61 Answer: 105
+"
+44 62,106,"Input: 44 62 Answer: 106
+"
+44 63,107,"Input: 44 63 Answer: 107
+"
+44 64,108,"Input: 44 64 Answer: 108
+"
+44 65,109,"Input: 44 65 Answer: 109
+"
+44 66,110,"Input: 44 66 Answer: 110
+"
+44 67,111,"Input: 44 67 Answer: 111
+"
+44 68,112,"Input: 44 68 Answer: 112
+"
+44 69,113,"Input: 44 69 Answer: 113
+"
+44 70,114,"Input: 44 70 Answer: 114
+"
+44 71,115,"Input: 44 71 Answer: 115
+"
+44 72,116,"Input: 44 72 Answer: 116
+"
+44 73,117,"Input: 44 73 Answer: 117
+"
+44 74,118,"Input: 44 74 Answer: 118
+"
+44 75,119,"Input: 44 75 Answer: 119
+"
+44 76,120,"Input: 44 76 Answer: 120
+"
+44 77,121,"Input: 44 77 Answer: 121
+"
+44 78,122,"Input: 44 78 Answer: 122
+"
+44 79,123,"Input: 44 79 Answer: 123
+"
+44 80,124,"Input: 44 80 Answer: 124
+"
+44 81,125,"Input: 44 81 Answer: 125
+"
+44 82,126,"Input: 44 82 Answer: 126
+"
+44 83,127,"Input: 44 83 Answer: 127
+"
+44 84,128,"Input: 44 84 Answer: 128
+"
+44 85,129,"Input: 44 85 Answer: 129
+"
+44 86,130,"Input: 44 86 Answer: 130
+"
+44 87,131,"Input: 44 87 Answer: 131
+"
+44 88,132,"Input: 44 88 Answer: 132
+"
+44 89,133,"Input: 44 89 Answer: 133
+"
+44 90,134,"Input: 44 90 Answer: 134
+"
+44 91,135,"Input: 44 91 Answer: 135
+"
+44 92,136,"Input: 44 92 Answer: 136
+"
+44 93,137,"Input: 44 93 Answer: 137
+"
+44 94,138,"Input: 44 94 Answer: 138
+"
+44 95,139,"Input: 44 95 Answer: 139
+"
+44 96,140,"Input: 44 96 Answer: 140
+"
+44 97,141,"Input: 44 97 Answer: 141
+"
+44 98,142,"Input: 44 98 Answer: 142
+"
+44 99,143,"Input: 44 99 Answer: 143
+"
+45 45,90,"Input: 45 45 Answer: 90
+"
+45 46,91,"Input: 45 46 Answer: 91
+"
+45 47,92,"Input: 45 47 Answer: 92
+"
+45 48,93,"Input: 45 48 Answer: 93
+"
+45 49,94,"Input: 45 49 Answer: 94
+"
+45 50,95,"Input: 45 50 Answer: 95
+"
+45 51,96,"Input: 45 51 Answer: 96
+"
+45 52,97,"Input: 45 52 Answer: 97
+"
+45 53,98,"Input: 45 53 Answer: 98
+"
+45 54,99,"Input: 45 54 Answer: 99
+"
+45 55,100,"Input: 45 55 Answer: 100
+"
+45 56,101,"Input: 45 56 Answer: 101
+"
+45 57,102,"Input: 45 57 Answer: 102
+"
+45 58,103,"Input: 45 58 Answer: 103
+"
+45 59,104,"Input: 45 59 Answer: 104
+"
+45 60,105,"Input: 45 60 Answer: 105
+"
+45 61,106,"Input: 45 61 Answer: 106
+"
+45 62,107,"Input: 45 62 Answer: 107
+"
+45 63,108,"Input: 45 63 Answer: 108
+"
+45 64,109,"Input: 45 64 Answer: 109
+"
+45 65,110,"Input: 45 65 Answer: 110
+"
+45 66,111,"Input: 45 66 Answer: 111
+"
+45 67,112,"Input: 45 67 Answer: 112
+"
+45 68,113,"Input: 45 68 Answer: 113
+"
+45 69,114,"Input: 45 69 Answer: 114
+"
+45 70,115,"Input: 45 70 Answer: 115
+"
+45 71,116,"Input: 45 71 Answer: 116
+"
+45 72,117,"Input: 45 72 Answer: 117
+"
+45 73,118,"Input: 45 73 Answer: 118
+"
+45 74,119,"Input: 45 74 Answer: 119
+"
+45 75,120,"Input: 45 75 Answer: 120
+"
+45 76,121,"Input: 45 76 Answer: 121
+"
+45 77,122,"Input: 45 77 Answer: 122
+"
+45 78,123,"Input: 45 78 Answer: 123
+"
+45 79,124,"Input: 45 79 Answer: 124
+"
+45 80,125,"Input: 45 80 Answer: 125
+"
+45 81,126,"Input: 45 81 Answer: 126
+"
+45 82,127,"Input: 45 82 Answer: 127
+"
+45 83,128,"Input: 45 83 Answer: 128
+"
+45 84,129,"Input: 45 84 Answer: 129
+"
+45 85,130,"Input: 45 85 Answer: 130
+"
+45 86,131,"Input: 45 86 Answer: 131
+"
+45 87,132,"Input: 45 87 Answer: 132
+"
+45 88,133,"Input: 45 88 Answer: 133
+"
+45 89,134,"Input: 45 89 Answer: 134
+"
+45 90,135,"Input: 45 90 Answer: 135
+"
+45 91,136,"Input: 45 91 Answer: 136
+"
+45 92,137,"Input: 45 92 Answer: 137
+"
+45 93,138,"Input: 45 93 Answer: 138
+"
+45 94,139,"Input: 45 94 Answer: 139
+"
+45 95,140,"Input: 45 95 Answer: 140
+"
+45 96,141,"Input: 45 96 Answer: 141
+"
+45 97,142,"Input: 45 97 Answer: 142
+"
+45 98,143,"Input: 45 98 Answer: 143
+"
+45 99,144,"Input: 45 99 Answer: 144
+"
+46 46,92,"Input: 46 46 Answer: 92
+"
+46 47,93,"Input: 46 47 Answer: 93
+"
+46 48,94,"Input: 46 48 Answer: 94
+"
+46 49,95,"Input: 46 49 Answer: 95
+"
+46 50,96,"Input: 46 50 Answer: 96
+"
+46 51,97,"Input: 46 51 Answer: 97
+"
+46 52,98,"Input: 46 52 Answer: 98
+"
+46 53,99,"Input: 46 53 Answer: 99
+"
+46 54,100,"Input: 46 54 Answer: 100
+"
+46 55,101,"Input: 46 55 Answer: 101
+"
+46 56,102,"Input: 46 56 Answer: 102
+"
+46 57,103,"Input: 46 57 Answer: 103
+"
+46 58,104,"Input: 46 58 Answer: 104
+"
+46 59,105,"Input: 46 59 Answer: 105
+"
+46 60,106,"Input: 46 60 Answer: 106
+"
+46 61,107,"Input: 46 61 Answer: 107
+"
+46 62,108,"Input: 46 62 Answer: 108
+"
+46 63,109,"Input: 46 63 Answer: 109
+"
+46 64,110,"Input: 46 64 Answer: 110
+"
+46 65,111,"Input: 46 65 Answer: 111
+"
+46 66,112,"Input: 46 66 Answer: 112
+"
+46 67,113,"Input: 46 67 Answer: 113
+"
+46 69,115,"Input: 46 69 Answer: 115
+"
+46 70,116,"Input: 46 70 Answer: 116
+"
+46 71,117,"Input: 46 71 Answer: 117
+"
+46 72,118,"Input: 46 72 Answer: 118
+"
+46 73,119,"Input: 46 73 Answer: 119
+"
+46 74,120,"Input: 46 74 Answer: 120
+"
+46 75,121,"Input: 46 75 Answer: 121
+"
+46 76,122,"Input: 46 76 Answer: 122
+"
+46 77,123,"Input: 46 77 Answer: 123
+"
+46 78,124,"Input: 46 78 Answer: 124
+"
+46 79,125,"Input: 46 79 Answer: 125
+"
+46 80,126,"Input: 46 80 Answer: 126
+"
+46 81,127,"Input: 46 81 Answer: 127
+"
+46 83,129,"Input: 46 83 Answer: 129
+"
+46 84,130,"Input: 46 84 Answer: 130
+"
+46 85,131,"Input: 46 85 Answer: 131
+"
+46 86,132,"Input: 46 86 Answer: 132
+"
+46 87,133,"Input: 46 87 Answer: 133
+"
+46 88,134,"Input: 46 88 Answer: 134
+"
+46 89,135,"Input: 46 89 Answer: 135
+"
+46 90,136,"Input: 46 90 Answer: 136
+"
+46 92,138,"Input: 46 92 Answer: 138
+"
+46 93,139,"Input: 46 93 Answer: 139
+"
+46 94,140,"Input: 46 94 Answer: 140
+"
+46 95,141,"Input: 46 95 Answer: 141
+"
+46 96,142,"Input: 46 96 Answer: 142
+"
+46 97,143,"Input: 46 97 Answer: 143
+"
+46 98,144,"Input: 46 98 Answer: 144
+"
+46 99,145,"Input: 46 99 Answer: 145
+"
+47 47,94,"Input: 47 47 Answer: 94
+"
+47 48,95,"Input: 47 48 Answer: 95
+"
+47 49,96,"Input: 47 49 Answer: 96
+"
+47 50,97,"Input: 47 50 Answer: 97
+"
+47 51,98,"Input: 47 51 Answer: 98
+"
+47 52,99,"Input: 47 52 Answer: 99
+"
+47 53,100,"Input: 47 53 Answer: 100
+"
+47 54,101,"Input: 47 54 Answer: 101
+"
+47 55,102,"Input: 47 55 Answer: 102
+"
+47 56,103,"Input: 47 56 Answer: 103
+"
+47 57,104,"Input: 47 57 Answer: 104
+"
+47 58,105,"Input: 47 58 Answer: 105
+"
+47 59,106,"Input: 47 59 Answer: 106
+"
+47 60,107,"Input: 47 60 Answer: 107
+"
+47 61,108,"Input: 47 61 Answer: 108
+"
+47 62,109,"Input: 47 62 Answer: 109
+"
+47 63,110,"Input: 47 63 Answer: 110
+"
+47 64,111,"Input: 47 64 Answer: 111
+"
+47 65,112,"Input: 47 65 Answer: 112
+"
+47 66,113,"Input: 47 66 Answer: 113
+"
+47 67,114,"Input: 47 67 Answer: 114
+"
+47 68,115,"Input: 47 68 Answer: 115
+"
+47 69,116,"Input: 47 69 Answer: 116
+"
+47 70,117,"Input: 47 70 Answer: 117
+"
+47 71,118,"Input: 47 71 Answer: 118
+"
+47 72,119,"Input: 47 72 Answer: 119
+"
+47 73,120,"Input: 47 73 Answer: 120
+"
+47 74,121,"Input: 47 74 Answer: 121
+"
+47 75,122,"Input: 47 75 Answer: 122
+"
+47 76,123,"Input: 47 76 Answer: 123
+"
+47 77,124,"Input: 47 77 Answer: 124
+"
+47 78,125,"Input: 47 78 Answer: 125
+"
+47 79,126,"Input: 47 79 Answer: 126
+"
+47 80,127,"Input: 47 80 Answer: 127
+"
+47 81,128,"Input: 47 81 Answer: 128
+"
+47 82,129,"Input: 47 82 Answer: 129
+"
+47 83,130,"Input: 47 83 Answer: 130
+"
+47 84,131,"Input: 47 84 Answer: 131
+"
+47 85,132,"Input: 47 85 Answer: 132
+"
+47 86,133,"Input: 47 86 Answer: 133
+"
+47 87,134,"Input: 47 87 Answer: 134
+"
+47 88,135,"Input: 47 88 Answer: 135
+"
+47 89,136,"Input: 47 89 Answer: 136
+"
+47 90,137,"Input: 47 90 Answer: 137
+"
+47 91,138,"Input: 47 91 Answer: 138
+"
+47 92,139,"Input: 47 92 Answer: 139
+"
+47 93,140,"Input: 47 93 Answer: 140
+"
+47 94,141,"Input: 47 94 Answer: 141
+"
+47 95,142,"Input: 47 95 Answer: 142
+"
+47 96,143,"Input: 47 96 Answer: 143
+"
+47 97,144,"Input: 47 97 Answer: 144
+"
+47 98,145,"Input: 47 98 Answer: 145
+"
+47 99,146,"Input: 47 99 Answer: 146
+"
+48 48,96,"Input: 48 48 Answer: 96
+"
+48 49,97,"Input: 48 49 Answer: 97
+"
+48 50,98,"Input: 48 50 Answer: 98
+"
+48 51,99,"Input: 48 51 Answer: 99
+"
+48 52,100,"Input: 48 52 Answer: 100
+"
+48 53,101,"Input: 48 53 Answer: 101
+"
+48 54,102,"Input: 48 54 Answer: 102
+"
+48 55,103,"Input: 48 55 Answer: 103
+"
+48 56,104,"Input: 48 56 Answer: 104
+"
+48 57,105,"Input: 48 57 Answer: 105
+"
+48 58,106,"Input: 48 58 Answer: 106
+"
+48 59,107,"Input: 48 59 Answer: 107
+"
+48 60,108,"Input: 48 60 Answer: 108
+"
+48 61,109,"Input: 48 61 Answer: 109
+"
+48 62,110,"Input: 48 62 Answer: 110
+"
+48 63,111,"Input: 48 63 Answer: 111
+"
+48 64,112,"Input: 48 64 Answer: 112
+"
+48 65,113,"Input: 48 65 Answer: 113
+"
+48 66,114,"Input: 48 66 Answer: 114
+"
+48 67,115,"Input: 48 67 Answer: 115
+"
+48 68,116,"Input: 48 68 Answer: 116
+"
+48 69,117,"Input: 48 69 Answer: 117
+"
+48 70,118,"Input: 48 70 Answer: 118
+"
+48 71,119,"Input: 48 71 Answer: 119
+"
+48 72,120,"Input: 48 72 Answer: 120
+"
+48 73,121,"Input: 48 73 Answer: 121
+"
+48 74,122,"Input: 48 74 Answer: 122
+"
+48 75,123,"Input: 48 75 Answer: 123
+"
+48 76,124,"Input: 48 76 Answer: 124
+"
+48 77,125,"Input: 48 77 Answer: 125
+"
+48 78,126,"Input: 48 78 Answer: 126
+"
+48 79,127,"Input: 48 79 Answer: 127
+"
+48 80,128,"Input: 48 80 Answer: 128
+"
+48 81,129,"Input: 48 81 Answer: 129
+"
+48 82,130,"Input: 48 82 Answer: 130
+"
+48 83,131,"Input: 48 83 Answer: 131
+"
+48 84,132,"Input: 48 84 Answer: 132
+"
+48 85,133,"Input: 48 85 Answer: 133
+"
+48 86,134,"Input: 48 86 Answer: 134
+"
+48 87,135,"Input: 48 87 Answer: 135
+"
+48 88,136,"Input: 48 88 Answer: 136
+"
+48 89,137,"Input: 48 89 Answer: 137
+"
+48 91,139,"Input: 48 91 Answer: 139
+"
+48 92,140,"Input: 48 92 Answer: 140
+"
+48 93,141,"Input: 48 93 Answer: 141
+"
+48 94,142,"Input: 48 94 Answer: 142
+"
+48 95,143,"Input: 48 95 Answer: 143
+"
+48 97,145,"Input: 48 97 Answer: 145
+"
+48 98,146,"Input: 48 98 Answer: 146
+"
+48 99,147,"Input: 48 99 Answer: 147
+"
+49 49,98,"Input: 49 49 Answer: 98
+"
+49 50,99,"Input: 49 50 Answer: 99
+"
+49 51,100,"Input: 49 51 Answer: 100
+"
+49 52,101,"Input: 49 52 Answer: 101
+"
+49 53,102,"Input: 49 53 Answer: 102
+"
+49 54,103,"Input: 49 54 Answer: 103
+"
+49 55,104,"Input: 49 55 Answer: 104
+"
+49 56,105,"Input: 49 56 Answer: 105
+"
+49 57,106,"Input: 49 57 Answer: 106
+"
+49 58,107,"Input: 49 58 Answer: 107
+"
+49 59,108,"Input: 49 59 Answer: 108
+"
+49 60,109,"Input: 49 60 Answer: 109
+"
+49 61,110,"Input: 49 61 Answer: 110
+"
+49 62,111,"Input: 49 62 Answer: 111
+"
+49 63,112,"Input: 49 63 Answer: 112
+"
+49 64,113,"Input: 49 64 Answer: 113
+"
+49 65,114,"Input: 49 65 Answer: 114
+"
+49 66,115,"Input: 49 66 Answer: 115
+"
+49 67,116,"Input: 49 67 Answer: 116
+"
+49 68,117,"Input: 49 68 Answer: 117
+"
+49 69,118,"Input: 49 69 Answer: 118
+"
+49 70,119,"Input: 49 70 Answer: 119
+"
+49 71,120,"Input: 49 71 Answer: 120
+"
+49 72,121,"Input: 49 72 Answer: 121
+"
+49 73,122,"Input: 49 73 Answer: 122
+"
+49 74,123,"Input: 49 74 Answer: 123
+"
+49 75,124,"Input: 49 75 Answer: 124
+"
+49 76,125,"Input: 49 76 Answer: 125
+"
+49 77,126,"Input: 49 77 Answer: 126
+"
+49 78,127,"Input: 49 78 Answer: 127
+"
+49 79,128,"Input: 49 79 Answer: 128
+"
+49 80,129,"Input: 49 80 Answer: 129
+"
+49 81,130,"Input: 49 81 Answer: 130
+"
+49 82,131,"Input: 49 82 Answer: 131
+"
+49 83,132,"Input: 49 83 Answer: 132
+"
+49 84,133,"Input: 49 84 Answer: 133
+"
+49 85,134,"Input: 49 85 Answer: 134
+"
+49 86,135,"Input: 49 86 Answer: 135
+"
+49 87,136,"Input: 49 87 Answer: 136
+"
+49 88,137,"Input: 49 88 Answer: 137
+"
+49 89,138,"Input: 49 89 Answer: 138
+"
+49 90,139,"Input: 49 90 Answer: 139
+"
+49 91,140,"Input: 49 91 Answer: 140
+"
+49 92,141,"Input: 49 92 Answer: 141
+"
+49 93,142,"Input: 49 93 Answer: 142
+"
+49 94,143,"Input: 49 94 Answer: 143
+"
+49 95,144,"Input: 49 95 Answer: 144
+"
+49 96,145,"Input: 49 96 Answer: 145
+"
+49 97,146,"Input: 49 97 Answer: 146
+"
+49 98,147,"Input: 49 98 Answer: 147
+"
+49 99,148,"Input: 49 99 Answer: 148
+"
+50 50,100,"Input: 50 50 Answer: 100
+"
+50 51,101,"Input: 50 51 Answer: 101
+"
+50 52,102,"Input: 50 52 Answer: 102
+"
+50 53,103,"Input: 50 53 Answer: 103
+"
+50 54,104,"Input: 50 54 Answer: 104
+"
+50 55,105,"Input: 50 55 Answer: 105
+"
+50 56,106,"Input: 50 56 Answer: 106
+"
+50 57,107,"Input: 50 57 Answer: 107
+"
+50 58,108,"Input: 50 58 Answer: 108
+"
+50 59,109,"Input: 50 59 Answer: 109
+"
+50 60,110,"Input: 50 60 Answer: 110
+"
+50 61,111,"Input: 50 61 Answer: 111
+"
+50 62,112,"Input: 50 62 Answer: 112
+"
+50 63,113,"Input: 50 63 Answer: 113
+"
+50 64,114,"Input: 50 64 Answer: 114
+"
+50 65,115,"Input: 50 65 Answer: 115
+"
+50 66,116,"Input: 50 66 Answer: 116
+"
+50 67,117,"Input: 50 67 Answer: 117
+"
+50 68,118,"Input: 50 68 Answer: 118
+"
+50 69,119,"Input: 50 69 Answer: 119
+"
+50 70,120,"Input: 50 70 Answer: 120
+"
+50 71,121,"Input: 50 71 Answer: 121
+"
+50 73,123,"Input: 50 73 Answer: 123
+"
+50 74,124,"Input: 50 74 Answer: 124
+"
+50 75,125,"Input: 50 75 Answer: 125
+"
+50 76,126,"Input: 50 76 Answer: 126
+"
+50 77,127,"Input: 50 77 Answer: 127
+"
+50 78,128,"Input: 50 78 Answer: 128
+"
+50 79,129,"Input: 50 79 Answer: 129
+"
+50 81,131,"Input: 50 81 Answer: 131
+"
+50 82,132,"Input: 50 82 Answer: 132
+"
+50 83,133,"Input: 50 83 Answer: 133
+"
+50 84,134,"Input: 50 84 Answer: 134
+"
+50 85,135,"Input: 50 85 Answer: 135
+"
+50 86,136,"Input: 50 86 Answer: 136
+"
+50 87,137,"Input: 50 87 Answer: 137
+"
+50 88,138,"Input: 50 88 Answer: 138
+"
+50 89,139,"Input: 50 89 Answer: 139
+"
+50 90,140,"Input: 50 90 Answer: 140
+"
+50 92,142,"Input: 50 92 Answer: 142
+"
+50 93,143,"Input: 50 93 Answer: 143
+"
+50 94,144,"Input: 50 94 Answer: 144
+"
+50 95,145,"Input: 50 95 Answer: 145
+"
+50 96,146,"Input: 50 96 Answer: 146
+"
+50 97,147,"Input: 50 97 Answer: 147
+"
+50 98,148,"Input: 50 98 Answer: 148
+"
+50 99,149,"Input: 50 99 Answer: 149
+"
+51 51,102,"Input: 51 51 Answer: 102
+"
+51 52,103,"Input: 51 52 Answer: 103
+"
+51 53,104,"Input: 51 53 Answer: 104
+"
+51 54,105,"Input: 51 54 Answer: 105
+"
+51 55,106,"Input: 51 55 Answer: 106
+"
+51 56,107,"Input: 51 56 Answer: 107
+"
+51 57,108,"Input: 51 57 Answer: 108
+"
+51 58,109,"Input: 51 58 Answer: 109
+"
+51 59,110,"Input: 51 59 Answer: 110
+"
+51 61,112,"Input: 51 61 Answer: 112
+"
+51 62,113,"Input: 51 62 Answer: 113
+"
+51 63,114,"Input: 51 63 Answer: 114
+"
+51 64,115,"Input: 51 64 Answer: 115
+"
+51 65,116,"Input: 51 65 Answer: 116
+"
+51 66,117,"Input: 51 66 Answer: 117
+"
+51 67,118,"Input: 51 67 Answer: 118
+"
+51 68,119,"Input: 51 68 Answer: 119
+"
+51 69,120,"Input: 51 69 Answer: 120
+"
+51 70,121,"Input: 51 70 Answer: 121
+"
+51 71,122,"Input: 51 71 Answer: 122
+"
+51 72,123,"Input: 51 72 Answer: 123
+"
+51 73,124,"Input: 51 73 Answer: 124
+"
+51 74,125,"Input: 51 74 Answer: 125
+"
+51 75,126,"Input: 51 75 Answer: 126
+"
+51 76,127,"Input: 51 76 Answer: 127
+"
+51 77,128,"Input: 51 77 Answer: 128
+"
+51 78,129,"Input: 51 78 Answer: 129
+"
+51 79,130,"Input: 51 79 Answer: 130
+"
+51 80,131,"Input: 51 80 Answer: 131
+"
+51 81,132,"Input: 51 81 Answer: 132
+"
+51 82,133,"Input: 51 82 Answer: 133
+"
+51 84,135,"Input: 51 84 Answer: 135
+"
+51 85,136,"Input: 51 85 Answer: 136
+"
+51 86,137,"Input: 51 86 Answer: 137
+"
+51 87,138,"Input: 51 87 Answer: 138
+"
+51 88,139,"Input: 51 88 Answer: 139
+"
+51 89,140,"Input: 51 89 Answer: 140
+"
+51 90,141,"Input: 51 90 Answer: 141
+"
+51 91,142,"Input: 51 91 Answer: 142
+"
+51 92,143,"Input: 51 92 Answer: 143
+"
+51 93,144,"Input: 51 93 Answer: 144
+"
+51 94,145,"Input: 51 94 Answer: 145
+"
+51 95,146,"Input: 51 95 Answer: 146
+"
+51 96,147,"Input: 51 96 Answer: 147
+"
+51 97,148,"Input: 51 97 Answer: 148
+"
+51 98,149,"Input: 51 98 Answer: 149
+"
+52 52,104,"Input: 52 52 Answer: 104
+"
+52 53,105,"Input: 52 53 Answer: 105
+"
+52 54,106,"Input: 52 54 Answer: 106
+"
+52 55,107,"Input: 52 55 Answer: 107
+"
+52 56,108,"Input: 52 56 Answer: 108
+"
+52 57,109,"Input: 52 57 Answer: 109
+"
+52 58,110,"Input: 52 58 Answer: 110
+"
+52 59,111,"Input: 52 59 Answer: 111
+"
+52 60,112,"Input: 52 60 Answer: 112
+"
+52 61,113,"Input: 52 61 Answer: 113
+"
+52 62,114,"Input: 52 62 Answer: 114
+"
+52 63,115,"Input: 52 63 Answer: 115
+"
+52 64,116,"Input: 52 64 Answer: 116
+"
+52 65,117,"Input: 52 65 Answer: 117
+"
+52 66,118,"Input: 52 66 Answer: 118
+"
+52 67,119,"Input: 52 67 Answer: 119
+"
+52 68,120,"Input: 52 68 Answer: 120
+"
+52 69,121,"Input: 52 69 Answer: 121
+"
+52 70,122,"Input: 52 70 Answer: 122
+"
+52 71,123,"Input: 52 71 Answer: 123
+"
+52 72,124,"Input: 52 72 Answer: 124
+"
+52 73,125,"Input: 52 73 Answer: 125
+"
+52 74,126,"Input: 52 74 Answer: 126
+"
+52 75,127,"Input: 52 75 Answer: 127
+"
+52 77,129,"Input: 52 77 Answer: 129
+"
+52 78,130,"Input: 52 78 Answer: 130
+"
+52 79,131,"Input: 52 79 Answer: 131
+"
+52 80,132,"Input: 52 80 Answer: 132
+"
+52 81,133,"Input: 52 81 Answer: 133
+"
+52 82,134,"Input: 52 82 Answer: 134
+"
+52 83,135,"Input: 52 83 Answer: 135
+"
+52 84,136,"Input: 52 84 Answer: 136
+"
+52 85,137,"Input: 52 85 Answer: 137
+"
+52 86,138,"Input: 52 86 Answer: 138
+"
+52 87,139,"Input: 52 87 Answer: 139
+"
+52 88,140,"Input: 52 88 Answer: 140
+"
+52 89,141,"Input: 52 89 Answer: 141
+"
+52 90,142,"Input: 52 90 Answer: 142
+"
+52 91,143,"Input: 52 91 Answer: 143
+"
+52 92,144,"Input: 52 92 Answer: 144
+"
+52 93,145,"Input: 52 93 Answer: 145
+"
+52 94,146,"Input: 52 94 Answer: 146
+"
+52 95,147,"Input: 52 95 Answer: 147
+"
+52 96,148,"Input: 52 96 Answer: 148
+"
+52 97,149,"Input: 52 97 Answer: 149
+"
+52 98,150,"Input: 52 98 Answer: 150
+"
+52 99,151,"Input: 52 99 Answer: 151
+"
+53 53,106,"Input: 53 53 Answer: 106
+"
+53 54,107,"Input: 53 54 Answer: 107
+"
+53 55,108,"Input: 53 55 Answer: 108
+"
+53 56,109,"Input: 53 56 Answer: 109
+"
+53 57,110,"Input: 53 57 Answer: 110
+"
+53 58,111,"Input: 53 58 Answer: 111
+"
+53 59,112,"Input: 53 59 Answer: 112
+"
+53 60,113,"Input: 53 60 Answer: 113
+"
+53 61,114,"Input: 53 61 Answer: 114
+"
+53 62,115,"Input: 53 62 Answer: 115
+"
+53 63,116,"Input: 53 63 Answer: 116
+"
+53 64,117,"Input: 53 64 Answer: 117
+"
+53 65,118,"Input: 53 65 Answer: 118
+"
+53 66,119,"Input: 53 66 Answer: 119
+"
+53 67,120,"Input: 53 67 Answer: 120
+"
+53 68,121,"Input: 53 68 Answer: 121
+"
+53 69,122,"Input: 53 69 Answer: 122
+"
+53 70,123,"Input: 53 70 Answer: 123
+"
+53 72,125,"Input: 53 72 Answer: 125
+"
+53 73,126,"Input: 53 73 Answer: 126
+"
+53 74,127,"Input: 53 74 Answer: 127
+"
+53 75,128,"Input: 53 75 Answer: 128
+"
+53 76,129,"Input: 53 76 Answer: 129
+"
+53 77,130,"Input: 53 77 Answer: 130
+"
+53 78,131,"Input: 53 78 Answer: 131
+"
+53 79,132,"Input: 53 79 Answer: 132
+"
+53 80,133,"Input: 53 80 Answer: 133
+"
+53 81,134,"Input: 53 81 Answer: 134
+"
+53 82,135,"Input: 53 82 Answer: 135
+"
+53 83,136,"Input: 53 83 Answer: 136
+"
+53 84,137,"Input: 53 84 Answer: 137
+"
+53 85,138,"Input: 53 85 Answer: 138
+"
+53 86,139,"Input: 53 86 Answer: 139
+"
+53 87,140,"Input: 53 87 Answer: 140
+"
+53 88,141,"Input: 53 88 Answer: 141
+"
+53 89,142,"Input: 53 89 Answer: 142
+"
+53 90,143,"Input: 53 90 Answer: 143
+"
+53 91,144,"Input: 53 91 Answer: 144
+"
+53 92,145,"Input: 53 92 Answer: 145
+"
+53 93,146,"Input: 53 93 Answer: 146
+"
+53 94,147,"Input: 53 94 Answer: 147
+"
+53 95,148,"Input: 53 95 Answer: 148
+"
+53 96,149,"Input: 53 96 Answer: 149
+"
+53 98,151,"Input: 53 98 Answer: 151
+"
+53 99,152,"Input: 53 99 Answer: 152
+"
+54 54,108,"Input: 54 54 Answer: 108
+"
+54 55,109,"Input: 54 55 Answer: 109
+"
+54 56,110,"Input: 54 56 Answer: 110
+"
+54 57,111,"Input: 54 57 Answer: 111
+"
+54 58,112,"Input: 54 58 Answer: 112
+"
+54 59,113,"Input: 54 59 Answer: 113
+"
+54 60,114,"Input: 54 60 Answer: 114
+"
+54 61,115,"Input: 54 61 Answer: 115
+"
+54 62,116,"Input: 54 62 Answer: 116
+"
+54 63,117,"Input: 54 63 Answer: 117
+"
+54 64,118,"Input: 54 64 Answer: 118
+"
+54 65,119,"Input: 54 65 Answer: 119
+"
+54 66,120,"Input: 54 66 Answer: 120
+"
+54 67,121,"Input: 54 67 Answer: 121
+"
+54 68,122,"Input: 54 68 Answer: 122
+"
+54 69,123,"Input: 54 69 Answer: 123
+"
+54 70,124,"Input: 54 70 Answer: 124
+"
+54 71,125,"Input: 54 71 Answer: 125
+"
+54 73,127,"Input: 54 73 Answer: 127
+"
+54 74,128,"Input: 54 74 Answer: 128
+"
+54 75,129,"Input: 54 75 Answer: 129
+"
+54 76,130,"Input: 54 76 Answer: 130
+"
+54 77,131,"Input: 54 77 Answer: 131
+"
+54 78,132,"Input: 54 78 Answer: 132
+"
+54 79,133,"Input: 54 79 Answer: 133
+"
+54 80,134,"Input: 54 80 Answer: 134
+"
+54 81,135,"Input: 54 81 Answer: 135
+"
+54 82,136,"Input: 54 82 Answer: 136
+"
+54 83,137,"Input: 54 83 Answer: 137
+"
+54 84,138,"Input: 54 84 Answer: 138
+"
+54 85,139,"Input: 54 85 Answer: 139
+"
+54 86,140,"Input: 54 86 Answer: 140
+"
+54 87,141,"Input: 54 87 Answer: 141
+"
+54 88,142,"Input: 54 88 Answer: 142
+"
+54 89,143,"Input: 54 89 Answer: 143
+"
+54 90,144,"Input: 54 90 Answer: 144
+"
+54 91,145,"Input: 54 91 Answer: 145
+"
+54 92,146,"Input: 54 92 Answer: 146
+"
+54 93,147,"Input: 54 93 Answer: 147
+"
+54 94,148,"Input: 54 94 Answer: 148
+"
+54 95,149,"Input: 54 95 Answer: 149
+"
+54 96,150,"Input: 54 96 Answer: 150
+"
+54 97,151,"Input: 54 97 Answer: 151
+"
+54 98,152,"Input: 54 98 Answer: 152
+"
+54 99,153,"Input: 54 99 Answer: 153
+"
+55 55,110,"Input: 55 55 Answer: 110
+"
+55 56,111,"Input: 55 56 Answer: 111
+"
+55 57,112,"Input: 55 57 Answer: 112
+"
+55 58,113,"Input: 55 58 Answer: 113
+"
+55 59,114,"Input: 55 59 Answer: 114
+"
+55 60,115,"Input: 55 60 Answer: 115
+"
+55 61,116,"Input: 55 61 Answer: 116
+"
+55 62,117,"Input: 55 62 Answer: 117
+"
+55 63,118,"Input: 55 63 Answer: 118
+"
+55 64,119,"Input: 55 64 Answer: 119
+"
+55 65,120,"Input: 55 65 Answer: 120
+"
+55 66,121,"Input: 55 66 Answer: 121
+"
+55 67,122,"Input: 55 67 Answer: 122
+"
+55 68,123,"Input: 55 68 Answer: 123
+"
+55 69,124,"Input: 55 69 Answer: 124
+"
+55 70,125,"Input: 55 70 Answer: 125
+"
+55 71,126,"Input: 55 71 Answer: 126
+"
+55 72,127,"Input: 55 72 Answer: 127
+"
+55 73,128,"Input: 55 73 Answer: 128
+"
+55 74,129,"Input: 55 74 Answer: 129
+"
+55 75,130,"Input: 55 75 Answer: 130
+"
+55 76,131,"Input: 55 76 Answer: 131
+"
+55 77,132,"Input: 55 77 Answer: 132
+"
+55 78,133,"Input: 55 78 Answer: 133
+"
+55 79,134,"Input: 55 79 Answer: 134
+"
+55 80,135,"Input: 55 80 Answer: 135
+"
+55 81,136,"Input: 55 81 Answer: 136
+"
+55 82,137,"Input: 55 82 Answer: 137
+"
+55 83,138,"Input: 55 83 Answer: 138
+"
+55 84,139,"Input: 55 84 Answer: 139
+"
+55 85,140,"Input: 55 85 Answer: 140
+"
+55 86,141,"Input: 55 86 Answer: 141
+"
+55 87,142,"Input: 55 87 Answer: 142
+"
+55 88,143,"Input: 55 88 Answer: 143
+"
+55 89,144,"Input: 55 89 Answer: 144
+"
+55 90,145,"Input: 55 90 Answer: 145
+"
+55 91,146,"Input: 55 91 Answer: 146
+"
+55 92,147,"Input: 55 92 Answer: 147
+"
+55 93,148,"Input: 55 93 Answer: 148
+"
+55 94,149,"Input: 55 94 Answer: 149
+"
+55 95,150,"Input: 55 95 Answer: 150
+"
+55 96,151,"Input: 55 96 Answer: 151
+"
+55 97,152,"Input: 55 97 Answer: 152
+"
+55 98,153,"Input: 55 98 Answer: 153
+"
+55 99,154,"Input: 55 99 Answer: 154
+"
+56 56,112,"Input: 56 56 Answer: 112
+"
+56 57,113,"Input: 56 57 Answer: 113
+"
+56 59,115,"Input: 56 59 Answer: 115
+"
+56 60,116,"Input: 56 60 Answer: 116
+"
+56 61,117,"Input: 56 61 Answer: 117
+"
+56 62,118,"Input: 56 62 Answer: 118
+"
+56 64,120,"Input: 56 64 Answer: 120
+"
+56 65,121,"Input: 56 65 Answer: 121
+"
+56 66,122,"Input: 56 66 Answer: 122
+"
+56 67,123,"Input: 56 67 Answer: 123
+"
+56 68,124,"Input: 56 68 Answer: 124
+"
+56 69,125,"Input: 56 69 Answer: 125
+"
+56 70,126,"Input: 56 70 Answer: 126
+"
+56 71,127,"Input: 56 71 Answer: 127
+"
+56 72,128,"Input: 56 72 Answer: 128
+"
+56 73,129,"Input: 56 73 Answer: 129
+"
+56 74,130,"Input: 56 74 Answer: 130
+"
+56 75,131,"Input: 56 75 Answer: 131
+"
+56 76,132,"Input: 56 76 Answer: 132
+"
+56 77,133,"Input: 56 77 Answer: 133
+"
+56 78,134,"Input: 56 78 Answer: 134
+"
+56 79,135,"Input: 56 79 Answer: 135
+"
+56 80,136,"Input: 56 80 Answer: 136
+"
+56 81,137,"Input: 56 81 Answer: 137
+"
+56 82,138,"Input: 56 82 Answer: 138
+"
+56 83,139,"Input: 56 83 Answer: 139
+"
+56 84,140,"Input: 56 84 Answer: 140
+"
+56 85,141,"Input: 56 85 Answer: 141
+"
+56 86,142,"Input: 56 86 Answer: 142
+"
+56 87,143,"Input: 56 87 Answer: 143
+"
+56 88,144,"Input: 56 88 Answer: 144
+"
+56 89,145,"Input: 56 89 Answer: 145
+"
+56 90,146,"Input: 56 90 Answer: 146
+"
+56 91,147,"Input: 56 91 Answer: 147
+"
+56 92,148,"Input: 56 92 Answer: 148
+"
+56 93,149,"Input: 56 93 Answer: 149
+"
+56 94,150,"Input: 56 94 Answer: 150
+"
+56 95,151,"Input: 56 95 Answer: 151
+"
+56 96,152,"Input: 56 96 Answer: 152
+"
+56 97,153,"Input: 56 97 Answer: 153
+"
+56 98,154,"Input: 56 98 Answer: 154
+"
+56 99,155,"Input: 56 99 Answer: 155
+"
+57 57,114,"Input: 57 57 Answer: 114
+"
+57 58,115,"Input: 57 58 Answer: 115
+"
+57 59,116,"Input: 57 59 Answer: 116
+"
+57 60,117,"Input: 57 60 Answer: 117
+"
+57 61,118,"Input: 57 61 Answer: 118
+"
+57 62,119,"Input: 57 62 Answer: 119
+"
+57 63,120,"Input: 57 63 Answer: 120
+"
+57 64,121,"Input: 57 64 Answer: 121
+"
+57 65,122,"Input: 57 65 Answer: 122
+"
+57 66,123,"Input: 57 66 Answer: 123
+"
+57 67,124,"Input: 57 67 Answer: 124
+"
+57 68,125,"Input: 57 68 Answer: 125
+"
+57 69,126,"Input: 57 69 Answer: 126
+"
+57 70,127,"Input: 57 70 Answer: 127
+"
+57 71,128,"Input: 57 71 Answer: 128
+"
+57 72,129,"Input: 57 72 Answer: 129
+"
+57 73,130,"Input: 57 73 Answer: 130
+"
+57 75,132,"Input: 57 75 Answer: 132
+"
+57 76,133,"Input: 57 76 Answer: 133
+"
+57 77,134,"Input: 57 77 Answer: 134
+"
+57 78,135,"Input: 57 78 Answer: 135
+"
+57 79,136,"Input: 57 79 Answer: 136
+"
+57 80,137,"Input: 57 80 Answer: 137
+"
+57 81,138,"Input: 57 81 Answer: 138
+"
+57 82,139,"Input: 57 82 Answer: 139
+"
+57 83,140,"Input: 57 83 Answer: 140
+"
+57 84,141,"Input: 57 84 Answer: 141
+"
+57 85,142,"Input: 57 85 Answer: 142
+"
+57 86,143,"Input: 57 86 Answer: 143
+"
+57 87,144,"Input: 57 87 Answer: 144
+"
+57 88,145,"Input: 57 88 Answer: 145
+"
+57 89,146,"Input: 57 89 Answer: 146
+"
+57 90,147,"Input: 57 90 Answer: 147
+"
+57 91,148,"Input: 57 91 Answer: 148
+"
+57 92,149,"Input: 57 92 Answer: 149
+"
+57 93,150,"Input: 57 93 Answer: 150
+"
+57 94,151,"Input: 57 94 Answer: 151
+"
+57 95,152,"Input: 57 95 Answer: 152
+"
+57 96,153,"Input: 57 96 Answer: 153
+"
+57 97,154,"Input: 57 97 Answer: 154
+"
+57 98,155,"Input: 57 98 Answer: 155
+"
+57 99,156,"Input: 57 99 Answer: 156
+"
+58 58,116,"Input: 58 58 Answer: 116
+"
+58 59,117,"Input: 58 59 Answer: 117
+"
+58 60,118,"Input: 58 60 Answer: 118
+"
+58 61,119,"Input: 58 61 Answer: 119
+"
+58 62,120,"Input: 58 62 Answer: 120
+"
+58 63,121,"Input: 58 63 Answer: 121
+"
+58 64,122,"Input: 58 64 Answer: 122
+"
+58 65,123,"Input: 58 65 Answer: 123
+"
+58 66,124,"Input: 58 66 Answer: 124
+"
+58 67,125,"Input: 58 67 Answer: 125
+"
+58 68,126,"Input: 58 68 Answer: 126
+"
+58 69,127,"Input: 58 69 Answer: 127
+"
+58 70,128,"Input: 58 70 Answer: 128
+"
+58 71,129,"Input: 58 71 Answer: 129
+"
+58 72,130,"Input: 58 72 Answer: 130
+"
+58 74,132,"Input: 58 74 Answer: 132
+"
+58 75,133,"Input: 58 75 Answer: 133
+"
+58 76,134,"Input: 58 76 Answer: 134
+"
+58 77,135,"Input: 58 77 Answer: 135
+"
+58 78,136,"Input: 58 78 Answer: 136
+"
+58 79,137,"Input: 58 79 Answer: 137
+"
+58 80,138,"Input: 58 80 Answer: 138
+"
+58 81,139,"Input: 58 81 Answer: 139
+"
+58 82,140,"Input: 58 82 Answer: 140
+"
+58 83,141,"Input: 58 83 Answer: 141
+"
+58 84,142,"Input: 58 84 Answer: 142
+"
+58 85,143,"Input: 58 85 Answer: 143
+"
+58 86,144,"Input: 58 86 Answer: 144
+"
+58 87,145,"Input: 58 87 Answer: 145
+"
+58 88,146,"Input: 58 88 Answer: 146
+"
+58 89,147,"Input: 58 89 Answer: 147
+"
+58 90,148,"Input: 58 90 Answer: 148
+"
+58 91,149,"Input: 58 91 Answer: 149
+"
+58 92,150,"Input: 58 92 Answer: 150
+"
+58 93,151,"Input: 58 93 Answer: 151
+"
+58 94,152,"Input: 58 94 Answer: 152
+"
+58 95,153,"Input: 58 95 Answer: 153
+"
+58 96,154,"Input: 58 96 Answer: 154
+"
+58 97,155,"Input: 58 97 Answer: 155
+"
+58 98,156,"Input: 58 98 Answer: 156
+"
+58 99,157,"Input: 58 99 Answer: 157
+"
+59 59,118,"Input: 59 59 Answer: 118
+"
+59 60,119,"Input: 59 60 Answer: 119
+"
+59 61,120,"Input: 59 61 Answer: 120
+"
+59 62,121,"Input: 59 62 Answer: 121
+"
+59 63,122,"Input: 59 63 Answer: 122
+"
+59 64,123,"Input: 59 64 Answer: 123
+"
+59 65,124,"Input: 59 65 Answer: 124
+"
+59 66,125,"Input: 59 66 Answer: 125
+"
+59 67,126,"Input: 59 67 Answer: 126
+"
+59 68,127,"Input: 59 68 Answer: 127
+"
+59 69,128,"Input: 59 69 Answer: 128
+"
+59 70,129,"Input: 59 70 Answer: 129
+"
+59 71,130,"Input: 59 71 Answer: 130
+"
+59 72,131,"Input: 59 72 Answer: 131
+"
+59 73,132,"Input: 59 73 Answer: 132
+"
+59 74,133,"Input: 59 74 Answer: 133
+"
+59 75,134,"Input: 59 75 Answer: 134
+"
+59 76,135,"Input: 59 76 Answer: 135
+"
+59 77,136,"Input: 59 77 Answer: 136
+"
+59 78,137,"Input: 59 78 Answer: 137
+"
+59 79,138,"Input: 59 79 Answer: 138
+"
+59 80,139,"Input: 59 80 Answer: 139
+"
+59 81,140,"Input: 59 81 Answer: 140
+"
+59 82,141,"Input: 59 82 Answer: 141
+"
+59 83,142,"Input: 59 83 Answer: 142
+"
+59 84,143,"Input: 59 84 Answer: 143
+"
+59 85,144,"Input: 59 85 Answer: 144
+"
+59 86,145,"Input: 59 86 Answer: 145
+"
+59 87,146,"Input: 59 87 Answer: 146
+"
+59 88,147,"Input: 59 88 Answer: 147
+"
+59 90,149,"Input: 59 90 Answer: 149
+"
+59 91,150,"Input: 59 91 Answer: 150
+"
+59 92,151,"Input: 59 92 Answer: 151
+"
+59 93,152,"Input: 59 93 Answer: 152
+"
+59 94,153,"Input: 59 94 Answer: 153
+"
+59 95,154,"Input: 59 95 Answer: 154
+"
+59 96,155,"Input: 59 96 Answer: 155
+"
+59 97,156,"Input: 59 97 Answer: 156
+"
+59 98,157,"Input: 59 98 Answer: 157
+"
+59 99,158,"Input: 59 99 Answer: 158
+"
+60 60,120,"Input: 60 60 Answer: 120
+"
+60 61,121,"Input: 60 61 Answer: 121
+"
+60 62,122,"Input: 60 62 Answer: 122
+"
+60 63,123,"Input: 60 63 Answer: 123
+"
+60 64,124,"Input: 60 64 Answer: 124
+"
+60 65,125,"Input: 60 65 Answer: 125
+"
+60 66,126,"Input: 60 66 Answer: 126
+"
+60 67,127,"Input: 60 67 Answer: 127
+"
+60 68,128,"Input: 60 68 Answer: 128
+"
+60 69,129,"Input: 60 69 Answer: 129
+"
+60 70,130,"Input: 60 70 Answer: 130
+"
+60 71,131,"Input: 60 71 Answer: 131
+"
+60 72,132,"Input: 60 72 Answer: 132
+"
+60 73,133,"Input: 60 73 Answer: 133
+"
+60 74,134,"Input: 60 74 Answer: 134
+"
+60 75,135,"Input: 60 75 Answer: 135
+"
+60 76,136,"Input: 60 76 Answer: 136
+"
+60 77,137,"Input: 60 77 Answer: 137
+"
+60 78,138,"Input: 60 78 Answer: 138
+"
+60 79,139,"Input: 60 79 Answer: 139
+"
+60 80,140,"Input: 60 80 Answer: 140
+"
+60 81,141,"Input: 60 81 Answer: 141
+"
+60 82,142,"Input: 60 82 Answer: 142
+"
+60 84,144,"Input: 60 84 Answer: 144
+"
+60 85,145,"Input: 60 85 Answer: 145
+"
+60 86,146,"Input: 60 86 Answer: 146
+"
+60 87,147,"Input: 60 87 Answer: 147
+"
+60 88,148,"Input: 60 88 Answer: 148
+"
+60 89,149,"Input: 60 89 Answer: 149
+"
+60 90,150,"Input: 60 90 Answer: 150
+"
+60 91,151,"Input: 60 91 Answer: 151
+"
+60 92,152,"Input: 60 92 Answer: 152
+"
+60 93,153,"Input: 60 93 Answer: 153
+"
+60 94,154,"Input: 60 94 Answer: 154
+"
+60 95,155,"Input: 60 95 Answer: 155
+"
+60 96,156,"Input: 60 96 Answer: 156
+"
+60 97,157,"Input: 60 97 Answer: 157
+"
+60 98,158,"Input: 60 98 Answer: 158
+"
+60 99,159,"Input: 60 99 Answer: 159
+"
+61 61,122,"Input: 61 61 Answer: 122
+"
+61 62,123,"Input: 61 62 Answer: 123
+"
+61 63,124,"Input: 61 63 Answer: 124
+"
+61 64,125,"Input: 61 64 Answer: 125
+"
+61 65,126,"Input: 61 65 Answer: 126
+"
+61 66,127,"Input: 61 66 Answer: 127
+"
+61 67,128,"Input: 61 67 Answer: 128
+"
+61 68,129,"Input: 61 68 Answer: 129
+"
+61 69,130,"Input: 61 69 Answer: 130
+"
+61 70,131,"Input: 61 70 Answer: 131
+"
+61 71,132,"Input: 61 71 Answer: 132
+"
+61 72,133,"Input: 61 72 Answer: 133
+"
+61 73,134,"Input: 61 73 Answer: 134
+"
+61 74,135,"Input: 61 74 Answer: 135
+"
+61 75,136,"Input: 61 75 Answer: 136
+"
+61 76,137,"Input: 61 76 Answer: 137
+"
+61 77,138,"Input: 61 77 Answer: 138
+"
+61 78,139,"Input: 61 78 Answer: 139
+"
+61 79,140,"Input: 61 79 Answer: 140
+"
+61 80,141,"Input: 61 80 Answer: 141
+"
+61 81,142,"Input: 61 81 Answer: 142
+"
+61 82,143,"Input: 61 82 Answer: 143
+"
+61 83,144,"Input: 61 83 Answer: 144
+"
+61 84,145,"Input: 61 84 Answer: 145
+"
+61 85,146,"Input: 61 85 Answer: 146
+"
+61 86,147,"Input: 61 86 Answer: 147
+"
+61 87,148,"Input: 61 87 Answer: 148
+"
+61 88,149,"Input: 61 88 Answer: 149
+"
+61 89,150,"Input: 61 89 Answer: 150
+"
+61 90,151,"Input: 61 90 Answer: 151
+"
+61 91,152,"Input: 61 91 Answer: 152
+"
+61 92,153,"Input: 61 92 Answer: 153
+"
+61 93,154,"Input: 61 93 Answer: 154
+"
+61 94,155,"Input: 61 94 Answer: 155
+"
+61 95,156,"Input: 61 95 Answer: 156
+"
+61 96,157,"Input: 61 96 Answer: 157
+"
+61 97,158,"Input: 61 97 Answer: 158
+"
+61 98,159,"Input: 61 98 Answer: 159
+"
+61 99,160,"Input: 61 99 Answer: 160
+"
+62 62,124,"Input: 62 62 Answer: 124
+"
+62 63,125,"Input: 62 63 Answer: 125
+"
+62 64,126,"Input: 62 64 Answer: 126
+"
+62 65,127,"Input: 62 65 Answer: 127
+"
+62 66,128,"Input: 62 66 Answer: 128
+"
+62 67,129,"Input: 62 67 Answer: 129
+"
+62 68,130,"Input: 62 68 Answer: 130
+"
+62 69,131,"Input: 62 69 Answer: 131
+"
+62 70,132,"Input: 62 70 Answer: 132
+"
+62 71,133,"Input: 62 71 Answer: 133
+"
+62 72,134,"Input: 62 72 Answer: 134
+"
+62 73,135,"Input: 62 73 Answer: 135
+"
+62 74,136,"Input: 62 74 Answer: 136
+"
+62 75,137,"Input: 62 75 Answer: 137
+"
+62 76,138,"Input: 62 76 Answer: 138
+"
+62 77,139,"Input: 62 77 Answer: 139
+"
+62 78,140,"Input: 62 78 Answer: 140
+"
+62 79,141,"Input: 62 79 Answer: 141
+"
+62 80,142,"Input: 62 80 Answer: 142
+"
+62 81,143,"Input: 62 81 Answer: 143
+"
+62 82,144,"Input: 62 82 Answer: 144
+"
+62 83,145,"Input: 62 83 Answer: 145
+"
+62 84,146,"Input: 62 84 Answer: 146
+"
+62 85,147,"Input: 62 85 Answer: 147
+"
+62 86,148,"Input: 62 86 Answer: 148
+"
+62 87,149,"Input: 62 87 Answer: 149
+"
+62 88,150,"Input: 62 88 Answer: 150
+"
+62 89,151,"Input: 62 89 Answer: 151
+"
+62 90,152,"Input: 62 90 Answer: 152
+"
+62 91,153,"Input: 62 91 Answer: 153
+"
+62 93,155,"Input: 62 93 Answer: 155
+"
+62 94,156,"Input: 62 94 Answer: 156
+"
+62 95,157,"Input: 62 95 Answer: 157
+"
+62 97,159,"Input: 62 97 Answer: 159
+"
+62 98,160,"Input: 62 98 Answer: 160
+"
+62 99,161,"Input: 62 99 Answer: 161
+"
+63 63,126,"Input: 63 63 Answer: 126
+"
+63 64,127,"Input: 63 64 Answer: 127
+"
+63 65,128,"Input: 63 65 Answer: 128
+"
+63 66,129,"Input: 63 66 Answer: 129
+"
+63 67,130,"Input: 63 67 Answer: 130
+"
+63 68,131,"Input: 63 68 Answer: 131
+"
+63 69,132,"Input: 63 69 Answer: 132
+"
+63 70,133,"Input: 63 70 Answer: 133
+"
+63 71,134,"Input: 63 71 Answer: 134
+"
+63 72,135,"Input: 63 72 Answer: 135
+"
+63 73,136,"Input: 63 73 Answer: 136
+"
+63 74,137,"Input: 63 74 Answer: 137
+"
+63 75,138,"Input: 63 75 Answer: 138
+"
+63 76,139,"Input: 63 76 Answer: 139
+"
+63 77,140,"Input: 63 77 Answer: 140
+"
+63 78,141,"Input: 63 78 Answer: 141
+"
+63 79,142,"Input: 63 79 Answer: 142
+"
+63 80,143,"Input: 63 80 Answer: 143
+"
+63 81,144,"Input: 63 81 Answer: 144
+"
+63 82,145,"Input: 63 82 Answer: 145
+"
+63 83,146,"Input: 63 83 Answer: 146
+"
+63 84,147,"Input: 63 84 Answer: 147
+"
+63 85,148,"Input: 63 85 Answer: 148
+"
+63 86,149,"Input: 63 86 Answer: 149
+"
+63 87,150,"Input: 63 87 Answer: 150
+"
+63 88,151,"Input: 63 88 Answer: 151
+"
+63 89,152,"Input: 63 89 Answer: 152
+"
+63 90,153,"Input: 63 90 Answer: 153
+"
+63 91,154,"Input: 63 91 Answer: 154
+"
+63 92,155,"Input: 63 92 Answer: 155
+"
+63 93,156,"Input: 63 93 Answer: 156
+"
+63 94,157,"Input: 63 94 Answer: 157
+"
+63 95,158,"Input: 63 95 Answer: 158
+"
+63 96,159,"Input: 63 96 Answer: 159
+"
+63 97,160,"Input: 63 97 Answer: 160
+"
+63 98,161,"Input: 63 98 Answer: 161
+"
+63 99,162,"Input: 63 99 Answer: 162
+"
+64 64,128,"Input: 64 64 Answer: 128
+"
+64 65,129,"Input: 64 65 Answer: 129
+"
+64 66,130,"Input: 64 66 Answer: 130
+"
+64 67,131,"Input: 64 67 Answer: 131
+"
+64 68,132,"Input: 64 68 Answer: 132
+"
+64 69,133,"Input: 64 69 Answer: 133
+"
+64 70,134,"Input: 64 70 Answer: 134
+"
+64 71,135,"Input: 64 71 Answer: 135
+"
+64 72,136,"Input: 64 72 Answer: 136
+"
+64 73,137,"Input: 64 73 Answer: 137
+"
+64 74,138,"Input: 64 74 Answer: 138
+"
+64 75,139,"Input: 64 75 Answer: 139
+"
+64 76,140,"Input: 64 76 Answer: 140
+"
+64 77,141,"Input: 64 77 Answer: 141
+"
+64 78,142,"Input: 64 78 Answer: 142
+"
+64 79,143,"Input: 64 79 Answer: 143
+"
+64 80,144,"Input: 64 80 Answer: 144
+"
+64 81,145,"Input: 64 81 Answer: 145
+"
+64 82,146,"Input: 64 82 Answer: 146
+"
+64 83,147,"Input: 64 83 Answer: 147
+"
+64 84,148,"Input: 64 84 Answer: 148
+"
+64 85,149,"Input: 64 85 Answer: 149
+"
+64 86,150,"Input: 64 86 Answer: 150
+"
+64 87,151,"Input: 64 87 Answer: 151
+"
+64 88,152,"Input: 64 88 Answer: 152
+"
+64 89,153,"Input: 64 89 Answer: 153
+"
+64 90,154,"Input: 64 90 Answer: 154
+"
+64 91,155,"Input: 64 91 Answer: 155
+"
+64 92,156,"Input: 64 92 Answer: 156
+"
+64 93,157,"Input: 64 93 Answer: 157
+"
+64 94,158,"Input: 64 94 Answer: 158
+"
+64 95,159,"Input: 64 95 Answer: 159
+"
+64 96,160,"Input: 64 96 Answer: 160
+"
+64 97,161,"Input: 64 97 Answer: 161
+"
+64 98,162,"Input: 64 98 Answer: 162
+"
+64 99,163,"Input: 64 99 Answer: 163
+"
+65 65,130,"Input: 65 65 Answer: 130
+"
+65 66,131,"Input: 65 66 Answer: 131
+"
+65 67,132,"Input: 65 67 Answer: 132
+"
+65 68,133,"Input: 65 68 Answer: 133
+"
+65 69,134,"Input: 65 69 Answer: 134
+"
+65 70,135,"Input: 65 70 Answer: 135
+"
+65 71,136,"Input: 65 71 Answer: 136
+"
+65 72,137,"Input: 65 72 Answer: 137
+"
+65 73,138,"Input: 65 73 Answer: 138
+"
+65 74,139,"Input: 65 74 Answer: 139
+"
+65 75,140,"Input: 65 75 Answer: 140
+"
+65 76,141,"Input: 65 76 Answer: 141
+"
+65 78,143,"Input: 65 78 Answer: 143
+"
+65 79,144,"Input: 65 79 Answer: 144
+"
+65 80,145,"Input: 65 80 Answer: 145
+"
+65 81,146,"Input: 65 81 Answer: 146
+"
+65 82,147,"Input: 65 82 Answer: 147
+"
+65 83,148,"Input: 65 83 Answer: 148
+"
+65 84,149,"Input: 65 84 Answer: 149
+"
+65 85,150,"Input: 65 85 Answer: 150
+"
+65 86,151,"Input: 65 86 Answer: 151
+"
+65 87,152,"Input: 65 87 Answer: 152
+"
+65 88,153,"Input: 65 88 Answer: 153
+"
+65 89,154,"Input: 65 89 Answer: 154
+"
+65 90,155,"Input: 65 90 Answer: 155
+"
+65 91,156,"Input: 65 91 Answer: 156
+"
+65 92,157,"Input: 65 92 Answer: 157
+"
+65 93,158,"Input: 65 93 Answer: 158
+"
+65 94,159,"Input: 65 94 Answer: 159
+"
+65 95,160,"Input: 65 95 Answer: 160
+"
+65 96,161,"Input: 65 96 Answer: 161
+"
+65 97,162,"Input: 65 97 Answer: 162
+"
+65 98,163,"Input: 65 98 Answer: 163
+"
+65 99,164,"Input: 65 99 Answer: 164
+"
+66 66,132,"Input: 66 66 Answer: 132
+"
+66 67,133,"Input: 66 67 Answer: 133
+"
+66 68,134,"Input: 66 68 Answer: 134
+"
+66 69,135,"Input: 66 69 Answer: 135
+"
+66 70,136,"Input: 66 70 Answer: 136
+"
+66 71,137,"Input: 66 71 Answer: 137
+"
+66 72,138,"Input: 66 72 Answer: 138
+"
+66 73,139,"Input: 66 73 Answer: 139
+"
+66 74,140,"Input: 66 74 Answer: 140
+"
+66 75,141,"Input: 66 75 Answer: 141
+"
+66 76,142,"Input: 66 76 Answer: 142
+"
+66 77,143,"Input: 66 77 Answer: 143
+"
+66 78,144,"Input: 66 78 Answer: 144
+"
+66 79,145,"Input: 66 79 Answer: 145
+"
+66 80,146,"Input: 66 80 Answer: 146
+"
+66 81,147,"Input: 66 81 Answer: 147
+"
+66 82,148,"Input: 66 82 Answer: 148
+"
+66 83,149,"Input: 66 83 Answer: 149
+"
+66 84,150,"Input: 66 84 Answer: 150
+"
+66 85,151,"Input: 66 85 Answer: 151
+"
+66 86,152,"Input: 66 86 Answer: 152
+"
+66 87,153,"Input: 66 87 Answer: 153
+"
+66 88,154,"Input: 66 88 Answer: 154
+"
+66 89,155,"Input: 66 89 Answer: 155
+"
+66 90,156,"Input: 66 90 Answer: 156
+"
+66 91,157,"Input: 66 91 Answer: 157
+"
+66 92,158,"Input: 66 92 Answer: 158
+"
+66 93,159,"Input: 66 93 Answer: 159
+"
+66 94,160,"Input: 66 94 Answer: 160
+"
+66 95,161,"Input: 66 95 Answer: 161
+"
+66 96,162,"Input: 66 96 Answer: 162
+"
+66 97,163,"Input: 66 97 Answer: 163
+"
+66 98,164,"Input: 66 98 Answer: 164
+"
+66 99,165,"Input: 66 99 Answer: 165
+"
+67 67,134,"Input: 67 67 Answer: 134
+"
+67 68,135,"Input: 67 68 Answer: 135
+"
+67 69,136,"Input: 67 69 Answer: 136
+"
+67 70,137,"Input: 67 70 Answer: 137
+"
+67 71,138,"Input: 67 71 Answer: 138
+"
+67 72,139,"Input: 67 72 Answer: 139
+"
+67 73,140,"Input: 67 73 Answer: 140
+"
+67 74,141,"Input: 67 74 Answer: 141
+"
+67 75,142,"Input: 67 75 Answer: 142
+"
+67 76,143,"Input: 67 76 Answer: 143
+"
+67 77,144,"Input: 67 77 Answer: 144
+"
+67 78,145,"Input: 67 78 Answer: 145
+"
+67 79,146,"Input: 67 79 Answer: 146
+"
+67 80,147,"Input: 67 80 Answer: 147
+"
+67 81,148,"Input: 67 81 Answer: 148
+"
+67 82,149,"Input: 67 82 Answer: 149
+"
+67 83,150,"Input: 67 83 Answer: 150
+"
+67 84,151,"Input: 67 84 Answer: 151
+"
+67 85,152,"Input: 67 85 Answer: 152
+"
+67 86,153,"Input: 67 86 Answer: 153
+"
+67 87,154,"Input: 67 87 Answer: 154
+"
+67 88,155,"Input: 67 88 Answer: 155
+"
+67 89,156,"Input: 67 89 Answer: 156
+"
+67 90,157,"Input: 67 90 Answer: 157
+"
+67 91,158,"Input: 67 91 Answer: 158
+"
+67 92,159,"Input: 67 92 Answer: 159
+"
+67 93,160,"Input: 67 93 Answer: 160
+"
+67 94,161,"Input: 67 94 Answer: 161
+"
+67 95,162,"Input: 67 95 Answer: 162
+"
+67 96,163,"Input: 67 96 Answer: 163
+"
+67 97,164,"Input: 67 97 Answer: 164
+"
+67 98,165,"Input: 67 98 Answer: 165
+"
+67 99,166,"Input: 67 99 Answer: 166
+"
+68 68,136,"Input: 68 68 Answer: 136
+"
+68 69,137,"Input: 68 69 Answer: 137
+"
+68 70,138,"Input: 68 70 Answer: 138
+"
+68 71,139,"Input: 68 71 Answer: 139
+"
+68 72,140,"Input: 68 72 Answer: 140
+"
+68 73,141,"Input: 68 73 Answer: 141
+"
+68 74,142,"Input: 68 74 Answer: 142
+"
+68 75,143,"Input: 68 75 Answer: 143
+"
+68 76,144,"Input: 68 76 Answer: 144
+"
+68 77,145,"Input: 68 77 Answer: 145
+"
+68 78,146,"Input: 68 78 Answer: 146
+"
+68 79,147,"Input: 68 79 Answer: 147
+"
+68 80,148,"Input: 68 80 Answer: 148
+"
+68 81,149,"Input: 68 81 Answer: 149
+"
+68 82,150,"Input: 68 82 Answer: 150
+"
+68 83,151,"Input: 68 83 Answer: 151
+"
+68 84,152,"Input: 68 84 Answer: 152
+"
+68 85,153,"Input: 68 85 Answer: 153
+"
+68 86,154,"Input: 68 86 Answer: 154
+"
+68 87,155,"Input: 68 87 Answer: 155
+"
+68 88,156,"Input: 68 88 Answer: 156
+"
+68 89,157,"Input: 68 89 Answer: 157
+"
+68 90,158,"Input: 68 90 Answer: 158
+"
+68 91,159,"Input: 68 91 Answer: 159
+"
+68 92,160,"Input: 68 92 Answer: 160
+"
+68 93,161,"Input: 68 93 Answer: 161
+"
+68 94,162,"Input: 68 94 Answer: 162
+"
+68 95,163,"Input: 68 95 Answer: 163
+"
+68 96,164,"Input: 68 96 Answer: 164
+"
+68 97,165,"Input: 68 97 Answer: 165
+"
+68 98,166,"Input: 68 98 Answer: 166
+"
+68 99,167,"Input: 68 99 Answer: 167
+"
+69 69,138,"Input: 69 69 Answer: 138
+"
+69 70,139,"Input: 69 70 Answer: 139
+"
+69 71,140,"Input: 69 71 Answer: 140
+"
+69 72,141,"Input: 69 72 Answer: 141
+"
+69 74,143,"Input: 69 74 Answer: 143
+"
+69 75,144,"Input: 69 75 Answer: 144
+"
+69 76,145,"Input: 69 76 Answer: 145
+"
+69 77,146,"Input: 69 77 Answer: 146
+"
+69 78,147,"Input: 69 78 Answer: 147
+"
+69 79,148,"Input: 69 79 Answer: 148
+"
+69 81,150,"Input: 69 81 Answer: 150
+"
+69 82,151,"Input: 69 82 Answer: 151
+"
+69 83,152,"Input: 69 83 Answer: 152
+"
+69 84,153,"Input: 69 84 Answer: 153
+"
+69 85,154,"Input: 69 85 Answer: 154
+"
+69 86,155,"Input: 69 86 Answer: 155
+"
+69 87,156,"Input: 69 87 Answer: 156
+"
+69 88,157,"Input: 69 88 Answer: 157
+"
+69 89,158,"Input: 69 89 Answer: 158
+"
+69 90,159,"Input: 69 90 Answer: 159
+"
+69 91,160,"Input: 69 91 Answer: 160
+"
+69 92,161,"Input: 69 92 Answer: 161
+"
+69 93,162,"Input: 69 93 Answer: 162
+"
+69 94,163,"Input: 69 94 Answer: 163
+"
+69 95,164,"Input: 69 95 Answer: 164
+"
+69 96,165,"Input: 69 96 Answer: 165
+"
+69 97,166,"Input: 69 97 Answer: 166
+"
+69 98,167,"Input: 69 98 Answer: 167
+"
+69 99,168,"Input: 69 99 Answer: 168
+"
+70 70,140,"Input: 70 70 Answer: 140
+"
+70 71,141,"Input: 70 71 Answer: 141
+"
+70 72,142,"Input: 70 72 Answer: 142
+"
+70 73,143,"Input: 70 73 Answer: 143
+"
+70 74,144,"Input: 70 74 Answer: 144
+"
+70 75,145,"Input: 70 75 Answer: 145
+"
+70 76,146,"Input: 70 76 Answer: 146
+"
+70 77,147,"Input: 70 77 Answer: 147
+"
+70 78,148,"Input: 70 78 Answer: 148
+"
+70 79,149,"Input: 70 79 Answer: 149
+"
+70 80,150,"Input: 70 80 Answer: 150
+"
+70 81,151,"Input: 70 81 Answer: 151
+"
+70 82,152,"Input: 70 82 Answer: 152
+"
+70 83,153,"Input: 70 83 Answer: 153
+"
+70 84,154,"Input: 70 84 Answer: 154
+"
+70 85,155,"Input: 70 85 Answer: 155
+"
+70 86,156,"Input: 70 86 Answer: 156
+"
+70 87,157,"Input: 70 87 Answer: 157
+"
+70 88,158,"Input: 70 88 Answer: 158
+"
+70 89,159,"Input: 70 89 Answer: 159
+"
+70 90,160,"Input: 70 90 Answer: 160
+"
+70 91,161,"Input: 70 91 Answer: 161
+"
+70 92,162,"Input: 70 92 Answer: 162
+"
+70 93,163,"Input: 70 93 Answer: 163
+"
+70 94,164,"Input: 70 94 Answer: 164
+"
+70 95,165,"Input: 70 95 Answer: 165
+"
+70 96,166,"Input: 70 96 Answer: 166
+"
+70 98,168,"Input: 70 98 Answer: 168
+"
+70 99,169,"Input: 70 99 Answer: 169
+"
+71 71,142,"Input: 71 71 Answer: 142
+"
+71 72,143,"Input: 71 72 Answer: 143
+"
+71 73,144,"Input: 71 73 Answer: 144
+"
+71 74,145,"Input: 71 74 Answer: 145
+"
+71 75,146,"Input: 71 75 Answer: 146
+"
+71 76,147,"Input: 71 76 Answer: 147
+"
+71 77,148,"Input: 71 77 Answer: 148
+"
+71 78,149,"Input: 71 78 Answer: 149
+"
+71 79,150,"Input: 71 79 Answer: 150
+"
+71 80,151,"Input: 71 80 Answer: 151
+"
+71 81,152,"Input: 71 81 Answer: 152
+"
+71 82,153,"Input: 71 82 Answer: 153
+"
+71 83,154,"Input: 71 83 Answer: 154
+"
+71 84,155,"Input: 71 84 Answer: 155
+"
+71 85,156,"Input: 71 85 Answer: 156
+"
+71 86,157,"Input: 71 86 Answer: 157
+"
+71 87,158,"Input: 71 87 Answer: 158
+"
+71 88,159,"Input: 71 88 Answer: 159
+"
+71 89,160,"Input: 71 89 Answer: 160
+"
+71 90,161,"Input: 71 90 Answer: 161
+"
+71 91,162,"Input: 71 91 Answer: 162
+"
+71 92,163,"Input: 71 92 Answer: 163
+"
+71 93,164,"Input: 71 93 Answer: 164
+"
+71 94,165,"Input: 71 94 Answer: 165
+"
+71 95,166,"Input: 71 95 Answer: 166
+"
+71 96,167,"Input: 71 96 Answer: 167
+"
+71 97,168,"Input: 71 97 Answer: 168
+"
+71 98,169,"Input: 71 98 Answer: 169
+"
+71 99,170,"Input: 71 99 Answer: 170
+"
+72 72,144,"Input: 72 72 Answer: 144
+"
+72 73,145,"Input: 72 73 Answer: 145
+"
+72 74,146,"Input: 72 74 Answer: 146
+"
+72 75,147,"Input: 72 75 Answer: 147
+"
+72 76,148,"Input: 72 76 Answer: 148
+"
+72 77,149,"Input: 72 77 Answer: 149
+"
+72 78,150,"Input: 72 78 Answer: 150
+"
+72 79,151,"Input: 72 79 Answer: 151
+"
+72 80,152,"Input: 72 80 Answer: 152
+"
+72 81,153,"Input: 72 81 Answer: 153
+"
+72 82,154,"Input: 72 82 Answer: 154
+"
+72 83,155,"Input: 72 83 Answer: 155
+"
+72 84,156,"Input: 72 84 Answer: 156
+"
+72 85,157,"Input: 72 85 Answer: 157
+"
+72 86,158,"Input: 72 86 Answer: 158
+"
+72 87,159,"Input: 72 87 Answer: 159
+"
+72 88,160,"Input: 72 88 Answer: 160
+"
+72 89,161,"Input: 72 89 Answer: 161
+"
+72 90,162,"Input: 72 90 Answer: 162
+"
+72 91,163,"Input: 72 91 Answer: 163
+"
+72 92,164,"Input: 72 92 Answer: 164
+"
+72 93,165,"Input: 72 93 Answer: 165
+"
+72 94,166,"Input: 72 94 Answer: 166
+"
+72 95,167,"Input: 72 95 Answer: 167
+"
+72 96,168,"Input: 72 96 Answer: 168
+"
+72 97,169,"Input: 72 97 Answer: 169
+"
+72 98,170,"Input: 72 98 Answer: 170
+"
+72 99,171,"Input: 72 99 Answer: 171
+"
+73 73,146,"Input: 73 73 Answer: 146
+"
+73 74,147,"Input: 73 74 Answer: 147
+"
+73 75,148,"Input: 73 75 Answer: 148
+"
+73 76,149,"Input: 73 76 Answer: 149
+"
+73 77,150,"Input: 73 77 Answer: 150
+"
+73 78,151,"Input: 73 78 Answer: 151
+"
+73 79,152,"Input: 73 79 Answer: 152
+"
+73 80,153,"Input: 73 80 Answer: 153
+"
+73 81,154,"Input: 73 81 Answer: 154
+"
+73 82,155,"Input: 73 82 Answer: 155
+"
+73 83,156,"Input: 73 83 Answer: 156
+"
+73 84,157,"Input: 73 84 Answer: 157
+"
+73 85,158,"Input: 73 85 Answer: 158
+"
+73 86,159,"Input: 73 86 Answer: 159
+"
+73 87,160,"Input: 73 87 Answer: 160
+"
+73 88,161,"Input: 73 88 Answer: 161
+"
+73 89,162,"Input: 73 89 Answer: 162
+"
+73 90,163,"Input: 73 90 Answer: 163
+"
+73 91,164,"Input: 73 91 Answer: 164
+"
+73 92,165,"Input: 73 92 Answer: 165
+"
+73 93,166,"Input: 73 93 Answer: 166
+"
+73 94,167,"Input: 73 94 Answer: 167
+"
+73 95,168,"Input: 73 95 Answer: 168
+"
+73 96,169,"Input: 73 96 Answer: 169
+"
+73 97,170,"Input: 73 97 Answer: 170
+"
+73 98,171,"Input: 73 98 Answer: 171
+"
+73 99,172,"Input: 73 99 Answer: 172
+"
+74 74,148,"Input: 74 74 Answer: 148
+"
+74 75,149,"Input: 74 75 Answer: 149
+"
+74 76,150,"Input: 74 76 Answer: 150
+"
+74 77,151,"Input: 74 77 Answer: 151
+"
+74 78,152,"Input: 74 78 Answer: 152
+"
+74 79,153,"Input: 74 79 Answer: 153
+"
+74 80,154,"Input: 74 80 Answer: 154
+"
+74 81,155,"Input: 74 81 Answer: 155
+"
+74 82,156,"Input: 74 82 Answer: 156
+"
+74 83,157,"Input: 74 83 Answer: 157
+"
+74 84,158,"Input: 74 84 Answer: 158
+"
+74 85,159,"Input: 74 85 Answer: 159
+"
+74 86,160,"Input: 74 86 Answer: 160
+"
+74 87,161,"Input: 74 87 Answer: 161
+"
+74 88,162,"Input: 74 88 Answer: 162
+"
+74 89,163,"Input: 74 89 Answer: 163
+"
+74 90,164,"Input: 74 90 Answer: 164
+"
+74 91,165,"Input: 74 91 Answer: 165
+"
+74 92,166,"Input: 74 92 Answer: 166
+"
+74 93,167,"Input: 74 93 Answer: 167
+"
+74 94,168,"Input: 74 94 Answer: 168
+"
+74 95,169,"Input: 74 95 Answer: 169
+"
+74 96,170,"Input: 74 96 Answer: 170
+"
+74 97,171,"Input: 74 97 Answer: 171
+"
+74 98,172,"Input: 74 98 Answer: 172
+"
+74 99,173,"Input: 74 99 Answer: 173
+"
+75 75,150,"Input: 75 75 Answer: 150
+"
+75 76,151,"Input: 75 76 Answer: 151
+"
+75 77,152,"Input: 75 77 Answer: 152
+"
+75 78,153,"Input: 75 78 Answer: 153
+"
+75 79,154,"Input: 75 79 Answer: 154
+"
+75 80,155,"Input: 75 80 Answer: 155
+"
+75 81,156,"Input: 75 81 Answer: 156
+"
+75 82,157,"Input: 75 82 Answer: 157
+"
+75 83,158,"Input: 75 83 Answer: 158
+"
+75 84,159,"Input: 75 84 Answer: 159
+"
+75 85,160,"Input: 75 85 Answer: 160
+"
+75 86,161,"Input: 75 86 Answer: 161
+"
+75 87,162,"Input: 75 87 Answer: 162
+"
+75 88,163,"Input: 75 88 Answer: 163
+"
+75 89,164,"Input: 75 89 Answer: 164
+"
+75 90,165,"Input: 75 90 Answer: 165
+"
+75 91,166,"Input: 75 91 Answer: 166
+"
+75 92,167,"Input: 75 92 Answer: 167
+"
+75 94,169,"Input: 75 94 Answer: 169
+"
+75 95,170,"Input: 75 95 Answer: 170
+"
+75 96,171,"Input: 75 96 Answer: 171
+"
+75 97,172,"Input: 75 97 Answer: 172
+"
+75 98,173,"Input: 75 98 Answer: 173
+"
+75 99,174,"Input: 75 99 Answer: 174
+"
+76 76,152,"Input: 76 76 Answer: 152
+"
+76 77,153,"Input: 76 77 Answer: 153
+"
+76 78,154,"Input: 76 78 Answer: 154
+"
+76 79,155,"Input: 76 79 Answer: 155
+"
+76 80,156,"Input: 76 80 Answer: 156
+"
+76 81,157,"Input: 76 81 Answer: 157
+"
+76 82,158,"Input: 76 82 Answer: 158
+"
+76 83,159,"Input: 76 83 Answer: 159
+"
+76 84,160,"Input: 76 84 Answer: 160
+"
+76 85,161,"Input: 76 85 Answer: 161
+"
+76 86,162,"Input: 76 86 Answer: 162
+"
+76 87,163,"Input: 76 87 Answer: 163
+"
+76 88,164,"Input: 76 88 Answer: 164
+"
+76 89,165,"Input: 76 89 Answer: 165
+"
+76 90,166,"Input: 76 90 Answer: 166
+"
+76 91,167,"Input: 76 91 Answer: 167
+"
+76 92,168,"Input: 76 92 Answer: 168
+"
+76 93,169,"Input: 76 93 Answer: 169
+"
+76 94,170,"Input: 76 94 Answer: 170
+"
+76 96,172,"Input: 76 96 Answer: 172
+"
+76 97,173,"Input: 76 97 Answer: 173
+"
+76 98,174,"Input: 76 98 Answer: 174
+"
+76 99,175,"Input: 76 99 Answer: 175
+"
+77 78,155,"Input: 77 78 Answer: 155
+"
+77 79,156,"Input: 77 79 Answer: 156
+"
+77 80,157,"Input: 77 80 Answer: 157
+"
+77 81,158,"Input: 77 81 Answer: 158
+"
+77 82,159,"Input: 77 82 Answer: 159
+"
+77 83,160,"Input: 77 83 Answer: 160
+"
+77 84,161,"Input: 77 84 Answer: 161
+"
+77 85,162,"Input: 77 85 Answer: 162
+"
+77 86,163,"Input: 77 86 Answer: 163
+"
+77 87,164,"Input: 77 87 Answer: 164
+"
+77 88,165,"Input: 77 88 Answer: 165
+"
+77 89,166,"Input: 77 89 Answer: 166
+"
+77 90,167,"Input: 77 90 Answer: 167
+"
+77 91,168,"Input: 77 91 Answer: 168
+"
+77 92,169,"Input: 77 92 Answer: 169
+"
+77 93,170,"Input: 77 93 Answer: 170
+"
+77 94,171,"Input: 77 94 Answer: 171
+"
+77 95,172,"Input: 77 95 Answer: 172
+"
+77 96,173,"Input: 77 96 Answer: 173
+"
+77 97,174,"Input: 77 97 Answer: 174
+"
+77 98,175,"Input: 77 98 Answer: 175
+"
+77 99,176,"Input: 77 99 Answer: 176
+"
+78 78,156,"Input: 78 78 Answer: 156
+"
+78 79,157,"Input: 78 79 Answer: 157
+"
+78 80,158,"Input: 78 80 Answer: 158
+"
+78 81,159,"Input: 78 81 Answer: 159
+"
+78 82,160,"Input: 78 82 Answer: 160
+"
+78 83,161,"Input: 78 83 Answer: 161
+"
+78 84,162,"Input: 78 84 Answer: 162
+"
+78 85,163,"Input: 78 85 Answer: 163
+"
+78 86,164,"Input: 78 86 Answer: 164
+"
+78 87,165,"Input: 78 87 Answer: 165
+"
+78 88,166,"Input: 78 88 Answer: 166
+"
+78 89,167,"Input: 78 89 Answer: 167
+"
+78 90,168,"Input: 78 90 Answer: 168
+"
+78 91,169,"Input: 78 91 Answer: 169
+"
+78 92,170,"Input: 78 92 Answer: 170
+"
+78 93,171,"Input: 78 93 Answer: 171
+"
+78 95,173,"Input: 78 95 Answer: 173
+"
+78 96,174,"Input: 78 96 Answer: 174
+"
+78 97,175,"Input: 78 97 Answer: 175
+"
+78 98,176,"Input: 78 98 Answer: 176
+"
+78 99,177,"Input: 78 99 Answer: 177
+"
+79 79,158,"Input: 79 79 Answer: 158
+"
+79 80,159,"Input: 79 80 Answer: 159
+"
+79 81,160,"Input: 79 81 Answer: 160
+"
+79 82,161,"Input: 79 82 Answer: 161
+"
+79 83,162,"Input: 79 83 Answer: 162
+"
+79 84,163,"Input: 79 84 Answer: 163
+"
+79 85,164,"Input: 79 85 Answer: 164
+"
+79 86,165,"Input: 79 86 Answer: 165
+"
+79 87,166,"Input: 79 87 Answer: 166
+"
+79 88,167,"Input: 79 88 Answer: 167
+"
+79 89,168,"Input: 79 89 Answer: 168
+"
+79 90,169,"Input: 79 90 Answer: 169
+"
+79 91,170,"Input: 79 91 Answer: 170
+"
+79 92,171,"Input: 79 92 Answer: 171
+"
+79 93,172,"Input: 79 93 Answer: 172
+"
+79 94,173,"Input: 79 94 Answer: 173
+"
+79 95,174,"Input: 79 95 Answer: 174
+"
+79 96,175,"Input: 79 96 Answer: 175
+"
+79 97,176,"Input: 79 97 Answer: 176
+"
+79 98,177,"Input: 79 98 Answer: 177
+"
+79 99,178,"Input: 79 99 Answer: 178
+"
+80 80,160,"Input: 80 80 Answer: 160
+"
+80 81,161,"Input: 80 81 Answer: 161
+"
+80 82,162,"Input: 80 82 Answer: 162
+"
+80 83,163,"Input: 80 83 Answer: 163
+"
+80 84,164,"Input: 80 84 Answer: 164
+"
+80 85,165,"Input: 80 85 Answer: 165
+"
+80 86,166,"Input: 80 86 Answer: 166
+"
+80 87,167,"Input: 80 87 Answer: 167
+"
+80 88,168,"Input: 80 88 Answer: 168
+"
+80 89,169,"Input: 80 89 Answer: 169
+"
+80 90,170,"Input: 80 90 Answer: 170
+"
+80 91,171,"Input: 80 91 Answer: 171
+"
+80 92,172,"Input: 80 92 Answer: 172
+"
+80 93,173,"Input: 80 93 Answer: 173
+"
+80 94,174,"Input: 80 94 Answer: 174
+"
+80 95,175,"Input: 80 95 Answer: 175
+"
+80 96,176,"Input: 80 96 Answer: 176
+"
+80 97,177,"Input: 80 97 Answer: 177
+"
+80 98,178,"Input: 80 98 Answer: 178
+"
+80 99,179,"Input: 80 99 Answer: 179
+"
+81 81,162,"Input: 81 81 Answer: 162
+"
+81 82,163,"Input: 81 82 Answer: 163
+"
+81 83,164,"Input: 81 83 Answer: 164
+"
+81 84,165,"Input: 81 84 Answer: 165
+"
+81 85,166,"Input: 81 85 Answer: 166
+"
+81 86,167,"Input: 81 86 Answer: 167
+"
+81 87,168,"Input: 81 87 Answer: 168
+"
+81 88,169,"Input: 81 88 Answer: 169
+"
+81 89,170,"Input: 81 89 Answer: 170
+"
+81 90,171,"Input: 81 90 Answer: 171
+"
+81 91,172,"Input: 81 91 Answer: 172
+"
+81 92,173,"Input: 81 92 Answer: 173
+"
+81 93,174,"Input: 81 93 Answer: 174
+"
+81 95,176,"Input: 81 95 Answer: 176
+"
+81 96,177,"Input: 81 96 Answer: 177
+"
+81 97,178,"Input: 81 97 Answer: 178
+"
+81 98,179,"Input: 81 98 Answer: 179
+"
+81 99,180,"Input: 81 99 Answer: 180
+"
+82 82,164,"Input: 82 82 Answer: 164
+"
+82 83,165,"Input: 82 83 Answer: 165
+"
+82 84,166,"Input: 82 84 Answer: 166
+"
+82 85,167,"Input: 82 85 Answer: 167
+"
+82 86,168,"Input: 82 86 Answer: 168
+"
+82 87,169,"Input: 82 87 Answer: 169
+"
+82 88,170,"Input: 82 88 Answer: 170
+"
+82 89,171,"Input: 82 89 Answer: 171
+"
+82 90,172,"Input: 82 90 Answer: 172
+"
+82 91,173,"Input: 82 91 Answer: 173
+"
+82 92,174,"Input: 82 92 Answer: 174
+"
+82 93,175,"Input: 82 93 Answer: 175
+"
+82 94,176,"Input: 82 94 Answer: 176
+"
+82 95,177,"Input: 82 95 Answer: 177
+"
+82 96,178,"Input: 82 96 Answer: 178
+"
+82 97,179,"Input: 82 97 Answer: 179
+"
+82 98,180,"Input: 82 98 Answer: 180
+"
+82 99,181,"Input: 82 99 Answer: 181
+"
+83 83,166,"Input: 83 83 Answer: 166
+"
+83 84,167,"Input: 83 84 Answer: 167
+"
+83 85,168,"Input: 83 85 Answer: 168
+"
+83 86,169,"Input: 83 86 Answer: 169
+"
+83 87,170,"Input: 83 87 Answer: 170
+"
+83 88,171,"Input: 83 88 Answer: 171
+"
+83 89,172,"Input: 83 89 Answer: 172
+"
+83 90,173,"Input: 83 90 Answer: 173
+"
+83 91,174,"Input: 83 91 Answer: 174
+"
+83 92,175,"Input: 83 92 Answer: 175
+"
+83 93,176,"Input: 83 93 Answer: 176
+"
+83 94,177,"Input: 83 94 Answer: 177
+"
+83 95,178,"Input: 83 95 Answer: 178
+"
+83 96,179,"Input: 83 96 Answer: 179
+"
+83 97,180,"Input: 83 97 Answer: 180
+"
+83 98,181,"Input: 83 98 Answer: 181
+"
+83 99,182,"Input: 83 99 Answer: 182
+"
+84 84,168,"Input: 84 84 Answer: 168
+"
+84 85,169,"Input: 84 85 Answer: 169
+"
+84 86,170,"Input: 84 86 Answer: 170
+"
+84 87,171,"Input: 84 87 Answer: 171
+"
+84 88,172,"Input: 84 88 Answer: 172
+"
+84 89,173,"Input: 84 89 Answer: 173
+"
+84 90,174,"Input: 84 90 Answer: 174
+"
+84 91,175,"Input: 84 91 Answer: 175
+"
+84 92,176,"Input: 84 92 Answer: 176
+"
+84 93,177,"Input: 84 93 Answer: 177
+"
+84 94,178,"Input: 84 94 Answer: 178
+"
+84 95,179,"Input: 84 95 Answer: 179
+"
+84 96,180,"Input: 84 96 Answer: 180
+"
+84 98,182,"Input: 84 98 Answer: 182
+"
+84 99,183,"Input: 84 99 Answer: 183
+"
+85 85,170,"Input: 85 85 Answer: 170
+"
+85 86,171,"Input: 85 86 Answer: 171
+"
+85 87,172,"Input: 85 87 Answer: 172
+"
+85 88,173,"Input: 85 88 Answer: 173
+"
+85 89,174,"Input: 85 89 Answer: 174
+"
+85 90,175,"Input: 85 90 Answer: 175
+"
+85 91,176,"Input: 85 91 Answer: 176
+"
+85 92,177,"Input: 85 92 Answer: 177
+"
+85 93,178,"Input: 85 93 Answer: 178
+"
+85 94,179,"Input: 85 94 Answer: 179
+"
+85 95,180,"Input: 85 95 Answer: 180
+"
+85 96,181,"Input: 85 96 Answer: 181
+"
+85 97,182,"Input: 85 97 Answer: 182
+"
+85 98,183,"Input: 85 98 Answer: 183
+"
+85 99,184,"Input: 85 99 Answer: 184
+"
+86 86,172,"Input: 86 86 Answer: 172
+"
+86 87,173,"Input: 86 87 Answer: 173
+"
+86 88,174,"Input: 86 88 Answer: 174
+"
+86 89,175,"Input: 86 89 Answer: 175
+"
+86 90,176,"Input: 86 90 Answer: 176
+"
+86 91,177,"Input: 86 91 Answer: 177
+"
+86 92,178,"Input: 86 92 Answer: 178
+"
+86 93,179,"Input: 86 93 Answer: 179
+"
+86 94,180,"Input: 86 94 Answer: 180
+"
+86 95,181,"Input: 86 95 Answer: 181
+"
+86 96,182,"Input: 86 96 Answer: 182
+"
+86 97,183,"Input: 86 97 Answer: 183
+"
+86 98,184,"Input: 86 98 Answer: 184
+"
+86 99,185,"Input: 86 99 Answer: 185
+"
+87 87,174,"Input: 87 87 Answer: 174
+"
+87 88,175,"Input: 87 88 Answer: 175
+"
+87 89,176,"Input: 87 89 Answer: 176
+"
+87 90,177,"Input: 87 90 Answer: 177
+"
+87 91,178,"Input: 87 91 Answer: 178
+"
+87 92,179,"Input: 87 92 Answer: 179
+"
+87 93,180,"Input: 87 93 Answer: 180
+"
+87 94,181,"Input: 87 94 Answer: 181
+"
+87 95,182,"Input: 87 95 Answer: 182
+"
+87 96,183,"Input: 87 96 Answer: 183
+"
+87 97,184,"Input: 87 97 Answer: 184
+"
+87 98,185,"Input: 87 98 Answer: 185
+"
+87 99,186,"Input: 87 99 Answer: 186
+"
+88 88,176,"Input: 88 88 Answer: 176
+"
+88 89,177,"Input: 88 89 Answer: 177
+"
+88 90,178,"Input: 88 90 Answer: 178
+"
+88 91,179,"Input: 88 91 Answer: 179
+"
+88 92,180,"Input: 88 92 Answer: 180
+"
+88 93,181,"Input: 88 93 Answer: 181
+"
+88 94,182,"Input: 88 94 Answer: 182
+"
+88 95,183,"Input: 88 95 Answer: 183
+"
+88 96,184,"Input: 88 96 Answer: 184
+"
+88 97,185,"Input: 88 97 Answer: 185
+"
+88 98,186,"Input: 88 98 Answer: 186
+"
+88 99,187,"Input: 88 99 Answer: 187
+"
+89 89,178,"Input: 89 89 Answer: 178
+"
+89 90,179,"Input: 89 90 Answer: 179
+"
+89 91,180,"Input: 89 91 Answer: 180
+"
+89 92,181,"Input: 89 92 Answer: 181
+"
+89 93,182,"Input: 89 93 Answer: 182
+"
+89 94,183,"Input: 89 94 Answer: 183
+"
+89 95,184,"Input: 89 95 Answer: 184
+"
+89 96,185,"Input: 89 96 Answer: 185
+"
+89 97,186,"Input: 89 97 Answer: 186
+"
+89 98,187,"Input: 89 98 Answer: 187
+"
+89 99,188,"Input: 89 99 Answer: 188
+"
+90 90,180,"Input: 90 90 Answer: 180
+"
+90 91,181,"Input: 90 91 Answer: 181
+"
+90 92,182,"Input: 90 92 Answer: 182
+"
+90 93,183,"Input: 90 93 Answer: 183
+"
+90 94,184,"Input: 90 94 Answer: 184
+"
+90 95,185,"Input: 90 95 Answer: 185
+"
+90 96,186,"Input: 90 96 Answer: 186
+"
+90 97,187,"Input: 90 97 Answer: 187
+"
+90 98,188,"Input: 90 98 Answer: 188
+"
+90 99,189,"Input: 90 99 Answer: 189
+"
+91 91,182,"Input: 91 91 Answer: 182
+"
+91 92,183,"Input: 91 92 Answer: 183
+"
+91 93,184,"Input: 91 93 Answer: 184
+"
+91 94,185,"Input: 91 94 Answer: 185
+"
+91 95,186,"Input: 91 95 Answer: 186
+"
+91 96,187,"Input: 91 96 Answer: 187
+"
+91 97,188,"Input: 91 97 Answer: 188
+"
+91 98,189,"Input: 91 98 Answer: 189
+"
+91 99,190,"Input: 91 99 Answer: 190
+"
+92 92,184,"Input: 92 92 Answer: 184
+"
+92 93,185,"Input: 92 93 Answer: 185
+"
+92 94,186,"Input: 92 94 Answer: 186
+"
+92 95,187,"Input: 92 95 Answer: 187
+"
+92 96,188,"Input: 92 96 Answer: 188
+"
+92 97,189,"Input: 92 97 Answer: 189
+"
+92 98,190,"Input: 92 98 Answer: 190
+"
+92 99,191,"Input: 92 99 Answer: 191
+"
+93 93,186,"Input: 93 93 Answer: 186
+"
+93 94,187,"Input: 93 94 Answer: 187
+"
+93 95,188,"Input: 93 95 Answer: 188
+"
+93 96,189,"Input: 93 96 Answer: 189
+"
+93 97,190,"Input: 93 97 Answer: 190
+"
+93 98,191,"Input: 93 98 Answer: 191
+"
+93 99,192,"Input: 93 99 Answer: 192
+"
+94 94,188,"Input: 94 94 Answer: 188
+"
+94 95,189,"Input: 94 95 Answer: 189
+"
+94 96,190,"Input: 94 96 Answer: 190
+"
+94 97,191,"Input: 94 97 Answer: 191
+"
+94 98,192,"Input: 94 98 Answer: 192
+"
+94 99,193,"Input: 94 99 Answer: 193
+"
+95 95,190,"Input: 95 95 Answer: 190
+"
+95 96,191,"Input: 95 96 Answer: 191
+"
+95 97,192,"Input: 95 97 Answer: 192
+"
+95 98,193,"Input: 95 98 Answer: 193
+"
+95 99,194,"Input: 95 99 Answer: 194
+"
+96 96,192,"Input: 96 96 Answer: 192
+"
+96 97,193,"Input: 96 97 Answer: 193
+"
+96 98,194,"Input: 96 98 Answer: 194
+"
+96 99,195,"Input: 96 99 Answer: 195
+"
+97 98,195,"Input: 97 98 Answer: 195
+"
+97 99,196,"Input: 97 99 Answer: 196
+"
+98 98,196,"Input: 98 98 Answer: 196
+"
+98 99,197,"Input: 98 99 Answer: 197
+"
+99 99,198,"Input: 99 99 Answer: 198
+"
