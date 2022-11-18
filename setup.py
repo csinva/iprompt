@@ -29,7 +29,7 @@ setuptools.setup(
     packages=setuptools.find_packages(
         exclude=['tests', 'tests.*', '*.test.*']
     ),
-    install_requires=required_pypi,
+    # install_requires=required_pypi,
     python_requires='>=3.6',
     classifiers=[
         "Programming Language :: Python :: 3",

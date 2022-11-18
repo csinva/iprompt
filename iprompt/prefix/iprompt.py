@@ -62,7 +62,7 @@ class iPrompt(AutoPrompt):
         ####################################################################
         self._prefix_pool = PrefixPool(
             tokenizer=self.tokenizer,
-            criterion='loss'  # in ['loss', 'acc', 'combined']
+            criterion='combined'  # in ['loss', 'acc', 'combined']
         )
         # Suff to track for early stopping
         self._last_population = None

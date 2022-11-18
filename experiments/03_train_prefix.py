@@ -10,7 +10,7 @@ import time
 import torch
 import transformers
 import argparse
-from transformers import AutoTokenizer, AutoModel, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModel, AutoModelForCausalLM, AutoModelForSeq2SeqLM
 from tqdm import tqdm
 from collections import defaultdict
 from iprompt.prefix import (
@@ -383,6 +383,12 @@ if __name__ == '__main__':
                             "gpt2-large",  # 774M params
                             "gpt2-xl",     # 1.5B params
                             ############################
+                            "google/flan-t5-small",  # 80M Params
+                            "google/flan-t5-base",   # 250M Params
+                            "google/flan-t5-large",  # 780M Params
+                            "google/flan-t5-xl",     # 3B Params
+                            "google/flan-t5-xxl",    # 11B Params
+                            ############################
                         ),
                         help='model checkpoint to use'
                         )
@@ -419,21 +425,23 @@ if __name__ == '__main__':
         tokenizer = AutoTokenizer.from_pretrained(checkpoint)
         tokenizer.pad_token = tokenizer.eos_token
 
+        llm_cls = AutoModelForSeq2SeqLM if 't5' in checkpoint else AutoModelForCausalLM
+
         if args.llm_float16:
             if checkpoint == "EleutherAI/gpt-j-6B":
-                lm = AutoModelForCausalLM.from_pretrained(
+                lm = llm_cls.from_pretrained(
                     checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id,
                     revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True
                 )
             else:
                 # (only certain models are pre-float16ed)
                 print(f"trying to convert {checkpoint} to float16...")
-                lm = transformers.AutoModelForCausalLM.from_pretrained(
+                lm = llm_cls.from_pretrained(
                     checkpoint, torch_dtype=torch.float16
                 )
                 lm = lm.half()
         else:
-            lm = AutoModelForCausalLM.from_pretrained(
+            lm = llm_cls.from_pretrained(
                 checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id
             )
         loss_func = PrefixLoss(gamma=args.gamma, tokenizer=tokenizer)

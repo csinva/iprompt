@@ -15,6 +15,7 @@ from torch.utils.data import DataLoader
 from torch import nn
 import tqdm
 
+
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 DEBUG_VERBOSE = False
 
@@ -186,11 +187,17 @@ class PrefixModel(nn.Module, abc.ABC):
     @property
     def _is_gpt_neox(self) -> bool:
         return isinstance(self.model, transformers.GPTNeoXModel) or isinstance(self.model, transformers.GPTNeoXForCausalLM)
+    
+    @property
+    def _is_t5(self) -> bool:
+        return isinstance(self.model, transformers.T5ForConditionalGeneration)
 
     @property
     def transformer(self) -> nn.Module:
         if self._is_gpt_neox:
             return self.model._modules['gpt_neox']
+        elif self._is_t5:
+            return self.model.encoder
         else:
             return self.model._modules['transformer']
 
@@ -198,6 +205,8 @@ class PrefixModel(nn.Module, abc.ABC):
     def token_embedding(self) -> nn.Embedding:
         if self._is_gpt_neox:
             return self.transformer.embed_in
+        elif self._is_t5:
+            return self.model.encoder.embed_tokens
         else:
             return self.transformer.wte
     
@@ -216,11 +225,47 @@ class PrefixModel(nn.Module, abc.ABC):
         y_text = [answer.rstrip().rstrip('.') for answer in batch['output']] # strip whitespace at the end.
         return x_text, y_text
 
+    def forward_t5(
+            self,
+            input_ids: torch.Tensor,
+            next_token_ids: torch.Tensor,
+            prefix_ids: torch.Tensor, 
+        ) -> Tuple[torch.Tensor, torch.Tensor]:
+        new_input_ids, embeddings = self.embed_input_ids(
+            input_ids=input_ids,
+            prefix_ids=prefix_ids, 
+        )
+        attention_mask = ~(new_input_ids == self.tokenizer.pad_token_id)
+        assert new_input_ids.shape == embeddings.shape[0:2]
+
+        encoder_outputs = self.model.get_encoder()(
+            inputs_embeds=embeddings,
+            attention_mask=attention_mask,
+        )
+        # decoder_input_ids = torch.full(
+        #     size=(len(embeddings), 1),
+        #     fill_value=self.model.config.decoder_start_token_id,
+        #     device=device,
+        # )
+        output = self.model(
+            encoder_outputs=encoder_outputs,
+            decoder_input_ids=next_token_ids,
+        )
+
+        full_input_ids = torch.cat(
+            (new_input_ids, next_token_ids), dim=1
+        )
+        breakpoint9)
+        output_logits = torch.cat(
+            (output.encoder_last_hidden_state, output.logits), dim=1
+        )
+        return full_input_ids, output_logits
+
     def forward(
             self,
             input_ids: torch.Tensor,
             prefix_ids: Optional[torch.Tensor],
-        ) -> torch.Tensor:
+        ) -> Tuple[torch.Tensor, torch.Tensor]:
         new_input_ids, embeddings = self.embed_input_ids(
             input_ids=input_ids, prefix_ids=prefix_ids
         )
@@ -229,10 +274,12 @@ class PrefixModel(nn.Module, abc.ABC):
         attention_mask = ~(new_input_ids == self.tokenizer.pad_token_id)
 
         assert new_input_ids.shape == embeddings.shape[0:2]
-        return new_input_ids, self.model(
+
+        output = self.model(
             inputs_embeds=embeddings,
             attention_mask=attention_mask,
         )
+        return new_input_ids, output.logits
     
     def pre_epoch(self) -> None:
         return
@@ -296,16 +343,23 @@ class PrefixModel(nn.Module, abc.ABC):
         assert input_ids.shape == (original_input_ids.shape[0], original_input_ids.shape[1] + next_token_ids.shape[1])
 
         # feed into the model. prefix-handling is implemented in PrefixModel::forward.
-        full_input_ids, outputs = self.forward(
-            input_ids=input_ids,
-            prefix_ids=prefix_ids,
-        )
+        if self._is_t5:
+            full_input_ids, outputs = self.forward_t5(
+                input_ids=original_input_ids,
+                next_token_ids=next_token_ids,
+                prefix_ids=prefix_ids, 
+            )
+        else:
+            full_input_ids, outputs = self.forward(
+                input_ids=input_ids,
+                prefix_ids=prefix_ids,
+            )
         # make sure we have same number of predictions as tokens
-        assert full_input_ids.shape == outputs.logits.shape[:2]
+        assert full_input_ids.shape == outputs.shape[:2]
 
         # get first predicted token logits
         next_token_idx = (~(full_input_ids == self.tokenizer.eos_token_id)).cumsum(dim=1).argmax(dim=1)
-        next_token_logits = outputs.logits[torch.arange(len(original_input_ids)), next_token_idx-1]
+        next_token_logits = outputs[torch.arange(len(original_input_ids)), next_token_idx-1]
 
         # compute first-token acc
         if possible_answer_mask is None:
@@ -336,7 +390,7 @@ class PrefixModel(nn.Module, abc.ABC):
         b, label_sequence_length = next_token_ids.shape
         if label_sequence_length > 1:
             other_next_token_logits = (
-                outputs.logits[:, -label_sequence_length:-1]
+                outputs[:, -label_sequence_length:-1]
                     .reshape((b * (label_sequence_length-1), -1))
             )
             other_next_token_ids = (
