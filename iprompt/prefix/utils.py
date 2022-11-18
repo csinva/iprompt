@@ -225,28 +225,48 @@ class PrefixModel(nn.Module, abc.ABC):
         y_text = [answer.rstrip().rstrip('.') for answer in batch['output']] # strip whitespace at the end.
         return x_text, y_text
 
-    def forward_t5(
+    def forward_t5_and_compute_loss(
             self,
             input_ids: torch.Tensor,
             next_token_ids: torch.Tensor,
             prefix_ids: torch.Tensor, 
-        ) -> Tuple[torch.Tensor, torch.Tensor]:
+        ) -> Tuple[int, torch.Tensor, torch.Tensor]:
         new_input_ids, embeddings = self.embed_input_ids(
             input_ids=input_ids,
             prefix_ids=prefix_ids, 
         )
-        attention_mask = ~(new_input_ids == self.tokenizer.pad_token_id)
-        assert new_input_ids.shape == embeddings.shape[0:2]
-
-        encoder_outputs = self.model.get_encoder()(
+        outputs = self.model(
             inputs_embeds=embeddings,
-            attention_mask=attention_mask,
+            labels=next_token_ids
         )
-        output = self.model(
-            encoder_outputs=encoder_outputs,
-            decoder_input_ids=next_token_ids,
-        )
-        return next_token_ids, output.logits
+        n_correct = (
+            outputs.logits[:,0].argmax(dim=-1) == next_token_ids[:,0]
+        ).sum().item()
+        return n_correct, new_input_ids, outputs.loss
+        # attention_mask = ~(new_input_ids == self.tokenizer.pad_token_id)
+        # assert new_input_ids.shape == embeddings.shape[0:2]
+
+        # encoder_outputs = self.model.get_encoder()(
+        #     inputs_embeds=embeddings,
+        #     attention_mask=attention_mask,
+        # )
+        # pad_token = torch.tensor(
+        #     self.tokenizer.pad_token_id,
+        #     dtype=torch.long,
+        #     device=device
+        # )[None,None]
+        # decoder_input_ids = torch.cat(
+        #     (
+        #         pad_token.repeat((len(next_token_ids), 1)),
+        #         next_token_ids
+        #     ), dim=1
+        # )
+        # output = self.model(
+        #     encoder_outputs=encoder_outputs,
+        #     decoder_input_ids=decoder_input_ids,
+        # )
+        # breakpoint()
+        # return next_token_ids, output.logits
 
     def forward(
             self,
@@ -256,7 +276,6 @@ class PrefixModel(nn.Module, abc.ABC):
         new_input_ids, embeddings = self.embed_input_ids(
             input_ids=input_ids, prefix_ids=prefix_ids
         )
-
         # Automatically set attention mask and position-ids
         attention_mask = ~(new_input_ids == self.tokenizer.pad_token_id)
 
@@ -331,12 +350,11 @@ class PrefixModel(nn.Module, abc.ABC):
 
         # feed into the model. prefix-handling is implemented in PrefixModel::forward.
         if self._is_t5:
-            full_input_ids, outputs = self.forward_t5(
+            n_correct, full_input_ids, loss = self.forward_t5_and_compute_loss(
                 input_ids=original_input_ids,
                 next_token_ids=next_token_ids,
                 prefix_ids=prefix_ids, 
             )
-            next_token_logits = outputs[:, 0, :]
         else:
             full_input_ids, outputs = self.forward(
                 input_ids=input_ids,
@@ -349,65 +367,65 @@ class PrefixModel(nn.Module, abc.ABC):
             next_token_idx = (~(full_input_ids == self.tokenizer.eos_token_id)).cumsum(dim=1).argmax(dim=1)
             next_token_logits = outputs[torch.arange(len(original_input_ids)), next_token_idx-1]
 
+            # compute first-token acc
+            if possible_answer_mask is None:
+                n_correct = (
+                    next_token_logits.argmax(dim=-1) == next_token_ids[:, 0]
+                ).int().sum()
+            else:
+                # apply possible answer mask for single-token
+                next_token_logits = torch.where(
+                    possible_answer_mask[None],
+                    next_token_logits, torch.tensor(float('-inf')).to(device)
+                )
+                n_correct = (
+                    (next_token_logits.exp() * possible_answer_mask).argmax(dim=-1)
+                        ==
+                    next_token_ids[:, 0]
+                ).int().sum()
 
-        # compute first-token acc
-        if possible_answer_mask is None:
-            n_correct = (
-                next_token_logits.argmax(dim=-1) == next_token_ids[:, 0]
-            ).int().sum()
-        else:
-            # apply possible answer mask for single-token
-            next_token_logits = torch.where(
-                possible_answer_mask[None],
-                next_token_logits, torch.tensor(float('-inf')).to(device)
-            )
-            n_correct = (
-                (next_token_logits.exp() * possible_answer_mask).argmax(dim=-1)
-                    ==
-                next_token_ids[:, 0]
-            ).int().sum()
-
-        # compute loss from first token
-        original_losses = torch.nn.functional.cross_entropy(
-            input=next_token_logits,
-            target=next_token_ids[:, 0],
-            ignore_index=self.tokenizer.pad_token_id,
-            reduction='none'
-        )
-
-        # add loss from other tokens
-        b, label_sequence_length = next_token_ids.shape
-        if label_sequence_length > 1:
-            other_next_token_logits = (
-                outputs[:, -label_sequence_length:-1]
-                    .reshape((b * (label_sequence_length-1), -1))
-            )
-            other_next_token_ids = (
-                next_token_ids[:, 1:]
-                    .reshape((b * (label_sequence_length-1),))
-            )
-            other_losses = torch.nn.functional.cross_entropy(
-                input=other_next_token_logits,
-                target=other_next_token_ids,
+            # compute loss from first token
+            original_losses = torch.nn.functional.cross_entropy(
+                input=next_token_logits,
+                target=next_token_ids[:, 0],
                 ignore_index=self.tokenizer.pad_token_id,
                 reduction='none'
             )
-            # take the mean of losses on the batch level, and normalize for length
-            all_losses = torch.cat(
-                (original_losses[:, None], other_losses.reshape((b, -1))), dim=1
-            )
-            special_token_id = self.tokenizer.bos_token_id or self.tokenizer.pad_token_id
-            num_tokens_per_output = (
-                ~(next_token_ids == special_token_id)).sum(dim=1)
-            all_losses = all_losses.sum(dim=1) / num_tokens_per_output
-            assert all_losses.shape == (b,)
-            loss = all_losses.mean()
-        else:
-            loss = original_losses.mean()
-        
-        if DEBUG_VERBOSE: 
-            print(f">> loss for input string: {self.tokenizer.decode(full_input_ids[0])}")
-            print(f"\tLoss = {loss:.3f}")
+            breakpoint()
+
+            # add loss from other tokens
+            b, label_sequence_length = next_token_ids.shape
+            if label_sequence_length > 1:
+                other_next_token_logits = (
+                    outputs[:, -label_sequence_length:-1]
+                        .reshape((b * (label_sequence_length-1), -1))
+                )
+                other_next_token_ids = (
+                    next_token_ids[:, 1:]
+                        .reshape((b * (label_sequence_length-1),))
+                )
+                other_losses = torch.nn.functional.cross_entropy(
+                    input=other_next_token_logits,
+                    target=other_next_token_ids,
+                    ignore_index=self.tokenizer.pad_token_id,
+                    reduction='none'
+                )
+                # take the mean of losses on the batch level, and normalize for length
+                all_losses = torch.cat(
+                    (original_losses[:, None], other_losses.reshape((b, -1))), dim=1
+                )
+                special_token_id = self.tokenizer.bos_token_id or self.tokenizer.pad_token_id
+                num_tokens_per_output = (
+                    ~(next_token_ids == special_token_id)).sum(dim=1)
+                all_losses = all_losses.sum(dim=1) / num_tokens_per_output
+                assert all_losses.shape == (b,)
+                loss = all_losses.mean()
+            else:
+                loss = original_losses.mean()
+            
+            if DEBUG_VERBOSE: 
+                print(f">> loss for input string: {self.tokenizer.decode(full_input_ids[0])}")
+                print(f"\tLoss = {loss:.3f}")
 
         return full_input_ids, loss, n_correct
     
