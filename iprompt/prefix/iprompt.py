@@ -70,8 +70,8 @@ class iPrompt(AutoPrompt):
         ####################################################################
         prompt_str = args.iprompt_preprefix_str.lstrip()
         prompt_str = (' ' + prompt_str) if len(prompt_str) else ''
-        self._pre_data_token_ids = self.tokenizer("Data:\n\n", return_tensors='pt').input_ids.to(device)
-        self._post_data_token_ids = self.tokenizer("\n\nPrompt:" + prompt_str, return_tensors='pt').input_ids.to(device)
+        self._pre_data_token_ids = self.tokenizer("Data:\n\n", add_special_tokens=False, return_tensors='pt').input_ids.to(device)
+        self._post_data_token_ids = self.tokenizer("\n\nPrompt:" + prompt_str, add_special_tokens=False, return_tensors='pt').input_ids.to(device)
         ####################################################################
         self._verbose = True
         self._step = 0
@@ -115,6 +115,7 @@ class iPrompt(AutoPrompt):
         output_length = self._num_tokens + num_conditional_tokens
         attention_mask = ~(input_ids == self.tokenizer.pad_token_id)
         assert attention_mask.shape == input_ids.shape
+        print("iPrompt._generate", input_ids.shape)
         
         g = self.model.generate(
             input_ids=input_ids,
@@ -290,7 +291,7 @@ class iPrompt(AutoPrompt):
         """
         self.model.eval()
 
-        # logic here is that we want to see a sample a good number of times before
+        # logic here is that we want to see a sample multiple times before
         # we actually have a good estimate of its loss.
         num_min_occurrences = 2
 

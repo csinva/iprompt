@@ -242,24 +242,11 @@ class PrefixModel(nn.Module, abc.ABC):
             inputs_embeds=embeddings,
             attention_mask=attention_mask,
         )
-        # decoder_input_ids = torch.full(
-        #     size=(len(embeddings), 1),
-        #     fill_value=self.model.config.decoder_start_token_id,
-        #     device=device,
-        # )
         output = self.model(
             encoder_outputs=encoder_outputs,
             decoder_input_ids=next_token_ids,
         )
-
-        full_input_ids = torch.cat(
-            (new_input_ids, next_token_ids), dim=1
-        )
-        breakpoint9)
-        output_logits = torch.cat(
-            (output.encoder_last_hidden_state, output.logits), dim=1
-        )
-        return full_input_ids, output_logits
+        return next_token_ids, output.logits
 
     def forward(
             self,
@@ -349,17 +336,19 @@ class PrefixModel(nn.Module, abc.ABC):
                 next_token_ids=next_token_ids,
                 prefix_ids=prefix_ids, 
             )
+            next_token_logits = outputs[:, 0, :]
         else:
             full_input_ids, outputs = self.forward(
                 input_ids=input_ids,
                 prefix_ids=prefix_ids,
             )
-        # make sure we have same number of predictions as tokens
-        assert full_input_ids.shape == outputs.shape[:2]
+            # make sure we have same number of predictions as tokens
+            assert full_input_ids.shape == outputs.shape[:2]
 
-        # get first predicted token logits
-        next_token_idx = (~(full_input_ids == self.tokenizer.eos_token_id)).cumsum(dim=1).argmax(dim=1)
-        next_token_logits = outputs[torch.arange(len(original_input_ids)), next_token_idx-1]
+            # get first predicted token logits
+            next_token_idx = (~(full_input_ids == self.tokenizer.eos_token_id)).cumsum(dim=1).argmax(dim=1)
+            next_token_logits = outputs[torch.arange(len(original_input_ids)), next_token_idx-1]
+
 
         # compute first-token acc
         if possible_answer_mask is None:
@@ -407,8 +396,9 @@ class PrefixModel(nn.Module, abc.ABC):
             all_losses = torch.cat(
                 (original_losses[:, None], other_losses.reshape((b, -1))), dim=1
             )
+            special_token_id = self.tokenizer.bos_token_id or self.tokenizer.pad_token_id
             num_tokens_per_output = (
-                ~(next_token_ids == self.tokenizer.bos_token_id)).sum(dim=1)
+                ~(next_token_ids == special_token_id)).sum(dim=1)
             all_losses = all_losses.sum(dim=1) / num_tokens_per_output
             assert all_losses.shape == (b,)
             loss = all_losses.mean()
