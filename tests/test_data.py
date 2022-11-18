@@ -1,4 +1,5 @@
 from iprompt.data import TASKS
+from iprompt.data_utils.induction import TASKS_INDUCTION
 from iprompt.data_utils.two_num import TASKS_TWO_NUMS
 from iprompt.data_utils.one_num import TASKS_ONE_NUM
 from iprompt.data_utils import data_funcs
@@ -33,9 +34,9 @@ def test_get_data():
     task_name = 'multiply_two'
 
     args = dict(
-        template_num_task_phrasing = 0,
-        max_dset_size = 1000,
-        max_digit = 10,
+        template_num_task_phrasing=0,
+        max_dset_size=1000,
+        max_digit=10,
     )
     dset, check_answer_func, descr = get_data(
         task_name=task_name, n_shots=1, **args)
@@ -90,9 +91,9 @@ def test_get_data():
 
 def test_anli():
     args = dict(
-        template_num_task_phrasing = 0,
-        max_dset_size = 1000,
-        max_digit = 10,
+        template_num_task_phrasing=0,
+        max_dset_size=1000,
+        max_digit=10,
     )
     for task_name in TASKS_ANLI:
         if not task_name == 'SUFFIXES':
@@ -106,5 +107,24 @@ def test_anli():
             assert check_text(descr)
 
 
+def test_induction():
+    args = dict(
+        template_num_task_phrasing=0,
+        max_dset_size=1000,
+        max_digit=10,
+    )
+    for task_name in TASKS_INDUCTION:
+        if not task_name == 'SUFFIXES':
+            print(task_name)
+            df, answer_func, descr = get_data(**args, task_name=task_name)
+
+            def check_text(s):
+                return isinstance(s, str) and len(s) > 0
+            assert pd.Series(df['text']).apply(
+                check_text).all(), 'text is all strings'
+            assert check_text(descr)
+
+
 if __name__ == '__main__':
-    test_get_data()
+    # test_get_data()
+    test_induction()

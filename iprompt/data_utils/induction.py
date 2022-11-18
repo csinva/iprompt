@@ -1,87 +1,106 @@
-from functools import partial
-import logging
-from typing import List
-from datasets import Dataset
+import json
+
+import os
 import pandas as pd
-import numpy as np
-from collections import defaultdict
-import re
-from tqdm import trange
-import torch.nn
-from . import data_funcs
+from os.path import dirname
+from os.path import join as oj
 
-"""Note: all templates should be "stackable" so that they work in the multi-shot setting.
-Only 2 newlines will be added between them.
-Don't change the order of these (higher should be better).
-"""
+INDUCTION_PROCESSED_DIR = oj(
+    dirname(os.path.abspath(__file__)), 'induction_processed')
+DESCRIPTIONS_DICT = json.load(open(
+    # oj(ANLI_PROCESSED_DIR, 'task_defs_brief.json'), 'r'))
+    oj(INDUCTION_PROCESSED_DIR, 'task_defs.json'), 'r')
+)
 
-PROMPT_TEMPLATE_ONE_NUM = [
-    lambda num1, g: (
-        f'Given the input x is {num1}, the output f(x) is', f' {g(num1)}.\n\n'),
 
-    lambda num1, g: (
-        f'Given the input x is {num1}, the output is', f' {g(num1)}.\n\n'),
+def fetch_data(task_name_induction):
+    df = pd.read_csv(oj(INDUCTION_PROCESSED_DIR, task_name_induction + '.csv'))
+    # Fix input: Encourage model to answer output as next token.
+    df['input'] = df['input'].map(lambda s: f'Input: {s} Answer:')
+    # Fix output: Prepend a space and add newlines to match output format of number tasks
+    df['output'] = df['output'].map(lambda s: f' {s}\n\n')
+    return df
 
-    lambda num1, g: (
-        f'Given the input number {num1}, the function output is', f' {g(num1)}.\n\n'),
 
-    lambda num1, g: (
-        f'Input: {num1}\n', f'Function output: {g(num1)}\n\n'),
-
-    lambda num1, g: (
-        f'The input is {num1}.', f' The function output is {g(num1)}\n\n'),
-]
-# "The function returns the",
-# "To compute the answer from the input number x, return",
-# "To calculate the answer, take the input and",
-# # "To compute the answer f(x) from the input number x, return",
-# # "The function mapping the input to the output is",
-# # "To find the output, take the number in the question and use the",
-# # "To get the answer, take the number in the question and",
-# # "The relationship between the number in the question and the answer is:",
-# # "To get the answer,",
-SUFFIXES_ONE_NUM = {
-    'square_one': ["To compute the answer, take the input number and"],
-    'exp_one': ["To compute the answer, take the input number x and return"],
-    'prime_one': ["To compute the answer, return whether the input number is"],
-    'double_one': ["To compute the answer, take the input number and"],
-    'fibonacci_one': ["To compute the answer, take the input number x and return the"],
+TASKS_INDUCTION = {
+    'cause_and_effect': {
+        'check_answer_func': r'caus|effect|reason',
+    },
+    'sum': {
+        'check_answer_func': r'add|sum',
+    },
+    'num_to_verbal': {
+        'check_answer_func': r'number|numeric',
+    },
+    'diff': {
+        'check_answer_func': r'difference|subtract',
+    },
+    'first_word_letter': {
+        'check_answer_func': r'first',
+    },
+    'singular_to_plural': {
+        'check_answer_func': r'sing|plural',
+    },
+    'synonyms': {
+        'check_answer_func': r'synonym|alternate|rephrase',
+    },
+    'letters_list': {
+        'check_answer_func': r'list|sequence',
+    },
+    'sentence_similarity': {
+        'check_answer_func': r'similarity|same|same meaning|same meaning as',
+    },
+    'informal_to_formal': {
+        'check_answer_func': r'formal|informal|polite|impolite',
+    },
+    'rhymes': {
+        'check_answer_func': r'rhyme',
+    },
+    'common_concept': {
+        'check_answer_func': r'common|shared|same|concept|meaning|idea',
+    },
+    'second_word_letter': {
+        'check_answer_func': r'second',
+    },
+    'translation_en-fr': {
+        'check_answer_func': r'translat',
+    },
+    'taxonomy_animal': {
+        'check_answer_func': r'animal',
+    },
+    'sentiment': {
+        'check_answer_func': r'sentiment|positive|negative',
+    },
+    'active_to_passive': {
+        'check_answer_func': r'active|passive',
+    },
+    'word_in_context': {
+        'check_answer_func': r'same|same meaning|same meaning as',
+    },
+    'orthography_starts_with': {
+        'check_answer_func': r'orthography|starts with',
+    },
+    'antonyms': {
+        'check_answer_func': r'antonym|opposite',
+    },
+    'negation': {
+        'check_answer_func': r'negation|opposite',
+    },
+    'translation_en-de': {
+        'check_answer_func': r'translat',
+    },
+    'larger_animal': {
+        'check_answer_func': r'large|larger|bigger|biggest',
+    },
+    'translation_en-es': {
+        'check_answer_func': r'translat',
+    },
 }
-TASKS_ONE_NUM = {
-    'square_one': {
-        'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
-        'check_answer_func': r'square|(mult.*self)|(prod.*self)|x\s*\*\s*x|pow\(x,\s*2\)',
-        'gen_func': lambda x: x * x,
-        'description': "Square the input to get the output.",
-    },
-    'exp_one': {
-        'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
-        'check_answer_func': r'exp|e\s*^\s*x|e\s*to the\s*x',
-        'gen_func': lambda x: np.exp(x).round(2),
-        'description': "Exponentiate the input to get the output.",
-    },
-    'double_one': {
-        'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
-        'check_answer_func': r'two|double|2',
-        'gen_func': lambda x: 2 * x,
-        'description': "Given an input x, return 2*x.",
-    },
+ks = list(TASKS_INDUCTION.keys())
+for k in ks:
+    if not k == 'SUFFIXES':
+        TASKS_INDUCTION[k]['description'] = DESCRIPTIONS_DICT[k]
+        TASKS_INDUCTION[k]['gen_func'] = fetch_data
 
-    # redundant with anli
-    # 'prime_one': {
-    #     'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
-    #     'check_answer_func': r'prime',
-    #     'gen_func': lambda x: data_funcs.prime_n(x),
-    #     'description': "Given an input x, return the xth prime number.",
-    # },    
-
-    # too hard
-    'fibonacci_one': {
-        'prompt_template_funcs': PROMPT_TEMPLATE_ONE_NUM,
-        'check_answer_func': r'fib',
-        'gen_func': lambda x: data_funcs.fib_n(x),
-        'description': "Given an input x, return the xth fibonacci number.",
-    },
-
-    'SUFFIXES': SUFFIXES_ONE_NUM
-}
+if __name__ == '__main__':
+    print(TASKS_INDUCTION)
