@@ -142,6 +142,9 @@ class iPrompt(AutoPrompt):
             print(">>", self.tokenizer.decode(random_sentence_ids).replace('\n', '\\n'))
         
         if self._is_t5:
+            if not (g[:, 0] == self.tokenizer.pad_token_id).all():
+                breakpoint()
+            assert (g[:, 0] == self.tokenizer.pad_token_id).all()
             return g[:, 1:]
         else:
             # Split off the conditional part, we only want the prefix part, which
