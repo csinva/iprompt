@@ -1,0 +1,3887 @@
+input,output,text
+game,games,"Input: game Answer: games
+"
+season,seasons,"Input: season Answer: seasons
+"
+year,years,"Input: year Answer: years
+"
+second,seconds,"Input: second Answer: seconds
+"
+album,albums,"Input: album Answer: albums
+"
+song,songs,"Input: song Answer: songs
+"
+number,numbers,"Input: number Answer: numbers
+"
+part,parts,"Input: part Answer: parts
+"
+team,teams,"Input: team Answer: teams
+"
+episode,episodes,"Input: episode Answer: episodes
+"
+day,days,"Input: day Answer: days
+"
+state,states,"Input: state Answer: states
+"
+century,centuries,"Input: century Answer: centuries
+"
+area,areas,"Input: area Answer: areas
+"
+city,cities,"Input: city Answer: cities
+"
+show,shows,"Input: show Answer: shows
+"
+war,wars,"Input: war Answer: wars
+"
+place,places,"Input: place Answer: places
+"
+group,groups,"Input: group Answer: groups
+"
+system,systems,"Input: system Answer: systems
+"
+name,names,"Input: name Answer: names
+"
+line,lines,"Input: line Answer: lines
+"
+family,families,"Input: family Answer: families
+"
+home,homes,"Input: home Answer: homes
+"
+band,bands,"Input: band Answer: bands
+"
+record,records,"Input: record Answer: records
+"
+ship,ships,"Input: ship Answer: ships
+"
+release,releases,"Input: release Answer: releases
+"
+role,roles,"Input: role Answer: roles
+"
+way,ways,"Input: way Answer: ways
+"
+side,sides,"Input: side Answer: sides
+"
+story,stories,"Input: story Answer: stories
+"
+form,forms,"Input: form Answer: forms
+"
+storm,storms,"Input: storm Answer: storms
+"
+version,versions,"Input: version Answer: versions
+"
+support,supports,"Input: support Answer: supports
+"
+book,books,"Input: book Answer: books
+"
+period,periods,"Input: period Answer: periods
+"
+half,halves,"Input: half Answer: halves
+"
+point,points,"Input: point Answer: points
+"
+position,positions,"Input: position Answer: positions
+"
+attack,attacks,"Input: attack Answer: attacks
+"
+include,includes,"Input: include Answer: includes
+"
+building,buildings,"Input: building Answer: buildings
+"
+town,towns,"Input: town Answer: towns
+"
+service,services,"Input: service Answer: services
+"
+aircraft,aircraft,"Input: aircraft Answer: aircraft
+"
+father,fathers,"Input: father Answer: fathers
+"
+club,clubs,"Input: club Answer: clubs
+"
+result,results,"Input: result Answer: results
+"
+run,runs,"Input: run Answer: runs
+"
+title,titles,"Input: title Answer: titles
+"
+week,weeks,"Input: week Answer: weeks
+"
+force,forces,"Input: force Answer: forces
+"
+television,televisions,"Input: television Answer: televisions
+"
+head,heads,"Input: head Answer: heads
+"
+level,levels,"Input: level Answer: levels
+"
+route,routes,"Input: route Answer: routes
+"
+member,members,"Input: member Answer: members
+"
+battle,battles,"Input: battle Answer: battles
+"
+road,roads,"Input: road Answer: roads
+"
+range,ranges,"Input: range Answer: ranges
+"
+race,races,"Input: race Answer: races
+"
+present,presents,"Input: present Answer: presents
+"
+population,populations,"Input: population Answer: populations
+"
+campaign,campaigns,"Input: campaign Answer: campaigns
+"
+stage,stages,"Input: stage Answer: stages
+"
+station,stations,"Input: station Answer: stations
+"
+site,sites,"Input: site Answer: sites
+"
+party,parties,"Input: party Answer: parties
+"
+case,cases,"Input: case Answer: cases
+"
+event,events,"Input: event Answer: events
+"
+scene,scenes,"Input: scene Answer: scenes
+"
+front,fronts,"Input: front Answer: fronts
+"
+field,fields,"Input: field Answer: fields
+"
+region,regions,"Input: region Answer: regions
+"
+office,offices,"Input: office Answer: offices
+"
+example,examples,"Input: example Answer: examples
+"
+wife,wives,"Input: wife Answer: wives
+"
+army,armies,"Input: army Answer: armies
+"
+mother,mothers,"Input: mother Answer: mothers
+"
+project,projects,"Input: project Answer: projects
+"
+rest,rests,"Input: rest Answer: rests
+"
+highway,highways,"Input: highway Answer: highways
+"
+shot,shots,"Input: shot Answer: shots
+"
+month,months,"Input: month Answer: months
+"
+crew,crews,"Input: crew Answer: crews
+"
+studio,studios,"Input: studio Answer: studios
+"
+director,directors,"Input: director Answer: directors
+"
+hurricane,hurricanes,"Input: hurricane Answer: hurricanes
+"
+appearance,appearances,"Input: appearance Answer: appearances
+"
+list,lists,"Input: list Answer: lists
+"
+goal,goals,"Input: goal Answer: goals
+"
+relationship,relationships,"Input: relationship Answer: relationships
+"
+court,courts,"Input: court Answer: courts
+"
+chart,charts,"Input: chart Answer: charts
+"
+attempt,attempts,"Input: attempt Answer: attempts
+"
+recording,recordings,"Input: recording Answer: recordings
+"
+sound,sounds,"Input: sound Answer: sounds
+"
+cast,casts,"Input: cast Answer: casts
+"
+term,terms,"Input: term Answer: terms
+"
+art,arts,"Input: art Answer: arts
+"
+future,futures,"Input: future Answer: futures
+"
+league,leagues,"Input: league Answer: leagues
+"
+review,reviews,"Input: review Answer: reviews
+"
+section,sections,"Input: section Answer: sections
+"
+cover,covers,"Input: cover Answer: covers
+"
+idea,ideas,"Input: idea Answer: ideas
+"
+brother,brothers,"Input: brother Answer: brothers
+"
+election,elections,"Input: election Answer: elections
+"
+novel,novels,"Input: novel Answer: novels
+"
+coast,coasts,"Input: coast Answer: coasts
+"
+person,people,"Input: person Answer: people
+"
+sea,seas,"Input: sea Answer: seas
+"
+gun,guns,"Input: gun Answer: guns
+"
+hand,hands,"Input: hand Answer: hands
+"
+study,studies,"Input: study Answer: studies
+"
+response,responses,"Input: response Answer: responses
+"
+decision,decisions,"Input: decision Answer: decisions
+"
+magazine,magazines,"Input: magazine Answer: magazines
+"
+debut,debuts,"Input: debut Answer: debuts
+"
+program,programs,"Input: program Answer: programs
+"
+score,scores,"Input: score Answer: scores
+"
+surface,surfaces,"Input: surface Answer: surfaces
+"
+turn,turns,"Input: turn Answer: turns
+"
+community,communities,"Input: community Answer: communities
+"
+length,lengths,"Input: length Answer: lengths
+"
+bridge,bridges,"Input: bridge Answer: bridges
+"
+plan,plans,"Input: plan Answer: plans
+"
+center,centers,"Input: center Answer: centers
+"
+speed,speeds,"Input: speed Answer: speeds
+"
+president,presidents,"Input: president Answer: presidents
+"
+summer,summers,"Input: summer Answer: summers
+"
+cut,cuts,"Input: cut Answer: cuts
+"
+writer,writers,"Input: writer Answer: writers
+"
+date,dates,"Input: date Answer: dates
+"
+influence,influences,"Input: influence Answer: influences
+"
+fleet,fleets,"Input: fleet Answer: fleets
+"
+size,sizes,"Input: size Answer: sizes
+"
+daughter,daughters,"Input: daughter Answer: daughters
+"
+cost,costs,"Input: cost Answer: costs
+"
+river,rivers,"Input: river Answer: rivers
+"
+contract,contracts,"Input: contract Answer: contracts
+"
+view,views,"Input: view Answer: views
+"
+language,languages,"Input: language Answer: languages
+"
+self,selves,"Input: self Answer: selves
+"
+course,courses,"Input: course Answer: courses
+"
+producer,producers,"Input: producer Answer: producers
+"
+radio,radios,"Input: radio Answer: radios
+"
+feature,features,"Input: feature Answer: features
+"
+effect,effects,"Input: effect Answer: effects
+"
+leader,leaders,"Input: leader Answer: leaders
+"
+woman,women,"Input: woman Answer: women
+"
+voice,voices,"Input: voice Answer: voices
+"
+increase,increases,"Input: increase Answer: increases
+"
+friend,friends,"Input: friend Answer: friends
+"
+location,locations,"Input: location Answer: locations
+"
+child,children,"Input: child Answer: children
+"
+report,reports,"Input: report Answer: reports
+"
+village,villages,"Input: village Answer: villages
+"
+manager,managers,"Input: manager Answer: managers
+"
+majority,majorities,"Input: majority Answer: majorities
+"
+cause,causes,"Input: cause Answer: causes
+"
+act,acts,"Input: act Answer: acts
+"
+park,parks,"Input: park Answer: parks
+"
+flight,flights,"Input: flight Answer: flights
+"
+need,needs,"Input: need Answer: needs
+"
+broadcast,broadcasts,"Input: broadcast Answer: broadcasts
+"
+guitar,guitars,"Input: guitar Answer: guitars
+"
+interview,interviews,"Input: interview Answer: interviews
+"
+audience,audiences,"Input: audience Answer: audiences
+"
+operation,operations,"Input: operation Answer: operations
+"
+reach,reaches,"Input: reach Answer: reaches
+"
+officer,officers,"Input: officer Answer: officers
+"
+sister,sisters,"Input: sister Answer: sisters
+"
+ability,abilities,"Input: ability Answer: abilities
+"
+pop,pops,"Input: pop Answer: pops
+"
+deal,deals,"Input: deal Answer: deals
+"
+ball,balls,"Input: ball Answer: balls
+"
+subject,subjects,"Input: subject Answer: subjects
+"
+rate,rates,"Input: rate Answer: rates
+"
+unit,units,"Input: unit Answer: units
+"
+artist,artists,"Input: artist Answer: artists
+"
+model,models,"Input: model Answer: models
+"
+theme,themes,"Input: theme Answer: themes
+"
+pass,passes,"Input: pass Answer: passes
+"
+centre,centres,"Input: centre Answer: centres
+"
+plot,plots,"Input: plot Answer: plots
+"
+letter,letters,"Input: letter Answer: letters
+"
+peak,peaks,"Input: peak Answer: peaks
+"
+capital,capitals,"Input: capital Answer: capitals
+"
+word,words,"Input: word Answer: words
+"
+edition,editions,"Input: edition Answer: editions
+"
+script,scripts,"Input: script Answer: scripts
+"
+movie,movies,"Input: movie Answer: movies
+"
+network,networks,"Input: network Answer: networks
+"
+board,boards,"Input: board Answer: boards
+"
+effort,efforts,"Input: effort Answer: efforts
+"
+marriage,marriages,"Input: marriage Answer: marriages
+"
+college,colleges,"Input: college Answer: colleges
+"
+mass,masses,"Input: mass Answer: masses
+"
+culture,cultures,"Input: culture Answer: cultures
+"
+cyclone,cyclones,"Input: cyclone Answer: cyclones
+"
+combat,combats,"Input: combat Answer: combats
+"
+market,markets,"Input: market Answer: markets
+"
+science,sciences,"Input: science Answer: sciences
+"
+source,sources,"Input: source Answer: sources
+"
+quality,qualities,"Input: quality Answer: qualities
+"
+fall,falls,"Input: fall Answer: falls
+"
+break,breaks,"Input: break Answer: breaks
+"
+rule,rules,"Input: rule Answer: rules
+"
+yard,yards,"Input: yard Answer: yards
+"
+concert,concerts,"Input: concert Answer: concerts
+"
+engine,engines,"Input: engine Answer: engines
+"
+advance,advances,"Input: advance Answer: advances
+"
+portion,portions,"Input: portion Answer: portions
+"
+castle,castles,"Input: castle Answer: castles
+"
+pair,pairs,"Input: pair Answer: pairs
+"
+award,awards,"Input: award Answer: awards
+"
+collection,collections,"Input: collection Answer: collections
+"
+call,calls,"Input: call Answer: calls
+"
+port,ports,"Input: port Answer: ports
+"
+approach,approaches,"Input: approach Answer: approaches
+"
+situation,situations,"Input: situation Answer: situations
+"
+distance,distances,"Input: distance Answer: distances
+"
+amount,amounts,"Input: amount Answer: amounts
+"
+test,tests,"Input: test Answer: tests
+"
+inch,inches,"Input: inch Answer: inches
+"
+actor,actors,"Input: actor Answer: actors
+"
+piece,pieces,"Input: piece Answer: pieces
+"
+train,trains,"Input: train Answer: trains
+"
+figure,figures,"Input: figure Answer: figures
+"
+concept,concepts,"Input: concept Answer: concepts
+"
+scale,scales,"Input: scale Answer: scales
+"
+job,jobs,"Input: job Answer: jobs
+"
+chief,chiefs,"Input: chief Answer: chiefs
+"
+foot,feet,"Input: foot Answer: feet
+"
+author,authors,"Input: author Answer: authors
+"
+cross,crosses,"Input: cross Answer: crosses
+"
+captain,captains,"Input: captain Answer: captains
+"
+theory,theories,"Input: theory Answer: theories
+"
+invasion,invasions,"Input: invasion Answer: invasions
+"
+plant,plants,"Input: plant Answer: plants
+"
+charge,charges,"Input: charge Answer: charges
+"
+county,counties,"Input: county Answer: counties
+"
+screen,screens,"Input: screen Answer: screens
+"
+wall,walls,"Input: wall Answer: walls
+"
+sense,senses,"Input: sense Answer: senses
+"
+pilot,pilots,"Input: pilot Answer: pilots
+"
+reception,receptions,"Input: reception Answer: receptions
+"
+lot,lots,"Input: lot Answer: lots
+"
+wing,wings,"Input: wing Answer: wings
+"
+student,students,"Input: student Answer: students
+"
+executive,executives,"Input: executive Answer: executives
+"
+district,districts,"Input: district Answer: districts
+"
+image,images,"Input: image Answer: images
+"
+share,shares,"Input: share Answer: shares
+"
+border,borders,"Input: border Answer: borders
+"
+stone,stones,"Input: stone Answer: stones
+"
+quarter,quarters,"Input: quarter Answer: quarters
+"
+box,boxes,"Input: box Answer: boxes
+"
+husband,husbands,"Input: husband Answer: husbands
+"
+travel,travels,"Input: travel Answer: travels
+"
+tournament,tournaments,"Input: tournament Answer: tournaments
+"
+floor,floors,"Input: floor Answer: floors
+"
+couple,couples,"Input: couple Answer: couples
+"
+formation,formations,"Input: formation Answer: formations
+"
+reference,references,"Input: reference Answer: references
+"
+territory,territories,"Input: territory Answer: territories
+"
+championship,championships,"Input: championship Answer: championships
+"
+university,universities,"Input: university Answer: universities
+"
+machine,machines,"Input: machine Answer: machines
+"
+guest,guests,"Input: guest Answer: guests
+"
+problem,problems,"Input: problem Answer: problems
+"
+horse,horses,"Input: horse Answer: horses
+"
+governor,governors,"Input: governor Answer: governors
+"
+soundtrack,soundtracks,"Input: soundtrack Answer: soundtracks
+"
+senior,seniors,"Input: senior Answer: seniors
+"
+degree,degrees,"Input: degree Answer: degrees
+"
+railway,railways,"Input: railway Answer: railways
+"
+birth,births,"Input: birth Answer: births
+"
+vote,votes,"Input: vote Answer: votes
+"
+website,websites,"Input: website Answer: websites
+"
+escape,escapes,"Input: escape Answer: escapes
+"
+basis,bases,"Input: basis Answer: bases
+"
+sequence,sequences,"Input: sequence Answer: sequences
+"
+squadron,squadrons,"Input: squadron Answer: squadrons
+"
+risk,risks,"Input: risk Answer: risks
+"
+agreement,agreements,"Input: agreement Answer: agreements
+"
+failure,failures,"Input: failure Answer: failures
+"
+nation,nations,"Input: nation Answer: nations
+"
+eye,eyes,"Input: eye Answer: eyes
+"
+threat,threats,"Input: threat Answer: threats
+"
+claim,claims,"Input: claim Answer: claims
+"
+bill,bills,"Input: bill Answer: bills
+"
+tower,towers,"Input: tower Answer: towers
+"
+expansion,expansions,"Input: expansion Answer: expansions
+"
+boat,boats,"Input: boat Answer: boats
+"
+hospital,hospitals,"Input: hospital Answer: hospitals
+"
+ring,rings,"Input: ring Answer: rings
+"
+landing,landings,"Input: landing Answer: landings
+"
+crossing,crossings,"Input: crossing Answer: crossings
+"
+contact,contacts,"Input: contact Answer: contacts
+"
+seat,seats,"Input: seat Answer: seats
+"
+girl,girls,"Input: girl Answer: girls
+"
+split,splits,"Input: split Answer: splits
+"
+committee,committees,"Input: committee Answer: committees
+"
+beat,beats,"Input: beat Answer: beats
+"
+article,articles,"Input: article Answer: articles
+"
+animal,animals,"Input: animal Answer: animals
+"
+comedy,comedies,"Input: comedy Answer: comedies
+"
+transport,transports,"Input: transport Answer: transports
+"
+leg,legs,"Input: leg Answer: legs
+"
+flag,flags,"Input: flag Answer: flags
+"
+interchange,interchanges,"Input: interchange Answer: interchanges
+"
+purpose,purposes,"Input: purpose Answer: purposes
+"
+security,securities,"Input: security Answer: securities
+"
+spread,spreads,"Input: spread Answer: spreads
+"
+search,searches,"Input: search Answer: searches
+"
+incident,incidents,"Input: incident Answer: incidents
+"
+mind,minds,"Input: mind Answer: minds
+"
+battalion,battalions,"Input: battalion Answer: battalions
+"
+critic,critics,"Input: critic Answer: critics
+"
+mile,miles,"Input: mile Answer: miles
+"
+budget,budgets,"Input: budget Answer: budgets
+"
+arrival,arrivals,"Input: arrival Answer: arrivals
+"
+ceremony,ceremonies,"Input: ceremony Answer: ceremonies
+"
+condition,conditions,"Input: condition Answer: conditions
+"
+thing,things,"Input: thing Answer: things
+"
+color,colors,"Input: color Answer: colors
+"
+street,streets,"Input: street Answer: streets
+"
+session,sessions,"Input: session Answer: sessions
+"
+wave,waves,"Input: wave Answer: waves
+"
+piano,pianos,"Input: piano Answer: pianos
+"
+planet,planets,"Input: planet Answer: planets
+"
+reign,reigns,"Input: reign Answer: reigns
+"
+selection,selections,"Input: selection Answer: selections
+"
+computer,computers,"Input: computer Answer: computers
+"
+council,councils,"Input: council Answer: councils
+"
+comic,comics,"Input: comic Answer: comics
+"
+opportunity,opportunities,"Input: opportunity Answer: opportunities
+"
+question,questions,"Input: question Answer: questions
+"
+shooting,shootings,"Input: shooting Answer: shootings
+"
+display,displays,"Input: display Answer: displays
+"
+advantage,advantages,"Input: advantage Answer: advantages
+"
+conference,conferences,"Input: conference Answer: conferences
+"
+fan,fans,"Input: fan Answer: fans
+"
+prison,prisons,"Input: prison Answer: prisons
+"
+host,hosts,"Input: host Answer: hosts
+"
+protection,protections,"Input: protection Answer: protections
+"
+target,targets,"Input: target Answer: targets
+"
+expedition,expeditions,"Input: expedition Answer: expeditions
+"
+temperature,temperatures,"Input: temperature Answer: temperatures
+"
+brief,briefs,"Input: brief Answer: briefs
+"
+edge,edges,"Input: edge Answer: edges
+"
+intersection,intersections,"Input: intersection Answer: intersections
+"
+chance,chances,"Input: chance Answer: chances
+"
+label,labels,"Input: label Answer: labels
+"
+gain,gains,"Input: gain Answer: gains
+"
+element,elements,"Input: element Answer: elements
+"
+strike,strikes,"Input: strike Answer: strikes
+"
+adult,adults,"Input: adult Answer: adults
+"
+launch,launches,"Input: launch Answer: launches
+"
+storyline,storylines,"Input: storyline Answer: storylines
+"
+shape,shapes,"Input: shape Answer: shapes
+"
+sign,signs,"Input: sign Answer: signs
+"
+tax,taxes,"Input: tax Answer: taxes
+"
+agent,agents,"Input: agent Answer: agents
+"
+editor,editors,"Input: editor Answer: editors
+"
+reputation,reputations,"Input: reputation Answer: reputations
+"
+estate,estates,"Input: estate Answer: estates
+"
+poem,poems,"Input: poem Answer: poems
+"
+height,heights,"Input: height Answer: heights
+"
+alternative,alternatives,"Input: alternative Answer: alternatives
+"
+franchise,franchises,"Input: franchise Answer: franchises
+"
+opinion,opinions,"Input: opinion Answer: opinions
+"
+steel,steels,"Input: steel Answer: steels
+"
+cricket,crickets,"Input: cricket Answer: crickets
+"
+introduction,introductions,"Input: introduction Answer: introductions
+"
+branch,branches,"Input: branch Answer: branches
+"
+exchange,exchanges,"Input: exchange Answer: exchanges
+"
+platform,platforms,"Input: platform Answer: platforms
+"
+mouth,mouths,"Input: mouth Answer: mouths
+"
+request,requests,"Input: request Answer: requests
+"
+freeway,freeways,"Input: freeway Answer: freeways
+"
+crowd,crowds,"Input: crowd Answer: crowds
+"
+settlement,settlements,"Input: settlement Answer: settlements
+"
+note,notes,"Input: note Answer: notes
+"
+description,descriptions,"Input: description Answer: descriptions
+"
+method,methods,"Input: method Answer: methods
+"
+environment,environments,"Input: environment Answer: environments
+"
+genre,genres,"Input: genre Answer: genres
+"
+composition,compositions,"Input: composition Answer: compositions
+"
+bank,banks,"Input: bank Answer: banks
+"
+statement,statements,"Input: statement Answer: statements
+"
+rain,rains,"Input: rain Answer: rains
+"
+assault,assaults,"Input: assault Answer: assaults
+"
+candidate,candidates,"Input: candidate Answer: candidates
+"
+table,tables,"Input: table Answer: tables
+"
+contain,contains,"Input: contain Answer: contains
+"
+entrance,entrances,"Input: entrance Answer: entrances
+"
+forest,forests,"Input: forest Answer: forests
+"
+camera,cameras,"Input: camera Answer: cameras
+"
+stadium,stadiums,"Input: stadium Answer: stadiums
+"
+landfall,landfalls,"Input: landfall Answer: landfalls
+"
+cell,cells,"Input: cell Answer: cells
+"
+decade,decades,"Input: decade Answer: decades
+"
+boy,boys,"Input: boy Answer: boys
+"
+message,messages,"Input: message Answer: messages
+"
+proposal,proposals,"Input: proposal Answer: proposals
+"
+trip,trips,"Input: trip Answer: trips
+"
+bit,bits,"Input: bit Answer: bits
+"
+duty,duties,"Input: duty Answer: duties
+"
+bomb,bombs,"Input: bomb Answer: bombs
+"
+religion,religions,"Input: religion Answer: religions
+"
+controversy,controversies,"Input: controversy Answer: controversies
+"
+hall,halls,"Input: hall Answer: halls
+"
+tail,tails,"Input: tail Answer: tails
+"
+actress,actresses,"Input: actress Answer: actresses
+"
+owner,owners,"Input: owner Answer: owners
+"
+opera,operas,"Input: opera Answer: operas
+"
+composer,composers,"Input: composer Answer: composers
+"
+transfer,transfers,"Input: transfer Answer: transfers
+"
+promote,promotes,"Input: promote Answer: promotes
+"
+price,prices,"Input: price Answer: prices
+"
+mountain,mountains,"Input: mountain Answer: mountains
+"
+firm,firms,"Input: firm Answer: firms
+"
+roof,roofs,"Input: roof Answer: roofs
+"
+identity,identities,"Input: identity Answer: identities
+"
+bottom,bottoms,"Input: bottom Answer: bottoms
+"
+zone,zones,"Input: zone Answer: zones
+"
+challenge,challenges,"Input: challenge Answer: challenges
+"
+lane,lanes,"Input: lane Answer: lanes
+"
+rail,rails,"Input: rail Answer: rails
+"
+hotel,hotels,"Input: hotel Answer: hotels
+"
+depth,depths,"Input: depth Answer: depths
+"
+purchase,purchases,"Input: purchase Answer: purchases
+"
+departure,departures,"Input: departure Answer: departures
+"
+decline,declines,"Input: decline Answer: declines
+"
+accident,accidents,"Input: accident Answer: accidents
+"
+connection,connections,"Input: connection Answer: connections
+"
+mode,modes,"Input: mode Answer: modes
+"
+sequel,sequels,"Input: sequel Answer: sequels
+"
+disc,discs,"Input: disc Answer: discs
+"
+museum,museums,"Input: museum Answer: museums
+"
+measure,measures,"Input: measure Answer: measures
+"
+department,departments,"Input: department Answer: departments
+"
+spot,spots,"Input: spot Answer: spots
+"
+tank,tanks,"Input: tank Answer: tanks
+"
+circulation,circulations,"Input: circulation Answer: circulations
+"
+possibility,possibilities,"Input: possibility Answer: possibilities
+"
+freedom,freedoms,"Input: freedom Answer: freedoms
+"
+drug,drugs,"Input: drug Answer: drugs
+"
+replacement,replacements,"Input: replacement Answer: replacements
+"
+medal,medals,"Input: medal Answer: medals
+"
+task,tasks,"Input: task Answer: tasks
+"
+block,blocks,"Input: block Answer: blocks
+"
+guard,guards,"Input: guard Answer: guards
+"
+regiment,regiments,"Input: regiment Answer: regiments
+"
+theatre,theatres,"Input: theatre Answer: theatres
+"
+chorus,choruses,"Input: chorus Answer: choruses
+"
+hip,hips,"Input: hip Answer: hips
+"
+honor,honors,"Input: honor Answer: honors
+"
+establishment,establishments,"Input: establishment Answer: establishments
+"
+store,stores,"Input: store Answer: stores
+"
+completion,completions,"Input: completion Answer: completions
+"
+origin,origins,"Input: origin Answer: origins
+"
+responsibility,responsibilities,"Input: responsibility Answer: responsibilities
+"
+warning,warnings,"Input: warning Answer: warnings
+"
+skin,skins,"Input: skin Answer: skins
+"
+page,pages,"Input: page Answer: pages
+"
+province,provinces,"Input: province Answer: provinces
+"
+path,paths,"Input: path Answer: paths
+"
+passage,passages,"Input: passage Answer: passages
+"
+counter,counters,"Input: counter Answer: counters
+"
+breed,breeds,"Input: breed Answer: breeds
+"
+corner,corners,"Input: corner Answer: corners
+"
+vehicle,vehicles,"Input: vehicle Answer: vehicles
+"
+reality,realities,"Input: reality Answer: realities
+"
+picture,pictures,"Input: picture Answer: pictures
+"
+memory,memories,"Input: memory Answer: memories
+"
+segment,segments,"Input: segment Answer: segments
+"
+bar,bars,"Input: bar Answer: bars
+"
+touchdown,touchdowns,"Input: touchdown Answer: touchdowns
+"
+difficulty,difficulties,"Input: difficulty Answer: difficulties
+"
+programme,programmes,"Input: programme Answer: programmes
+"
+discovery,discoveries,"Input: discovery Answer: discoveries
+"
+anniversary,anniversaries,"Input: anniversary Answer: anniversaries
+"
+praise,praises,"Input: praise Answer: praises
+"
+penalty,penalties,"Input: penalty Answer: penalties
+"
+pattern,patterns,"Input: pattern Answer: patterns
+"
+documentary,documentaries,"Input: documentary Answer: documentaries
+"
+cap,caps,"Input: cap Answer: caps
+"
+determine,determines,"Input: determine Answer: determines
+"
+category,categories,"Input: category Answer: categories
+"
+contest,contests,"Input: contest Answer: contests
+"
+plane,planes,"Input: plane Answer: planes
+"
+minister,ministers,"Input: minister Answer: ministers
+"
+ensure,ensures,"Input: ensure Answer: ensures
+"
+champion,champions,"Input: champion Answer: champions
+"
+scheme,schemes,"Input: scheme Answer: schemes
+"
+library,libraries,"Input: library Answer: libraries
+"
+fit,fits,"Input: fit Answer: fits
+"
+fighter,fighters,"Input: fighter Answer: fighters
+"
+throne,thrones,"Input: throne Answer: thrones
+"
+rival,rivals,"Input: rival Answer: rivals
+"
+passenger,passengers,"Input: passenger Answer: passengers
+"
+partner,partners,"Input: partner Answer: partners
+"
+reviewer,reviewers,"Input: reviewer Answer: reviewers
+"
+door,doors,"Input: door Answer: doors
+"
+engineer,engineers,"Input: engineer Answer: engineers
+"
+airport,airports,"Input: airport Answer: airports
+"
+interior,interiors,"Input: interior Answer: interiors
+"
+conclusion,conclusions,"Input: conclusion Answer: conclusions
+"
+acid,acids,"Input: acid Answer: acids
+"
+retirement,retirements,"Input: retirement Answer: retirements
+"
+colony,colonies,"Input: colony Answer: colonies
+"
+favor,favors,"Input: favor Answer: favors
+"
+kingdom,kingdoms,"Input: kingdom Answer: kingdoms
+"
+rescue,rescues,"Input: rescue Answer: rescues
+"
+farm,farms,"Input: farm Answer: farms
+"
+crash,crashes,"Input: crash Answer: crashes
+"
+battleship,battleships,"Input: battleship Answer: battleships
+"
+habitat,habitats,"Input: habitat Answer: habitats
+"
+hop,hops,"Input: hop Answer: hops
+"
+judge,judges,"Input: judge Answer: judges
+"
+chairman,chairmen,"Input: chairman Answer: chairmen
+"
+outbreak,outbreaks,"Input: outbreak Answer: outbreaks
+"
+arrangement,arrangements,"Input: arrangement Answer: arrangements
+"
+dog,dogs,"Input: dog Answer: dogs
+"
+step,steps,"Input: step Answer: steps
+"
+grade,grades,"Input: grade Answer: grades
+"
+limit,limits,"Input: limit Answer: limits
+"
+cancer,cancers,"Input: cancer Answer: cancers
+"
+shark,sharks,"Input: shark Answer: sharks
+"
+festival,festivals,"Input: festival Answer: festivals
+"
+siege,sieges,"Input: siege Answer: sieges
+"
+successor,successors,"Input: successor Answer: successors
+"
+narrative,narratives,"Input: narrative Answer: narratives
+"
+cycle,cycles,"Input: cycle Answer: cycles
+"
+hill,hills,"Input: hill Answer: hills
+"
+belt,belts,"Input: belt Answer: belts
+"
+journalist,journalists,"Input: journalist Answer: journalists
+"
+object,objects,"Input: object Answer: objects
+"
+ride,rides,"Input: ride Answer: rides
+"
+chapter,chapters,"Input: chapter Answer: chapters
+"
+exception,exceptions,"Input: exception Answer: exceptions
+"
+arm,arms,"Input: arm Answer: arms
+"
+device,devices,"Input: device Answer: devices
+"
+animation,animations,"Input: animation Answer: animations
+"
+poet,poets,"Input: poet Answer: poets
+"
+brain,brains,"Input: brain Answer: brains
+"
+chain,chains,"Input: chain Answer: chains
+"
+retreat,retreats,"Input: retreat Answer: retreats
+"
+dialogue,dialogues,"Input: dialogue Answer: dialogues
+"
+colour,colours,"Input: colour Answer: colours
+"
+format,formats,"Input: format Answer: formats
+"
+instance,instances,"Input: instance Answer: instances
+"
+shell,shells,"Input: shell Answer: shells
+"
+union,unions,"Input: union Answer: unions
+"
+convoy,convoys,"Input: convoy Answer: convoys
+"
+belief,beliefs,"Input: belief Answer: beliefs
+"
+valley,valleys,"Input: valley Answer: valleys
+"
+driver,drivers,"Input: driver Answer: drivers
+"
+suit,suits,"Input: suit Answer: suits
+"
+diameter,diameters,"Input: diameter Answer: diameters
+"
+junior,juniors,"Input: junior Answer: juniors
+"
+founder,founders,"Input: founder Answer: founders
+"
+hero,heroes,"Input: hero Answer: heroes
+"
+crisis,crises,"Input: crisis Answer: crises
+"
+designer,designers,"Input: designer Answer: designers
+"
+reform,reforms,"Input: reform Answer: reforms
+"
+weekend,weekends,"Input: weekend Answer: weekends
+"
+mix,mixes,"Input: mix Answer: mixes
+"
+tone,tones,"Input: tone Answer: tones
+"
+finale,finales,"Input: finale Answer: finales
+"
+weapon,weapons,"Input: weapon Answer: weapons
+"
+factor,factors,"Input: factor Answer: factors
+"
+vice,vices,"Input: vice Answer: vices
+"
+address,addresses,"Input: address Answer: addresses
+"
+verse,verses,"Input: verse Answer: verses
+"
+window,windows,"Input: window Answer: windows
+"
+personality,personalities,"Input: personality Answer: personalities
+"
+squad,squads,"Input: squad Answer: squads
+"
+channel,channels,"Input: channel Answer: channels
+"
+drawing,drawings,"Input: drawing Answer: drawings
+"
+dynasty,dynasties,"Input: dynasty Answer: dynasties
+"
+card,cards,"Input: card Answer: cards
+"
+intention,intentions,"Input: intention Answer: intentions
+"
+creator,creators,"Input: creator Answer: creators
+"
+symbol,symbols,"Input: symbol Answer: symbols
+"
+listing,listings,"Input: listing Answer: listings
+"
+tribute,tributes,"Input: tribute Answer: tributes
+"
+collapse,collapses,"Input: collapse Answer: collapses
+"
+protagonist,protagonists,"Input: protagonist Answer: protagonists
+"
+link,links,"Input: link Answer: links
+"
+folk,folks,"Input: folk Answer: folks
+"
+tie,ties,"Input: tie Answer: ties
+"
+designation,designations,"Input: designation Answer: designations
+"
+radar,radars,"Input: radar Answer: radars
+"
+appointment,appointments,"Input: appointment Answer: appointments
+"
+surprise,surprises,"Input: surprise Answer: surprises
+"
+dispute,disputes,"Input: dispute Answer: disputes
+"
+survey,surveys,"Input: survey Answer: surveys
+"
+canal,canals,"Input: canal Answer: canals
+"
+benefit,benefits,"Input: benefit Answer: benefits
+"
+struggle,struggles,"Input: struggle Answer: struggles
+"
+favour,favours,"Input: favour Answer: favours
+"
+column,columns,"Input: column Answer: columns
+"
+teacher,teachers,"Input: teacher Answer: teachers
+"
+brand,brands,"Input: brand Answer: brands
+"
+wedding,weddings,"Input: wedding Answer: weddings
+"
+cent,cents,"Input: cent Answer: cents
+"
+alignment,alignments,"Input: alignment Answer: alignments
+"
+map,maps,"Input: map Answer: maps
+"
+opponent,opponents,"Input: opponent Answer: opponents
+"
+copy,copies,"Input: copy Answer: copies
+"
+percentage,percentages,"Input: percentage Answer: percentages
+"
+argument,arguments,"Input: argument Answer: arguments
+"
+arrest,arrests,"Input: arrest Answer: arrests
+"
+railroad,railroads,"Input: railroad Answer: railroads
+"
+attendance,attendances,"Input: attendance Answer: attendances
+"
+household,households,"Input: household Answer: households
+"
+restaurant,restaurants,"Input: restaurant Answer: restaurants
+"
+honour,honours,"Input: honour Answer: honours
+"
+junction,junctions,"Input: junction Answer: junctions
+"
+funeral,funerals,"Input: funeral Answer: funerals
+"
+affair,affairs,"Input: affair Answer: affairs
+"
+compilation,compilations,"Input: compilation Answer: compilations
+"
+exit,exits,"Input: exit Answer: exits
+"
+statue,statues,"Input: statue Answer: statues
+"
+explosion,explosions,"Input: explosion Answer: explosions
+"
+professor,professors,"Input: professor Answer: professors
+"
+mention,mentions,"Input: mention Answer: mentions
+"
+collaboration,collaborations,"Input: collaboration Answer: collaborations
+"
+sector,sectors,"Input: sector Answer: sectors
+"
+tunnel,tunnels,"Input: tunnel Answer: tunnels
+"
+pain,pains,"Input: pain Answer: pains
+"
+residence,residences,"Input: residence Answer: residences
+"
+preparation,preparations,"Input: preparation Answer: preparations
+"
+alliance,alliances,"Input: alliance Answer: alliances
+"
+orbit,orbits,"Input: orbit Answer: orbits
+"
+restoration,restorations,"Input: restoration Answer: restorations
+"
+detail,details,"Input: detail Answer: details
+"
+grant,grants,"Input: grant Answer: grants
+"
+option,options,"Input: option Answer: options
+"
+neck,necks,"Input: neck Answer: necks
+"
+engagement,engagements,"Input: engagement Answer: engagements
+"
+walk,walks,"Input: walk Answer: walks
+"
+cargo,cargoes,"Input: cargo Answer: cargoes
+"
+bear,bears,"Input: bear Answer: bears
+"
+solution,solutions,"Input: solution Answer: solutions
+"
+patrol,patrols,"Input: patrol Answer: patrols
+"
+boundary,boundaries,"Input: boundary Answer: boundaries
+"
+occasion,occasions,"Input: occasion Answer: occasions
+"
+militia,militias,"Input: militia Answer: militias
+"
+crown,crowns,"Input: crown Answer: crowns
+"
+comparison,comparisons,"Input: comparison Answer: comparisons
+"
+spend,spends,"Input: spend Answer: spends
+"
+circuit,circuits,"Input: circuit Answer: circuits
+"
+bed,beds,"Input: bed Answer: beds
+"
+application,applications,"Input: application Answer: applications
+"
+pace,paces,"Input: pace Answer: paces
+"
+satellite,satellites,"Input: satellite Answer: satellites
+"
+palace,palaces,"Input: palace Answer: palaces
+"
+frame,frames,"Input: frame Answer: frames
+"
+flank,flanks,"Input: flank Answer: flanks
+"
+exhibition,exhibitions,"Input: exhibition Answer: exhibitions
+"
+surgery,surgeries,"Input: surgery Answer: surgeries
+"
+poll,polls,"Input: poll Answer: polls
+"
+adventure,adventures,"Input: adventure Answer: adventures
+"
+apartment,apartments,"Input: apartment Answer: apartments
+"
+kick,kicks,"Input: kick Answer: kicks
+"
+dollar,dollars,"Input: dollar Answer: dollars
+"
+protest,protests,"Input: protest Answer: protests
+"
+layer,layers,"Input: layer Answer: layers
+"
+catch,catches,"Input: catch Answer: catches
+"
+gap,gaps,"Input: gap Answer: gaps
+"
+phone,phones,"Input: phone Answer: phones
+"
+casting,castings,"Input: casting Answer: castings
+"
+wicket,wickets,"Input: wicket Answer: wickets
+"
+spin,spins,"Input: spin Answer: spins
+"
+legacy,legacies,"Input: legacy Answer: legacies
+"
+drum,drums,"Input: drum Answer: drums
+"
+illness,illnesses,"Input: illness Answer: illnesses
+"
+merchant,merchants,"Input: merchant Answer: merchants
+"
+bombing,bombings,"Input: bombing Answer: bombings
+"
+fund,funds,"Input: fund Answer: funds
+"
+console,consoles,"Input: console Answer: consoles
+"
+bow,bows,"Input: bow Answer: bows
+"
+definition,definitions,"Input: definition Answer: definitions
+"
+artwork,artworks,"Input: artwork Answer: artworks
+"
+guitarist,guitarists,"Input: guitarist Answer: guitarists
+"
+extend,extends,"Input: extend Answer: extends
+"
+ruling,rulings,"Input: ruling Answer: rulings
+"
+factory,factories,"Input: factory Answer: factories
+"
+profile,profiles,"Input: profile Answer: profiles
+"
+pursue,pursues,"Input: pursue Answer: pursues
+"
+bonus,bonuses,"Input: bonus Answer: bonuses
+"
+theater,theaters,"Input: theater Answer: theaters
+"
+signal,signals,"Input: signal Answer: signals
+"
+coin,coins,"Input: coin Answer: coins
+"
+pit,pits,"Input: pit Answer: pits
+"
+strip,strips,"Input: strip Answer: strips
+"
+flood,floods,"Input: flood Answer: floods
+"
+dress,dresses,"Input: dress Answer: dresses
+"
+triple,triples,"Input: triple Answer: triples
+"
+organ,organs,"Input: organ Answer: organs
+"
+architect,architects,"Input: architect Answer: architects
+"
+legislature,legislatures,"Input: legislature Answer: legislatures
+"
+musician,musicians,"Input: musician Answer: musicians
+"
+baby,babies,"Input: baby Answer: babies
+"
+danger,dangers,"Input: danger Answer: dangers
+"
+expand,expands,"Input: expand Answer: expands
+"
+string,strings,"Input: string Answer: strings
+"
+meter,meters,"Input: meter Answer: meters
+"
+venue,venues,"Input: venue Answer: venues
+"
+cult,cults,"Input: cult Answer: cults
+"
+encounter,encounters,"Input: encounter Answer: encounters
+"
+remix,remixes,"Input: remix Answer: remixes
+"
+turret,turrets,"Input: turret Answer: turrets
+"
+quarterback,quarterbacks,"Input: quarterback Answer: quarterbacks
+"
+panel,panels,"Input: panel Answer: panels
+"
+announcement,announcements,"Input: announcement Answer: announcements
+"
+soldier,soldiers,"Input: soldier Answer: soldiers
+"
+fantasy,fantasies,"Input: fantasy Answer: fantasies
+"
+placing,placings,"Input: placing Answer: placings
+"
+discussion,discussions,"Input: discussion Answer: discussions
+"
+roll,rolls,"Input: roll Answer: rolls
+"
+landscape,landscapes,"Input: landscape Answer: landscapes
+"
+withdrawal,withdrawals,"Input: withdrawal Answer: withdrawals
+"
+angle,angles,"Input: angle Answer: angles
+"
+margin,margins,"Input: margin Answer: margins
+"
+circle,circles,"Input: circle Answer: circles
+"
+trouble,troubles,"Input: trouble Answer: troubles
+"
+specimen,specimens,"Input: specimen Answer: specimens
+"
+pool,pools,"Input: pool Answer: pools
+"
+constitution,constitutions,"Input: constitution Answer: constitutions
+"
+beam,beams,"Input: beam Answer: beams
+"
+shift,shifts,"Input: shift Answer: shifts
+"
+loop,loops,"Input: loop Answer: loops
+"
+plate,plates,"Input: plate Answer: plates
+"
+expression,expressions,"Input: expression Answer: expressions
+"
+skull,skulls,"Input: skull Answer: skulls
+"
+basin,basins,"Input: basin Answer: basins
+"
+assembly,assemblies,"Input: assembly Answer: assemblies
+"
+prize,prizes,"Input: prize Answer: prizes
+"
+sole,soles,"Input: sole Answer: soles
+"
+portrayal,portrayals,"Input: portrayal Answer: portrayals
+"
+bid,bids,"Input: bid Answer: bids
+"
+regime,regimes,"Input: regime Answer: regimes
+"
+delay,delays,"Input: delay Answer: delays
+"
+jury,juries,"Input: jury Answer: juries
+"
+cousin,cousins,"Input: cousin Answer: cousins
+"
+commentary,commentaries,"Input: commentary Answer: commentaries
+"
+lawyer,lawyers,"Input: lawyer Answer: lawyers
+"
+execution,executions,"Input: execution Answer: executions
+"
+terrain,terrains,"Input: terrain Answer: terrains
+"
+duration,durations,"Input: duration Answer: durations
+"
+tenure,tenures,"Input: tenure Answer: tenures
+"
+dream,dreams,"Input: dream Answer: dreams
+"
+bone,bones,"Input: bone Answer: bones
+"
+rhythm,rhythms,"Input: rhythm Answer: rhythms
+"
+coup,coups,"Input: coup Answer: coups
+"
+shop,shops,"Input: shop Answer: shops
+"
+publisher,publishers,"Input: publisher Answer: publishers
+"
+component,components,"Input: component Answer: components
+"
+uncle,uncles,"Input: uncle Answer: uncles
+"
+parliament,parliaments,"Input: parliament Answer: parliaments
+"
+tube,tubes,"Input: tube Answer: tubes
+"
+virus,viruses,"Input: virus Answer: viruses
+"
+contribution,contributions,"Input: contribution Answer: contributions
+"
+earthquake,earthquakes,"Input: earthquake Answer: earthquakes
+"
+scholar,scholars,"Input: scholar Answer: scholars
+"
+songwriter,songwriters,"Input: songwriter Answer: songwriters
+"
+debt,debts,"Input: debt Answer: debts
+"
+ticket,tickets,"Input: ticket Answer: tickets
+"
+frequency,frequencies,"Input: frequency Answer: frequencies
+"
+coat,coats,"Input: coat Answer: coats
+"
+destroyer,destroyers,"Input: destroyer Answer: destroyers
+"
+doctor,doctors,"Input: doctor Answer: doctors
+"
+profit,profits,"Input: profit Answer: profits
+"
+touch,touches,"Input: touch Answer: touches
+"
+ballad,ballads,"Input: ballad Answer: ballads
+"
+bay,bays,"Input: bay Answer: bays
+"
+cannon,cannons,"Input: cannon Answer: cannons
+"
+trough,troughs,"Input: trough Answer: troughs
+"
+parody,parodies,"Input: parody Answer: parodies
+"
+phrase,phrases,"Input: phrase Answer: phrases
+"
+trail,trails,"Input: trail Answer: trails
+"
+reduction,reductions,"Input: reduction Answer: reductions
+"
+ruler,rulers,"Input: ruler Answer: rulers
+"
+shoulder,shoulders,"Input: shoulder Answer: shoulders
+"
+signature,signatures,"Input: signature Answer: signatures
+"
+communist,communists,"Input: communist Answer: communists
+"
+wish,wishes,"Input: wish Answer: wishes
+"
+minority,minorities,"Input: minority Answer: minorities
+"
+document,documents,"Input: document Answer: documents
+"
+instrument,instruments,"Input: instrument Answer: instruments
+"
+revolt,revolts,"Input: revolt Answer: revolts
+"
+tip,tips,"Input: tip Answer: tips
+"
+escort,escorts,"Input: escort Answer: escorts
+"
+climb,climbs,"Input: climb Answer: climbs
+"
+representation,representations,"Input: representation Answer: representations
+"
+magnitude,magnitudes,"Input: magnitude Answer: magnitudes
+"
+hole,holes,"Input: hole Answer: holes
+"
+prisoner,prisoners,"Input: prisoner Answer: prisoners
+"
+stream,streams,"Input: stream Answer: streams
+"
+chair,chairs,"Input: chair Answer: chairs
+"
+sample,samples,"Input: sample Answer: samples
+"
+airing,airings,"Input: airing Answer: airings
+"
+biographer,biographers,"Input: biographer Answer: biographers
+"
+waste,wastes,"Input: waste Answer: wastes
+"
+experiment,experiments,"Input: experiment Answer: experiments
+"
+guide,guides,"Input: guide Answer: guides
+"
+slave,slaves,"Input: slave Answer: slaves
+"
+liquid,liquids,"Input: liquid Answer: liquids
+"
+institution,institutions,"Input: institution Answer: institutions
+"
+parent,parents,"Input: parent Answer: parents
+"
+salary,salaries,"Input: salary Answer: salaries
+"
+count,counts,"Input: count Answer: counts
+"
+doubt,doubts,"Input: doubt Answer: doubts
+"
+cinema,cinemas,"Input: cinema Answer: cinemas
+"
+cloud,clouds,"Input: cloud Answer: clouds
+"
+drummer,drummers,"Input: drummer Answer: drummers
+"
+cabinet,cabinets,"Input: cabinet Answer: cabinets
+"
+neighborhood,neighborhoods,"Input: neighborhood Answer: neighborhoods
+"
+compound,compounds,"Input: compound Answer: compounds
+"
+legend,legends,"Input: legend Answer: legends
+"
+jump,jumps,"Input: jump Answer: jumps
+"
+inclusion,inclusions,"Input: inclusion Answer: inclusions
+"
+tale,tales,"Input: tale Answer: tales
+"
+mate,mates,"Input: mate Answer: mates
+"
+ratio,ratios,"Input: ratio Answer: ratios
+"
+liner,liners,"Input: liner Answer: liners
+"
+journal,journals,"Input: journal Answer: journals
+"
+throw,throws,"Input: throw Answer: throws
+"
+summit,summits,"Input: summit Answer: summits
+"
+playoff,playoffs,"Input: playoff Answer: playoffs
+"
+sentence,sentences,"Input: sentence Answer: sentences
+"
+beating,beatings,"Input: beating Answer: beatings
+"
+accommodate,accommodates,"Input: accommodate Answer: accommodates
+"
+altitude,altitudes,"Input: altitude Answer: altitudes
+"
+trend,trends,"Input: trend Answer: trends
+"
+presentation,presentations,"Input: presentation Answer: presentations
+"
+resident,residents,"Input: resident Answer: residents
+"
+intervention,interventions,"Input: intervention Answer: interventions
+"
+tribe,tribes,"Input: tribe Answer: tribes
+"
+error,errors,"Input: error Answer: errors
+"
+answer,answers,"Input: answer Answer: answers
+"
+victim,victims,"Input: victim Answer: victims
+"
+sight,sights,"Input: sight Answer: sights
+"
+jurisdiction,jurisdictions,"Input: jurisdiction Answer: jurisdictions
+"
+knee,knees,"Input: knee Answer: knees
+"
+interaction,interactions,"Input: interaction Answer: interactions
+"
+voyage,voyages,"Input: voyage Answer: voyages
+"
+girlfriend,girlfriends,"Input: girlfriend Answer: girlfriends
+"
+principle,principles,"Input: principle Answer: principles
+"
+demo,demos,"Input: demo Answer: demos
+"
+fossil,fossils,"Input: fossil Answer: fossils
+"
+streak,streaks,"Input: streak Answer: streaks
+"
+lifetime,lifetimes,"Input: lifetime Answer: lifetimes
+"
+fee,fees,"Input: fee Answer: fees
+"
+disturbance,disturbances,"Input: disturbance Answer: disturbances
+"
+gift,gifts,"Input: gift Answer: gifts
+"
+holiday,holidays,"Input: holiday Answer: holidays
+"
+pack,packs,"Input: pack Answer: packs
+"
+shock,shocks,"Input: shock Answer: shocks
+"
+tape,tapes,"Input: tape Answer: tapes
+"
+stretch,stretches,"Input: stretch Answer: stretches
+"
+motor,motors,"Input: motor Answer: motors
+"
+inning,innings,"Input: inning Answer: innings
+"
+pursuit,pursuits,"Input: pursuit Answer: pursuits
+"
+fortress,fortresses,"Input: fortress Answer: fortresses
+"
+manuscript,manuscripts,"Input: manuscript Answer: manuscripts
+"
+teammate,teammates,"Input: teammate Answer: teammates
+"
+gate,gates,"Input: gate Answer: gates
+"
+dinner,dinners,"Input: dinner Answer: dinners
+"
+tempo,tempos,"Input: tempo Answer: tempos
+"
+span,spans,"Input: span Answer: spans
+"
+bypass,bypasses,"Input: bypass Answer: bypasses
+"
+screenplay,screenplays,"Input: screenplay Answer: screenplays
+"
+mixture,mixtures,"Input: mixture Answer: mixtures
+"
+census,censuses,"Input: census Answer: censuses
+"
+lift,lifts,"Input: lift Answer: lifts
+"
+trailer,trailers,"Input: trailer Answer: trailers
+"
+pitcher,pitchers,"Input: pitcher Answer: pitchers
+"
+skill,skills,"Input: skill Answer: skills
+"
+sword,swords,"Input: sword Answer: swords
+"
+net,nets,"Input: net Answer: nets
+"
+cable,cables,"Input: cable Answer: cables
+"
+bombardment,bombardments,"Input: bombardment Answer: bombardments
+"
+costume,costumes,"Input: costume Answer: costumes
+"
+prototype,prototypes,"Input: prototype Answer: prototypes
+"
+celebration,celebrations,"Input: celebration Answer: celebrations
+"
+tornado,tornadoes,"Input: tornado Answer: tornadoes
+"
+promise,promises,"Input: promise Answer: promises
+"
+laboratory,laboratories,"Input: laboratory Answer: laboratories
+"
+craft,craft,"Input: craft Answer: craft
+"
+dozen,dozens,"Input: dozen Answer: dozens
+"
+marking,markings,"Input: marking Answer: markings
+"
+separation,separations,"Input: separation Answer: separations
+"
+chest,chests,"Input: chest Answer: chests
+"
+revival,revivals,"Input: revival Answer: revivals
+"
+nickname,nicknames,"Input: nickname Answer: nicknames
+"
+politician,politicians,"Input: politician Answer: politicians
+"
+handle,handles,"Input: handle Answer: handles
+"
+harbour,harbours,"Input: harbour Answer: harbours
+"
+biography,biographies,"Input: biography Answer: biographies
+"
+deputy,deputies,"Input: deputy Answer: deputies
+"
+lighter,lighters,"Input: lighter Answer: lighters
+"
+moon,moons,"Input: moon Answer: moons
+"
+usage,usages,"Input: usage Answer: usages
+"
+evacuation,evacuations,"Input: evacuation Answer: evacuations
+"
+clock,clocks,"Input: clock Answer: clocks
+"
+exile,exiles,"Input: exile Answer: exiles
+"
+seed,seeds,"Input: seed Answer: seeds
+"
+lawsuit,lawsuits,"Input: lawsuit Answer: lawsuits
+"
+cathedral,cathedrals,"Input: cathedral Answer: cathedrals
+"
+speculation,speculations,"Input: speculation Answer: speculations
+"
+intent,intents,"Input: intent Answer: intents
+"
+decrease,decreases,"Input: decrease Answer: decreases
+"
+conquest,conquests,"Input: conquest Answer: conquests
+"
+mechanism,mechanisms,"Input: mechanism Answer: mechanisms
+"
+nose,noses,"Input: nose Answer: noses
+"
+killer,killers,"Input: killer Answer: killers
+"
+exhibit,exhibits,"Input: exhibit Answer: exhibits
+"
+disorder,disorders,"Input: disorder Answer: disorders
+"
+suspension,suspensions,"Input: suspension Answer: suspensions
+"
+boyfriend,boyfriends,"Input: boyfriend Answer: boyfriends
+"
+helicopter,helicopters,"Input: helicopter Answer: helicopters
+"
+metre,metres,"Input: metre Answer: metres
+"
+infection,infections,"Input: infection Answer: infections
+"
+metric,metrics,"Input: metric Answer: metrics
+"
+portrait,portraits,"Input: portrait Answer: portraits
+"
+explanation,explanations,"Input: explanation Answer: explanations
+"
+acre,acres,"Input: acre Answer: acres
+"
+peninsula,peninsulas,"Input: peninsula Answer: peninsulas
+"
+attorney,attorneys,"Input: attorney Answer: attorneys
+"
+heir,heirs,"Input: heir Answer: heirs
+"
+truck,trucks,"Input: truck Answer: trucks
+"
+bowl,bowls,"Input: bowl Answer: bowls
+"
+user,users,"Input: user Answer: users
+"
+lover,lovers,"Input: lover Answer: lovers
+"
+wheel,wheels,"Input: wheel Answer: wheels
+"
+suggestion,suggestions,"Input: suggestion Answer: suggestions
+"
+proof,proofs,"Input: proof Answer: proofs
+"
+conspiracy,conspiracies,"Input: conspiracy Answer: conspiracies
+"
+faculty,faculties,"Input: faculty Answer: faculties
+"
+reporter,reporters,"Input: reporter Answer: reporters
+"
+romance,romances,"Input: romance Answer: romances
+"
+license,licenses,"Input: license Answer: licenses
+"
+sheep,sheep,"Input: sheep Answer: sheep
+"
+surge,surges,"Input: surge Answer: surges
+"
+patient,patients,"Input: patient Answer: patients
+"
+companion,companions,"Input: companion Answer: companions
+"
+drink,drinks,"Input: drink Answer: drinks
+"
+resignation,resignations,"Input: resignation Answer: resignations
+"
+telephone,telephones,"Input: telephone Answer: telephones
+"
+cruise,cruises,"Input: cruise Answer: cruises
+"
+roster,rosters,"Input: roster Answer: rosters
+"
+comment,comments,"Input: comment Answer: comments
+"
+tune,tunes,"Input: tune Answer: tunes
+"
+photo,photos,"Input: photo Answer: photos
+"
+creature,creatures,"Input: creature Answer: creatures
+"
+crop,crops,"Input: crop Answer: crops
+"
+pole,poles,"Input: pole Answer: poles
+"
+scholarship,scholarships,"Input: scholarship Answer: scholarships
+"
+rotation,rotations,"Input: rotation Answer: rotations
+"
+monastery,monasteries,"Input: monastery Answer: monasteries
+"
+reconstruction,reconstructions,"Input: reconstruction Answer: reconstructions
+"
+mill,mills,"Input: mill Answer: mills
+"
+spacecraft,spacecraft,"Input: spacecraft Answer: spacecraft
+"
+commitment,commitments,"Input: commitment Answer: commitments
+"
+routing,routings,"Input: routing Answer: routings
+"
+crest,crests,"Input: crest Answer: crests
+"
+exterior,exteriors,"Input: exterior Answer: exteriors
+"
+consequence,consequences,"Input: consequence Answer: consequences
+"
+expert,experts,"Input: expert Answer: experts
+"
+formula,formulas,"Input: formula Answer: formulas
+"
+runner,runners,"Input: runner Answer: runners
+"
+proportion,proportions,"Input: proportion Answer: proportions
+"
+scandal,scandals,"Input: scandal Answer: scandals
+"
+shield,shields,"Input: shield Answer: shields
+"
+mansion,mansions,"Input: mansion Answer: mansions
+"
+outcome,outcomes,"Input: outcome Answer: outcomes
+"
+logo,logos,"Input: logo Answer: logos
+"
+consideration,considerations,"Input: consideration Answer: considerations
+"
+autobiography,autobiographies,"Input: autobiography Answer: autobiographies
+"
+rider,riders,"Input: rider Answer: riders
+"
+depiction,depictions,"Input: depiction Answer: depictions
+"
+monster,monsters,"Input: monster Answer: monsters
+"
+custom,customs,"Input: custom Answer: customs
+"
+routine,routines,"Input: routine Answer: routines
+"
+worker,workers,"Input: worker Answer: workers
+"
+doctrine,doctrines,"Input: doctrine Answer: doctrines
+"
+pound,pounds,"Input: pound Answer: pounds
+"
+assassination,assassinations,"Input: assassination Answer: assassinations
+"
+achievement,achievements,"Input: achievement Answer: achievements
+"
+payment,payments,"Input: payment Answer: payments
+"
+nephew,nephews,"Input: nephew Answer: nephews
+"
+switch,switches,"Input: switch Answer: switches
+"
+phenomenon,phenomena,"Input: phenomenon Answer: phenomena
+"
+venture,ventures,"Input: venture Answer: ventures
+"
+argue,argues,"Input: argue Answer: argues
+"
+witness,witnesses,"Input: witness Answer: witnesses
+"
+curve,curves,"Input: curve Answer: curves
+"
+scientist,scientists,"Input: scientist Answer: scientists
+"
+exploration,explorations,"Input: exploration Answer: explorations
+"
+bell,bells,"Input: bell Answer: bells
+"
+choir,choirs,"Input: choir Answer: choirs
+"
+shaft,shafts,"Input: shaft Answer: shafts
+"
+ceiling,ceilings,"Input: ceiling Answer: ceilings
+"
+villain,villains,"Input: villain Answer: villains
+"
+cat,cats,"Input: cat Answer: cats
+"
+requirement,requirements,"Input: requirement Answer: requirements
+"
+associate,associates,"Input: associate Answer: associates
+"
+bond,bonds,"Input: bond Answer: bonds
+"
+resemble,resembles,"Input: resemble Answer: resembles
+"
+cameo,cameos,"Input: cameo Answer: cameos
+"
+treat,treats,"Input: treat Answer: treats
+"
+mood,moods,"Input: mood Answer: moods
+"
+faction,factions,"Input: faction Answer: factions
+"
+gauge,gauges,"Input: gauge Answer: gauges
+"
+dive,dives,"Input: dive Answer: dives
+"
+goddess,goddesses,"Input: goddess Answer: goddesses
+"
+tooth,teeth,"Input: tooth Answer: teeth
+"
+loyalty,loyalties,"Input: loyalty Answer: loyalties
+"
+battlefield,battlefields,"Input: battlefield Answer: battlefields
+"
+printing,printings,"Input: printing Answer: printings
+"
+pounder,pounders,"Input: pounder Answer: pounders
+"
+seal,seals,"Input: seal Answer: seals
+"
+batsman,batsmen,"Input: batsman Answer: batsmen
+"
+highlight,highlights,"Input: highlight Answer: highlights
+"
+reader,readers,"Input: reader Answer: readers
+"
+clip,clips,"Input: clip Answer: clips
+"
+vocalist,vocalists,"Input: vocalist Answer: vocalists
+"
+sheet,sheets,"Input: sheet Answer: sheets
+"
+referee,referees,"Input: referee Answer: referees
+"
+declaration,declarations,"Input: declaration Answer: declarations
+"
+missile,missiles,"Input: missile Answer: missiles
+"
+airfield,airfields,"Input: airfield Answer: airfields
+"
+discipline,disciplines,"Input: discipline Answer: disciplines
+"
+mistake,mistakes,"Input: mistake Answer: mistakes
+"
+sacrifice,sacrifices,"Input: sacrifice Answer: sacrifices
+"
+gallery,galleries,"Input: gallery Answer: galleries
+"
+frigate,frigates,"Input: frigate Answer: frigates
+"
+syndrome,syndromes,"Input: syndrome Answer: syndromes
+"
+troop,troops,"Input: troop Answer: troops
+"
+locomotive,locomotives,"Input: locomotive Answer: locomotives
+"
+stroke,strokes,"Input: stroke Answer: strokes
+"
+hunt,hunts,"Input: hunt Answer: hunts
+"
+joke,jokes,"Input: joke Answer: jokes
+"
+whale,whales,"Input: whale Answer: whales
+"
+rocket,rockets,"Input: rocket Answer: rockets
+"
+spell,spells,"Input: spell Answer: spells
+"
+gathering,gatherings,"Input: gathering Answer: gatherings
+"
+cylinder,cylinders,"Input: cylinder Answer: cylinders
+"
+cave,caves,"Input: cave Answer: caves
+"
+leaf,leaves,"Input: leaf Answer: leaves
+"
+screening,screenings,"Input: screening Answer: screenings
+"
+stick,sticks,"Input: stick Answer: sticks
+"
+installation,installations,"Input: installation Answer: installations
+"
+massacre,massacres,"Input: massacre Answer: massacres
+"
+therapy,therapies,"Input: therapy Answer: therapies
+"
+widow,widows,"Input: widow Answer: widows
+"
+hook,hooks,"Input: hook Answer: hooks
+"
+deployment,deployments,"Input: deployment Answer: deployments
+"
+transit,transits,"Input: transit Answer: transits
+"
+prospect,prospects,"Input: prospect Answer: prospects
+"
+corridor,corridors,"Input: corridor Answer: corridors
+"
+volcano,volcanoes,"Input: volcano Answer: volcanoes
+"
+shirt,shirts,"Input: shirt Answer: shirts
+"
+delegation,delegations,"Input: delegation Answer: delegations
+"
+rapper,rappers,"Input: rapper Answer: rappers
+"
+hybrid,hybrids,"Input: hybrid Answer: hybrids
+"
+coalition,coalitions,"Input: coalition Answer: coalitions
+"
+developer,developers,"Input: developer Answer: developers
+"
+trick,tricks,"Input: trick Answer: tricks
+"
+thickness,thicknesses,"Input: thickness Answer: thicknesses
+"
+kiss,kisses,"Input: kiss Answer: kisses
+"
+operator,operators,"Input: operator Answer: operators
+"
+pregnancy,pregnancies,"Input: pregnancy Answer: pregnancies
+"
+trophy,trophies,"Input: trophy Answer: trophies
+"
+oak,oaks,"Input: oak Answer: oaks
+"
+file,files,"Input: file Answer: files
+"
+collision,collisions,"Input: collision Answer: collisions
+"
+kitchen,kitchens,"Input: kitchen Answer: kitchens
+"
+scenario,scenarios,"Input: scenario Answer: scenarios
+"
+package,packages,"Input: package Answer: packages
+"
+substance,substances,"Input: substance Answer: substances
+"
+roller,rollers,"Input: roller Answer: rollers
+"
+motorway,motorways,"Input: motorway Answer: motorways
+"
+lifestyle,lifestyles,"Input: lifestyle Answer: lifestyles
+"
+petition,petitions,"Input: petition Answer: petitions
+"
+progression,progressions,"Input: progression Answer: progressions
+"
+topic,topics,"Input: topic Answer: topics
+"
+demonstration,demonstrations,"Input: demonstration Answer: demonstrations
+"
+suburb,suburbs,"Input: suburb Answer: suburbs
+"
+wound,wounds,"Input: wound Answer: wounds
+"
+monitor,monitors,"Input: monitor Answer: monitors
+"
+attachment,attachments,"Input: attachment Answer: attachments
+"
+essay,essays,"Input: essay Answer: essays
+"
+grain,grains,"Input: grain Answer: grains
+"
+pleasure,pleasures,"Input: pleasure Answer: pleasures
+"
+flee,flees,"Input: flee Answer: flees
+"
+upgrade,upgrades,"Input: upgrade Answer: upgrades
+"
+hamlet,hamlets,"Input: hamlet Answer: hamlets
+"
+stance,stances,"Input: stance Answer: stances
+"
+wreck,wrecks,"Input: wreck Answer: wrecks
+"
+muscle,muscles,"Input: muscle Answer: muscles
+"
+grandson,grandsons,"Input: grandson Answer: grandsons
+"
+citizen,citizens,"Input: citizen Answer: citizens
+"
+ensemble,ensembles,"Input: ensemble Answer: ensembles
+"
+speaker,speakers,"Input: speaker Answer: speakers
+"
+item,items,"Input: item Answer: items
+"
+barrier,barriers,"Input: barrier Answer: barriers
+"
+rookie,rookies,"Input: rookie Answer: rookies
+"
+scrap,scraps,"Input: scrap Answer: scraps
+"
+layout,layouts,"Input: layout Answer: layouts
+"
+invitation,invitations,"Input: invitation Answer: invitations
+"
+notion,notions,"Input: notion Answer: notions
+"
+monarchy,monarchies,"Input: monarchy Answer: monarchies
+"
+locate,locates,"Input: locate Answer: locates
+"
+employee,employees,"Input: employee Answer: employees
+"
+anger,angers,"Input: anger Answer: angers
+"
+destination,destinations,"Input: destination Answer: destinations
+"
+inscription,inscriptions,"Input: inscription Answer: inscriptions
+"
+tide,tides,"Input: tide Answer: tides
+"
+mirror,mirrors,"Input: mirror Answer: mirrors
+"
+physician,physicians,"Input: physician Answer: physicians
+"
+testimony,testimonies,"Input: testimony Answer: testimonies
+"
+cartoon,cartoons,"Input: cartoon Answer: cartoons
+"
+arcade,arcades,"Input: arcade Answer: arcades
+"
+rifle,rifles,"Input: rifle Answer: rifles
+"
+colonel,colonels,"Input: colonel Answer: colonels
+"
+blast,blasts,"Input: blast Answer: blasts
+"
+bench,benches,"Input: bench Answer: benches
+"
+myth,myths,"Input: myth Answer: myths
+"
+congregation,congregations,"Input: congregation Answer: congregations
+"
+municipality,municipalities,"Input: municipality Answer: municipalities
+"
+skeleton,skeletons,"Input: skeleton Answer: skeletons
+"
+extinction,extinctions,"Input: extinction Answer: extinctions
+"
+prayer,prayers,"Input: prayer Answer: prayers
+"
+specialist,specialists,"Input: specialist Answer: specialists
+"
+sketch,sketches,"Input: sketch Answer: sketches
+"
+burn,burns,"Input: burn Answer: burns
+"
+nationalist,nationalists,"Input: nationalist Answer: nationalists
+"
+conviction,convictions,"Input: conviction Answer: convictions
+"
+subsidiary,subsidiaries,"Input: subsidiary Answer: subsidiaries
+"
+resort,resorts,"Input: resort Answer: resorts
+"
+volunteer,volunteers,"Input: volunteer Answer: volunteers
+"
+runway,runways,"Input: runway Answer: runways
+"
+sphere,spheres,"Input: sphere Answer: spheres
+"
+summary,summaries,"Input: summary Answer: summaries
+"
+trademark,trademarks,"Input: trademark Answer: trademarks
+"
+instruction,instructions,"Input: instruction Answer: instructions
+"
+garage,garages,"Input: garage Answer: garages
+"
+lock,locks,"Input: lock Answer: locks
+"
+freshman,freshmen,"Input: freshman Answer: freshmen
+"
+tool,tools,"Input: tool Answer: tools
+"
+domain,domains,"Input: domain Answer: domains
+"
+inquiry,inquiries,"Input: inquiry Answer: inquiries
+"
+tendency,tendencies,"Input: tendency Answer: tendencies
+"
+permit,permits,"Input: permit Answer: permits
+"
+athlete,athletes,"Input: athlete Answer: athletes
+"
+mask,masks,"Input: mask Answer: masks
+"
+prosecution,prosecutions,"Input: prosecution Answer: prosecutions
+"
+painter,painters,"Input: painter Answer: painters
+"
+basement,basements,"Input: basement Answer: basements
+"
+quest,quests,"Input: quest Answer: quests
+"
+ballot,ballots,"Input: ballot Answer: ballots
+"
+performer,performers,"Input: performer Answer: performers
+"
+placement,placements,"Input: placement Answer: placements
+"
+homage,homages,"Input: homage Answer: homages
+"
+possess,possesses,"Input: possess Answer: possesses
+"
+mouse,mice,"Input: mouse Answer: mice
+"
+goalkeeper,goalkeepers,"Input: goalkeeper Answer: goalkeepers
+"
+cabin,cabins,"Input: cabin Answer: cabins
+"
+colleague,colleagues,"Input: colleague Answer: colleagues
+"
+millimeter,millimeters,"Input: millimeter Answer: millimeters
+"
+solve,solves,"Input: solve Answer: solves
+"
+receiver,receivers,"Input: receiver Answer: receivers
+"
+stomach,stomachs,"Input: stomach Answer: stomachs
+"
+installment,installments,"Input: installment Answer: installments
+"
+throat,throats,"Input: throat Answer: throats
+"
+keyboard,keyboards,"Input: keyboard Answer: keyboards
+"
+fortune,fortunes,"Input: fortune Answer: fortunes
+"
+diagnosis,diagnoses,"Input: diagnosis Answer: diagnoses
+"
+activist,activists,"Input: activist Answer: activists
+"
+businessman,businessmen,"Input: businessman Answer: businessmen
+"
+commit,commits,"Input: commit Answer: commits
+"
+editorial,editorials,"Input: editorial Answer: editorials
+"
+cluster,clusters,"Input: cluster Answer: clusters
+"
+detachment,detachments,"Input: detachment Answer: detachments
+"
+complement,complements,"Input: complement Answer: complements
+"
+conductor,conductors,"Input: conductor Answer: conductors
+"
+infant,infants,"Input: infant Answer: infants
+"
+persuade,persuades,"Input: persuade Answer: persuades
+"
+reward,rewards,"Input: reward Answer: rewards
+"
+depot,depots,"Input: depot Answer: depots
+"
+tier,tiers,"Input: tier Answer: tiers
+"
+bowler,bowlers,"Input: bowler Answer: bowlers
+"
+lion,lions,"Input: lion Answer: lions
+"
+thrust,thrusts,"Input: thrust Answer: thrusts
+"
+finger,fingers,"Input: finger Answer: fingers
+"
+filter,filters,"Input: filter Answer: filters
+"
+shortage,shortages,"Input: shortage Answer: shortages
+"
+galaxy,galaxies,"Input: galaxy Answer: galaxies
+"
+boom,booms,"Input: boom Answer: booms
+"
+relay,relays,"Input: relay Answer: relays
+"
+recommendation,recommendations,"Input: recommendation Answer: recommendations
+"
+strain,strains,"Input: strain Answer: strains
+"
+clearing,clearings,"Input: clearing Answer: clearings
+"
+array,arrays,"Input: array Answer: arrays
+"
+flash,flashes,"Input: flash Answer: flashes
+"
+propeller,propellers,"Input: propeller Answer: propellers
+"
+confrontation,confrontations,"Input: confrontation Answer: confrontations
+"
+narrator,narrators,"Input: narrator Answer: narrators
+"
+nucleus,nuclei,"Input: nucleus Answer: nuclei
+"
+dock,docks,"Input: dock Answer: docks
+"
+superstructure,superstructures,"Input: superstructure Answer: superstructures
+"
+pocket,pockets,"Input: pocket Answer: pockets
+"
+spur,spurs,"Input: spur Answer: spurs
+"
+anchor,anchors,"Input: anchor Answer: anchors
+"
+undergraduate,undergraduates,"Input: undergraduate Answer: undergraduates
+"
+captive,captives,"Input: captive Answer: captives
+"
+preference,preferences,"Input: preference Answer: preferences
+"
+trout,trout,"Input: trout Answer: trout
+"
+silk,silks,"Input: silk Answer: silks
+"
+steal,steals,"Input: steal Answer: steals
+"
+weakness,weaknesses,"Input: weakness Answer: weaknesses
+"
+viewer,viewers,"Input: viewer Answer: viewers
+"
+accompany,accompanies,"Input: accompany Answer: accompanies
+"
+disk,disks,"Input: disk Answer: disks
+"
+afford,affords,"Input: afford Answer: affords
+"
+breakdown,breakdowns,"Input: breakdown Answer: breakdowns
+"
+parade,parades,"Input: parade Answer: parades
+"
+platoon,platoons,"Input: platoon Answer: platoons
+"
+photographer,photographers,"Input: photographer Answer: photographers
+"
+detect,detects,"Input: detect Answer: detects
+"
+manufacturer,manufacturers,"Input: manufacturer Answer: manufacturers
+"
+calendar,calendars,"Input: calendar Answer: calendars
+"
+admission,admissions,"Input: admission Answer: admissions
+"
+deer,deer,"Input: deer Answer: deer
+"
+emotion,emotions,"Input: emotion Answer: emotions
+"
+marble,marbles,"Input: marble Answer: marbles
+"
+civilization,civilizations,"Input: civilization Answer: civilizations
+"
+controller,controllers,"Input: controller Answer: controllers
+"
+slot,slots,"Input: slot Answer: slots
+"
+coaster,coasters,"Input: coaster Answer: coasters
+"
+capability,capabilities,"Input: capability Answer: capabilities
+"
+communicate,communicates,"Input: communicate Answer: communicates
+"
+torture,tortures,"Input: torture Answer: tortures
+"
+farmland,farmlands,"Input: farmland Answer: farmlands
+"
+complexity,complexities,"Input: complexity Answer: complexities
+"
+recipient,recipients,"Input: recipient Answer: recipients
+"
+nurse,nurses,"Input: nurse Answer: nurses
+"
+qualification,qualifications,"Input: qualification Answer: qualifications
+"
+cancellation,cancellations,"Input: cancellation Answer: cancellations
+"
+discharge,discharges,"Input: discharge Answer: discharges
+"
+bedroom,bedrooms,"Input: bedroom Answer: bedrooms
+"
+ancestor,ancestors,"Input: ancestor Answer: ancestors
+"
+premise,premises,"Input: premise Answer: premises
+"
+trace,traces,"Input: trace Answer: traces
+"
+boost,boosts,"Input: boost Answer: boosts
+"
+offspring,offspring,"Input: offspring Answer: offspring
+"
+oxide,oxides,"Input: oxide Answer: oxides
+"
+rendition,renditions,"Input: rendition Answer: renditions
+"
+auction,auctions,"Input: auction Answer: auctions
+"
+defender,defenders,"Input: defender Answer: defenders
+"
+yield,yields,"Input: yield Answer: yields
+"
+starter,starters,"Input: starter Answer: starters
+"
+opener,openers,"Input: opener Answer: openers
+"
+patent,patents,"Input: patent Answer: patents
+"
+particle,particles,"Input: particle Answer: particles
+"
+aesthetic,aesthetics,"Input: aesthetic Answer: aesthetics
+"
+patch,patches,"Input: patch Answer: patches
+"
+combine,combines,"Input: combine Answer: combines
+"
+stunt,stunts,"Input: stunt Answer: stunts
+"
+clause,clauses,"Input: clause Answer: clauses
+"
+corporation,corporations,"Input: corporation Answer: corporations
+"
+breach,breaches,"Input: breach Answer: breaches
+"
+slope,slopes,"Input: slope Answer: slopes
+"
+instructor,instructors,"Input: instructor Answer: instructors
+"
+uncertainty,uncertainties,"Input: uncertainty Answer: uncertainties
+"
+wrestler,wrestlers,"Input: wrestler Answer: wrestlers
+"
+alert,alerts,"Input: alert Answer: alerts
+"
+triumph,triumphs,"Input: triumph Answer: triumphs
+"
+ramp,ramps,"Input: ramp Answer: ramps
+"
+senator,senators,"Input: senator Answer: senators
+"
+nominee,nominees,"Input: nominee Answer: nominees
+"
+antagonist,antagonists,"Input: antagonist Answer: antagonists
+"
+ghost,ghosts,"Input: ghost Answer: ghosts
+"
+servant,servants,"Input: servant Answer: servants
+"
+comedian,comedians,"Input: comedian Answer: comedians
+"
+outfit,outfits,"Input: outfit Answer: outfits
+"
+canon,canons,"Input: canon Answer: canons
+"
+caution,cautions,"Input: caution Answer: cautions
+"
+teenager,teenagers,"Input: teenager Answer: teenagers
+"
+similarity,similarities,"Input: similarity Answer: similarities
+"
+log,logs,"Input: log Answer: logs
+"
+dragon,dragons,"Input: dragon Answer: dragons
+"
+shipyard,shipyards,"Input: shipyard Answer: shipyards
+"
+entity,entities,"Input: entity Answer: entities
+"
+deadline,deadlines,"Input: deadline Answer: deadlines
+"
+enzyme,enzymes,"Input: enzyme Answer: enzymes
+"
+counterpart,counterparts,"Input: counterpart Answer: counterparts
+"
+climax,climaxes,"Input: climax Answer: climaxes
+"
+sitcom,sitcoms,"Input: sitcom Answer: sitcoms
+"
+abundance,abundances,"Input: abundance Answer: abundances
+"
+invention,inventions,"Input: invention Answer: inventions
+"
+deity,deities,"Input: deity Answer: deities
+"
+horn,horns,"Input: horn Answer: horns
+"
+spore,spores,"Input: spore Answer: spores
+"
+complaint,complaints,"Input: complaint Answer: complaints
+"
+constituency,constituencies,"Input: constituency Answer: constituencies
+"
+stake,stakes,"Input: stake Answer: stakes
+"
+deficit,deficits,"Input: deficit Answer: deficits
+"
+collector,collectors,"Input: collector Answer: collectors
+"
+overlap,overlaps,"Input: overlap Answer: overlaps
+"
+coronation,coronations,"Input: coronation Answer: coronations
+"
+crossover,crossovers,"Input: crossover Answer: crossovers
+"
+posting,postings,"Input: posting Answer: postings
+"
+mob,mobs,"Input: mob Answer: mobs
+"
+button,buttons,"Input: button Answer: buttons
+"
+shooter,shooters,"Input: shooter Answer: shooters
+"
+warrant,warrants,"Input: warrant Answer: warrants
+"
+terrorist,terrorists,"Input: terrorist Answer: terrorists
+"
+reactor,reactors,"Input: reactor Answer: reactors
+"
+compose,composes,"Input: compose Answer: composes
+"
+lecture,lectures,"Input: lecture Answer: lectures
+"
+hub,hubs,"Input: hub Answer: hubs
+"
+tragedy,tragedies,"Input: tragedy Answer: tragedies
+"
+implement,implements,"Input: implement Answer: implements
+"
+client,clients,"Input: client Answer: clients
+"
+striker,strikers,"Input: striker Answer: strikers
+"
+embassy,embassies,"Input: embassy Answer: embassies
+"
+plaque,plaques,"Input: plaque Answer: plaques
+"
+knife,knives,"Input: knife Answer: knives
+"
+consultant,consultants,"Input: consultant Answer: consultants
+"
+pyramid,pyramids,"Input: pyramid Answer: pyramids
+"
+drag,drags,"Input: drag Answer: drags
+"
+rope,ropes,"Input: rope Answer: ropes
+"
+barrel,barrels,"Input: barrel Answer: barrels
+"
+membrane,membranes,"Input: membrane Answer: membranes
+"
+cure,cures,"Input: cure Answer: cures
+"
+mentor,mentors,"Input: mentor Answer: mentors
+"
+dancer,dancers,"Input: dancer Answer: dancers
+"
+intercept,intercepts,"Input: intercept Answer: intercepts
+"
+spy,spies,"Input: spy Answer: spies
+"
+abbey,abbeys,"Input: abbey Answer: abbeys
+"
+contingent,contingents,"Input: contingent Answer: contingents
+"
+motif,motifs,"Input: motif Answer: motifs
+"
+reservoir,reservoirs,"Input: reservoir Answer: reservoirs
+"
+battlecruiser,battlecruisers,"Input: battlecruiser Answer: battlecruisers
+"
+goaltender,goaltenders,"Input: goaltender Answer: goaltenders
+"
+punt,punts,"Input: punt Answer: punts
+"
+decoration,decorations,"Input: decoration Answer: decorations
+"
+consumer,consumers,"Input: consumer Answer: consumers
+"
+storey,storeys,"Input: storey Answer: storeys
+"
+ankle,ankles,"Input: ankle Answer: ankles
+"
+profession,professions,"Input: profession Answer: professions
+"
+cease,ceases,"Input: cease Answer: ceases
+"
+furniture,furniture,"Input: furniture Answer: furniture
+"
+cantata,cantatas,"Input: cantata Answer: cantatas
+"
+luxury,luxuries,"Input: luxury Answer: luxuries
+"
+sprint,sprints,"Input: sprint Answer: sprints
+"
+predator,predators,"Input: predator Answer: predators
+"
+interact,interacts,"Input: interact Answer: interacts
+"
+superhero,superheroes,"Input: superhero Answer: superheroes
+"
+sink,sinks,"Input: sink Answer: sinks
+"
+shrine,shrines,"Input: shrine Answer: shrines
+"
+precursor,precursors,"Input: precursor Answer: precursors
+"
+convey,conveys,"Input: convey Answer: conveys
+"
+plug,plugs,"Input: plug Answer: plugs
+"
+liberty,liberties,"Input: liberty Answer: liberties
+"
+gale,gales,"Input: gale Answer: gales
+"
+visitor,visitors,"Input: visitor Answer: visitors
+"
+ministry,ministries,"Input: ministry Answer: ministries
+"
+pipe,pipes,"Input: pipe Answer: pipes
+"
+latitude,latitudes,"Input: latitude Answer: latitudes
+"
+farmer,farmers,"Input: farmer Answer: farmers
+"
+accent,accents,"Input: accent Answer: accents
+"
+cage,cages,"Input: cage Answer: cages
+"
+maneuver,maneuvers,"Input: maneuver Answer: maneuvers
+"
+academy,academies,"Input: academy Answer: academies
+"
+reunion,reunions,"Input: reunion Answer: reunions
+"
+counterattack,counterattacks,"Input: counterattack Answer: counterattacks
+"
+isotope,isotopes,"Input: isotope Answer: isotopes
+"
+turnpike,turnpikes,"Input: turnpike Answer: turnpikes
+"
+suite,suites,"Input: suite Answer: suites
+"
+courtyard,courtyards,"Input: courtyard Answer: courtyards
+"
+indication,indications,"Input: indication Answer: indications
+"
+dinosaur,dinosaurs,"Input: dinosaur Answer: dinosaurs
+"
+resource,resources,"Input: resource Answer: resources
+"
+abortion,abortions,"Input: abortion Answer: abortions
+"
+retrieve,retrieves,"Input: retrieve Answer: retrieves
+"
+constellation,constellations,"Input: constellation Answer: constellations
+"
+snake,snakes,"Input: snake Answer: snakes
+"
+supervisor,supervisors,"Input: supervisor Answer: supervisors
+"
+icon,icons,"Input: icon Answer: icons
+"
+menu,menus,"Input: menu Answer: menus
+"
+persecution,persecutions,"Input: persecution Answer: persecutions
+"
+wolf,wolves,"Input: wolf Answer: wolves
+"
+occurrence,occurrences,"Input: occurrence Answer: occurrences
+"
+swim,swims,"Input: swim Answer: swims
+"
+slide,slides,"Input: slide Answer: slides
+"
+elephant,elephants,"Input: elephant Answer: elephants
+"
+novelist,novelists,"Input: novelist Answer: novelists
+"
+verdict,verdicts,"Input: verdict Answer: verdicts
+"
+wage,wages,"Input: wage Answer: wages
+"
+bottle,bottles,"Input: bottle Answer: bottles
+"
+backdrop,backdrops,"Input: backdrop Answer: backdrops
+"
+jacket,jackets,"Input: jacket Answer: jackets
+"
+pianist,pianists,"Input: pianist Answer: pianists
+"
+ambush,ambushes,"Input: ambush Answer: ambushes
+"
+blog,blogs,"Input: blog Answer: blogs
+"
+bag,bags,"Input: bag Answer: bags
+"
+sweep,sweeps,"Input: sweep Answer: sweeps
+"
+puzzle,puzzles,"Input: puzzle Answer: puzzles
+"
+foul,fouls,"Input: foul Answer: fouls
+"
+anthology,anthologies,"Input: anthology Answer: anthologies
+"
+update,updates,"Input: update Answer: updates
+"
+fairy,fairies,"Input: fairy Answer: fairies
+"
+trunkline,trunklines,"Input: trunkline Answer: trunklines
+"
+interception,interceptions,"Input: interception Answer: interceptions
+"
+affiliate,affiliates,"Input: affiliate Answer: affiliates
+"
+spider,spiders,"Input: spider Answer: spiders
+"
+defendant,defendants,"Input: defendant Answer: defendants
+"
+enhance,enhances,"Input: enhance Answer: enhances
+"
+spiral,spirals,"Input: spiral Answer: spirals
+"
+certification,certifications,"Input: certification Answer: certifications
+"
+funnel,funnels,"Input: funnel Answer: funnels
+"
+pose,poses,"Input: pose Answer: poses
+"
+commissioner,commissioners,"Input: commissioner Answer: commissioners
+"
+ditch,ditches,"Input: ditch Answer: ditches
+"
+texture,textures,"Input: texture Answer: textures
+"
+virtue,virtues,"Input: virtue Answer: virtues
+"
+contributor,contributors,"Input: contributor Answer: contributors
+"
+pet,pets,"Input: pet Answer: pets
+"
+drought,droughts,"Input: drought Answer: droughts
+"
+trunk,trunks,"Input: trunk Answer: trunks
+"
+correspondent,correspondents,"Input: correspondent Answer: correspondents
+"
+vector,vectors,"Input: vector Answer: vectors
+"
+advisor,advisors,"Input: advisor Answer: advisors
+"
+sponsor,sponsors,"Input: sponsor Answer: sponsors
+"
+conception,conceptions,"Input: conception Answer: conceptions
+"
+plantation,plantations,"Input: plantation Answer: plantations
+"
+habit,habits,"Input: habit Answer: habits
+"
+tributary,tributaries,"Input: tributary Answer: tributaries
+"
+outline,outlines,"Input: outline Answer: outlines
+"
+surgeon,surgeons,"Input: surgeon Answer: surgeons
+"
+bite,bites,"Input: bite Answer: bites
+"
+keeper,keepers,"Input: keeper Answer: keepers
+"
+agenda,agendas,"Input: agenda Answer: agendas
+"
+pin,pins,"Input: pin Answer: pins
+"
+ladder,ladders,"Input: ladder Answer: ladders
+"
+sophomore,sophomores,"Input: sophomore Answer: sophomores
+"
+modification,modifications,"Input: modification Answer: modifications
+"
+rehearsal,rehearsals,"Input: rehearsal Answer: rehearsals
+"
+supplement,supplements,"Input: supplement Answer: supplements
+"
+bicycle,bicycles,"Input: bicycle Answer: bicycles
+"
+sympathy,sympathies,"Input: sympathy Answer: sympathies
+"
+disagreement,disagreements,"Input: disagreement Answer: disagreements
+"
+fixture,fixtures,"Input: fixture Answer: fixtures
+"
+corpse,corpses,"Input: corpse Answer: corpses
+"
+fare,fares,"Input: fare Answer: fares
+"
+bullet,bullets,"Input: bullet Answer: bullets
+"
+lighthouse,lighthouses,"Input: lighthouse Answer: lighthouses
+"
+hitter,hitters,"Input: hitter Answer: hitters
+"
+allegiance,allegiances,"Input: allegiance Answer: allegiances
+"
+slip,slips,"Input: slip Answer: slips
+"
+decree,decrees,"Input: decree Answer: decrees
+"
+employer,employers,"Input: employer Answer: employers
+"
+twist,twists,"Input: twist Answer: twists
+"
+pen,pens,"Input: pen Answer: pens
+"
+thesis,theses,"Input: thesis Answer: theses
+"
+exploit,exploits,"Input: exploit Answer: exploits
+"
+dialect,dialects,"Input: dialect Answer: dialects
+"
+anxiety,anxieties,"Input: anxiety Answer: anxieties
+"
+lab,labs,"Input: lab Answer: labs
+"
+sculptor,sculptors,"Input: sculptor Answer: sculptors
+"
+masterpiece,masterpieces,"Input: masterpiece Answer: masterpieces
+"
+commentator,commentators,"Input: commentator Answer: commentators
+"
+emission,emissions,"Input: emission Answer: emissions
+"
+disappearance,disappearances,"Input: disappearance Answer: disappearances
+"
+barrage,barrages,"Input: barrage Answer: barrages
+"
+contender,contenders,"Input: contender Answer: contenders
+"
+toss,tosses,"Input: toss Answer: tosses
+"
+zoo,zoos,"Input: zoo Answer: zoos
+"
+laugh,laughs,"Input: laugh Answer: laughs
+"
+fix,fixes,"Input: fix Answer: fixes
+"
+groove,grooves,"Input: groove Answer: grooves
+"
+invade,invades,"Input: invade Answer: invades
+"
+warehouse,warehouses,"Input: warehouse Answer: warehouses
+"
+pope,popes,"Input: pope Answer: popes
+"
+pipeline,pipelines,"Input: pipeline Answer: pipelines
+"
+meal,meals,"Input: meal Answer: meals
+"
+globe,globes,"Input: globe Answer: globes
+"
+admit,admits,"Input: admit Answer: admits
+"
+balloon,balloons,"Input: balloon Answer: balloons
+"
+dish,dishes,"Input: dish Answer: dishes
+"
+turbine,turbines,"Input: turbine Answer: turbines
+"
+chloride,chlorides,"Input: chloride Answer: chlorides
+"
+competitor,competitors,"Input: competitor Answer: competitors
+"
+preview,previews,"Input: preview Answer: previews
+"
+cuisine,cuisines,"Input: cuisine Answer: cuisines
+"
+kid,kids,"Input: kid Answer: kids
+"
+pub,pubs,"Input: pub Answer: pubs
+"
+catalog,catalogs,"Input: catalog Answer: catalogs
+"
+revelation,revelations,"Input: revelation Answer: revelations
+"
+precedent,precedents,"Input: precedent Answer: precedents
+"
+showcase,showcases,"Input: showcase Answer: showcases
+"
+cricketer,cricketers,"Input: cricketer Answer: cricketers
+"
+database,databases,"Input: database Answer: databases
+"
+mock,mocks,"Input: mock Answer: mocks
+"
+illustration,illustrations,"Input: illustration Answer: illustrations
+"
+administrator,administrators,"Input: administrator Answer: administrators
+"
+ion,ions,"Input: ion Answer: ions
+"
+catalogue,catalogues,"Input: catalogue Answer: catalogues
+"
+laser,lasers,"Input: laser Answer: lasers
+"
+surname,surnames,"Input: surname Answer: surnames
+"
+assumption,assumptions,"Input: assumption Answer: assumptions
+"
+hostage,hostages,"Input: hostage Answer: hostages
+"
+curtain,curtains,"Input: curtain Answer: curtains
+"
+plateau,plateaus,"Input: plateau Answer: plateaus
+"
+kilogram,kilograms,"Input: kilogram Answer: kilograms
+"
+robot,robots,"Input: robot Answer: robots
+"
+hymn,hymns,"Input: hymn Answer: hymns
+"
+atom,atoms,"Input: atom Answer: atoms
+"
+midfielder,midfielders,"Input: midfielder Answer: midfielders
+"
+bike,bikes,"Input: bike Answer: bikes
+"
+measurement,measurements,"Input: measurement Answer: measurements
+"
+seizure,seizures,"Input: seizure Answer: seizures
+"
+replay,replays,"Input: replay Answer: replays
+"
+excavation,excavations,"Input: excavation Answer: excavations
+"
+frog,frogs,"Input: frog Answer: frogs
+"
+metaphor,metaphors,"Input: metaphor Answer: metaphors
+"
+drift,drifts,"Input: drift Answer: drifts
+"
+subplot,subplots,"Input: subplot Answer: subplots
+"
+epithet,epithets,"Input: epithet Answer: epithets
+"
+kickoff,kickoffs,"Input: kickoff Answer: kickoffs
+"
+lineage,lineages,"Input: lineage Answer: lineages
+"
+maker,makers,"Input: maker Answer: makers
+"
+addiction,addictions,"Input: addiction Answer: addictions
+"
+piercing,piercings,"Input: piercing Answer: piercings
+"
+smell,smells,"Input: smell Answer: smells
+"
+pig,pigs,"Input: pig Answer: pigs
+"
+trainer,trainers,"Input: trainer Answer: trainers
+"
+flashback,flashbacks,"Input: flashback Answer: flashbacks
+"
+gesture,gestures,"Input: gesture Answer: gestures
+"
+duel,duels,"Input: duel Answer: duels
+"
+clash,clashes,"Input: clash Answer: clashes
+"
+necessity,necessities,"Input: necessity Answer: necessities
+"
+naturalist,naturalists,"Input: naturalist Answer: naturalists
+"
+quote,quotes,"Input: quote Answer: quotes
+"
+delegate,delegates,"Input: delegate Answer: delegates
+"
+certificate,certificates,"Input: certificate Answer: certificates
+"
+mascot,mascots,"Input: mascot Answer: mascots
+"
+comprise,comprises,"Input: comprise Answer: comprises
+"
+sponsorship,sponsorships,"Input: sponsorship Answer: sponsorships
+"
+slate,slates,"Input: slate Answer: slates
+"
+thunderstorm,thunderstorms,"Input: thunderstorm Answer: thunderstorms
+"
+neighbor,neighbors,"Input: neighbor Answer: neighbors
+"
+dimension,dimensions,"Input: dimension Answer: dimensions
+"
+apology,apologies,"Input: apology Answer: apologies
+"
+footballer,footballers,"Input: footballer Answer: footballers
+"
+parachute,parachutes,"Input: parachute Answer: parachutes
+"
+trigger,triggers,"Input: trigger Answer: triggers
+"
+vacation,vacations,"Input: vacation Answer: vacations
+"
+spelling,spellings,"Input: spelling Answer: spellings
+"
+tract,tracts,"Input: tract Answer: tracts
+"
+shipment,shipments,"Input: shipment Answer: shipments
+"
+organism,organisms,"Input: organism Answer: organisms
+"
+riff,riffs,"Input: riff Answer: riffs
+"
+soprano,sopranos,"Input: soprano Answer: sopranos
+"
+penetrate,penetrates,"Input: penetrate Answer: penetrates
+"
+collaborator,collaborators,"Input: collaborator Answer: collaborators
+"
+procession,processions,"Input: procession Answer: processions
+"
+motorcycle,motorcycles,"Input: motorcycle Answer: motorcycles
+"
+resonance,resonances,"Input: resonance Answer: resonances
+"
+astronomer,astronomers,"Input: astronomer Answer: astronomers
+"
+physicist,physicists,"Input: physicist Answer: physicists
+"
+filmmaker,filmmakers,"Input: filmmaker Answer: filmmakers
+"
+baptism,baptisms,"Input: baptism Answer: baptisms
+"
+crater,craters,"Input: crater Answer: craters
+"
+symphony,symphonies,"Input: symphony Answer: symphonies
+"
+hierarchy,hierarchies,"Input: hierarchy Answer: hierarchies
+"
+screenwriter,screenwriters,"Input: screenwriter Answer: screenwriters
+"
+monkey,monkeys,"Input: monkey Answer: monkeys
+"
+dose,doses,"Input: dose Answer: doses
+"
+contestant,contestants,"Input: contestant Answer: contestants
+"
+cry,cries,"Input: cry Answer: cries
+"
+institute,institutes,"Input: institute Answer: institutes
+"
+licence,licences,"Input: licence Answer: licences
+"
+cottage,cottages,"Input: cottage Answer: cottages
+"
+characterization,characterizations,"Input: characterization Answer: characterizations
+"
+theorem,theorems,"Input: theorem Answer: theorems
+"
+sanctuary,sanctuaries,"Input: sanctuary Answer: sanctuaries
+"
+flotilla,flotillas,"Input: flotilla Answer: flotillas
+"
+airplane,airplanes,"Input: airplane Answer: airplanes
+"
+sparrow,sparrows,"Input: sparrow Answer: sparrows
+"
+expressway,expressways,"Input: expressway Answer: expressways
+"
+enterprise,enterprises,"Input: enterprise Answer: enterprises
+"
+memoir,memoirs,"Input: memoir Answer: memoirs
+"
+projection,projections,"Input: projection Answer: projections
+"
+blade,blades,"Input: blade Answer: blades
+"
+microphone,microphones,"Input: microphone Answer: microphones
+"
+synthesizer,synthesizers,"Input: synthesizer Answer: synthesizers
+"
+stamp,stamps,"Input: stamp Answer: stamps
+"
+pseudonym,pseudonyms,"Input: pseudonym Answer: pseudonyms
+"
+elevator,elevators,"Input: elevator Answer: elevators
+"
+probe,probes,"Input: probe Answer: probes
+"
+descendant,descendants,"Input: descendant Answer: descendants
+"
+leak,leaks,"Input: leak Answer: leaks
+"
+cavity,cavities,"Input: cavity Answer: cavities
+"
+catcher,catchers,"Input: catcher Answer: catchers
+"
+explorer,explorers,"Input: explorer Answer: explorers
+"
+deposit,deposits,"Input: deposit Answer: deposits
+"
+compare,compares,"Input: compare Answer: compares
+"
+salmon,salmon,"Input: salmon Answer: salmon
+"
+collar,collars,"Input: collar Answer: collars
+"
+canopy,canopies,"Input: canopy Answer: canopies
+"
+sleeve,sleeves,"Input: sleeve Answer: sleeves
+"
+dealer,dealers,"Input: dealer Answer: dealers
+"
+emblem,emblems,"Input: emblem Answer: emblems
+"
+portal,portals,"Input: portal Answer: portals
+"
+fraternity,fraternities,"Input: fraternity Answer: fraternities
+"
+glider,gliders,"Input: glider Answer: gliders
+"
+fortification,fortifications,"Input: fortification Answer: fortifications
+"
+tactic,tactics,"Input: tactic Answer: tactics
+"
+impedance,impedances,"Input: impedance Answer: impedances
+"
+prequel,prequels,"Input: prequel Answer: prequels
+"
+fabric,fabrics,"Input: fabric Answer: fabrics
+"
+disruption,disruptions,"Input: disruption Answer: disruptions
+"
+synagogue,synagogues,"Input: synagogue Answer: synagogues
+"
+import,imports,"Input: import Answer: imports
+"
+pavilion,pavilions,"Input: pavilion Answer: pavilions
+"
+concession,concessions,"Input: concession Answer: concessions
+"
+baseman,basemen,"Input: baseman Answer: basemen
+"
+smallpox,smallpox,"Input: smallpox Answer: smallpox
+"
+trumpet,trumpets,"Input: trumpet Answer: trumpets
+"
+mandate,mandates,"Input: mandate Answer: mandates
+"
+mistress,mistresses,"Input: mistress Answer: mistresses
+"
+slogan,slogans,"Input: slogan Answer: slogans
+"
+reprise,reprises,"Input: reprise Answer: reprises
+"
+underside,undersides,"Input: underside Answer: undersides
+"
+millimetre,millimetres,"Input: millimetre Answer: millimetres
+"
+predict,predicts,"Input: predict Answer: predicts
+"
+reissue,reissues,"Input: reissue Answer: reissues
+"
+endorsement,endorsements,"Input: endorsement Answer: endorsements
+"
+disability,disabilities,"Input: disability Answer: disabilities
+"
+prohibition,prohibitions,"Input: prohibition Answer: prohibitions
+"
+feast,feasts,"Input: feast Answer: feasts
+"
+pirate,pirates,"Input: pirate Answer: pirates
+"
+confession,confessions,"Input: confession Answer: confessions
+"
+module,modules,"Input: module Answer: modules
+"
+mast,masts,"Input: mast Answer: masts
+"
+desk,desks,"Input: desk Answer: desks
+"
+undertaking,undertakings,"Input: undertaking Answer: undertakings
+"
+robbery,robberies,"Input: robbery Answer: robberies
+"
+survivor,survivors,"Input: survivor Answer: survivors
+"
+casino,casinos,"Input: casino Answer: casinos
+"
+facade,facades,"Input: facade Answer: facades
+"
+township,townships,"Input: township Answer: townships
+"
+chronicle,chronicles,"Input: chronicle Answer: chronicles
+"
+deploy,deploys,"Input: deploy Answer: deploys
+"
+researcher,researchers,"Input: researcher Answer: researchers
+"
+niece,nieces,"Input: niece Answer: nieces
+"
+ecosystem,ecosystems,"Input: ecosystem Answer: ecosystems
+"
+incarnation,incarnations,"Input: incarnation Answer: incarnations
+"
+shutout,shutouts,"Input: shutout Answer: shutouts
+"
+plague,plagues,"Input: plague Answer: plagues
+"
+hemisphere,hemispheres,"Input: hemisphere Answer: hemispheres
+"
+cadet,cadets,"Input: cadet Answer: cadets
+"
+inventory,inventories,"Input: inventory Answer: inventories
+"
+donation,donations,"Input: donation Answer: donations
+"
+curse,curses,"Input: curse Answer: curses
+"
+crush,crushes,"Input: crush Answer: crushes
+"
+interval,intervals,"Input: interval Answer: intervals
+"
+crack,cracks,"Input: crack Answer: cracks
+"
+sediment,sediments,"Input: sediment Answer: sediments
+"
+pension,pensions,"Input: pension Answer: pensions
+"
+textile,textiles,"Input: textile Answer: textiles
+"
+coincide,coincides,"Input: coincide Answer: coincides
+"
+bathroom,bathrooms,"Input: bathroom Answer: bathrooms
+"
+drain,drains,"Input: drain Answer: drains
+"
+nightclub,nightclubs,"Input: nightclub Answer: nightclubs
+"
+disguise,disguises,"Input: disguise Answer: disguises
+"
+distributor,distributors,"Input: distributor Answer: distributors
+"
+workshop,workshops,"Input: workshop Answer: workshops
+"
+vault,vaults,"Input: vault Answer: vaults
+"
+timeline,timelines,"Input: timeline Answer: timelines
+"
+cow,cows,"Input: cow Answer: cows
+"
+enclosure,enclosures,"Input: enclosure Answer: enclosures
+"
+milestone,milestones,"Input: milestone Answer: milestones
+"
+pairing,pairings,"Input: pairing Answer: pairings
+"
+graph,graphs,"Input: graph Answer: graphs
+"
+illusion,illusions,"Input: illusion Answer: illusions
+"
+privilege,privileges,"Input: privilege Answer: privileges
+"
+bend,bends,"Input: bend Answer: bends
+"
+circus,circuses,"Input: circus Answer: circuses
+"
+doll,dolls,"Input: doll Answer: dolls
+"
+beak,beaks,"Input: beak Answer: beaks
+"
+monopoly,monopolies,"Input: monopoly Answer: monopolies
+"
+snout,snouts,"Input: snout Answer: snouts
+"
+trait,traits,"Input: trait Answer: traits
+"
+pamphlet,pamphlets,"Input: pamphlet Answer: pamphlets
+"
+porch,porches,"Input: porch Answer: porches
+"
+gradient,gradients,"Input: gradient Answer: gradients
+"
+finalist,finalists,"Input: finalist Answer: finalists
+"
+playwright,playwrights,"Input: playwright Answer: playwrights
+"
+proclamation,proclamations,"Input: proclamation Answer: proclamations
+"
+plea,pleas,"Input: plea Answer: pleas
+"
+diplomat,diplomats,"Input: diplomat Answer: diplomats
+"
+fraction,fractions,"Input: fraction Answer: fractions
+"
+prediction,predictions,"Input: prediction Answer: predictions
+"
+dictator,dictators,"Input: dictator Answer: dictators
+"
+fragment,fragments,"Input: fragment Answer: fragments
+"
+boycott,boycotts,"Input: boycott Answer: boycotts
+"
+ambulance,ambulances,"Input: ambulance Answer: ambulances
+"
+critique,critiques,"Input: critique Answer: critiques
+"
+backstory,backstories,"Input: backstory Answer: backstories
+"
+judgement,judgements,"Input: judgement Answer: judgements
+"
+sensation,sensations,"Input: sensation Answer: sensations
+"
+bride,brides,"Input: bride Answer: brides
+"
+medication,medications,"Input: medication Answer: medications
+"
+vaccine,vaccines,"Input: vaccine Answer: vaccines
+"
+contractor,contractors,"Input: contractor Answer: contractors
+"
+taxi,taxis,"Input: taxi Answer: taxis
+"
+grip,grips,"Input: grip Answer: grips
+"
+headline,headlines,"Input: headline Answer: headlines
+"
+participant,participants,"Input: participant Answer: participants
+"
+brake,brakes,"Input: brake Answer: brakes
+"
+murderer,murderers,"Input: murderer Answer: murderers
+"
+synth,synths,"Input: synth Answer: synths
+"
+fluoride,fluorides,"Input: fluoride Answer: fluorides
+"
+cord,cords,"Input: cord Answer: cords
+"
+lesson,lessons,"Input: lesson Answer: lessons
+"
+intake,intakes,"Input: intake Answer: intakes
+"
+exam,exams,"Input: exam Answer: exams
+"
+genome,genomes,"Input: genome Answer: genomes
+"
+peasant,peasants,"Input: peasant Answer: peasants
+"
+booklet,booklets,"Input: booklet Answer: booklets
+"
+prosecutor,prosecutors,"Input: prosecutor Answer: prosecutors
+"
+royalty,royalties,"Input: royalty Answer: royalties
+"
+expose,exposes,"Input: expose Answer: exposes
+"
+restriction,restrictions,"Input: restriction Answer: restrictions
+"
+gust,gusts,"Input: gust Answer: gusts
+"
+tent,tents,"Input: tent Answer: tents
+"
+expectation,expectations,"Input: expectation Answer: expectations
+"
+pilgrimage,pilgrimages,"Input: pilgrimage Answer: pilgrimages
+"
+meditation,meditations,"Input: meditation Answer: meditations
+"
+analogy,analogies,"Input: analogy Answer: analogies
+"
+commuter,commuters,"Input: commuter Answer: commuters
+"
+limb,limbs,"Input: limb Answer: limbs
+"
+vitamin,vitamins,"Input: vitamin Answer: vitamins
+"
+algorithm,algorithms,"Input: algorithm Answer: algorithms
+"
+worry,worries,"Input: worry Answer: worries
+"
+molecule,molecules,"Input: molecule Answer: molecules
+"
+nursery,nurseries,"Input: nursery Answer: nurseries
+"
+cook,cooks,"Input: cook Answer: cooks
+"
+lure,lures,"Input: lure Answer: lures
+"
+scratch,scratches,"Input: scratch Answer: scratches
+"
+vulnerability,vulnerabilities,"Input: vulnerability Answer: vulnerabilities
+"
+staple,staples,"Input: staple Answer: staples
+"
+sortie,sorties,"Input: sortie Answer: sorties
+"
+guess,guesses,"Input: guess Answer: guesses
+"
+bubble,bubbles,"Input: bubble Answer: bubbles
+"
+affinity,affinities,"Input: affinity Answer: affinities
+"
+outlet,outlets,"Input: outlet Answer: outlets
+"
+cheek,cheeks,"Input: cheek Answer: cheeks
+"
+obligation,obligations,"Input: obligation Answer: obligations
+"
+valve,valves,"Input: valve Answer: valves
+"
+wrist,wrists,"Input: wrist Answer: wrists
+"
+premium,premiums,"Input: premium Answer: premiums
+"
+mutation,mutations,"Input: mutation Answer: mutations
+"
+archaeologist,archaeologists,"Input: archaeologist Answer: archaeologists
+"
+simulation,simulations,"Input: simulation Answer: simulations
+"
+linebacker,linebackers,"Input: linebacker Answer: linebackers
+"
+subscription,subscriptions,"Input: subscription Answer: subscriptions
+"
+synonym,synonyms,"Input: synonym Answer: synonyms
+"
+parkway,parkways,"Input: parkway Answer: parkways
+"
+thread,threads,"Input: thread Answer: threads
+"
+generator,generators,"Input: generator Answer: generators
+"
+obstacle,obstacles,"Input: obstacle Answer: obstacles
+"
+subfamily,subfamilies,"Input: subfamily Answer: subfamilies
+"
+reservation,reservations,"Input: reservation Answer: reservations
+"
+assemble,assembles,"Input: assemble Answer: assembles
+"
+attribute,attributes,"Input: attribute Answer: attributes
+"
+pond,ponds,"Input: pond Answer: ponds
+"
+vibe,vibes,"Input: vibe Answer: vibes
+"
+crane,cranes,"Input: crane Answer: cranes
+"
+cassette,cassettes,"Input: cassette Answer: cassettes
+"
+seller,sellers,"Input: seller Answer: sellers
+"
+sergeant,sergeants,"Input: sergeant Answer: sergeants
+"
+consort,consorts,"Input: consort Answer: consorts
+"
+peer,peers,"Input: peer Answer: peers
+"
+bunker,bunkers,"Input: bunker Answer: bunkers
+"
+obsession,obsessions,"Input: obsession Answer: obsessions
+"
+antiquity,antiquities,"Input: antiquity Answer: antiquities
+"
+listener,listeners,"Input: listener Answer: listeners
+"
+standout,standouts,"Input: standout Answer: standouts
+"
+reel,reels,"Input: reel Answer: reels
+"
+spectacle,spectacles,"Input: spectacle Answer: spectacles
+"
+swamp,swamps,"Input: swamp Answer: swamps
+"
+crusade,crusades,"Input: crusade Answer: crusades
+"
+deposition,depositions,"Input: deposition Answer: depositions
+"
+penis,penises,"Input: penis Answer: penises
+"
+pathway,pathways,"Input: pathway Answer: pathways
+"
+prejudice,prejudices,"Input: prejudice Answer: prejudices
+"
+analyst,analysts,"Input: analyst Answer: analysts
+"
+clone,clones,"Input: clone Answer: clones
+"
+rudder,rudders,"Input: rudder Answer: rudders
+"
+shake,shakes,"Input: shake Answer: shakes
+"
+prostitute,prostitutes,"Input: prostitute Answer: prostitutes
+"
+stripe,stripes,"Input: stripe Answer: stripes
+"
+receptor,receptors,"Input: receptor Answer: receptors
+"
+antibody,antibodies,"Input: antibody Answer: antibodies
+"
+injection,injections,"Input: injection Answer: injections
+"
+diabetes,diabetes,"Input: diabetes Answer: diabetes
+"
+obituary,obituaries,"Input: obituary Answer: obituaries
+"
+cone,cones,"Input: cone Answer: cones
+"
+messenger,messengers,"Input: messenger Answer: messengers
+"
+advancement,advancements,"Input: advancement Answer: advancements
+"
+forage,forages,"Input: forage Answer: forages
+"
+witchcraft,witchcraft,"Input: witchcraft Answer: witchcraft
+"
+strand,strands,"Input: strand Answer: strands
+"
+inventor,inventors,"Input: inventor Answer: inventors
+"
+asset,assets,"Input: asset Answer: assets
+"
+posture,postures,"Input: posture Answer: postures
+"
+container,containers,"Input: container Answer: containers
+"
+envelope,envelopes,"Input: envelope Answer: envelopes
+"
+sailor,sailors,"Input: sailor Answer: sailors
+"
+tumor,tumors,"Input: tumor Answer: tumors
+"
+landslide,landslides,"Input: landslide Answer: landslides
+"
+shelf,shelves,"Input: shelf Answer: shelves
+"
+affiliation,affiliations,"Input: affiliation Answer: affiliations
+"
+echo,echoes,"Input: echo Answer: echoes
+"
+stud,studs,"Input: stud Answer: studs
+"
+sermon,sermons,"Input: sermon Answer: sermons
+"
+mathematician,mathematicians,"Input: mathematician Answer: mathematicians
+"
+troupe,troupes,"Input: troupe Answer: troupes
+"
+liaison,liaisons,"Input: liaison Answer: liaisons
+"
+concussion,concussions,"Input: concussion Answer: concussions
+"
+eclipse,eclipses,"Input: eclipse Answer: eclipses
+"
+compartment,compartments,"Input: compartment Answer: compartments
+"
+excuse,excuses,"Input: excuse Answer: excuses
+"
+gateway,gateways,"Input: gateway Answer: gateways
+"
+elbow,elbows,"Input: elbow Answer: elbows
+"
+pardon,pardons,"Input: pardon Answer: pardons
+"
+scent,scents,"Input: scent Answer: scents
+"
+semifinal,semifinals,"Input: semifinal Answer: semifinals
+"
+deficiency,deficiencies,"Input: deficiency Answer: deficiencies
+"
+terrace,terraces,"Input: terrace Answer: terraces
+"
+chemist,chemists,"Input: chemist Answer: chemists
+"
+parrot,parrots,"Input: parrot Answer: parrots
+"
+smile,smiles,"Input: smile Answer: smiles
+"
+float,floats,"Input: float Answer: floats
+"
+stallion,stallions,"Input: stallion Answer: stallions
+"
+planting,plantings,"Input: planting Answer: plantings
+"
+organise,organises,"Input: organise Answer: organises
+"
+citation,citations,"Input: citation Answer: citations
+"
+builder,builders,"Input: builder Answer: builders
+"
+neighbourhood,neighbourhoods,"Input: neighbourhood Answer: neighbourhoods
+"
+magistrate,magistrates,"Input: magistrate Answer: magistrates
+"
+bikini,bikinis,"Input: bikini Answer: bikinis
+"
+spray,sprays,"Input: spray Answer: sprays
+"
+assertion,assertions,"Input: assertion Answer: assertions
+"
+tutor,tutors,"Input: tutor Answer: tutors
+"
+capsule,capsules,"Input: capsule Answer: capsules
+"
+recipe,recipes,"Input: recipe Answer: recipes
+"
+sect,sects,"Input: sect Answer: sects
+"
+brood,broods,"Input: brood Answer: broods
+"
+grouping,groupings,"Input: grouping Answer: groupings
+"
+chip,chips,"Input: chip Answer: chips
+"
+famine,famines,"Input: famine Answer: famines
+"
+reinforcement,reinforcements,"Input: reinforcement Answer: reinforcements
+"
+basket,baskets,"Input: basket Answer: baskets
+"
+locality,localities,"Input: locality Answer: localities
+"
+liability,liabilities,"Input: liability Answer: liabilities
+"
+maid,maids,"Input: maid Answer: maids
+"
+semester,semesters,"Input: semester Answer: semesters
+"
+clutch,clutches,"Input: clutch Answer: clutches
+"
+gut,guts,"Input: gut Answer: guts
+"
+trim,trims,"Input: trim Answer: trims
+"
+hazard,hazards,"Input: hazard Answer: hazards
+"
+grenade,grenades,"Input: grenade Answer: grenades
+"
+gag,gags,"Input: gag Answer: gags
+"
+remark,remarks,"Input: remark Answer: remarks
+"
+leap,leaps,"Input: leap Answer: leaps
+"
+toilet,toilets,"Input: toilet Answer: toilets
+"
+pile,piles,"Input: pile Answer: piles
+"
+pad,pads,"Input: pad Answer: pads
+"
+registry,registries,"Input: registry Answer: registries
+"
+heal,heals,"Input: heal Answer: heals
+"
+militant,militants,"Input: militant Answer: militants
+"
+pastor,pastors,"Input: pastor Answer: pastors
+"
+verb,verbs,"Input: verb Answer: verbs
+"
+casualty,casualties,"Input: casualty Answer: casualties
+"
+fumble,fumbles,"Input: fumble Answer: fumbles
+"
+tuning,tunings,"Input: tuning Answer: tunings
+"
+pony,ponies,"Input: pony Answer: ponies
+"
+sighting,sightings,"Input: sighting Answer: sightings
+"
+viewpoint,viewpoints,"Input: viewpoint Answer: viewpoints
+"
+hormone,hormones,"Input: hormone Answer: hormones
+"
+toe,toes,"Input: toe Answer: toes
+"
+setup,setups,"Input: setup Answer: setups
+"
+commence,commences,"Input: commence Answer: commences
+"
+forum,forums,"Input: forum Answer: forums
+"
+telegram,telegrams,"Input: telegram Answer: telegrams
+"
+lizard,lizards,"Input: lizard Answer: lizards
+"
+showrunner,showrunners,"Input: showrunner Answer: showrunners
+"
+doctorate,doctorates,"Input: doctorate Answer: doctorates
+"
+ribbon,ribbons,"Input: ribbon Answer: ribbons
+"
+interrogation,interrogations,"Input: interrogation Answer: interrogations
+"
+pulse,pulses,"Input: pulse Answer: pulses
+"
+fiber,fibers,"Input: fiber Answer: fibers
+"
+injunction,injunctions,"Input: injunction Answer: injunctions
+"
+doorway,doorways,"Input: doorway Answer: doorways
+"
+grape,grapes,"Input: grape Answer: grapes
+"
+centimeter,centimeters,"Input: centimeter Answer: centimeters
+"
+heel,heels,"Input: heel Answer: heels
+"
+wavelength,wavelengths,"Input: wavelength Answer: wavelengths
+"
+fringe,fringes,"Input: fringe Answer: fringes
+"
+transcription,transcriptions,"Input: transcription Answer: transcriptions
+"
+whistle,whistles,"Input: whistle Answer: whistles
+"
+spear,spears,"Input: spear Answer: spears
+"
+hint,hints,"Input: hint Answer: hints
+"
+boot,boots,"Input: boot Answer: boots
+"
+promoter,promoters,"Input: promoter Answer: promoters
+"
+nationality,nationalities,"Input: nationality Answer: nationalities
+"
+simulate,simulates,"Input: simulate Answer: simulates
+"
+classroom,classrooms,"Input: classroom Answer: classrooms
+"
+manoeuvre,manoeuvres,"Input: manoeuvre Answer: manoeuvres
+"
+rental,rentals,"Input: rental Answer: rentals
+"
+tap,taps,"Input: tap Answer: taps
+"
+consul,consuls,"Input: consul Answer: consuls
+"
+imitation,imitations,"Input: imitation Answer: imitations
+"
+acquaintance,acquaintances,"Input: acquaintance Answer: acquaintances
+"
+convict,convicts,"Input: convict Answer: convicts
+"
+interlude,interludes,"Input: interlude Answer: interludes
+"

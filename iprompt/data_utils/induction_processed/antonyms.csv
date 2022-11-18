@@ -1,0 +1,5185 @@
+input,output,text
+sane,insane,"Input: sane Answer: insane
+"
+direct,indirect,"Input: direct Answer: indirect
+"
+informally,formally,"Input: informally Answer: formally
+"
+unpopular,popular,"Input: unpopular Answer: popular
+"
+subtractive,additive,"Input: subtractive Answer: additive
+"
+nonresidential,residential,"Input: nonresidential Answer: residential
+"
+linear,cubic,"Input: linear Answer: cubic
+"
+inexact,exact,"Input: inexact Answer: exact
+"
+uptown,downtown,"Input: uptown Answer: downtown
+"
+incomparable,comparable,"Input: incomparable Answer: comparable
+"
+powerful,powerless,"Input: powerful Answer: powerless
+"
+gaseous,solid,"Input: gaseous Answer: solid
+"
+evenly,unevenly,"Input: evenly Answer: unevenly
+"
+formality,informality,"Input: formality Answer: informality
+"
+postnatal,prenatal,"Input: postnatal Answer: prenatal
+"
+deliberately,accidentally,"Input: deliberately Answer: accidentally
+"
+off,on,"Input: off Answer: on
+"
+uninsured,insured,"Input: uninsured Answer: insured
+"
+credit,cash,"Input: credit Answer: cash
+"
+float,sink,"Input: float Answer: sink
+"
+untalented,talented,"Input: untalented Answer: talented
+"
+ground,figure,"Input: ground Answer: figure
+"
+immobility,mobility,"Input: immobility Answer: mobility
+"
+coherence,incoherence,"Input: coherence Answer: incoherence
+"
+nationalism,internationalism,"Input: nationalism Answer: internationalism
+"
+developed,undeveloped,"Input: developed Answer: undeveloped
+"
+inoffensive,offensive,"Input: inoffensive Answer: offensive
+"
+unattractive,attractive,"Input: unattractive Answer: attractive
+"
+intense,mild,"Input: intense Answer: mild
+"
+disarrange,arrange,"Input: disarrange Answer: arrange
+"
+inaction,action,"Input: inaction Answer: action
+"
+rewarding,unrewarding,"Input: rewarding Answer: unrewarding
+"
+local,general,"Input: local Answer: general
+"
+net,gross,"Input: net Answer: gross
+"
+interrogative,declarative,"Input: interrogative Answer: declarative
+"
+kern,kern,"Input: kern Answer: kern
+"
+fill,empty,"Input: fill Answer: empty
+"
+confused,clearheaded,"Input: confused Answer: clearheaded
+"
+inexperience,experience,"Input: inexperience Answer: experience
+"
+inconsideration,consideration,"Input: inconsideration Answer: consideration
+"
+unambiguous,ambiguous,"Input: unambiguous Answer: ambiguous
+"
+immortal,mortal,"Input: immortal Answer: mortal
+"
+available,unavailable,"Input: available Answer: unavailable
+"
+restful,restless,"Input: restful Answer: restless
+"
+passing,running,"Input: passing Answer: running
+"
+justice,injustice,"Input: justice Answer: injustice
+"
+mortal,immortal,"Input: mortal Answer: immortal
+"
+baptized,unbaptized,"Input: baptized Answer: unbaptized
+"
+holy,unholy,"Input: holy Answer: unholy
+"
+illegitimacy,legitimacy,"Input: illegitimacy Answer: legitimacy
+"
+center,right,"Input: center Answer: right
+"
+unworldly,worldly,"Input: unworldly Answer: worldly
+"
+insincere,sincere,"Input: insincere Answer: sincere
+"
+disbelieve,believe,"Input: disbelieve Answer: believe
+"
+middle,end,"Input: middle Answer: end
+"
+breathing,breathless,"Input: breathing Answer: breathless
+"
+shared,unshared,"Input: shared Answer: unshared
+"
+minimally,maximally,"Input: minimally Answer: maximally
+"
+inefficient,efficient,"Input: inefficient Answer: efficient
+"
+unaccompanied,accompanied,"Input: unaccompanied Answer: accompanied
+"
+inside,outside,"Input: inside Answer: outside
+"
+depreciation,appreciation,"Input: depreciation Answer: appreciation
+"
+manual,automatic,"Input: manual Answer: automatic
+"
+disembark,embark,"Input: disembark Answer: embark
+"
+crooked,straight,"Input: crooked Answer: straight
+"
+distant,close,"Input: distant Answer: close
+"
+association,disassociation,"Input: association Answer: disassociation
+"
+sell,buy,"Input: sell Answer: buy
+"
+headed,headless,"Input: headed Answer: headless
+"
+propriety,impropriety,"Input: propriety Answer: impropriety
+"
+lower,raise,"Input: lower Answer: raise
+"
+uncombined,combined,"Input: uncombined Answer: combined
+"
+passionate,passionless,"Input: passionate Answer: passionless
+"
+inelegant,elegant,"Input: inelegant Answer: elegant
+"
+last,first,"Input: last Answer: first
+"
+hopeful,hopeless,"Input: hopeful Answer: hopeless
+"
+unfruitful,fruitful,"Input: unfruitful Answer: fruitful
+"
+disorganized,organized,"Input: disorganized Answer: organized
+"
+atomistic,holistic,"Input: atomistic Answer: holistic
+"
+determined,undetermined,"Input: determined Answer: undetermined
+"
+foe,friend,"Input: foe Answer: friend
+"
+concealing,revealing,"Input: concealing Answer: revealing
+"
+hopefully,hopelessly,"Input: hopefully Answer: hopelessly
+"
+opaque,clear,"Input: opaque Answer: clear
+"
+lowered,raised,"Input: lowered Answer: raised
+"
+fine,coarse,"Input: fine Answer: coarse
+"
+sadness,happiness,"Input: sadness Answer: happiness
+"
+unarmed,armed,"Input: unarmed Answer: armed
+"
+temperate,intemperate,"Input: temperate Answer: intemperate
+"
+marked,unmarked,"Input: marked Answer: unmarked
+"
+pro,anti,"Input: pro Answer: anti
+"
+acute,chronic,"Input: acute Answer: chronic
+"
+exhausted,unexhausted,"Input: exhausted Answer: unexhausted
+"
+tender,tough,"Input: tender Answer: tough
+"
+immobile,mobile,"Input: immobile Answer: mobile
+"
+heterogeneity,homogeneity,"Input: heterogeneity Answer: homogeneity
+"
+feed,starve,"Input: feed Answer: starve
+"
+unnatural,natural,"Input: unnatural Answer: natural
+"
+preventive,permissive,"Input: preventive Answer: permissive
+"
+intolerance,tolerance,"Input: intolerance Answer: tolerance
+"
+disloyal,loyal,"Input: disloyal Answer: loyal
+"
+uninhibited,inhibited,"Input: uninhibited Answer: inhibited
+"
+nonspecific,specific,"Input: nonspecific Answer: specific
+"
+happiness,sadness,"Input: happiness Answer: sadness
+"
+autologous,homologous,"Input: autologous Answer: homologous
+"
+more,less,"Input: more Answer: less
+"
+reputable,disreputable,"Input: reputable Answer: disreputable
+"
+aft,fore,"Input: aft Answer: fore
+"
+unbalance,balance,"Input: unbalance Answer: balance
+"
+synchronous,asynchronous,"Input: synchronous Answer: asynchronous
+"
+necessitate,obviate,"Input: necessitate Answer: obviate
+"
+experience,inexperience,"Input: experience Answer: inexperience
+"
+unblock,block,"Input: unblock Answer: block
+"
+varietal,generic,"Input: varietal Answer: generic
+"
+monism,pluralism,"Input: monism Answer: pluralism
+"
+bull,bear,"Input: bull Answer: bear
+"
+second,first,"Input: second Answer: first
+"
+creditor,debtor,"Input: creditor Answer: debtor
+"
+present,past,"Input: present Answer: past
+"
+turned,unturned,"Input: turned Answer: unturned
+"
+inflexible,flexible,"Input: inflexible Answer: flexible
+"
+no,all,"Input: no Answer: all
+"
+increment,decrement,"Input: increment Answer: decrement
+"
+unstained,stained,"Input: unstained Answer: stained
+"
+careless,careful,"Input: careless Answer: careful
+"
+consciousness,unconsciousness,"Input: consciousness Answer: unconsciousness
+"
+applaud,boo,"Input: applaud Answer: boo
+"
+outer,inner,"Input: outer Answer: inner
+"
+heedful,heedless,"Input: heedful Answer: heedless
+"
+fat,thin,"Input: fat Answer: thin
+"
+effectiveness,ineffectiveness,"Input: effectiveness Answer: ineffectiveness
+"
+patronize,boycott,"Input: patronize Answer: boycott
+"
+merciless,merciful,"Input: merciless Answer: merciful
+"
+dissociate,associate,"Input: dissociate Answer: associate
+"
+unemployment,employment,"Input: unemployment Answer: employment
+"
+enthusiastic,unenthusiastic,"Input: enthusiastic Answer: unenthusiastic
+"
+predictable,unpredictable,"Input: predictable Answer: unpredictable
+"
+fire,hire,"Input: fire Answer: hire
+"
+explicitly,implicitly,"Input: explicitly Answer: implicitly
+"
+stingy,generous,"Input: stingy Answer: generous
+"
+nonaligned,aligned,"Input: nonaligned Answer: aligned
+"
+rejuvenate,age,"Input: rejuvenate Answer: age
+"
+luckily,unluckily,"Input: luckily Answer: unluckily
+"
+melted,unmelted,"Input: melted Answer: unmelted
+"
+persistent,caducous,"Input: persistent Answer: caducous
+"
+incomprehension,comprehension,"Input: incomprehension Answer: comprehension
+"
+like,unlike,"Input: like Answer: unlike
+"
+unavailability,availability,"Input: unavailability Answer: availability
+"
+superiority,inferiority,"Input: superiority Answer: inferiority
+"
+relevance,irrelevance,"Input: relevance Answer: irrelevance
+"
+awkward,graceful,"Input: awkward Answer: graceful
+"
+extant,extinct,"Input: extant Answer: extinct
+"
+distributive,collective,"Input: distributive Answer: collective
+"
+cross,uncross,"Input: cross Answer: uncross
+"
+insubordination,subordination,"Input: insubordination Answer: subordination
+"
+run,idle,"Input: run Answer: idle
+"
+significantly,insignificantly,"Input: significantly Answer: insignificantly
+"
+unmade,made,"Input: unmade Answer: made
+"
+competence,incompetence,"Input: competence Answer: incompetence
+"
+conventional,nuclear,"Input: conventional Answer: nuclear
+"
+stretch,shrink,"Input: stretch Answer: shrink
+"
+meager,ample,"Input: meager Answer: ample
+"
+recessive,dominant,"Input: recessive Answer: dominant
+"
+notice,ignore,"Input: notice Answer: ignore
+"
+bearing,nonbearing,"Input: bearing Answer: nonbearing
+"
+small,large,"Input: small Answer: large
+"
+suffix,prefix,"Input: suffix Answer: prefix
+"
+regularity,irregularity,"Input: regularity Answer: irregularity
+"
+imprecisely,precisely,"Input: imprecisely Answer: precisely
+"
+thinness,thickness,"Input: thinness Answer: thickness
+"
+officially,unofficially,"Input: officially Answer: unofficially
+"
+fair,unfair,"Input: fair Answer: unfair
+"
+forget,mind,"Input: forget Answer: mind
+"
+undetected,detected,"Input: undetected Answer: detected
+"
+internationalism,nationalism,"Input: internationalism Answer: nationalism
+"
+unclean,clean,"Input: unclean Answer: clean
+"
+unwelcome,welcome,"Input: unwelcome Answer: welcome
+"
+vowel,consonant,"Input: vowel Answer: consonant
+"
+weakening,strengthening,"Input: weakening Answer: strengthening
+"
+loudly,softly,"Input: loudly Answer: softly
+"
+intervention,nonintervention,"Input: intervention Answer: nonintervention
+"
+pleased,displeased,"Input: pleased Answer: displeased
+"
+unfrozen,frozen,"Input: unfrozen Answer: frozen
+"
+patiently,impatiently,"Input: patiently Answer: impatiently
+"
+former,latter,"Input: former Answer: latter
+"
+studio,location,"Input: studio Answer: location
+"
+less,more,"Input: less Answer: more
+"
+unofficially,officially,"Input: unofficially Answer: officially
+"
+northern,southern,"Input: northern Answer: southern
+"
+agitate,calm,"Input: agitate Answer: calm
+"
+covered,bare,"Input: covered Answer: bare
+"
+gravity,levity,"Input: gravity Answer: levity
+"
+gradual,sudden,"Input: gradual Answer: sudden
+"
+loud,soft,"Input: loud Answer: soft
+"
+divide,multiply,"Input: divide Answer: multiply
+"
+nadir,zenith,"Input: nadir Answer: zenith
+"
+reasonably,unreasonably,"Input: reasonably Answer: unreasonably
+"
+disappear,appear,"Input: disappear Answer: appear
+"
+figurative,literal,"Input: figurative Answer: literal
+"
+obey,disobey,"Input: obey Answer: disobey
+"
+utility,inutility,"Input: utility Answer: inutility
+"
+uncut,cut,"Input: uncut Answer: cut
+"
+closeness,openness,"Input: closeness Answer: openness
+"
+revolutionary,counterrevolutionary,"Input: revolutionary Answer: counterrevolutionary
+"
+unsteady,steady,"Input: unsteady Answer: steady
+"
+intransitive,transitive,"Input: intransitive Answer: transitive
+"
+unconvinced,convinced,"Input: unconvinced Answer: convinced
+"
+inductive,deductive,"Input: inductive Answer: deductive
+"
+yin,yang,"Input: yin Answer: yang
+"
+arming,disarming,"Input: arming Answer: disarming
+"
+reliable,unreliable,"Input: reliable Answer: unreliable
+"
+merciful,merciless,"Input: merciful Answer: merciless
+"
+unclothed,clothed,"Input: unclothed Answer: clothed
+"
+atypically,typically,"Input: atypically Answer: typically
+"
+acquit,convict,"Input: acquit Answer: convict
+"
+promote,demote,"Input: promote Answer: demote
+"
+unreliable,reliable,"Input: unreliable Answer: reliable
+"
+dark,light,"Input: dark Answer: light
+"
+enthrone,dethrone,"Input: enthrone Answer: dethrone
+"
+topless,topped,"Input: topless Answer: topped
+"
+accuracy,inaccuracy,"Input: accuracy Answer: inaccuracy
+"
+inaccessibility,accessibility,"Input: inaccessibility Answer: accessibility
+"
+lesser,greater,"Input: lesser Answer: greater
+"
+amphoteric,alkaline,"Input: amphoteric Answer: alkaline
+"
+nonexplosive,explosive,"Input: nonexplosive Answer: explosive
+"
+lovable,hateful,"Input: lovable Answer: hateful
+"
+powerlessness,power,"Input: powerlessness Answer: power
+"
+neutral,positive,"Input: neutral Answer: positive
+"
+sensory,extrasensory,"Input: sensory Answer: extrasensory
+"
+immoral,moral,"Input: immoral Answer: moral
+"
+prospective,retrospective,"Input: prospective Answer: retrospective
+"
+unmotivated,motivated,"Input: unmotivated Answer: motivated
+"
+paternal,maternal,"Input: paternal Answer: maternal
+"
+immutable,mutable,"Input: immutable Answer: mutable
+"
+nonhuman,human,"Input: nonhuman Answer: human
+"
+unconscious,conscious,"Input: unconscious Answer: conscious
+"
+institutional,noninstitutional,"Input: institutional Answer: noninstitutional
+"
+satisfaction,dissatisfaction,"Input: satisfaction Answer: dissatisfaction
+"
+congenial,uncongenial,"Input: congenial Answer: uncongenial
+"
+unashamed,ashamed,"Input: unashamed Answer: ashamed
+"
+advance,back,"Input: advance Answer: back
+"
+order,disorder,"Input: order Answer: disorder
+"
+imperfect,perfect,"Input: imperfect Answer: perfect
+"
+relax,tense,"Input: relax Answer: tense
+"
+divest,invest,"Input: divest Answer: invest
+"
+dove,hawk,"Input: dove Answer: hawk
+"
+comprehensible,incomprehensible,"Input: comprehensible Answer: incomprehensible
+"
+unloved,loved,"Input: unloved Answer: loved
+"
+win,lose,"Input: win Answer: lose
+"
+intolerably,tolerably,"Input: intolerably Answer: tolerably
+"
+impalpable,palpable,"Input: impalpable Answer: palpable
+"
+flatter,disparage,"Input: flatter Answer: disparage
+"
+unpopularity,popularity,"Input: unpopularity Answer: popularity
+"
+politic,impolitic,"Input: politic Answer: impolitic
+"
+biennial,annual,"Input: biennial Answer: annual
+"
+repute,disrepute,"Input: repute Answer: disrepute
+"
+joyless,joyous,"Input: joyless Answer: joyous
+"
+minimize,maximize,"Input: minimize Answer: maximize
+"
+isometric,isotonic,"Input: isometric Answer: isotonic
+"
+intrastate,interstate,"Input: intrastate Answer: interstate
+"
+freelance,salaried,"Input: freelance Answer: salaried
+"
+indoors,outdoors,"Input: indoors Answer: outdoors
+"
+please,displease,"Input: please Answer: displease
+"
+enlightened,unenlightened,"Input: enlightened Answer: unenlightened
+"
+pack,unpack,"Input: pack Answer: unpack
+"
+unstructured,structured,"Input: unstructured Answer: structured
+"
+incomprehensible,comprehensible,"Input: incomprehensible Answer: comprehensible
+"
+counterfeit,genuine,"Input: counterfeit Answer: genuine
+"
+altered,unaltered,"Input: altered Answer: unaltered
+"
+courtesy,discourtesy,"Input: courtesy Answer: discourtesy
+"
+downwards,upwards,"Input: downwards Answer: upwards
+"
+absence,presence,"Input: absence Answer: presence
+"
+unsupported,supported,"Input: unsupported Answer: supported
+"
+intelligent,unintelligent,"Input: intelligent Answer: unintelligent
+"
+extraordinary,ordinary,"Input: extraordinary Answer: ordinary
+"
+arrive,leave,"Input: arrive Answer: leave
+"
+endogenous,exogenous,"Input: endogenous Answer: exogenous
+"
+hurried,unhurried,"Input: hurried Answer: unhurried
+"
+untangled,tangled,"Input: untangled Answer: tangled
+"
+unethical,ethical,"Input: unethical Answer: ethical
+"
+cauline,radical,"Input: cauline Answer: radical
+"
+unequivocal,equivocal,"Input: unequivocal Answer: equivocal
+"
+generosity,stinginess,"Input: generosity Answer: stinginess
+"
+leave,arrive,"Input: leave Answer: arrive
+"
+consecrated,desecrated,"Input: consecrated Answer: desecrated
+"
+geometrically,linearly,"Input: geometrically Answer: linearly
+"
+thoughtful,thoughtless,"Input: thoughtful Answer: thoughtless
+"
+uncharged,charged,"Input: uncharged Answer: charged
+"
+defined,undefined,"Input: defined Answer: undefined
+"
+indispensable,dispensable,"Input: indispensable Answer: dispensable
+"
+divergent,convergent,"Input: divergent Answer: convergent
+"
+nonclassical,classical,"Input: nonclassical Answer: classical
+"
+unsurprised,surprised,"Input: unsurprised Answer: surprised
+"
+undramatic,dramatic,"Input: undramatic Answer: dramatic
+"
+liked,disliked,"Input: liked Answer: disliked
+"
+oblique,parallel,"Input: oblique Answer: parallel
+"
+responsible,irresponsible,"Input: responsible Answer: irresponsible
+"
+unprofessional,professional,"Input: unprofessional Answer: professional
+"
+immeasurable,measurable,"Input: immeasurable Answer: measurable
+"
+equality,inequality,"Input: equality Answer: inequality
+"
+descriptive,prescriptive,"Input: descriptive Answer: prescriptive
+"
+nephew,niece,"Input: nephew Answer: niece
+"
+unwrap,wrap,"Input: unwrap Answer: wrap
+"
+capable,incapable,"Input: capable Answer: incapable
+"
+unreserved,reserved,"Input: unreserved Answer: reserved
+"
+tragedy,comedy,"Input: tragedy Answer: comedy
+"
+niece,nephew,"Input: niece Answer: nephew
+"
+coastal,inland,"Input: coastal Answer: inland
+"
+indiscriminate,discriminate,"Input: indiscriminate Answer: discriminate
+"
+inhumane,humane,"Input: inhumane Answer: humane
+"
+finished,unfinished,"Input: finished Answer: unfinished
+"
+pleasantly,unpleasantly,"Input: pleasantly Answer: unpleasantly
+"
+uncooperative,cooperative,"Input: uncooperative Answer: cooperative
+"
+favorable,unfavorable,"Input: favorable Answer: unfavorable
+"
+joyful,sorrowful,"Input: joyful Answer: sorrowful
+"
+dry,sweet,"Input: dry Answer: sweet
+"
+inflow,outflow,"Input: inflow Answer: outflow
+"
+heavily,lightly,"Input: heavily Answer: lightly
+"
+paved,unpaved,"Input: paved Answer: unpaved
+"
+colored,uncolored,"Input: colored Answer: uncolored
+"
+closed,open,"Input: closed Answer: open
+"
+punitive,rehabilitative,"Input: punitive Answer: rehabilitative
+"
+voluntarily,involuntarily,"Input: voluntarily Answer: involuntarily
+"
+territorial,extraterritorial,"Input: territorial Answer: extraterritorial
+"
+parasite,host,"Input: parasite Answer: host
+"
+incomplete,complete,"Input: incomplete Answer: complete
+"
+qualify,disqualify,"Input: qualify Answer: disqualify
+"
+unguided,guided,"Input: unguided Answer: guided
+"
+irrevocable,revocable,"Input: irrevocable Answer: revocable
+"
+impractical,practical,"Input: impractical Answer: practical
+"
+inconstancy,constancy,"Input: inconstancy Answer: constancy
+"
+potential,actual,"Input: potential Answer: actual
+"
+loser,winner,"Input: loser Answer: winner
+"
+bisexual,homosexual,"Input: bisexual Answer: homosexual
+"
+undefined,defined,"Input: undefined Answer: defined
+"
+defense,offense,"Input: defense Answer: offense
+"
+nonpregnant,pregnant,"Input: nonpregnant Answer: pregnant
+"
+tire,refresh,"Input: tire Answer: refresh
+"
+incompetent,competent,"Input: incompetent Answer: competent
+"
+comfortably,uncomfortably,"Input: comfortably Answer: uncomfortably
+"
+negligent,diligent,"Input: negligent Answer: diligent
+"
+lowborn,noble,"Input: lowborn Answer: noble
+"
+critically,uncritically,"Input: critically Answer: uncritically
+"
+opacity,transparency,"Input: opacity Answer: transparency
+"
+aqueous,igneous,"Input: aqueous Answer: igneous
+"
+intrinsic,extrinsic,"Input: intrinsic Answer: extrinsic
+"
+acquaintance,stranger,"Input: acquaintance Answer: stranger
+"
+leading,following,"Input: leading Answer: following
+"
+harmonious,inharmonious,"Input: harmonious Answer: inharmonious
+"
+malnourished,nourished,"Input: malnourished Answer: nourished
+"
+ambitious,unambitious,"Input: ambitious Answer: unambitious
+"
+uncritically,critically,"Input: uncritically Answer: critically
+"
+manage,fail,"Input: manage Answer: fail
+"
+unstuck,stuck,"Input: unstuck Answer: stuck
+"
+untrained,trained,"Input: untrained Answer: trained
+"
+retail,wholesale,"Input: retail Answer: wholesale
+"
+cathode,anode,"Input: cathode Answer: anode
+"
+ordinal,cardinal,"Input: ordinal Answer: cardinal
+"
+invulnerable,vulnerable,"Input: invulnerable Answer: vulnerable
+"
+windward,leeward,"Input: windward Answer: leeward
+"
+resolute,irresolute,"Input: resolute Answer: irresolute
+"
+ascending,descending,"Input: ascending Answer: descending
+"
+roughen,smooth,"Input: roughen Answer: smooth
+"
+indicate,contraindicate,"Input: indicate Answer: contraindicate
+"
+principled,unprincipled,"Input: principled Answer: unprincipled
+"
+informed,uninformed,"Input: informed Answer: uninformed
+"
+cautiously,incautiously,"Input: cautiously Answer: incautiously
+"
+inconsistent,consistent,"Input: inconsistent Answer: consistent
+"
+domestic,foreign,"Input: domestic Answer: foreign
+"
+prosecute,defend,"Input: prosecute Answer: defend
+"
+strong,weak,"Input: strong Answer: weak
+"
+civil,sidereal,"Input: civil Answer: sidereal
+"
+eastern,western,"Input: eastern Answer: western
+"
+painless,painful,"Input: painless Answer: painful
+"
+passive,active,"Input: passive Answer: active
+"
+down,up,"Input: down Answer: up
+"
+unappealing,appealing,"Input: unappealing Answer: appealing
+"
+father,mother,"Input: father Answer: mother
+"
+unbelief,belief,"Input: unbelief Answer: belief
+"
+continued,discontinued,"Input: continued Answer: discontinued
+"
+confined,invasive,"Input: confined Answer: invasive
+"
+classical,nonclassical,"Input: classical Answer: nonclassical
+"
+uncoil,coil,"Input: uncoil Answer: coil
+"
+cleared,uncleared,"Input: cleared Answer: uncleared
+"
+son,daughter,"Input: son Answer: daughter
+"
+extended,unextended,"Input: extended Answer: unextended
+"
+diligent,negligent,"Input: diligent Answer: negligent
+"
+enjoy,suffer,"Input: enjoy Answer: suffer
+"
+extraterritorial,territorial,"Input: extraterritorial Answer: territorial
+"
+delicate,rugged,"Input: delicate Answer: rugged
+"
+existence,nonexistence,"Input: existence Answer: nonexistence
+"
+indistinct,distinct,"Input: indistinct Answer: distinct
+"
+incautiously,cautiously,"Input: incautiously Answer: cautiously
+"
+untrustworthy,trustworthy,"Input: untrustworthy Answer: trustworthy
+"
+patriotic,unpatriotic,"Input: patriotic Answer: unpatriotic
+"
+commercial,noncommercial,"Input: commercial Answer: noncommercial
+"
+freeze,boil,"Input: freeze Answer: boil
+"
+commonality,individuality,"Input: commonality Answer: individuality
+"
+unfaithfulness,faithfulness,"Input: unfaithfulness Answer: faithfulness
+"
+blame,absolve,"Input: blame Answer: absolve
+"
+war,peace,"Input: war Answer: peace
+"
+distal,proximal,"Input: distal Answer: proximal
+"
+atonic,tonic,"Input: atonic Answer: tonic
+"
+outpatient,inpatient,"Input: outpatient Answer: inpatient
+"
+looseness,tightness,"Input: looseness Answer: tightness
+"
+addressed,unaddressed,"Input: addressed Answer: unaddressed
+"
+unknowable,knowable,"Input: unknowable Answer: knowable
+"
+exclude,include,"Input: exclude Answer: include
+"
+correctly,incorrectly,"Input: correctly Answer: incorrectly
+"
+significant,insignificant,"Input: significant Answer: insignificant
+"
+thoughtfully,thoughtlessly,"Input: thoughtfully Answer: thoughtlessly
+"
+earned,unearned,"Input: earned Answer: unearned
+"
+expensive,cheap,"Input: expensive Answer: cheap
+"
+impersonally,personally,"Input: impersonally Answer: personally
+"
+worthlessness,worth,"Input: worthlessness Answer: worth
+"
+instability,stability,"Input: instability Answer: stability
+"
+inattentive,attentive,"Input: inattentive Answer: attentive
+"
+empirically,theoretically,"Input: empirically Answer: theoretically
+"
+inadequacy,adequacy,"Input: inadequacy Answer: adequacy
+"
+masculinity,femininity,"Input: masculinity Answer: femininity
+"
+unsure,sure,"Input: unsure Answer: sure
+"
+sour,sweet,"Input: sour Answer: sweet
+"
+worth,worthlessness,"Input: worth Answer: worthlessness
+"
+beseeching,imperative,"Input: beseeching Answer: imperative
+"
+matriarchal,patriarchal,"Input: matriarchal Answer: patriarchal
+"
+inefficacy,efficacy,"Input: inefficacy Answer: efficacy
+"
+discontinued,continued,"Input: discontinued Answer: continued
+"
+lighten,darken,"Input: lighten Answer: darken
+"
+contraindication,indication,"Input: contraindication Answer: indication
+"
+retrospective,prospective,"Input: retrospective Answer: prospective
+"
+endemic,epidemic,"Input: endemic Answer: epidemic
+"
+permanence,impermanence,"Input: permanence Answer: impermanence
+"
+unwritten,written,"Input: unwritten Answer: written
+"
+separate,joint,"Input: separate Answer: joint
+"
+rush,delay,"Input: rush Answer: delay
+"
+complaining,uncomplaining,"Input: complaining Answer: uncomplaining
+"
+used,misused,"Input: used Answer: misused
+"
+straighten,bend,"Input: straighten Answer: bend
+"
+adequately,inadequately,"Input: adequately Answer: inadequately
+"
+linger,rush,"Input: linger Answer: rush
+"
+inferior,superior,"Input: inferior Answer: superior
+"
+consistently,inconsistently,"Input: consistently Answer: inconsistently
+"
+physical,mental,"Input: physical Answer: mental
+"
+mistrust,trust,"Input: mistrust Answer: trust
+"
+avascular,vascular,"Input: avascular Answer: vascular
+"
+rounded,angular,"Input: rounded Answer: angular
+"
+unpaid,paid,"Input: unpaid Answer: paid
+"
+stimulate,stifle,"Input: stimulate Answer: stifle
+"
+development,nondevelopment,"Input: development Answer: nondevelopment
+"
+ascent,descent,"Input: ascent Answer: descent
+"
+likely,unlikely,"Input: likely Answer: unlikely
+"
+undignified,dignified,"Input: undignified Answer: dignified
+"
+advantageous,disadvantageous,"Input: advantageous Answer: disadvantageous
+"
+ordinary,extraordinary,"Input: ordinary Answer: extraordinary
+"
+multiform,uniform,"Input: multiform Answer: uniform
+"
+cephalic,caudal,"Input: cephalic Answer: caudal
+"
+worthy,unworthy,"Input: worthy Answer: unworthy
+"
+member,nonmember,"Input: member Answer: nonmember
+"
+despair,hope,"Input: despair Answer: hope
+"
+extensive,intensive,"Input: extensive Answer: intensive
+"
+infallibility,fallibility,"Input: infallibility Answer: fallibility
+"
+adoptive,biological,"Input: adoptive Answer: biological
+"
+unassisted,assisted,"Input: unassisted Answer: assisted
+"
+patience,impatience,"Input: patience Answer: impatience
+"
+perennial,annual,"Input: perennial Answer: annual
+"
+potent,impotent,"Input: potent Answer: impotent
+"
+superior,inferior,"Input: superior Answer: inferior
+"
+below,above,"Input: below Answer: above
+"
+unpaved,paved,"Input: unpaved Answer: paved
+"
+adorned,unadorned,"Input: adorned Answer: unadorned
+"
+nonracial,racial,"Input: nonracial Answer: racial
+"
+cover,uncover,"Input: cover Answer: uncover
+"
+uncontaminated,contaminated,"Input: uncontaminated Answer: contaminated
+"
+insensitivity,sensitivity,"Input: insensitivity Answer: sensitivity
+"
+wasteful,thrifty,"Input: wasteful Answer: thrifty
+"
+chromatic,diatonic,"Input: chromatic Answer: diatonic
+"
+complexity,simplicity,"Input: complexity Answer: simplicity
+"
+heuristic,algorithmic,"Input: heuristic Answer: algorithmic
+"
+abstain,consume,"Input: abstain Answer: consume
+"
+purity,impurity,"Input: purity Answer: impurity
+"
+approbation,disapprobation,"Input: approbation Answer: disapprobation
+"
+frivolity,seriousness,"Input: frivolity Answer: seriousness
+"
+controversial,uncontroversial,"Input: controversial Answer: uncontroversial
+"
+unrefined,refined,"Input: unrefined Answer: refined
+"
+unregistered,registered,"Input: unregistered Answer: registered
+"
+probable,improbable,"Input: probable Answer: improbable
+"
+discipline,indiscipline,"Input: discipline Answer: indiscipline
+"
+dissonance,harmony,"Input: dissonance Answer: harmony
+"
+rehabilitative,punitive,"Input: rehabilitative Answer: punitive
+"
+uncultivated,cultivated,"Input: uncultivated Answer: cultivated
+"
+restrained,unrestrained,"Input: restrained Answer: unrestrained
+"
+extension,flexion,"Input: extension Answer: flexion
+"
+concern,unconcern,"Input: concern Answer: unconcern
+"
+unaddressed,addressed,"Input: unaddressed Answer: addressed
+"
+disobedience,obedience,"Input: disobedience Answer: obedience
+"
+unfixed,fixed,"Input: unfixed Answer: fixed
+"
+inshore,offshore,"Input: inshore Answer: offshore
+"
+obligate,facultative,"Input: obligate Answer: facultative
+"
+wisdom,folly,"Input: wisdom Answer: folly
+"
+boy,girl,"Input: boy Answer: girl
+"
+unimportance,importance,"Input: unimportance Answer: importance
+"
+fastened,unfastened,"Input: fastened Answer: unfastened
+"
+unloaded,loaded,"Input: unloaded Answer: loaded
+"
+unaware,aware,"Input: unaware Answer: aware
+"
+unjustly,justly,"Input: unjustly Answer: justly
+"
+toxic,nontoxic,"Input: toxic Answer: nontoxic
+"
+variable,invariable,"Input: variable Answer: invariable
+"
+narrowing,widening,"Input: narrowing Answer: widening
+"
+industrial,nonindustrial,"Input: industrial Answer: nonindustrial
+"
+resident,nonresident,"Input: resident Answer: nonresident
+"
+impossibility,possibility,"Input: impossibility Answer: possibility
+"
+unimpressive,impressive,"Input: unimpressive Answer: impressive
+"
+inexpedient,expedient,"Input: inexpedient Answer: expedient
+"
+there,here,"Input: there Answer: here
+"
+nonsurgical,surgical,"Input: nonsurgical Answer: surgical
+"
+equipped,unequipped,"Input: equipped Answer: unequipped
+"
+begrudge,wish,"Input: begrudge Answer: wish
+"
+waxing,waning,"Input: waxing Answer: waning
+"
+adequacy,inadequacy,"Input: adequacy Answer: inadequacy
+"
+labeled,unlabeled,"Input: labeled Answer: unlabeled
+"
+effector,receptor,"Input: effector Answer: receptor
+"
+undemocratic,democratic,"Input: undemocratic Answer: democratic
+"
+toothless,toothed,"Input: toothless Answer: toothed
+"
+wrapped,unwrapped,"Input: wrapped Answer: unwrapped
+"
+unaltered,altered,"Input: unaltered Answer: altered
+"
+undrained,drained,"Input: undrained Answer: drained
+"
+discriminate,indiscriminate,"Input: discriminate Answer: indiscriminate
+"
+diminution,augmentation,"Input: diminution Answer: augmentation
+"
+underived,derived,"Input: underived Answer: derived
+"
+unchain,chain,"Input: unchain Answer: chain
+"
+saturated,unsaturated,"Input: saturated Answer: unsaturated
+"
+immaterial,material,"Input: immaterial Answer: material
+"
+subordinating,coordinating,"Input: subordinating Answer: coordinating
+"
+profitable,unprofitable,"Input: profitable Answer: unprofitable
+"
+insolvent,solvent,"Input: insolvent Answer: solvent
+"
+grateful,ungrateful,"Input: grateful Answer: ungrateful
+"
+visibility,invisibility,"Input: visibility Answer: invisibility
+"
+treated,untreated,"Input: treated Answer: untreated
+"
+nonmagnetic,magnetic,"Input: nonmagnetic Answer: magnetic
+"
+sonic,supersonic,"Input: sonic Answer: supersonic
+"
+untidy,tidy,"Input: untidy Answer: tidy
+"
+incapable,capable,"Input: incapable Answer: capable
+"
+brunet,blond,"Input: brunet Answer: blond
+"
+weighty,weightless,"Input: weighty Answer: weightless
+"
+unconsciously,consciously,"Input: unconsciously Answer: consciously
+"
+publicized,suppressed,"Input: publicized Answer: suppressed
+"
+imprudent,prudent,"Input: imprudent Answer: prudent
+"
+uneven,even,"Input: uneven Answer: even
+"
+waning,waxing,"Input: waning Answer: waxing
+"
+useful,useless,"Input: useful Answer: useless
+"
+polar,equatorial,"Input: polar Answer: equatorial
+"
+found,lost,"Input: found Answer: lost
+"
+authorized,unauthorized,"Input: authorized Answer: unauthorized
+"
+externally,internally,"Input: externally Answer: internally
+"
+incontinent,continent,"Input: incontinent Answer: continent
+"
+belief,unbelief,"Input: belief Answer: unbelief
+"
+compromising,uncompromising,"Input: compromising Answer: uncompromising
+"
+expected,unexpected,"Input: expected Answer: unexpected
+"
+unsold,sold,"Input: unsold Answer: sold
+"
+stale,fresh,"Input: stale Answer: fresh
+"
+tangled,untangled,"Input: tangled Answer: untangled
+"
+insulator,conductor,"Input: insulator Answer: conductor
+"
+move,stay,"Input: move Answer: stay
+"
+undesirable,desirable,"Input: undesirable Answer: desirable
+"
+systematic,unsystematic,"Input: systematic Answer: unsystematic
+"
+accustomed,unaccustomed,"Input: accustomed Answer: unaccustomed
+"
+undefeated,defeated,"Input: undefeated Answer: defeated
+"
+nonrandom,random,"Input: nonrandom Answer: random
+"
+clarity,obscurity,"Input: clarity Answer: obscurity
+"
+uncharitable,charitable,"Input: uncharitable Answer: charitable
+"
+unfilled,filled,"Input: unfilled Answer: filled
+"
+atheism,theism,"Input: atheism Answer: theism
+"
+synthesis,analysis,"Input: synthesis Answer: analysis
+"
+kind,unkind,"Input: kind Answer: unkind
+"
+unresponsive,responsive,"Input: unresponsive Answer: responsive
+"
+defeat,victory,"Input: defeat Answer: victory
+"
+untied,tied,"Input: untied Answer: tied
+"
+material,immaterial,"Input: material Answer: immaterial
+"
+lowland,highland,"Input: lowland Answer: highland
+"
+invariable,variable,"Input: invariable Answer: variable
+"
+incorporeal,corporeal,"Input: incorporeal Answer: corporeal
+"
+generative,consumptive,"Input: generative Answer: consumptive
+"
+deceleration,acceleration,"Input: deceleration Answer: acceleration
+"
+inconveniently,conveniently,"Input: inconveniently Answer: conveniently
+"
+equal,differ,"Input: equal Answer: differ
+"
+encouraging,discouraging,"Input: encouraging Answer: discouraging
+"
+interested,uninterested,"Input: interested Answer: uninterested
+"
+maximum,minimum,"Input: maximum Answer: minimum
+"
+inhale,exhale,"Input: inhale Answer: exhale
+"
+misconstruction,construction,"Input: misconstruction Answer: construction
+"
+fold,unfold,"Input: fold Answer: unfold
+"
+selfishness,unselfishness,"Input: selfishness Answer: unselfishness
+"
+sweeten,sour,"Input: sweeten Answer: sour
+"
+harmony,dissonance,"Input: harmony Answer: dissonance
+"
+nonmetallic,metallic,"Input: nonmetallic Answer: metallic
+"
+symmetrical,asymmetrical,"Input: symmetrical Answer: asymmetrical
+"
+unsystematic,systematic,"Input: unsystematic Answer: systematic
+"
+anaerobic,aerobic,"Input: anaerobic Answer: aerobic
+"
+financial,nonfinancial,"Input: financial Answer: nonfinancial
+"
+annual,perennial,"Input: annual Answer: perennial
+"
+noticed,unnoticed,"Input: noticed Answer: unnoticed
+"
+analysis,synthesis,"Input: analysis Answer: synthesis
+"
+exogenous,endogenous,"Input: exogenous Answer: endogenous
+"
+enable,disable,"Input: enable Answer: disable
+"
+easterly,westerly,"Input: easterly Answer: westerly
+"
+infinite,finite,"Input: infinite Answer: finite
+"
+functioning,malfunctioning,"Input: functioning Answer: malfunctioning
+"
+incorrectly,correctly,"Input: incorrectly Answer: correctly
+"
+structured,unstructured,"Input: structured Answer: unstructured
+"
+trained,untrained,"Input: trained Answer: untrained
+"
+blessed,cursed,"Input: blessed Answer: cursed
+"
+upstairs,downstairs,"Input: upstairs Answer: downstairs
+"
+humorous,humorless,"Input: humorous Answer: humorless
+"
+typical,atypical,"Input: typical Answer: atypical
+"
+irritate,soothe,"Input: irritate Answer: soothe
+"
+resolution,preparation,"Input: resolution Answer: preparation
+"
+chain,unchain,"Input: chain Answer: unchain
+"
+impatient,patient,"Input: impatient Answer: patient
+"
+laity,clergy,"Input: laity Answer: clergy
+"
+worry,reassure,"Input: worry Answer: reassure
+"
+faceless,faced,"Input: faceless Answer: faced
+"
+documented,undocumented,"Input: documented Answer: undocumented
+"
+cholinergic,anticholinergic,"Input: cholinergic Answer: anticholinergic
+"
+christian,unchristian,"Input: christian Answer: unchristian
+"
+unipolar,bipolar,"Input: unipolar Answer: bipolar
+"
+hardness,softness,"Input: hardness Answer: softness
+"
+ill,well,"Input: ill Answer: well
+"
+unexploited,exploited,"Input: unexploited Answer: exploited
+"
+disenchanted,enchanted,"Input: disenchanted Answer: enchanted
+"
+unfashionable,fashionable,"Input: unfashionable Answer: fashionable
+"
+fatal,nonfatal,"Input: fatal Answer: nonfatal
+"
+nonviolent,violent,"Input: nonviolent Answer: violent
+"
+aground,afloat,"Input: aground Answer: afloat
+"
+establish,abolish,"Input: establish Answer: abolish
+"
+imprecise,precise,"Input: imprecise Answer: precise
+"
+upload,download,"Input: upload Answer: download
+"
+stative,active,"Input: stative Answer: active
+"
+unabridged,abridged,"Input: unabridged Answer: abridged
+"
+unbound,bound,"Input: unbound Answer: bound
+"
+diluted,undiluted,"Input: diluted Answer: undiluted
+"
+concentrated,distributed,"Input: concentrated Answer: distributed
+"
+bright,dull,"Input: bright Answer: dull
+"
+improbable,probable,"Input: improbable Answer: probable
+"
+alignment,nonalignment,"Input: alignment Answer: nonalignment
+"
+unkindly,kindly,"Input: unkindly Answer: kindly
+"
+concave,convex,"Input: concave Answer: convex
+"
+unimproved,improved,"Input: unimproved Answer: improved
+"
+unbutton,button,"Input: unbutton Answer: button
+"
+pessimistic,optimistic,"Input: pessimistic Answer: optimistic
+"
+thermal,nonthermal,"Input: thermal Answer: nonthermal
+"
+classified,unclassified,"Input: classified Answer: unclassified
+"
+impossibly,possibly,"Input: impossibly Answer: possibly
+"
+articulate,inarticulate,"Input: articulate Answer: inarticulate
+"
+hairy,hairless,"Input: hairy Answer: hairless
+"
+uncollected,collected,"Input: uncollected Answer: collected
+"
+show,hide,"Input: show Answer: hide
+"
+being,nonbeing,"Input: being Answer: nonbeing
+"
+lax,tense,"Input: lax Answer: tense
+"
+exterior,interior,"Input: exterior Answer: interior
+"
+acquittal,conviction,"Input: acquittal Answer: conviction
+"
+loyalty,disloyalty,"Input: loyalty Answer: disloyalty
+"
+random,nonrandom,"Input: random Answer: nonrandom
+"
+asexual,sexual,"Input: asexual Answer: sexual
+"
+unoriginal,original,"Input: unoriginal Answer: original
+"
+coated,uncoated,"Input: coated Answer: uncoated
+"
+inelastic,elastic,"Input: inelastic Answer: elastic
+"
+death,birth,"Input: death Answer: birth
+"
+precision,imprecision,"Input: precision Answer: imprecision
+"
+signed,unsigned,"Input: signed Answer: unsigned
+"
+uninviting,inviting,"Input: uninviting Answer: inviting
+"
+badness,goodness,"Input: badness Answer: goodness
+"
+qualitative,quantitative,"Input: qualitative Answer: quantitative
+"
+unkindness,kindness,"Input: unkindness Answer: kindness
+"
+connected,unconnected,"Input: connected Answer: unconnected
+"
+occupied,unoccupied,"Input: occupied Answer: unoccupied
+"
+possibly,impossibly,"Input: possibly Answer: impossibly
+"
+disagreement,agreement,"Input: disagreement Answer: agreement
+"
+unconstitutional,constitutional,"Input: unconstitutional Answer: constitutional
+"
+nice,nasty,"Input: nice Answer: nasty
+"
+joyous,joyless,"Input: joyous Answer: joyless
+"
+satisfactory,unsatisfactory,"Input: satisfactory Answer: unsatisfactory
+"
+amateur,professional,"Input: amateur Answer: professional
+"
+heterologous,analogous,"Input: heterologous Answer: analogous
+"
+software,hardware,"Input: software Answer: hardware
+"
+disconnect,connect,"Input: disconnect Answer: connect
+"
+unpublished,published,"Input: unpublished Answer: published
+"
+tapped,untapped,"Input: tapped Answer: untapped
+"
+implicit,explicit,"Input: implicit Answer: explicit
+"
+uncrossed,crossed,"Input: uncrossed Answer: crossed
+"
+unnoticed,noticed,"Input: unnoticed Answer: noticed
+"
+weightless,weighty,"Input: weightless Answer: weighty
+"
+exempt,enforce,"Input: exempt Answer: enforce
+"
+acceptance,rejection,"Input: acceptance Answer: rejection
+"
+conformity,nonconformity,"Input: conformity Answer: nonconformity
+"
+download,upload,"Input: download Answer: upload
+"
+uncleared,cleared,"Input: uncleared Answer: cleared
+"
+immediate,mediate,"Input: immediate Answer: mediate
+"
+protected,unprotected,"Input: protected Answer: unprotected
+"
+ethical,unethical,"Input: ethical Answer: unethical
+"
+impressive,unimpressive,"Input: impressive Answer: unimpressive
+"
+cursed,blessed,"Input: cursed Answer: blessed
+"
+nascent,dying,"Input: nascent Answer: dying
+"
+modern,nonmodern,"Input: modern Answer: nonmodern
+"
+sufficient,insufficient,"Input: sufficient Answer: insufficient
+"
+unwary,wary,"Input: unwary Answer: wary
+"
+nonbeing,being,"Input: nonbeing Answer: being
+"
+reassure,worry,"Input: reassure Answer: worry
+"
+accentual,quantitative,"Input: accentual Answer: quantitative
+"
+precise,imprecise,"Input: precise Answer: imprecise
+"
+stranger,acquaintance,"Input: stranger Answer: acquaintance
+"
+necessarily,unnecessarily,"Input: necessarily Answer: unnecessarily
+"
+here,there,"Input: here Answer: there
+"
+intended,unintended,"Input: intended Answer: unintended
+"
+sunrise,sunset,"Input: sunrise Answer: sunset
+"
+prudence,imprudence,"Input: prudence Answer: imprudence
+"
+confident,diffident,"Input: confident Answer: diffident
+"
+succeed,fail,"Input: succeed Answer: fail
+"
+bind,unbind,"Input: bind Answer: unbind
+"
+secure,insecure,"Input: secure Answer: insecure
+"
+efficiently,inefficiently,"Input: efficiently Answer: inefficiently
+"
+helpful,unhelpful,"Input: helpful Answer: unhelpful
+"
+sterile,fertile,"Input: sterile Answer: fertile
+"
+fast,slow,"Input: fast Answer: slow
+"
+coil,uncoil,"Input: coil Answer: uncoil
+"
+destabilization,stabilization,"Input: destabilization Answer: stabilization
+"
+irrational,rational,"Input: irrational Answer: rational
+"
+ungrammatical,grammatical,"Input: ungrammatical Answer: grammatical
+"
+unstudied,studied,"Input: unstudied Answer: studied
+"
+hardware,software,"Input: hardware Answer: software
+"
+converge,diverge,"Input: converge Answer: diverge
+"
+comfort,discomfort,"Input: comfort Answer: discomfort
+"
+meaningless,meaningful,"Input: meaningless Answer: meaningful
+"
+discontinuity,continuity,"Input: discontinuity Answer: continuity
+"
+injured,uninjured,"Input: injured Answer: uninjured
+"
+afferent,efferent,"Input: afferent Answer: efferent
+"
+regress,progress,"Input: regress Answer: progress
+"
+religious,secular,"Input: religious Answer: secular
+"
+neuter,feminine,"Input: neuter Answer: feminine
+"
+aunt,uncle,"Input: aunt Answer: uncle
+"
+dullness,brightness,"Input: dullness Answer: brightness
+"
+disadvantageous,advantageous,"Input: disadvantageous Answer: advantageous
+"
+sacred,profane,"Input: sacred Answer: profane
+"
+ambiguously,unambiguously,"Input: ambiguously Answer: unambiguously
+"
+figuratively,literally,"Input: figuratively Answer: literally
+"
+impolitic,politic,"Input: impolitic Answer: politic
+"
+lowness,highness,"Input: lowness Answer: highness
+"
+mindful,unmindful,"Input: mindful Answer: unmindful
+"
+patriarchal,matriarchal,"Input: patriarchal Answer: matriarchal
+"
+undemanding,demanding,"Input: undemanding Answer: demanding
+"
+unadjusted,adjusted,"Input: unadjusted Answer: adjusted
+"
+defeated,undefeated,"Input: defeated Answer: undefeated
+"
+yea,nay,"Input: yea Answer: nay
+"
+productive,unproductive,"Input: productive Answer: unproductive
+"
+afraid,unafraid,"Input: afraid Answer: unafraid
+"
+nonmodern,modern,"Input: nonmodern Answer: modern
+"
+lively,dull,"Input: lively Answer: dull
+"
+home,away,"Input: home Answer: away
+"
+rugged,delicate,"Input: rugged Answer: delicate
+"
+published,unpublished,"Input: published Answer: unpublished
+"
+insufficient,sufficient,"Input: insufficient Answer: sufficient
+"
+involuntary,voluntary,"Input: involuntary Answer: voluntary
+"
+disagree,agree,"Input: disagree Answer: agree
+"
+uncertainty,certainty,"Input: uncertainty Answer: certainty
+"
+unreality,reality,"Input: unreality Answer: reality
+"
+uncommitted,committed,"Input: uncommitted Answer: committed
+"
+content,discontent,"Input: content Answer: discontent
+"
+unfold,fold,"Input: unfold Answer: fold
+"
+interstate,intrastate,"Input: interstate Answer: intrastate
+"
+yield,stand,"Input: yield Answer: stand
+"
+vertebrate,invertebrate,"Input: vertebrate Answer: invertebrate
+"
+unselfishness,selfishness,"Input: unselfishness Answer: selfishness
+"
+malfunctioning,functioning,"Input: malfunctioning Answer: functioning
+"
+egoism,altruism,"Input: egoism Answer: altruism
+"
+liking,dislike,"Input: liking Answer: dislike
+"
+unilateral,multilateral,"Input: unilateral Answer: multilateral
+"
+dejected,elated,"Input: dejected Answer: elated
+"
+profound,superficial,"Input: profound Answer: superficial
+"
+incidental,basic,"Input: incidental Answer: basic
+"
+even,odd,"Input: even Answer: odd
+"
+optimistic,pessimistic,"Input: optimistic Answer: pessimistic
+"
+contracted,expanded,"Input: contracted Answer: expanded
+"
+joint,separate,"Input: joint Answer: separate
+"
+offence,defence,"Input: offence Answer: defence
+"
+asymmetry,symmetry,"Input: asymmetry Answer: symmetry
+"
+crosswise,lengthwise,"Input: crosswise Answer: lengthwise
+"
+peripheral,central,"Input: peripheral Answer: central
+"
+admit,deny,"Input: admit Answer: deny
+"
+unlikely,likely,"Input: unlikely Answer: likely
+"
+defendant,plaintiff,"Input: defendant Answer: plaintiff
+"
+colorless,colorful,"Input: colorless Answer: colorful
+"
+palpable,impalpable,"Input: palpable Answer: impalpable
+"
+effectively,ineffectively,"Input: effectively Answer: ineffectively
+"
+nonindustrial,industrial,"Input: nonindustrial Answer: industrial
+"
+unseal,seal,"Input: unseal Answer: seal
+"
+dishonesty,honesty,"Input: dishonesty Answer: honesty
+"
+competitive,noncompetitive,"Input: competitive Answer: noncompetitive
+"
+hate,love,"Input: hate Answer: love
+"
+uniformity,nonuniformity,"Input: uniformity Answer: nonuniformity
+"
+improbability,probability,"Input: improbability Answer: probability
+"
+inattention,attention,"Input: inattention Answer: attention
+"
+unhelpful,helpful,"Input: unhelpful Answer: helpful
+"
+decrease,increase,"Input: decrease Answer: increase
+"
+caudal,cephalic,"Input: caudal Answer: cephalic
+"
+ugly,beautiful,"Input: ugly Answer: beautiful
+"
+attentive,inattentive,"Input: attentive Answer: inattentive
+"
+diffidence,confidence,"Input: diffidence Answer: confidence
+"
+mitigated,unmitigated,"Input: mitigated Answer: unmitigated
+"
+imperfection,perfection,"Input: imperfection Answer: perfection
+"
+unauthorized,authorized,"Input: unauthorized Answer: authorized
+"
+unsuitably,suitably,"Input: unsuitably Answer: suitably
+"
+uncritical,critical,"Input: uncritical Answer: critical
+"
+unhurried,hurried,"Input: unhurried Answer: hurried
+"
+love,hate,"Input: love Answer: hate
+"
+dormant,active,"Input: dormant Answer: active
+"
+discontinuance,continuance,"Input: discontinuance Answer: continuance
+"
+preserved,fresh,"Input: preserved Answer: fresh
+"
+nonalcoholic,alcoholic,"Input: nonalcoholic Answer: alcoholic
+"
+egoistic,altruistic,"Input: egoistic Answer: altruistic
+"
+bipolar,unipolar,"Input: bipolar Answer: unipolar
+"
+supersonic,sonic,"Input: supersonic Answer: sonic
+"
+ending,beginning,"Input: ending Answer: beginning
+"
+unfitness,fitness,"Input: unfitness Answer: fitness
+"
+prolix,concise,"Input: prolix Answer: concise
+"
+unmindful,mindful,"Input: unmindful Answer: mindful
+"
+king,queen,"Input: king Answer: queen
+"
+collateral,lineal,"Input: collateral Answer: lineal
+"
+uncreative,creative,"Input: uncreative Answer: creative
+"
+hypothyroidism,hyperthyroidism,"Input: hypothyroidism Answer: hyperthyroidism
+"
+inconstant,constant,"Input: inconstant Answer: constant
+"
+dissimilarity,similarity,"Input: dissimilarity Answer: similarity
+"
+inadmissible,admissible,"Input: inadmissible Answer: admissible
+"
+dissent,assent,"Input: dissent Answer: assent
+"
+credibly,incredibly,"Input: credibly Answer: incredibly
+"
+intermediate,terminal,"Input: intermediate Answer: terminal
+"
+mortality,immortality,"Input: mortality Answer: immortality
+"
+peripherally,centrally,"Input: peripherally Answer: centrally
+"
+furnished,unfurnished,"Input: furnished Answer: unfurnished
+"
+discontinuous,continuous,"Input: discontinuous Answer: continuous
+"
+night,day,"Input: night Answer: day
+"
+fortunately,unfortunately,"Input: fortunately Answer: unfortunately
+"
+opposite,alternate,"Input: opposite Answer: alternate
+"
+distributed,concentrated,"Input: distributed Answer: concentrated
+"
+unsent,sent,"Input: unsent Answer: sent
+"
+incompatibility,compatibility,"Input: incompatibility Answer: compatibility
+"
+intangible,tangible,"Input: intangible Answer: tangible
+"
+indication,contraindication,"Input: indication Answer: contraindication
+"
+unravel,ravel,"Input: unravel Answer: ravel
+"
+humane,inhumane,"Input: humane Answer: inhumane
+"
+listed,unlisted,"Input: listed Answer: unlisted
+"
+cooperative,uncooperative,"Input: cooperative Answer: uncooperative
+"
+nonsignificant,significant,"Input: nonsignificant Answer: significant
+"
+prescriptive,descriptive,"Input: prescriptive Answer: descriptive
+"
+dependent,independent,"Input: dependent Answer: independent
+"
+unenclosed,enclosed,"Input: unenclosed Answer: enclosed
+"
+ventral,dorsal,"Input: ventral Answer: dorsal
+"
+personal,impersonal,"Input: personal Answer: impersonal
+"
+contamination,decontamination,"Input: contamination Answer: decontamination
+"
+cowardly,brave,"Input: cowardly Answer: brave
+"
+desecrated,consecrated,"Input: desecrated Answer: consecrated
+"
+nonintegrated,integrated,"Input: nonintegrated Answer: integrated
+"
+broadly,narrowly,"Input: broadly Answer: narrowly
+"
+evil,good,"Input: evil Answer: good
+"
+endocrine,exocrine,"Input: endocrine Answer: exocrine
+"
+unfit,fit,"Input: unfit Answer: fit
+"
+involuntarily,voluntarily,"Input: involuntarily Answer: voluntarily
+"
+discontinue,continue,"Input: discontinue Answer: continue
+"
+wane,wax,"Input: wane Answer: wax
+"
+medulla,cortex,"Input: medulla Answer: cortex
+"
+overhead,surface,"Input: overhead Answer: surface
+"
+epidemic,endemic,"Input: epidemic Answer: endemic
+"
+selected,unselected,"Input: selected Answer: unselected
+"
+righteous,unrighteous,"Input: righteous Answer: unrighteous
+"
+antecedent,subsequent,"Input: antecedent Answer: subsequent
+"
+provincial,cosmopolitan,"Input: provincial Answer: cosmopolitan
+"
+reported,unreported,"Input: reported Answer: unreported
+"
+indecency,decency,"Input: indecency Answer: decency
+"
+overestimate,underestimate,"Input: overestimate Answer: underestimate
+"
+meaningful,meaningless,"Input: meaningful Answer: meaningless
+"
+activator,inhibitor,"Input: activator Answer: inhibitor
+"
+characteristic,uncharacteristic,"Input: characteristic Answer: uncharacteristic
+"
+unqualified,qualified,"Input: unqualified Answer: qualified
+"
+insolubility,solubility,"Input: insolubility Answer: solubility
+"
+stupidity,intelligence,"Input: stupidity Answer: intelligence
+"
+fidelity,infidelity,"Input: fidelity Answer: infidelity
+"
+export,import,"Input: export Answer: import
+"
+boldness,timidity,"Input: boldness Answer: timidity
+"
+compatibility,incompatibility,"Input: compatibility Answer: incompatibility
+"
+multiple,single,"Input: multiple Answer: single
+"
+disapproval,approval,"Input: disapproval Answer: approval
+"
+hospitable,inhospitable,"Input: hospitable Answer: inhospitable
+"
+beauty,ugliness,"Input: beauty Answer: ugliness
+"
+assent,dissent,"Input: assent Answer: dissent
+"
+smoky,smokeless,"Input: smoky Answer: smokeless
+"
+harmful,harmless,"Input: harmful Answer: harmless
+"
+estimable,contemptible,"Input: estimable Answer: contemptible
+"
+coordination,incoordination,"Input: coordination Answer: incoordination
+"
+beautiful,ugly,"Input: beautiful Answer: ugly
+"
+uncontroversial,controversial,"Input: uncontroversial Answer: controversial
+"
+decency,indecency,"Input: decency Answer: indecency
+"
+vulnerability,invulnerability,"Input: vulnerability Answer: invulnerability
+"
+innocent,guilty,"Input: innocent Answer: guilty
+"
+appreciate,depreciate,"Input: appreciate Answer: depreciate
+"
+pain,pleasure,"Input: pain Answer: pleasure
+"
+veiled,unveiled,"Input: veiled Answer: unveiled
+"
+away,home,"Input: away Answer: home
+"
+specifically,generally,"Input: specifically Answer: generally
+"
+thoughtless,thoughtful,"Input: thoughtless Answer: thoughtful
+"
+cheerful,depressing,"Input: cheerful Answer: depressing
+"
+buttoned,unbuttoned,"Input: buttoned Answer: unbuttoned
+"
+classification,declassification,"Input: classification Answer: declassification
+"
+unreflected,reflected,"Input: unreflected Answer: reflected
+"
+diurnal,nocturnal,"Input: diurnal Answer: nocturnal
+"
+unfortunately,fortunately,"Input: unfortunately Answer: fortunately
+"
+noble,ignoble,"Input: noble Answer: ignoble
+"
+correct,incorrect,"Input: correct Answer: incorrect
+"
+foreign,native,"Input: foreign Answer: native
+"
+surprising,unsurprising,"Input: surprising Answer: unsurprising
+"
+tightening,loosening,"Input: tightening Answer: loosening
+"
+absolve,blame,"Input: absolve Answer: blame
+"
+disapprobation,approbation,"Input: disapprobation Answer: approbation
+"
+impotency,potency,"Input: impotency Answer: potency
+"
+interesting,uninteresting,"Input: interesting Answer: uninteresting
+"
+advisable,inadvisable,"Input: advisable Answer: inadvisable
+"
+disinflation,inflation,"Input: disinflation Answer: inflation
+"
+coordinating,subordinating,"Input: coordinating Answer: subordinating
+"
+unfavorably,favorably,"Input: unfavorably Answer: favorably
+"
+relaxed,tense,"Input: relaxed Answer: tense
+"
+disclaim,claim,"Input: disclaim Answer: claim
+"
+lean,rich,"Input: lean Answer: rich
+"
+prosecution,defense,"Input: prosecution Answer: defense
+"
+thickly,thinly,"Input: thickly Answer: thinly
+"
+good,bad,"Input: good Answer: bad
+"
+questionable,unquestionable,"Input: questionable Answer: unquestionable
+"
+unearned,earned,"Input: unearned Answer: earned
+"
+patient,impatient,"Input: patient Answer: impatient
+"
+backless,backed,"Input: backless Answer: backed
+"
+unlawfully,lawfully,"Input: unlawfully Answer: lawfully
+"
+mechanical,nonmechanical,"Input: mechanical Answer: nonmechanical
+"
+nonproliferation,proliferation,"Input: nonproliferation Answer: proliferation
+"
+tasteful,tasteless,"Input: tasteful Answer: tasteless
+"
+impotent,potent,"Input: impotent Answer: potent
+"
+top,side,"Input: top Answer: side
+"
+unwilling,willing,"Input: unwilling Answer: willing
+"
+head,foot,"Input: head Answer: foot
+"
+handless,handed,"Input: handless Answer: handed
+"
+unbind,bind,"Input: unbind Answer: bind
+"
+deviate,conform,"Input: deviate Answer: conform
+"
+contemptible,estimable,"Input: contemptible Answer: estimable
+"
+concealed,unconcealed,"Input: concealed Answer: unconcealed
+"
+intentionally,unintentionally,"Input: intentionally Answer: unintentionally
+"
+independent,dependent,"Input: independent Answer: dependent
+"
+unacceptable,acceptable,"Input: unacceptable Answer: acceptable
+"
+incoordination,coordination,"Input: incoordination Answer: coordination
+"
+adequate,inadequate,"Input: adequate Answer: inadequate
+"
+leader,follower,"Input: leader Answer: follower
+"
+fashionable,unfashionable,"Input: fashionable Answer: unfashionable
+"
+relevant,irrelevant,"Input: relevant Answer: irrelevant
+"
+appealing,unappealing,"Input: appealing Answer: unappealing
+"
+guilt,innocence,"Input: guilt Answer: innocence
+"
+honor,dishonor,"Input: honor Answer: dishonor
+"
+convergent,divergent,"Input: convergent Answer: divergent
+"
+eligible,ineligible,"Input: eligible Answer: ineligible
+"
+validate,invalidate,"Input: validate Answer: invalidate
+"
+socialism,capitalism,"Input: socialism Answer: capitalism
+"
+trackless,tracked,"Input: trackless Answer: tracked
+"
+little,much,"Input: little Answer: much
+"
+stabilization,destabilization,"Input: stabilization Answer: destabilization
+"
+overt,covert,"Input: overt Answer: covert
+"
+instrumental,vocal,"Input: instrumental Answer: vocal
+"
+unprejudiced,prejudiced,"Input: unprejudiced Answer: prejudiced
+"
+deprive,enrich,"Input: deprive Answer: enrich
+"
+avoid,confront,"Input: avoid Answer: confront
+"
+recorded,live,"Input: recorded Answer: live
+"
+disabling,enabling,"Input: disabling Answer: enabling
+"
+insensibility,sensibility,"Input: insensibility Answer: sensibility
+"
+verso,recto,"Input: verso Answer: recto
+"
+dignified,undignified,"Input: dignified Answer: undignified
+"
+inactivity,activity,"Input: inactivity Answer: activity
+"
+disprove,prove,"Input: disprove Answer: prove
+"
+extensor,flexor,"Input: extensor Answer: flexor
+"
+unplanned,planned,"Input: unplanned Answer: planned
+"
+unimpaired,impaired,"Input: unimpaired Answer: impaired
+"
+constitutional,unconstitutional,"Input: constitutional Answer: unconstitutional
+"
+segregated,integrated,"Input: segregated Answer: integrated
+"
+indefinite,definite,"Input: indefinite Answer: definite
+"
+anterior,posterior,"Input: anterior Answer: posterior
+"
+detach,attach,"Input: detach Answer: attach
+"
+widen,narrow,"Input: widen Answer: narrow
+"
+extracellular,intracellular,"Input: extracellular Answer: intracellular
+"
+live,dead,"Input: live Answer: dead
+"
+permanent,impermanent,"Input: permanent Answer: impermanent
+"
+usefulness,uselessness,"Input: usefulness Answer: uselessness
+"
+unrestricted,restricted,"Input: unrestricted Answer: restricted
+"
+inspiring,uninspiring,"Input: inspiring Answer: uninspiring
+"
+discourtesy,courtesy,"Input: discourtesy Answer: courtesy
+"
+wicked,virtuous,"Input: wicked Answer: virtuous
+"
+unwholesome,wholesome,"Input: unwholesome Answer: wholesome
+"
+ingratitude,gratitude,"Input: ingratitude Answer: gratitude
+"
+covert,overt,"Input: covert Answer: overt
+"
+heavenly,earthly,"Input: heavenly Answer: earthly
+"
+increased,decreased,"Input: increased Answer: decreased
+"
+unconfirmed,confirmed,"Input: unconfirmed Answer: confirmed
+"
+citizen,noncitizen,"Input: citizen Answer: noncitizen
+"
+reverence,irreverence,"Input: reverence Answer: irreverence
+"
+push,pull,"Input: push Answer: pull
+"
+reflected,unreflected,"Input: reflected Answer: unreflected
+"
+tightness,looseness,"Input: tightness Answer: looseness
+"
+impartial,partial,"Input: impartial Answer: partial
+"
+passively,actively,"Input: passively Answer: actively
+"
+inclination,disinclination,"Input: inclination Answer: disinclination
+"
+dead,living,"Input: dead Answer: living
+"
+settled,unsettled,"Input: settled Answer: unsettled
+"
+oral,anal,"Input: oral Answer: anal
+"
+majority,minority,"Input: majority Answer: minority
+"
+unpainted,painted,"Input: unpainted Answer: painted
+"
+insensitive,sensitive,"Input: insensitive Answer: sensitive
+"
+invasive,confined,"Input: invasive Answer: confined
+"
+disrepute,repute,"Input: disrepute Answer: repute
+"
+compatible,incompatible,"Input: compatible Answer: incompatible
+"
+uninhabited,inhabited,"Input: uninhabited Answer: inhabited
+"
+increase,decrease,"Input: increase Answer: decrease
+"
+faced,faceless,"Input: faced Answer: faceless
+"
+secondary,primary,"Input: secondary Answer: primary
+"
+focused,unfocused,"Input: focused Answer: unfocused
+"
+intractable,tractable,"Input: intractable Answer: tractable
+"
+incautious,cautious,"Input: incautious Answer: cautious
+"
+unformed,formed,"Input: unformed Answer: formed
+"
+weaken,strengthen,"Input: weaken Answer: strengthen
+"
+egalitarian,elitist,"Input: egalitarian Answer: elitist
+"
+disarranged,arranged,"Input: disarranged Answer: arranged
+"
+unoriented,oriented,"Input: unoriented Answer: oriented
+"
+inclusion,exclusion,"Input: inclusion Answer: exclusion
+"
+unfairness,fairness,"Input: unfairness Answer: fairness
+"
+attack,defend,"Input: attack Answer: defend
+"
+destabilize,stabilize,"Input: destabilize Answer: stabilize
+"
+unlawful,lawful,"Input: unlawful Answer: lawful
+"
+smart,stupid,"Input: smart Answer: stupid
+"
+side,top,"Input: side Answer: top
+"
+activation,inactivation,"Input: activation Answer: inactivation
+"
+unsound,sound,"Input: unsound Answer: sound
+"
+diatonic,chromatic,"Input: diatonic Answer: chromatic
+"
+upstream,downstream,"Input: upstream Answer: downstream
+"
+unobvious,obvious,"Input: unobvious Answer: obvious
+"
+preparation,resolution,"Input: preparation Answer: resolution
+"
+minority,majority,"Input: minority Answer: majority
+"
+heterogeneous,homogeneous,"Input: heterogeneous Answer: homogeneous
+"
+fit,unfit,"Input: fit Answer: unfit
+"
+unselected,selected,"Input: unselected Answer: selected
+"
+regular,irregular,"Input: regular Answer: irregular
+"
+maladjusted,adjusted,"Input: maladjusted Answer: adjusted
+"
+claim,forfeit,"Input: claim Answer: forfeit
+"
+colorlessness,color,"Input: colorlessness Answer: color
+"
+anticholinergic,cholinergic,"Input: anticholinergic Answer: cholinergic
+"
+winged,wingless,"Input: winged Answer: wingless
+"
+honestly,dishonestly,"Input: honestly Answer: dishonestly
+"
+cry,laugh,"Input: cry Answer: laugh
+"
+illegal,legal,"Input: illegal Answer: legal
+"
+tied,untied,"Input: tied Answer: untied
+"
+incompleteness,completeness,"Input: incompleteness Answer: completeness
+"
+nonfinancial,financial,"Input: nonfinancial Answer: financial
+"
+indiscreet,discreet,"Input: indiscreet Answer: discreet
+"
+uncorrected,corrected,"Input: uncorrected Answer: corrected
+"
+following,leading,"Input: following Answer: leading
+"
+continent,incontinent,"Input: continent Answer: incontinent
+"
+obstructed,unobstructed,"Input: obstructed Answer: unobstructed
+"
+decreasing,increasing,"Input: decreasing Answer: increasing
+"
+increasing,decreasing,"Input: increasing Answer: decreasing
+"
+resist,surrender,"Input: resist Answer: surrender
+"
+importance,unimportance,"Input: importance Answer: unimportance
+"
+manned,unmanned,"Input: manned Answer: unmanned
+"
+historical,ahistorical,"Input: historical Answer: ahistorical
+"
+equivocal,unequivocal,"Input: equivocal Answer: unequivocal
+"
+nonconformity,conformity,"Input: nonconformity Answer: conformity
+"
+carelessness,carefulness,"Input: carelessness Answer: carefulness
+"
+sidereal,civil,"Input: sidereal Answer: civil
+"
+uncolored,colored,"Input: uncolored Answer: colored
+"
+feminine,neuter,"Input: feminine Answer: neuter
+"
+include,exclude,"Input: include Answer: exclude
+"
+inequality,equality,"Input: inequality Answer: equality
+"
+masculine,neuter,"Input: masculine Answer: neuter
+"
+eyed,eyeless,"Input: eyed Answer: eyeless
+"
+primarily,secondarily,"Input: primarily Answer: secondarily
+"
+persuade,dissuade,"Input: persuade Answer: dissuade
+"
+veer,back,"Input: veer Answer: back
+"
+maximal,minimal,"Input: maximal Answer: minimal
+"
+incurious,curious,"Input: incurious Answer: curious
+"
+unproved,proved,"Input: unproved Answer: proved
+"
+taxable,nontaxable,"Input: taxable Answer: nontaxable
+"
+aboral,oral,"Input: aboral Answer: oral
+"
+united,divided,"Input: united Answer: divided
+"
+depreciate,appreciate,"Input: depreciate Answer: appreciate
+"
+nontechnical,technical,"Input: nontechnical Answer: technical
+"
+sadly,happily,"Input: sadly Answer: happily
+"
+immortality,mortality,"Input: immortality Answer: mortality
+"
+deductible,nondeductible,"Input: deductible Answer: nondeductible
+"
+leafless,leafy,"Input: leafless Answer: leafy
+"
+sharpness,softness,"Input: sharpness Answer: softness
+"
+sedate,stimulate,"Input: sedate Answer: stimulate
+"
+courteous,discourteous,"Input: courteous Answer: discourteous
+"
+insolvency,solvency,"Input: insolvency Answer: solvency
+"
+revocable,irrevocable,"Input: revocable Answer: irrevocable
+"
+unscrupulous,scrupulous,"Input: unscrupulous Answer: scrupulous
+"
+unsupervised,supervised,"Input: unsupervised Answer: supervised
+"
+nonthermal,thermal,"Input: nonthermal Answer: thermal
+"
+antagonistic,conciliatory,"Input: antagonistic Answer: conciliatory
+"
+nontraditional,traditional,"Input: nontraditional Answer: traditional
+"
+single,double,"Input: single Answer: double
+"
+exhale,inhale,"Input: exhale Answer: inhale
+"
+nonpartisan,partisan,"Input: nonpartisan Answer: partisan
+"
+buried,unburied,"Input: buried Answer: unburied
+"
+noninterference,interference,"Input: noninterference Answer: interference
+"
+wintry,autumnal,"Input: wintry Answer: autumnal
+"
+discomfort,comfort,"Input: discomfort Answer: comfort
+"
+perceptible,imperceptible,"Input: perceptible Answer: imperceptible
+"
+gather,spread,"Input: gather Answer: spread
+"
+prove,disprove,"Input: prove Answer: disprove
+"
+lighted,unlighted,"Input: lighted Answer: unlighted
+"
+disarmament,armament,"Input: disarmament Answer: armament
+"
+differentiated,undifferentiated,"Input: differentiated Answer: undifferentiated
+"
+spontaneous,induced,"Input: spontaneous Answer: induced
+"
+wary,unwary,"Input: wary Answer: unwary
+"
+withdraw,deposit,"Input: withdraw Answer: deposit
+"
+suitably,unsuitably,"Input: suitably Answer: unsuitably
+"
+unmilitary,military,"Input: unmilitary Answer: military
+"
+prejudiced,unprejudiced,"Input: prejudiced Answer: unprejudiced
+"
+excited,unexcited,"Input: excited Answer: unexcited
+"
+kindly,unkindly,"Input: kindly Answer: unkindly
+"
+musical,unmusical,"Input: musical Answer: unmusical
+"
+difficulty,ease,"Input: difficulty Answer: ease
+"
+unsigned,signed,"Input: unsigned Answer: signed
+"
+magnetic,geographic,"Input: magnetic Answer: geographic
+"
+proportionately,disproportionately,"Input: proportionately Answer: disproportionately
+"
+ascend,descend,"Input: ascend Answer: descend
+"
+infinitely,finitely,"Input: infinitely Answer: finitely
+"
+finite,infinite,"Input: finite Answer: infinite
+"
+counterclockwise,clockwise,"Input: counterclockwise Answer: clockwise
+"
+pregnant,nonpregnant,"Input: pregnant Answer: nonpregnant
+"
+sleep,wake,"Input: sleep Answer: wake
+"
+abridged,unabridged,"Input: abridged Answer: unabridged
+"
+inconspicuous,conspicuous,"Input: inconspicuous Answer: conspicuous
+"
+timidity,boldness,"Input: timidity Answer: boldness
+"
+external,internal,"Input: external Answer: internal
+"
+impartiality,partiality,"Input: impartiality Answer: partiality
+"
+trust,distrust,"Input: trust Answer: distrust
+"
+clergyman,layman,"Input: clergyman Answer: layman
+"
+inpatient,outpatient,"Input: inpatient Answer: outpatient
+"
+nonfunctional,functional,"Input: nonfunctional Answer: functional
+"
+unlighted,lighted,"Input: unlighted Answer: lighted
+"
+armament,disarmament,"Input: armament Answer: disarmament
+"
+inarticulate,articulate,"Input: inarticulate Answer: articulate
+"
+unvoiced,voiced,"Input: unvoiced Answer: voiced
+"
+prewar,postwar,"Input: prewar Answer: postwar
+"
+divided,united,"Input: divided Answer: united
+"
+cold,hot,"Input: cold Answer: hot
+"
+survive,succumb,"Input: survive Answer: succumb
+"
+onshore,offshore,"Input: onshore Answer: offshore
+"
+rigid,nonrigid,"Input: rigid Answer: nonrigid
+"
+sporadic,continual,"Input: sporadic Answer: continual
+"
+irrelevant,relevant,"Input: irrelevant Answer: relevant
+"
+posterior,anterior,"Input: posterior Answer: anterior
+"
+liberal,conservative,"Input: liberal Answer: conservative
+"
+purge,rehabilitate,"Input: purge Answer: rehabilitate
+"
+carelessly,carefully,"Input: carelessly Answer: carefully
+"
+irresponsible,responsible,"Input: irresponsible Answer: responsible
+"
+incredibly,credibly,"Input: incredibly Answer: credibly
+"
+transparency,opacity,"Input: transparency Answer: opacity
+"
+mutable,immutable,"Input: mutable Answer: immutable
+"
+activity,inactivity,"Input: activity Answer: inactivity
+"
+upwards,downwards,"Input: upwards Answer: downwards
+"
+impious,pious,"Input: impious Answer: pious
+"
+conveniently,inconveniently,"Input: conveniently Answer: inconveniently
+"
+faithful,unfaithful,"Input: faithful Answer: unfaithful
+"
+vernal,wintry,"Input: vernal Answer: wintry
+"
+unacknowledged,acknowledged,"Input: unacknowledged Answer: acknowledged
+"
+thrifty,wasteful,"Input: thrifty Answer: wasteful
+"
+civilian,military,"Input: civilian Answer: military
+"
+surrender,resist,"Input: surrender Answer: resist
+"
+bony,boneless,"Input: bony Answer: boneless
+"
+depressing,cheerful,"Input: depressing Answer: cheerful
+"
+many,few,"Input: many Answer: few
+"
+realistic,unrealistic,"Input: realistic Answer: unrealistic
+"
+terrestrial,aquatic,"Input: terrestrial Answer: aquatic
+"
+unfocused,focused,"Input: unfocused Answer: focused
+"
+unlined,lined,"Input: unlined Answer: lined
+"
+westerly,easterly,"Input: westerly Answer: easterly
+"
+uncouple,couple,"Input: uncouple Answer: couple
+"
+experienced,inexperienced,"Input: experienced Answer: inexperienced
+"
+identifiable,unidentifiable,"Input: identifiable Answer: unidentifiable
+"
+ancestor,descendant,"Input: ancestor Answer: descendant
+"
+unmoving,moving,"Input: unmoving Answer: moving
+"
+wet,dry,"Input: wet Answer: dry
+"
+unemotional,emotional,"Input: unemotional Answer: emotional
+"
+invisibly,visibly,"Input: invisibly Answer: visibly
+"
+shaded,unshaded,"Input: shaded Answer: unshaded
+"
+outdoor,indoor,"Input: outdoor Answer: indoor
+"
+victory,defeat,"Input: victory Answer: defeat
+"
+unpack,pack,"Input: unpack Answer: pack
+"
+perfection,imperfection,"Input: perfection Answer: imperfection
+"
+seated,standing,"Input: seated Answer: standing
+"
+approval,disapproval,"Input: approval Answer: disapproval
+"
+unquestionable,questionable,"Input: unquestionable Answer: questionable
+"
+dispensable,indispensable,"Input: dispensable Answer: indispensable
+"
+record,erase,"Input: record Answer: erase
+"
+unselfish,selfish,"Input: unselfish Answer: selfish
+"
+reversible,irreversible,"Input: reversible Answer: irreversible
+"
+deregulate,regulate,"Input: deregulate Answer: regulate
+"
+serviceman,civilian,"Input: serviceman Answer: civilian
+"
+processed,unprocessed,"Input: processed Answer: unprocessed
+"
+sleeping,waking,"Input: sleeping Answer: waking
+"
+matched,mismatched,"Input: matched Answer: mismatched
+"
+stupid,smart,"Input: stupid Answer: smart
+"
+upward,downward,"Input: upward Answer: downward
+"
+tonic,atonic,"Input: tonic Answer: atonic
+"
+unadorned,adorned,"Input: unadorned Answer: adorned
+"
+incredulous,credulous,"Input: incredulous Answer: credulous
+"
+oriented,unoriented,"Input: oriented Answer: unoriented
+"
+unknowingly,knowingly,"Input: unknowingly Answer: knowingly
+"
+bold,timid,"Input: bold Answer: timid
+"
+able,unable,"Input: able Answer: unable
+"
+lined,unlined,"Input: lined Answer: unlined
+"
+proactive,retroactive,"Input: proactive Answer: retroactive
+"
+equity,inequity,"Input: equity Answer: inequity
+"
+irreplaceable,replaceable,"Input: irreplaceable Answer: replaceable
+"
+substantial,insubstantial,"Input: substantial Answer: insubstantial
+"
+charitable,uncharitable,"Input: charitable Answer: uncharitable
+"
+convergence,divergence,"Input: convergence Answer: divergence
+"
+designed,undesigned,"Input: designed Answer: undesigned
+"
+commissioned,noncommissioned,"Input: commissioned Answer: noncommissioned
+"
+current,noncurrent,"Input: current Answer: noncurrent
+"
+obscurity,clarity,"Input: obscurity Answer: clarity
+"
+sophisticated,naive,"Input: sophisticated Answer: naive
+"
+inequitable,equitable,"Input: inequitable Answer: equitable
+"
+discreet,indiscreet,"Input: discreet Answer: indiscreet
+"
+mature,immature,"Input: mature Answer: immature
+"
+humble,proud,"Input: humble Answer: proud
+"
+abstract,concrete,"Input: abstract Answer: concrete
+"
+polished,unpolished,"Input: polished Answer: unpolished
+"
+destroyed,preserved,"Input: destroyed Answer: preserved
+"
+unidentifiable,identifiable,"Input: unidentifiable Answer: identifiable
+"
+accurately,inaccurately,"Input: accurately Answer: inaccurately
+"
+deactivation,activation,"Input: deactivation Answer: activation
+"
+friendly,hostile,"Input: friendly Answer: hostile
+"
+funded,unfunded,"Input: funded Answer: unfunded
+"
+enforceable,unenforceable,"Input: enforceable Answer: unenforceable
+"
+logically,illogically,"Input: logically Answer: illogically
+"
+convenience,inconvenience,"Input: convenience Answer: inconvenience
+"
+artful,artless,"Input: artful Answer: artless
+"
+divisible,indivisible,"Input: divisible Answer: indivisible
+"
+unhappy,happy,"Input: unhappy Answer: happy
+"
+noxious,innocuous,"Input: noxious Answer: innocuous
+"
+planned,unplanned,"Input: planned Answer: unplanned
+"
+corporeal,incorporeal,"Input: corporeal Answer: incorporeal
+"
+generality,particularity,"Input: generality Answer: particularity
+"
+fertile,sterile,"Input: fertile Answer: sterile
+"
+normal,abnormal,"Input: normal Answer: abnormal
+"
+noninstitutional,institutional,"Input: noninstitutional Answer: institutional
+"
+defend,attack,"Input: defend Answer: attack
+"
+hyperthyroidism,hypothyroidism,"Input: hyperthyroidism Answer: hypothyroidism
+"
+uncontrolled,controlled,"Input: uncontrolled Answer: controlled
+"
+illness,wellness,"Input: illness Answer: wellness
+"
+issue,recall,"Input: issue Answer: recall
+"
+unregulated,regulated,"Input: unregulated Answer: regulated
+"
+noncitizen,citizen,"Input: noncitizen Answer: citizen
+"
+capitalism,socialism,"Input: capitalism Answer: socialism
+"
+lineal,collateral,"Input: lineal Answer: collateral
+"
+unmanageable,manageable,"Input: unmanageable Answer: manageable
+"
+decline,improvement,"Input: decline Answer: improvement
+"
+analyze,synthesize,"Input: analyze Answer: synthesize
+"
+determinate,indeterminate,"Input: determinate Answer: indeterminate
+"
+tolerant,intolerant,"Input: tolerant Answer: intolerant
+"
+compliant,defiant,"Input: compliant Answer: defiant
+"
+well,ill,"Input: well Answer: ill
+"
+foolishly,wisely,"Input: foolishly Answer: wisely
+"
+unglazed,glazed,"Input: unglazed Answer: glazed
+"
+exit,enter,"Input: exit Answer: enter
+"
+cautious,incautious,"Input: cautious Answer: incautious
+"
+unsolved,solved,"Input: unsolved Answer: solved
+"
+highness,lowness,"Input: highness Answer: lowness
+"
+precocious,retarded,"Input: precocious Answer: retarded
+"
+alive,dead,"Input: alive Answer: dead
+"
+linearly,geometrically,"Input: linearly Answer: geometrically
+"
+uncle,aunt,"Input: uncle Answer: aunt
+"
+impermanence,permanence,"Input: impermanence Answer: permanence
+"
+plausible,implausible,"Input: plausible Answer: implausible
+"
+subjective,objective,"Input: subjective Answer: objective
+"
+tractable,intractable,"Input: tractable Answer: intractable
+"
+unpatriotic,patriotic,"Input: unpatriotic Answer: patriotic
+"
+abundance,scarcity,"Input: abundance Answer: scarcity
+"
+proximal,distal,"Input: proximal Answer: distal
+"
+borrow,lend,"Input: borrow Answer: lend
+"
+conception,misconception,"Input: conception Answer: misconception
+"
+generally,specifically,"Input: generally Answer: specifically
+"
+nonprofessional,professional,"Input: nonprofessional Answer: professional
+"
+related,unrelated,"Input: related Answer: unrelated
+"
+half,whole,"Input: half Answer: whole
+"
+prominence,obscurity,"Input: prominence Answer: obscurity
+"
+discouragement,encouragement,"Input: discouragement Answer: encouragement
+"
+nondevelopment,development,"Input: nondevelopment Answer: development
+"
+profit,lose,"Input: profit Answer: lose
+"
+irreversible,reversible,"Input: irreversible Answer: reversible
+"
+unready,ready,"Input: unready Answer: ready
+"
+military,civilian,"Input: military Answer: civilian
+"
+calmness,agitation,"Input: calmness Answer: agitation
+"
+cerebral,emotional,"Input: cerebral Answer: emotional
+"
+lengthwise,crosswise,"Input: lengthwise Answer: crosswise
+"
+attract,repel,"Input: attract Answer: repel
+"
+unsealed,sealed,"Input: unsealed Answer: sealed
+"
+descent,ascent,"Input: descent Answer: ascent
+"
+distinct,indistinct,"Input: distinct Answer: indistinct
+"
+ashamed,unashamed,"Input: ashamed Answer: unashamed
+"
+nonexistence,existence,"Input: nonexistence Answer: existence
+"
+indiscipline,discipline,"Input: indiscipline Answer: discipline
+"
+dishonestly,honestly,"Input: dishonestly Answer: honestly
+"
+filled,unfilled,"Input: filled Answer: unfilled
+"
+distrust,trust,"Input: distrust Answer: trust
+"
+organize,disorganize,"Input: organize Answer: disorganize
+"
+unfastened,fastened,"Input: unfastened Answer: fastened
+"
+untie,tie,"Input: untie Answer: tie
+"
+sensitivity,insensitivity,"Input: sensitivity Answer: insensitivity
+"
+noncompetitive,competitive,"Input: noncompetitive Answer: competitive
+"
+overtly,covertly,"Input: overtly Answer: covertly
+"
+individual,common,"Input: individual Answer: common
+"
+biological,adoptive,"Input: biological Answer: adoptive
+"
+agitation,calmness,"Input: agitation Answer: calmness
+"
+outlaw,legalize,"Input: outlaw Answer: legalize
+"
+white,black,"Input: white Answer: black
+"
+depression,elation,"Input: depression Answer: elation
+"
+rational,irrational,"Input: rational Answer: irrational
+"
+distinguishable,indistinguishable,"Input: distinguishable Answer: indistinguishable
+"
+hearing,deaf,"Input: hearing Answer: deaf
+"
+waking,sleeping,"Input: waking Answer: sleeping
+"
+indirectly,directly,"Input: indirectly Answer: directly
+"
+crowned,uncrowned,"Input: crowned Answer: uncrowned
+"
+theoretically,empirically,"Input: theoretically Answer: empirically
+"
+fitness,unfitness,"Input: fitness Answer: unfitness
+"
+valuable,worthless,"Input: valuable Answer: worthless
+"
+inconsistently,consistently,"Input: inconsistently Answer: consistently
+"
+uncertain,certain,"Input: uncertain Answer: certain
+"
+swept,unswept,"Input: swept Answer: unswept
+"
+native,foreign,"Input: native Answer: foreign
+"
+particularity,generality,"Input: particularity Answer: generality
+"
+wetness,dryness,"Input: wetness Answer: dryness
+"
+disqualify,qualify,"Input: disqualify Answer: qualify
+"
+loading,unloading,"Input: loading Answer: unloading
+"
+knowingly,unknowingly,"Input: knowingly Answer: unknowingly
+"
+naturally,artificially,"Input: naturally Answer: artificially
+"
+malodorous,fragrant,"Input: malodorous Answer: fragrant
+"
+respect,disrespect,"Input: respect Answer: disrespect
+"
+familiarity,unfamiliarity,"Input: familiarity Answer: unfamiliarity
+"
+knowable,unknowable,"Input: knowable Answer: unknowable
+"
+acutely,chronically,"Input: acutely Answer: chronically
+"
+disesteem,esteem,"Input: disesteem Answer: esteem
+"
+private,public,"Input: private Answer: public
+"
+discontent,content,"Input: discontent Answer: content
+"
+stability,instability,"Input: stability Answer: instability
+"
+slowly,quickly,"Input: slowly Answer: quickly
+"
+deposit,withdraw,"Input: deposit Answer: withdraw
+"
+maximize,minimize,"Input: maximize Answer: minimize
+"
+uninteresting,interesting,"Input: uninteresting Answer: interesting
+"
+conviction,acquittal,"Input: conviction Answer: acquittal
+"
+conductor,insulator,"Input: conductor Answer: insulator
+"
+inflation,deflation,"Input: inflation Answer: deflation
+"
+sensible,insensible,"Input: sensible Answer: insensible
+"
+near,far,"Input: near Answer: far
+"
+morality,immorality,"Input: morality Answer: immorality
+"
+intolerable,tolerable,"Input: intolerable Answer: tolerable
+"
+perfect,imperfect,"Input: perfect Answer: imperfect
+"
+fullness,emptiness,"Input: fullness Answer: emptiness
+"
+scientific,unscientific,"Input: scientific Answer: unscientific
+"
+sweet,dry,"Input: sweet Answer: dry
+"
+certain,uncertain,"Input: certain Answer: uncertain
+"
+bottomless,bottomed,"Input: bottomless Answer: bottomed
+"
+clement,inclement,"Input: clement Answer: inclement
+"
+kindness,unkindness,"Input: kindness Answer: unkindness
+"
+disliked,liked,"Input: disliked Answer: liked
+"
+bottom,side,"Input: bottom Answer: side
+"
+reverse,forward,"Input: reverse Answer: forward
+"
+male,female,"Input: male Answer: female
+"
+possibility,impossibility,"Input: possibility Answer: impossibility
+"
+enrich,deprive,"Input: enrich Answer: deprive
+"
+algorithmic,heuristic,"Input: algorithmic Answer: heuristic
+"
+receptor,effector,"Input: receptor Answer: effector
+"
+nonpolitical,political,"Input: nonpolitical Answer: political
+"
+ever,never,"Input: ever Answer: never
+"
+decent,indecent,"Input: decent Answer: indecent
+"
+integrate,differentiate,"Input: integrate Answer: differentiate
+"
+exclusion,inclusion,"Input: exclusion Answer: inclusion
+"
+unmusical,musical,"Input: unmusical Answer: musical
+"
+nay,yea,"Input: nay Answer: yea
+"
+insignificance,significance,"Input: insignificance Answer: significance
+"
+surface,overhead,"Input: surface Answer: overhead
+"
+prepared,unprepared,"Input: prepared Answer: unprepared
+"
+uncrowned,crowned,"Input: uncrowned Answer: crowned
+"
+most,least,"Input: most Answer: least
+"
+progressive,regressive,"Input: progressive Answer: regressive
+"
+aquatic,terrestrial,"Input: aquatic Answer: terrestrial
+"
+comedy,tragedy,"Input: comedy Answer: tragedy
+"
+immorality,morality,"Input: immorality Answer: morality
+"
+elective,appointive,"Input: elective Answer: appointive
+"
+disassemble,assemble,"Input: disassemble Answer: assemble
+"
+recto,verso,"Input: recto Answer: verso
+"
+lawful,unlawful,"Input: lawful Answer: unlawful
+"
+ungracious,gracious,"Input: ungracious Answer: gracious
+"
+objective,subjective,"Input: objective Answer: subjective
+"
+unstable,stable,"Input: unstable Answer: stable
+"
+compression,decompression,"Input: compression Answer: decompression
+"
+nontoxic,toxic,"Input: nontoxic Answer: toxic
+"
+wish,begrudge,"Input: wish Answer: begrudge
+"
+anal,oral,"Input: anal Answer: oral
+"
+incorrect,correct,"Input: incorrect Answer: correct
+"
+agonist,antagonist,"Input: agonist Answer: antagonist
+"
+unitary,federal,"Input: unitary Answer: federal
+"
+impossible,possible,"Input: impossible Answer: possible
+"
+centrally,peripherally,"Input: centrally Answer: peripherally
+"
+disinclination,inclination,"Input: disinclination Answer: inclination
+"
+commensurate,incommensurate,"Input: commensurate Answer: incommensurate
+"
+healthy,unhealthy,"Input: healthy Answer: unhealthy
+"
+unintentionally,intentionally,"Input: unintentionally Answer: intentionally
+"
+attention,inattention,"Input: attention Answer: inattention
+"
+amicable,hostile,"Input: amicable Answer: hostile
+"
+allow,deny,"Input: allow Answer: deny
+"
+disproportionate,proportionate,"Input: disproportionate Answer: proportionate
+"
+suppressed,publicized,"Input: suppressed Answer: publicized
+"
+hit,miss,"Input: hit Answer: miss
+"
+demerit,merit,"Input: demerit Answer: merit
+"
+unsteadily,steadily,"Input: unsteadily Answer: steadily
+"
+much,little,"Input: much Answer: little
+"
+interference,noninterference,"Input: interference Answer: noninterference
+"
+quietly,noisily,"Input: quietly Answer: noisily
+"
+minimization,maximization,"Input: minimization Answer: maximization
+"
+stinginess,generosity,"Input: stinginess Answer: generosity
+"
+pleasure,pain,"Input: pleasure Answer: pain
+"
+disloyalty,loyalty,"Input: disloyalty Answer: loyalty
+"
+back,front,"Input: back Answer: front
+"
+follower,leader,"Input: follower Answer: leader
+"
+hook,unhook,"Input: hook Answer: unhook
+"
+vascular,avascular,"Input: vascular Answer: avascular
+"
+husband,wife,"Input: husband Answer: wife
+"
+hot,cold,"Input: hot Answer: cold
+"
+unrighteousness,righteousness,"Input: unrighteousness Answer: righteousness
+"
+uncharacteristic,characteristic,"Input: uncharacteristic Answer: characteristic
+"
+eyeless,eyed,"Input: eyeless Answer: eyed
+"
+accurate,inaccurate,"Input: accurate Answer: inaccurate
+"
+sealed,unsealed,"Input: sealed Answer: unsealed
+"
+speaking,nonspeaking,"Input: speaking Answer: nonspeaking
+"
+behave,misbehave,"Input: behave Answer: misbehave
+"
+noninfectious,infectious,"Input: noninfectious Answer: infectious
+"
+serious,frivolous,"Input: serious Answer: frivolous
+"
+surgical,medical,"Input: surgical Answer: medical
+"
+honesty,dishonesty,"Input: honesty Answer: dishonesty
+"
+identical,fraternal,"Input: identical Answer: fraternal
+"
+hide,show,"Input: hide Answer: show
+"
+out,safe,"Input: out Answer: safe
+"
+maturity,immaturity,"Input: maturity Answer: immaturity
+"
+providence,improvidence,"Input: providence Answer: improvidence
+"
+obedient,disobedient,"Input: obedient Answer: disobedient
+"
+merit,demerit,"Input: merit Answer: demerit
+"
+pretentious,unpretentious,"Input: pretentious Answer: unpretentious
+"
+forfeit,claim,"Input: forfeit Answer: claim
+"
+decreased,increased,"Input: decreased Answer: increased
+"
+synthetic,analytic,"Input: synthetic Answer: analytic
+"
+wind,unwind,"Input: wind Answer: unwind
+"
+finely,coarsely,"Input: finely Answer: coarsely
+"
+imperfectly,perfectly,"Input: imperfectly Answer: perfectly
+"
+passable,impassable,"Input: passable Answer: impassable
+"
+proud,humble,"Input: proud Answer: humble
+"
+visibly,invisibly,"Input: visibly Answer: invisibly
+"
+activate,inactivate,"Input: activate Answer: inactivate
+"
+glazed,unglazed,"Input: glazed Answer: unglazed
+"
+quiet,active,"Input: quiet Answer: active
+"
+uncoated,coated,"Input: uncoated Answer: coated
+"
+esteem,disesteem,"Input: esteem Answer: disesteem
+"
+postwar,prewar,"Input: postwar Answer: prewar
+"
+focus,blur,"Input: focus Answer: blur
+"
+carefulness,carelessness,"Input: carefulness Answer: carelessness
+"
+intelligence,stupidity,"Input: intelligence Answer: stupidity
+"
+generalist,specialist,"Input: generalist Answer: specialist
+"
+invulnerability,vulnerability,"Input: invulnerability Answer: vulnerability
+"
+convincing,unconvincing,"Input: convincing Answer: unconvincing
+"
+narrowly,broadly,"Input: narrowly Answer: broadly
+"
+happily,unhappily,"Input: happily Answer: unhappily
+"
+type,antitype,"Input: type Answer: antitype
+"
+subjectively,objectively,"Input: subjectively Answer: objectively
+"
+boil,freeze,"Input: boil Answer: freeze
+"
+insecure,secure,"Input: insecure Answer: secure
+"
+porosity,solidity,"Input: porosity Answer: solidity
+"
+subsequent,antecedent,"Input: subsequent Answer: antecedent
+"
+nonexempt,exempt,"Input: nonexempt Answer: exempt
+"
+disservice,service,"Input: disservice Answer: service
+"
+geographic,magnetic,"Input: geographic Answer: magnetic
+"
+molecular,molar,"Input: molecular Answer: molar
+"
+gracious,ungracious,"Input: gracious Answer: ungracious
+"
+coarsely,finely,"Input: coarsely Answer: finely
+"
+common,individual,"Input: common Answer: individual
+"
+unreasonable,reasonable,"Input: unreasonable Answer: reasonable
+"
+stifle,stimulate,"Input: stifle Answer: stimulate
+"
+purposeless,purposeful,"Input: purposeless Answer: purposeful
+"
+erase,record,"Input: erase Answer: record
+"
+difficult,easy,"Input: difficult Answer: easy
+"
+tolerable,intolerable,"Input: tolerable Answer: intolerable
+"
+thinly,thickly,"Input: thinly Answer: thickly
+"
+unanalyzed,analyzed,"Input: unanalyzed Answer: analyzed
+"
+poverty,wealth,"Input: poverty Answer: wealth
+"
+standard,nonstandard,"Input: standard Answer: nonstandard
+"
+antagonist,agonist,"Input: antagonist Answer: agonist
+"
+specialist,generalist,"Input: specialist Answer: generalist
+"
+considerable,inconsiderable,"Input: considerable Answer: inconsiderable
+"
+unrelated,related,"Input: unrelated Answer: related
+"
+directly,indirectly,"Input: directly Answer: indirectly
+"
+soften,harden,"Input: soften Answer: harden
+"
+declassification,classification,"Input: declassification Answer: classification
+"
+ineffectually,effectually,"Input: ineffectually Answer: effectually
+"
+contract,expand,"Input: contract Answer: expand
+"
+indeterminate,determinate,"Input: indeterminate Answer: determinate
+"
+fairly,unfairly,"Input: fairly Answer: unfairly
+"
+untouched,touched,"Input: untouched Answer: touched
+"
+offshore,inshore,"Input: offshore Answer: inshore
+"
+uncomplaining,complaining,"Input: uncomplaining Answer: complaining
+"
+demand,supply,"Input: demand Answer: supply
+"
+noisy,quiet,"Input: noisy Answer: quiet
+"
+modified,unmodified,"Input: modified Answer: unmodified
+"
+illiterate,literate,"Input: illiterate Answer: literate
+"
+front,back,"Input: front Answer: back
+"
+grammatical,ungrammatical,"Input: grammatical Answer: ungrammatical
+"
+optional,obligatory,"Input: optional Answer: obligatory
+"
+emptiness,fullness,"Input: emptiness Answer: fullness
+"
+shut,open,"Input: shut Answer: open
+"
+obverse,reverse,"Input: obverse Answer: reverse
+"
+continental,intercontinental,"Input: continental Answer: intercontinental
+"
+scheduled,unscheduled,"Input: scheduled Answer: unscheduled
+"
+gnostic,agnostic,"Input: gnostic Answer: agnostic
+"
+incentive,disincentive,"Input: incentive Answer: disincentive
+"
+exactly,inexactly,"Input: exactly Answer: inexactly
+"
+declared,undeclared,"Input: declared Answer: undeclared
+"
+varied,unvaried,"Input: varied Answer: unvaried
+"
+unreliability,reliability,"Input: unreliability Answer: reliability
+"
+inadequate,adequate,"Input: inadequate Answer: adequate
+"
+decentralized,centralized,"Input: decentralized Answer: centralized
+"
+failure,success,"Input: failure Answer: success
+"
+employed,unemployed,"Input: employed Answer: unemployed
+"
+prescription,nonprescription,"Input: prescription Answer: nonprescription
+"
+incoming,outgoing,"Input: incoming Answer: outgoing
+"
+wealth,poverty,"Input: wealth Answer: poverty
+"
+vocal,instrumental,"Input: vocal Answer: instrumental
+"
+infertility,fertility,"Input: infertility Answer: fertility
+"
+undesigned,designed,"Input: undesigned Answer: designed
+"
+sad,glad,"Input: sad Answer: glad
+"
+amphibious,terrestrial,"Input: amphibious Answer: terrestrial
+"
+emotional,cerebral,"Input: emotional Answer: cerebral
+"
+loved,unloved,"Input: loved Answer: unloved
+"
+contraindicate,indicate,"Input: contraindicate Answer: indicate
+"
+undeclared,declared,"Input: undeclared Answer: declared
+"
+untreated,treated,"Input: untreated Answer: treated
+"
+intemperance,temperance,"Input: intemperance Answer: temperance
+"
+emit,absorb,"Input: emit Answer: absorb
+"
+loaded,unloaded,"Input: loaded Answer: unloaded
+"
+uninvolved,involved,"Input: uninvolved Answer: involved
+"
+regressive,progressive,"Input: regressive Answer: progressive
+"
+sensibility,insensibility,"Input: sensibility Answer: insensibility
+"
+reliability,unreliability,"Input: reliability Answer: unreliability
+"
+tracked,trackless,"Input: tracked Answer: trackless
+"
+unquiet,quiet,"Input: unquiet Answer: quiet
+"
+touched,untouched,"Input: touched Answer: untouched
+"
+plaintiff,defendant,"Input: plaintiff Answer: defendant
+"
+unlisted,listed,"Input: unlisted Answer: listed
+"
+continuous,discontinuous,"Input: continuous Answer: discontinuous
+"
+brightness,dullness,"Input: brightness Answer: dullness
+"
+analogue,digital,"Input: analogue Answer: digital
+"
+impermanent,permanent,"Input: impermanent Answer: permanent
+"
+outdoors,indoors,"Input: outdoors Answer: indoors
+"
+lie,stand,"Input: lie Answer: stand
+"
+peace,war,"Input: peace Answer: war
+"
+unkind,kind,"Input: unkind Answer: kind
+"
+inviting,uninviting,"Input: inviting Answer: uninviting
+"
+afloat,aground,"Input: afloat Answer: aground
+"
+change,stay,"Input: change Answer: stay
+"
+literacy,illiteracy,"Input: literacy Answer: illiteracy
+"
+humorless,humorous,"Input: humorless Answer: humorous
+"
+applied,theoretical,"Input: applied Answer: theoretical
+"
+hypotension,hypertension,"Input: hypotension Answer: hypertension
+"
+seal,unseal,"Input: seal Answer: unseal
+"
+damaged,undamaged,"Input: damaged Answer: undamaged
+"
+ripe,green,"Input: ripe Answer: green
+"
+brighten,darken,"Input: brighten Answer: darken
+"
+proportionate,disproportionate,"Input: proportionate Answer: disproportionate
+"
+fuse,defuse,"Input: fuse Answer: defuse
+"
+leafy,leafless,"Input: leafy Answer: leafless
+"
+unshaded,shaded,"Input: unshaded Answer: shaded
+"
+fresh,preserved,"Input: fresh Answer: preserved
+"
+antiseptic,septic,"Input: antiseptic Answer: septic
+"
+strengthen,weaken,"Input: strengthen Answer: weaken
+"
+daughter,son,"Input: daughter Answer: son
+"
+inglorious,glorious,"Input: inglorious Answer: glorious
+"
+goodness,badness,"Input: goodness Answer: badness
+"
+better,worse,"Input: better Answer: worse
+"
+undamaged,damaged,"Input: undamaged Answer: damaged
+"
+naive,sophisticated,"Input: naive Answer: sophisticated
+"
+voluntary,involuntary,"Input: voluntary Answer: involuntary
+"
+loosening,tightening,"Input: loosening Answer: tightening
+"
+cortex,medulla,"Input: cortex Answer: medulla
+"
+unwillingly,willingly,"Input: unwillingly Answer: willingly
+"
+docile,stubborn,"Input: docile Answer: stubborn
+"
+extinguish,ignite,"Input: extinguish Answer: ignite
+"
+nonparticipation,participation,"Input: nonparticipation Answer: participation
+"
+unfamiliarity,familiarity,"Input: unfamiliarity Answer: familiarity
+"
+poor,rich,"Input: poor Answer: rich
+"
+impaired,unimpaired,"Input: impaired Answer: unimpaired
+"
+outgoing,incoming,"Input: outgoing Answer: incoming
+"
+unswept,swept,"Input: unswept Answer: swept
+"
+cyclic,acyclic,"Input: cyclic Answer: acyclic
+"
+nontaxable,taxable,"Input: nontaxable Answer: taxable
+"
+appropriate,inappropriate,"Input: appropriate Answer: inappropriate
+"
+unambitious,ambitious,"Input: unambitious Answer: ambitious
+"
+inward,outward,"Input: inward Answer: outward
+"
+detached,attached,"Input: detached Answer: attached
+"
+nonfatal,fatal,"Input: nonfatal Answer: fatal
+"
+foolish,wise,"Input: foolish Answer: wise
+"
+unopposed,opposed,"Input: unopposed Answer: opposed
+"
+ungathered,gathered,"Input: ungathered Answer: gathered
+"
+frivolous,serious,"Input: frivolous Answer: serious
+"
+minimal,maximal,"Input: minimal Answer: maximal
+"
+formalism,imitation,"Input: formalism Answer: imitation
+"
+inactivate,activate,"Input: inactivate Answer: activate
+"
+paranormal,normal,"Input: paranormal Answer: normal
+"
+loving,unloving,"Input: loving Answer: unloving
+"
+weak,strong,"Input: weak Answer: strong
+"
+hypoglycemia,hyperglycemia,"Input: hypoglycemia Answer: hyperglycemia
+"
+curse,bless,"Input: curse Answer: bless
+"
+invertebrate,vertebrate,"Input: invertebrate Answer: vertebrate
+"
+nonmoving,moving,"Input: nonmoving Answer: moving
+"
+harden,soften,"Input: harden Answer: soften
+"
+hypertension,hypotension,"Input: hypertension Answer: hypotension
+"
+painlessly,painfully,"Input: painlessly Answer: painfully
+"
+pleasant,unpleasant,"Input: pleasant Answer: unpleasant
+"
+clockwise,counterclockwise,"Input: clockwise Answer: counterclockwise
+"
+contralateral,ipsilateral,"Input: contralateral Answer: ipsilateral
+"
+unexcited,excited,"Input: unexcited Answer: excited
+"
+conditionally,unconditionally,"Input: conditionally Answer: unconditionally
+"
+insincerity,sincerity,"Input: insincerity Answer: sincerity
+"
+tasteless,tasty,"Input: tasteless Answer: tasty
+"
+sincerity,insincerity,"Input: sincerity Answer: insincerity
+"
+refuse,accept,"Input: refuse Answer: accept
+"
+abolish,establish,"Input: abolish Answer: establish
+"
+unscientific,scientific,"Input: unscientific Answer: scientific
+"
+day,night,"Input: day Answer: night
+"
+worthless,valuable,"Input: worthless Answer: valuable
+"
+unsanitary,sanitary,"Input: unsanitary Answer: sanitary
+"
+malevolence,benevolence,"Input: malevolence Answer: benevolence
+"
+discolor,color,"Input: discolor Answer: color
+"
+ebb,tide,"Input: ebb Answer: tide
+"
+midi,mini,"Input: midi Answer: mini
+"
+unorthodox,orthodox,"Input: unorthodox Answer: orthodox
+"
+unfairly,fairly,"Input: unfairly Answer: fairly
+"
+inexperienced,experienced,"Input: inexperienced Answer: experienced
+"
+similar,dissimilar,"Input: similar Answer: dissimilar
+"
+disorganize,organize,"Input: disorganize Answer: organize
+"
+insubordinate,subordinate,"Input: insubordinate Answer: subordinate
+"
+insubstantial,substantial,"Input: insubstantial Answer: substantial
+"
+sufficiency,insufficiency,"Input: sufficiency Answer: insufficiency
+"
+insensible,sensible,"Input: insensible Answer: sensible
+"
+federal,unitary,"Input: federal Answer: unitary
+"
+criticize,praise,"Input: criticize Answer: praise
+"
+international,national,"Input: international Answer: national
+"
+ugliness,beauty,"Input: ugliness Answer: beauty
+"
+trustworthy,untrustworthy,"Input: trustworthy Answer: untrustworthy
+"
+debilitating,invigorating,"Input: debilitating Answer: invigorating
+"
+elastic,inelastic,"Input: elastic Answer: inelastic
+"
+unequally,equally,"Input: unequally Answer: equally
+"
+adopted,native,"Input: adopted Answer: native
+"
+unpleasant,pleasant,"Input: unpleasant Answer: pleasant
+"
+service,disservice,"Input: service Answer: disservice
+"
+convenient,inconvenient,"Input: convenient Answer: inconvenient
+"
+complain,cheer,"Input: complain Answer: cheer
+"
+offense,defense,"Input: offense Answer: defense
+"
+unconfined,confined,"Input: unconfined Answer: confined
+"
+maladaptive,adaptive,"Input: maladaptive Answer: adaptive
+"
+due,undue,"Input: due Answer: undue
+"
+solidity,porosity,"Input: solidity Answer: porosity
+"
+retarded,precocious,"Input: retarded Answer: precocious
+"
+solvent,insolvent,"Input: solvent Answer: insolvent
+"
+eccentric,concentric,"Input: eccentric Answer: concentric
+"
+violent,nonviolent,"Input: violent Answer: nonviolent
+"
+singular,plural,"Input: singular Answer: plural
+"
+central,peripheral,"Input: central Answer: peripheral
+"
+bad,good,"Input: bad Answer: good
+"
+nonlinguistic,linguistic,"Input: nonlinguistic Answer: linguistic
+"
+lightly,heavily,"Input: lightly Answer: heavily
+"
+skilled,unskilled,"Input: skilled Answer: unskilled
+"
+wingless,winged,"Input: wingless Answer: winged
+"
+mesial,distal,"Input: mesial Answer: distal
+"
+inconsiderate,considerate,"Input: inconsiderate Answer: considerate
+"
+folly,wisdom,"Input: folly Answer: wisdom
+"
+falling,rising,"Input: falling Answer: rising
+"
+participation,nonparticipation,"Input: participation Answer: nonparticipation
+"
+diffident,confident,"Input: diffident Answer: confident
+"
+unobstructed,obstructed,"Input: unobstructed Answer: obstructed
+"
+changed,unchanged,"Input: changed Answer: unchanged
+"
+theism,atheism,"Input: theism Answer: atheism
+"
+undiluted,diluted,"Input: undiluted Answer: diluted
+"
+tense,relaxed,"Input: tense Answer: relaxed
+"
+tie,untie,"Input: tie Answer: untie
+"
+heterosexual,homosexual,"Input: heterosexual Answer: homosexual
+"
+flatten,sharpen,"Input: flatten Answer: sharpen
+"
+curious,incurious,"Input: curious Answer: incurious
+"
+loudness,softness,"Input: loudness Answer: softness
+"
+finitely,infinitely,"Input: finitely Answer: infinitely
+"
+blur,focus,"Input: blur Answer: focus
+"
+concentric,eccentric,"Input: concentric Answer: eccentric
+"
+inflexibility,flexibility,"Input: inflexibility Answer: flexibility
+"
+ravel,unravel,"Input: ravel Answer: unravel
+"
+laugh,cry,"Input: laugh Answer: cry
+"
+liberator,captor,"Input: liberator Answer: captor
+"
+unfaithful,faithful,"Input: unfaithful Answer: faithful
+"
+unskilled,skilled,"Input: unskilled Answer: skilled
+"
+expansion,contraction,"Input: expansion Answer: contraction
+"
+incompatible,compatible,"Input: incompatible Answer: compatible
+"
+safe,out,"Input: safe Answer: out
+"
+efflux,influx,"Input: efflux Answer: influx
+"
+lack,have,"Input: lack Answer: have
+"
+progress,regress,"Input: progress Answer: regress
+"
+inaccessible,accessible,"Input: inaccessible Answer: accessible
+"
+flexibility,inflexibility,"Input: flexibility Answer: inflexibility
+"
+potency,impotency,"Input: potency Answer: impotency
+"
+subtract,add,"Input: subtract Answer: add
+"
+sober,intoxicated,"Input: sober Answer: intoxicated
+"
+nonnative,native,"Input: nonnative Answer: native
+"
+unvaried,varied,"Input: unvaried Answer: varied
+"
+human,nonhuman,"Input: human Answer: nonhuman
+"
+fractional,whole,"Input: fractional Answer: whole
+"
+timid,brave,"Input: timid Answer: brave
+"
+imperceptibly,perceptibly,"Input: imperceptibly Answer: perceptibly
+"
+birth,death,"Input: birth Answer: death
+"
+lodge,dislodge,"Input: lodge Answer: dislodge
+"
+unconcealed,concealed,"Input: unconcealed Answer: concealed
+"
+capitalistic,socialistic,"Input: capitalistic Answer: socialistic
+"
+enchanted,disenchanted,"Input: enchanted Answer: disenchanted
+"
+periodic,aperiodic,"Input: periodic Answer: aperiodic
+"
+suffer,enjoy,"Input: suffer Answer: enjoy
+"
+uncrowded,crowded,"Input: uncrowded Answer: crowded
+"
+queen,king,"Input: queen Answer: king
+"
+mismatched,matched,"Input: mismatched Answer: matched
+"
+discouraging,encouraging,"Input: discouraging Answer: encouraging
+"
+encouragement,discouragement,"Input: encouragement Answer: discouragement
+"
+permissible,impermissible,"Input: permissible Answer: impermissible
+"
+metallic,nonmetallic,"Input: metallic Answer: nonmetallic
+"
+hydrophobic,hydrophilic,"Input: hydrophobic Answer: hydrophilic
+"
+evergreen,deciduous,"Input: evergreen Answer: deciduous
+"
+impure,pure,"Input: impure Answer: pure
+"
+ignite,extinguish,"Input: ignite Answer: extinguish
+"
+flattering,unflattering,"Input: flattering Answer: unflattering
+"
+partiality,impartiality,"Input: partiality Answer: impartiality
+"
+maxi,mini,"Input: maxi Answer: mini
+"
+completeness,incompleteness,"Input: completeness Answer: incompleteness
+"
+cheap,expensive,"Input: cheap Answer: expensive
+"
+temperance,intemperance,"Input: temperance Answer: intemperance
+"
+flora,fauna,"Input: flora Answer: fauna
+"
+double,single,"Input: double Answer: single
+"
+analytic,synthetic,"Input: analytic Answer: synthetic
+"
+fixed,unfixed,"Input: fixed Answer: unfixed
+"
+indistinguishable,distinguishable,"Input: indistinguishable Answer: distinguishable
+"
+affirmative,negative,"Input: affirmative Answer: negative
+"
+retreat,advance,"Input: retreat Answer: advance
+"
+committed,uncommitted,"Input: committed Answer: uncommitted
+"
+spread,gather,"Input: spread Answer: gather
+"
+continuity,discontinuity,"Input: continuity Answer: discontinuity
+"
+nonrepresentative,representative,"Input: nonrepresentative Answer: representative
+"
+rising,falling,"Input: rising Answer: falling
+"
+sold,unsold,"Input: sold Answer: unsold
+"
+reject,accept,"Input: reject Answer: accept
+"
+worsen,better,"Input: worsen Answer: better
+"
+nonalignment,alignment,"Input: nonalignment Answer: alignment
+"
+intoxicated,sober,"Input: intoxicated Answer: sober
+"
+impurity,purity,"Input: impurity Answer: purity
+"
+stressed,unstressed,"Input: stressed Answer: unstressed
+"
+imprudence,prudence,"Input: imprudence Answer: prudence
+"
+supervised,unsupervised,"Input: supervised Answer: unsupervised
+"
+desirable,undesirable,"Input: desirable Answer: undesirable
+"
+competent,incompetent,"Input: competent Answer: incompetent
+"
+unscheduled,scheduled,"Input: unscheduled Answer: scheduled
+"
+indivisible,divisible,"Input: indivisible Answer: divisible
+"
+inconsiderable,considerable,"Input: inconsiderable Answer: considerable
+"
+unprofitable,profitable,"Input: unprofitable Answer: profitable
+"
+unmanned,manned,"Input: unmanned Answer: manned
+"
+unconditional,conditional,"Input: unconditional Answer: conditional
+"
+backward,forward,"Input: backward Answer: forward
+"
+disorderly,orderly,"Input: disorderly Answer: orderly
+"
+rejection,acceptance,"Input: rejection Answer: acceptance
+"
+up,down,"Input: up Answer: down
+"
+nonrigid,rigid,"Input: nonrigid Answer: rigid
+"
+misbehave,behave,"Input: misbehave Answer: behave
+"
+sorrowful,joyful,"Input: sorrowful Answer: joyful
+"
+elated,dejected,"Input: elated Answer: dejected
+"
+extrasensory,sensory,"Input: extrasensory Answer: sensory
+"
+outflow,inflow,"Input: outflow Answer: inflow
+"
+whole,half,"Input: whole Answer: half
+"
+pessimism,optimism,"Input: pessimism Answer: optimism
+"
+wholesale,retail,"Input: wholesale Answer: retail
+"
+noncommercial,commercial,"Input: noncommercial Answer: commercial
+"
+consciously,unconsciously,"Input: consciously Answer: unconsciously
+"
+bar,unbar,"Input: bar Answer: unbar
+"
+inwardly,outwardly,"Input: inwardly Answer: outwardly
+"
+devolution,evolution,"Input: devolution Answer: evolution
+"
+differ,equal,"Input: differ Answer: equal
+"
+definite,indefinite,"Input: definite Answer: indefinite
+"
+decontamination,contamination,"Input: decontamination Answer: contamination
+"
+courage,cowardice,"Input: courage Answer: cowardice
+"
+autumnal,wintry,"Input: autumnal Answer: wintry
+"
+dishonor,honor,"Input: dishonor Answer: honor
+"
+continue,discontinue,"Input: continue Answer: discontinue
+"
+smokeless,smoky,"Input: smokeless Answer: smoky
+"
+constant,inconstant,"Input: constant Answer: inconstant
+"
+influx,efflux,"Input: influx Answer: efflux
+"
+encode,decode,"Input: encode Answer: decode
+"
+improvement,decline,"Input: improvement Answer: decline
+"
+unforgiving,forgiving,"Input: unforgiving Answer: forgiving
+"
+contaminated,uncontaminated,"Input: contaminated Answer: uncontaminated
+"
+sorrow,joy,"Input: sorrow Answer: joy
+"
+honest,dishonest,"Input: honest Answer: dishonest
+"
+inconvenience,convenience,"Input: inconvenience Answer: convenience
+"
+limited,unlimited,"Input: limited Answer: unlimited
+"
+saved,lost,"Input: saved Answer: lost
+"
+infrequent,frequent,"Input: infrequent Answer: frequent
+"
+unable,able,"Input: unable Answer: able
+"
+exocrine,endocrine,"Input: exocrine Answer: endocrine
+"
+arranged,disarranged,"Input: arranged Answer: disarranged
+"
+inhibitor,activator,"Input: inhibitor Answer: activator
+"
+south,north,"Input: south Answer: north
+"
+uninformed,informed,"Input: uninformed Answer: informed
+"
+deny,allow,"Input: deny Answer: allow
+"
+aperiodic,periodic,"Input: aperiodic Answer: periodic
+"
+odd,even,"Input: odd Answer: even
+"
+consistency,inconsistency,"Input: consistency Answer: inconsistency
+"
+lender,borrower,"Input: lender Answer: borrower
+"
+foot,head,"Input: foot Answer: head
+"
+tame,wild,"Input: tame Answer: wild
+"
+properly,improperly,"Input: properly Answer: improperly
+"
+fewest,most,"Input: fewest Answer: most
+"
+unwillingness,willingness,"Input: unwillingness Answer: willingness
+"
+qualified,unqualified,"Input: qualified Answer: unqualified
+"
+unequal,equal,"Input: unequal Answer: equal
+"
+easy,difficult,"Input: easy Answer: difficult
+"
+optimism,pessimism,"Input: optimism Answer: pessimism
+"
+contraction,expansion,"Input: contraction Answer: expansion
+"
+painfully,painlessly,"Input: painfully Answer: painlessly
+"
+subsurface,surface,"Input: subsurface Answer: surface
+"
+mother,father,"Input: mother Answer: father
+"
+antitype,type,"Input: antitype Answer: type
+"
+disequilibrium,equilibrium,"Input: disequilibrium Answer: equilibrium
+"
+adaptive,maladaptive,"Input: adaptive Answer: maladaptive
+"
+unfunded,funded,"Input: unfunded Answer: funded
+"
+nocturnal,diurnal,"Input: nocturnal Answer: diurnal
+"
+unpretentious,pretentious,"Input: unpretentious Answer: pretentious
+"
+perpendicular,parallel,"Input: perpendicular Answer: parallel
+"
+fame,infamy,"Input: fame Answer: infamy
+"
+seriousness,frivolity,"Input: seriousness Answer: frivolity
+"
+captor,liberator,"Input: captor Answer: liberator
+"
+expedient,inexpedient,"Input: expedient Answer: inexpedient
+"
+nonvolatile,volatile,"Input: nonvolatile Answer: volatile
+"
+demobilization,mobilization,"Input: demobilization Answer: mobilization
+"
+sunset,sunrise,"Input: sunset Answer: sunrise
+"
+popularity,unpopularity,"Input: popularity Answer: unpopularity
+"
+inactive,active,"Input: inactive Answer: active
+"
+reverent,irreverent,"Input: reverent Answer: irreverent
+"
+uneducated,educated,"Input: uneducated Answer: educated
+"
+palatable,unpalatable,"Input: palatable Answer: unpalatable
+"
+indoor,outdoor,"Input: indoor Answer: outdoor
+"
+indecent,decent,"Input: indecent Answer: decent
+"
+explicit,implicit,"Input: explicit Answer: implicit
+"
+conceit,humility,"Input: conceit Answer: humility
+"
+uncivil,civil,"Input: uncivil Answer: civil
+"
+unloading,loading,"Input: unloading Answer: loading
+"
+disintegrate,integrate,"Input: disintegrate Answer: integrate
+"
+unambiguously,ambiguously,"Input: unambiguously Answer: ambiguously
+"
+unprincipled,principled,"Input: unprincipled Answer: principled
+"
+specified,unspecified,"Input: specified Answer: unspecified
+"
+stabilize,destabilize,"Input: stabilize Answer: destabilize
+"
+lawfully,unlawfully,"Input: lawfully Answer: unlawfully
+"
+unprocessed,processed,"Input: unprocessed Answer: processed
+"
+ionic,nonionic,"Input: ionic Answer: nonionic
+"
+sent,unsent,"Input: sent Answer: unsent
+"
+darken,lighten,"Input: darken Answer: lighten
+"
+internal,external,"Input: internal Answer: external
+"
+wrap,unwrap,"Input: wrap Answer: unwrap
+"
+constancy,inconstancy,"Input: constancy Answer: inconstancy
+"
+bloody,bloodless,"Input: bloody Answer: bloodless
+"
+partly,wholly,"Input: partly Answer: wholly
+"
+unimportant,important,"Input: unimportant Answer: important
+"
+explicable,inexplicable,"Input: explicable Answer: inexplicable
+"
+underestimate,overestimate,"Input: underestimate Answer: overestimate
+"
+agreeable,disagreeable,"Input: agreeable Answer: disagreeable
+"
+individuality,commonality,"Input: individuality Answer: commonality
+"
+augmentation,diminution,"Input: augmentation Answer: diminution
+"
+acceptable,unacceptable,"Input: acceptable Answer: unacceptable
+"
+tasty,tasteless,"Input: tasty Answer: tasteless
+"
+incurable,curable,"Input: incurable Answer: curable
+"
+decompression,compression,"Input: decompression Answer: compression
+"
+leeward,windward,"Input: leeward Answer: windward
+"
+undue,due,"Input: undue Answer: due
+"
+payment,nonpayment,"Input: payment Answer: nonpayment
+"
+unsatisfactory,satisfactory,"Input: unsatisfactory Answer: satisfactory
+"
+ready,unready,"Input: ready Answer: unready
+"
+unbuttoned,buttoned,"Input: unbuttoned Answer: buttoned
+"
+centralization,decentralization,"Input: centralization Answer: decentralization
+"
+charged,uncharged,"Input: charged Answer: uncharged
+"
+dangerous,safe,"Input: dangerous Answer: safe
+"
+illogically,logically,"Input: illogically Answer: logically
+"
+scarce,abundant,"Input: scarce Answer: abundant
+"
+multilateral,unilateral,"Input: multilateral Answer: unilateral
+"
+shout,whisper,"Input: shout Answer: whisper
+"
+vulnerable,invulnerable,"Input: vulnerable Answer: invulnerable
+"
+actively,passively,"Input: actively Answer: passively
+"
+miss,hit,"Input: miss Answer: hit
+"
+internally,externally,"Input: internally Answer: externally
+"
+unclassified,classified,"Input: unclassified Answer: classified
+"
+simplify,complicate,"Input: simplify Answer: complicate
+"
+far,near,"Input: far Answer: near
+"
+imitation,formalism,"Input: imitation Answer: formalism
+"
+altruism,egoism,"Input: altruism Answer: egoism
+"
+racial,nonracial,"Input: racial Answer: nonracial
+"
+justly,unjustly,"Input: justly Answer: unjustly
+"
+involved,uninvolved,"Input: involved Answer: uninvolved
+"
+acknowledged,unacknowledged,"Input: acknowledged Answer: unacknowledged
+"
+inexplicable,explicable,"Input: inexplicable Answer: explicable
+"
+specialized,unspecialized,"Input: specialized Answer: unspecialized
+"
+unequipped,equipped,"Input: unequipped Answer: equipped
+"
+nonuniformity,uniformity,"Input: nonuniformity Answer: uniformity
+"
+uselessness,usefulness,"Input: uselessness Answer: usefulness
+"
+phlegmy,dry,"Input: phlegmy Answer: dry
+"
+studied,unstudied,"Input: studied Answer: unstudied
+"
+destructive,constructive,"Input: destructive Answer: constructive
+"
+unfurnished,furnished,"Input: unfurnished Answer: furnished
+"
+unrighteous,righteous,"Input: unrighteous Answer: righteous
+"
+employee,employer,"Input: employee Answer: employer
+"
+secondarily,primarily,"Input: secondarily Answer: primarily
+"
+agree,disagree,"Input: agree Answer: disagree
+"
+submissive,domineering,"Input: submissive Answer: domineering
+"
+permeable,impermeable,"Input: permeable Answer: impermeable
+"
+irregularly,regularly,"Input: irregularly Answer: regularly
+"
+efferent,afferent,"Input: efferent Answer: afferent
+"
+uniform,multiform,"Input: uniform Answer: multiform
+"
+unenforceable,enforceable,"Input: unenforceable Answer: enforceable
+"
+significance,insignificance,"Input: significance Answer: insignificance
+"
+comfortable,uncomfortable,"Input: comfortable Answer: uncomfortable
+"
+unemployed,employed,"Input: unemployed Answer: employed
+"
+righteousness,unrighteousness,"Input: righteousness Answer: unrighteousness
+"
+delay,rush,"Input: delay Answer: rush
+"
+unsympathetic,sympathetic,"Input: unsympathetic Answer: sympathetic
+"
+spirited,spiritless,"Input: spirited Answer: spiritless
+"
+roughness,smoothness,"Input: roughness Answer: smoothness
+"
+homosexual,heterosexual,"Input: homosexual Answer: heterosexual
+"
+isotonic,isometric,"Input: isotonic Answer: isometric
+"
+ease,difficulty,"Input: ease Answer: difficulty
+"
+downstream,upstream,"Input: downstream Answer: upstream
+"
+nonexistent,existent,"Input: nonexistent Answer: existent
+"
+virtuous,wicked,"Input: virtuous Answer: wicked
+"
+homogeneous,heterogeneous,"Input: homogeneous Answer: heterogeneous
+"
+reversal,affirmation,"Input: reversal Answer: affirmation
+"
+diversify,specialize,"Input: diversify Answer: specialize
+"
+unsuspected,suspected,"Input: unsuspected Answer: suspected
+"
+disorder,order,"Input: disorder Answer: order
+"
+inefficiency,efficiency,"Input: inefficiency Answer: efficiency
+"
+unreactive,reactive,"Input: unreactive Answer: reactive
+"
+genuine,counterfeit,"Input: genuine Answer: counterfeit
+"
+defence,offence,"Input: defence Answer: offence
+"
+disengage,engage,"Input: disengage Answer: engage
+"
+unscrew,screw,"Input: unscrew Answer: screw
+"
+wisely,foolishly,"Input: wisely Answer: foolishly
+"
+truth,falsehood,"Input: truth Answer: falsehood
+"
+irreverent,reverent,"Input: irreverent Answer: reverent
+"
+negate,affirm,"Input: negate Answer: affirm
+"
+official,unofficial,"Input: official Answer: unofficial
+"
+shorten,lengthen,"Input: shorten Answer: lengthen
+"
+brave,timid,"Input: brave Answer: timid
+"
+discontinuation,continuation,"Input: discontinuation Answer: continuation
+"
+induced,spontaneous,"Input: induced Answer: spontaneous
+"
+moderately,immoderately,"Input: moderately Answer: immoderately
+"
+wanted,unwanted,"Input: wanted Answer: unwanted
+"
+unconvincing,convincing,"Input: unconvincing Answer: convincing
+"
+registered,unregistered,"Input: registered Answer: unregistered
+"
+decision,indecision,"Input: decision Answer: indecision
+"
+reality,unreality,"Input: reality Answer: unreality
+"
+whisper,shout,"Input: whisper Answer: shout
+"
+unexpired,expired,"Input: unexpired Answer: expired
+"
+bloodless,bloody,"Input: bloodless Answer: bloody
+"
+unreported,reported,"Input: unreported Answer: reported
+"
+ungrateful,grateful,"Input: ungrateful Answer: grateful
+"
+worse,better,"Input: worse Answer: better
+"
+intensive,extensive,"Input: intensive Answer: extensive
+"
+tidy,untidy,"Input: tidy Answer: untidy
+"
+modest,immodest,"Input: modest Answer: immodest
+"
+traditional,nontraditional,"Input: traditional Answer: nontraditional
+"
+unsocial,social,"Input: unsocial Answer: social
+"
+noninvasive,invasive,"Input: noninvasive Answer: invasive
+"
+regularly,irregularly,"Input: regularly Answer: irregularly
+"
+nonmechanical,mechanical,"Input: nonmechanical Answer: mechanical
+"
+concentration,distribution,"Input: concentration Answer: distribution
+"
+universal,particular,"Input: universal Answer: particular
+"
+stable,unstable,"Input: stable Answer: unstable
+"
+host,parasite,"Input: host Answer: parasite
+"
+repulsion,attraction,"Input: repulsion Answer: attraction
+"
+efficacy,inefficacy,"Input: efficacy Answer: inefficacy
+"
+bend,straighten,"Input: bend Answer: straighten
+"
+acyclic,cyclic,"Input: acyclic Answer: cyclic
+"
+credible,incredible,"Input: credible Answer: incredible
+"
+disapprove,approve,"Input: disapprove Answer: approve
+"
+irreligious,religious,"Input: irreligious Answer: religious
+"
+legalize,outlaw,"Input: legalize Answer: outlaw
+"
+borrower,lender,"Input: borrower Answer: lender
+"
+couple,uncouple,"Input: couple Answer: uncouple
+"
+unlikelihood,likelihood,"Input: unlikelihood Answer: likelihood
+"
+tolerably,intolerably,"Input: tolerably Answer: intolerably
+"
+improvidence,providence,"Input: improvidence Answer: providence
+"
+literate,illiterate,"Input: literate Answer: illiterate
+"
+unestablished,established,"Input: unestablished Answer: established
+"
+pious,impious,"Input: pious Answer: impious
+"
+consistent,inconsistent,"Input: consistent Answer: inconsistent
+"
+pride,humility,"Input: pride Answer: humility
+"
+unintelligent,intelligent,"Input: unintelligent Answer: intelligent
+"
+unrealistic,realistic,"Input: unrealistic Answer: realistic
+"
+carefully,carelessly,"Input: carefully Answer: carelessly
+"
+forgiving,unforgiving,"Input: forgiving Answer: unforgiving
+"
+nonionic,ionic,"Input: nonionic Answer: ionic
+"
+professional,amateur,"Input: professional Answer: amateur
+"
+displeasing,pleasing,"Input: displeasing Answer: pleasing
+"
+reserved,unreserved,"Input: reserved Answer: unreserved
+"
+earthly,heavenly,"Input: earthly Answer: heavenly
+"
+weakly,strongly,"Input: weakly Answer: strongly
+"
+rested,tired,"Input: rested Answer: tired
+"
+written,spoken,"Input: written Answer: spoken
+"
+unloving,loving,"Input: unloving Answer: loving
+"
+painted,unpainted,"Input: painted Answer: unpainted
+"
+soothe,irritate,"Input: soothe Answer: irritate
+"
+technical,nontechnical,"Input: technical Answer: nontechnical
+"
+fearfully,fearlessly,"Input: fearfully Answer: fearlessly
+"
+wholesome,unwholesome,"Input: wholesome Answer: unwholesome
+"
+innocuous,noxious,"Input: innocuous Answer: noxious
+"
+uneventful,eventful,"Input: uneventful Answer: eventful
+"
+hope,despair,"Input: hope Answer: despair
+"
+changeable,unchangeable,"Input: changeable Answer: unchangeable
+"
+fearlessly,fearfully,"Input: fearlessly Answer: fearfully
+"
+unmanly,manly,"Input: unmanly Answer: manly
+"
+uninjured,injured,"Input: uninjured Answer: injured
+"
+unnecessarily,necessarily,"Input: unnecessarily Answer: necessarily
+"
+employer,employee,"Input: employer Answer: employee
+"
+moving,still,"Input: moving Answer: still
+"
+invigorating,debilitating,"Input: invigorating Answer: debilitating
+"
+evolution,devolution,"Input: evolution Answer: devolution
+"
+rotor,stator,"Input: rotor Answer: stator
+"
+toothed,toothless,"Input: toothed Answer: toothless
+"
+lost,found,"Input: lost Answer: found
+"
+unpleasantly,pleasantly,"Input: unpleasantly Answer: pleasantly
+"
+unexciting,exciting,"Input: unexciting Answer: exciting
+"
+widening,narrowing,"Input: widening Answer: narrowing
+"
+dryness,wetness,"Input: dryness Answer: wetness
+"
+assemble,disassemble,"Input: assemble Answer: disassemble
+"
+chronically,acutely,"Input: chronically Answer: acutely
+"
+hungry,thirsty,"Input: hungry Answer: thirsty
+"
+conditioned,unconditioned,"Input: conditioned Answer: unconditioned
+"
+unowned,owned,"Input: unowned Answer: owned
+"
+security,insecurity,"Input: security Answer: insecurity
+"
+unprotected,protected,"Input: unprotected Answer: protected
+"
+original,unoriginal,"Input: original Answer: unoriginal
+"
+legality,illegality,"Input: legality Answer: illegality
+"
+crowded,uncrowded,"Input: crowded Answer: uncrowded
+"
+ineffectively,effectively,"Input: ineffectively Answer: effectively
+"
+conform,deviate,"Input: conform Answer: deviate
+"
+unafraid,afraid,"Input: unafraid Answer: afraid
+"
+confidence,diffidence,"Input: confidence Answer: diffidence
+"
+inanimate,animate,"Input: inanimate Answer: animate
+"
+proper,improper,"Input: proper Answer: improper
+"
+complete,incomplete,"Input: complete Answer: incomplete
+"
+wife,husband,"Input: wife Answer: husband
+"
+lend,borrow,"Input: lend Answer: borrow
+"
+ultimate,proximate,"Input: ultimate Answer: proximate
+"
+inhabited,uninhabited,"Input: inhabited Answer: uninhabited
+"
+maximization,minimization,"Input: maximization Answer: minimization
+"
+attached,detached,"Input: attached Answer: detached
+"
+unenlightened,enlightened,"Input: unenlightened Answer: enlightened
+"
+never,ever,"Input: never Answer: ever
+"
+depart,stay,"Input: depart Answer: stay
+"
+dislodge,lodge,"Input: dislodge Answer: lodge
+"
+nonprescription,prescription,"Input: nonprescription Answer: prescription
+"
+disappearance,appearance,"Input: disappearance Answer: appearance
+"
+inaccurate,accurate,"Input: inaccurate Answer: accurate
+"
+inconclusive,conclusive,"Input: inconclusive Answer: conclusive
+"
+unprepared,prepared,"Input: unprepared Answer: prepared
+"
+quantitative,qualitative,"Input: quantitative Answer: qualitative
+"
+girl,boy,"Input: girl Answer: boy
+"
+unhealthy,healthy,"Input: unhealthy Answer: healthy
+"
+mobilization,demobilization,"Input: mobilization Answer: demobilization
+"
+voiced,unvoiced,"Input: voiced Answer: unvoiced
+"
+unrestrained,restrained,"Input: unrestrained Answer: restrained
+"
+immoderately,moderately,"Input: immoderately Answer: moderately
+"
+sparkling,still,"Input: sparkling Answer: still
+"
+usual,unusual,"Input: usual Answer: unusual
+"
+invisible,visible,"Input: invisible Answer: visible
+"
+intolerant,tolerant,"Input: intolerant Answer: tolerant
+"
+asymmetrical,symmetrical,"Input: asymmetrical Answer: symmetrical
+"
+insecurity,security,"Input: insecurity Answer: security
+"
+repel,attract,"Input: repel Answer: attract
+"
+illiteracy,literacy,"Input: illiteracy Answer: literacy
+"
+abundant,scarce,"Input: abundant Answer: scarce
+"
+unbalanced,balanced,"Input: unbalanced Answer: balanced
+"
+forward,reverse,"Input: forward Answer: reverse
+"
+artificially,naturally,"Input: artificially Answer: naturally
+"
+nearness,farness,"Input: nearness Answer: farness
+"
+unmarried,married,"Input: unmarried Answer: married
+"
+indecision,decision,"Input: indecision Answer: decision
+"
+mini,midi,"Input: mini Answer: midi
+"
+sufficiently,insufficiently,"Input: sufficiently Answer: insufficiently
+"
+reactive,unreactive,"Input: reactive Answer: unreactive
+"
+active,quiet,"Input: active Answer: quiet
+"
+disproportionately,proportionately,"Input: disproportionately Answer: proportionately
+"
+noncritical,critical,"Input: noncritical Answer: critical
+"
+winner,loser,"Input: winner Answer: loser
+"
+responsive,unresponsive,"Input: responsive Answer: unresponsive
+"
+exciting,unexciting,"Input: exciting Answer: unexciting
+"
+proximate,ultimate,"Input: proximate Answer: ultimate
+"
+continual,sporadic,"Input: continual Answer: sporadic
+"
+discourteous,courteous,"Input: discourteous Answer: courteous
+"
+wake,sleep,"Input: wake Answer: sleep
+"
+benevolence,malevolence,"Input: benevolence Answer: malevolence
+"
+derived,underived,"Input: derived Answer: underived
+"
+green,ripe,"Input: green Answer: ripe
+"
+effectually,ineffectually,"Input: effectually Answer: ineffectually
+"
+political,nonpolitical,"Input: political Answer: nonpolitical
+"
+considerate,inconsiderate,"Input: considerate Answer: inconsiderate
+"
+noncurrent,current,"Input: noncurrent Answer: current
+"
+recall,issue,"Input: recall Answer: issue
+"
+willingness,unwillingness,"Input: willingness Answer: unwillingness
+"
+obvious,unobvious,"Input: obvious Answer: unobvious
+"
+spoken,written,"Input: spoken Answer: written
+"
+analyzed,unanalyzed,"Input: analyzed Answer: unanalyzed
+"
+boneless,bony,"Input: boneless Answer: bony
+"
+lock,unlock,"Input: lock Answer: unlock
+"
+layman,clergyman,"Input: layman Answer: clergyman
+"
+numerical,verbal,"Input: numerical Answer: verbal
+"
+hairless,hairy,"Input: hairless Answer: hairy
+"
+insufficiently,sufficiently,"Input: insufficiently Answer: sufficiently
+"
+similarity,dissimilarity,"Input: similarity Answer: dissimilarity
+"
+dissuade,persuade,"Input: dissuade Answer: persuade
+"
+assigned,unassigned,"Input: assigned Answer: unassigned
+"
+outward,inward,"Input: outward Answer: inward
+"
+normality,abnormality,"Input: normality Answer: abnormality
+"
+pointed,pointless,"Input: pointed Answer: pointless
+"
+gratitude,ingratitude,"Input: gratitude Answer: ingratitude
+"
+balanced,unbalanced,"Input: balanced Answer: unbalanced
+"
+badly,well,"Input: badly Answer: well
+"
+digital,analogue,"Input: digital Answer: analogue
+"
+bottomed,bottomless,"Input: bottomed Answer: bottomless
+"
+join,disjoin,"Input: join Answer: disjoin
+"
+defuse,fuse,"Input: defuse Answer: fuse
+"
+black,white,"Input: black Answer: white
+"
+integrated,segregated,"Input: integrated Answer: segregated
+"
+unstressed,stressed,"Input: unstressed Answer: stressed
+"
+stuck,unstuck,"Input: stuck Answer: unstuck
+"
+infamy,fame,"Input: infamy Answer: fame
+"
+stator,rotor,"Input: stator Answer: rotor
+"
+unaccustomed,accustomed,"Input: unaccustomed Answer: accustomed
+"
+femininity,masculinity,"Input: femininity Answer: masculinity
+"
+existent,nonexistent,"Input: existent Answer: nonexistent
+"
+unlucky,lucky,"Input: unlucky Answer: lucky
+"
+piety,impiety,"Input: piety Answer: impiety
+"
+acidity,alkalinity,"Input: acidity Answer: alkalinity
+"
+salaried,freelance,"Input: salaried Answer: freelance
+"
+complicate,simplify,"Input: complicate Answer: simplify
+"
+improved,unimproved,"Input: improved Answer: unimproved
+"
+falsehood,truth,"Input: falsehood Answer: truth
+"
+infallible,fallible,"Input: infallible Answer: fallible
+"
+unveil,veil,"Input: unveil Answer: veil
+"
+androgynous,female,"Input: androgynous Answer: female
+"
+restricted,unrestricted,"Input: restricted Answer: unrestricted
+"
+objectively,subjectively,"Input: objectively Answer: subjectively
+"
+selfish,unselfish,"Input: selfish Answer: unselfish
+"
+cultivated,uncultivated,"Input: cultivated Answer: uncultivated
+"
+bless,curse,"Input: bless Answer: curse
+"
+misused,used,"Input: misused Answer: used
+"
+educated,uneducated,"Input: educated Answer: uneducated
+"
+obedience,disobedience,"Input: obedience Answer: disobedience
+"
+symmetry,asymmetry,"Input: symmetry Answer: asymmetry
+"
+insignificant,significant,"Input: insignificant Answer: significant
+"
+downward,upward,"Input: downward Answer: upward
+"
+rich,poor,"Input: rich Answer: poor
+"
+won,lost,"Input: won Answer: lost
+"
+rear,head,"Input: rear Answer: head
+"
+equally,unequally,"Input: equally Answer: unequally
+"
+medical,surgical,"Input: medical Answer: surgical
+"
+tangible,intangible,"Input: tangible Answer: intangible
+"
+hydrophilic,hydrophobic,"Input: hydrophilic Answer: hydrophobic
+"
+solubility,insolubility,"Input: solubility Answer: insolubility
+"
+molar,molecular,"Input: molar Answer: molecular
+"
+agnostic,gnostic,"Input: agnostic Answer: gnostic
+"
+unlikeness,likeness,"Input: unlikeness Answer: likeness
+"
+established,unestablished,"Input: established Answer: unestablished
+"
+convex,concave,"Input: convex Answer: concave
+"
+stubborn,docile,"Input: stubborn Answer: docile
+"
+attend,miss,"Input: attend Answer: miss
+"
+interior,exterior,"Input: interior Answer: exterior
+"
+backed,backless,"Input: backed Answer: backless
+"
+engage,disengage,"Input: engage Answer: disengage
+"
+unpalatable,palatable,"Input: unpalatable Answer: palatable
+"
+abnormal,normal,"Input: abnormal Answer: normal
+"
+continuation,discontinuation,"Input: continuation Answer: discontinuation
+"
+plural,singular,"Input: plural Answer: singular
+"
+stiffen,loosen,"Input: stiffen Answer: loosen
+"
+unborn,born,"Input: unborn Answer: born
+"
+wide,narrow,"Input: wide Answer: narrow
+"
+dissatisfaction,satisfaction,"Input: dissatisfaction Answer: satisfaction
+"
+untapped,tapped,"Input: untapped Answer: tapped
+"
+inconvenient,convenient,"Input: inconvenient Answer: convenient
+"
+harmless,harmful,"Input: harmless Answer: harmful
+"
+disagreeable,agreeable,"Input: disagreeable Answer: agreeable
+"
+unspecialized,specialized,"Input: unspecialized Answer: specialized
+"
+unpolished,polished,"Input: unpolished Answer: polished
+"
+unlabeled,labeled,"Input: unlabeled Answer: labeled
+"
+falsify,correct,"Input: falsify Answer: correct
+"
+primary,secondary,"Input: primary Answer: secondary
+"
+adjusted,unadjusted,"Input: adjusted Answer: unadjusted
+"
+wholly,partly,"Input: wholly Answer: partly
+"
+consume,abstain,"Input: consume Answer: abstain
+"
+unconditioned,conditioned,"Input: unconditioned Answer: conditioned
+"
+handed,handless,"Input: handed Answer: handless
+"
+tired,rested,"Input: tired Answer: rested
+"
+replaceable,irreplaceable,"Input: replaceable Answer: irreplaceable
+"
+appointive,elective,"Input: appointive Answer: elective
+"
+outwardly,inwardly,"Input: outwardly Answer: inwardly
+"
+awake,asleep,"Input: awake Answer: asleep
+"
+thirsty,hungry,"Input: thirsty Answer: hungry
+"
+strongly,weakly,"Input: strongly Answer: weakly
+"
+veil,unveil,"Input: veil Answer: unveil
+"
+legal,illegal,"Input: legal Answer: illegal
+"
+discourage,encourage,"Input: discourage Answer: encourage
+"
+stand,lie,"Input: stand Answer: lie
+"
+profane,sacred,"Input: profane Answer: sacred
+"
+centripetal,centrifugal,"Input: centripetal Answer: centrifugal
+"
+verbal,numerical,"Input: verbal Answer: numerical
+"
+raw,cooked,"Input: raw Answer: cooked
+"
+living,dead,"Input: living Answer: dead
+"
+construction,misconstruction,"Input: construction Answer: misconstruction
+"
+malignant,benign,"Input: malignant Answer: benign
+"
+immaturity,maturity,"Input: immaturity Answer: maturity
+"
+likeness,unlikeness,"Input: likeness Answer: unlikeness
+"
+uncontested,contested,"Input: uncontested Answer: contested
+"
+prudent,imprudent,"Input: prudent Answer: imprudent
+"
+descending,ascending,"Input: descending Answer: ascending
+"
+superficial,profound,"Input: superficial Answer: profound
+"
+inefficiently,efficiently,"Input: inefficiently Answer: efficiently
+"
+invisibility,visibility,"Input: invisibility Answer: visibility
+"
+accessible,inaccessible,"Input: accessible Answer: inaccessible
+"
+nonmember,member,"Input: nonmember Answer: member
+"
+segregation,integration,"Input: segregation Answer: integration
+"
+improper,proper,"Input: improper Answer: proper
+"
+collected,uncollected,"Input: collected Answer: uncollected
+"
+willingly,unwillingly,"Input: willingly Answer: unwillingly
+"
+unbend,bend,"Input: unbend Answer: bend
+"
+lethargic,energetic,"Input: lethargic Answer: energetic
+"
+asleep,awake,"Input: asleep Answer: awake
+"
+operative,inoperative,"Input: operative Answer: inoperative
+"
+downstairs,upstairs,"Input: downstairs Answer: upstairs
+"
+crossed,uncrossed,"Input: crossed Answer: uncrossed
+"
+unconnected,connected,"Input: unconnected Answer: connected
+"
+pull,push,"Input: pull Answer: push
+"
+obligatory,optional,"Input: obligatory Answer: optional
+"
+nonresident,resident,"Input: nonresident Answer: resident
+"
+malign,benign,"Input: malign Answer: benign
+"
+unflattering,flattering,"Input: unflattering Answer: flattering
+"
+isotropic,anisotropic,"Input: isotropic Answer: anisotropic
+"
+confront,avoid,"Input: confront Answer: avoid
+"
+skew,align,"Input: skew Answer: align
+"
+diverge,converge,"Input: diverge Answer: converge
+"
+solved,unsolved,"Input: solved Answer: unsolved
+"
+domineering,submissive,"Input: domineering Answer: submissive
+"
+volatile,nonvolatile,"Input: volatile Answer: nonvolatile
+"
+igneous,aqueous,"Input: igneous Answer: aqueous
+"
+polite,impolite,"Input: polite Answer: impolite
+"
+unintelligible,intelligible,"Input: unintelligible Answer: intelligible
+"
+western,eastern,"Input: western Answer: eastern
+"
+uncover,cover,"Input: uncover Answer: cover
+"
+impermeable,permeable,"Input: impermeable Answer: permeable
+"
+temporarily,permanently,"Input: temporarily Answer: permanently
+"
+hostile,friendly,"Input: hostile Answer: friendly
+"
+effective,ineffective,"Input: effective Answer: ineffective
+"
+wax,wane,"Input: wax Answer: wane
+"
+impiety,piety,"Input: impiety Answer: piety
+"
+unspecified,specified,"Input: unspecified Answer: specified
+"
+unfinished,finished,"Input: unfinished Answer: finished
+"
+aerobic,anaerobic,"Input: aerobic Answer: anaerobic
+"
+differentiate,integrate,"Input: differentiate Answer: integrate
+"
+best,worst,"Input: best Answer: worst
+"
+expanded,contracted,"Input: expanded Answer: contracted
+"
+wired,wireless,"Input: wired Answer: wireless
+"
+innocence,guilt,"Input: innocence Answer: guilt
+"
+glorious,inglorious,"Input: glorious Answer: inglorious
+"
+loosen,stiffen,"Input: loosen Answer: stiffen
+"
+unlimited,limited,"Input: unlimited Answer: limited
+"
+aware,unaware,"Input: aware Answer: unaware
+"
+softness,hardness,"Input: softness Answer: hardness
+"
+intercontinental,continental,"Input: intercontinental Answer: continental
+"
+align,skew,"Input: align Answer: skew
+"
+unconditionally,conditionally,"Input: unconditionally Answer: conditionally
+"
+irreducible,reducible,"Input: irreducible Answer: reducible
+"
+integration,segregation,"Input: integration Answer: segregation
+"
+confirmed,unconfirmed,"Input: confirmed Answer: unconfirmed
+"
+eventful,uneventful,"Input: eventful Answer: uneventful
+"
+public,private,"Input: public Answer: private
+"
+conciliatory,antagonistic,"Input: conciliatory Answer: antagonistic
+"
+rehabilitate,purge,"Input: rehabilitate Answer: purge
+"
+imprecision,precision,"Input: imprecision Answer: precision
+"
+wireless,wired,"Input: wireless Answer: wired
+"
+supported,unsupported,"Input: supported Answer: unsupported
+"
+controlled,uncontrolled,"Input: controlled Answer: uncontrolled
+"
+upland,lowland,"Input: upland Answer: lowland
+"
+illegality,legality,"Input: illegality Answer: legality
+"
+inoperative,operative,"Input: inoperative Answer: operative
+"
+slow,fast,"Input: slow Answer: fast
+"
+centralized,decentralized,"Input: centralized Answer: decentralized
+"
+measurable,immeasurable,"Input: measurable Answer: immeasurable
+"
+implausible,plausible,"Input: implausible Answer: plausible
+"
+opposed,unopposed,"Input: opposed Answer: unopposed
+"
+simplicity,complexity,"Input: simplicity Answer: complexity
+"
+unexpected,expected,"Input: unexpected Answer: expected
+"
+retroactive,proactive,"Input: retroactive Answer: proactive
+"
+inaudible,audible,"Input: inaudible Answer: audible
+"
+senior,junior,"Input: senior Answer: junior
+"
+moral,immoral,"Input: moral Answer: immoral
+"
+imperative,beseeching,"Input: imperative Answer: beseeching
+"
+intelligible,unintelligible,"Input: intelligible Answer: unintelligible
+"
+farness,nearness,"Input: farness Answer: nearness
+"
+blond,brunet,"Input: blond Answer: brunet
+"
+enforce,exempt,"Input: enforce Answer: exempt
+"
+unsurprising,surprising,"Input: unsurprising Answer: surprising
+"
+income,outgo,"Input: income Answer: outgo
+"
+mental,physical,"Input: mental Answer: physical
+"
+absorb,emit,"Input: absorb Answer: emit
+"
+reducible,irreducible,"Input: reducible Answer: irreducible
+"
+joy,sorrow,"Input: joy Answer: sorrow
+"
+consanguinity,affinity,"Input: consanguinity Answer: affinity
+"
+motivated,unmotivated,"Input: motivated Answer: unmotivated
+"
+salty,fresh,"Input: salty Answer: fresh
+"
+defiant,compliant,"Input: defiant Answer: compliant
+"
+unsettled,settled,"Input: unsettled Answer: settled
+"
+refresh,tire,"Input: refresh Answer: tire
+"
+unintended,intended,"Input: unintended Answer: intended
+"
+underprivileged,privileged,"Input: underprivileged Answer: privileged
+"
+unoccupied,occupied,"Input: unoccupied Answer: occupied
+"
+unfavorable,favorable,"Input: unfavorable Answer: favorable
+"
+useless,useful,"Input: useless Answer: useful
+"
+energetic,lethargic,"Input: energetic Answer: lethargic
+"
+willing,unwilling,"Input: willing Answer: unwilling
+"
+omnidirectional,directional,"Input: omnidirectional Answer: directional
+"
+syllabic,quantitative,"Input: syllabic Answer: quantitative
+"
+pure,impure,"Input: pure Answer: impure
+"
+secular,religious,"Input: secular Answer: religious
+"
+spiritless,spirited,"Input: spiritless Answer: spirited
+"
+efficiency,inefficiency,"Input: efficiency Answer: inefficiency
+"
+nonpayment,payment,"Input: nonpayment Answer: payment
+"
+theoretical,applied,"Input: theoretical Answer: applied
+"
+covertly,overtly,"Input: covertly Answer: overtly
+"
+critical,uncritical,"Input: critical Answer: uncritical
+"
+cheer,complain,"Input: cheer Answer: complain
+"
+terminal,intermediate,"Input: terminal Answer: intermediate
+"
+success,failure,"Input: success Answer: failure
+"
+centrifugal,centripetal,"Input: centrifugal Answer: centripetal
+"
+solvency,insolvency,"Input: solvency Answer: insolvency
+"
+unassigned,assigned,"Input: unassigned Answer: assigned
+"
+unwind,wind,"Input: unwind Answer: wind
+"
+dilution,concentration,"Input: dilution Answer: concentration
+"
+anisotropic,isotropic,"Input: anisotropic Answer: isotropic
+"
+connect,disconnect,"Input: connect Answer: disconnect
+"
+certainty,uncertainty,"Input: certainty Answer: uncertainty
+"
+decode,encode,"Input: decode Answer: encode
+"
+sharpen,dull,"Input: sharpen Answer: dull
+"
+screw,unscrew,"Input: screw Answer: unscrew
+"
+insufficiency,sufficiency,"Input: insufficiency Answer: sufficiency
+"
+dull,bright,"Input: dull Answer: bright
+"
+literally,figuratively,"Input: literally Answer: figuratively
+"
+orthodox,unorthodox,"Input: orthodox Answer: unorthodox
+"
+inclement,clement,"Input: inclement Answer: clement
+"
+perfectly,imperfectly,"Input: perfectly Answer: imperfectly
+"
+uncomfortably,comfortably,"Input: uncomfortably Answer: comfortably
+"
+expand,contract,"Input: expand Answer: contract
+"
+aggressive,unaggressive,"Input: aggressive Answer: unaggressive
+"
+affirmation,reversal,"Input: affirmation Answer: reversal
+"
+extrinsic,intrinsic,"Input: extrinsic Answer: intrinsic
+"
+gathered,ungathered,"Input: gathered Answer: ungathered
+"
+quickly,slowly,"Input: quickly Answer: slowly
+"
+worst,best,"Input: worst Answer: best
+"
+facultative,obligate,"Input: facultative Answer: obligate
+"
+altruistic,egoistic,"Input: altruistic Answer: egoistic
+"
+regulate,deregulate,"Input: regulate Answer: deregulate
+"
+affinity,consanguinity,"Input: affinity Answer: consanguinity
+"
+unpunished,punished,"Input: unpunished Answer: punished
+"
+important,unimportant,"Input: important Answer: unimportant
+"
+impersonal,personal,"Input: impersonal Answer: personal
+"
+painful,painless,"Input: painful Answer: painless
+"
+audible,inaudible,"Input: audible Answer: inaudible
+"
+creative,uncreative,"Input: creative Answer: uncreative
+"
+steadily,unsteadily,"Input: steadily Answer: unsteadily
+"
+favorably,unfavorably,"Input: favorably Answer: unfavorably
+"
+inexactly,exactly,"Input: inexactly Answer: exactly
+"
+thoughtlessly,thoughtfully,"Input: thoughtlessly Answer: thoughtfully
+"
+guilty,innocent,"Input: guilty Answer: innocent
+"
+discomposed,composed,"Input: discomposed Answer: composed
+"
+inadequately,adequately,"Input: inadequately Answer: adequately
+"
+lightness,darkness,"Input: lightness Answer: darkness
+"
+succumb,survive,"Input: succumb Answer: survive
+"
+decisive,indecisive,"Input: decisive Answer: indecisive
+"
+unchanged,changed,"Input: unchanged Answer: changed
+"
+inharmonious,harmonious,"Input: inharmonious Answer: harmonious
+"
+fertility,infertility,"Input: fertility Answer: infertility
+"
+encourage,discourage,"Input: encourage Answer: discourage
+"
+ineffective,effective,"Input: ineffective Answer: effective
+"
+alcoholic,nonalcoholic,"Input: alcoholic Answer: nonalcoholic
+"
+decentralization,centralization,"Input: decentralization Answer: centralization
+"
+continuance,discontinuance,"Input: continuance Answer: discontinuance
+"
+actual,potential,"Input: actual Answer: potential
+"
+cowardice,courage,"Input: cowardice Answer: courage
+"
+disrespect,respect,"Input: disrespect Answer: respect
+"
+incredible,credible,"Input: incredible Answer: credible
+"
+irresolute,resolute,"Input: irresolute Answer: resolute
+"
+linguistic,nonlinguistic,"Input: linguistic Answer: nonlinguistic
+"
+inappropriately,appropriately,"Input: inappropriately Answer: appropriately
+"
+least,most,"Input: least Answer: most
+"
+lucky,unlucky,"Input: lucky Answer: unlucky
+"
+admissible,inadmissible,"Input: admissible Answer: inadmissible
+"
+scrupulous,unscrupulous,"Input: scrupulous Answer: unscrupulous
+"
+discontented,contented,"Input: discontented Answer: contented
+"
+social,unsocial,"Input: social Answer: unsocial
+"
+undocumented,documented,"Input: undocumented Answer: documented
+"
+parallel,perpendicular,"Input: parallel Answer: perpendicular
+"
+disallow,allow,"Input: disallow Answer: allow
+"
+born,unborn,"Input: born Answer: unborn
+"
+scarcity,abundance,"Input: scarcity Answer: abundance
+"
+artless,artful,"Input: artless Answer: artful
+"
+praise,criticize,"Input: praise Answer: criticize
+"
+robust,frail,"Input: robust Answer: frail
+"
+invalid,valid,"Input: invalid Answer: valid
+"
+inhospitable,hospitable,"Input: inhospitable Answer: hospitable
+"
+manly,unmanly,"Input: manly Answer: unmanly
+"
+concise,prolix,"Input: concise Answer: prolix
+"
+ahistorical,historical,"Input: ahistorical Answer: historical
+"
+formed,unformed,"Input: formed Answer: unformed
+"
+descend,ascend,"Input: descend Answer: ascend
+"
+supply,demand,"Input: supply Answer: demand
+"
+smoothness,roughness,"Input: smoothness Answer: roughness
+"
+intracellular,extracellular,"Input: intracellular Answer: extracellular
+"
+wild,tame,"Input: wild Answer: tame
+"
+troubled,untroubled,"Input: troubled Answer: untroubled
+"
+appearance,disappearance,"Input: appearance Answer: disappearance
+"
+burden,unburden,"Input: burden Answer: unburden
+"
+unwrapped,wrapped,"Input: unwrapped Answer: wrapped
+"
+unusual,usual,"Input: unusual Answer: usual
+"
+unbar,bar,"Input: unbar Answer: bar
+"
+happy,unhappy,"Input: happy Answer: unhappy
+"
+demanding,undemanding,"Input: demanding Answer: undemanding
+"
+radical,cauline,"Input: radical Answer: cauline
+"
+contented,discontented,"Input: contented Answer: discontented
+"
+representative,nonrepresentative,"Input: representative Answer: nonrepresentative
+"
+impolite,polite,"Input: impolite Answer: polite
+"
+junior,senior,"Input: junior Answer: senior
+"
+frequent,infrequent,"Input: frequent Answer: infrequent
+"
+disable,enable,"Input: disable Answer: enable
+"
+expired,unexpired,"Input: expired Answer: unexpired
+"
+punished,unpunished,"Input: punished Answer: unpunished
+"
+frail,robust,"Input: frail Answer: robust
+"
+corrected,uncorrected,"Input: corrected Answer: uncorrected
+"
+disparage,flatter,"Input: disparage Answer: flatter
+"
+deflation,inflation,"Input: deflation Answer: inflation
+"
+compliance,noncompliance,"Input: compliance Answer: noncompliance
+"
+undifferentiated,differentiated,"Input: undifferentiated Answer: differentiated
+"
+sure,unsure,"Input: sure Answer: unsure
+"
+accept,refuse,"Input: accept Answer: refuse
+"
+permanently,temporarily,"Input: permanently Answer: temporarily
+"
+impassable,passable,"Input: impassable Answer: passable
+"
+septic,antiseptic,"Input: septic Answer: antiseptic
+"
+maternal,paternal,"Input: maternal Answer: paternal
+"
+faithfulness,unfaithfulness,"Input: faithfulness Answer: unfaithfulness
+"
+proliferation,nonproliferation,"Input: proliferation Answer: nonproliferation
+"
+heaviness,lightness,"Input: heaviness Answer: lightness
+"
+humility,pride,"Input: humility Answer: pride
+"
+appropriately,inappropriately,"Input: appropriately Answer: inappropriately
+"
+unproductive,productive,"Input: unproductive Answer: productive
+"
+probability,improbability,"Input: probability Answer: improbability
+"
+owned,unowned,"Input: owned Answer: unowned
+"
+inequity,equity,"Input: inequity Answer: equity
+"
+proved,unproved,"Input: proved Answer: unproved
+"
+minimum,maximum,"Input: minimum Answer: maximum
+"
+paid,unpaid,"Input: paid Answer: unpaid
+"
+north,south,"Input: north Answer: south
+"
+conditional,unconditional,"Input: conditional Answer: unconditional
+"
+imperceptible,perceptible,"Input: imperceptible Answer: perceptible
+"
+pleasing,displeasing,"Input: pleasing Answer: displeasing
+"
+unfriendly,friendly,"Input: unfriendly Answer: friendly
+"
+sexual,asexual,"Input: sexual Answer: asexual
+"
+unchangeable,changeable,"Input: unchangeable Answer: changeable
+"
+disjoin,join,"Input: disjoin Answer: join
+"
+personally,impersonally,"Input: personally Answer: impersonally
+"
+conclusive,inconclusive,"Input: conclusive Answer: inconclusive
+"
+nonstandard,standard,"Input: nonstandard Answer: standard
+"
+impermissible,permissible,"Input: impermissible Answer: permissible
+"
+wise,foolish,"Input: wise Answer: foolish
+"
+sensitive,insensitive,"Input: sensitive Answer: insensitive
+"
+uneasy,easy,"Input: uneasy Answer: easy
+"
+conspicuous,inconspicuous,"Input: conspicuous Answer: inconspicuous
+"
+unofficial,official,"Input: unofficial Answer: official
+"
+nasty,nice,"Input: nasty Answer: nice
+"
+sophistication,naivete,"Input: sophistication Answer: naivete
+"
+inappropriate,appropriate,"Input: inappropriate Answer: appropriate
+"
+unhappily,happily,"Input: unhappily Answer: happily
+"
+consumptive,generative,"Input: consumptive Answer: generative
+"
+visible,invisible,"Input: visible Answer: invisible
+"
+few,many,"Input: few Answer: many
+"
+flexor,extensor,"Input: flexor Answer: extensor
+"
+inactivation,activation,"Input: inactivation Answer: activation
+"
+pointless,pointed,"Input: pointless Answer: pointed
+"
+inaccurately,accurately,"Input: inaccurately Answer: accurately
+"
+purposeful,purposeless,"Input: purposeful Answer: purposeless
+"
+manageable,unmanageable,"Input: manageable Answer: unmanageable
+"
+noisily,quietly,"Input: noisily Answer: quietly
+"
+drained,undrained,"Input: drained Answer: undrained
+"
+fraternal,identical,"Input: fraternal Answer: identical
+"
+sympathetic,unsympathetic,"Input: sympathetic Answer: unsympathetic
+"
+irregular,regular,"Input: irregular Answer: regular
+"
+refined,unrefined,"Input: refined Answer: unrefined
+"
+conscious,unconscious,"Input: conscious Answer: unconscious
+"
+attraction,repulsion,"Input: attraction Answer: repulsion
+"
+fallibility,infallibility,"Input: fallibility Answer: infallibility
+"
+uninterested,interested,"Input: uninterested Answer: interested
+"
+contested,uncontested,"Input: contested Answer: uncontested
+"
+untroubled,troubled,"Input: untroubled Answer: troubled
+"
+cardinal,ordinal,"Input: cardinal Answer: ordinal
+"
+democratic,undemocratic,"Input: democratic Answer: undemocratic
+"
+valid,invalid,"Input: valid Answer: invalid
+"
+tide,ebb,"Input: tide Answer: ebb
+"
+deaf,hearing,"Input: deaf Answer: hearing
+"
+fallible,infallible,"Input: fallible Answer: infallible
+"
+equitable,inequitable,"Input: equitable Answer: inequitable
+"
+ahead,back,"Input: ahead Answer: back
+"
+basic,incidental,"Input: basic Answer: incidental
+"
+dying,nascent,"Input: dying Answer: nascent
+"
+equatorial,polar,"Input: equatorial Answer: polar
+"
+socialistic,capitalistic,"Input: socialistic Answer: capitalistic
+"
+inland,coastal,"Input: inland Answer: coastal
+"
+unconcern,concern,"Input: unconcern Answer: concern
+"
+regulated,unregulated,"Input: regulated Answer: unregulated
+"
+unsuccessful,successful,"Input: unsuccessful Answer: successful
+"
+hyperglycemia,hypoglycemia,"Input: hyperglycemia Answer: hypoglycemia
+"
+partial,impartial,"Input: partial Answer: impartial
+"
+alkalinity,acidity,"Input: alkalinity Answer: acidity
+"
+abnormality,normality,"Input: abnormality Answer: normality
+"
+infidelity,fidelity,"Input: infidelity Answer: fidelity
+"
+unwanted,wanted,"Input: unwanted Answer: wanted
+"
+unconcerned,concerned,"Input: unconcerned Answer: concerned
+"
+distribution,concentration,"Input: distribution Answer: concentration
+"
+conservative,liberal,"Input: conservative Answer: liberal
+"
+equilibrium,disequilibrium,"Input: equilibrium Answer: disequilibrium
+"
+unburied,buried,"Input: unburied Answer: buried
+"
+presence,absence,"Input: presence Answer: absence
+"
+button,unbutton,"Input: button Answer: unbutton
+"
+sanitary,unsanitary,"Input: sanitary Answer: unsanitary
+"
+partisan,nonpartisan,"Input: partisan Answer: nonpartisan
+"
+constructive,destructive,"Input: constructive Answer: destructive
+"
+likelihood,unlikelihood,"Input: likelihood Answer: unlikelihood
+"
+orderly,disorderly,"Input: orderly Answer: disorderly
+"
+nourished,malnourished,"Input: nourished Answer: malnourished
+"
+cooked,raw,"Input: cooked Answer: raw
+"
+specialize,diversify,"Input: specialize Answer: diversify
+"
+concrete,abstract,"Input: concrete Answer: abstract
+"
+inadvisable,advisable,"Input: inadvisable Answer: advisable
+"
+angular,rounded,"Input: angular Answer: rounded
+"
+unhook,hook,"Input: unhook Answer: hook
+"
+ineligible,eligible,"Input: ineligible Answer: eligible
+"
+uncomfortable,comfortable,"Input: uncomfortable Answer: comfortable
+"
+unsaturated,saturated,"Input: unsaturated Answer: saturated
+"
+composed,discomposed,"Input: composed Answer: discomposed
+"
+cosmopolitan,provincial,"Input: cosmopolitan Answer: provincial
+"
+exploited,unexploited,"Input: exploited Answer: unexploited
+"
+invest,divest,"Input: invest Answer: divest
+"
+fragrant,malodorous,"Input: fragrant Answer: malodorous
+"
+uncharacteristically,characteristically,"Input: uncharacteristically Answer: characteristically
+"
+naivete,sophistication,"Input: naivete Answer: sophistication
+"
+practical,impractical,"Input: practical Answer: impractical
+"
+colorful,colorless,"Input: colorful Answer: colorless
+"
+lengthen,shorten,"Input: lengthen Answer: shorten
+"
+synthesize,analyze,"Input: synthesize Answer: analyze
+"
+characteristically,uncharacteristically,"Input: characteristically Answer: uncharacteristically
+"
+outgo,income,"Input: outgo Answer: income
+"
+ipsilateral,contralateral,"Input: ipsilateral Answer: contralateral
+"
+directional,omnidirectional,"Input: directional Answer: omnidirectional
+"
+mediate,immediate,"Input: mediate Answer: immediate
+"
+possible,impossible,"Input: possible Answer: impossible
+"
+unaggressive,aggressive,"Input: unaggressive Answer: aggressive
+"

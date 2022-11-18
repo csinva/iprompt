@@ -1,0 +1,53 @@
+input,output,text
+It started raining.,The woman who was walking on the street opened her umbrella.,"Input: It started raining. Answer: The woman who was walking on the street opened her umbrella.
+"
+A watermelon exploded.,A man was covered in sticky red goo.,"Input: A watermelon exploded. Answer: A man was covered in sticky red goo.
+"
+A large object hit the Earth.,The dinosaurs became extinct.,"Input: A large object hit the Earth. Answer: The dinosaurs became extinct.
+"
+The bottle was left open.,The soda went flat.,"Input: The bottle was left open. Answer: The soda went flat.
+"
+The laptop ran out of battery.,George plugged the laptop charger in.,"Input: The laptop ran out of battery. Answer: George plugged the laptop charger in.
+"
+The curtains were opened.,Sunlight filled the room.,"Input: The curtains were opened. Answer: Sunlight filled the room.
+"
+The insect pollinated the tomato flowers.,Tomatoes grew on the vine.,"Input: The insect pollinated the tomato flowers. Answer: Tomatoes grew on the vine.
+"
+There was a wardrobe malfunction.,The performer ran off the stage.,"Input: There was a wardrobe malfunction. Answer: The performer ran off the stage.
+"
+A bird hit the engine.,"The pilot turned on the ""fasten seatbelts"" light.","Input: A bird hit the engine. Answer: The pilot turned on the ""fasten seatbelts"" light.
+"
+The milk was left outside the fridge over night.,The man sipped the milk and spit it out.,"Input: The milk was left outside the fridge over night. Answer: The man sipped the milk and spit it out.
+"
+The man couldn't hear what the woman was saying.,The man turned down the music volume.,"Input: The man couldn't hear what the woman was saying. Answer: The man turned down the music volume.
+"
+The power was out for days.,The meat spoiled.,"Input: The power was out for days. Answer: The meat spoiled.
+"
+The gardener planted a seed.,A flower grew.,"Input: The gardener planted a seed. Answer: A flower grew.
+"
+The door was locked.,The man climbed in through the window.,"Input: The door was locked. Answer: The man climbed in through the window.
+"
+The wind blew strong.,The ship capsized.,"Input: The wind blew strong. Answer: The ship capsized.
+"
+The man robbed a gas station.,The man went to jail.,"Input: The man robbed a gas station. Answer: The man went to jail.
+"
+Jill won the lawsuit against Acme.,Acme paid Jill's legal fees.,"Input: Jill won the lawsuit against Acme. Answer: Acme paid Jill's legal fees.
+"
+The girl skipped school.,The girl got detention.,"Input: The girl skipped school. Answer: The girl got detention.
+"
+I flipped the switch.,Light filled the room.,"Input: I flipped the switch. Answer: Light filled the room.
+"
+I pulled the dog's tail.,The dog bit me.,"Input: I pulled the dog's tail. Answer: The dog bit me.
+"
+The air conditioner broke.,The family went to the beach.,"Input: The air conditioner broke. Answer: The family went to the beach.
+"
+The company's posted strong earnings.,The company's stock went up.,"Input: The company's posted strong earnings. Answer: The company's stock went up.
+"
+My friend got a promotion.,My friend celebrated with their family.,"Input: My friend got a promotion. Answer: My friend celebrated with their family.
+"
+The floor was wet.,The man sued.,"Input: The floor was wet. Answer: The man sued.
+"
+Ted went out drinking.,Ted had a hangover.,"Input: Ted went out drinking. Answer: Ted had a hangover.
+"
+Jimmy took the last piece of cake.,Mom rinsed the tray.,"Input: Jimmy took the last piece of cake. Answer: Mom rinsed the tray.
+"
