@@ -12,9 +12,13 @@ from iprompt.data_utils.three_num import TASKS_THREE_NUMS
 from iprompt.data_utils.anli import TASKS_ANLI
 from iprompt.data_utils.classification import TASKS_CLASSIFICATION
 from iprompt.data_utils.induction import TASKS_INDUCTION
+from iprompt.data_utils.d3 import TASKS_D3
 
-TASKS = {**TASKS_THREE_NUMS, **TASKS_TWO_NUMS, **
-         TASKS_ONE_NUM, **TASKS_ANLI, **TASKS_CLASSIFICATION, **TASKS_INDUCTION}
+TASKS = {
+    **TASKS_THREE_NUMS, **TASKS_TWO_NUMS,
+    **TASKS_ONE_NUM, **TASKS_ANLI, **TASKS_CLASSIFICATION,
+    **TASKS_INDUCTION, **TASKS_D3
+}
 
 
 def get_data(task_name: str = 'add_two',

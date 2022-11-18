@@ -1,4 +1,5 @@
 from iprompt.data import TASKS
+from iprompt.data_utils.d3 import TASKS_D3
 from iprompt.data_utils.induction import TASKS_INDUCTION
 from iprompt.data_utils.two_num import TASKS_TWO_NUMS
 from iprompt.data_utils.one_num import TASKS_ONE_NUM
@@ -124,7 +125,25 @@ def test_induction():
                 check_text).all(), 'text is all strings'
             assert check_text(descr)
 
+def test_d3():
+    args = dict(
+        template_num_task_phrasing=0,
+        max_dset_size=1000,
+        max_digit=10,
+    )
+    for task_name in TASKS_D3:
+        if not task_name == 'SUFFIXES':
+            print(task_name)
+            df, answer_func, descr = get_data(**args, task_name=task_name)
+
+            def check_text(s):
+                return isinstance(s, str) and len(s) > 0
+            assert pd.Series(df['text']).apply(
+                check_text).all(), 'text is all strings'
+            assert check_text(descr)
+
 
 if __name__ == '__main__':
     # test_get_data()
-    test_induction()
+    # test_induction()
+    test_d3()
