@@ -356,7 +356,7 @@ if __name__ == '__main__':
                         help='should we clear gradients after a batch, or only at the end of the epoch?')
     parser.add_argument('--num_learned_tokens', type=int, default=1,
                         help='number of learned prefix tokens (for gumbel, hotflip, autoprompt, prompt-tuning)')
-    parser.add_argument('--use_preprefix', type=int, default=1, choices=(0, 1),
+    parser.add_argument('--use_preprefix', type=int, default=0, choices=(0, 1),
                         help='whether to use a template pre-prefix')
     parser.add_argument('--iprompt_preprefix_str', type=str, default='',
                         help='Text like "Output the number that" or "Answer F/M if"...'
