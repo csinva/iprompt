@@ -5,7 +5,7 @@ import sys
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-save_dir = f'/home/chansingh/mntv1/iprompt_revision/math/'
+save_dir = f'/home/chansingh/mntv1/iprompt_revision2/math/'
 
 cmd_python = 'python'
 
