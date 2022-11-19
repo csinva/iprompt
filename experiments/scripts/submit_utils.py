@@ -11,14 +11,16 @@ repo_dir = dirname(dirname(os.path.abspath(__file__)))
 SAVE_DIR = '/home/chansingh/mntv1/'
 JOB_SUFFIX = 'long_suffs'
 PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
-    ('checkpoint', 'batch_size'): [
-        # ('gpt2', 32),
-        # ('gpt2-medium', 200),
-        # ('gpt2-large', 100),
-        ('gpt2-xl', 32),
-        ('EleutherAI/gpt-neo-2.7B', 16),
-        ('EleutherAI/gpt-j-6B', 4)
-        # ('EleutherAI/gpt-neox-20b', 1),
+    ('checkpoint', 'batch_size', 'float16'): [
+        # ('gpt2', 32, 0),
+        # ('gpt2-medium', 200, 0),
+        # ('gpt2-large', 100, 0),
+        # ('gpt2-xl', 32, 0),
+        # ('EleutherAI/gpt-neo-2.7B', 16, 0),
+        # ('EleutherAI/gpt-j-6B', 64, 1)
+        # ('EleutherAI/gpt-neox-20b', 1, 0),
+        ('google/flan-t5-xl', 1, 0)
+        # ('google/flan-t5-xxl', 1, 1)
     ],
 }
 

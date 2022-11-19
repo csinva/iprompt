@@ -5,7 +5,7 @@ import sys
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-save_dir = f'/home/chansingh/mntv1/iprompt_revision/math/'
+save_dir = f'/home/chansingh/mntv1/iprompt_revision/anli/'
 
 cmd_python = 'python'
 
@@ -15,27 +15,31 @@ PARAMS_SHARED_DICT = {
 
     # things to vary
     'n_shots': [1, 5],
-
     'task_name_list': [
-        'add_two', 'multiply_two', 
-        'subtract_two',
-        'max_two', 'first_two',
-        'square_one', 'double_one',
-        'exp_one',  'fibonacci_one',
-        'divide_two', 
+        'task1146_country_capital',
+        'task1147_country_currency',
+        'task1509_evalution_antonyms',
+        'task1149_item_check_edible',
+        'task183_rhyme_generation',
+        'task1191_food_veg_nonveg',
+        'task092_check_prime_classification',
+        'task088_identify_typo_verification',
+        'task1336_peixian_equity_evaluation_corpus_gender_classifier',
+        'task107_splash_question_to_sql'
     ],
-    'model_cls': ['iprompt'], #, 'autoprompt'],
+    'model_cls': ['iprompt'],
     'num_learned_tokens': [6],
 
     # stopping criteria
     'max_dset_size': [5000],
     'max_n_datapoints': [5000],
-    'early_stopping_steps': [25],
+    'early_stopping_steps': [50],
 
     # fixed params
-    'max_digit': [10],
+    'max_length': [128],
     'train_split_frac': [0.75],
     'single_shot_loss': [1],
+    'iprompt_generation_repetition_penalty': [1.5],
 }
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 PARAMS_COUPLED_DICT = submit_utils.PARAMS_COUPLED_DICT
