@@ -24,8 +24,8 @@ PARAMS_SHARED_DICT = {
         'exp_one',  'fibonacci_one',
         'divide_two', 
     ],
-    'model_cls': ['iprompt'], #, 'autoprompt'],
-    'num_learned_tokens': [6],
+    'model_cls': ['autoprompt'], #, 'autoprompt'],
+    'num_learned_tokens': [6, 12],
 
     # stopping criteria
     'max_dset_size': [5000],

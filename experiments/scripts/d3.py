@@ -19,7 +19,7 @@ PARAMS_SHARED_DICT = {
         f'd3_{i}' for i in range(54)
     ],
     'model_cls': ['iprompt'],
-    'num_learned_tokens': [6],
+    'num_learned_tokens': [12],
 
     # stopping criteria
     'max_dset_size': [5000],

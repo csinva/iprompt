@@ -26,7 +26,7 @@ PARAMS_SHARED_DICT = {
         'translation_en-de', 'larger_animal', 'translation_en-es'
     ],
     'model_cls': ['iprompt'],
-    'num_learned_tokens': [6],
+    'num_learned_tokens': [12],
 
     # stopping criteria
     'max_dset_size': [5000],

@@ -27,8 +27,8 @@ PARAMS_SHARED_DICT = {
         'task1336_peixian_equity_evaluation_corpus_gender_classifier',
         'task107_splash_question_to_sql'
     ],
-    'model_cls': ['iprompt'],
-    'num_learned_tokens': [6],
+    'model_cls': ['autoprompt'],
+    'num_learned_tokens': [6, 12],
 
     # stopping criteria
     'max_dset_size': [5000],
