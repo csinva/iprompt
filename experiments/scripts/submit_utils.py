@@ -6,6 +6,8 @@ from os.path import dirname
 from os.path import join as oj
 import sys
 import tempfile
+import random
+
 
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 SAVE_DIR = '/home/chansingh/mntv1/'
@@ -20,7 +22,7 @@ PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gp
         ('EleutherAI/gpt-j-6B', 64, 1),
         # ('EleutherAI/gpt-neox-20b', 1, 0),
         ('google/flan-t5-xl', 1, 0),
-        # ('google/flan-t5-xxl', 1, 1),
+        # ('google/flan-t5-xxl', 1, 1)
     ],
 }
 
@@ -143,9 +145,15 @@ def run_dicts(
     script_name: str = '02_train_suffix.py',
     actually_run: bool = True,
     use_slurm: bool = False,
+    shuffle: bool = False,
+    reverse: bool = False,
     slurm_gpu_str: str = 'gpu:a6000:1',
     save_dir: str = '',
 ):
+    if shuffle:
+        random.shuffle(param_combos_final)
+    if reverse:
+        param_combos_final = param_combos_final[::-1]
     for i in range(len(param_combos_final)):
         param_str = cmd_python + ' ' + \
             os.path.join(repo_dir, script_name + ' ')

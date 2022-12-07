@@ -39,7 +39,7 @@ class iPrompt(AutoPrompt):
             preprefix: str = ''
         ):
         super().__init__(
-            args=args, loss_func=loss_func, model=model, tokenizer=tokenizer, preprefix=''
+            args=args, loss_func=loss_func, model=model, tokenizer=tokenizer, preprefix=preprefix
         )
         self.preprefix_ids = torch.tensor([], dtype=int).to(device)
         self.tokenizer.add_special_tokens = False

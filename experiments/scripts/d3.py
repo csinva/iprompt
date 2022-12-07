@@ -5,7 +5,7 @@ import sys
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-save_dir = f'/home/chansingh/mntv1/iprompt_revision2/anli/'
+save_dir = f'/home/chansingh/mntv1/iprompt_revision3/anli/'
 
 cmd_python = 'python'
 
@@ -14,12 +14,14 @@ PARAMS_SHARED_DICT = {
     'seed': [1],
 
     # things to vary
-    'n_shots': [1, 5],
+    'use_preprefix': [1],
+    'iprompt_preprefix_str': ['"Output yes if the input"'],
+    'n_shots': [5],
     'task_name_list': [
         f'd3_{i}' for i in range(54)
     ],
     'model_cls': ['iprompt'],
-    'num_learned_tokens': [12],
+    'num_learned_tokens': [6, 12],
 
     # stopping criteria
     'max_dset_size': [5000],
@@ -42,5 +44,6 @@ print('running job')
 submit_utils.run_dicts(
     ks_final, param_combos_final, cmd_python=cmd_python,
     script_name='03_train_prefix.py', actually_run=True,
+    shuffle=True,
     use_slurm=False, save_dir=save_dir, slurm_gpu_str='gpu:a6000:1',
 )

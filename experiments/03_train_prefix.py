@@ -453,7 +453,12 @@ if __name__ == '__main__':
         logging.info('saving to ' + save_dir)
         args.save_dir_unique = save_dir
 
-        preprefix = data.get_init_suffix(args.task_name, args.use_generic_query, args.template_num_init_string) if args.use_preprefix else ''
+        preprefix = ''
+        if args.use_preprefix:
+            if args.iprompt_preprefix_str == '':
+                preprefix = data.get_init_suffix(args.task_name, args.use_generic_query, args.template_num_init_string)
+            else:
+                preprefix = args.iprompt_preprefix_str
         model = model_cls_dict[args.model_cls](
             args=args,
             loss_func=loss_func,
