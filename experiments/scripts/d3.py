@@ -5,7 +5,7 @@ import sys
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-save_dir = f'/home/chansingh/mntv1/iprompt_revision3/anli/'
+save_dir = f'/home/chansingh/mntv1/iprompt_revision4/anli/'
 
 cmd_python = 'python'
 
@@ -15,7 +15,7 @@ PARAMS_SHARED_DICT = {
 
     # things to vary
     'use_preprefix': [1],
-    'iprompt_preprefix_str': ['"Output yes if the input"'],
+    'iprompt_preprefix_str': ["'Output yes if the input'"],
     'n_shots': [5],
     'task_name_list': [
         f'd3_{i}' for i in range(54)
