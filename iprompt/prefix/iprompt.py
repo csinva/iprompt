@@ -73,7 +73,7 @@ class iPrompt(AutoPrompt):
         self._pre_data_token_ids = self.tokenizer("Data:\n\n", add_special_tokens=False, return_tensors='pt').input_ids.to(device)
         self._post_data_token_ids = self.tokenizer("\n\nPrompt:" + prompt_str, add_special_tokens=False, return_tensors='pt').input_ids.to(device)
         ####################################################################
-        self._verbose = True
+        self._iprompt_verbose = True
         self._step = 0
     
     def serialize(self, eval_dataloader: torch.utils.data.DataLoader, possible_answer_mask: torch.Tensor) -> Dict[str, Any]:
@@ -132,7 +132,7 @@ class iPrompt(AutoPrompt):
             do_sample=True
         )
 
-        if self._verbose:
+        if self._iprompt_verbose:
             # Print a random one (but remove padded tokens and newlines)
             idx = random.choice(range(len(input_ids)))
             # idx_attention_mask = torch.cat(
@@ -159,12 +159,12 @@ class iPrompt(AutoPrompt):
         population = set(self._select_pop_topk(k=__n_early_stop, min_occurrences=3))
         if (len(population) == __n_early_stop) and (self._last_population == population):
             self._steps_since_new_population += 1
-            if self._verbose:
+            if self._iprompt_verbose:
                 print("self._steps_since_new_population:", self._steps_since_new_population)
         else:
             self._last_population = population
             self._steps_since_new_population = 0
-            if self._verbose:
+            if self._iprompt_verbose:
                 print("new population:", [self.tokenizer.decode(p) for p in sorted(population)])
 
     def check_early_stop(self) -> bool:
@@ -175,7 +175,7 @@ class iPrompt(AutoPrompt):
     
     def _get_population_and_random_generations(self, full_text_ids: torch.Tensor) -> torch.Tensor:
         population_pool = self._select_pop_topk(k=self._topk_pop_sample)
-        if self._verbose:
+        if self._iprompt_verbose:
             print("population_pool:", [self.tokenizer.decode(p) for p in population_pool])
         population = random.sample(population_pool, self._pop_size)
         population = torch.tensor(population).to(device)

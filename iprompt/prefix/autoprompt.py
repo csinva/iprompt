@@ -41,7 +41,7 @@ class AutoPrompt(HotFlip):
             tokenizer=self.tokenizer,
             criterion='loss'  # in ['loss', 'acc', 'combined']
         )
-        self._VERBOSE = False
+        self._autoprompt_verbose = True
         self._num_min_occurrences = 1
         # Will rank and save this many prefixes at the end of training.
         self._num_prefixes_to_test = 1024
@@ -135,7 +135,7 @@ class AutoPrompt(HotFlip):
         )
         current_loss.backward()
 
-        self._VERBOSE: print(f'** {self.tokenizer.decode(self.prefix_ids)}: {current_loss:.2f}')
+        self._autoprompt_verbose: print(f'** {self.tokenizer.decode(self.prefix_ids)}: {current_loss:.2f}')
         # track running accuracy of this prefix.
         self._prefix_pool.update(
             prefix=self.prefix_ids,
@@ -188,7 +188,7 @@ class AutoPrompt(HotFlip):
             all_candidate_losses[i] = cand_loss
             all_n_correct[i] = cand_n_correct
 
-            self._VERBOSE: print(f'** \t{self.tokenizer.decode(candidate_prefix_ids[i])}: {cand_loss:.2f}')
+            self._autoprompt_verbose: print(f'** \t{self.tokenizer.decode(candidate_prefix_ids[i])}: {cand_loss:.2f}')
 
             self._prefix_pool.update(
                 prefix=candidate_prefix_ids[i],
@@ -203,12 +203,12 @@ class AutoPrompt(HotFlip):
             best_prefix = candidate_prefix_ids[all_candidate_losses.argmin()]
             best_prefix_loss = all_candidate_losses.min()
             best_prefix_n_correct = all_n_correct[all_candidate_losses.argmin()]
-            if self._VERBOSE: print("** set new prefix", best_prefix)
+            if self._autoprompt_verbose: print("** set new prefix", best_prefix)
         else:
             best_prefix = self.prefix_ids
             best_prefix_loss = current_loss
             best_prefix_n_correct = current_n_correct
-            if self._VERBOSE: print("** set same prefix", best_prefix)
+            if self._autoprompt_verbose: print("** set same prefix", best_prefix)
 
 
         self._set_prefix_ids(best_prefix)
