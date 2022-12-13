@@ -14,7 +14,7 @@ PARAMS_SHARED_DICT = submit_utils.PARAMS_SHARED_DICT_ANLI
 PARAMS_SHARED_DICT.update(submit_utils.PARAMS_SHARED_DICT_PREFIX)
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 
-
+PARAMS_COUPLED_DICT = submit_utils.PARAMS_COUPLED_DICT_ANLI
 # # Temp stuff: only need to re-run 5-shot experiments,
 # # with reranking, with max 64 examples.
 # PARAMS_SHARED_DICT['do_reranking'] = [0, 1]

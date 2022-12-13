@@ -39,9 +39,8 @@ class iPrompt(AutoPrompt):
             preprefix: str = ''
         ):
         super().__init__(
-            args=args, loss_func=loss_func, model=model, tokenizer=tokenizer, preprefix=''
+            args=args, loss_func=loss_func, model=model, tokenizer=tokenizer, preprefix=preprefix
         )
-        self.preprefix_ids = torch.tensor([], dtype=int).to(device)
         self.tokenizer.add_special_tokens = False
         ####################################################################
         # iPrompt-specific parameters
@@ -68,6 +67,14 @@ class iPrompt(AutoPrompt):
         self._last_population = None
         self._steps_since_new_population = 0
         ####################################################################
+        self.prefix_ids = None
+        if len(preprefix):
+            self.preprefix_ids = torch.tensor(
+                self.tokenizer.encode(preprefix, add_special_tokens=False), dtype=int
+            ).to(device)
+        else:
+            self.preprefix_ids = torch.tensor([], dtype=int).to(device)
+        
         prompt_str = preprefix.lstrip()
         prompt_str = (' ' + prompt_str) if len(prompt_str) else ''
         self._pre_data_token_ids = self.tokenizer("Data:\n\n", add_special_tokens=False, return_tensors='pt').input_ids.to(device)
@@ -75,6 +82,7 @@ class iPrompt(AutoPrompt):
         ####################################################################
         self._iprompt_verbose = True
         self._step = 0
+        
     
     def serialize(self, eval_dataloader: torch.utils.data.DataLoader, possible_answer_mask: torch.Tensor) -> Dict[str, Any]:
         r = super().serialize(eval_dataloader=eval_dataloader, possible_answer_mask=possible_answer_mask)
@@ -111,13 +119,14 @@ class iPrompt(AutoPrompt):
         If `num_conditional_tokens` > 0, generates extra text because there was an additional
         prefix set.
         """
+        attention_mask = ~(input_ids == self.tokenizer.pad_token_id)
+        assert attention_mask.shape == input_ids.shape
+
         if self._is_t5:
             output_length = self._num_tokens + 1 # will add pad token
         else:
             output_length = self._num_tokens + num_conditional_tokens
         
-        attention_mask = ~(input_ids == self.tokenizer.pad_token_id)
-        assert attention_mask.shape == input_ids.shape
         print("iPrompt._generate", input_ids.shape, "//", self.tokenizer.decode(input_ids[0]))
         
         g = self.model.generate(
@@ -131,6 +140,15 @@ class iPrompt(AutoPrompt):
             bad_words_ids=self._generation_bad_words_ids,
             do_sample=True
         )
+        
+        if self._is_t5:
+            #  TODO: Figure out why is 0 != self.tokenizer.pad_token_id for T5 generation?
+            assert (g[:, 0] == 0).all()
+            g = g[:, 1:]
+        else:
+            # Split off the conditional part, we only want the prefix part, which
+            # starts after the conditional part.
+            g = g[:, num_conditional_tokens:]
 
         if self._iprompt_verbose:
             # Print a random one (but remove padded tokens and newlines)
@@ -141,14 +159,7 @@ class iPrompt(AutoPrompt):
             random_sentence_ids = g[idx]
             print(">>", self.tokenizer.decode(random_sentence_ids).replace('\n', '\\n'))
         
-        if self._is_t5:
-            #  TODO: Figure out why is 0 != self.tokenizer.pad_token_id for T5 generation?
-            assert (g[:, 0] == 0).all()
-            return g[:, 1:]
-        else:
-            # Split off the conditional part, we only want the prefix part, which
-            # starts after the conditional part.
-            return g[:, num_conditional_tokens:]
+        return g
     
     def _select_pop_topk(self, k: int, min_occurrences: int = None) -> List[Tuple[int]]:
         return self._prefix_pool.topk(k=k, min_occurrences=min_occurrences)
@@ -261,7 +272,7 @@ class iPrompt(AutoPrompt):
         
         for i in range(pop_size):
             new_pop_input_ids = tuple(population_input_ids[i].cpu().tolist())
-            assert len(new_pop_input_ids) == self._num_tokens
+            assert len(new_pop_input_ids) == (self._num_tokens)
             self._prefix_pool.update(
                 population_input_ids[i], all_candidate_losses[i], all_accuracy[i]
             )

@@ -396,6 +396,7 @@ class PrefixModel(nn.Module, abc.ABC):
                 ignore_index=self.tokenizer.pad_token_id,
                 reduction='none'
             )
+            # breakpoint()
 
             # add loss from other tokens
             b, label_sequence_length = next_token_ids.shape

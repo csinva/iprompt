@@ -144,3 +144,4 @@ iprompt/data_utils/speechmodeltutorial
 iprompt/data_utils/instruction-induction
 iprompt/data_utils/data
 iprompt/data_utils/DescribeDistributionalDifferences
+iprompt/data_utils/moleculenet_raw/

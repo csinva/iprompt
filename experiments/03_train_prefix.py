@@ -356,7 +356,7 @@ if __name__ == '__main__':
                         help='should we clear gradients after a batch, or only at the end of the epoch?')
     parser.add_argument('--num_learned_tokens', type=int, default=1,
                         help='number of learned prefix tokens (for gumbel, hotflip, autoprompt, prompt-tuning)')
-    parser.add_argument('--use_preprefix', type=int, default=1, choices=(0, 1),
+    parser.add_argument('--use_preprefix', type=int, default=0, choices=(0, 1),
                         help='whether to use a template pre-prefix')
     parser.add_argument('--iprompt_pop_size', type=int, default=8,)
     parser.add_argument('--iprompt_num_mutations', type=int, default=4)
@@ -450,8 +450,13 @@ if __name__ == '__main__':
         logging.info('saving to ' + save_dir)
         args.save_dir_unique = save_dir
 
-        preprefix = data.get_init_suffix(args.task_name, args.use_generic_query, args.template_num_init_string) if args.use_preprefix else ''
-        preprefix = 'Output yes if the input'
+        preprefix = ''
+        if args.use_preprefix:
+            if args.iprompt_preprefix_str == '':
+                preprefix = data.get_init_suffix(args.task_name, args.use_generic_query, args.template_num_init_string)
+            else:
+                preprefix = args.iprompt_preprefix_str
+
         print(f'preprefix: `{preprefix}`')
         model = model_cls_dict[args.model_cls](
             args=args,

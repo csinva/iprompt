@@ -6,19 +6,23 @@ from os.path import dirname
 from os.path import join as oj
 import sys
 import tempfile
+import random
+
 
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 SAVE_DIR = '/home/chansingh/mntv1/'
 JOB_SUFFIX = 'long_suffs'
 PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
-    ('checkpoint', 'batch_size'): [
-        # ('gpt2', 32),
-        # ('gpt2-medium', 200),
-        # ('gpt2-large', 100),
-        ('gpt2-xl', 32),
-        ('EleutherAI/gpt-neo-2.7B', 16),
-        ('EleutherAI/gpt-j-6B', 4)
-        # ('EleutherAI/gpt-neox-20b', 1),
+    ('checkpoint', 'batch_size', 'float16'): [
+        # ('gpt2', 32, 0),
+        # ('gpt2-medium', 200, 0),
+        # ('gpt2-large', 100, 0),
+        # ('gpt2-xl', 32, 0),
+        # ('EleutherAI/gpt-neo-2.7B', 16, 0),
+        ('EleutherAI/gpt-j-6B', 64, 1),
+        # ('EleutherAI/gpt-neox-20b', 1, 0),
+        ('google/flan-t5-xl', 1, 0),
+        # ('google/flan-t5-xxl', 1, 1)
     ],
 }
 
@@ -29,12 +33,12 @@ PARAMS_SHARED_DICT_MATH = {
     # things to vary
     'n_shots': [1, 5, 10],
     'task_name_list': [['add_two', 'multiply_two', 'divide_two', 'subtract_two',
-             'max_two', 'first_two',
-             'square_one', 'exp_one', 'double_one', 'fibonacci_one']],
+                        'max_two', 'first_two',
+                        'square_one', 'exp_one', 'double_one', 'fibonacci_one']],
     # things to average over
     'seed': [1],
-    'template_num_init_string': [0], #, 1, 2],
-    'template_num_task_phrasing': [0], #, 1, 2],
+    'template_num_init_string': [0],  # , 1, 2],
+    'template_num_task_phrasing': [0],  # , 1, 2],
 
     # fixed params
     'max_digit': [10],
@@ -46,9 +50,9 @@ PARAMS_SHARED_DICT_ANLI = {
     'task_name_list': [
         [
             'task1146_country_capital', 'task1509_evalution_antonyms', 'task1147_country_currency',
-         'task1149_item_check_edible', 'task183_rhyme_generation', 'task1191_food_veg_nonveg',
-         'task092_check_prime_classification', 'task088_identify_typo_verification',
-          'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql'
+            'task1149_item_check_edible', 'task183_rhyme_generation', 'task1191_food_veg_nonveg',
+            'task092_check_prime_classification', 'task088_identify_typo_verification',
+            'task1336_peixian_equity_evaluation_corpus_gender_classifier', 'task107_splash_question_to_sql'
         ]
     ],
     # things to average over
@@ -71,15 +75,17 @@ PARAMS_SHARED_DICT_PREFIX = {
     # 'mlm_num_candidates': [256],
     'mlm_num_candidates': [128],
     'do_reranking': [0, 1],
-    'max_num_samples': [0, 1], # try full dataset (0) and single-sample (1)
+    'max_num_samples': [0, 1],  # try full dataset (0) and single-sample (1)
 }
+
 
 def combine_param_dicts(PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT):
     # shared
     ks_shared = list(PARAMS_SHARED_DICT.keys())
     vals_shared = [PARAMS_SHARED_DICT[k] for k in ks_shared]
     for val in vals_shared:
-        assert isinstance(val, list), f"param val {val} must be type list, got type {type(val)}"
+        assert isinstance(
+            val, list), f"param val {val} must be type list, got type {type(val)}"
     param_tuples_list_shared = list(
         itertools.product(*vals_shared))
 
@@ -103,13 +109,14 @@ def combine_param_dicts(PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT):
 def run_command_bash(cmd: str) -> None:
     os.system(cmd)
 
+
 def run_command_slurm(
-        python_cmd: str,
-        save_dir: str,
-        gpu_str: str,
-        mem_str: str = '32G',
-        num_cpus: int = 4,
-    ) -> None:
+    python_cmd: str,
+    save_dir: str,
+    gpu_str: str,
+    mem_str: str = '32G',
+    num_cpus: int = 4,
+) -> None:
     dir_path = dirname(os.path.realpath(__file__))
     slurm_template_file = open(oj(dir_path, 'slurm_template.slurm'))
     new_slurm_file_text = slurm_template_file.read().format(
@@ -125,26 +132,35 @@ def run_command_slurm(
     )
     tmp_slurm_file.write((new_slurm_file_text + '\n').encode())
     tmp_slurm_file.close()
-    run_command_bash(f'sbatch {tmp_slurm_file.name}') # will block until slurm processes file.
-    print(f'launched slurm command, removing temporary file {tmp_slurm_file.name}')
+    # will block until slurm processes file.
+    run_command_bash(f'sbatch {tmp_slurm_file.name}')
+    print(
+        f'launched slurm command, removing temporary file {tmp_slurm_file.name}')
     os.remove(tmp_slurm_file.name)
 
+
 def run_dicts(
-        ks_final: List, param_combos_final: List,
-        cmd_python: str ='python',
-        script_name: str = '02_train_suffix.py',
-        actually_run: bool = True,
-        use_slurm: bool = False,
-        slurm_gpu_str: str = 'gpu:a6000:1',
-        save_dir: str = '',
-    ):
+    ks_final: List, param_combos_final: List,
+    cmd_python: str = 'python',
+    script_name: str = '02_train_suffix.py',
+    actually_run: bool = True,
+    use_slurm: bool = False,
+    shuffle: bool = False,
+    reverse: bool = False,
+    slurm_gpu_str: str = 'gpu:a6000:1',
+    save_dir: str = '',
+):
+    if shuffle:
+        random.shuffle(param_combos_final)
+    if reverse:
+        param_combos_final = param_combos_final[::-1]
     for i in range(len(param_combos_final)):
         param_str = cmd_python + ' ' + \
             os.path.join(repo_dir, script_name + ' ')
         for j, key in enumerate(ks_final):
             param_val = param_combos_final[i][j]
             if isinstance(param_val, list):
-               param_str += '--' + key + ' ' + ' '.join(param_val) + ' ' 
+                param_str += '--' + key + ' ' + ' '.join(param_val) + ' '
             else:
                 param_str += '--' + key + ' ' + str(param_val) + ' '
         print(
@@ -161,4 +177,3 @@ def run_dicts(
                     run_command_bash(param_str)
         except Exception as e:
             print(e)
-
