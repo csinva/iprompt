@@ -17,7 +17,7 @@ import tqdm
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-DEBUG_VERBOSE = True
+DEBUG_VERBOSE = False
 
 
 def get_token_replacements_single_mask(
