@@ -68,7 +68,7 @@ class iPrompt(AutoPrompt):
         self._last_population = None
         self._steps_since_new_population = 0
         ####################################################################
-        prompt_str = args.iprompt_preprefix_str.lstrip()
+        prompt_str = preprefix.lstrip()
         prompt_str = (' ' + prompt_str) if len(prompt_str) else ''
         self._pre_data_token_ids = self.tokenizer("Data:\n\n", add_special_tokens=False, return_tensors='pt').input_ids.to(device)
         self._post_data_token_ids = self.tokenizer("\n\nPrompt:" + prompt_str, add_special_tokens=False, return_tensors='pt').input_ids.to(device)
@@ -118,7 +118,7 @@ class iPrompt(AutoPrompt):
         
         attention_mask = ~(input_ids == self.tokenizer.pad_token_id)
         assert attention_mask.shape == input_ids.shape
-        print("iPrompt._generate", input_ids.shape)
+        print("iPrompt._generate", input_ids.shape, "//", self.tokenizer.decode(input_ids[0]))
         
         g = self.model.generate(
             input_ids=input_ids,
@@ -142,7 +142,7 @@ class iPrompt(AutoPrompt):
             print(">>", self.tokenizer.decode(random_sentence_ids).replace('\n', '\\n'))
         
         if self._is_t5:
-            #  TODO: Figure out why is 0 != self.tokenizer.pad_token_id?
+            #  TODO: Figure out why is 0 != self.tokenizer.pad_token_id for T5 generation?
             assert (g[:, 0] == 0).all()
             return g[:, 1:]
         else:
