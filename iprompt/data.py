@@ -13,11 +13,13 @@ from iprompt.data_utils.anli import TASKS_ANLI
 from iprompt.data_utils.classification import TASKS_CLASSIFICATION
 from iprompt.data_utils.induction import TASKS_INDUCTION
 from iprompt.data_utils.d3 import TASKS_D3
+from iprompt.data_utils.galactica import TASKS_GALACTICA
 
 TASKS = {
     **TASKS_THREE_NUMS, **TASKS_TWO_NUMS,
     **TASKS_ONE_NUM, **TASKS_ANLI, **TASKS_CLASSIFICATION,
-    **TASKS_INDUCTION, **TASKS_D3
+    **TASKS_INDUCTION, **TASKS_D3,
+    **TASKS_GALACTICA,
 }
 
 
