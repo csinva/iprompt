@@ -386,6 +386,9 @@ if __name__ == '__main__':
                             "google/flan-t5-xl",     # 3B Params
                             "google/flan-t5-xxl",    # 11B Params
                             ############################
+                            "facebook/galactica-125m", 
+                            "facebook/galactica-1.3b", 
+                            "facebook/galactica-6.7b", 
                         ),
                         help='model checkpoint to use'
                         )
@@ -420,6 +423,7 @@ if __name__ == '__main__':
         logger.info('loading model and data...')
         checkpoint = args.checkpoint
         tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+        tokenizer.eos_token = tokenizer.eos_token or 0
         tokenizer.pad_token = tokenizer.eos_token
 
         llm_cls = AutoModelForSeq2SeqLM if 't5' in checkpoint else AutoModelForCausalLM

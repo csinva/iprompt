@@ -193,11 +193,17 @@ class PrefixModel(nn.Module, abc.ABC):
         return isinstance(self.model, transformers.T5ForConditionalGeneration)
 
     @property
+    def _is_opt(self) -> bool:
+        return isinstance(self.model, transformers.OPTForCausalLM)
+
+    @property
     def transformer(self) -> nn.Module:
         if self._is_gpt_neox:
             return self.model._modules['gpt_neox']
         elif self._is_t5:
             return self.model.encoder
+        elif self._is_opt:
+            return self.model._modules['model'].decoder
         else:
             return self.model._modules['transformer']
 
@@ -207,6 +213,8 @@ class PrefixModel(nn.Module, abc.ABC):
             return self.transformer.embed_in
         elif self._is_t5:
             return self.model.encoder.embed_tokens
+        elif self._is_opt:
+            return self.transformer.embed_tokens
         else:
             return self.transformer.wte
     
@@ -396,7 +404,6 @@ class PrefixModel(nn.Module, abc.ABC):
                 ignore_index=self.tokenizer.pad_token_id,
                 reduction='none'
             )
-            # breakpoint()
 
             # add loss from other tokens
             b, label_sequence_length = next_token_ids.shape
