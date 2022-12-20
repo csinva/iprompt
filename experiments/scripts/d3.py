@@ -5,13 +5,14 @@ import sys
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-save_dir = f'/home/chansingh/mntv1/iprompt_revision4/anli/'
+# save_dir = f'/home/chansingh/mntv1/iprompt_revision4/anli/'
+save_dir = submit_utils.SAVE_DIR
 
 cmd_python = 'python'
 
 PARAMS_SHARED_DICT = {
     # things to average over
-    'seed': [1],
+     'seed': submit_utils.SEEDS,
 
     # things to vary
     'use_preprefix': [1],
@@ -21,7 +22,7 @@ PARAMS_SHARED_DICT = {
         f'd3_{i}' for i in range(54)
     ],
     'model_cls': ['iprompt'],
-    'num_learned_tokens': [6, 12],
+    'num_learned_tokens': submit_utils.NUM_LEARNED_TOKENS,
 
     # stopping criteria
     'max_dset_size': [5000],

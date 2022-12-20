@@ -358,6 +358,10 @@ if __name__ == '__main__':
                         help='number of learned prefix tokens (for gumbel, hotflip, autoprompt, prompt-tuning)')
     parser.add_argument('--use_preprefix', type=int, default=0, choices=(0, 1),
                         help='whether to use a template pre-prefix')
+    parser.add_argument('--iprompt_preprefix_str', type=str, default='',
+                        help='Text like "Output the number that" or "Answer F/M if"... \
+                            If this is passed, automatically use_preprifx'
+                        )
     parser.add_argument('--iprompt_pop_size', type=int, default=8,)
     parser.add_argument('--iprompt_num_mutations', type=int, default=4)
     parser.add_argument('--iprompt_num_random_generations',
@@ -386,9 +390,9 @@ if __name__ == '__main__':
                             "google/flan-t5-xl",     # 3B Params
                             "google/flan-t5-xxl",    # 11B Params
                             ############################
-                            "facebook/galactica-125m", 
-                            "facebook/galactica-1.3b", 
-                            "facebook/galactica-6.7b", 
+                            "facebook/galactica-125m",
+                            "facebook/galactica-1.3b",
+                            "facebook/galactica-6.7b",
                         ),
                         help='model checkpoint to use'
                         )
@@ -455,9 +459,10 @@ if __name__ == '__main__':
         args.save_dir_unique = save_dir
 
         preprefix = ''
-        if args.use_preprefix:
+        if args.use_preprefix or not args.iprompt_preprefix_str == '':
             if args.iprompt_preprefix_str == '':
-                preprefix = data.get_init_suffix(args.task_name, args.use_generic_query, args.template_num_init_string)
+                preprefix = data.get_init_suffix(
+                    args.task_name, args.use_generic_query, args.template_num_init_string)
             else:
                 preprefix = args.iprompt_preprefix_str
 

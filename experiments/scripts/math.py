@@ -5,16 +5,20 @@ import sys
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-save_dir = f'/home/chansingh/mntv1/iprompt_revision2/math/'
+# save_dir = f'/home/chansingh/mntv1/iprompt_revision2/math/'
+# save_dir = f'/home/chansingh/mntv1/iprompt_revision2/anli/'
+# save_dir = f'/home/chansingh/mntv1/iprompt_revision4/anli/'
+save_dir = submit_utils.SAVE_DIR
 
 cmd_python = 'python'
 
 PARAMS_SHARED_DICT = {
     # things to average over
-    'seed': [1],
+    'seed': submit_utils.SEEDS,
+    # 'seed': [1],
 
     # things to vary
-    'n_shots': [1, 5],
+    'n_shots': [5],
 
     'task_name_list': [
         'add_two', 'multiply_two', 
@@ -24,8 +28,10 @@ PARAMS_SHARED_DICT = {
         'exp_one',  'fibonacci_one',
         'divide_two', 
     ],
-    'model_cls': ['autoprompt'], #, 'autoprompt'],
-    'num_learned_tokens': [6, 12],
+    'model_cls': ['iprompt'],
+    'num_learned_tokens': submit_utils.NUM_LEARNED_TOKENS,
+    # 'model_cls': ['autoprompt'], #, 'autoprompt'],
+    # 'num_learned_tokens': [6, 12],
 
     # stopping criteria
     'max_dset_size': [5000],

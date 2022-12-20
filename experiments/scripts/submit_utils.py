@@ -10,7 +10,10 @@ import random
 
 
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
-SAVE_DIR = '/home/chansingh/mntv1/'
+# SAVE_DIR = '/home/chansingh/mntv1/'
+SAVE_DIR = f'/home/chansingh/mntv1/iprompt_revision_xmas/'
+NUM_LEARNED_TOKENS = [6]
+SEEDS = [1, 2, 3]
 JOB_SUFFIX = 'long_suffs'
 PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
     ('checkpoint', 'batch_size', 'float16'): [
@@ -21,7 +24,7 @@ PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gp
         # ('EleutherAI/gpt-neo-2.7B', 16, 0),
         ('EleutherAI/gpt-j-6B', 64, 1),
         # ('EleutherAI/gpt-neox-20b', 1, 0),
-        ('google/flan-t5-xl', 1, 0),
+        # ('google/flan-t5-xl', 1, 0),
         # ('google/flan-t5-xxl', 1, 1)
     ],
 }
