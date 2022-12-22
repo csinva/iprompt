@@ -5,16 +5,17 @@ import sys
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-save_dir = f'/home/chansingh/mntv1/iprompt_revision2/anli/'
+save_dir = submit_utils.SAVE_DIR
+# save_dir = f'/home/chansingh/mntv1/iprompt_revision2/anli/'
 
 cmd_python = 'python'
 
 PARAMS_SHARED_DICT = {
     # things to average over
-    'seed': [1],
+    'seed': submit_utils.SEEDS,
 
     # things to vary
-    'n_shots': [1, 5],
+    'n_shots': [5],
     'task_name_list': [
         'task1146_country_capital',
         'task1147_country_currency',
@@ -27,8 +28,8 @@ PARAMS_SHARED_DICT = {
         'task1336_peixian_equity_evaluation_corpus_gender_classifier',
         'task107_splash_question_to_sql'
     ],
-    'model_cls': ['autoprompt'],
-    'num_learned_tokens': [6, 12],
+    'model_cls': ['iprompt'],
+    'num_learned_tokens': submit_utils.NUM_LEARNED_TOKENS,
 
     # stopping criteria
     'max_dset_size': [5000],
