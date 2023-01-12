@@ -21,14 +21,17 @@ from imodelsx import explain_dataset_iprompt, get_add_two_numbers_dataset
 if __name__ == '__main__':
     
     # hyperparams
-    for seed in range(3):
-        for task_num in range(12):
-            task_name = f'tox21_{task_num}'
+    for seed in range(3, 12):
+        for task_name in ['uniprot_cytoplasm_membrane', 'uniprot_rna-binding_atp-binding']:
             n_max = 100
             save_dir = '/home/chansingh/iprompt/experiments/results'
 
             # get task
             task = TASKS_GALACTICA[task_name]
+            df = task['gen_func']()
+            input_strings = df['input'].values
+            output_strings = df['output'].values
+            input_strings[0]
             
             # get data
             df = task['gen_func']()
@@ -42,7 +45,8 @@ if __name__ == '__main__':
                 output_strings=output_strings,
                 # checkpoint='EleutherAI/gpt-j-6B', # which language model to use
                 checkpoint="facebook/galactica-6.7b", # which language model to use
-                preprefix='Answer Yes if the compound is',
+                # preprefix='Answer Yes if the compound is',
+                preprefix='Answer Yes if the protein is associated with the',
                 num_learned_tokens=6, # how long of a prompt to learn
                 n_shots=5, # shots per example
                 n_epochs=1, # how many epochs to search
