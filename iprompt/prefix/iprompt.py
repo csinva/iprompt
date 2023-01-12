@@ -49,8 +49,8 @@ class iPrompt(AutoPrompt):
         self._topk_pop_sample = (self._pop_size + 4) # sample next population from this num of top things. set higher for more randomness.
         self._num_mutations_per_ex = args.iprompt_num_mutations # num mutations for each population item
         self._num_random_generations = args.iprompt_num_random_generations # extra random examples to throw in there (won't get mutated)
-        self._generation_temp = 1.0
-        self._generation_top_p = 1.0
+        self._generation_temp = args.iprompt_generation_temp
+        self._generation_top_p = args.iprompt_generation_top_p
         self._generation_repetition_penalty = self.args.iprompt_generation_repetition_penalty # 1 means no penalty
         self._pop_initialized = False
         self._generation_bad_words_ids = [
@@ -142,7 +142,6 @@ class iPrompt(AutoPrompt):
         )
         
         if self._is_t5:
-            #  TODO: Figure out why is 0 != self.tokenizer.pad_token_id for T5 generation?
             assert (g[:, 0] == 0).all()
             g = g[:, 1:]
         else:
@@ -191,17 +190,22 @@ class iPrompt(AutoPrompt):
         population = random.sample(population_pool, self._pop_size)
         population = torch.tensor(population).to(device)
 
-        random_idxs = torch.randint(
-            low=0, high=len(full_text_ids), size=(self._num_random_generations,)
-        )
-        random_full_text_ids = full_text_ids[random_idxs]
-        num_conditional_tokens = full_text_ids.shape[1]
-        random_population = self._generate(
-            input_ids=random_full_text_ids,
-            num_conditional_tokens=num_conditional_tokens
-        )
+        if self._num_random_generations > 0:
+            random_idxs = torch.randint(
+                low=0, high=len(full_text_ids), size=(self._num_random_generations,)
+            )
+            random_full_text_ids = full_text_ids[random_idxs]
+            num_conditional_tokens = full_text_ids.shape[1]
+            random_population = self._generate(
+                input_ids=random_full_text_ids,
+                num_conditional_tokens=num_conditional_tokens
+            )
 
-        full_population = torch.cat((population, random_population), dim=0)
+            full_population = torch.cat((population, random_population), dim=0)
+        else:
+            # Support case where _num_random_generations is set to 0.
+            full_population = population
+
         assert full_population.shape == (
             self._pop_size + self._num_random_generations,
             self._num_tokens
@@ -321,20 +325,29 @@ class iPrompt(AutoPrompt):
         prefix_save_folder = os.path.join(self.args.save_dir_unique, 'prefix')
         df_to_print = self._prefix_pool.print(topk=10, min_occurrences=num_min_occurrences)
         os.makedirs(prefix_save_folder, exist_ok=True)
-        prefix_out_file = os.path.join(prefix_save_folder, f'prefix_{self._step}.p')
-        df_to_print.to_pickle(prefix_out_file)
-        print(f'wrote {len(df_to_print)} prefixes to {prefix_out_file}')
+
+        log_prefixes = False
+        if log_prefixes:
+            prefix_out_file = os.path.join(prefix_save_folder, f'prefix_{self._step}.p')
+            df_to_print.to_pickle(prefix_out_file)
+            print(f'wrote {len(df_to_print)} prefixes to {prefix_out_file}')
 
         # Grab new population
         population_input_ids = self._get_population_and_random_generations(
             full_text_ids=full_text_ids,
         )
-        mutated_population_input_ids = self._mutate(
-            population_input_ids=population_input_ids, full_text_ids=full_text_ids
-        )
-        full_population_input_ids = torch.cat(
-            (population_input_ids, mutated_population_input_ids), dim=0
-        )
+
+        if self._num_mutations_per_ex > 0:
+            mutated_population_input_ids = self._mutate(
+                population_input_ids=population_input_ids, full_text_ids=full_text_ids
+            )
+            full_population_input_ids = torch.cat(
+                (population_input_ids, mutated_population_input_ids), dim=0
+            )
+        else:
+            # Support skipping mutation step by stetting _num_mutations_per_ex to 0
+            full_population_input_ids = population_input_ids
+
         # Re-score new guys
         all_candidate_losses, all_candidate_n_correct = self._score_population(
             x_tokenized=x_tokenized,
