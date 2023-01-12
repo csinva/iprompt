@@ -21,7 +21,7 @@ from imodelsx import explain_dataset_iprompt, get_add_two_numbers_dataset
 if __name__ == '__main__':
     
     # hyperparams
-    for seed in range(3, 12):
+    for seed in range(12):
         for task_name in ['uniprot_cytoplasm_membrane', 'uniprot_rna-binding_atp-binding']:
             n_max = 100
             save_dir = '/home/chansingh/iprompt/experiments/results'
