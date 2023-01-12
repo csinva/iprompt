@@ -38,6 +38,7 @@ if __name__ == '__main__':
                 input_strings=input_strings,
                 output_strings=output_strings,
                 # checkpoint='EleutherAI/gpt-j-6B', # which language model to use
+                preprefix='Answer Yes if the protein is associated with the',
                 checkpoint="facebook/galactica-6.7b", # which language model to use
                 num_learned_tokens=6, # how long of a prompt to learn
                 n_shots=5, # shots per example
