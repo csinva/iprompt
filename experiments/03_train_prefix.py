@@ -147,7 +147,7 @@ def train_model(
             model_check_early_stop = model.check_early_stop()
             if model_check_early_stop:
                 print("model_check_early_stop returned true")
-            if (total_n_datapoints > args.max_n_datapoints) or (total_n_steps > args.max_n_steps) or model_check_early_stop:
+            if (total_n_datapoints >= args.max_n_datapoints) or (total_n_steps >= args.max_n_steps) or model_check_early_stop:
                 stopping_early = True
                 break
 
@@ -195,6 +195,7 @@ def train_model(
 
     pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
 
+    print("finished training")
     return r
 
 
@@ -244,6 +245,7 @@ def eval_model_with_set_prefix(
 
         pbar.set_description(
             f"Acc = {total_n_correct}/{total_n} {(total_n_correct/total_n*100):.2f}%")
+
 
     return (total_loss / total_n), (total_n_correct / total_n)
 
@@ -362,8 +364,10 @@ if __name__ == '__main__':
                         help='Text like "Output the number that" or "Answer F/M if"... \
                             If this is passed, automatically use_preprifx'
                         )
-    parser.add_argument('--iprompt_pop_size', type=int, default=8,)
+    parser.add_argument('--iprompt_pop_size', type=int, default=8)
     parser.add_argument('--iprompt_num_mutations', type=int, default=4)
+    parser.add_argument('--iprompt_generation_temp', type=float, default=1.0)
+    parser.add_argument('--iprompt_generation_top_p', type=float, default=1.0)
     parser.add_argument('--iprompt_num_random_generations',
                         type=int, default=4)
     parser.add_argument('--llm_float16', '--float16', '--parsimonious', type=int, default=0, choices=(0, 1),
