@@ -331,8 +331,6 @@ if __name__ == '__main__':
                         help='directory for saving')
     parser.add_argument('--epoch_save_interval', type=int, default=1,
                         help='interval to save results')
-    parser.add_argument('--iprompt_generation_repetition_penalty', type=float, default=2.0,
-                        help='repetition penalty for iprompt generations')
     parser.add_argument('--lr', type=float, default=1e-4,
                         help='learning rate')
     parser.add_argument('--gamma', type=float, default=0.0,
@@ -362,12 +360,17 @@ if __name__ == '__main__':
                         help='whether to use a template pre-prefix')
     parser.add_argument('--iprompt_preprefix_str', type=str, default='',
                         help='Text like "Output the number that" or "Answer F/M if"... \
-                            If this is passed, automatically use_preprifx'
+                            If this is passed, automatically use_preprefix'
                         )
     parser.add_argument('--iprompt_pop_size', type=int, default=8)
     parser.add_argument('--iprompt_num_mutations', type=int, default=4)
+    parser.add_argument('--iprompt_generation_repetition_penalty', type=float, default=2.0,
+                        help='repetition penalty for iprompt generations')
     parser.add_argument('--iprompt_generation_temp', type=float, default=1.0)
     parser.add_argument('--iprompt_generation_top_p', type=float, default=1.0)
+    parser.add_argument('--iprompt_conditioning_strategy', type=str,
+        default='', choices=('', 'x_only', 'y_only', 'unconditional'),
+        help="allow conditioning on just inputs or outputs (for ablations)")
     parser.add_argument('--iprompt_num_random_generations',
                         type=int, default=4)
     parser.add_argument('--llm_float16', '--float16', '--parsimonious', type=int, default=0, choices=(0, 1),
@@ -400,6 +403,34 @@ if __name__ == '__main__':
                         ),
                         help='model checkpoint to use'
                         )
+    parser.add_argument('--iprompt_generation_checkpoint', type=str, default=None,
+                        choices=(
+                            None,
+                            ############################
+                            "EleutherAI/gpt-neo-125M",
+                            "EleutherAI/gpt-neo-1.3B",
+                            "EleutherAI/gpt-neo-2.7B",
+                            ############################
+                            "EleutherAI/gpt-j-6B",
+                            ############################
+                            "EleutherAI/gpt-neox-20b",
+                            ############################
+                            "gpt2",        # 117M params
+                            "gpt2-medium",  # 355M params
+                            "gpt2-large",  # 774M params
+                            "gpt2-xl",     # 1.5B params
+                            ############################
+                            "google/flan-t5-small",  # 80M Params
+                            "google/flan-t5-base",   # 250M Params
+                            "google/flan-t5-large",  # 780M Params
+                            "google/flan-t5-xl",     # 3B Params
+                            "google/flan-t5-xxl",    # 11B Params
+                            ############################
+                            "facebook/galactica-125m",
+                            "facebook/galactica-1.3b",
+                            "facebook/galactica-6.7b",
+                        ),
+                        help='model checkpoint to use for generation, if different from discrimination')
     args = parser.parse_args()
 
     random_str = ''.join(random.choices(string.ascii_lowercase, k=12))

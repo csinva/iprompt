@@ -9,7 +9,7 @@ import torch
 import transformers
 
 from .autoprompt import AutoPrompt
-from .utils import device, PrefixLoss, PrefixModel, PrefixPool
+from .utils import device, load_lm_from_checkpoint, PrefixLoss, PrefixModel, PrefixPool
 
 
 """
@@ -21,14 +21,15 @@ generation example:
     tokenizer.decode(lm.generate(input_ids=None, max_length=15, temperature=0.8, top_p=0.8, do_sample=True)[0])
 """
 
-
 class iPrompt(AutoPrompt):
     args: argparse.Namespace
     loss_func: PrefixLoss
     model: transformers.PreTrainedModel
+    other_generation_model: Optional[transformers.PreTrainedModel]
     tokenizer: transformers.PreTrainedTokenizer
     prefix_ids: torch.Tensor
     prefix_embedding: torch.nn.Parameter
+    conditioning_strategy: str
     preprefix: str
     def __init__(
             self,
@@ -59,6 +60,13 @@ class iPrompt(AutoPrompt):
             self.tokenizer.encode('\n\n\n')
         ]
         ####################################################################
+        self.conditioning_strategy = args.iprompt_conditioning_strategy
+        self.other_generation_model = None
+        if args.iprompt_generation_checkpoint:
+            self.other_generation_model = load_lm_from_checkpoint(
+                args.iprompt_generation_checkpoint, float16=args.llm_float16
+            )
+        ####################################################################
         self._prefix_pool = PrefixPool(
             tokenizer=self.tokenizer,
             criterion='loss'  # in ['loss', 'acc', 'combined']
@@ -80,7 +88,7 @@ class iPrompt(AutoPrompt):
         self._pre_data_token_ids = self.tokenizer("Data:\n\n", add_special_tokens=False, return_tensors='pt').input_ids.to(device)
         self._post_data_token_ids = self.tokenizer("\n\nPrompt:" + prompt_str, add_special_tokens=False, return_tensors='pt').input_ids.to(device)
         ####################################################################
-        self._iprompt_verbose = True
+        self._iprompt_verbose = False
         self._step = 0
         
     
@@ -113,6 +121,18 @@ class iPrompt(AutoPrompt):
 
         self._pop_initialized = True
     
+    @property
+    def _generation_model(self) -> transformers.AutoModelForCausalLM:
+        """Returns the model to use for generation.
+
+        We optionally support using different models for generation and discrimination.
+        However, by default, we use the same model for both.
+        """
+        if self.other_generation_model:
+            return self.other_generation_model
+        else:
+            return self.model
+    
     def _generate(self, input_ids: torch.Tensor, num_conditional_tokens: int) -> torch.Tensor:
         """Generates some text using the model and preset hparams.
 
@@ -129,7 +149,7 @@ class iPrompt(AutoPrompt):
         
         print("iPrompt._generate", input_ids.shape, "//", self.tokenizer.decode(input_ids[0]))
         
-        g = self.model.generate(
+        g = self._generation_model.generate(
             input_ids=input_ids,
             attention_mask=attention_mask,
             min_length=output_length,
@@ -243,8 +263,6 @@ class iPrompt(AutoPrompt):
             input_ids=conditional_input_ids,
             num_conditional_tokens=num_conditional_tokens
         )
-        
-        # TODO consider adding crossover (combining spans?) here.
         return new_input_ids
     
     def _score_population(
@@ -291,8 +309,8 @@ class iPrompt(AutoPrompt):
         using whatever template is defined by pre-data and post-data.
         """
         B = len(full_text_input_ids)
-        pre_data = self._pre_data_token_ids.repeat((B, 1)).to(device)
-        post_data = self._post_data_token_ids.repeat((B, 1)).to(device)
+        pre_data = self._pre_data_token_ids.repeat((B, 1)).to(device)  # Like "Data:\n\n"
+        post_data = self._post_data_token_ids.repeat((B, 1)).to(device) # Like "\n\nPrompt:"
         output = torch.cat((pre_data, full_text_input_ids, post_data), dim=1)
         return output
 
@@ -312,6 +330,21 @@ class iPrompt(AutoPrompt):
             num_correct (int): number of examples where prediction was correct
         """
         self.model.eval()
+
+        # allow for conditioning only on x or y. This is mainly just used for ablations.
+        if self.conditioning_strategy == "x_only":
+            full_text_tokenized = y_tokenized
+        elif self.conditioning_strategy == "y_only":
+            full_text_tokenized = y_tokenized
+        elif self.conditioning_strategy == "unconditional":
+            full_text_tokenized['input_ids'] = torch.full(
+                size=(len(y_tokenized), 1),
+                fill_value=self.tokenizer.bos_token_id,
+                device=device,
+            )
+            full_text_tokenized['attention_mask'] = torch.ones_like(
+                full_text_tokenized['input_ids']
+            )
 
         # logic here is that we want to see a sample multiple times before
         # we actually have a good estimate of its loss.

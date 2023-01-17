@@ -11,7 +11,7 @@ import random
 
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 # SAVE_DIR = '/home/chansingh/mntv1/'
-SAVE_DIR = f'/home/chansingh/mntv1/iprompt_revision_xmas/'
+# SAVE_DIR = f'/home/chansingh/mntv1/iprompt_revision_xmas/'
 NUM_LEARNED_TOKENS = [6]
 SEEDS = [1, 2, 3]
 JOB_SUFFIX = 'long_suffs'
@@ -118,7 +118,7 @@ def run_command_slurm(
     save_dir: str,
     gpu_str: str,
     mem_str: str = '32G',
-    num_cpus: int = 4,
+    num_cpus: int = 1,
 ) -> None:
     dir_path = dirname(os.path.realpath(__file__))
     slurm_template_file = open(oj(dir_path, 'slurm_template.slurm'))
@@ -150,7 +150,7 @@ def run_dicts(
     use_slurm: bool = False,
     shuffle: bool = False,
     reverse: bool = False,
-    slurm_gpu_str: str = 'gpu:a6000:1',
+    slurm_gpu_str: str = 'gpu:1',
     save_dir: str = '',
 ):
     if shuffle:

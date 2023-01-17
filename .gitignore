@@ -131,6 +131,7 @@ dmypy.json
 **cache*
 **.pkl
 results
+results_icml/
 
 
 iprompt/data_utils/natural-instructions
