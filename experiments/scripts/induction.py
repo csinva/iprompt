@@ -27,7 +27,8 @@ PARAMS_SHARED_DICT = {
         'antonyms', 'negation',
         'translation_en-de', 'larger_animal', 'translation_en-es'
     ],
-    'model_cls': ['iprompt'],
+    'model_cls': ['iprompt', 'autoprompt'],
+    # 'model_cls': ['autoprompt'],
     'num_learned_tokens': submit_utils.NUM_LEARNED_TOKENS,
 
     # stopping criteria
@@ -51,5 +52,6 @@ print('running job')
 submit_utils.run_dicts(
     ks_final, param_combos_final, cmd_python=cmd_python,
     script_name='03_train_prefix.py', actually_run=True,
+    shuffle=True,
     use_slurm=False, save_dir=save_dir, slurm_gpu_str='gpu:a6000:1',
 )
