@@ -246,7 +246,6 @@ def eval_model_with_set_prefix(
         pbar.set_description(
             f"Acc = {total_n_correct}/{total_n} {(total_n_correct/total_n*100):.2f}%")
 
-
     return (total_loss / total_n), (total_n_correct / total_n)
 
 
@@ -370,6 +369,8 @@ if __name__ == '__main__':
     parser.add_argument('--iprompt_generation_top_p', type=float, default=1.0)
     parser.add_argument('--iprompt_num_random_generations',
                         type=int, default=4)
+    parser.add_argument('--iprompt_criterion', type=str, default='loss',
+                        choices=['loss', 'acc', 'combined'])
     parser.add_argument('--llm_float16', '--float16', '--parsimonious', type=int, default=0, choices=(0, 1),
                         help='if true, loads LLM in fp16 and at low-ram')
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",

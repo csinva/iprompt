@@ -13,6 +13,7 @@ cmd_python = 'python'
 PARAMS_SHARED_DICT = {
     # things to average over
      'seed': submit_utils.SEEDS,
+     'iprompt_criterion': submit_utils.iprompt_criterion,
 
     # things to vary
     'use_preprefix': [1],

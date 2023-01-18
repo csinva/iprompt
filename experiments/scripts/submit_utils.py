@@ -11,10 +11,10 @@ import random
 
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 # SAVE_DIR = '/home/chansingh/mntv1/'
-SAVE_DIR = f'/home/chansingh/mntv1/iprompt_revision_xmas/'
-NUM_LEARNED_TOKENS = [6]
-SEEDS = [1, 2, 3]
+# SAVE_DIR = f'/home/chansingh/mntv1/iprompt_revision_xmas/'
+SAVE_DIR = f'/home/chansingh/mntv1/iprompt_use_acc/'
 JOB_SUFFIX = 'long_suffs'
+iprompt_criterion = ['acc'] # 'loss', 'acc'
 PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
     ('checkpoint', 'batch_size', 'float16'): [
         # ('gpt2', 32, 0),
@@ -22,13 +22,15 @@ PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gp
         # ('gpt2-large', 100, 0),
         # ('gpt2-xl', 32, 0),
         # ('EleutherAI/gpt-neo-2.7B', 16, 0),
-        # ('EleutherAI/gpt-j-6B', 64, 1),
+        ('EleutherAI/gpt-j-6B', 64, 1),
         # ('EleutherAI/gpt-neox-20b', 1, 0),
-        ("facebook/galactica-6.7b", 1, 0), # which language model to use
+        # ("facebook/galactica-6.7b", 1, 0), # which language model to use
         # ('google/flan-t5-xl', 1, 0),
         # ('google/flan-t5-xxl', 1, 1)
     ],
 }
+NUM_LEARNED_TOKENS = [6]
+SEEDS = [1, 2, 3]
 
 ##########################################
 # params shared across everything (higher up things are looped over first)
