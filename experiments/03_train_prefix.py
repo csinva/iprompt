@@ -33,6 +33,7 @@ model_cls_dict = {
     'autoprompt': AutoPrompt,
     'genetic': iPrompt,  # outdated alias
     'iprompt': iPrompt,
+    'suffix': iPrompt, # also fixes some hyperparams to specific values
     'gumbel': GumbelPrefixModel,
     'hotflip': HotFlip,
     'prompt_tune': PromptTunedModel,
@@ -472,6 +473,15 @@ if __name__ == '__main__':
                 preprefix = args.iprompt_preprefix_str
 
         print(f'preprefix: `{preprefix}`')
+        if args.model_cls == 'suffix':
+            args.batch_size = 1
+            args.max_n_steps = 1
+            args.single_shot_loss = 1
+            args.iprompt_num_mutations = 1
+            args.iprompt_pop_size = 1
+            args.iprompt_num_random_generations = 1
+            args.iprompt_generation_temp = 1
+            args.iprompt_generation_top_p = 1
         model = model_cls_dict[args.model_cls](
             args=args,
             loss_func=loss_func,
