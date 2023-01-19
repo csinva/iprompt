@@ -1,0 +1,1 @@
+These scripts are copies for running the `suffix` baseline. They are faster because they pass all task_names as a single list, so the model doesn't need to be reloaded (although if there is an err, all following tasks will fail.)
