@@ -32,7 +32,7 @@ PARAMS_SHARED_DICT = {
     ]],
     # 'model_cls': ['iprompt', 'autoprompt'],
     # 'model_cls': ['iprompt'],
-    'model_cls': ['suffix'],
+    'model_cls': ['suff'],
     # 'model_cls': ['autoprompt'],
     'num_learned_tokens': submit_utils.NUM_LEARNED_TOKENS,
 

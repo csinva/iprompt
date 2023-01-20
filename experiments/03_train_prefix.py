@@ -33,7 +33,7 @@ model_cls_dict = {
     'autoprompt': AutoPrompt,
     'genetic': iPrompt,  # outdated alias
     'iprompt': iPrompt,
-    'suffix': iPrompt, # also fixes some hyperparams to specific values
+    'suff': iPrompt, # also fixes some hyperparams to specific values
     'gumbel': GumbelPrefixModel,
     'hotflip': HotFlip,
     'prompt_tune': PromptTunedModel,
@@ -451,15 +451,16 @@ if __name__ == '__main__':
     else:
         args.task_name_list = [args.task_name]
 
-    if args.model_cls == 'suffix':
+    if args.model_cls == 'suff':
         args.batch_size = 1
         args.max_n_steps = 1
         args.single_shot_loss = 1
         args.iprompt_num_mutations = 1
-        args.iprompt_pop_size = 1
+        args.iprompt_pop_size = 128
         args.iprompt_num_random_generations = 1
         args.iprompt_generation_temp = 1
         args.max_dset_size = min(args.max_dset_size, 100)
+        args.iprompt_do_final_reranking = 0
 
     logger = logging.getLogger()
     logging.basicConfig(level=logging.INFO)
