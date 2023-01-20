@@ -373,6 +373,7 @@ if __name__ == '__main__':
         help="allow conditioning on just inputs or outputs (for ablations)")
     parser.add_argument('--iprompt_num_random_generations',
                         type=int, default=4)
+    parser.add_argument('--iprompt_do_final_reranking', type=int, default=1)
     parser.add_argument('--llm_float16', '--float16', '--parsimonious', type=int, default=0, choices=(0, 1),
                         help='if true, loads LLM in fp16 and at low-ram')
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",

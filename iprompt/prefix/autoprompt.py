@@ -34,6 +34,7 @@ class AutoPrompt(HotFlip):
         super().__init__(
             args=args, loss_func=loss_func, model=model, tokenizer=tokenizer, preprefix=preprefix
         )
+        self._do_final_reranking = args.iprompt_do_final_reranking
         # AutoPrompt-specific parameters.
         self._num_candidates_per_prefix_token = 32 # V_cand in autoprompt paper
         # This helps us know which were the best prefixes to return over time
@@ -100,8 +101,10 @@ class AutoPrompt(HotFlip):
             zip(*[all_prefixes, all_losses, all_accuracies]),
             columns=['prefix', 'loss', 'accuracy']
         )
-        df = df.sort_values(by=['accuracy', 'loss'], ascending=[False, True]).reset_index()
+        if self._do_final_reranking:
+            df = df.sort_values(by=['accuracy', 'loss'], ascending=[False, True]).reset_index()
         # df = df.sort_values(by='loss', ascending=True).reset_index()
+
         df['prefix_str'] = df['prefix'].map(self.tokenizer.decode)
         df['n_queries'] = df['prefix'].map(lambda p_ids: len(self._prefix_pool._all_losses[p_ids]))
 
