@@ -456,10 +456,10 @@ if __name__ == '__main__':
         args.max_n_steps = 1
         args.single_shot_loss = 1
         args.iprompt_num_mutations = 1
-        args.iprompt_pop_size = 128
+        args.iprompt_pop_size = 8
         args.iprompt_num_random_generations = 1
         args.iprompt_generation_temp = 1
-        args.max_dset_size = min(args.max_dset_size, 100)
+        args.max_dset_size = min(args.max_dset_size, 64)
         args.iprompt_do_final_reranking = 0
 
     logger = logging.getLogger()
