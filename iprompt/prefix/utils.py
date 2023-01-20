@@ -485,6 +485,36 @@ def mean(_list: List[Union[int, float]]) -> float:
     return sum(_list) / len(_list)
 
 
+def load_lm_from_checkpoint(
+    checkpoint: str, float16: bool) -> transformers.AutoModel:
+
+    print(f"loading iprompt generation-specific model '{checkpoint}'")
+
+    tokenizer = transformers.AutoTokenizer.from_pretrained(checkpoint)
+    llm_cls = transformers.AutoModelForSeq2SeqLM if 't5' in checkpoint else transformers.AutoModelForCausalLM
+
+    if float16:
+        if checkpoint == "EleutherAI/gpt-j-6B":
+            print(f"loading {checkpoint} in float16...")
+            lm = llm_cls.from_pretrained(
+                checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id,
+                revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True
+            )
+        else:
+            # (only certain models are pre-float16ed)
+            print(f"trying to convert {checkpoint} to float16...")
+            lm = llm_cls.from_pretrained(
+                checkpoint, torch_dtype=torch.float16
+            )
+            lm = lm.half()
+    else:
+        lm = llm_cls.from_pretrained(
+            checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id
+        )
+    
+    return lm
+
+
 class PrefixPool:
     """Tracks a pool of candidate prefixes and their associated metrics over time."""
     criterion: str

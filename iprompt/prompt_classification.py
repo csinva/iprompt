@@ -32,10 +32,17 @@ class Model:
                 offload_folder='~/tmp',
             ) #, torch_dtype=torch.float16
         else:
-            self.model = transformers.AutoModelForCausalLM.from_pretrained(model_name)
-        if float16:
-            print('\tconverting to half precision')
-            self.model = self.model.half()
+            if float16:
+                if model_name == "EleutherAI/gpt-j-6B":
+                    self.model = transformers.AutoModelForCausalLM.from_pretrained(model_name, 
+                    revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True)
+                else:
+                    print('\tconverting to half precision')
+                    self.model = transformers.AutoModelForCausalLM.from_pretrained(
+                        model_name, torch_dtype=torch.float16, low_cpu_mem_usage=True).half()
+            else:
+                self.model = transformers.AutoModelForCausalLM.from_pretrained(
+                    model_name, low_cpu_mem_usage=True)
             
         self.tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
         self.tokenizer.pad_token = self.tokenizer.eos_token

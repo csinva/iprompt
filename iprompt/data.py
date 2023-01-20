@@ -34,7 +34,7 @@ def get_data(task_name: str = 'add_two',
 
     Params
     ------
-    dset: str
+    task_name: str
         huggingface dataset name or custom dataset name
     n_shots: int
         number of examples to put in the context (1 for no examples)
