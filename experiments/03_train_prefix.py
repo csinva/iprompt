@@ -33,6 +33,7 @@ model_cls_dict = {
     'autoprompt': AutoPrompt,
     'genetic': iPrompt,  # outdated alias
     'iprompt': iPrompt,
+    'suffix': iPrompt, # also fixes some hyperparams to specific values
     'gumbel': GumbelPrefixModel,
     'hotflip': HotFlip,
     'prompt_tune': PromptTunedModel,
@@ -194,8 +195,6 @@ def train_model(
     r['train_time_elapsed'] = r['train_end_time'] - r['train_start_time']
 
     pkl.dump(r, open(os.path.join(save_dir, 'results.pkl'), 'wb'))
-
-    print("finished training")
     return r
 
 
@@ -245,7 +244,6 @@ def eval_model_with_set_prefix(
 
         pbar.set_description(
             f"Acc = {total_n_correct}/{total_n} {(total_n_correct/total_n*100):.2f}%")
-
 
     return (total_loss / total_n), (total_n_correct / total_n)
 
@@ -374,6 +372,8 @@ if __name__ == '__main__':
     parser.add_argument('--iprompt_num_random_generations',
                         type=int, default=4)
     parser.add_argument('--iprompt_do_final_reranking', type=int, default=1)
+    parser.add_argument('--iprompt_criterion', type=str, default='loss',
+                        choices=['loss', 'acc', 'combined'])
     parser.add_argument('--llm_float16', '--float16', '--parsimonious', type=int, default=0, choices=(0, 1),
                         help='if true, loads LLM in fp16 and at low-ram')
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",
@@ -445,11 +445,52 @@ if __name__ == '__main__':
     if (args.mask_possible_answers) and (args.train_split_frac is not None):
         print("Warning: mask possible answers not supported for eval")
 
-    # iterate over tasks
+    # iterate over tasks (without having to reload the model)
     if args.task_name_list is not None:
         logging.info('using task_name_list ' + str(args.task_name_list))
     else:
         args.task_name_list = [args.task_name]
+
+    if args.model_cls == 'suffix':
+        args.batch_size = 1
+        args.max_n_steps = 1
+        args.single_shot_loss = 1
+        args.iprompt_num_mutations = 1
+        args.iprompt_pop_size = 1
+        args.iprompt_num_random_generations = 1
+        args.iprompt_generation_temp = 1
+        args.max_dset_size = min(args.max_dset_size, 100)
+
+    logger = logging.getLogger()
+    logging.basicConfig(level=logging.INFO)
+    logger.info('loading model and data...')
+
+    # get model and data
+    checkpoint = args.checkpoint
+    tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+    tokenizer.eos_token = tokenizer.eos_token or 0
+    tokenizer.pad_token = tokenizer.eos_token
+
+    llm_cls = AutoModelForSeq2SeqLM if 't5' in checkpoint else AutoModelForCausalLM
+
+    if args.llm_float16:
+        if checkpoint == "EleutherAI/gpt-j-6B":
+            lm = llm_cls.from_pretrained(
+                checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id,
+                revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True
+            )
+        else:
+            # (only certain models are pre-float16ed)
+            print(f"trying to convert {checkpoint} to float16...")
+            lm = llm_cls.from_pretrained(
+                checkpoint, torch_dtype=torch.float16
+            )
+            lm = lm.half()
+    else:
+        lm = llm_cls.from_pretrained(
+            checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id
+        )
+
     for task_idx, task_name in enumerate(args.task_name_list):
         print(f'*** Executing task {task_idx+1}/{len(args.task_name_list)}')
         # actually set the task
@@ -457,34 +498,6 @@ if __name__ == '__main__':
 
         r = defaultdict(list)
         r.update(vars(args))
-        logger = logging.getLogger()
-        logging.basicConfig(level=logging.INFO)
-
-        logger.info('loading model and data...')
-        checkpoint = args.checkpoint
-        tokenizer = AutoTokenizer.from_pretrained(checkpoint)
-        tokenizer.eos_token = tokenizer.eos_token or 0
-        tokenizer.pad_token = tokenizer.eos_token
-
-        llm_cls = AutoModelForSeq2SeqLM if 't5' in checkpoint else AutoModelForCausalLM
-
-        if args.llm_float16:
-            if checkpoint == "EleutherAI/gpt-j-6B":
-                lm = llm_cls.from_pretrained(
-                    checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id,
-                    revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True
-                )
-            else:
-                # (only certain models are pre-float16ed)
-                print(f"trying to convert {checkpoint} to float16...")
-                lm = llm_cls.from_pretrained(
-                    checkpoint, torch_dtype=torch.float16
-                )
-                lm = lm.half()
-        else:
-            lm = llm_cls.from_pretrained(
-                checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id
-            )
         loss_func = PrefixLoss(gamma=args.gamma, tokenizer=tokenizer)
 
         # set up saving
@@ -526,3 +539,4 @@ if __name__ == '__main__':
             r = train_model(args=args, r=r, dset=dset_train,
                             model=model, tokenizer=tokenizer)
             # r = eval_model(args=args, r=r, dset=Dataset.from_dict(dset_test[:128]), model=model, tokenizer=tokenizer)
+        logger.info("-----------------------------------\nFinished training\n-----------------------------------\n\n\n")

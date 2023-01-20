@@ -17,6 +17,16 @@ import pickle as pkl
 import json
 import os
 import io
+from iprompt.data import TASKS_ANLI, TASKS_D3, TASKS_INDUCTION, TASKS_TWO_NUMS, TASKS_ONE_NUM
+
+def task_collection(task_name):
+    if task_name in TASKS_ANLI:
+        return 'ANLI'
+    elif task_name in TASKS_D3:
+        return 'D3'
+    elif task_name in TASKS_INDUCTION:
+        return 'INDUCTION'
+    return 'MATH'
 
 CHECKPOINT_RENAME = {
     'gpt2-medium': 'GPT-2 (345M)',
@@ -193,7 +203,11 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
     all_losses = []
     for dir_name in tqdm(dir_names):
         pickle_filename = oj(results_dir, dir_name, 'results.pkl')
-        json_dict = CPU_Unpickler(open(pickle_filename, 'rb')).load()
+        try:
+            json_dict = CPU_Unpickler(open(pickle_filename, 'rb')).load()
+        except:
+            print(f'skipping {pickle_filename} (pkl still writing?)')
+            continue
 
         if 'prefixes' not in json_dict:
             print(f'skipping {pickle_filename} (run still in progress?)')

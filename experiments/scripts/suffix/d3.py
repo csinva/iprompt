@@ -2,10 +2,10 @@ import itertools
 import os
 from os.path import dirname
 import sys
+sys.path.append('..')
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-# save_dir = f'/home/chansingh/mntv1/iprompt_revision2/anli/'
 # save_dir = f'/home/chansingh/mntv1/iprompt_revision4/anli/'
 save_dir = submit_utils.SAVE_DIR
 
@@ -13,22 +13,18 @@ cmd_python = 'python'
 
 PARAMS_SHARED_DICT = {
     # things to average over
-    'seed': submit_utils.SEEDS,
-    'iprompt_criterion': submit_utils.iprompt_criterion,
+     'seed': submit_utils.SEEDS,
+     'iprompt_criterion': submit_utils.iprompt_criterion,
 
     # things to vary
+    'use_preprefix': [1],
+    'iprompt_preprefix_str': ["'Output yes if the input'"],
     'n_shots': [5],
-    'task_name_list': [
-        'cause_and_effect', 'sum', 'num_to_verbal', 'diff',
-        'first_word_letter', 'singular_to_plural', 'synonyms',
-        'letters_list', 'sentence_similarity', 'informal_to_formal',
-        'rhymes', 'common_concept', 'second_word_letter',
-        'translation_en-fr', 'taxonomy_animal', 'sentiment',
-        'active_to_passive', 'word_in_context', 'orthography_starts_with',
-        'antonyms', 'negation',
-        'translation_en-de', 'larger_animal', 'translation_en-es'
-    ],
-    'model_cls': ['iprompt', 'autoprompt'],
+    'task_name_list': [[
+        f'd3_{i}' for i in range(54)
+    ]],
+    # 'model_cls': ['iprompt', 'autoprompt'],
+    'model_cls': ['suffix'],
     # 'model_cls': ['autoprompt'],
     'num_learned_tokens': submit_utils.NUM_LEARNED_TOKENS,
 

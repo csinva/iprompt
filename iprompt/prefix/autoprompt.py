@@ -87,7 +87,10 @@ class AutoPrompt(HotFlip):
         # Uncomment following line to save all the prefixes we tested.
         # pickle.dump(self._prefix_pool, open(os.path.join(save_dir, 'prefix_pool.p'), 'wb'))
 
-        all_prefixes = self._prefix_pool.topk_all(k=self._num_prefixes_to_test, min_occurrences=1)
+        if self._do_final_reranking:
+            all_prefixes = self._prefix_pool.topk_all(k=self._num_prefixes_to_test, min_occurrences=1)
+        else:
+            all_prefixes = list(self._prefix_pool.prefixes)
 
         if not len(all_prefixes):
             # In the case where we get no prefixes here (i.e. prompt generation
@@ -101,6 +104,7 @@ class AutoPrompt(HotFlip):
             zip(*[all_prefixes, all_losses, all_accuracies]),
             columns=['prefix', 'loss', 'accuracy']
         )
+
         if self._do_final_reranking:
             df = df.sort_values(by=['accuracy', 'loss'], ascending=[False, True]).reset_index()
         # df = df.sort_values(by='loss', ascending=True).reset_index()

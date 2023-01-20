@@ -2,6 +2,7 @@ import itertools
 import os
 from os.path import dirname
 import sys
+sys.path.append('..')
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
@@ -18,7 +19,7 @@ PARAMS_SHARED_DICT = {
 
     # things to vary
     'n_shots': [5],
-    'task_name_list': [
+    'task_name_list': [[
         'cause_and_effect', 'sum', 'num_to_verbal', 'diff',
         'first_word_letter', 'singular_to_plural', 'synonyms',
         'letters_list', 'sentence_similarity', 'informal_to_formal',
@@ -27,9 +28,10 @@ PARAMS_SHARED_DICT = {
         'active_to_passive', 'word_in_context', 'orthography_starts_with',
         'antonyms', 'negation',
         'translation_en-de', 'larger_animal', 'translation_en-es'
-    ],
-    'model_cls': ['iprompt', 'autoprompt'],
+    ]],
+    # 'model_cls': ['iprompt', 'autoprompt'],
     # 'model_cls': ['autoprompt'],
+    'model_cls': ['suffix'],
     'num_learned_tokens': submit_utils.NUM_LEARNED_TOKENS,
 
     # stopping criteria

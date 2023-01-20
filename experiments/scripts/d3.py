@@ -13,6 +13,7 @@ cmd_python = 'python'
 PARAMS_SHARED_DICT = {
     # things to average over
      'seed': submit_utils.SEEDS,
+     'iprompt_criterion': submit_utils.iprompt_criterion,
 
     # things to vary
     'use_preprefix': [1],
@@ -21,7 +22,9 @@ PARAMS_SHARED_DICT = {
     'task_name_list': [
         f'd3_{i}' for i in range(54)
     ],
-    'model_cls': ['iprompt'],
+    'model_cls': ['iprompt', 'autoprompt'],
+    # 'model_cls': ['autoprompt'],
+    # 'model_cls': ['autoprompt'],
     'num_learned_tokens': submit_utils.NUM_LEARNED_TOKENS,
 
     # stopping criteria

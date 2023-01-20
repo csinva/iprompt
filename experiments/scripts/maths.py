@@ -15,6 +15,7 @@ cmd_python = 'python'
 PARAMS_SHARED_DICT = {
     # things to average over
     'seed': submit_utils.SEEDS,
+    'iprompt_criterion': submit_utils.iprompt_criterion,
     # 'seed': [1],
 
     # things to vary
@@ -28,7 +29,8 @@ PARAMS_SHARED_DICT = {
         'exp_one',  'fibonacci_one',
         'divide_two', 
     ],
-    'model_cls': ['iprompt'],
+    # 'model_cls': ['iprompt'],
+    'model_cls': ['iprompt', 'autoprompt'],
     'num_learned_tokens': submit_utils.NUM_LEARNED_TOKENS,
     # 'model_cls': ['autoprompt'], #, 'autoprompt'],
     # 'num_learned_tokens': [6, 12],

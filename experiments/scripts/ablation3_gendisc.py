@@ -5,19 +5,25 @@ import sys
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-save_dir = submit_utils.SAVE_DIR
-# save_dir = f'/home/chansingh/mntv1/iprompt_revision2/anli/'
+save_dir = '/home/jxm3/research/prompting/interpretable-autoprompting/results_icml/ablation3'
 
 cmd_python = 'python'
 
 PARAMS_SHARED_DICT = {
     # things to average over
-    'seed': submit_utils.SEEDS,
-    'iprompt_criterion': submit_utils.iprompt_criterion,
+    'seed': [4], # TODO: can run more random seeds if heatmap comes out crazy
 
     # things to vary
     'n_shots': [5],
     'task_name_list': [
+        # MATH
+        'subtract_two',
+        'add_two', 'multiply_two', 
+        'max_two', 'first_two',
+        'square_one', 'double_one',
+        'exp_one',  'fibonacci_one',
+        'divide_two', 
+        # ANLI
         'task1146_country_capital',
         'task1147_country_currency',
         'task1509_evalution_antonyms',
@@ -29,10 +35,8 @@ PARAMS_SHARED_DICT = {
         'task1336_peixian_equity_evaluation_corpus_gender_classifier',
         'task107_splash_question_to_sql'
     ],
-    'model_cls': ['iprompt', 'autoprompt'],
-    # 'model_cls': ['iprompt'],
-    # 'model_cls': ['autoprompt'],
-    'num_learned_tokens': submit_utils.NUM_LEARNED_TOKENS,
+    'model_cls': ['iprompt'],
+    'num_learned_tokens': [6],
 
     # stopping criteria
     'max_dset_size': [5000],
@@ -40,13 +44,32 @@ PARAMS_SHARED_DICT = {
     'early_stopping_steps': [50],
 
     # fixed params
-    'max_length': [128],
-    'train_split_frac': [0.75],
+    'max_digit': [10],
+    'max_length': [64],
+    'train_split_frac': [1.0],
     'single_shot_loss': [1],
-    'iprompt_generation_repetition_penalty': [1.5],
+    'iprompt_pop_size': [4],
+    'iprompt_num_random_generations': [4],
+    'iprompt_num_mutations': [2],
+    ##
+    'single_shot_loss': [1],
+    ##
+    'iprompt_generation_checkpoint': [
+        "EleutherAI/gpt-neo-125M",
+        "EleutherAI/gpt-neo-1.3B",
+        "EleutherAI/gpt-neo-2.7B",
+        "EleutherAI/gpt-j-6B",
+    ],
 }
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
-PARAMS_COUPLED_DICT = submit_utils.PARAMS_COUPLED_DICT
+PARAMS_COUPLED_DICT = {
+    ('checkpoint', 'batch_size', 'float16'): [
+        ('EleutherAI/gpt-neo-125M', 16, 1),
+        ('EleutherAI/gpt-neo-1.3B', 16, 1),
+        ('EleutherAI/gpt-neo-2.7B', 16, 1),
+        ('EleutherAI/gpt-j-6B', 16, 1),
+    ],
+}
 
 ks_final, param_combos_final = submit_utils.combine_param_dicts(
     PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT)
@@ -55,5 +78,5 @@ print('running job')
 submit_utils.run_dicts(
     ks_final, param_combos_final, cmd_python=cmd_python,
     script_name='03_train_prefix.py', actually_run=True,
-    use_slurm=False, save_dir=save_dir, slurm_gpu_str='gpu:a6000:1',
+    use_slurm=True, save_dir=save_dir, slurm_gpu_str='gpu:1',
 )

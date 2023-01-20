@@ -2,12 +2,12 @@ import itertools
 import os
 from os.path import dirname
 import sys
+sys.path.append('..')
 import submit_utils
-repo_dir = dirname(dirname(os.path.abspath(__file__)))
+# repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-# save_dir = f'/home/chansingh/mntv1/iprompt_revision2/anli/'
-# save_dir = f'/home/chansingh/mntv1/iprompt_revision4/anli/'
 save_dir = submit_utils.SAVE_DIR
+# save_dir = f'/home/chansingh/mntv1/iprompt_revision2/anli/'
 
 cmd_python = 'python'
 
@@ -18,17 +18,21 @@ PARAMS_SHARED_DICT = {
 
     # things to vary
     'n_shots': [5],
-    'task_name_list': [
-        'cause_and_effect', 'sum', 'num_to_verbal', 'diff',
-        'first_word_letter', 'singular_to_plural', 'synonyms',
-        'letters_list', 'sentence_similarity', 'informal_to_formal',
-        'rhymes', 'common_concept', 'second_word_letter',
-        'translation_en-fr', 'taxonomy_animal', 'sentiment',
-        'active_to_passive', 'word_in_context', 'orthography_starts_with',
-        'antonyms', 'negation',
-        'translation_en-de', 'larger_animal', 'translation_en-es'
-    ],
-    'model_cls': ['iprompt', 'autoprompt'],
+    'task_name_list': [[
+        'task1146_country_capital',
+        'task1147_country_currency',
+        'task1509_evalution_antonyms',
+        'task1149_item_check_edible',
+        'task183_rhyme_generation',
+        'task1191_food_veg_nonveg',
+        'task092_check_prime_classification',
+        'task088_identify_typo_verification',
+        'task1336_peixian_equity_evaluation_corpus_gender_classifier',
+        'task107_splash_question_to_sql'
+    ]],
+    # 'model_cls': ['iprompt', 'autoprompt'],
+    # 'model_cls': ['iprompt'],
+    'model_cls': ['suffix'],
     # 'model_cls': ['autoprompt'],
     'num_learned_tokens': submit_utils.NUM_LEARNED_TOKENS,
 
@@ -53,6 +57,5 @@ print('running job')
 submit_utils.run_dicts(
     ks_final, param_combos_final, cmd_python=cmd_python,
     script_name='03_train_prefix.py', actually_run=True,
-    shuffle=True,
     use_slurm=False, save_dir=save_dir, slurm_gpu_str='gpu:a6000:1',
 )
