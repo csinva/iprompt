@@ -19,6 +19,7 @@ import os
 import io
 from iprompt.data import TASKS_ANLI, TASKS_D3, TASKS_INDUCTION, TASKS_TWO_NUMS, TASKS_ONE_NUM
 
+
 def task_collection(task_name):
     if task_name in TASKS_ANLI:
         return 'ANLI'
@@ -27,6 +28,7 @@ def task_collection(task_name):
     elif task_name in TASKS_INDUCTION:
         return 'Induction'
     return 'Math'
+
 
 CHECKPOINT_RENAME = {
     'gpt2-medium': 'GPT-2 (345M)',
@@ -72,14 +74,16 @@ COLORS = OrderedDict({
 SORTED_HUE_NAMES = list(COLORS.keys())
 
 
-
 METHOD_NAMES = {
     'autoprompt': 'AutoPrompt',
     'genetic': 'iPrompt',
 }
+
+
 def get_legend__autoprompt(row: Dict) -> str:
     nt = f'{row["num_learned_tokens"]} tokens'
     return METHOD_NAMES.get(row["model_cls"]) + f' ({nt})'
+
 
 YLABS = {
     'final_num_suffixes_checked': 'Number of suffixes checked before finding correct answer\n(lower is better)',
@@ -88,11 +92,13 @@ YLABS = {
     'reciprocal_rank_multi': 'Reciprocal rank (higher is better)',
 }
 
+
 def t_item(t: Union[float, torch.Tensor]) -> float:
     if isinstance(t, torch.Tensor):
         return t.item()
     else:
         return t
+
 
 class CPU_Unpickler(pkl.Unpickler):
     def find_class(self, module, name):
@@ -184,21 +190,26 @@ def load_results_and_cache_prefix_json(results_dir: str, save_file: str = 'r.pkl
     return r
 
 
-def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r.pkl', include_losses: bool = False) -> pd.DataFrame:
+def load_results_and_cache_autoprompt_json(
+    results_dir: str, save_file: str = 'r.pkl',
+    include_losses: bool = False,
+    one_row_only: bool = False,
+) -> pd.DataFrame:
     """Prefix script stores results.json instead of results_final.pkl
     """
+    print('getting dir_names...')
     dir_names = sorted(
         [fname
-        for fname in os.listdir(results_dir)
-        if os.path.isdir(oj(results_dir, fname))
-        and (
-            os.path.exists(
-                oj(results_dir, fname, 'results.json'))
-            or
-            os.path.exists(
-                oj(results_dir, fname, 'results.pkl'))
-        )
-    ])
+         for fname in os.listdir(results_dir)
+         if os.path.isdir(oj(results_dir, fname))
+         and (
+             os.path.exists(
+                 oj(results_dir, fname, 'results.json'))
+             or
+             os.path.exists(
+                 oj(results_dir, fname, 'results.pkl'))
+         )
+         ])
     dfs = []
     all_losses = []
     for dir_name in tqdm(dir_names):
@@ -212,7 +223,7 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
         if 'prefixes' not in json_dict:
             print(f'skipping {pickle_filename} (run still in progress?)')
             continue
-        
+
         # remove list of losses (shouldn't be loaded in df, and will be a different length.)
         if 'all_losses' in json_dict:
             all_losses.append(list(map(t_item, json_dict['all_losses'])))
@@ -223,10 +234,11 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
         # fix extra types for missing prefixes when there weren't enough starting with
         # different tokens to save
         if 'prefix_type' in json_dict:
-            json_dict['prefix_type'] = json_dict['prefix_type'][:len(json_dict['prefixes'])]
+            json_dict['prefix_type'] = json_dict['prefix_type'][:len(
+                json_dict['prefixes'])]
 
         # remove unneeded keys
-        del json_dict['task_name_list'] 
+        del json_dict['task_name_list']
 
         # list to str
         if len(json_dict['generation_bad_words_ids']):
@@ -244,7 +256,8 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
 
         # tensor -> float
         if 'prefix_test_acc' in df:
-            df['prefix_test_acc'] = df['prefix_test_acc'].map(lambda t: t.item())
+            df['prefix_test_acc'] = df['prefix_test_acc'].map(
+                lambda t: t.item())
 
         # compute rank
         if df["prefixes__check_answer_func"].sum() == 0:
@@ -254,9 +267,12 @@ def load_results_and_cache_autoprompt_json(results_dir: str, save_file: str = 'r
         df['reciprocal_rank'] = df['final_answer_pos_initial_token'].map(
             lambda n: 1/(n+1))
 
+        # prefixes are sorted so that best ones are first
+        if one_row_only:
+            df = df.iloc[:1]
         dfs.append(df)
 
-    if not len(dfs):
+    if len(dfs) == 0:
         print(f'Warning: no valid dfs found in {results_dir}')
         return None
 
@@ -338,6 +354,7 @@ def get_hue_order(legend_names):
             ' not in ' + str(SORTED_HUE_NAMES)
     return [k for k in SORTED_HUE_NAMES if k in legend_names.unique()]
 
+
 def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = True, legend_on_side=True):
     # reformat legend
     if add_legend:
@@ -365,7 +382,7 @@ def plot_tab(tab: pd.DataFrame, metric_key: str, title: str, add_legend: bool = 
     ax = sns.barplot(x=tab['checkpoint'].map(CHECKPOINT_RENAME).tolist(),
                      y=tab[metric_key], hue=tab['legend'],
                      hue_order=hue_order, order=order, palette=COLORS
-    )  # data=tab[tab['n_shots'] == 1])
+                     )  # data=tab[tab['n_shots'] == 1])
     # ax = sns.barplot(x=tab['checkpoint'].map(CHECKPOINT_RENAME).tolist(),
     #  y=tab[metric_key], hue=tab['legend'], palette=COLORS)
     plt.xlabel('Model name')
