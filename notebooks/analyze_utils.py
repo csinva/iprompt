@@ -23,10 +23,10 @@ def task_collection(task_name):
     if task_name in TASKS_ANLI:
         return 'ANLI'
     elif task_name in TASKS_D3:
-        return 'D3'
+        return 'DD'
     elif task_name in TASKS_INDUCTION:
-        return 'INDUCTION'
-    return 'MATH'
+        return 'Induction'
+    return 'Math'
 
 CHECKPOINT_RENAME = {
     'gpt2-medium': 'GPT-2 (345M)',

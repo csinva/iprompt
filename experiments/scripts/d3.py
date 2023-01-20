@@ -19,9 +19,9 @@ PARAMS_SHARED_DICT = {
     'use_preprefix': [1],
     'iprompt_preprefix_str': ["'Output yes if the input'"],
     'n_shots': [5],
-    'task_name_list': [
+    'task_name_list': [[
         f'd3_{i}' for i in range(54)
-    ],
+    ]],
     'model_cls': ['iprompt', 'autoprompt'],
     # 'model_cls': ['autoprompt'],
     # 'model_cls': ['autoprompt'],
