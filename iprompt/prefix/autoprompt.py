@@ -102,6 +102,10 @@ class AutoPrompt(HotFlip):
             all_losses, all_accuracies = self._test_prefixes(
                 prefixes=all_prefixes, eval_dataloader=eval_dataloader, possible_answer_mask=possible_answer_mask
             )
+            df = pd.DataFrame(
+                zip(*[all_prefixes, all_losses, all_accuracies]),
+                columns=['prefix', 'loss', 'accuracy']
+            )
             df = df.sort_values(by=['accuracy', 'loss'], ascending=[
                                 False, True]).reset_index()
         else:
@@ -109,10 +113,10 @@ class AutoPrompt(HotFlip):
             all_losses = [-1] * len(all_prefixes)
             all_accuracies = [-1] * len(all_prefixes)
 
-        df = pd.DataFrame(
-            zip(*[all_prefixes, all_losses, all_accuracies]),
-            columns=['prefix', 'loss', 'accuracy']
-        )
+            df = pd.DataFrame(
+                zip(*[all_prefixes, all_losses, all_accuracies]),
+                columns=['prefix', 'loss', 'accuracy']
+            )
         # df = df.sort_values(by='loss', ascending=True).reset_index()
 
         df['prefix_str'] = df['prefix'].map(self.tokenizer.decode)
