@@ -47,17 +47,12 @@ class AutoPrompt(HotFlip):
         self._num_min_occurrences = 1
         # Will rank and save this many prefixes at the end of training.
         self._num_prefixes_to_test = 1024
-<<<<<<< HEAD
     
     def _test_prefixes(
         self,
         prefixes: List[Tuple[int]], 
         eval_dataloader: torch.utils.data.DataLoader, 
         possible_answer_mask: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
-=======
-
-    def _test_prefixes(self, prefixes: List[Tuple[int]], eval_dataloader: torch.utils.data.DataLoader, possible_answer_mask: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
->>>>>>> 6efeea7f8c04e0cf4cde1a0d5c5e1fb5bc949e42
         """Computes loss & accuracy for each prefix on data in dataloader. Used to rank
         prefixes at the end of training.
         """
@@ -76,14 +71,9 @@ class AutoPrompt(HotFlip):
             )
             x_tokenized = tok(x_text).to(device)
             y_tokenized = tok(y_text).to(device)
-<<<<<<< HEAD
 
             next_token_ids = y_tokenized.input_ids[:, 0:1]
             # next_token_ids = y_tokenized.input_ids ##
-=======
-            # only compute loss over next token
-            next_token_ids = y_tokenized.input_ids[:, 0:1]
->>>>>>> 6efeea7f8c04e0cf4cde1a0d5c5e1fb5bc949e42
             for i in range(len(prefixes)):
                 with torch.no_grad():
                     _cand_input_ids, cand_loss, cand_n_correct = (
