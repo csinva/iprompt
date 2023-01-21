@@ -222,6 +222,8 @@ def eval_model_with_set_prefix(
     total_n = 0
     total_n_correct = 0
     for idx, batch in pbar:
+        # if (args.n_shots > 1) and (args.single_shot_loss):
+            # batch['input'] = batch['last_input']
         x_text, y_text = model.prepare_batch(batch=batch)
 
         tok = functools.partial(

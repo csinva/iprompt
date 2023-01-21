@@ -47,14 +47,20 @@ class AutoPrompt(HotFlip):
         # Will rank and save this many prefixes at the end of training.
         self._num_prefixes_to_test = 1024
     
-    def _test_prefixes(self, prefixes: List[Tuple[int]], eval_dataloader: torch.utils.data.DataLoader, possible_answer_mask: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
+    def _test_prefixes(
+        self,
+        prefixes: List[Tuple[int]], 
+        eval_dataloader: torch.utils.data.DataLoader, 
+        possible_answer_mask: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
         """Computes loss & accuracy for each prefix on data in dataloader. Used to rank
         prefixes at the end of training.
         """
         all_candidate_losses = torch.zeros(len(prefixes), dtype=torch.float32)
         all_candidate_n_correct = torch.zeros(len(prefixes), dtype=torch.float32)
         total_n = 0
-        for batch in tqdm.tqdm(eval_dataloader, desc='evaluating prefixes'):
+        for batch in tqdm.tqdm(eval_dataloader, desc=f'evaluating {len(eval_dataloader)} prefixes'):
+            if (self.args.n_shots > 1) and (self.args.single_shot_loss):
+                batch['input'] = batch['last_input']
             x_text, y_text = self.prepare_batch(batch=batch)
             total_n += len(x_text)
             tok = functools.partial(
@@ -63,13 +69,12 @@ class AutoPrompt(HotFlip):
             )
             x_tokenized = tok(x_text).to(device)
             y_tokenized = tok(y_text).to(device)
-            next_token_ids = y_tokenized.input_ids[:, 0:1] # only compute loss over next token
             for i in range(len(prefixes)):
                 with torch.no_grad():
                     _cand_input_ids, cand_loss, cand_n_correct = (
                         self._compute_loss_with_set_prefix(
                             original_input_ids=x_tokenized.input_ids,
-                            next_token_ids=next_token_ids,
+                            next_token_ids=y_tokenized.input_ids,
                             possible_answer_mask=possible_answer_mask,
                             prefix_ids=torch.tensor(prefixes[i]).to(device),
                         )
@@ -98,7 +103,9 @@ class AutoPrompt(HotFlip):
             all_prefixes = list(self._prefix_pool._avg_loss.keys())
 
         all_losses, all_accuracies = self._test_prefixes(
-            prefixes=all_prefixes, eval_dataloader=eval_dataloader, possible_answer_mask=possible_answer_mask
+            prefixes=all_prefixes,
+            eval_dataloader=eval_dataloader,
+            possible_answer_mask=possible_answer_mask
         )
         df = pd.DataFrame(
             zip(*[all_prefixes, all_losses, all_accuracies]),

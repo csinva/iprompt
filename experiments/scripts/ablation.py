@@ -39,14 +39,14 @@ PARAMS_SHARED_DICT = {
     'num_learned_tokens': submit_utils.NUM_LEARNED_TOKENS,
 
     # stopping criteria
-    'max_dset_size': [2000],
-    'max_n_datapoints': [2000],
+    'max_dset_size': [5000],
+    'max_n_datapoints': [5000],
     'early_stopping_steps': [50],
 
     # fixed params
-    'max_digit': [10, 20, 40, 80, 160],
+    'max_digit': [10],
     'max_length': [64],
-    'train_split_frac': [0.75],
+    'train_split_frac': [1.0],
     'single_shot_loss': [1],
     'iprompt_pop_size': [4],
     'iprompt_num_random_generations': [4],

@@ -5,16 +5,16 @@ import sys
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-save_dir = '/home/jxm3/research/prompting/interpretable-autoprompting/results_icml/ablation2'
+# save_dir = '/home/jxm3/research/prompting/interpretable-autoprompting/results_icml/ablation2'
+save_dir = '/home/jxm3/research/prompting/interpretable-autoprompting/results_icml/ablation2_rerun'
 
 cmd_python = 'python'
 
 PARAMS_SHARED_DICT = {
     # things to average over
-    'seed': [1, 2, 3],
+    'seed': [1, 2, 3, 4],
 
     # things to vary
-    'n_shots': [5],
     'task_name_list': [
         # MATH
         'subtract_two',
@@ -52,11 +52,17 @@ PARAMS_SHARED_DICT = {
     'iprompt_num_random_generations': [4],
     'iprompt_num_mutations': [2],
     ##
-    'iprompt_conditioning_strategy': ['\"\"', 'x_only', 'y_only', 'unconditional'],
-    'single_shot_loss': [1],
+    # 'iprompt_conditioning_strategy': ['\"\"', 'x_only', 'y_only', 'unconditional'],
+    # 'single_shot_loss': [1],
+    # 'n_shots': [5],
     ##
     # 'iprompt_conditioning_strategy': ['\"\"'],
     # 'single_shot_loss': [0],
+    # 'n_shots': [5],
+    ## 
+    'iprompt_conditioning_strategy': ['\"\"'],
+    'single_shot_loss': [1],
+    'n_shots': [1],
 }
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 PARAMS_COUPLED_DICT = { 

@@ -11,7 +11,7 @@ cmd_python = 'python'
 
 PARAMS_SHARED_DICT = {
     # things to average over
-    'seed': [4], # TODO: can run more random seeds if heatmap comes out crazy
+    'seed': [5, 6], # [4], # TODO: can run more random seeds if heatmap comes out crazy
 
     # things to vary
     'n_shots': [5],
