@@ -11,7 +11,7 @@ import random
 
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 # SAVE_DIR = '/home/chansingh/mntv1/'
-# SAVE_DIR = f'/home/chansingh/mntv1/iprompt_revision_xmas/'
+SAVE_DIR = f'/home/chansingh/mntv1/iprompt_revision_xmas/'
 NUM_LEARNED_TOKENS = [6]
 SEEDS = [1, 2, 3]
 JOB_SUFFIX = 'long_suffs'

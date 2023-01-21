@@ -21,16 +21,17 @@ PARAMS_SHARED_DICT = {
     # things to vary
     'n_shots': [5],
 
-    'task_name_list': [
+    'task_name_list': [[
         'add_two', 'multiply_two', 
         'subtract_two',
         'max_two', 'first_two',
         'square_one', 'double_one',
         'exp_one',  'fibonacci_one',
         'divide_two', 
-    ],
-    # 'model_cls': ['iprompt'],
-    'model_cls': ['iprompt', 'autoprompt'],
+    ]],
+    'model_cls': ['iprompt'],
+    # 'model_cls': ['autoprompt'],
+    # 'model_cls': ['iprompt', 'autoprompt'],
     'num_learned_tokens': submit_utils.NUM_LEARNED_TOKENS,
     # 'model_cls': ['autoprompt'], #, 'autoprompt'],
     # 'num_learned_tokens': [6, 12],
