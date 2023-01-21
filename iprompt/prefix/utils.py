@@ -504,12 +504,19 @@ def load_lm_from_checkpoint(
             # (only certain models are pre-float16ed)
             print(f"trying to convert {checkpoint} to float16...")
             lm = llm_cls.from_pretrained(
-                checkpoint, torch_dtype=torch.float16
+                checkpoint,
+                torch_dtype=torch.float16,
+                device_map="auto", 
+                # low_cpu_mem_usage=True
             )
-            lm = lm.half()
+            # lm = lm.half()
     else:
         lm = llm_cls.from_pretrained(
-            checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id
+            checkpoint,
+            output_hidden_states=False,
+            pad_token_id=tokenizer.eos_token_id,
+            device_map="auto",
+            # low_cpu_mem_usage=True
         )
     
     return lm
