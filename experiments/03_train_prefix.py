@@ -18,6 +18,7 @@ from iprompt.prefix import (
     PrefixLoss, PrefixModel,
     PromptTunedModel, HotFlip, GumbelPrefixModel
 )
+from iprompt.prefix.utils import load_lm_from_checkpoint
 import pandas as pd
 import iprompt.data as data
 import logging
@@ -473,25 +474,9 @@ if __name__ == '__main__':
     tokenizer.eos_token = tokenizer.eos_token or 0
     tokenizer.pad_token = tokenizer.eos_token
 
-    llm_cls = AutoModelForSeq2SeqLM if 't5' in checkpoint else AutoModelForCausalLM
+    lm = load_lm_from_checkpoint(checkpoint=checkpoint, float16=args.llm_float16)
 
-    if args.llm_float16:
-        if checkpoint == "EleutherAI/gpt-j-6B":
-            lm = llm_cls.from_pretrained(
-                checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id,
-                revision="float16", torch_dtype=torch.float16, low_cpu_mem_usage=True
-            )
-        else:
-            # (only certain models are pre-float16ed)
-            print(f"trying to convert {checkpoint} to float16...")
-            lm = llm_cls.from_pretrained(
-                checkpoint, torch_dtype=torch.float16
-            )
-            lm = lm.half()
-    else:
-        lm = llm_cls.from_pretrained(
-            checkpoint, output_hidden_states=False, pad_token_id=tokenizer.eos_token_id
-        )
+    llm_cls = AutoModelForSeq2SeqLM if 't5' in checkpoint else AutoModelForCausalLM
 
     for task_idx, task_name in enumerate(args.task_name_list):
         print(f'*** Executing task {task_idx+1}/{len(args.task_name_list)}')
