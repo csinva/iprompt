@@ -253,33 +253,9 @@ class PrefixModel(nn.Module, abc.ABC):
             (outputs.logits.argmax(dim=-1) == next_token_ids)
             |
             (self.tokenizer.pad_token_id == next_token_ids)
-        ).all(dim=1).sum().item()
+        ).all(dim=1).sum()
         
         return n_correct, new_input_ids, outputs.loss
-        # attention_mask = ~(new_input_ids == self.tokenizer.pad_token_id)
-        # assert new_input_ids.shape == embeddings.shape[0:2]
-
-        # encoder_outputs = self.model.get_encoder()(
-        #     inputs_embeds=embeddings,
-        #     attention_mask=attention_mask,
-        # )
-        # pad_token = torch.tensor(
-        #     self.tokenizer.pad_token_id,
-        #     dtype=torch.long,
-        #     device=device
-        # )[None,None]
-        # decoder_input_ids = torch.cat(
-        #     (
-        #         pad_token.repeat((len(next_token_ids), 1)),
-        #         next_token_ids
-        #     ), dim=1
-        # )
-        # output = self.model(
-        #     encoder_outputs=encoder_outputs,
-        #     decoder_input_ids=decoder_input_ids,
-        # )
-        # breakpoint()
-        # return next_token_ids, output.logits
 
     def forward(
             self,
@@ -488,7 +464,7 @@ def mean(_list: List[Union[int, float]]) -> float:
 def load_lm_from_checkpoint(
     checkpoint: str, float16: bool) -> transformers.AutoModel:
 
-    print(f"loading iprompt generation-specific model '{checkpoint}'")
+    print(f"loading lm '{checkpoint}'")
 
     tokenizer = transformers.AutoTokenizer.from_pretrained(checkpoint)
     llm_cls = transformers.AutoModelForSeq2SeqLM if 't5' in checkpoint else transformers.AutoModelForCausalLM
@@ -507,7 +483,7 @@ def load_lm_from_checkpoint(
                 checkpoint,
                 torch_dtype=torch.float16,
                 device_map="auto", 
-                # low_cpu_mem_usage=True
+                low_cpu_mem_usage=True
             )
             # lm = lm.half()
     else:

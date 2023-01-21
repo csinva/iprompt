@@ -169,6 +169,7 @@ class AutoPrompt(HotFlip):
 
         self._autoprompt_verbose: print(
             f'** {self.tokenizer.decode(self.prefix_ids)}: {current_loss:.2f}')
+        
         # track running accuracy of this prefix.
         self._prefix_pool.update(
             prefix=self.prefix_ids,
@@ -183,6 +184,13 @@ class AutoPrompt(HotFlip):
         # Get top token replacements
         #
         token_grads = self._prefix_token_grad
+        if self._is_t5:
+            # t5 has extra vocab tokens for no reason:
+            # https://github.com/huggingface/transformers/issues/4875#issuecomment-647634437
+            assert token_grads.shape == (
+                self._num_tokens, len(self.tokenizer.vocab) + 28
+            )
+            token_grads = token_grads[:, :-28]
         assert token_grads.shape == (
             self._num_tokens, len(self.tokenizer.vocab))
         top_tokens_per_position = (
