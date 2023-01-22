@@ -1,5 +1,7 @@
 from typing import Dict, Union
 
+import argparse
+import datasets
 import numpy as np
 import torch
 from torch import nn
@@ -8,7 +10,6 @@ from copy import deepcopy
 import pandas as pd
 from tqdm import tqdm
 from collections import defaultdict, OrderedDict
-from transformers import AutoTokenizer
 import pandas as pd
 import seaborn as sns
 from datasets import Dataset
@@ -17,6 +18,8 @@ import pickle as pkl
 import json
 import os
 import io
+
+
 from iprompt.data import TASKS_ANLI, TASKS_D3, TASKS_INDUCTION, TASKS_TWO_NUMS, TASKS_ONE_NUM
 
 
@@ -162,6 +165,8 @@ def load_results_and_cache_prefix_json(results_dir: str, save_file: str = 'r.pkl
             del json_dict['task_name_list']
             del json_dict['losses']
 
+            import pdb; pdb.set_trace()
+
             df = pd.DataFrame.from_dict(json_dict)
             df['json_filename'] = json_filename
 
@@ -194,6 +199,7 @@ def load_results_and_cache_autoprompt_json(
     results_dir: str, save_file: str = 'r.pkl',
     include_losses: bool = False,
     one_row_only: bool = False,
+    do_reranking: bool = False,
 ) -> pd.DataFrame:
     """Prefix script stores results.json instead of results_final.pkl
     """

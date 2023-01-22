@@ -461,6 +461,17 @@ def mean(_list: List[Union[int, float]]) -> float:
     return sum(_list) / len(_list)
 
 
+def get_preprefix_from_args(args: argparse.Namespace) -> str:
+    preprefix = ''
+    if args.use_preprefix or not args.iprompt_preprefix_str == '':
+        if args.iprompt_preprefix_str == '':
+            preprefix = data.get_init_suffix(
+                args.task_name, args.use_generic_query, args.template_num_init_string)
+        else:
+            preprefix = args.iprompt_preprefix_str
+    return preprefix
+
+
 def load_lm_from_checkpoint(
     checkpoint: str, float16: bool) -> transformers.AutoModel:
 

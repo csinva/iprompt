@@ -18,7 +18,7 @@ from iprompt.prefix import (
     PrefixLoss, PrefixModel,
     PromptTunedModel, HotFlip, GumbelPrefixModel
 )
-from iprompt.prefix.utils import load_lm_from_checkpoint
+from iprompt.prefix.utils import get_preprefix_from_args, load_lm_from_checkpoint
 import pandas as pd
 import iprompt.data as data
 import logging
@@ -495,13 +495,7 @@ if __name__ == '__main__':
         logging.info('saving to ' + save_dir)
         args.save_dir_unique = save_dir
 
-        preprefix = ''
-        if args.use_preprefix or not args.iprompt_preprefix_str == '':
-            if args.iprompt_preprefix_str == '':
-                preprefix = data.get_init_suffix(
-                    args.task_name, args.use_generic_query, args.template_num_init_string)
-            else:
-                preprefix = args.iprompt_preprefix_str
+        preprefix = get_preprefix_from_args(args)
 
         print(f'preprefix: `{preprefix}`')
         model = model_cls_dict[args.model_cls](

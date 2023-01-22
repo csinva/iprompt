@@ -61,8 +61,8 @@ class AutoPrompt(HotFlip):
             len(prefixes), dtype=torch.float32)
         total_n = 0
         for batch in tqdm.tqdm(eval_dataloader, desc=f'evaluating {len(eval_dataloader)} prefixes'):
-            # if (self.args.n_shots > 1) and (self.args.single_shot_loss): ##
-                # batch['input'] = batch['last_input'] ##
+            if (self.args.n_shots > 1) and (self.args.single_shot_loss): ##
+                batch['input'] = batch['last_input'] ##
             x_text, y_text = self.prepare_batch(batch=batch)
             total_n += len(x_text)
             tok = functools.partial(
@@ -72,8 +72,7 @@ class AutoPrompt(HotFlip):
             x_tokenized = tok(x_text).to(device)
             y_tokenized = tok(y_text).to(device)
 
-            next_token_ids = y_tokenized.input_ids[:, 0:1]
-            # next_token_ids = y_tokenized.input_ids ##
+            next_token_ids = y_tokenized.input_ids
             for i in range(len(prefixes)):
                 with torch.no_grad():
                     _cand_input_ids, cand_loss, cand_n_correct = (
@@ -91,10 +90,10 @@ class AutoPrompt(HotFlip):
     def serialize(self, eval_dataloader: torch.utils.data.DataLoader, possible_answer_mask: torch.Tensor) -> Dict[str, Any]:
         """Writes stuff to disk. Saves other stuff to save as full results file.
         """
-        save_dir = self.args.save_dir_unique
-        os.makedirs(save_dir, exist_ok=True)
 
-        # Uncomment following line to save all the prefixes we tested.
+        # Uncomment following lines to save all the prefixes we tested.
+        # save_dir = self.args.save_dir_unique
+        # os.makedirs(save_dir, exist_ok=True)
         # pickle.dump(self._prefix_pool, open(os.path.join(save_dir, 'prefix_pool.p'), 'wb'))
 
         if self._do_final_reranking:
