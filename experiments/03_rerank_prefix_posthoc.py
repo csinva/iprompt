@@ -88,9 +88,20 @@ def rerank_dict(json_dict: Dict[str, Any]) -> Dict[str, Any]:
 
 def rerank_folder(folder_name: str):
     pickle_filename = os.path.join(folder_name, 'results.pkl')
+    out_file = os.path.join(folder_name, 'results_reranked.pkl')
+
+    if os.path.exists(out_file):
+        print(f'Exiting: file already exists {out_file}')
+        exit()
+
     if not os.path.exists(pickle_filename):
         raise FileNotFoundException(f'No results file found at {pickle_filename}')
     json_dict = CPU_Unpickler(open(pickle_filename, 'rb')).load()
+
+    # set old args
+    json_dict["iprompt_do_final_reranking"] = json_dict.get("iprompt_do_final_reranking", 1)
+    json_dict["iprompt_criterion"] = json_dict.get("iprompt_criterion", "loss")
+
     new_json_dict = rerank_dict(json_dict)
     out_file = os.path.join(folder_name, 'results_reranked.pkl')
     pkl.dump(new_json_dict, open(out_file, 'wb'))
