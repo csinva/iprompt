@@ -204,16 +204,19 @@ def load_results_and_cache_autoprompt_json(
     """Prefix script stores results.json instead of results_final.pkl
     """
     print('getting dir_names...')
+
+    results_fn = 'results_reranked' if do_reranking else 'results'
+
     dir_names = sorted(
         [fname
          for fname in os.listdir(results_dir)
          if os.path.isdir(oj(results_dir, fname))
          and (
              os.path.exists(
-                 oj(results_dir, fname, 'results.json'))
+                 oj(results_dir, fname, f'{results_fn}.json'))
              or
              os.path.exists(
-                 oj(results_dir, fname, 'results.pkl'))
+                 oj(results_dir, fname, f'{results_fn}.pkl'))
          )
          ])
     dfs = []
