@@ -4,6 +4,8 @@ import argparse
 import io
 import os
 
+from tqdm import tqdm
+
 import datasets
 import pickle as pkl
 import torch
@@ -35,7 +37,7 @@ def rerank_dict(json_dict: Dict[str, Any]) -> Dict[str, Any]:
         template_num_task_phrasing=args.template_num_task_phrasing, max_digit=args.max_digit
     )
     dset_train, _dset_test = dset
-    
+
     if args.mask_possible_answers:
         vocab_size = len(tokenizer.vocab)
         possible_answer_mask = (
@@ -50,9 +52,9 @@ def rerank_dict(json_dict: Dict[str, Any]) -> Dict[str, Any]:
         'autoprompt': AutoPrompt,
         'genetic': iPrompt,  # outdated alias
         'iprompt': iPrompt,
-        'suff': iPrompt, # also fixes some hyperparams to specific values
+        'suff': iPrompt,  # also fixes some hyperparams to specific values
     }
-    
+
     tokenizer = transformers.AutoTokenizer.from_pretrained(args.checkpoint)
     tokenizer.eos_token = tokenizer.eos_token or 0
     tokenizer.pad_token = tokenizer.eos_token
@@ -73,7 +75,7 @@ def rerank_dict(json_dict: Dict[str, Any]) -> Dict[str, Any]:
 
     # fake add all prefixes.
     for prefix_ids in json_dict['prefix_ids']:
-         model._prefix_pool.update(
+        model._prefix_pool.update(
             prefix=torch.tensor(prefix_ids),
             loss=torch.tensor(0.0),
             accuracy=torch.tensor(0.0),
@@ -82,34 +84,33 @@ def rerank_dict(json_dict: Dict[str, Any]) -> Dict[str, Any]:
     json_dict.update(model.serialize(eval_dataloader, possible_answer_mask))
     json_dict["prefixes__check_answer_func"] = list(
         map(check_answer_func, json_dict["prefixes"]))
-    
+
     return json_dict
 
 
-def rerank_folder(folder_name: str):
-    pickle_filename = os.path.join(folder_name, 'results.pkl')
-    out_file = os.path.join(folder_name, 'results_reranked.pkl')
-
-    if os.path.exists(out_file):
-        print(f'Exiting: file already exists {out_file}')
-        exit()
-
+def rerank_folder(input_folder_name: str, output_folder_name: str):
+    pickle_filename = os.path.join(input_folder_name, 'results.pkl')
     if not os.path.exists(pickle_filename):
-        raise FileNotFoundException(f'No results file found at {pickle_filename}')
+        raise Exception(f'No results file found at {pickle_filename}')
     json_dict = CPU_Unpickler(open(pickle_filename, 'rb')).load()
-
-    # set old args
-    json_dict["iprompt_do_final_reranking"] = json_dict.get("iprompt_do_final_reranking", 1)
-    json_dict["iprompt_criterion"] = json_dict.get("iprompt_criterion", "loss")
-
     new_json_dict = rerank_dict(json_dict)
-    out_file = os.path.join(folder_name, 'results_reranked.pkl')
+    os.makedirs(output_folder_name, exist_ok=True)
+    out_file = os.path.join(output_folder_name, 'results.pkl')
     pkl.dump(new_json_dict, open(out_file, 'wb'))
     print('wrote to', out_file)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--folder_name")
+    parser.add_argument("--input_folder_name",
+                        default='/home/chansingh/mntv1/iprompt_revision_xmas/')
+    parser.add_argument("--output_folder_name",
+                        default='/home/chansingh/mntv1/iprompt_revision_reranked/')
     args = parser.parse_args()
-    rerank_folder(folder_name=args.folder_name)
+    for folder in tqdm(os.listdir(args.input_folder_name)):
+        folder_full = os.path.join(args.input_folder_name, folder)
+        output_folder_full = os.path.join(
+            args.output_folder_name, folder)
+        if 'results.pkl' in os.listdir(folder_full):
+            if not os.path.exists(os.path.join(output_folder_full, 'results.pkl')):
+                rerank_folder(input_folder_name=folder_full, output_folder_name=output_folder_full)
