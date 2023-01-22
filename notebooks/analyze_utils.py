@@ -222,13 +222,13 @@ def load_results_and_cache_autoprompt_json(
     dfs = []
     all_losses = []
     for dir_name in tqdm(dir_names):
-        pickle_filename = oj(results_dir, dir_name, 'results.pkl')
+        pickle_filename = oj(results_dir, dir_name, f'{results_fn}.pkl')
         try:
             json_dict = CPU_Unpickler(open(pickle_filename, 'rb')).load()
         except:
             print(f'skipping {pickle_filename} (pkl still writing?)')
             continue
-
+        
         if 'prefixes' not in json_dict:
             print(f'skipping {pickle_filename} (run still in progress?)')
             continue

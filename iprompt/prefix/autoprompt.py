@@ -60,7 +60,7 @@ class AutoPrompt(HotFlip):
         all_candidate_n_correct = torch.zeros(
             len(prefixes), dtype=torch.float32)
         total_n = 0
-        for batch in tqdm.tqdm(eval_dataloader, desc=f'evaluating {len(eval_dataloader)} prefixes'):
+        for batch in tqdm.tqdm(eval_dataloader, desc=f'evaluating {len(prefixes)} prefixes'):
             if (self.args.n_shots > 1) and (self.args.single_shot_loss): ##
                 batch['input'] = batch['last_input'] ##
             x_text, y_text = self.prepare_batch(batch=batch)

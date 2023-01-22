@@ -12,7 +12,7 @@
 
 # source /home/jxm3/.zshrc # <-- won't work bc SLURM runs in batch
 
-cd random/interpretable_autoprompting
+# cd random/interpretable_autoprompting
 
 
 # TODO email self when job finished :-)
