@@ -9,9 +9,9 @@ save_dir = f'/home/jxm3/research/prompting/interpretable-autoprompting/results_i
 ## rerank all experiments in this folder:
 # results_dir = '/home/jxm3/research/prompting/interpretable-autoprompting/results_icml/ablation3/'
 # results_dir = '/home/jxm3/research/prompting/interpretable-autoprompting/results_icml/ablation2/'
-results_dir = '/home/jxm3/research/prompting/interpretable-autoprompting/results_icml/ablation2_rerun/'
+# results_dir = '/home/jxm3/research/prompting/interpretable-autoprompting/results_icml/ablation2_rerun/'
 # results_dir = '/home/jxm3/research/prompting/interpretable-autoprompting/results_icml/ablation_math_across_difficulty_levels/'
-# results_dir = '/home/jxm3/research/prompting/interpretable-autoprompting/results_icml/ablation_math_across_difficulty_levels_rerun/'
+results_dir = '/home/jxm3/research/prompting/interpretable-autoprompting/results_icml/ablation_math_across_difficulty_levels_rerun/'
 
 exp_dir_names = sorted(
     [oj(results_dir, fname) for fname in os.listdir(results_dir)

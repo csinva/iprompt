@@ -34,7 +34,7 @@ PARAMS_SHARED_DICT = {
 }
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 
-PARAMS_COUPLED_DICT = {  # these batch_sizes are roughly set for an A100 80GB gpu
+PARAMS_COUPLED_DICT = {
     ('checkpoint', 'batch_size', 'float16'): [
         # ('gpt2', 32, 0),
         # ('gpt2-medium', 200, 0),
