@@ -102,6 +102,7 @@ def rerank_folder(folder_name: str):
     json_dict["iprompt_do_final_reranking"] = json_dict.get("iprompt_do_final_reranking", 1)
     json_dict["iprompt_criterion"] = json_dict.get("iprompt_criterion", "loss")
     json_dict["iprompt_conditioning_strategy"] = json_dict.get("iprompt_conditioning_strategy", "")
+    json_dict["iprompt_generation_checkpoint"] = json_dict.get("iprompt_generation_checkpoint", json_dict["checkpoint"])
 
     new_json_dict = rerank_dict(json_dict)
     out_file = os.path.join(folder_name, 'results_reranked.pkl')
