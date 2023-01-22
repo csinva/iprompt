@@ -97,7 +97,8 @@ def run_command_slurm(
 
 
 def run_dicts(
-    ks_final: List, param_combos_final: List,
+    ks_final: List,
+    param_combos_final: List,
     cmd_python: str = 'python',
     script_name: str = '02_train_suffix.py',
     actually_run: bool = True,

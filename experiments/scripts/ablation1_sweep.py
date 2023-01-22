@@ -63,6 +63,7 @@ ks_final, param_combos_final = submit_utils.combine_param_dicts(
     PARAMS_SHARED_DICT, PARAMS_COUPLED_DICT)
 
 print('running job')
+breakpoint()
 submit_utils.run_dicts(
     ks_final, param_combos_final, cmd_python=cmd_python,
     script_name='03_train_prefix.py', actually_run=True,
