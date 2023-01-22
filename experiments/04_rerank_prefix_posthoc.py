@@ -13,7 +13,7 @@ import torch
 from torch.utils.data import DataLoader
 import transformers
 import pandas as pd
-
+import shutil
 import iprompt.data as data
 from iprompt.prefix import AutoPrompt, iPrompt
 from iprompt.prefix.utils import get_preprefix_from_args, load_lm_from_checkpoint
@@ -102,6 +102,9 @@ def rerank_folder(input_folder_name: str, output_folder_name: str):
     json_dict["iprompt_generation_checkpoint"] = json_dict.get("iprompt_generation_checkpoint", json_dict["checkpoint"])
     json_dict["iprompt_generation_temp"] = json_dict.get("iprompt_generation_temp", 1.0)
     json_dict["iprompt_generation_top_p"] = json_dict.get("iprompt_generation_top_p", 1.0)
+    if json_dict["imodel_cls"] == 'suffix':
+        shutil.rmtree(input_folder_name)
+        return
 
     new_json_dict = rerank_dict(json_dict)
     os.makedirs(output_folder_name, exist_ok=True)
@@ -125,4 +128,9 @@ if __name__ == '__main__':
             args.output_folder_name, folder)
         if 'results.pkl' in os.listdir(folder_full):
             if not os.path.exists(os.path.join(output_folder_full, 'results.pkl')):
-                rerank_folder(input_folder_name=folder_full, output_folder_name=output_folder_full)
+                try:
+                    rerank_folder(input_folder_name=folder_full, output_folder_name=output_folder_full)
+                except Exception as e:
+                    print(e)
+
+                
