@@ -19,12 +19,13 @@ PARAMS_SHARED_DICT = {
     'use_preprefix': [1],
     'iprompt_preprefix_str': ["'Output yes if the input'"],
     'n_shots': [5],
-    'task_name_list': [[
+    'task_name_list': [
         f'd3_{i}' for i in range(54)
-    ]],
-    'model_cls': ['iprompt', 'autoprompt'],
+    ],
+    # 'model_cls': ['iprompt', 'autoprompt'],
     # 'model_cls': ['autoprompt'],
-    # 'model_cls': ['autoprompt'],
+    # 'model_cls': ['iprompt'],
+    'model_cls': ['autoprompt'],
     'num_learned_tokens': submit_utils.NUM_LEARNED_TOKENS,
 
     # stopping criteria
@@ -33,7 +34,7 @@ PARAMS_SHARED_DICT = {
     'early_stopping_steps': [50],
 
     # fixed params
-    'max_length': [128],
+    'max_length': [64],
     'train_split_frac': [0.75],
     'single_shot_loss': [1],
     'iprompt_generation_repetition_penalty': [1.5],

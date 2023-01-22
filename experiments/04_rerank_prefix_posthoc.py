@@ -1,3 +1,4 @@
+import random
 from typing import Any, Dict
 
 import argparse
@@ -93,6 +94,15 @@ def rerank_folder(input_folder_name: str, output_folder_name: str):
     if not os.path.exists(pickle_filename):
         raise Exception(f'No results file found at {pickle_filename}')
     json_dict = CPU_Unpickler(open(pickle_filename, 'rb')).load()
+
+    # set old args
+    json_dict["iprompt_do_final_reranking"] = json_dict.get("iprompt_do_final_reranking", 1)
+    json_dict["iprompt_criterion"] = json_dict.get("iprompt_criterion", "loss")
+    json_dict["iprompt_conditioning_strategy"] = json_dict.get("iprompt_conditioning_strategy", "")
+    json_dict["iprompt_generation_checkpoint"] = json_dict.get("iprompt_generation_checkpoint", json_dict["checkpoint"])
+    json_dict["iprompt_generation_temp"] = json_dict.get("iprompt_generation_temp", 1.0)
+    json_dict["iprompt_generation_top_p"] = json_dict.get("iprompt_generation_top_p", 1.0)
+
     new_json_dict = rerank_dict(json_dict)
     os.makedirs(output_folder_name, exist_ok=True)
     out_file = os.path.join(output_folder_name, 'results.pkl')
@@ -107,7 +117,9 @@ if __name__ == '__main__':
     parser.add_argument("--output_folder_name",
                         default='/home/chansingh/mntv1/iprompt_revision_reranked/')
     args = parser.parse_args()
-    for folder in tqdm(os.listdir(args.input_folder_name)):
+    folders = os.listdir(args.input_folder_name)
+    random.shuffle(folders)
+    for folder in tqdm(folders):
         folder_full = os.path.join(args.input_folder_name, folder)
         output_folder_full = os.path.join(
             args.output_folder_name, folder)

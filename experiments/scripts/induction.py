@@ -29,8 +29,8 @@ PARAMS_SHARED_DICT = {
         'translation_en-de', 'larger_animal', 'translation_en-es'
     ]],
     # 'model_cls': ['iprompt', 'autoprompt'],
-    # 'model_cls': ['autoprompt'],
-    'model_cls': ['iprompt'],
+    'model_cls': ['autoprompt'],
+    # 'model_cls': ['iprompt'],
     'num_learned_tokens': submit_utils.NUM_LEARNED_TOKENS,
 
     # stopping criteria
