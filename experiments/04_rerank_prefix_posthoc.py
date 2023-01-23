@@ -129,12 +129,15 @@ if __name__ == '__main__':
     parser.add_argument("--input_folder_name",
                         default='/home/chansingh/mntv1/iprompt_revision_xmas/')
     parser.add_argument("--output_folder_name",
-                        default='/home/chansingh/mntv1/iprompt_revision_reranked/')
+                        # default='/home/chansingh/mntv1/iprompt_revision_reranked/')
+                        default='/home/chansingh/iprompt_reranked_test/')
     args = parser.parse_args()
     folders = [
         d for d in os.listdir(args.input_folder_name)
         if os.path.isdir(os.path.join(args.input_folder_name, d))
     ]
+    with open('folders.txt', 'w') as f:
+        f.write(str(folders))
     random.shuffle(folders)
     for folder in tqdm(folders):
         folder_full = os.path.join(args.input_folder_name, folder)
