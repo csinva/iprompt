@@ -64,20 +64,31 @@ ALL_SPLIT_DICT = {**SST2_SPLIT_DICT, **IMDB_SPLIT_DICT, **RT_SPLIT_DICT, **FFB_S
     return dataset, args
 """
 
+# LABEL_MAP = {
+#     # neg, pos
+#     "rotten_tomatoes": { 0: "No", 1: "Yes" },
+#     "sst2": { 0: "No", 1: "Yes" },
+#     "imdb": { 0: "No", 1: "Yes" },
+#     # neg, neutral, pos
+#     "financial_phrasebank": { 0: "No", 1: "Maybe", 2: "Yes" },
+#     # not hate speech, yes hate speech
+#     "tweets_hate_speech": { 0: "No", 1: "Yes" },
+# }
+
 LABEL_MAP = {
     # neg, pos
-    "rotten_tomatoes": { 0: "No", 1: "Yes" },
-    "sst2": { 0: "No", 1: "Yes" },
-    "imdb": { 0: "No", 1: "Yes" },
+    "rotten_tomatoes": { 0: "negative", 1: "positive" },
+    "sst2": { 0: "negative", 1: "positive" },
+    "imdb": { 0: "negative", 1: "positive" },
     # neg, neutral, pos
-    "financial_phrasebank": { 0: "No", 1: "Maybe", 2: "Yes" },
+    "financial_phrasebank": { 0: "negative", 1: "neutral", 2: "positive" },
     # not hate speech, yes hate speech
-    "tweets_hate_speech": { 0: "No", 1: "Yes" },
+    "tweets_hate_speech": { 0: "negative", 1: "positive" },
 }
 
 
-def make_row_sentiment(row: Dict[str, str], dataset_name: str, text_key: str) -> Dict[str, str]:
-    text_input = f'Input: {row[text_key]} Answer:'
+def make_row_sentiment_with_labelnames(row: Dict[str, str], dataset_name: str, text_key: str) -> Dict[str, str]:
+    text_input = f'Input: "{row[text_key]}" Answer:'
     sentiment = LABEL_MAP[dataset_name][row['label']]
     text_output =  f' {sentiment}\n'
     return {
@@ -112,7 +123,9 @@ def fetch_classification_data(dataset_split: str, dataset_name: str, text_key: s
     raw_dataset = raw_dataset.filter(lambda row: row["label"] in LABEL_MAP[dataset_name])
     if not len(raw_dataset): raise ValueError("got no datapoints after filtering for valid labels")
     # make rows
-    dataset = raw_dataset.map(functools.partial(make_row_sentiment, dataset_name=dataset_name, text_key=text_key))
+    dataset = raw_dataset.map(
+        functools.partial(make_row_sentiment_with_labelnames, dataset_name=dataset_name, text_key=text_key)
+    )
     return dataset.to_pandas()
 
 

@@ -39,8 +39,8 @@ PARAMS_SHARED_DICT = {
     'num_learned_tokens': [6],
 
     # stopping criteria
-    'max_dset_size': [5000],
-    'max_n_datapoints': [5000],
+    'max_dset_size': [10 * 16],
+    'max_n_datapoints': [10 * 16],
     'early_stopping_steps': [50],
 
     # fixed params
@@ -52,6 +52,10 @@ PARAMS_SHARED_DICT = {
     'iprompt_num_random_generations': [4],
     'iprompt_num_mutations': [2],
     ##
+    'iprompt_conditioning_strategy': ['\"\"'],
+    'single_shot_loss': [1],
+    'n_shots': [5],
+    ##
     # 'iprompt_conditioning_strategy': ['\"\"', 'x_only', 'y_only', 'unconditional'],
     # 'single_shot_loss': [1],
     # 'n_shots': [5],
@@ -60,9 +64,9 @@ PARAMS_SHARED_DICT = {
     # 'single_shot_loss': [0],
     # 'n_shots': [5],
     ## 
-    'iprompt_conditioning_strategy': ['\"\"'],
-    'single_shot_loss': [1],
-    'n_shots': [1],
+    # 'iprompt_conditioning_strategy': ['\"\"'],
+    # 'single_shot_loss': [1],
+    # 'n_shots': [1],
 }
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 PARAMS_COUPLED_DICT = { 

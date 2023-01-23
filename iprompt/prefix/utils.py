@@ -335,7 +335,9 @@ class PrefixModel(nn.Module, abc.ABC):
             )
 
         input_ids = torch.stack(input_ids)
-        assert input_ids.shape == (original_input_ids.shape[0], original_input_ids.shape[1] + next_token_ids.shape[1])
+        assert input_ids.shape == (
+            original_input_ids.shape[0], original_input_ids.shape[1] + next_token_ids.shape[1]
+        )
 
         # feed into the model. prefix-handling is implemented in PrefixModel::forward.
         if self._is_t5:

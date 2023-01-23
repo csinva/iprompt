@@ -185,6 +185,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
     np.random.seed(42)
     torch.manual_seed(42)
     total_loss = 0.0
+    total_likelihood = 0.0
     total_n = 0
     total_n_correct = 0.0
     dataloader = torch.utils.data.DataLoader(
@@ -240,6 +241,9 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                 loss = torch.nn.functional.nll_loss(
                     input=pred_next_token_logits, target=true_next_token_ids, reduction='sum')
 
+                # compute likelihood
+                total_likelihood += pred_next_token_logits.softmax(dim=-1)[torch.arange(len(pred_next_token_logits),device=device), true_next_token_ids].sum().item()
+
                 # check if correct
                 total_n_correct += (pred_next_token_logits.argmax(dim=-1)
                             == true_next_token_ids.flatten()).int().sum().item()
@@ -288,6 +292,6 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
     if verbose:
         print(f"Percent correct: {(total_n_correct * 100.0 / total_n):.2f}")
     if not multi_token:
-        return (total_loss / total_n), (total_n_correct * 100.0 / total_n)
+        return (total_likelihood / total_n), (total_loss / total_n), (total_n_correct * 100.0 / total_n)
     else:
-        return np.nan, (total_n_correct * 100.0 / total_n)
+        return np.nan, np.nan, (total_n_correct * 100.0 / total_n)

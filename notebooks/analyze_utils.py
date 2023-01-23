@@ -194,7 +194,8 @@ def load_results_and_cache_prefix_json(results_dir: str, save_file: str = 'r.pkl
 
 
 def load_results_and_cache_autoprompt_json(
-    results_dir: str, save_file: str = 'r.pkl',
+    results_dir: str,
+    save_file: str = 'r.pkl',
     include_losses: bool = False,
     one_row_only: bool = False,
     do_reranking: bool = False,
@@ -204,19 +205,7 @@ def load_results_and_cache_autoprompt_json(
     print('getting dir_names...')
 
     results_fn = 'results_reranked' if do_reranking else 'results'
-
-    dir_names = sorted(
-        [fname
-         for fname in os.listdir(results_dir)
-         if os.path.isdir(oj(results_dir, fname))
-         and (
-             os.path.exists(
-                 oj(results_dir, fname, f'{results_fn}.json'))
-             or
-             os.path.exists(
-                 oj(results_dir, fname, f'{results_fn}.pkl'))
-         )
-         ])
+    dir_names = sorted(os.listdir(results_dir))
     dfs = []
     all_losses = []
     for dir_name in tqdm(dir_names):
@@ -226,9 +215,13 @@ def load_results_and_cache_autoprompt_json(
         except:
             print(f'skipping {pickle_filename} (pkl still writing?)')
             continue
-        
+
         if 'prefixes' not in json_dict:
             print(f'skipping {pickle_filename} (run still in progress?)')
+            continue
+
+        if len(json_dict['prefixes']) == 0:
+            print(f'skipping {pickle_filename} (no prefixes?)')
             continue
 
         # remove list of losses (shouldn't be loaded in df, and will be a different length.)
@@ -250,15 +243,26 @@ def load_results_and_cache_autoprompt_json(
 
         # list to str
         if len(json_dict['generation_bad_words_ids']):
-            json_dict['generation_bad_words_ids'] = json_dict['generation_bad_words_ids'][0]
-            json_dict['generation_bad_words_ids'] = ', '.join(
-                map(str, json_dict['generation_bad_words_ids']))
+            # json_dict['generation_bad_words_ids'] = json_dict['generation_bad_words_ids'][0]
+            # json_dict['generation_bad_words_ids'] = ', '.join(
+                # map(str, json_dict['generation_bad_words_ids']))
+            del json_dict['generation_bad_words_ids']
         else:
             json_dict['generation_bad_words_ids'] = ''
+        if 'imodel_cls' in json_dict:
+            del json_dict['imodel_cls']
 
         # this line of code debugs lengths of things in the dict -- TODO change to assert on list sizes
-        # print({k: len(v) for k, v in json_dict.items() if (hasattr(v, '__len__') and not isinstance(v, str))})
-        df = pd.DataFrame.from_dict(json_dict)
+        # for k, v in json_dict.items():
+            # if isinstance(v, list):
+                # print(k, len(v))
+
+        try:
+            df = pd.DataFrame.from_dict(json_dict)
+        except:
+            import pdb
+            pdb.set_trace()
+            continue
         df['pickle_filename'] = pickle_filename
 
         # tensor -> float
