@@ -31,10 +31,9 @@ def get_next_token_logits(ex_inputs, model):
 
     # index at correct positions
     # TODO: smarter torch func to do this
-    next_token_logits = torch.Tensor(
-        size=(logits.shape[0], logits.shape[-1])).to(logits.device)
-    for i in range(logits.shape[0]):
-        next_token_logits[i, :] = logits[i, positions_next_token[i], :]
+    batch_size = logits.shape[0]
+    next_token_logits = logits[torch.arange(batch_size).to(logits.device), positions_next_token]
+    
     return next_token_logits
 
 
