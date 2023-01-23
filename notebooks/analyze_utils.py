@@ -165,8 +165,6 @@ def load_results_and_cache_prefix_json(results_dir: str, save_file: str = 'r.pkl
             del json_dict['task_name_list']
             del json_dict['losses']
 
-            import pdb; pdb.set_trace()
-
             df = pd.DataFrame.from_dict(json_dict)
             df['json_filename'] = json_filename
 
@@ -248,6 +246,7 @@ def load_results_and_cache_autoprompt_json(
 
         # remove unneeded keys
         del json_dict['task_name_list']
+        if 'imodel_cls' in json_dict: del json_dict['imodel_cls']
 
         # list to str
         if len(json_dict['generation_bad_words_ids']):
@@ -259,7 +258,6 @@ def load_results_and_cache_autoprompt_json(
 
         # this line of code debugs lengths of things in the dict -- TODO change to assert on list sizes
         # print({k: len(v) for k, v in json_dict.items() if (hasattr(v, '__len__') and not isinstance(v, str))})
-
         df = pd.DataFrame.from_dict(json_dict)
         df['pickle_filename'] = pickle_filename
 
