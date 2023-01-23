@@ -6,6 +6,7 @@ import datasets
 import numpy as np
 import os
 import torch
+import tqdm
 import string
 import transformers
 from iprompt import suffix
@@ -130,6 +131,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                                    max_new_tokens=7,
                                    max_length=256,
                                    verbose=True,
+                                   tqdm_notebook=False,
                                    ) -> float:
     """Tests a given language model on a dataset and returns {zero,few}-shot loss. 
     Note: accuracy is computed over the set of possible answers found in the original dataset.
@@ -143,7 +145,6 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
     batch_size (int): batch size for evaluation
     restrict_to_valid_answers (bool):
         Whether to restrict evaluation over all tokens present in the answers.
-        Only applied when multi_token is false.
     multi_token (bool):
         Whether to allow multiple tokens (uses beam search)
     max_length (int):
@@ -188,9 +189,20 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
     total_n_correct = 0.0
     dataloader = torch.utils.data.DataLoader(
         dset, batch_size=batch_size, shuffle=False, drop_last=False)
+    
+    # set up mask for possible answers
+    # vocab_size = model.tokenizer.vocab_size
+    vocab_size = model.get_logits(['dummy text']).shape[-1]
+    if restrict_to_valid_answers:
+        possible_answer_mask = get_possible_answer_mask(
+            dataloader, model, vocab_size)
+    else:
+        possible_answer_mask = torch.ones(vocab_size).bool().to(device)
 
-
-    for idx, batch in enumerate(dataloader):
+    pbar = dataloader
+    if tqdm_notebook:
+        pbar = tqdm.notebook.tqdm(dataloader, leave=False)
+    for idx, batch in enumerate(pbar):
         x_text = [(prefix + prompt) for prompt in batch['input']]
         y_text = [answer for answer in batch['output']]
         if idx == 0 and verbose:
@@ -214,16 +226,6 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                     ex_inputs, model.model)  # note, this will break for gpt-3
                 # all_token_logits = model.get_logits(x_text)
                 # pred_next_token_logits = all_token_logits[:, -1, :]
-
-                # set up mask for possible answers
-                # vocab_size = model.tokenizer.vocab_size
-                vocab_size = model.get_logits(['dummy text']).shape[-1]
-                if restrict_to_valid_answers:
-                    possible_answer_mask = get_possible_answer_mask(
-                        dataloader, model, vocab_size)
-                else:
-                    possible_answer_mask = torch.ones(vocab_size).bool().to(device)
-
 
                 # optionally take a mask over some tokens
                 pred_next_token_logits = torch.where(
