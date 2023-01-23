@@ -95,16 +95,27 @@ def rerank_folder(input_folder_name: str, output_folder_name: str):
         raise Exception(f'No results file found at {pickle_filename}')
     json_dict = CPU_Unpickler(open(pickle_filename, 'rb')).load()
 
-    # set old args
-    json_dict["iprompt_do_final_reranking"] = json_dict.get("iprompt_do_final_reranking", 1)
-    json_dict["iprompt_criterion"] = json_dict.get("iprompt_criterion", "loss")
-    json_dict["iprompt_conditioning_strategy"] = json_dict.get("iprompt_conditioning_strategy", "")
-    json_dict["iprompt_generation_checkpoint"] = json_dict.get("iprompt_generation_checkpoint", json_dict["checkpoint"])
-    json_dict["iprompt_generation_temp"] = json_dict.get("iprompt_generation_temp", 1.0)
-    json_dict["iprompt_generation_top_p"] = json_dict.get("iprompt_generation_top_p", 1.0)
+    # speed things up
+    if not json_dict['checkpoint'] == 'EleutherAI/gpt-j-6B':
+        return
+    if json_dict['task_name'].startswith('d3_'):
+        return
     if json_dict["imodel_cls"] == 'suffix':
         shutil.rmtree(input_folder_name)
         return
+
+    # set old args
+    json_dict["iprompt_do_final_reranking"] = json_dict.get(
+        "iprompt_do_final_reranking", 1)
+    json_dict["iprompt_criterion"] = json_dict.get("iprompt_criterion", "loss")
+    json_dict["iprompt_conditioning_strategy"] = json_dict.get(
+        "iprompt_conditioning_strategy", "")
+    json_dict["iprompt_generation_checkpoint"] = json_dict.get(
+        "iprompt_generation_checkpoint", json_dict["checkpoint"])
+    json_dict["iprompt_generation_temp"] = json_dict.get(
+        "iprompt_generation_temp", 1.0)
+    json_dict["iprompt_generation_top_p"] = json_dict.get(
+        "iprompt_generation_top_p", 1.0)
 
     new_json_dict = rerank_dict(json_dict)
     os.makedirs(output_folder_name, exist_ok=True)
@@ -120,7 +131,10 @@ if __name__ == '__main__':
     parser.add_argument("--output_folder_name",
                         default='/home/chansingh/mntv1/iprompt_revision_reranked/')
     args = parser.parse_args()
-    folders = os.listdir(args.input_folder_name)
+    folders = [
+        d for d in os.listdir(args.input_folder_name)
+        if os.path.isdir(os.path.join(args.input_folder_name, d))
+    ]
     random.shuffle(folders)
     for folder in tqdm(folders):
         folder_full = os.path.join(args.input_folder_name, folder)
@@ -129,8 +143,7 @@ if __name__ == '__main__':
         if 'results.pkl' in os.listdir(folder_full):
             if not os.path.exists(os.path.join(output_folder_full, 'results.pkl')):
                 try:
-                    rerank_folder(input_folder_name=folder_full, output_folder_name=output_folder_full)
+                    rerank_folder(input_folder_name=folder_full,
+                                  output_folder_name=output_folder_full)
                 except Exception as e:
                     print(e)
-
-                
