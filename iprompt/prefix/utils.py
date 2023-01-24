@@ -229,33 +229,12 @@ class PrefixModel(nn.Module, abc.ABC):
     def prepare_batch(self, batch: Dict[str, str]) -> Tuple[str, str]:
         """Preprocesses text from `batch['input']` and `batch['output']` for inputting into prefix model.
         """
-        x_text = [f'. {prompt}' for prompt in batch['input']]
+        if self.prefix_before_input:
+            x_text = [f'. {prompt}' for prompt in batch['input']]
+        else:
+            x_text = [prompt for prompt in batch['input']]
         y_text = [answer.rstrip().rstrip('.') for answer in batch['output']] # strip whitespace at the end.
         return x_text, y_text
-
-    def forward_t5_and_compute_loss(
-            self,
-            input_ids: torch.Tensor,
-            next_token_ids: torch.Tensor,
-            prefix_ids: torch.Tensor, 
-        ) -> Tuple[int, torch.Tensor, torch.Tensor]:
-        new_input_ids, embeddings = self.embed_input_ids(
-            input_ids=input_ids,
-            prefix_ids=prefix_ids, 
-        )
-        attention_mask = ~(new_input_ids == self.tokenizer.pad_token_id)
-        outputs = self.model(
-            inputs_embeds=embeddings,
-            attention_mask=attention_mask,
-            labels=next_token_ids
-        )
-        n_correct = (
-            (outputs.logits.argmax(dim=-1) == next_token_ids)
-            |
-            (self.tokenizer.pad_token_id == next_token_ids)
-        ).all(dim=1).sum()
-        
-        return n_correct, new_input_ids, outputs.loss
 
     def forward(
             self,
@@ -320,104 +299,57 @@ class PrefixModel(nn.Module, abc.ABC):
             possible_answer_mask: torch.Tensor,
             prefix_ids: Optional[torch.Tensor] = None
         ) -> torch.Tensor:
-        # roll tensors together to put padding at the end. slow but I know it's right. (TODO: tensorize)
-        input_ids = []
-        num_pad_tokens = (original_input_ids == self.tokenizer.eos_token_id).sum(dim=1)
-        for i in range(len(original_input_ids)):
-            if num_pad_tokens[i] == 0:
-                next_tensor = torch.cat((original_input_ids[i], next_token_ids[i]), dim=0)
-            else:
-                num_non_pad_tokens = original_input_ids.shape[1] - num_pad_tokens[i]
-                padding = torch.full(size=(num_pad_tokens[i], ), fill_value=self.tokenizer.eos_token_id).to(device)
-                next_tensor = torch.cat((original_input_ids[i][:num_non_pad_tokens], next_token_ids[i], padding), dim=0)
-            input_ids.append(
-                next_tensor
-            )
-
-        input_ids = torch.stack(input_ids)
-        assert input_ids.shape == (
-            original_input_ids.shape[0], original_input_ids.shape[1] + next_token_ids.shape[1]
-        )
-
         # feed into the model. prefix-handling is implemented in PrefixModel::forward.
+        # and huggingface LM automatically computes language modeling loss.
         if self._is_t5:
-            n_correct, full_input_ids, loss = self.forward_t5_and_compute_loss(
+            new_input_ids, embeddings = self.embed_input_ids(
                 input_ids=original_input_ids,
-                next_token_ids=next_token_ids,
                 prefix_ids=prefix_ids, 
             )
+            attention_mask = ~(new_input_ids == self.tokenizer.pad_token_id)
+            outputs = self.model(
+                inputs_embeds=embeddings,
+                attention_mask=attention_mask,
+                labels=next_token_ids
+            )
+            next_token_logits = outputs.logits
         else:
-            full_input_ids, outputs = self.forward(
-                input_ids=input_ids,
-                prefix_ids=prefix_ids,
+            full_input_ids = torch.cat((original_input_ids, next_token_ids), dim=1)
+            new_input_ids, embeddings = self.embed_input_ids(
+                input_ids=full_input_ids,
+                prefix_ids=prefix_ids, 
             )
-            # make sure we have same number of predictions as tokens
-            assert full_input_ids.shape == outputs.shape[:2]
+            attention_mask = ~(new_input_ids == self.tokenizer.pad_token_id)
 
-            # get first predicted token logits
-            next_token_idx = (~(full_input_ids == self.tokenizer.eos_token_id)).cumsum(dim=1).argmax(dim=1)
-            next_token_logits = outputs[torch.arange(len(original_input_ids)), next_token_idx-1]
-
-            # compute first-token acc
-            if possible_answer_mask is None:
-                n_correct = (
-                    next_token_logits.argmax(dim=-1) == next_token_ids[:, 0]
-                ).int().sum()
-            else:
-                # apply possible answer mask for single-token
-                next_token_logits = torch.where(
-                    possible_answer_mask[None],
-                    next_token_logits, torch.tensor(float('-inf')).to(device)
-                )
-                n_correct = (
-                    (next_token_logits.exp() * possible_answer_mask).argmax(dim=-1)
-                        ==
-                    next_token_ids[:, 0]
-                ).int().sum()
-
-            # compute loss from first token
-            original_losses = torch.nn.functional.cross_entropy(
-                input=next_token_logits,
-                target=next_token_ids[:, 0],
-                ignore_index=self.tokenizer.pad_token_id,
-                reduction='none'
+            # mask labels before feeding into model
+            # huggingface supports labels of -100.
+            # see huggingface.co/docs/transformers/model_doc/gpt2#transformers.GPT2DoubleHeadsModel.forward.labels
+            S = new_input_ids.shape[1]
+            LS = next_token_ids.shape[1]
+            labels = torch.where(
+                torch.arange(S, device=device) < (S - LS), -100, new_input_ids
             )
-
-            # add loss from other tokens
-            b, label_sequence_length = next_token_ids.shape
-            if label_sequence_length > 1:
-                other_next_token_logits = (
-                    outputs[:, -label_sequence_length:-1]
-                        .reshape((b * (label_sequence_length-1), -1))
-                )
-                other_next_token_ids = (
-                    next_token_ids[:, 1:]
-                        .reshape((b * (label_sequence_length-1),))
-                )
-                other_losses = torch.nn.functional.cross_entropy(
-                    input=other_next_token_logits,
-                    target=other_next_token_ids,
-                    ignore_index=self.tokenizer.pad_token_id,
-                    reduction='none'
-                )
-                # take the mean of losses on the batch level, and normalize for length
-                all_losses = torch.cat(
-                    (original_losses[:, None], other_losses.reshape((b, -1))), dim=1
-                )
-                special_token_id = self.tokenizer.bos_token_id or self.tokenizer.pad_token_id
-                num_tokens_per_output = (
-                    ~(next_token_ids == special_token_id)).sum(dim=1)
-                all_losses = all_losses.sum(dim=1) / num_tokens_per_output
-                assert all_losses.shape == (b,)
-                loss = all_losses.mean()
-            else:
-                loss = original_losses.mean()
+            labels = torch.where(
+                labels == self.tokenizer.pad_token_id, -100, labels
+            )
+            outputs = self.model(
+                inputs_embeds=embeddings,
+                attention_mask=attention_mask,
+                labels=labels,
+            )
+            next_token_logits = outputs.logits[:, -LS-1:-1]
             
-            if DEBUG_VERBOSE: 
-                print(f">> loss for input string: {self.tokenizer.decode(full_input_ids[0])}")
-                print(f"\tLoss = {loss:.3f}")
+        n_correct = (
+            (next_token_logits.argmax(dim=-1) == next_token_ids)
+            |
+            (self.tokenizer.pad_token_id == next_token_ids)
+        ).all(dim=1).sum()
+        
+        if DEBUG_VERBOSE: 
+            print(f">> loss for input string: {self.tokenizer.decode(full_input_ids[0])}")
+            print(f"\tLoss = {outputs.loss:.3f}")
 
-        return full_input_ids, loss, n_correct
+        return full_input_ids, outputs.loss, n_correct
     
     def compute_loss_and_call_backward(
             self,

@@ -64,7 +64,7 @@ class HotFlip(PrefixModel):
         self._data = []
         self._loss_for_prefix = {}
         # 
-        self.prefix_before_input = True
+        self.prefix_before_input = args.prefix_before_input
 
     def check_early_stop(self) -> bool:
         """Allow prefix models to stop early."""
@@ -299,17 +299,24 @@ class HotFlip(PrefixModel):
             full_input_ids = torch.cat(
                 (preprefix_ids, prefix_ids, input_ids), dim=1
             )
+            outputs = torch.cat(
+                (
+                    self.token_embedding.forward(preprefix_ids),
+                    prefix_embedding[None].repeat((batch_size, 1, 1)),
+                    self.token_embedding.forward(input_ids)
+                ), dim=1
+            )
         else:
             full_input_ids = torch.cat(
                 (input_ids, preprefix_ids, prefix_ids), dim=1
             )
-        outputs = torch.cat(
-            (
-                self.token_embedding.forward(preprefix_ids),
-                prefix_embedding[None].repeat((batch_size, 1, 1)),
-                self.token_embedding.forward(input_ids)
-            ), dim=1
-        )
+            outputs = torch.cat(
+                (
+                    self.token_embedding.forward(input_ids),
+                    self.token_embedding.forward(preprefix_ids),
+                    prefix_embedding[None].repeat((batch_size, 1, 1)),
+                ), dim=1
+            )
         return full_input_ids, outputs
 
 

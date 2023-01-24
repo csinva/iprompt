@@ -359,6 +359,9 @@ if __name__ == '__main__':
                         help='number of learned prefix tokens (for gumbel, hotflip, autoprompt, prompt-tuning)')
     parser.add_argument('--use_preprefix', type=int, default=0, choices=(0, 1),
                         help='whether to use a template pre-prefix')
+    parser.add_argument('--prefix_before_input', type=int, default=1,
+                        help=('Whether the prefix should become *before* the input in the '
+                        'order fed to model before computing loss. iPrompt default is yes.'))
     parser.add_argument('--iprompt_preprefix_str', type=str, default='',
                         help='Text like "Output the number that" or "Answer F/M if"... \
                             If this is passed, automatically use_preprefix'
