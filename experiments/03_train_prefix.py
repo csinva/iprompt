@@ -350,7 +350,7 @@ if __name__ == '__main__':
     parser.add_argument('--single_shot_loss', type=int, default=0,
                         help='if n_shots==0, load multiple shots but only use one compute loss')
     parser.add_argument('--mask_possible_answers', type=int, default=0,
-                        help='only compute loss over possible answer tokens')
+                        help='only compute loss/acc over possible answer tokens')
     parser.add_argument('--hotflip_num_candidates', type=int, default=10,
                         help='number of candidates to rerank, for hotflip')
     parser.add_argument('--accum_grad_over_epoch', type=int, default=0, choices=(0, 1),
@@ -380,6 +380,8 @@ if __name__ == '__main__':
     parser.add_argument('--iprompt_do_final_reranking', type=int, default=1)
     parser.add_argument('--iprompt_criterion', type=str, default='loss',
                         choices=['loss', 'acc', 'combined'])
+    parser.add_argument('--iprompt_topk_strategy', type=str, default='different_start_token',
+                        choices=['different_start_token', 'all'])
     parser.add_argument('--llm_float16', '--float16', '--parsimonious', type=int, default=0, choices=(0, 1),
                         help='if true, loads LLM in fp16 and at low-ram')
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",

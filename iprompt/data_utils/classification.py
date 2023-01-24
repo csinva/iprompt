@@ -87,8 +87,8 @@ LABEL_MAP = {
 }
 
 
-def make_row_sentiment_with_labelnames(row: Dict[str, str], dataset_name: str, text_key: str) -> Dict[str, str]:
-    text_input = f'Input: "{row[text_key]}" Answer:'
+def make_row_sentiment__(row: Dict[str, str], dataset_name: str, text_key: str) -> Dict[str, str]:
+    text_input = f'Input: "{row[text_key].strip()}"'
     sentiment = LABEL_MAP[dataset_name][row['label']]
     text_output =  f' {sentiment}\n'
     return {
@@ -124,7 +124,7 @@ def fetch_classification_data(dataset_split: str, dataset_name: str, text_key: s
     if not len(raw_dataset): raise ValueError("got no datapoints after filtering for valid labels")
     # make rows
     dataset = raw_dataset.map(
-        functools.partial(make_row_sentiment_with_labelnames, dataset_name=dataset_name, text_key=text_key)
+        functools.partial(make_row_sentiment__, dataset_name=dataset_name, text_key=text_key)
     )
     return dataset.to_pandas()
 

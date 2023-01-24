@@ -17,7 +17,7 @@ import tqdm
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-DEBUG_VERBOSE = True
+DEBUG_VERBOSE = False
 
 
 def get_token_replacements_single_mask(
@@ -292,6 +292,7 @@ class PrefixModel(nn.Module, abc.ABC):
         # feed into the model. prefix-handling is implemented in PrefixModel::forward.
         # and huggingface LM automatically computes language modeling loss.
         if self._is_t5:
+            assert possible_answer_mask is None, "not implemented with t5 yet"
             blank_next_token_ids = torch.zeros(
                 (len(original_input_ids), 0), dtype=torch.long, device=device)
             new_input_ids, embeddings = self.embed_input_ids(
@@ -306,6 +307,7 @@ class PrefixModel(nn.Module, abc.ABC):
                 labels=next_token_ids
             )
             next_token_logits = outputs.logits
+            loss = outputs.loss
         else:
             new_input_ids, embeddings = self.embed_input_ids(
                 input_ids=original_input_ids,
@@ -331,6 +333,17 @@ class PrefixModel(nn.Module, abc.ABC):
                 labels=labels,
             )
             next_token_logits = outputs.logits[:, -LS-1:-1]
+
+            if possible_answer_mask is not None:
+                BIG_NEGATIVE_NUMBER = torch.tensor(-10**10, dtype=next_token_logits.dtype, device=device)
+                next_token_logits = torch.where(possible_answer_mask, next_token_logits, BIG_NEGATIVE_NUMBER)
+            B, S, _V = next_token_logits.shape
+            loss = torch.nn.functional.cross_entropy(
+                input=next_token_logits.reshape((B * S, -1)),
+                target=next_token_ids.reshape((B * S),),
+                ignore_index=self.tokenizer.pad_token_id,
+                # reduction=None
+            )
             
         n_correct = (
             (next_token_logits.argmax(dim=-1) == next_token_ids)
@@ -342,7 +355,7 @@ class PrefixModel(nn.Module, abc.ABC):
             print(f">> loss for input string: {self.tokenizer.decode(new_input_ids[0])}")
             print(f"\tLoss = {outputs.loss:.3f}")
 
-        return new_input_ids, outputs.loss, n_correct
+        return new_input_ids, loss, n_correct
     
     def compute_loss_and_call_backward(
             self,
@@ -447,7 +460,8 @@ class PrefixPool:
     _avg_accuracy: Dict[Tuple[int], float]
     _best_prefix_by_start_token: Dict[int, Tuple[Tuple[int], float]]
 
-    def __init__(self, tokenizer: transformers.PreTrainedTokenizer, criterion: str):
+    def __init__(self, tokenizer: transformers.PreTrainedTokenizer, criterion: str,
+        topk_strategy: str = 'different_start_token'):
         self.tokenizer = tokenizer
         self.criterion = criterion
         # tuple (input_ids) -> float (loss)
@@ -459,7 +473,7 @@ class PrefixPool:
         # 
         self._best_prefix_by_start_token = {}
         # 
-        self._topk_strategy = 'different_start_token' # ['different_start_token', 'all']
+        self._topk_strategy = topk_strategy # ['different_start_token', 'all']
     
     @property
     def prefixes(self) -> List[Tuple[int]]:
