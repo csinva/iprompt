@@ -5,7 +5,7 @@ import sys
 import submit_utils
 repo_dir = dirname(dirname(os.path.abspath(__file__)))
 
-save_dir = '/home/jxm3/research/prompting/interpretable-autoprompting/results_icml/classification__prefix_after_input'
+save_dir = '/home/jxm3/research/prompting/interpretable-autoprompting/results_icml/classification__prefix_after_input_2'
 
 cmd_python = 'python'
 
@@ -16,8 +16,8 @@ cmd_python = 'python'
 PARAMS_SHARED_DICT = {
     # stopping criteria
     'max_dset_size': [10_000], # sst2 has 10k sentences but could be more with a higher n_shots.
-    'num_learned_tokens': [6], # 
-    # 'num_learned_tokens': [12, 24],
+    # 'num_learned_tokens': [6], # 
+    'num_learned_tokens': [12, 24],
     'task_name': [
         'sst2_train',
         'imdb_train',
@@ -40,8 +40,10 @@ PARAMS_SHARED_DICT = {
     # sentiment-specific args
     'prefix_before_input': [0],
     'mask_possible_answers': [1],
-    'iprompt_generation_repetition_penalty': [0.1], # ?
-    'iprompt_topk_strategy': ['all'],
+    # 'iprompt_generation_repetition_penalty': [0.1],
+    # 'iprompt_topk_strategy': ['all'],
+    'iprompt_generation_repetition_penalty': [1.0],
+    'iprompt_topk_strategy': ['different_start_token'],
 }
 PARAMS_SHARED_DICT['save_dir'] = [save_dir]
 

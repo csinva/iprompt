@@ -60,17 +60,19 @@ class AutoPrompt(HotFlip):
         all_candidate_n_correct = torch.zeros(
             len(prefixes), dtype=torch.float32)
         total_n = 0
+        print('_test_prefixes')
+        # breakpoint()
         for batch in tqdm.tqdm(eval_dataloader, desc=f'evaluating {len(prefixes)} prefixes'):
             if (self.args.n_shots > 1) and (self.args.single_shot_loss): ##
                 batch['input'] = batch['last_input'] ##
             x_text, y_text = self.prepare_batch(batch=batch)
-            total_n += len(x_text)
             tok = functools.partial(
                 self.tokenizer, return_tensors='pt', padding='longest',
                 truncation=True, max_length=self.args.max_length  # TODO set max_length on self
             )
             x_tokenized = tok(x_text).to(device)
             y_tokenized = tok(y_text).to(device)
+            total_n += len(x_tokenized.input_ids)
 
             next_token_ids = y_tokenized.input_ids
             for i in range(len(prefixes)):
@@ -83,8 +85,8 @@ class AutoPrompt(HotFlip):
                             prefix_ids=torch.tensor(prefixes[i]).to(device),
                         )
                     )
-                all_candidate_losses[i] = cand_loss
-                all_candidate_n_correct[i] = cand_n_correct
+                all_candidate_losses[i] += cand_loss.item()
+                all_candidate_n_correct[i] += cand_n_correct.item()
         return all_candidate_losses.cpu().tolist(), (all_candidate_n_correct / total_n).cpu().tolist()
 
     def serialize(self, eval_dataloader: torch.utils.data.DataLoader, possible_answer_mask: torch.Tensor) -> Dict[str, Any]:
