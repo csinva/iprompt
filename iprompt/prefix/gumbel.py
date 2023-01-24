@@ -35,7 +35,7 @@ class GumbelPrefixModel(PrefixModel):
         self.tau = self.tau / self.tau_anneal
         print(f"𝛕 = {self.tau:.2f}")
 
-    def embed_input_ids(self, input_ids: torch.Tensor, prefix_ids: Optional[torch.Tensor]) -> Tuple[torch.Tensor, torch.Tensor]:
+    def embed_input_ids(self, input_ids: torch.Tensor, next_token_ids: torch.Tensor, prefix_ids: Optional[torch.Tensor]) -> Tuple[torch.Tensor, torch.Tensor]:
         assert prefix_ids is None, "cannot provide custom prefix IDs for Gumbel"
         # word_weights_dist = (word_weights * 1000).softmax(dim=-1)
         prefix_embedding_words_dist = nn.functional.gumbel_softmax(
@@ -49,6 +49,7 @@ class GumbelPrefixModel(PrefixModel):
         )
         prefix_embedding = prefix_embedding_words_dist @ self.token_embedding.weight
 
+        input_ids = torch.cat((input_ids, next_token_ids), dim=1)
         input_ids = torch.cat(
             (prefix_embedding_words_dist.argmax(dim=-1), input_ids), dim=1
         )

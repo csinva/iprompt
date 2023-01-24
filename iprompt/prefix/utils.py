@@ -17,12 +17,13 @@ import tqdm
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-DEBUG_VERBOSE = False
+DEBUG_VERBOSE = True
 
 
 def get_token_replacements_single_mask(
     dataloader: DataLoader, model: transformers.AutoModelForMaskedLM,
-    tokenizer: transformers.AutoTokenizer, init_prefix_template: str, num_candidates: int)-> List[str]:
+    tokenizer: transformers.AutoTokenizer, init_prefix_template: str, num_candidates: int
+    )-> List[str]:
     """Given a template like `{mask} the numbers`, returns the `num_candidates` most likely
     single-token replacements for `{mask}` given `model`.
     """
@@ -231,9 +232,10 @@ class PrefixModel(nn.Module, abc.ABC):
         """
         if self.prefix_before_input:
             x_text = [f'. {prompt}' for prompt in batch['input']]
+            y_text = [answer for answer in batch['output']] # strip whitespace at the end.
         else:
             x_text = [prompt for prompt in batch['input']]
-        y_text = [answer.rstrip().rstrip('.') for answer in batch['output']] # strip whitespace at the end.
+            y_text = [answer.rstrip().rstrip('.') for answer in batch['output']] # strip whitespace at the end.
         return x_text, y_text
 
     def forward(
@@ -241,20 +243,8 @@ class PrefixModel(nn.Module, abc.ABC):
             input_ids: torch.Tensor,
             prefix_ids: Optional[torch.Tensor],
         ) -> Tuple[torch.Tensor, torch.Tensor]:
-        new_input_ids, embeddings = self.embed_input_ids(
-            input_ids=input_ids, prefix_ids=prefix_ids
-        )
-        # Automatically set attention mask and position-ids
-        attention_mask = ~(new_input_ids == self.tokenizer.pad_token_id)
+        raise NotImplementedError()
 
-        assert new_input_ids.shape == embeddings.shape[0:2]
-
-        output = self.model(
-            inputs_embeds=embeddings,
-            attention_mask=attention_mask,
-        )
-        return new_input_ids, output.logits
-    
     def pre_epoch(self) -> None:
         return
     
@@ -302,8 +292,11 @@ class PrefixModel(nn.Module, abc.ABC):
         # feed into the model. prefix-handling is implemented in PrefixModel::forward.
         # and huggingface LM automatically computes language modeling loss.
         if self._is_t5:
+            blank_next_token_ids = torch.zeros(
+                (len(original_input_ids), 0), dtype=torch.long, device=device)
             new_input_ids, embeddings = self.embed_input_ids(
                 input_ids=original_input_ids,
+                next_token_ids=blank_next_token_ids,
                 prefix_ids=prefix_ids, 
             )
             attention_mask = ~(new_input_ids == self.tokenizer.pad_token_id)
@@ -314,9 +307,9 @@ class PrefixModel(nn.Module, abc.ABC):
             )
             next_token_logits = outputs.logits
         else:
-            full_input_ids = torch.cat((original_input_ids, next_token_ids), dim=1)
             new_input_ids, embeddings = self.embed_input_ids(
-                input_ids=full_input_ids,
+                input_ids=original_input_ids,
+                next_token_ids=next_token_ids,
                 prefix_ids=prefix_ids, 
             )
             attention_mask = ~(new_input_ids == self.tokenizer.pad_token_id)
@@ -346,10 +339,10 @@ class PrefixModel(nn.Module, abc.ABC):
         ).all(dim=1).sum()
         
         if DEBUG_VERBOSE: 
-            print(f">> loss for input string: {self.tokenizer.decode(full_input_ids[0])}")
+            print(f">> loss for input string: {self.tokenizer.decode(new_input_ids[0])}")
             print(f"\tLoss = {outputs.loss:.3f}")
 
-        return full_input_ids, outputs.loss, n_correct
+        return new_input_ids, outputs.loss, n_correct
     
     def compute_loss_and_call_backward(
             self,

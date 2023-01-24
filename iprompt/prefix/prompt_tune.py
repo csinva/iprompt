@@ -19,7 +19,8 @@ class PromptTunedModel(PrefixModel):
         super().__init__(args=args, loss_func=loss_func, model=model, tokenizer=tokenizer, preprefix=preprefix)
         self.prefix_embedding = self.init_continuous_prefix(num_tokens=args.num_learned_tokens)
 
-    def embed_input_ids(self, input_ids: torch.Tensor, prefix_ids: Optional[torch.Tensor]) -> Tuple[torch.Tensor, torch.Tensor]:
+    def embed_input_ids(self, input_ids: torch.Tensor, next_token_ids: torch.Tensor, prefix_ids: Optional[torch.Tensor]) -> Tuple[torch.Tensor, torch.Tensor]:
+        input_ids = torch.cat((input_ids, next_token_ids), dim=1)
         assert prefix_ids is None, "cannot provide custom prefix IDs for prompt-tuning"
         token_embeddings = self.token_embedding.forward(input_ids)
         return None, torch.cat(
