@@ -295,7 +295,7 @@ class HotFlip(PrefixModel):
         prefix_ids = prefix_ids[None].to(device).repeat((batch_size, 1)).to(device)
         preprefix_ids = self.preprefix_ids[None].to(device).repeat((batch_size, 1)).to(device)
 
-        breakpoint()
+        # breakpoint()
         full_input_ids = torch.cat(
             (preprefix_ids, prefix_ids, input_ids), dim=1
         )
