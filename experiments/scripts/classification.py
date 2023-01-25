@@ -16,8 +16,7 @@ cmd_python = 'python'
 PARAMS_SHARED_DICT = {
     # stopping criteria
     'max_dset_size': [10_000], # sst2 has 10k sentences but could be more with a higher n_shots.
-    # 'num_learned_tokens': [6], # 
-    'num_learned_tokens': [12, 24],
+    # 'num_learned_tokens': [6, 12, 24],
     'task_name': [
         'sst2_train',
         'imdb_train',

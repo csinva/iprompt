@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -J {job_name}                        # Job name
 #SBATCH -N 1                                 # Total number of nodes requested
-#SBATCH -p rush-interactive                              # Total number of nodes requested
+#SBATCH -p rush                              # Total number of nodes requested
 #SBATCH -n {num_cpus}                    # Total number of cores requested
 #SBATCH --mem={mem}                      # Total amount of (real) memory requested (per node)
 #SBATCH --gres={gpu}

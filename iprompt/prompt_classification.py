@@ -132,6 +132,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                                    max_length=256,
                                    verbose=True,
                                    tqdm_notebook=False,
+                                   prefix_before_input=True,
                                    ) -> float:
     """Tests a given language model on a dataset and returns {zero,few}-shot loss. 
     Note: accuracy is computed over the set of possible answers found in the original dataset.
@@ -151,6 +152,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
         Max length for truncation. Won't be applied to most datasets.
     max_new_tokens (int):
         number of tokens to generate when checking multi-token output
+    prefix_before_input (bool)
 
     Returns:
         loss (float): language modeling loss on examples in dataset
@@ -204,7 +206,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
     if tqdm_notebook:
         pbar = tqdm.notebook.tqdm(dataloader, leave=False)
     for idx, batch in enumerate(pbar):
-        x_text = [(prefix + prompt) for prompt in batch['input']]
+        x_text = [input_ for input_ in batch['input']]
         y_text = [answer for answer in batch['output']]
         if idx == 0 and verbose:
             print('x_text[0]:' + repr(x_text[0]))
@@ -219,6 +221,25 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                 x_text, padding='longest', truncation=True,
                 max_length=max_length,
                 return_tensors='pt').to(model.model.device)
+            
+            prefix_tokenized = model.tokenizer(
+                [prefix] * len(x_text), padding='longest', truncation=False,
+                max_length=max_length,
+                return_tensors='pt'
+            ).to(model.model.device)
+
+            if prefix_before_input:
+                ex_inputs.input_ids = torch.cat(
+                    (prefix_tokenized.input_ids, ex_inputs.input_ids), dim=1)
+                ex_inputs.attention_mask = torch.cat(
+                    (prefix_tokenized.attention_mask, ex_inputs.attention_mask), dim=1)
+            else:
+                ex_inputs.input_ids = torch.cat(
+                    (ex_inputs.input_ids, prefix_tokenized.input_ids), dim=1)
+                ex_inputs.attention_mask = torch.cat(
+                    (ex_inputs.attention_mask, prefix_tokenized.attention_mask), dim=1)
+           
+            # if len(prefix): import pdb; pdb.set_trace()
 
             # just decode a single token
             if not multi_token:
@@ -292,6 +313,6 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
     if verbose:
         print(f"Percent correct: {(total_n_correct * 100.0 / total_n):.2f}")
     if not multi_token:
-        return (total_likelihood / total_n), (total_loss / total_n), (total_n_correct * 100.0 / total_n)
+        return (total_loss / total_n), (total_n_correct * 100.0 / total_n)
     else:
-        return np.nan, np.nan, (total_n_correct * 100.0 / total_n)
+        return np.nan, (total_n_correct * 100.0 / total_n)
