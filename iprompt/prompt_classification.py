@@ -229,15 +229,15 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
             ).to(model.model.device)
 
             if prefix_before_input:
-                ex_inputs.input_ids = torch.cat(
-                    (prefix_tokenized.input_ids, ex_inputs.input_ids), dim=1)
-                ex_inputs.attention_mask = torch.cat(
-                    (prefix_tokenized.attention_mask, ex_inputs.attention_mask), dim=1)
+                ex_inputs['input_ids'] = torch.cat(
+                    (prefix_tokenized['input_ids'], ex_inputs['input_ids']), dim=1)
+                ex_inputs['attention_mask'] = torch.cat(
+                    (prefix_tokenized['attention_mask'], ex_inputs['attention_mask']), dim=1)
             else:
-                ex_inputs.input_ids = torch.cat(
-                    (ex_inputs.input_ids, prefix_tokenized.input_ids), dim=1)
-                ex_inputs.attention_mask = torch.cat(
-                    (ex_inputs.attention_mask, prefix_tokenized.attention_mask), dim=1)
+                ex_inputs['input_ids'] = torch.cat(
+                    (ex_inputs['input_ids'], prefix_tokenized['input_ids']), dim=1)
+                ex_inputs['attention_mask'] = torch.cat(
+                    (ex_inputs['attention_mask'], prefix_tokenized['attention_mask']), dim=1)
            
             # if len(prefix): import pdb; pdb.set_trace()
 
@@ -316,3 +316,4 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
         return (total_loss / total_n), (total_n_correct * 100.0 / total_n)
     else:
         return np.nan, (total_n_correct * 100.0 / total_n)
+

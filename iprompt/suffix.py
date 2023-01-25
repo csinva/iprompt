@@ -32,6 +32,11 @@ def get_next_token_logits(ex_inputs, model):
     # index at correct positions
     batch_size = logits.shape[0]
     next_token_logits = logits[torch.arange(batch_size).to(logits.device), positions_next_token]
+   
+    # import transformers
+    # tt = transformers.AutoTokenizer.from_pretrained(model.name_or_path)
+    # import pdb; pdb.set_trace()
+    # The IMDb movie review in negative/positive sentiment is: 
 
     return next_token_logits
 
