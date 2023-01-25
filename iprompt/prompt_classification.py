@@ -203,8 +203,8 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
         dset, batch_size=batch_size, shuffle=False, drop_last=False)
     
     # set up mask for possible answers
-    vocab_size = model.tokenizer.vocab_size
-    # vocab_size = model.get_logits(['dummy text']).shape[-1]
+    # vocab_size = model.tokenizer.vocab_size
+    vocab_size = model.get_logits(['dummy text']).shape[-1]
     if restrict_to_valid_answers:
         possible_answer_mask = get_possible_answer_mask(
             dataloader, model, vocab_size)

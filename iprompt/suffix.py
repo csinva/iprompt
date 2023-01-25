@@ -6,8 +6,10 @@ import torch
 
 import iprompt.data as data
 import iprompt.parallel as parallel
-from iprompt.prompt_classification import Gpt3Model
 import iprompt.utils as utils
+
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 def get_stopwords():
@@ -22,7 +24,8 @@ def get_stopwords():
 def get_next_token_logits(ex_inputs, ex_inputs_str, model, possible_answer_mask):
     """Gets logits for the next token given inputs with appropriate attention mask
     """
-    print('model type:', type(model))
+    from iprompt.prompt_classification import Gpt3Model
+    # print('model type:', type(model))
     if isinstance(model, Gpt3Model):
         return model.get_logits(
             x_text=ex_inputs_str,
@@ -41,15 +44,15 @@ def get_next_token_logits(ex_inputs, ex_inputs_str, model, possible_answer_mask)
         batch_size = logits.shape[0]
         next_token_logits = logits[torch.arange(batch_size).to(logits.device), positions_next_token]
 
+        # import transformers
+        # tt = transformers.AutoTokenizer.from_pretrained(model.model.name_or_path)
+        # import pdb; pdb.set_trace()
+
         # optionally take a mask over some tokens
         next_token_logits = torch.where(
             possible_answer_mask, next_token_logits, torch.tensor(
                 float('-inf')).to(device)
         )
-        # import transformers
-        # tt = transformers.AutoTokenizer.from_pretrained(model.name_or_path)
-        # import pdb; pdb.set_trace()
-        # The IMDb movie review in negative/positive sentiment is: 
 
         return next_token_logits
 
