@@ -22,6 +22,7 @@ def get_stopwords():
 def get_next_token_logits(ex_inputs, ex_inputs_str, model, possible_answer_mask):
     """Gets logits for the next token given inputs with appropriate attention mask
     """
+    print('model type:', type(model))
     if isinstance(model, Gpt3Model):
         return model.get_logits(
             x_text=ex_inputs_str,
