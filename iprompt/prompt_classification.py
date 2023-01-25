@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 import abc
 import argparse
@@ -70,14 +70,23 @@ class Gpt3Model(Model):
         self._api_kwargs = {"model": "text-davinci-002",
                             "temperature": 0.0, "max_tokens": 1, "logprobs": 5}
         print("Initializing for calls to GPT-3 API")
+        self.model = argparse.Namespace(device=torch.device('cpu'))
 
-    def get_logits(self, x_text: List[str]) -> torch.Tensor:
+    def get_logits(self, x_text: List[str], possible_answer_mask: Optional[torch.Tensor] = None) -> torch.Tensor:
+        import openai
         # all negative logits
         logits = np.zeros((len(x_text), self.tokenizer.vocab_size)) - 1e4
 
+        kwargs = self._api_kwargs
+        if possible_answer_mask is not None:
+            logit_bias = {}
+            for _idx, is_not_masked in enumerate(possible_answer_mask.tolist()):
+                if is_not_masked:
+                    logit_bias[_idx] = +100
+            kwargs['logit_bias'] = logit_bias
+
         for i, prompt in enumerate(x_text):
-            response = openai.Completion.create(
-                prompt=prompt, **self._api_kwargs)
+            response = openai.Completion.create(prompt=prompt, **kwargs)
             token_logprobs = response.choices[0]['logprobs']['top_logprobs'][0].to_dict(
             )
             for token, prob in token_logprobs.items():
@@ -194,8 +203,8 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
         dset, batch_size=batch_size, shuffle=False, drop_last=False)
     
     # set up mask for possible answers
-    # vocab_size = model.tokenizer.vocab_size
-    vocab_size = model.get_logits(['dummy text']).shape[-1]
+    vocab_size = model.tokenizer.vocab_size
+    # vocab_size = model.get_logits(['dummy text']).shape[-1]
     if restrict_to_valid_answers:
         possible_answer_mask = get_possible_answer_mask(
             dataloader, model, vocab_size)
@@ -223,37 +232,31 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                 return_tensors='pt').to(model.model.device)
             
             prefix_tokenized = model.tokenizer(
-                [prefix] * len(x_text), padding='longest', truncation=False,
+                [prefix] * len(x_text), padding='longest', truncation='do_not_truncate',
                 max_length=max_length,
-                return_tensors='pt'
-            ).to(model.model.device)
+                return_tensors='pt').to(model.model.device)
 
             if prefix_before_input:
                 ex_inputs['input_ids'] = torch.cat(
-                    (prefix_tokenized['input_ids'], ex_inputs['input_ids']), dim=1)
+                    (prefix_tokenized['input_ids'].long(), ex_inputs['input_ids']), dim=1)
                 ex_inputs['attention_mask'] = torch.cat(
-                    (prefix_tokenized['attention_mask'], ex_inputs['attention_mask']), dim=1)
+                    (prefix_tokenized['attention_mask'].long(), ex_inputs['attention_mask']), dim=1)
+                ex_inputs_str = [prefix + xt for xt in x_text]
             else:
                 ex_inputs['input_ids'] = torch.cat(
-                    (ex_inputs['input_ids'], prefix_tokenized['input_ids']), dim=1)
+                    (ex_inputs['input_ids'], prefix_tokenized['input_ids'].long()), dim=1)
                 ex_inputs['attention_mask'] = torch.cat(
-                    (ex_inputs['attention_mask'], prefix_tokenized['attention_mask']), dim=1)
-           
-            # if len(prefix): import pdb; pdb.set_trace()
+                    (ex_inputs['attention_mask'], prefix_tokenized['attention_mask'].long()), dim=1)
+                ex_inputs_str = [xt + prefix for xt in x_text]
 
             # just decode a single token
             if not multi_token:
                 # this function ensures that padded tokens are properly dealt with
                 pred_next_token_logits = suffix.get_next_token_logits(
-                    ex_inputs, model.model)  # note, this will break for gpt-3
-                # all_token_logits = model.get_logits(x_text)
-                # pred_next_token_logits = all_token_logits[:, -1, :]
-
-                # optionally take a mask over some tokens
-                pred_next_token_logits = torch.where(
-                    possible_answer_mask, pred_next_token_logits, torch.tensor(
-                        float('-inf')).to(device)
-                )
+                    ex_inputs=ex_inputs, 
+                    ex_inputs_str=ex_inputs_str,
+                    model=model, 
+                    possible_answer_mask=possible_answer_mask)
 
                 # only test on the single next token
                 true_next_token_ids = y_tokenized['input_ids'][:, 0]
@@ -316,4 +319,5 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
         return (total_loss / total_n), (total_n_correct * 100.0 / total_n)
     else:
         return np.nan, (total_n_correct * 100.0 / total_n)
+
 

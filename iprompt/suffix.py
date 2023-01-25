@@ -6,6 +6,7 @@ import torch
 
 import iprompt.data as data
 import iprompt.parallel as parallel
+from iprompt.prompt_classification import Gpt3Model
 import iprompt.utils as utils
 
 
@@ -18,27 +19,38 @@ def get_stopwords():
     return set(stopwords.words('english'))
 
 
-def get_next_token_logits(ex_inputs, model):
+def get_next_token_logits(ex_inputs, ex_inputs_str, model, possible_answer_mask):
     """Gets logits for the next token given inputs with appropriate attention mask
     """
-    # go through model
-    outputs = model(
-        input_ids=ex_inputs['input_ids'], attention_mask=ex_inputs['attention_mask'])
-    logits = outputs['logits']  # (batch_size, seq_len, vocab_size)
+    if isinstance(model, Gpt3Model):
+        return model.get_logits(
+            x_text=ex_inputs_str,
+            possible_answer_mask=possible_answer_mask
+        ).squeeze(dim=1)
+    else:
+        # go through model
+        outputs = model.model(
+            input_ids=ex_inputs['input_ids'], attention_mask=ex_inputs['attention_mask'])
+        logits = outputs['logits']  # (batch_size, seq_len, vocab_size)
 
-    # get positions of the next-token hidden state
-    positions_next_token = ex_inputs['attention_mask'].cumsum(dim=1).argmax(dim=1)
+        # get positions of the next-token hidden state
+        positions_next_token = ex_inputs['attention_mask'].cumsum(dim=1).argmax(dim=1)
 
-    # index at correct positions
-    batch_size = logits.shape[0]
-    next_token_logits = logits[torch.arange(batch_size).to(logits.device), positions_next_token]
-   
-    # import transformers
-    # tt = transformers.AutoTokenizer.from_pretrained(model.name_or_path)
-    # import pdb; pdb.set_trace()
-    # The IMDb movie review in negative/positive sentiment is: 
+        # index at correct positions
+        batch_size = logits.shape[0]
+        next_token_logits = logits[torch.arange(batch_size).to(logits.device), positions_next_token]
 
-    return next_token_logits
+        # optionally take a mask over some tokens
+        next_token_logits = torch.where(
+            possible_answer_mask, next_token_logits, torch.tensor(
+                float('-inf')).to(device)
+        )
+        # import transformers
+        # tt = transformers.AutoTokenizer.from_pretrained(model.name_or_path)
+        # import pdb; pdb.set_trace()
+        # The IMDb movie review in negative/positive sentiment is: 
+
+        return next_token_logits
 
 
 def get_probs_avg_next_token(args, suffix_str: str, model, dataloader,
