@@ -87,18 +87,29 @@ LABEL_MAP = {
 }
 
 
-def make_row_sentiment__(row: Dict[str, str], dataset_name: str, text_key: str) -> Dict[str, str]:
-    text_input = f'Input: "{row[text_key].strip()}"'
-    sentiment = LABEL_MAP[dataset_name][row['label']]
-    text_output =  f' {sentiment}\n'
-    return {
-        "input": text_input,
-        "output": text_output,
-        "text": (text_input + text_output + '\n\n'),
-    }
+
+# initial_str = ""
+# initial_str = "Movie Review: "
+initial_str = "Input: "
+def make_row_sentiment_func(no_quotes: bool):
+    no_quotes = True
+    def make_row_sentiment__(row: Dict[str, str], dataset_name: str, text_key: str) -> Dict[str, str]:
+        if no_quotes:
+            text_input = f'{initial_str}{row[text_key].strip()}'
+        else:
+            text_input = f'{initial_str}"{row[text_key].strip()}"'
+        sentiment = LABEL_MAP[dataset_name][row['label']]
+        text_output =  f' {sentiment}\n'
+        return {
+            "input": text_input,
+            "output": text_output,
+            "text": (text_input + text_output + '\n\n'),
+        }
+    return make_row_sentiment__
 
 
 def fetch_classification_data(dataset_split: str, dataset_name: str, text_key: str) -> pd.DataFrame:
+    no_quotes = True
     print("**loading data:", dataset_name, "//", ALL_SPLIT_DICT[dataset_split])
     # load dataset
     if dataset_name == 'financial_phrasebank':
@@ -124,7 +135,7 @@ def fetch_classification_data(dataset_split: str, dataset_name: str, text_key: s
     if not len(raw_dataset): raise ValueError("got no datapoints after filtering for valid labels")
     # make rows
     dataset = raw_dataset.map(
-        functools.partial(make_row_sentiment__, dataset_name=dataset_name, text_key=text_key)
+        functools.partial(make_row_sentiment_func(no_quotes=no_quotes), dataset_name=dataset_name, text_key=text_key)
     )
     return dataset.to_pandas()
 

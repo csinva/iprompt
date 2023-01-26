@@ -94,6 +94,7 @@ class Gpt3Model(Model):
                 assert len(
                     token_id) == 1, f"token mismatch for input '{token}': {token_id}"
                 logits[i][token_id[0]] = prob  # set logits for the top 5 items
+            # import pdb; pdb.set_trace()
 
         logits = torch.tensor(logits).unsqueeze(dim=1)
         return logits.to(device).float()
