@@ -61,6 +61,11 @@ class iPrompt(AutoPrompt):
         ]
         ####################################################################
         self.conditioning_strategy = args.iprompt_conditioning_strategy
+        self.other_generation_model = None
+        if args.iprompt_generation_checkpoint:
+            self.other_generation_model = load_lm_from_checkpoint(
+                args.iprompt_generation_checkpoint, float16=args.llm_float16
+            )
         ####################################################################
         self._prefix_pool = PrefixPool(
             tokenizer=self.tokenizer,
