@@ -34,7 +34,9 @@ def get_next_token_logits(ex_inputs, ex_inputs_str, model, possible_answer_mask)
     else:
         # go through model
         outputs = model.model(
-            input_ids=ex_inputs['input_ids'], attention_mask=ex_inputs['attention_mask'])
+            input_ids=ex_inputs['input_ids'],
+            attention_mask=ex_inputs['attention_mask']
+        )
         logits = outputs['logits']  # (batch_size, seq_len, vocab_size)
 
         # get positions of the next-token hidden state

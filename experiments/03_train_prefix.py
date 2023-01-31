@@ -385,6 +385,17 @@ if __name__ == '__main__':
                         choices=['loss', 'acc', 'combined'])
     parser.add_argument('--iprompt_topk_strategy', type=str, default='different_start_token',
                         choices=['different_start_token', 'all'])
+    parser.add_argument('--gpt_model_for_reranking', type=str,
+                        default='', help='use gpt-3 api for reranking step!',
+                        choices=[                
+                            "text-ada-001",
+                            "text-babbage-001",
+                            "text-curie-001",
+                            "text-davinci-002", # used for iPrompt paper
+                            "text-davinci-003",
+                        ])
+    parser.add_argument('--autoprompt_num_candidates_per_prefix_token', type=int,
+                    help='V_cand from the autoprompt paper', default=32)
     parser.add_argument('--llm_float16', '--float16', '--parsimonious', type=int, default=0, choices=(0, 1),
                         help='if true, loads LLM in fp16 and at low-ram')
     parser.add_argument('--checkpoint', type=str, default="EleutherAI/gpt-neo-2.7B",

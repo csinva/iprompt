@@ -286,6 +286,7 @@ class iPrompt(AutoPrompt):
                         next_token_ids=y_tokenized.input_ids,
                         possible_answer_mask=possible_answer_mask,
                         prefix_ids=population_input_ids[i],
+                        reranking=True,
                     )
                 )
                 cand_accuracy = cand_n_correct / len(x_tokenized.input_ids)

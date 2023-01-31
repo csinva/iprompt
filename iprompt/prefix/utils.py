@@ -287,11 +287,52 @@ class PrefixModel(nn.Module, abc.ABC):
             original_input_ids: torch.Tensor,
             next_token_ids: torch.Tensor,
             possible_answer_mask: torch.Tensor,
-            prefix_ids: Optional[torch.Tensor] = None
+            prefix_ids: Optional[torch.Tensor] = None,
+            reranking: bool = False,
         ) -> torch.Tensor:
+        """Feeds an input into the model and computes loss over `next_token_ids`.
+
+        If `prefix_ids` is set, uses that as prefix. If not, uses `self.prefix_ids` or
+        whatever prefix happens through `embed_input_ids`. The separate embedding stage
+        makes it possible for our code to work for soft prompts too, like prefix tuning.
+
+        If `reranking` is true and `self._gpt_model_for_reranking` is set, uses a GPT-
+        style model to compute loss, etc.
+        """
         # feed into the model. prefix-handling is implemented in PrefixModel::forward.
         # and huggingface LM automatically computes language modeling loss.
-        if self._is_t5:
+        if (reranking and (self._gpt_model_for_reranking is not None)):
+            batch_size = len(original_input_ids)
+            if prefix_ids is None:
+                prefix_ids = self.prefix_ids
+            # concatenate preprefix (fixed) + prefix (learned) + example
+            prefix_ids = prefix_ids[None].to(device).repeat((batch_size, 1)).to(device)
+            preprefix_ids = self.preprefix_ids[None].to(device).repeat((batch_size, 1)).to(device)
+
+            if self.prefix_before_input:
+                new_input_ids = torch.cat(
+                    (preprefix_ids, prefix_ids, original_input_ids), dim=1
+                )
+            else:
+                new_input_ids = torch.cat(
+                    (preprefix_ids, prefix_ids, original_input_ids), dim=1
+                )
+            ex_inputs_str = self.tokenizer.batch_decode(
+                new_input_ids, skip_special_tokens=True)
+            next_token_ids = next_token_ids[:, 0] # Only compute loss over single next token
+            logits = self._gpt_model_for_reranking.get_logits(
+                x_text=ex_inputs_str,
+                possible_answer_mask=possible_answer_mask
+            )
+            loss = torch.nn.functional.nll_loss( 
+                input=logits.squeeze(dim=1), target=next_token_ids, reduction='mean'
+            )
+            breakpoint()
+            n_correct = (
+                 logits.argmax(dim=-1).squeeze() == next_token_ids
+            ).sum()
+            return new_input_ids, loss, n_correct
+        elif self._is_t5:
             assert possible_answer_mask is None, "not implemented with t5 yet"
             blank_next_token_ids = torch.zeros(
                 (len(original_input_ids), 0), dtype=torch.long, device=device)
@@ -342,7 +383,6 @@ class PrefixModel(nn.Module, abc.ABC):
                 input=next_token_logits.reshape((B * S, -1)),
                 target=next_token_ids.reshape((B * S),),
                 ignore_index=self.tokenizer.pad_token_id,
-                # reduction=None
             )
             
         n_correct = (

@@ -13,6 +13,7 @@ import transformers
 
 from .hotflip import HotFlip
 from .utils import device, PrefixLoss, PrefixModel, PrefixPool
+from iprompt.prompt_classification import Gpt3Model
 
 
 class AutoPrompt(HotFlip):
@@ -23,6 +24,7 @@ class AutoPrompt(HotFlip):
     prefix_ids: torch.Tensor
     prefix_embedding: torch.nn.Parameter
     preprefix: str
+    gpt_model_for_reranking: Optional[Gpt3Model]
 
     def __init__(
         self,
@@ -36,8 +38,14 @@ class AutoPrompt(HotFlip):
             args=args, loss_func=loss_func, model=model, tokenizer=tokenizer, preprefix=preprefix
         )
         self._do_final_reranking = args.iprompt_do_final_reranking
+        # Allow using GPT model for reranking.
+        if args.gpt_model_for_reranking:
+            self._gpt_model_for_reranking = Gpt3Model(
+                model_name=args.gpt_model_for_reranking
+            )
+            os.environ['TOKENIZERS_PARALLELISM'] = 'true' # hide annoying warning message
         # AutoPrompt-specific parameters.
-        self._num_candidates_per_prefix_token = 32  # V_cand in autoprompt paper
+        self._num_candidates_per_prefix_token = args.autoprompt_num_candidates_per_prefix_token  # V_cand in autoprompt paper
         # This helps us know which were the best prefixes to return over time
         self._prefix_pool = PrefixPool(
             tokenizer=self.tokenizer,
@@ -45,6 +53,12 @@ class AutoPrompt(HotFlip):
         )
         self._autoprompt_verbose = True
         self._num_min_occurrences = 1
+        # Support separate models
+        self.other_generation_model = None
+        if args.iprompt_generation_checkpoint:
+            self.other_generation_model = load_lm_from_checkpoint(
+                args.iprompt_generation_checkpoint, float16=args.llm_float16
+            )
         # Will rank and save this many prefixes at the end of training.
         self._num_prefixes_to_test = 1024
     
@@ -61,7 +75,6 @@ class AutoPrompt(HotFlip):
             len(prefixes), dtype=torch.float32)
         total_n = 0
         print('_test_prefixes')
-        # breakpoint()
         for batch in tqdm.tqdm(eval_dataloader, desc=f'evaluating {len(prefixes)} prefixes'):
             if (self.args.n_shots > 1) and (self.args.single_shot_loss): ##
                 batch['input'] = batch['last_input'] ##
@@ -83,6 +96,7 @@ class AutoPrompt(HotFlip):
                             next_token_ids=next_token_ids,
                             possible_answer_mask=possible_answer_mask,
                             prefix_ids=torch.tensor(prefixes[i]).to(device),
+                            reranking=True,
                         )
                     )
                 all_candidate_losses[i] += cand_loss.item()
@@ -165,8 +179,19 @@ class AutoPrompt(HotFlip):
             next_token_ids=next_token_ids,
             possible_answer_mask=possible_answer_mask,
             prefix_ids=None,
+            reranking=False,
         )
         current_loss.backward()
+
+        # Overwrite GPT-J loss with GPT-3 loss for current prefix.
+        if self._gpt_model_for_reranking is not None:
+            current_input_ids, current_loss, current_n_correct = self._compute_loss_with_set_prefix(
+                original_input_ids=original_input_ids,
+                next_token_ids=next_token_ids,
+                possible_answer_mask=possible_answer_mask,
+                prefix_ids=None,
+                reranking=True,
+            )
 
         self._autoprompt_verbose: print(
             f'** {self.tokenizer.decode(self.prefix_ids)}: {current_loss:.2f}')
@@ -232,6 +257,7 @@ class AutoPrompt(HotFlip):
                         next_token_ids=next_token_ids,
                         possible_answer_mask=possible_answer_mask,
                         prefix_ids=candidate_prefix_ids[i],
+                        reranking=True,
                     )
                 )
             all_candidate_losses[i] = cand_loss

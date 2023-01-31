@@ -60,16 +60,23 @@ class Model:
 
 
 class Gpt3Model(Model):
-    def __init__(self):
+    def __init__(self, model_name: str="text-davinci-002"):
         assert 'OPENAI_API_KEY' in os.environ, 'need to set OPENAI_API_KEY in env to use GPT-3 API'
         import openai
         openai.api_key = os.environ['OPENAI_API_KEY']
         self._num_requests = 0
         self.tokenizer = transformers.AutoTokenizer.from_pretrained('gpt2')
         self.tokenizer.pad_token = self.tokenizer.eos_token
-        self._api_kwargs = {"model": "text-davinci-002",
+        assert model_name in [
+            "text-ada-001",
+            "text-babbage-001",
+            "text-curie-001",
+            "text-davinci-002", # used for iPrompt paper
+            "text-davinci-003",
+        ]
+        self._api_kwargs = {"model": model_name,
                             "temperature": 0.0, "max_tokens": 1, "logprobs": 5}
-        print("Initializing for calls to GPT-3 API")
+        print(f"Initializing for calls to GPT-3 API [model {model_name}]")
         self.model = argparse.Namespace(device=torch.device('cpu'))
 
     def get_logits(self, x_text: List[str], possible_answer_mask: Optional[torch.Tensor] = None) -> torch.Tensor:
