@@ -294,6 +294,7 @@ class HotFlip(PrefixModel):
         prefix_ids = prefix_ids[None].to(device).repeat((batch_size, 1)).to(device)
         preprefix_ids = self.preprefix_ids[None].to(device).repeat((batch_size, 1)).to(device)
 
+<<<<<<< HEAD
         if self.prefix_before_input:
             full_input_ids = torch.cat(
                 (preprefix_ids, prefix_ids, input_ids, next_token_ids), dim=1
@@ -318,6 +319,19 @@ class HotFlip(PrefixModel):
                     self.token_embedding.forward(next_token_ids),
                 ), dim=1
             )
+=======
+        # breakpoint()
+        full_input_ids = torch.cat(
+            (preprefix_ids, prefix_ids, input_ids), dim=1
+        )
+        outputs = torch.cat(
+            (
+                self.token_embedding.forward(preprefix_ids),
+                prefix_embedding[None].repeat((batch_size, 1, 1)),
+                self.token_embedding.forward(input_ids)
+            ), dim=1
+        )
+>>>>>>> 1fab342373d8c1aa5b7d34ba6f90366d08302660
         return full_input_ids, outputs
 
 
