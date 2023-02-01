@@ -2,6 +2,7 @@ from typing import List, Optional
 
 import abc
 import argparse
+import copy
 import datasets
 import numpy as np
 import os
@@ -48,9 +49,7 @@ class Model:
         self.tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.model.eval()
-        
         self.model.to(device)
-        
 
     def get_logits(self, x_text: List[str]) -> torch.Tensor:
         x_tokenized = self.tokenizer(
@@ -76,23 +75,38 @@ class Gpt3Model(Model):
         ]
         self._api_kwargs = {"model": model_name,
                             "temperature": 0.0, "max_tokens": 1, "logprobs": 5}
-        print(f"Initializing for calls to GPT-3 API [model {model_name}]")
+        print(f"Initializing for calls to GPT-3 API [{model_name}]")
         self.model = argparse.Namespace(device=torch.device('cpu'))
 
-    def get_logits(self, x_text: List[str], possible_answer_mask: Optional[torch.Tensor] = None) -> torch.Tensor:
+    def get_logits(self, x_text: List[str], 
+            possible_answer_mask: Optional[torch.Tensor] = None,
+            next_token_ids: Optional[torch.Tensor] = None) -> torch.Tensor:
         import openai
         # all negative logits
         logits = np.zeros((len(x_text), self.tokenizer.vocab_size)) - 1e4
 
         kwargs = self._api_kwargs
+        logit_bias = None
         if possible_answer_mask is not None:
             logit_bias = {}
             for _idx, is_not_masked in enumerate(possible_answer_mask.tolist()):
                 if is_not_masked:
                     logit_bias[_idx] = +100
-            kwargs['logit_bias'] = logit_bias
 
         for i, prompt in enumerate(x_text):
+            # Special logic for making sure logit of correct next token
+            # is non-inf
+            if (logit_bias is not None):
+                # TODO: how to ensure that next_token_ids[i] is one of returned log_probs,
+                # even if it's not in the top 5?
+                # if next_token_ids is not None:
+                #     logit_bias_i = {}
+                #     next_token_idx = next_token_ids[i].item()
+                #     logit_bias_i[next_token_idx] = +100
+                # else:
+                logit_bias_i = copy.copy(logit_bias)                
+                kwargs['logit_bias'] = logit_bias_i
+
             response = openai.Completion.create(prompt=prompt, **kwargs)
             token_logprobs = response.choices[0]['logprobs']['top_logprobs'][0].to_dict(
             )
@@ -100,8 +114,8 @@ class Gpt3Model(Model):
                 token_id = self.tokenizer.encode(token)
                 assert len(
                     token_id) == 1, f"token mismatch for input '{token}': {token_id}"
-                logits[i][token_id[0]] = prob  # set logits for the top 5 items
-            # import pdb; pdb.set_trace()
+                logits[i][token_id[0]] = prob # set logits for the top 5 items
+            # breakpoint()
 
         logits = torch.tensor(logits).unsqueeze(dim=1)
         return logits.to(device).float()

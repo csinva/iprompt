@@ -44,12 +44,15 @@ class AutoPrompt(HotFlip):
                 model_name=args.gpt_model_for_reranking
             )
             os.environ['TOKENIZERS_PARALLELISM'] = 'true' # hide annoying warning message
+        else:
+            self._gpt_model_for_reranking = None
         # AutoPrompt-specific parameters.
         self._num_candidates_per_prefix_token = args.autoprompt_num_candidates_per_prefix_token  # V_cand in autoprompt paper
         # This helps us know which were the best prefixes to return over time
         self._prefix_pool = PrefixPool(
             tokenizer=self.tokenizer,
-            criterion='loss'  # in ['loss', 'acc', 'combined']
+            criterion=args.prefix_pool_criterion,  # in ['loss', 'acc', 'combined']
+            topk_strategy='all',
         )
         self._autoprompt_verbose = True
         self._num_min_occurrences = 1
@@ -275,19 +278,22 @@ class AutoPrompt(HotFlip):
         # randomly change the token to swap
         self._swap_token_idx = random.randint(0, (self._num_tokens-1))
         # get best prefix we've seen
-        if all_candidate_losses.min() < current_loss:
-            best_prefix = candidate_prefix_ids[all_candidate_losses.argmin()]
-            best_prefix_loss = all_candidate_losses.min()
-            best_prefix_n_correct = all_n_correct[all_candidate_losses.argmin(
-            )]
-            if self._autoprompt_verbose:
-                print("** set new prefix", best_prefix)
+        next_prefix_strategy = 'best_overall' # ['best_at_step', 'best_overall']
+        if next_prefix_strategy == 'best_overall':
+            best_prefix = min(self._prefix_pool._avg_loss, key=self._prefix_pool._avg_loss.get)        
         else:
-            best_prefix = self.prefix_ids
-            best_prefix_loss = current_loss
-            best_prefix_n_correct = current_n_correct
-            if self._autoprompt_verbose:
-                print("** set same prefix", best_prefix)
+            if all_candidate_losses.min() < current_loss:
+                best_prefix = candidate_prefix_ids[all_candidate_losses.argmin()]
+                best_prefix_loss = all_candidate_losses.min()
+                best_prefix_n_correct = all_n_correct[all_candidate_losses.argmin()]
+                if self._autoprompt_verbose:
+                    print("** set new prefix", best_prefix)
+            else:
+                best_prefix = self.prefix_ids
+                best_prefix_loss = current_loss
+                best_prefix_n_correct = current_n_correct
+                if self._autoprompt_verbose:
+                    print("** set same prefix", best_prefix.tolist())
 
         self._set_prefix_ids(best_prefix)
         return best_prefix_loss, best_prefix_n_correct

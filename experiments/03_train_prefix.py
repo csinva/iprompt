@@ -381,10 +381,12 @@ if __name__ == '__main__':
     parser.add_argument('--iprompt_num_random_generations',
                         type=int, default=4)
     parser.add_argument('--iprompt_do_final_reranking', type=int, default=1)
-    parser.add_argument('--iprompt_criterion', type=str, default='loss',
+    parser.add_argument('--prefix_pool_criterion', type=str, default='loss',
                         choices=['loss', 'acc', 'combined'])
     parser.add_argument('--iprompt_topk_strategy', type=str, default='different_start_token',
                         choices=['different_start_token', 'all'])
+    parser.add_argument('--autoprompt_init_prefix', type=str, default='',
+                        help='starter prefix for autoprompt')
     parser.add_argument('--gpt_model_for_reranking', type=str,
                         default='', help='use gpt-3 api for reranking step!',
                         choices=[                

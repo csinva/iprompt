@@ -51,6 +51,7 @@ class HotFlip(PrefixModel):
             preprefix_ids.extend(self.tokenizer.encode(preprefix))
         self.preprefix_ids = torch.tensor(preprefix_ids, dtype=int).to(device)
         self.prefix_ids = None
+
         self._set_prefix_ids(
             self.init_discrete_prefix(num_tokens=self._num_tokens)
         )
@@ -74,10 +75,12 @@ class HotFlip(PrefixModel):
     
     def _set_prefix_ids(self, new_ids: torch.Tensor) -> None:
         assert new_ids.ndim == 1, "cannot set prefix with more than 1 dim (need list of IDs)"
-
         # Track steps since new prefix to enable early stopping
-        print('self.prefix_ids:', self.prefix_ids)
-        print('new_ids:', new_ids)
+        print(
+            'self.prefix_ids:', 
+            (self.prefix_ids.tolist() if (self.prefix_ids is not None) else None),
+            '// new_ids:', new_ids.tolist()
+        )
         if (self.prefix_ids is not None) and (self.prefix_ids == new_ids).all():
             self._steps_since_new_prefix += 1
         else:

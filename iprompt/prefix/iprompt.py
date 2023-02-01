@@ -69,7 +69,7 @@ class iPrompt(AutoPrompt):
         ####################################################################
         self._prefix_pool = PrefixPool(
             tokenizer=self.tokenizer,
-            criterion=args.iprompt_criterion, # 'loss'  # in ['loss', 'acc', 'combined']
+            criterion=args.prefix_pool_criterion, # 'loss'  # in ['loss', 'acc', 'combined']
             topk_strategy=args.iprompt_topk_strategy,
         )
         # Suff to track for early stopping

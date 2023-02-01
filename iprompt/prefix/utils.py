@@ -274,7 +274,12 @@ class PrefixModel(nn.Module, abc.ABC):
             self.token_embedding.weight.mean(dim=0, keepdim=True)[None].repeat(1, num_tokens, 1), requires_grad=True
         )
     
-    def init_discrete_prefix(self, num_tokens: int) -> nn.Parameter:
+    def init_discrete_prefix(self, num_tokens: int) -> torch.Tensor:
+        if self.args.autoprompt_init_prefix:
+            prefix = self.tokenizer.encode(self.args.autoprompt_init_prefix, return_tensors='pt')
+            prefix = prefix.squeeze()
+            assert prefix.numel() == num_tokens, f"prefix is of length {prefix.numel()} but specified {num_tokens} in prefix"
+            return prefix
         if self.args.autoprompt_init_strategy == 'random':
             return torch.randint(low=0, high=self.tokenizer.vocab_size, size=(num_tokens,))
         else:
@@ -322,12 +327,12 @@ class PrefixModel(nn.Module, abc.ABC):
             next_token_ids = next_token_ids[:, 0] # Only compute loss over single next token
             logits = self._gpt_model_for_reranking.get_logits(
                 x_text=ex_inputs_str,
-                possible_answer_mask=possible_answer_mask
+                possible_answer_mask=possible_answer_mask,
+                next_token_ids=next_token_ids.squeeze(),
             )
             loss = torch.nn.functional.nll_loss( 
                 input=logits.squeeze(dim=1), target=next_token_ids, reduction='mean'
             )
-            breakpoint()
             n_correct = (
                  logits.argmax(dim=-1).squeeze() == next_token_ids
             ).sum()
@@ -376,6 +381,11 @@ class PrefixModel(nn.Module, abc.ABC):
             next_token_logits = outputs.logits[:, -LS-1:-1]
 
             if possible_answer_mask is not None:
+                # TODO make this work for multitoken.
+                S = 1
+                next_token_logits = next_token_logits[:, 0:1]
+                next_token_ids = next_token_ids[:, 0:1]
+
                 BIG_NEGATIVE_NUMBER = torch.tensor(-10**10, dtype=next_token_logits.dtype, device=device)
                 next_token_logits = torch.where(possible_answer_mask, next_token_logits, BIG_NEGATIVE_NUMBER)
             B, S, _V = next_token_logits.shape
@@ -605,9 +615,9 @@ class PrefixPool:
             # sort by min loss
             return (self._avg_loss[prefix], )
         elif criterion == 'combined':
-            return (-1 * round(self._avg_accuracy[prefix], 2), self._avg_loss[prefix])
+            return (-1 * round(self._avg_accuracy[prefix], 5), self._avg_loss[prefix])
         else:
-            return (-1 * self._avg_accuracy[prefix], 2)
+            return (-1 * self._avg_accuracy[prefix], )
     
     def _topk_from_prefixes(
         self,
