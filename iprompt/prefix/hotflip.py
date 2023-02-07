@@ -78,8 +78,8 @@ class HotFlip(PrefixModel):
         # Track steps since new prefix to enable early stopping
         print(
             'self.prefix_ids:', 
-            (self.prefix_ids.tolist() if (self.prefix_ids is not None) else None),
-            '// new_ids:', new_ids.tolist()
+            (self.tokenizer.decode(self.prefix_ids.tolist()) if (self.prefix_ids is not None) else None),
+            '// new_ids:', self.tokenizer.decode(new_ids.tolist())
         )
         if (self.prefix_ids is not None) and (self.prefix_ids == new_ids).all():
             self._steps_since_new_prefix += 1

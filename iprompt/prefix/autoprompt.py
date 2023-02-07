@@ -279,8 +279,15 @@ class AutoPrompt(HotFlip):
         self._swap_token_idx = random.randint(0, (self._num_tokens-1))
         # get best prefix we've seen
         next_prefix_strategy = 'best_overall' # ['best_at_step', 'best_overall']
+        # next_prefix_strategy = 'best_at_step' # ['best_at_step', 'best_overall']
         if next_prefix_strategy == 'best_overall':
-            best_prefix = min(self._prefix_pool._avg_loss, key=self._prefix_pool._avg_loss.get)        
+            best_prefix = max(self._prefix_pool._avg_accuracy, key=self._prefix_pool._avg_accuracy.get)        
+            # best_prefix = min(self._prefix_pool._avg_loss, key=self._prefix_pool._avg_loss.get)        
+            best_prefix_loss = self._prefix_pool._avg_loss[best_prefix]
+            best_prefix_n_correct = (
+                self._prefix_pool._avg_accuracy[best_prefix] * len(original_input_ids)
+            )
+            best_prefix = torch.tensor(best_prefix).to(device)
         else:
             if all_candidate_losses.min() < current_loss:
                 best_prefix = candidate_prefix_ids[all_candidate_losses.argmin()]
