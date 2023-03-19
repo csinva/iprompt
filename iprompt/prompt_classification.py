@@ -45,7 +45,7 @@ class Model:
                 self.model = transformers.AutoModelForCausalLM.from_pretrained(
                     model_name, low_cpu_mem_usage=True)
             
-        self.tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
+        self.tokenizer = transformers.AutoTokenizer.from_pretrained(model_name, truncation_side='left')
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.model.eval()
         

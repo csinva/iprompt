@@ -91,13 +91,14 @@ LABEL_MAP = {
 # initial_str = ""
 # initial_str = "Movie Review: "
 initial_str = "Input: "
+output_str = " Output:"
 def make_row_sentiment_func(no_quotes: bool):
     no_quotes = True
     def make_row_sentiment__(row: Dict[str, str], dataset_name: str, text_key: str) -> Dict[str, str]:
         if no_quotes:
-            text_input = f'{initial_str}{row[text_key].strip()}'
+            text_input = f'{initial_str}{row[text_key].strip()} {output_str}'
         else:
-            text_input = f'{initial_str}"{row[text_key].strip()}"'
+            text_input = f'{initial_str}"{row[text_key].strip()}" {output_str}'
         sentiment = LABEL_MAP[dataset_name][row['label']]
         text_output =  f' {sentiment}\n'
         return {
