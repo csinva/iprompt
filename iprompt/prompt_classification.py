@@ -107,7 +107,7 @@ def create_model(model_name: str, parallelize=False) -> Model:
         return Model(model_name=model_name, parallelize=parallelize)
 
 
-def test_gpt_model_on_task_with_prefix(dset, prefix, verbose=True, multi_token=True):
+def test_gpt_model_on_task_with_prefix(dset, prefix, verbose=True, multi_token=True, use_lower=False):
     import openai
     total_n_correct = 0
     for i in range(dset.shape[0]):
@@ -126,6 +126,12 @@ def test_gpt_model_on_task_with_prefix(dset, prefix, verbose=True, multi_token=T
 
         # check acc 
         y_gt = y_text.rstrip(string.punctuation + string.whitespace)
+        
+        if use_lower:
+            y_decoded = y_decoded.lower()
+            y_gt = y_gt.lower()
+            
+        # print(x_text, 'pred', repr(y_decoded), 'gt', y_gt)
         total_n_correct += int(y_gt.strip() in y_decoded)        
     percent_correct = total_n_correct * 100.0 / dset.shape[0]
     if verbose:

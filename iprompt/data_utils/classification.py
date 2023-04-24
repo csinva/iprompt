@@ -32,11 +32,16 @@ TWEETS_SPLIT_DICT = {
     "tweets_test": "test", # special case (see DATASETS_MISSING_TEST_SET)
 }
 
+EMOTION_SPLIT_DICT = {
+    "emotion_train": "train",
+    "emotion_test": "test",
+}
+
 
 DATASETS_MISSING_TEST_SET = {'financial_phrasebank'}
 
 
-ALL_SPLIT_DICT = {**SST2_SPLIT_DICT, **IMDB_SPLIT_DICT, **RT_SPLIT_DICT, **FFB_SPLIT_DICT, **TWEETS_SPLIT_DICT}
+ALL_SPLIT_DICT = {**SST2_SPLIT_DICT, **IMDB_SPLIT_DICT, **RT_SPLIT_DICT, **FFB_SPLIT_DICT, **TWEETS_SPLIT_DICT, **EMOTION_SPLIT_DICT}
 
 """
     # process dset
@@ -84,6 +89,7 @@ LABEL_MAP = {
     "financial_phrasebank": { 0: "negative", 1: "neutral", 2: "positive" },
     # not hate speech, yes hate speech
     "tweets_hate_speech": { 0: "negative", 1: "positive" },
+    'emotion': {0: 'Sad', 1: 'Happ', 2: 'Love', 3: 'Ang', 4: 'Fear', 5: 'Surpris'},
 }
 
 
@@ -193,6 +199,15 @@ for split_name in TWEETS_SPLIT_DICT.keys():
         'check_answer_func': SENTIMENT_CHECK_ANSWER_FUNC,
         'description': HATESPEECH_DESCRIPTION,
         'gen_func': functools.partial(fetch_classification_data, dataset_name="tweets_hate_speech", text_key="text"),
+    }
+    TASKS_CLASSIFICATION['SUFFIXES'][split_name] = SENTIMENT_SUFFIX
+
+# EMOTION
+for split_name in EMOTION_SPLIT_DICT.keys():
+    TASKS_CLASSIFICATION[split_name] = {
+        'check_answer_func': SENTIMENT_CHECK_ANSWER_FUNC,
+        'description': SENTIMENT_DESCRIPTION,
+        'gen_func': functools.partial(fetch_classification_data, dataset_name="emotion", text_key="text"),
     }
     TASKS_CLASSIFICATION['SUFFIXES'][split_name] = SENTIMENT_SUFFIX
 
