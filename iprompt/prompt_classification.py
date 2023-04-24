@@ -130,7 +130,7 @@ def test_gpt_model_on_task_with_prefix(dset, prefix, verbose=True, multi_token=T
         if use_lower:
             y_decoded = y_decoded.lower()
             y_gt = y_gt.lower()
-            
+
         # print(x_text, 'pred', repr(y_decoded), 'gt', y_gt)
         total_n_correct += int(y_gt.strip() in y_decoded)        
     percent_correct = total_n_correct * 100.0 / dset.shape[0]
@@ -149,6 +149,7 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                                    verbose=True,
                                    tqdm_notebook=False,
                                    prefix_before_input=True,
+                                   use_lower=False,
                                    ) -> float:
     """Tests a given language model on a dataset and returns {zero,few}-shot loss. 
     Note: accuracy is computed over the set of possible answers found in the original dataset.
@@ -303,16 +304,17 @@ def test_model_on_task_with_prefix(dset: datasets.Dataset, model: transformers.P
                 for i in range(len(samples)):
                     new_text = samples[i][len(x_text[i]):]
                     y_pred = y_text[i].rstrip(string.punctuation + string.whitespace)
-                    """
                     if verbose:
                         print(i)
                         print('\tx_text', repr(x_text[i]))
                         print('\tnew_text', repr(new_text))
                         print('\ty_text', repr(y_text[i]))
                         print('\ty_pred', repr(y_pred))
-                    """
                     
                     # correct if true answer is contained in the generation
+                    if use_lower:
+                        y_pred = y_pred.lower()
+                        new_text = new_text.lower()
                     total_n_correct += int(y_pred.strip() in new_text)
 
                 # loss = torch.nn.functional.nll_loss(

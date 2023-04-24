@@ -52,12 +52,14 @@ TASK_SETTINGS = {
     }
 }
 PROMPTS_EMOTION = [
-    ' The emotion of this sentence is:',
+    " Classify whether the tweet's emotion is sad, happy, love, anger, fear, or surprise:", # is 'emotion': {0: 'Sad', 1: 'Happ', 2: 'Love', 3: 'Ang', 4: 'Fear', 5: 'Surpris'},'
+    " What emotion is in this sentence? Choose from sad, happy, love, anger, fear, or surprise. Emotion:",
+    ' What feeling is present in this tweet? Choose from sad, happy, love, anger, fear, or surprise:',
     ' This tweet contains the emotion',
     ' The emotion of this tweet is',
 ]
 task_key = 'emotion'
-prompt = PROMPTS_EMOTION[1]
+prompt = PROMPTS_EMOTION[2]
 
 # prepare the args
 batch_sizes = {
@@ -147,8 +149,8 @@ for checkpoint in checkpoints_test:
                     )
                 else:
                     _, acc = prompt_classification.test_model_on_task_with_prefix(
-                        dset=dset_test, model=model, prefix=prompt_actual, multi_token=multi_token, verbose=False,
-                        batch_size=batch_size,
+                        dset=dset_test, model=model, prefix=prompt_actual, multi_token=multi_token, verbose=True,
+                        batch_size=batch_size, use_lower=True,# prefix_before_input=False,
                     )
 
                 # save stuff
