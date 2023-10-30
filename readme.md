@@ -62,7 +62,7 @@ prompts is a list of found natural-language prompt strings
 
 - **fMRI data experiment**: Uses scientific data/code from https://github.com/HuthLab/speechmodeltutorial linked to the paper "Natural speech reveals the semantic maps that tile human cerebral cortex" [Huth, A. G. et al., (2016) _Nature_.](https://www.nature.com/articles/nature17637)
 - AutoPrompt: find an (uninterpretable) prompt using input-gradients ([paper](https://arxiv.org/abs/2010.15980); [github](https://github.com/ucinlp/autoprompt))
-- Emb-GAM: Explain a dataset by fitting an interpretable linear model leveraging a pre-trained language model ([paper](https://arxiv.org/abs/2209.11799); [github](https://github.com/csinva/emb-gam))
+- Aug-imodels: Explain a dataset by fitting an interpretable linear model/decision tree leveraging a pre-trained language model ([paper](https://arxiv.org/abs/2209.11799); [github](https://github.com/csinva/emb-gam))
 
 ## Testing
 - to check if the pipeline seems to work, install pytest then run `pytest` from the repo's root directory
